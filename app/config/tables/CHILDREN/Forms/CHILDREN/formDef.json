@@ -1,0 +1,4213 @@
+{
+  "xlsx": {
+    "settings": [
+      {
+        "setting_name": "form_id",
+        "value": "CHILDREN",
+        "_row_num": 2
+      },
+      {
+        "setting_name": "form_version",
+        "value": 7122020,
+        "_row_num": 3
+      },
+      {
+        "setting_name": "table_id",
+        "value": "CHILDREN",
+        "_row_num": 4
+      },
+      {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Child in CS-BCG",
+              "default": "Criança em CS-BCG"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "setting_name": "default",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "Portuguese",
+              "default": "Portugues"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "setting_name": "english",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "English",
+              "default": "Inglês"
+            }
+          }
+        },
+        "_row_num": 7
+      }
+    ],
+    "survey": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "You are about to register a new child at:",
+              "default": "Você está prestes a registrar uma nova criança em:"
+            }
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Region: {{data.REGNOME}}",
+              "default": "Região: {{data.REGNOME}}"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Health centre area: {{data.HCNOME}}",
+              "default": "Área sanitárias: {{data.HCNOME}}"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Subarea: {{data.SUBAREANOME}}",
+              "default": "Subarea: {{data.SUBAREANOME}}"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Village: {{data.TABNOME}}",
+              "default": "Tabanca: {{data.TABNOME}}"
+            }
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Household: {{data.MOR}}",
+              "default": "Morança: {{data.MOR}}"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 9
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Name of mother: {{data.NOME}}",
+              "default": "Nome da mãe: {{data.NOME}}"
+            }
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 11
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 12
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "type": "adate",
+        "name": "DATASEG",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of visit",
+              "default": "Data de visita"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "required": true,
+        "constraint": "not(adate.hasUncertainty(data(\"DATASEG\"))) && data(\"DATASEG\") != null && adate.ageInYears(data(\"DATASEG\")) != -9999 && adate.ageInYears(data(\"DATASEG\")) < 2019",
+        "_row_num": 14
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 15
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 16
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "type": "text",
+        "name": "NOMECRI",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Name of child",
+              "default": "Nome da criança"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 18
+      },
+      {
+        "type": "select_one",
+        "values_list": "Sex",
+        "name": "SEX",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Sex",
+              "default": "Sexo"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 19
+      },
+      {
+        "type": "adate",
+        "name": "DOB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of birth",
+              "default": "Data de nascimento"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "required": true,
+        "constraint": "adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
+        "_row_num": 20
+      },
+      {
+        "type": "select_one",
+        "values_list": "PlaceOfBirth",
+        "name": "POB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Place of birth",
+              "default": "Local de nascimento"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 21
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 22
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 23
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "type": "select_one",
+        "values_list": "Status",
+        "name": "ESTADOCRI",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Status of child",
+              "default": "Estodo da criança"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 25
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESTADOCRI\") == \"2\" || data(\"ESTADOCRI\") == \"3\"",
+        "_row_num": 26
+      },
+      {
+        "type": "adate",
+        "name": "DATASAI",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of move / death",
+              "default": "Data de mudança / morte"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+        "_row_num": 27
+      },
+      {
+        "clause": "end if",
+        "_row_num": 28
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 29
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 30
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "VACINAS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child received vaccines?",
+              "default": "A criança recebeu vacinas?"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 32
+      },
+      {
+        "type": "select_one",
+        "values_list": "VaccineInfo",
+        "name": "VACINFO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Where is the information from?",
+              "default": "De onde vem a informação?"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 33
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 34
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"VACINAS\") == \"1\"",
+        "_row_num": 35
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 36
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "BCG",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the child receive BCG?",
+              "default": "A criança recebeu BCG?"
+            }
+          }
+        },
+        "constraint": "data(\"BCG\") != null || data(\"VACINAS\") !=1",
+        "_row_num": 38
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"BCG\") != \"2\"",
+        "_row_num": 39
+      },
+      {
+        "type": "adate",
+        "name": "BCGDATA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Day of vaccination",
+              "default": "Dia de vacinação"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "constraint": "(data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019) || data(\"BCG\") != 1",
+        "_row_num": 40
+      },
+      {
+        "clause": "end if",
+        "_row_num": 41
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "POLIO0",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the child receive polio at birth?",
+              "default": "A criança recebeu vaccina contra polio (VPO-0)?"
+            }
+          }
+        },
+        "constraint": "data(\"POLIO0\") != null || data(\"VACINAS\") !=1",
+        "_row_num": 42
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"POLIO0\") != \"2\"",
+        "_row_num": 43
+      },
+      {
+        "type": "adate",
+        "name": "POLIO0DATA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Day of vaccination",
+              "default": "Dia de vacinação"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "constraint": "(data(\"POLIO0DATA\") != null && adate.ageInYears(data(\"POLIO0DATA\")) != -9999 && adate.ageInYears(data(\"POLIO0DATA\")) < 2019) || data(\"BCG\") != 1",
+        "_row_num": 44
+      },
+      {
+        "clause": "end if",
+        "_row_num": 45
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 46
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 47
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 48
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "VACINASOU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child received any other vaccines?",
+              "default": "A criança recebeu alguma outra vacina?"
+            }
+          }
+        },
+        "constraint": "data(\"VACINASOU\") != null || data(\"VACINAS\") !=1",
+        "_row_num": 49
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 50
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"VACINASOU\") == \"1\" && data(\"VACINFO\") != \"3\"",
+        "_row_num": 51
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 52
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 53
+      },
+      {
+        "type": "image",
+        "name": "VACINASIMG",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Please take a photo of the extra vaccines",
+              "default": "Por favor, tire uma foto das vacinas extras"
+            },
+            "image": "vaccination_card.jpg"
+          },
+          "hint": {
+            "text": {
+              "english": "If possible, take a photo with both vaccinations dates and date of birth (as the picture above).",
+              "default": "Se possível, tire uma foto com as datas de vacinação e de nascimento (conforme a imagem acima)."
+            }
+          }
+        },
+        "constraint": "data(\"VACINASIMG_url\") != null ||  data(\"VACINFO\") ==3 || data(\"VACINASOU\") !=1",
+        "_row_num": 54
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 55
+      },
+      {
+        "clause": "end if",
+        "_row_num": 56
+      },
+      {
+        "clause": "end if",
+        "_row_num": 57
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESTADOCRI\") == \"1\"",
+        "_row_num": 58
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 59
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 60
+      },
+      {
+        "type": "integer",
+        "name": "MUAC",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Mid-upper-arm circumference",
+              "default": "Circunferência do meio do braço"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If MUAC is less than 50mm write \"11\" </br> Ft is not possible to measure MUAC write \"999\"",
+              "default": "Se o braço for menor que 50 mm, escreva \"11\" </br> Se não for possível medir o braço, escreva \"999\""
+            }
+          },
+          "constraint_message": {
+            "text": {
+              "english": "Must be between 50 and 342 and a even number.",
+              "default": "Deve estar entre 50 e 342 e um número par."
+            }
+          }
+        },
+        "constraint": "(data(\"MUAC\")>49 && data(\"MUAC\")<343 && data(\"MUAC\")%2 == 0) || data(\"MUAC\") == 999  || data(\"MUAC\") == \"11\" || data('ESTADOCRI') != 1",
+        "_row_num": 61
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"BCG\") == \"1\"",
+        "_row_num": 62
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "BCGREACT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Is there a reaction where the child got the BCG vaccine?",
+              "default": "Existe alguma reação onde a criança tomou a vacina BCG?"
+            }
+          }
+        },
+        "constraint": "data(\"BCGREACT\") != null || data(\"BCG\") != 1",
+        "_row_num": 63
+      },
+      {
+        "clause": "end if",
+        "_row_num": 64
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 65
+      },
+      {
+        "clause": "end if",
+        "_row_num": 66
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 67
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 68
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "HOSP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the child been hospitalised since birth?",
+              "default": "A criança está hospitalizada desde o nascimento?"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 69
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"HOSP\") ==\"1\"",
+        "_row_num": 70
+      },
+      {
+        "type": "adate",
+        "name": "HOSPDATA",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of first hospital admission",
+              "default": "Data da primeira admissão hospitalar"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "constraint": "(data(\"HOSPDATA\") != null && adate.ageInYears(data(\"HOSPDATA\")) != -9999 && adate.ageInYears(data(\"HOSPDATA\")) < 2019) || data(\"HOSP\") != 1",
+        "_row_num": 71
+      },
+      {
+        "clause": "end if",
+        "_row_num": 72
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 73
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "Sex",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Male",
+              "default": "Masculino"
+            }
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "Sex",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Female",
+              "default": "Fêmea"
+            }
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "Sex",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Home",
+              "default": "Casa"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Health centre",
+              "default": "Centro de Saúde"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Hospital",
+              "default": "Hospital"
+            }
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "33",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "choice_list_name": "Status",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Present",
+              "default": "Presente"
+            }
+          }
+        },
+        "_row_num": 11
+      },
+      {
+        "choice_list_name": "Status",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Absent",
+              "default": "Ausente"
+            }
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "Status",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Traveling",
+              "default": "Viagem"
+            }
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "choice_list_name": "Status",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Moved",
+              "default": "Mudou"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "choice_list_name": "Status",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Died",
+              "default": "Faleceu"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "YesNoDontknow",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "YesNoDontknow",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "YesNoDontknow",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "choice_list_name": "VaccineInfo",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Vaccination card",
+              "default": "Cartão de vacinação"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "VaccineInfo",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Antenatal card",
+              "default": "Cartão pré-natal"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "VaccineInfo",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Oral information",
+              "default": "Informação oral"
+            }
+          }
+        },
+        "_row_num": 26
+      }
+    ],
+    "prompt_types": [
+      {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2
+      }
+    ],
+    "model": [
+      {
+        "name": "REG",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 2
+      },
+      {
+        "name": "REGNOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 3
+      },
+      {
+        "name": "HCAREA",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 4
+      },
+      {
+        "name": "HCAREANOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 5
+      },
+      {
+        "name": "SUBAREA",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 6
+      },
+      {
+        "name": "SUBAREANOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 7
+      },
+      {
+        "name": "TAB",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 8
+      },
+      {
+        "name": "TABNOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 9
+      },
+      {
+        "name": "MOR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 10
+      },
+      {
+        "name": "VISNO",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 11
+      },
+      {
+        "name": "NUMEST",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 13
+      },
+      {
+        "name": "REGDIA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 14
+      },
+      {
+        "name": "NOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 15
+      },
+      {
+        "name": "DATASEG",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 16
+      },
+      {
+        "name": "NOMECRI",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 18
+      },
+      {
+        "name": "SEX",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 19
+      },
+      {
+        "name": "DOB",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 20
+      },
+      {
+        "name": "POB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 21
+      },
+      {
+        "name": "ESTADOCRI",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 22
+      },
+      {
+        "name": "DATASAI",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 23
+      },
+      {
+        "name": "VACINAS",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 24
+      },
+      {
+        "name": "VACINFO",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 25
+      },
+      {
+        "name": "BCG",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 26
+      },
+      {
+        "name": "BCGDATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 27
+      },
+      {
+        "name": "VACINASOU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 28
+      },
+      {
+        "name": "VACINASIMG",
+        "type": "image",
+        "isSessionVariable": false,
+        "_row_num": 29
+      },
+      {
+        "name": "POLIO0",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 30
+      },
+      {
+        "name": "POLIO0DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 31
+      },
+      {
+        "name": "MUAC",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 32
+      },
+      {
+        "name": "BCGREACT",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 33
+      },
+      {
+        "name": "HOSP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 34
+      },
+      {
+        "name": "HOSPDATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 35
+      },
+      {
+        "name": "NOMECRICON",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "comment": "fu",
+        "_row_num": 37
+      },
+      {
+        "name": "SEXCON",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 38
+      },
+      {
+        "name": "DOBCON",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
+        "name": "POBCON",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 40
+      }
+    ]
+  },
+  "specification": {
+    "column_types": {
+      "_screen_block": "function",
+      "condition": "formula",
+      "constraint": "formula",
+      "required": "formula",
+      "calculation": "formula",
+      "newRowInitialElementKeyToValueMap": "formula",
+      "openRowInitialElementKeyToValueMap": "formula",
+      "selectionArgs": "formula",
+      "url": "formula",
+      "uri": "formula",
+      "callback": "formula(context)",
+      "choice_filter": "formula(choice_item)",
+      "templatePath": "requirejs_path"
+    },
+    "settings": {
+      "form_id": {
+        "setting_name": "form_id",
+        "value": "CHILDREN",
+        "_row_num": 2
+      },
+      "form_version": {
+        "setting_name": "form_version",
+        "value": 7122020,
+        "_row_num": 3
+      },
+      "table_id": {
+        "setting_name": "table_id",
+        "value": "CHILDREN",
+        "_row_num": 4
+      },
+      "survey": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Child in CS-BCG",
+              "default": "Criança em CS-BCG"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      "default": {
+        "setting_name": "default",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "Portuguese",
+              "default": "Portugues"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      "english": {
+        "setting_name": "english",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "English",
+              "default": "Inglês"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      "_locales": {
+        "setting_name": "_locales",
+        "_row_num": 5,
+        "value": [
+          {
+            "display": {
+              "locale": {
+                "text": {
+                  "english": "Portuguese",
+                  "default": "Portugues"
+                }
+              }
+            },
+            "_row_num": 6,
+            "name": "default"
+          },
+          {
+            "display": {
+              "locale": {
+                "text": {
+                  "english": "English",
+                  "default": "Inglês"
+                }
+              }
+            },
+            "_row_num": 7,
+            "name": "english"
+          }
+        ]
+      },
+      "_default_locale": {
+        "setting_name": "_default_locale",
+        "_row_num": 5,
+        "value": "default"
+      },
+      "initial": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Child in CS-BCG",
+              "default": "Criança em CS-BCG"
+            }
+          }
+        },
+        "_row_num": 5
+      }
+    },
+    "choices": {
+      "Sex": [
+        {
+          "choice_list_name": "Sex",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Male",
+                "default": "Masculino"
+              }
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "Sex",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Female",
+                "default": "Fêmea"
+              }
+            }
+          },
+          "_row_num": 3
+        },
+        {
+          "choice_list_name": "Sex",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 4
+        }
+      ],
+      "PlaceOfBirth": [
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Home",
+                "default": "Casa"
+              }
+            }
+          },
+          "_row_num": 6
+        },
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Health centre",
+                "default": "Centro de Saúde"
+              }
+            }
+          },
+          "_row_num": 7
+        },
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Hospital",
+                "default": "Hospital"
+              }
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "33",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 9
+        }
+      ],
+      "Status": [
+        {
+          "choice_list_name": "Status",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Present",
+                "default": "Presente"
+              }
+            }
+          },
+          "_row_num": 11
+        },
+        {
+          "choice_list_name": "Status",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Absent",
+                "default": "Ausente"
+              }
+            }
+          },
+          "_row_num": 12
+        },
+        {
+          "choice_list_name": "Status",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Traveling",
+                "default": "Viagem"
+              }
+            }
+          },
+          "_row_num": 13
+        },
+        {
+          "choice_list_name": "Status",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Moved",
+                "default": "Mudou"
+              }
+            }
+          },
+          "_row_num": 14
+        },
+        {
+          "choice_list_name": "Status",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Died",
+                "default": "Faleceu"
+              }
+            }
+          },
+          "_row_num": 15
+        }
+      ],
+      "YesNo": [
+        {
+          "choice_list_name": "YesNo",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 17
+        },
+        {
+          "choice_list_name": "YesNo",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 18
+        }
+      ],
+      "YesNoDontknow": [
+        {
+          "choice_list_name": "YesNoDontknow",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "YesNoDontknow",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "YesNoDontknow",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 22
+        }
+      ],
+      "VaccineInfo": [
+        {
+          "choice_list_name": "VaccineInfo",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Vaccination card",
+                "default": "Cartão de vacinação"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "VaccineInfo",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Antenatal card",
+                "default": "Cartão pré-natal"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "VaccineInfo",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Oral information",
+                "default": "Informação oral"
+              }
+            }
+          },
+          "_row_num": 26
+        }
+      ]
+    },
+    "table_specific_definitions": {
+      "_tokens": {}
+    },
+    "queries": {},
+    "calculates": {},
+    "model": {
+      "REG": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REG"
+      },
+      "REGNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNOME"
+      },
+      "HCAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREA"
+      },
+      "HCAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREANOME"
+      },
+      "SUBAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREA"
+      },
+      "SUBAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREANOME"
+      },
+      "TAB": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TAB"
+      },
+      "TABNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABNOME"
+      },
+      "MOR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MOR"
+      },
+      "VISNO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNO"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMEST"
+      },
+      "REGDIA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDIA"
+      },
+      "NOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOME"
+      },
+      "DATASEG": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASEG"
+      },
+      "NOMECRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOMECRI"
+      },
+      "SEX": {
+        "type": "string",
+        "valuesList": "Sex",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SEX"
+      },
+      "DOB": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DOB"
+      },
+      "POB": {
+        "type": "string",
+        "valuesList": "PlaceOfBirth",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POB"
+      },
+      "ESTADOCRI": {
+        "type": "string",
+        "valuesList": "Status",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOCRI"
+      },
+      "DATASAI": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASAI"
+      },
+      "VACINAS": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINAS"
+      },
+      "VACINFO": {
+        "type": "string",
+        "valuesList": "VaccineInfo",
+        "_defn": [
+          {
+            "_row_num": 33,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINFO"
+      },
+      "BCG": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCG"
+      },
+      "BCGDATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 40,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 27,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGDATA"
+      },
+      "VACINASOU": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINASOU"
+      },
+      "VACINASIMG": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "VACINASIMG_uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "VACINASIMG_contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 29,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINASIMG"
+      },
+      "POLIO0": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 42,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 30,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIO0"
+      },
+      "POLIO0DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 31,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIO0DATA"
+      },
+      "MUAC": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MUAC"
+      },
+      "BCGREACT": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGREACT"
+      },
+      "HOSP": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HOSP"
+      },
+      "HOSPDATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 71,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HOSPDATA"
+      },
+      "NOMECRICON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "fu",
+        "elementKey": "NOMECRICON"
+      },
+      "SEXCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SEXCON"
+      },
+      "DOBCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DOBCON"
+      },
+      "POBCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 40,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POBCON"
+      }
+    },
+    "section_names": [
+      "initial",
+      "survey"
+    ],
+    "sections": {
+      "survey": {
+        "section_name": "survey",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "You are about to register a new child at:",
+                  "default": "Você está prestes a registrar uma nova criança em:"
+                }
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Region: {{data.REGNOME}}",
+                  "default": "Região: {{data.REGNOME}}"
+                }
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Health centre area: {{data.HCNOME}}",
+                  "default": "Área sanitárias: {{data.HCNOME}}"
+                }
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Subarea: {{data.SUBAREANOME}}",
+                  "default": "Subarea: {{data.SUBAREANOME}}"
+                }
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Village: {{data.TABNOME}}",
+                  "default": "Tabanca: {{data.TABNOME}}"
+                }
+              }
+            },
+            "_row_num": 8,
+            "__rowNum__": 7,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 5
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Household: {{data.MOR}}",
+                  "default": "Morança: {{data.MOR}}"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 6
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Name of mother: {{data.NOME}}",
+                  "default": "Nome da mãe: {{data.NOME}}"
+                }
+              }
+            },
+            "_row_num": 10,
+            "__rowNum__": 9,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 7
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 8
+          },
+          {
+            "type": "adate",
+            "name": "DATASEG",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of visit",
+                  "default": "Data de visita"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "required": true,
+            "constraint": "not(adate.hasUncertainty(data(\"DATASEG\"))) && data(\"DATASEG\") != null && adate.ageInYears(data(\"DATASEG\")) != -9999 && adate.ageInYears(data(\"DATASEG\")) < 2019",
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 9
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 10
+          },
+          {
+            "type": "text",
+            "name": "NOMECRI",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Name of child",
+                  "default": "Nome da criança"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 18,
+            "__rowNum__": 17,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 11
+          },
+          {
+            "type": "select_one",
+            "values_list": "Sex",
+            "name": "SEX",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Sex",
+                  "default": "Sexo"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 19,
+            "__rowNum__": 18,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 12
+          },
+          {
+            "type": "adate",
+            "name": "DOB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of birth",
+                  "default": "Data de nascimento"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "required": true,
+            "constraint": "adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 13
+          },
+          {
+            "type": "select_one",
+            "values_list": "PlaceOfBirth",
+            "name": "POB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Place of birth",
+                  "default": "Local de nascimento"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen16",
+            "promptIdx": 14
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 15
+          },
+          {
+            "type": "select_one",
+            "values_list": "Status",
+            "name": "ESTADOCRI",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Status of child",
+                  "default": "Estodo da criança"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 16
+          },
+          {
+            "type": "adate",
+            "name": "DATASAI",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of move / death",
+                  "default": "Data de mudança / morte"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 17
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 31,
+            "__rowNum__": 30,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 18
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "VACINAS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child received vaccines?",
+                  "default": "A criança recebeu vacinas?"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 32,
+            "__rowNum__": 31,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 19
+          },
+          {
+            "type": "select_one",
+            "values_list": "VaccineInfo",
+            "name": "VACINFO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Where is the information from?",
+                  "default": "De onde vem a informação?"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 33,
+            "__rowNum__": 32,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 20
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 21
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "BCG",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the child receive BCG?",
+                  "default": "A criança recebeu BCG?"
+                }
+              }
+            },
+            "constraint": "data(\"BCG\") != null || data(\"VACINAS\") !=1",
+            "_row_num": 38,
+            "__rowNum__": 37,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 22
+          },
+          {
+            "type": "adate",
+            "name": "BCGDATA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Day of vaccination",
+                  "default": "Dia de vacinação"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "constraint": "(data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019) || data(\"BCG\") != 1",
+            "_row_num": 40,
+            "__rowNum__": 39,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 23
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "POLIO0",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the child receive polio at birth?",
+                  "default": "A criança recebeu vaccina contra polio (VPO-0)?"
+                }
+              }
+            },
+            "constraint": "data(\"POLIO0\") != null || data(\"VACINAS\") !=1",
+            "_row_num": 42,
+            "__rowNum__": 41,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 24
+          },
+          {
+            "type": "adate",
+            "name": "POLIO0DATA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Day of vaccination",
+                  "default": "Dia de vacinação"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "constraint": "(data(\"POLIO0DATA\") != null && adate.ageInYears(data(\"POLIO0DATA\")) != -9999 && adate.ageInYears(data(\"POLIO0DATA\")) < 2019) || data(\"BCG\") != 1",
+            "_row_num": 44,
+            "__rowNum__": 43,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 25
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 48,
+            "__rowNum__": 47,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 26
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "VACINASOU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child received any other vaccines?",
+                  "default": "A criança recebeu alguma outra vacina?"
+                }
+              }
+            },
+            "constraint": "data(\"VACINASOU\") != null || data(\"VACINAS\") !=1",
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 27
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 53,
+            "__rowNum__": 52,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen52",
+            "promptIdx": 28
+          },
+          {
+            "type": "image",
+            "name": "VACINASIMG",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Please take a photo of the extra vaccines",
+                  "default": "Por favor, tire uma foto das vacinas extras"
+                },
+                "image": "vaccination_card.jpg"
+              },
+              "hint": {
+                "text": {
+                  "english": "If possible, take a photo with both vaccinations dates and date of birth (as the picture above).",
+                  "default": "Se possível, tire uma foto com as datas de vacinação e de nascimento (conforme a imagem acima)."
+                }
+              }
+            },
+            "constraint": "data(\"VACINASIMG_url\") != null ||  data(\"VACINFO\") ==3 || data(\"VACINASOU\") !=1",
+            "_row_num": 54,
+            "__rowNum__": 53,
+            "_token_type": "prompt",
+            "_type": "image",
+            "_branch_label_enclosing_screen": "survey/_screen52",
+            "promptIdx": 29
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 30
+          },
+          {
+            "type": "integer",
+            "name": "MUAC",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Mid-upper-arm circumference",
+                  "default": "Circunferência do meio do braço"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If MUAC is less than 50mm write \"11\" </br> Ft is not possible to measure MUAC write \"999\"",
+                  "default": "Se o braço for menor que 50 mm, escreva \"11\" </br> Se não for possível medir o braço, escreva \"999\""
+                }
+              },
+              "constraint_message": {
+                "text": {
+                  "english": "Must be between 50 and 342 and a even number.",
+                  "default": "Deve estar entre 50 e 342 e um número par."
+                }
+              }
+            },
+            "constraint": "(data(\"MUAC\")>49 && data(\"MUAC\")<343 && data(\"MUAC\")%2 == 0) || data(\"MUAC\") == 999  || data(\"MUAC\") == \"11\" || data('ESTADOCRI') != 1",
+            "_row_num": 61,
+            "__rowNum__": 60,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 31
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "BCGREACT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Is there a reaction where the child got the BCG vaccine?",
+                  "default": "Existe alguma reação onde a criança tomou a vacina BCG?"
+                }
+              }
+            },
+            "constraint": "data(\"BCGREACT\") != null || data(\"BCG\") != 1",
+            "_row_num": 63,
+            "__rowNum__": 62,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 32
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 68,
+            "__rowNum__": 67,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen67",
+            "promptIdx": 33
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "HOSP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the child been hospitalised since birth?",
+                  "default": "A criança está hospitalizada desde o nascimento?"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 69,
+            "__rowNum__": 68,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen67",
+            "promptIdx": 34
+          },
+          {
+            "type": "adate",
+            "name": "HOSPDATA",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of first hospital admission",
+                  "default": "Data da primeira admissão hospitalar"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "constraint": "(data(\"HOSPDATA\") != null && adate.ageInYears(data(\"HOSPDATA\")) != -9999 && adate.ageInYears(data(\"HOSPDATA\")) < 2019) || data(\"HOSP\") != 1",
+            "_row_num": 71,
+            "__rowNum__": 70,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen67",
+            "promptIdx": 35
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 74,
+            "_branch_label_enclosing_screen": "survey/_screen74",
+            "promptIdx": 36
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": [
+            6,
+            9,
+            11,
+            12,
+            13,
+            14,
+            16,
+            17,
+            19,
+            20,
+            22,
+            23,
+            24,
+            25,
+            27,
+            29,
+            31,
+            32,
+            34,
+            35
+          ]
+        },
+        "operations": [
+          {
+            "clause": "begin screen",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 11,
+              "__rowNum__": 10,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 0
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 15,
+              "__rowNum__": 14,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 1
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 16,
+            "__rowNum__": 15,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 22,
+              "__rowNum__": 21,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 23,
+            "__rowNum__": 22,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 29,
+              "__rowNum__": 28,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nif (data(\"ESTADOCRI\") == \"2\" || data(\"ESTADOCRI\") == \"3\") {\nactivePromptIndicies.push(17);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 3
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 34,
+              "__rowNum__": 33,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 4
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"VACINAS\") == \"1\"",
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "goto_label",
+            "_branch_label": "_then35",
+            "operationIdx": 5
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else57",
+            "_row_num": 57,
+            "operationIdx": 6
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 46,
+              "__rowNum__": 45,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nif (data(\"BCG\") != \"2\") {\nactivePromptIndicies.push(23);\n}\nactivePromptIndicies.push(24);\nif (data(\"POLIO0\") != \"2\") {\nactivePromptIndicies.push(25);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 7
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 47,
+            "__rowNum__": 46,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 50,
+              "__rowNum__": 49,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 8
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"VACINASOU\") == \"1\" && data(\"VACINFO\") != \"3\"",
+            "_row_num": 51,
+            "__rowNum__": 50,
+            "_token_type": "goto_label",
+            "_branch_label": "_then51",
+            "operationIdx": 9
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else56",
+            "_row_num": 56,
+            "operationIdx": 10
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 52,
+            "__rowNum__": 51,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 55,
+              "__rowNum__": 54,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 11
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif56",
+            "_row_num": 56,
+            "operationIdx": 12
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif57",
+            "_row_num": 57,
+            "operationIdx": 13
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"ESTADOCRI\") == \"1\"",
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "goto_label",
+            "_branch_label": "_then58",
+            "operationIdx": 14
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else66",
+            "_row_num": 66,
+            "operationIdx": 15
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 65,
+              "__rowNum__": 64,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data(\"BCG\") == \"1\") {\nactivePromptIndicies.push(32);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif66",
+            "_row_num": 66,
+            "operationIdx": 17
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 67,
+            "__rowNum__": 66,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 73,
+              "__rowNum__": 72,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nif (data(\"HOSP\") ==\"1\") {\nactivePromptIndicies.push(35);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 18
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 74,
+            "operationIdx": 19
+          },
+          {
+            "_row_num": 74,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 20
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 74,
+            "operationIdx": 21
+          }
+        ],
+        "branch_label_map": {
+          "_screen2": 0,
+          "_screen12": 1,
+          "_screen16": 2,
+          "_screen23": 3,
+          "_screen30": 4,
+          "_then35": 7,
+          "_screen36": 7,
+          "_screen47": 8,
+          "_then51": 11,
+          "_screen52": 11,
+          "_else56": 13,
+          "_endif56": 13,
+          "_else57": 14,
+          "_endif57": 14,
+          "_then58": 16,
+          "_screen59": 16,
+          "_else66": 18,
+          "_endif66": 18,
+          "_screen67": 18,
+          "_contents": 20,
+          "_screen74": 20
+        }
+      },
+      "initial": {
+        "section_name": "initial",
+        "nested_sections": {
+          "survey": true
+        },
+        "reachable_sections": {
+          "survey": true
+        },
+        "prompts": [
+          {
+            "_row_num": 3,
+            "type": "opening",
+            "display": {
+              "text": "Edit form"
+            },
+            "_token_type": "prompt",
+            "_type": "opening",
+            "_branch_label_enclosing_screen": "initial/_screen3",
+            "promptIdx": 0
+          },
+          {
+            "_row_num": 4,
+            "clause": "do section survey",
+            "_token_type": "prompt",
+            "_do_section_name": "survey",
+            "_type": "_section",
+            "promptIdx": 1,
+            "display": {
+              "title": {
+                "text": {
+                  "english": "Child in CS-BCG",
+                  "default": "Criança em CS-BCG"
+                }
+              }
+            },
+            "_branch_label_enclosing_screen": "survey/0"
+          },
+          {
+            "_row_num": 5,
+            "type": "finalize",
+            "display": {
+              "text": "Save form"
+            },
+            "_token_type": "prompt",
+            "_type": "finalize",
+            "_branch_label_enclosing_screen": "initial/_screen5",
+            "promptIdx": 2
+          },
+          {
+            "_row_num": 7,
+            "type": "instances",
+            "display": {
+              "text": "Saved instances"
+            },
+            "_token_type": "prompt",
+            "_type": "instances",
+            "_branch_label_enclosing_screen": "initial/_screen7",
+            "promptIdx": 3
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 9,
+            "_branch_label_enclosing_screen": "initial/_screen9",
+            "promptIdx": 4
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "_row_num": 2,
+            "clause": "if // start",
+            "condition": "(opendatakit.getCurrentInstanceId() != null)",
+            "_token_type": "goto_label",
+            "_tag_name": "start",
+            "_branch_label": "_then2",
+            "operationIdx": 0
+          },
+          {
+            "clause": "else // start",
+            "_token_type": "goto_label",
+            "_branch_label": "_else6",
+            "_row_num": 6,
+            "operationIdx": 1
+          },
+          {
+            "_row_num": 3,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 4,
+            "clause": "do section survey",
+            "_token_type": "do_section",
+            "_do_section_name": "survey",
+            "operationIdx": 3
+          },
+          {
+            "_row_num": 5,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 4
+          },
+          {
+            "clause": "end if // start",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif8",
+            "_row_num": 8,
+            "operationIdx": 5
+          },
+          {
+            "_row_num": 7,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 9,
+            "operationIdx": 7
+          },
+          {
+            "_row_num": 9,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 8
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 9,
+            "operationIdx": 9
+          },
+          {
+            "_token_type": "validate",
+            "clause": "validate finalize",
+            "_sweep_name": "finalize",
+            "_row_num": 9,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 10
+          },
+          {
+            "_token_type": "save_and_terminate",
+            "clause": "save and terminate",
+            "calculation": true,
+            "_row_num": 9,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 11
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 9,
+            "operationIdx": 12
+          }
+        ],
+        "branch_label_map": {
+          "_then2": 2,
+          "_screen3": 2,
+          "_screen5": 4,
+          "_else6": 6,
+          "_screen7": 6,
+          "_endif8": 7,
+          "_contents": 8,
+          "_screen9": 8,
+          "_finalize": 10
+        }
+      }
+    },
+    "dataTableModel": {
+      "REG": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REG",
+        "elementName": "REG",
+        "elementSet": "data",
+        "elementPath": "REG"
+      },
+      "REGNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNOME",
+        "elementName": "REGNOME",
+        "elementSet": "data",
+        "elementPath": "REGNOME"
+      },
+      "HCAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREA",
+        "elementName": "HCAREA",
+        "elementSet": "data",
+        "elementPath": "HCAREA"
+      },
+      "HCAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREANOME",
+        "elementName": "HCAREANOME",
+        "elementSet": "data",
+        "elementPath": "HCAREANOME"
+      },
+      "SUBAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREA",
+        "elementName": "SUBAREA",
+        "elementSet": "data",
+        "elementPath": "SUBAREA"
+      },
+      "SUBAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREANOME",
+        "elementName": "SUBAREANOME",
+        "elementSet": "data",
+        "elementPath": "SUBAREANOME"
+      },
+      "TAB": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TAB",
+        "elementName": "TAB",
+        "elementSet": "data",
+        "elementPath": "TAB"
+      },
+      "TABNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABNOME",
+        "elementName": "TABNOME",
+        "elementSet": "data",
+        "elementPath": "TABNOME"
+      },
+      "MOR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MOR",
+        "elementName": "MOR",
+        "elementSet": "data",
+        "elementPath": "MOR"
+      },
+      "VISNO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNO",
+        "elementName": "VISNO",
+        "elementSet": "data",
+        "elementPath": "VISNO"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMEST",
+        "elementName": "NUMEST",
+        "elementSet": "data",
+        "elementPath": "NUMEST"
+      },
+      "REGDIA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDIA",
+        "elementName": "REGDIA",
+        "elementSet": "data",
+        "elementPath": "REGDIA"
+      },
+      "NOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOME",
+        "elementName": "NOME",
+        "elementSet": "data",
+        "elementPath": "NOME"
+      },
+      "DATASEG": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASEG",
+        "elementName": "DATASEG",
+        "elementSet": "data",
+        "elementPath": "DATASEG"
+      },
+      "NOMECRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOMECRI",
+        "elementName": "NOMECRI",
+        "elementSet": "data",
+        "elementPath": "NOMECRI"
+      },
+      "SEX": {
+        "type": "string",
+        "valuesList": "Sex",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SEX",
+        "elementName": "SEX",
+        "elementSet": "data",
+        "elementPath": "SEX"
+      },
+      "DOB": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DOB",
+        "elementName": "DOB",
+        "elementSet": "data",
+        "elementPath": "DOB"
+      },
+      "POB": {
+        "type": "string",
+        "valuesList": "PlaceOfBirth",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POB",
+        "elementName": "POB",
+        "elementSet": "data",
+        "elementPath": "POB"
+      },
+      "ESTADOCRI": {
+        "type": "string",
+        "valuesList": "Status",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOCRI",
+        "elementName": "ESTADOCRI",
+        "elementSet": "data",
+        "elementPath": "ESTADOCRI"
+      },
+      "DATASAI": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASAI",
+        "elementName": "DATASAI",
+        "elementSet": "data",
+        "elementPath": "DATASAI"
+      },
+      "VACINAS": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINAS",
+        "elementName": "VACINAS",
+        "elementSet": "data",
+        "elementPath": "VACINAS"
+      },
+      "VACINFO": {
+        "type": "string",
+        "valuesList": "VaccineInfo",
+        "_defn": [
+          {
+            "_row_num": 33,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINFO",
+        "elementName": "VACINFO",
+        "elementSet": "data",
+        "elementPath": "VACINFO"
+      },
+      "BCG": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCG",
+        "elementName": "BCG",
+        "elementSet": "data",
+        "elementPath": "BCG"
+      },
+      "BCGDATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 40,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 27,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGDATA",
+        "elementName": "BCGDATA",
+        "elementSet": "data",
+        "elementPath": "BCGDATA"
+      },
+      "VACINASOU": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINASOU",
+        "elementName": "VACINASOU",
+        "elementSet": "data",
+        "elementPath": "VACINASOU"
+      },
+      "VACINASIMG": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "VACINASIMG_uriFragment",
+            "elementName": "uriFragment",
+            "elementSet": "data",
+            "elementPath": "VACINASIMG.uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "VACINASIMG_contentType",
+            "elementName": "contentType",
+            "elementSet": "data",
+            "elementPath": "VACINASIMG.contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 29,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VACINASIMG",
+        "elementName": "VACINASIMG",
+        "elementSet": "data",
+        "elementPath": "VACINASIMG",
+        "listChildElementKeys": [
+          "VACINASIMG_contentType",
+          "VACINASIMG_uriFragment"
+        ],
+        "notUnitOfRetention": true
+      },
+      "POLIO0": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 42,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 30,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIO0",
+        "elementName": "POLIO0",
+        "elementSet": "data",
+        "elementPath": "POLIO0"
+      },
+      "POLIO0DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 31,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIO0DATA",
+        "elementName": "POLIO0DATA",
+        "elementSet": "data",
+        "elementPath": "POLIO0DATA"
+      },
+      "MUAC": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MUAC",
+        "elementName": "MUAC",
+        "elementSet": "data",
+        "elementPath": "MUAC"
+      },
+      "BCGREACT": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGREACT",
+        "elementName": "BCGREACT",
+        "elementSet": "data",
+        "elementPath": "BCGREACT"
+      },
+      "HOSP": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HOSP",
+        "elementName": "HOSP",
+        "elementSet": "data",
+        "elementPath": "HOSP"
+      },
+      "HOSPDATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 71,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HOSPDATA",
+        "elementName": "HOSPDATA",
+        "elementSet": "data",
+        "elementPath": "HOSPDATA"
+      },
+      "NOMECRICON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "fu",
+        "elementKey": "NOMECRICON",
+        "elementName": "NOMECRICON",
+        "elementSet": "data",
+        "elementPath": "NOMECRICON"
+      },
+      "SEXCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SEXCON",
+        "elementName": "SEXCON",
+        "elementSet": "data",
+        "elementPath": "SEXCON"
+      },
+      "DOBCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DOBCON",
+        "elementName": "DOBCON",
+        "elementSet": "data",
+        "elementPath": "DOBCON"
+      },
+      "POBCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 40,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POBCON",
+        "elementName": "POBCON",
+        "elementSet": "data",
+        "elementPath": "POBCON"
+      },
+      "VACINASIMG_uriFragment": {
+        "type": "string",
+        "elementType": "rowpath",
+        "elementKey": "VACINASIMG_uriFragment",
+        "elementName": "uriFragment",
+        "elementSet": "data",
+        "elementPath": "VACINASIMG.uriFragment"
+      },
+      "VACINASIMG_contentType": {
+        "type": "string",
+        "elementType": "mimeType",
+        "default": "image/*",
+        "elementKey": "VACINASIMG_contentType",
+        "elementName": "contentType",
+        "elementSet": "data",
+        "elementPath": "VACINASIMG.contentType"
+      },
+      "_id": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_id",
+        "elementName": "_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_id"
+      },
+      "_row_etag": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_etag",
+        "elementName": "_row_etag",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_etag"
+      },
+      "_sync_state": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_sync_state",
+        "elementName": "_sync_state",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_sync_state"
+      },
+      "_conflict_type": {
+        "type": "integer",
+        "isNotNullable": false,
+        "elementKey": "_conflict_type",
+        "elementName": "_conflict_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_conflict_type"
+      },
+      "_default_access": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_default_access",
+        "elementName": "_default_access",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_default_access"
+      },
+      "_form_id": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_form_id",
+        "elementName": "_form_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_form_id"
+      },
+      "_group_modify": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_modify",
+        "elementName": "_group_modify",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_modify"
+      },
+      "_group_privileged": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_privileged",
+        "elementName": "_group_privileged",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_privileged"
+      },
+      "_group_read_only": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_read_only",
+        "elementName": "_group_read_only",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_read_only"
+      },
+      "_locale": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_locale",
+        "elementName": "_locale",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_locale"
+      },
+      "_row_owner": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_owner",
+        "elementName": "_row_owner",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_owner"
+      },
+      "_savepoint_type": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_type",
+        "elementName": "_savepoint_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_type"
+      },
+      "_savepoint_timestamp": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_savepoint_timestamp",
+        "elementName": "_savepoint_timestamp",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_timestamp"
+      },
+      "_savepoint_creator": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_creator",
+        "elementName": "_savepoint_creator",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_creator"
+      }
+    },
+    "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "BCG",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":17},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "BCGREACT",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":17},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ESTADOCRI",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Status\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Present\",\"default\":\"Presente\"}}},\"_row_num\":11},{\"choice_list_name\":\"Status\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Absent\",\"default\":\"Ausente\"}}},\"_row_num\":12},{\"choice_list_name\":\"Status\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Traveling\",\"default\":\"Viagem\"}}},\"_row_num\":13},{\"choice_list_name\":\"Status\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Moved\",\"default\":\"Mudou\"}}},\"_row_num\":14},{\"choice_list_name\":\"Status\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Died\",\"default\":\"Faleceu\"}}},\"_row_num\":15}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "HOSP",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":20},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":21},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":22}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "POB",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"PlaceOfBirth\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Home\",\"default\":\"Casa\"}}},\"_row_num\":6},{\"choice_list_name\":\"PlaceOfBirth\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Health centre\",\"default\":\"Centro de Saúde\"}}},\"_row_num\":7},{\"choice_list_name\":\"PlaceOfBirth\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Hospital\",\"default\":\"Hospital\"}}},\"_row_num\":8},{\"choice_list_name\":\"PlaceOfBirth\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":9}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "POLIO0",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":17},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SEX",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Sex\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Male\",\"default\":\"Masculino\"}}},\"_row_num\":2},{\"choice_list_name\":\"Sex\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Female\",\"default\":\"Fêmea\"}}},\"_row_num\":3},{\"choice_list_name\":\"Sex\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "VACINAS",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":20},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":21},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":22}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "VACINASOU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":17},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":18}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "VACINFO",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"VaccineInfo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Vaccination card\",\"default\":\"Cartão de vacinação\"}}},\"_row_num\":24},{\"choice_list_name\":\"VaccineInfo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Antenatal card\",\"default\":\"Cartão pré-natal\"}}},\"_row_num\":25},{\"choice_list_name\":\"VaccineInfo\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Oral information\",\"default\":\"Informação oral\"}}},\"_row_num\":26}]"
+      },
+      {
+        "_partition": "FormType",
+        "_aspect": "default",
+        "_key": "FormType.formType",
+        "_type": "string",
+        "_value": "SURVEY"
+      },
+      {
+        "_partition": "SurveyUtil",
+        "_aspect": "default",
+        "_key": "SurveyUtil.formId",
+        "_type": "string",
+        "_value": "CHILDREN"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "defaultViewType",
+        "_type": "string",
+        "_value": "SPREADSHEET"
+      },
+      {
+        "_partition": "Table",
+        "_aspect": "default",
+        "_key": "displayName",
+        "_type": "object",
+        "_value": "{\"text\":{\"english\":\"Child in CS-BCG\",\"default\":\"Criança em CS-BCG\"}}"
+      }
+    ]
+  }
+}

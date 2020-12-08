@@ -1,0 +1,3074 @@
+{
+  "xlsx": {
+    "settings": [
+      {
+        "setting_name": "form_id",
+        "value": "PREGNANCYFU",
+        "_row_num": 2
+      },
+      {
+        "setting_name": "form_version",
+        "value": 7122020,
+        "_row_num": 3
+      },
+      {
+        "setting_name": "table_id",
+        "value": "PREGNANCIES",
+        "_row_num": 4
+      },
+      {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Follow-up to pregnancies in CS-BCG",
+              "default": "Seguimento de gravidezes em CS-BCG"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "setting_name": "default",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "Portuguese",
+              "default": "Portugues"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "setting_name": "english",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "English",
+              "default": "Inglês"
+            }
+          }
+        },
+        "_row_num": 7
+      }
+    ],
+    "survey": [
+      {
+        "clause": "begin screen",
+        "_row_num": 2
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy</b>",
+              "default": "<b>Seguimento de gravidez registrada</b>"
+            }
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "You are about to conduct a follow-up interview at:",
+              "default": "Você está prestes a realizar uma entrevista de seguimento em:"
+            }
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Region: {{data.REGNOME}}",
+              "default": "Região: {{data.REGNOME}}"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Health centre area: {{data.HCNOME}}",
+              "default": "Área sanitárias: {{data.HCNOME}}"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Subarea: {{data.SUBAREANOME}}",
+              "default": "Subarea: {{data.SUBAREANOME}}"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Village: {{data.TABNOME}}",
+              "default": "Tabanca: {{data.TABNOME}}"
+            }
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "type": "text",
+        "name": "MOR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Household",
+              "default": "Morança"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 9
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of registration: {{calculates.displayREGDIA}}",
+              "default": "Data de registro {{calculates.displayREGDIA}}"
+            }
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "type": "text",
+        "name": "NOME",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Name of woman",
+              "default": "Nome de mulher"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 11
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 12
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 13
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "type": "adate",
+        "name": "DATASEG",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of visit",
+              "default": "Data de visita"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "required": true,
+        "constraint": "not(adate.hasUncertainty(data(\"DATASEG\"))) && data(\"DATASEG\") != null && adate.ageInYears(data(\"DATASEG\")) != -9999 && adate.ageInYears(data(\"DATASEG\")) < 2019",
+        "_row_num": 15
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 16
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 17
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "type": "select_one",
+        "values_list": "StatusFu",
+        "name": "ESTADOMUL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Status of woman",
+              "default": "Estado de mulher"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 19
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESTADOMUL\") == \"2\" || data(\"ESTADOMUL\") == \"3\"",
+        "_row_num": 20
+      },
+      {
+        "type": "adate",
+        "name": "DATASAI",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date of move / death",
+              "default": "Data de mudança / morte"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+        "_row_num": 21
+      },
+      {
+        "clause": "end if",
+        "_row_num": 22
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 23
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESTADOMUL\") == \"1\" && data(\"CICATRIZMAE\") == null",
+        "_row_num": 24
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 25
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "CICATRIZMAE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Does the woman have a scar from the BCG-vaccine?",
+              "default": "A mulher tem uma cicatriz da vacina BCG?"
+            }
+          }
+        },
+        "constraint": "data(\"CICATRIZMAE\") != null || data(\"ESTADOMUL\") != 1",
+        "_row_num": 27
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 28
+      },
+      {
+        "clause": "end if",
+        "_row_num": 29
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 30
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "type": "select_one",
+        "values_list": "StatusGrav",
+        "name": "ESTADOGRAV",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Status on pregnancy",
+              "default": "Estado da gravidez"
+            }
+          }
+        },
+        "required": true,
+        "_row_num": 32
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 33
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESTADOGRAV\") == \"1\"",
+        "_row_num": 34
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 35
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "type": "select_one",
+        "values_list": "nvnmab",
+        "name": "NVNMAB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How did the pregnancy end?",
+              "default": "Como terminou a gravidez?"
+            }
+          }
+        },
+        "constraint": "data(\"NVNMAB\") != null || data(\"ESTADOGRAV\") != 1",
+        "_row_num": 37
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 38
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"NVNMAB\") != \"3\"",
+        "_row_num": 39
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 40
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 41
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "GEM",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the woman give birth to twins?",
+              "default": "A mulher deu à luz gêmeos?"
+            }
+          }
+        },
+        "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1",
+        "_row_num": 42
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"GEM\") == \"1\"",
+        "_row_num": 43
+      },
+      {
+        "type": "integer",
+        "name": "GEMNUM",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How many did she give birth to?",
+              "default": "A quantos ela deu à luz?"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If number of children born is unknown write \"33\"",
+              "default": "Se o número de crianças nascidas for desconhecido, escreva \"33\""
+            }
+          },
+          "constraint_message": {
+            "text": {
+              "english": "Must be between 1 and 5. If unknown 33.",
+              "default": "Deve estar entre 1 e 5. Se desconhecido, 33."
+            }
+          }
+        },
+        "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
+        "_row_num": 44
+      },
+      {
+        "clause": "end if",
+        "_row_num": 45
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 46
+      },
+      {
+        "clause": "end if",
+        "_row_num": 47
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"NVNMAB\") == \"1\"",
+        "_row_num": 48
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 49
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 50
+      },
+      {
+        "type": "linked_table",
+        "values_list": "children",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "List of children born from this pregnancy",
+              "default": "Lista de crianças nascidas desta gravidez"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "Register a new child for <b>every</b> live born child",
+              "default": "Registre uma nova criança para <b>cada</b> criança nado vivo"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 52
+      },
+      {
+        "clause": "end if",
+        "_row_num": 53
+      },
+      {
+        "clause": "end if",
+        "_row_num": 54
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 55
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 56
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "The questionnaire is now finished.",
+              "default": "O questionário está concluído."
+            }
+          }
+        },
+        "_row_num": 57
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Thank you for your time.",
+              "default": "Obrigado pelo seu tempo."
+            }
+          }
+        },
+        "_row_num": 58
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 59
+      }
+    ],
+    "queries": [
+      {
+        "query_name": "children",
+        "query_type": "linked_table",
+        "linked_form_id": "CHILDREN",
+        "linked_table_id": "CHILDREN",
+        "selection": "NUMEST = ?",
+        "selectionArgs": "[data('NUMEST')]",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\")}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 2
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "StatusFu",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Present",
+              "default": "Presente"
+            }
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "StatusFu",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Absent",
+              "default": "Ausente"
+            }
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "StatusFu",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Traveling",
+              "default": "Viagem"
+            }
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "choice_list_name": "StatusFu",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Moved",
+              "default": "Mudou"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "choice_list_name": "StatusFu",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Died",
+              "default": "Faleceu"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "YesNoDontknow",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 8
+      },
+      {
+        "choice_list_name": "YesNoDontknow",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "choice_list_name": "YesNoDontknow",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "StatusGrav",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Pregnancy ended",
+              "default": "Gravidez encerrada"
+            }
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "StatusGrav",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Still pregnant",
+              "default": "Ainda grávida"
+            }
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "choice_list_name": "StatusGrav",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Moved before given birth",
+              "default": "Modou antes do parto"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "choice_list_name": "StatusGrav",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Not pregnant anyway",
+              "default": "Não grávida de qualquer maneira"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "StatusGrav",
+        "data_value": "33",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 16
+      },
+      {
+        "choice_list_name": "nvnmab",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Live birth",
+              "default": "Nado vivo"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "nvnmab",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Stillbirth",
+              "default": "Nado morto"
+            }
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "nvnmab",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Abortion",
+              "default": "Aborto"
+            }
+          }
+        },
+        "_row_num": 20
+      }
+    ],
+    "calculates": [
+      {
+        "calculation_name": "displayREGDIA",
+        "calculation": "adate.display(data(\"REGDIA\"))",
+        "_row_num": 2
+      }
+    ],
+    "prompt_types": [
+      {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2
+      }
+    ],
+    "model": [
+      {
+        "name": "REG",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 2
+      },
+      {
+        "name": "REGNOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 3
+      },
+      {
+        "name": "HCAREA",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 4
+      },
+      {
+        "name": "HCAREANOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 5
+      },
+      {
+        "name": "SUBAREA",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 6
+      },
+      {
+        "name": "SUBAREANOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 7
+      },
+      {
+        "name": "TAB",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 8
+      },
+      {
+        "name": "TABNOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 9
+      },
+      {
+        "name": "MOR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 10
+      },
+      {
+        "name": "VISNO",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 11
+      },
+      {
+        "name": "NUMEST",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 13
+      },
+      {
+        "name": "REGDIA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 14
+      },
+      {
+        "name": "NOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 15
+      },
+      {
+        "name": "CONSENT",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 17
+      },
+      {
+        "name": "CICATRIZMAE",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 18
+      },
+      {
+        "name": "ESTADOMUL",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 20
+      },
+      {
+        "name": "DATASEG",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 21
+      },
+      {
+        "name": "ESTADOGRAV",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 22
+      },
+      {
+        "name": "NVNMAB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 23
+      },
+      {
+        "name": "GEM",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 24
+      },
+      {
+        "name": "GEMNUM",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 25
+      }
+    ]
+  },
+  "specification": {
+    "column_types": {
+      "_screen_block": "function",
+      "condition": "formula",
+      "constraint": "formula",
+      "required": "formula",
+      "calculation": "formula",
+      "newRowInitialElementKeyToValueMap": "formula",
+      "openRowInitialElementKeyToValueMap": "formula",
+      "selectionArgs": "formula",
+      "url": "formula",
+      "uri": "formula",
+      "callback": "formula(context)",
+      "choice_filter": "formula(choice_item)",
+      "templatePath": "requirejs_path"
+    },
+    "settings": {
+      "form_id": {
+        "setting_name": "form_id",
+        "value": "PREGNANCYFU",
+        "_row_num": 2
+      },
+      "form_version": {
+        "setting_name": "form_version",
+        "value": 7122020,
+        "_row_num": 3
+      },
+      "table_id": {
+        "setting_name": "table_id",
+        "value": "PREGNANCIES",
+        "_row_num": 4
+      },
+      "survey": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Follow-up to pregnancies in CS-BCG",
+              "default": "Seguimento de gravidezes em CS-BCG"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      "default": {
+        "setting_name": "default",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "Portuguese",
+              "default": "Portugues"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      "english": {
+        "setting_name": "english",
+        "display": {
+          "locale": {
+            "text": {
+              "english": "English",
+              "default": "Inglês"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      "_locales": {
+        "setting_name": "_locales",
+        "_row_num": 5,
+        "value": [
+          {
+            "display": {
+              "locale": {
+                "text": {
+                  "english": "Portuguese",
+                  "default": "Portugues"
+                }
+              }
+            },
+            "_row_num": 6,
+            "name": "default"
+          },
+          {
+            "display": {
+              "locale": {
+                "text": {
+                  "english": "English",
+                  "default": "Inglês"
+                }
+              }
+            },
+            "_row_num": 7,
+            "name": "english"
+          }
+        ]
+      },
+      "_default_locale": {
+        "setting_name": "_default_locale",
+        "_row_num": 5,
+        "value": "default"
+      },
+      "initial": {
+        "setting_name": "survey",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Follow-up to pregnancies in CS-BCG",
+              "default": "Seguimento de gravidezes em CS-BCG"
+            }
+          }
+        },
+        "_row_num": 5
+      }
+    },
+    "choices": {
+      "StatusFu": [
+        {
+          "choice_list_name": "StatusFu",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Present",
+                "default": "Presente"
+              }
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "StatusFu",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Absent",
+                "default": "Ausente"
+              }
+            }
+          },
+          "_row_num": 3
+        },
+        {
+          "choice_list_name": "StatusFu",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Traveling",
+                "default": "Viagem"
+              }
+            }
+          },
+          "_row_num": 4
+        },
+        {
+          "choice_list_name": "StatusFu",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Moved",
+                "default": "Mudou"
+              }
+            }
+          },
+          "_row_num": 5
+        },
+        {
+          "choice_list_name": "StatusFu",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Died",
+                "default": "Faleceu"
+              }
+            }
+          },
+          "_row_num": 6
+        }
+      ],
+      "YesNoDontknow": [
+        {
+          "choice_list_name": "YesNoDontknow",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 8
+        },
+        {
+          "choice_list_name": "YesNoDontknow",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 9
+        },
+        {
+          "choice_list_name": "YesNoDontknow",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 10
+        }
+      ],
+      "StatusGrav": [
+        {
+          "choice_list_name": "StatusGrav",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Pregnancy ended",
+                "default": "Gravidez encerrada"
+              }
+            }
+          },
+          "_row_num": 12
+        },
+        {
+          "choice_list_name": "StatusGrav",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Still pregnant",
+                "default": "Ainda grávida"
+              }
+            }
+          },
+          "_row_num": 13
+        },
+        {
+          "choice_list_name": "StatusGrav",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Moved before given birth",
+                "default": "Modou antes do parto"
+              }
+            }
+          },
+          "_row_num": 14
+        },
+        {
+          "choice_list_name": "StatusGrav",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Not pregnant anyway",
+                "default": "Não grávida de qualquer maneira"
+              }
+            }
+          },
+          "_row_num": 15
+        },
+        {
+          "choice_list_name": "StatusGrav",
+          "data_value": "33",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 16
+        }
+      ],
+      "nvnmab": [
+        {
+          "choice_list_name": "nvnmab",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Live birth",
+                "default": "Nado vivo"
+              }
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "nvnmab",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Stillbirth",
+                "default": "Nado morto"
+              }
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "nvnmab",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Abortion",
+                "default": "Aborto"
+              }
+            }
+          },
+          "_row_num": 20
+        }
+      ]
+    },
+    "queries": {
+      "children": {
+        "query_name": "children",
+        "query_type": "linked_table",
+        "linked_form_id": "CHILDREN",
+        "linked_table_id": "CHILDREN",
+        "selection": "NUMEST = ?",
+        "selectionArgs": "[data('NUMEST')]",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\")}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 2
+      }
+    },
+    "calculates": {
+      "displayREGDIA": {
+        "calculation_name": "displayREGDIA",
+        "calculation": "adate.display(data(\"REGDIA\"))",
+        "_row_num": 2
+      }
+    },
+    "model": {
+      "REG": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REG"
+      },
+      "REGNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNOME"
+      },
+      "HCAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREA"
+      },
+      "HCAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREANOME"
+      },
+      "SUBAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREA"
+      },
+      "SUBAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREANOME"
+      },
+      "TAB": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TAB"
+      },
+      "TABNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABNOME"
+      },
+      "MOR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MOR"
+      },
+      "VISNO": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNO"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMEST"
+      },
+      "REGDIA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDIA"
+      },
+      "NOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOME"
+      },
+      "CONSENT": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONSENT"
+      },
+      "CICATRIZMAE": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CICATRIZMAE"
+      },
+      "ESTADOMUL": {
+        "type": "string",
+        "valuesList": "StatusFu",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOMUL"
+      },
+      "DATASEG": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASEG"
+      },
+      "ESTADOGRAV": {
+        "type": "string",
+        "valuesList": "StatusGrav",
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOGRAV"
+      },
+      "NVNMAB": {
+        "type": "string",
+        "valuesList": "nvnmab",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NVNMAB"
+      },
+      "GEM": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 42,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEM"
+      },
+      "GEMNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEMNUM"
+      },
+      "DATASAI": {
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "DATASAI"
+      }
+    },
+    "section_names": [
+      "initial",
+      "survey"
+    ],
+    "sections": {
+      "survey": {
+        "section_name": "survey",
+        "nested_sections": {},
+        "reachable_sections": {},
+        "prompts": [
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy</b>",
+                  "default": "<b>Seguimento de gravidez registrada</b>"
+                }
+              }
+            },
+            "_row_num": 3,
+            "__rowNum__": 2,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 0
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "You are about to conduct a follow-up interview at:",
+                  "default": "Você está prestes a realizar uma entrevista de seguimento em:"
+                }
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Region: {{data.REGNOME}}",
+                  "default": "Região: {{data.REGNOME}}"
+                }
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Health centre area: {{data.HCNOME}}",
+                  "default": "Área sanitárias: {{data.HCNOME}}"
+                }
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Subarea: {{data.SUBAREANOME}}",
+                  "default": "Subarea: {{data.SUBAREANOME}}"
+                }
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 4
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Village: {{data.TABNOME}}",
+                  "default": "Tabanca: {{data.TABNOME}}"
+                }
+              }
+            },
+            "_row_num": 8,
+            "__rowNum__": 7,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 5
+          },
+          {
+            "type": "text",
+            "name": "MOR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Household",
+                  "default": "Morança"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 6
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of registration: {{calculates.displayREGDIA}}",
+                  "default": "Data de registro {{calculates.displayREGDIA}}"
+                }
+              }
+            },
+            "_row_num": 10,
+            "__rowNum__": 9,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 7
+          },
+          {
+            "type": "text",
+            "name": "NOME",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Name of woman",
+                  "default": "Nome de mulher"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 11,
+            "__rowNum__": 10,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 8
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen13",
+            "promptIdx": 9
+          },
+          {
+            "type": "adate",
+            "name": "DATASEG",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of visit",
+                  "default": "Data de visita"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "required": true,
+            "constraint": "not(adate.hasUncertainty(data(\"DATASEG\"))) && data(\"DATASEG\") != null && adate.ageInYears(data(\"DATASEG\")) != -9999 && adate.ageInYears(data(\"DATASEG\")) < 2019",
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen13",
+            "promptIdx": 10
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 18,
+            "__rowNum__": 17,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 11
+          },
+          {
+            "type": "select_one",
+            "values_list": "StatusFu",
+            "name": "ESTADOMUL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Status of woman",
+                  "default": "Estado de mulher"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 19,
+            "__rowNum__": 18,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 12
+          },
+          {
+            "type": "adate",
+            "name": "DATASAI",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date of move / death",
+                  "default": "Data de mudança / morte"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 13
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 26,
+            "__rowNum__": 25,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen25",
+            "promptIdx": 14
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "CICATRIZMAE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Does the woman have a scar from the BCG-vaccine?",
+                  "default": "A mulher tem uma cicatriz da vacina BCG?"
+                }
+              }
+            },
+            "constraint": "data(\"CICATRIZMAE\") != null || data(\"ESTADOMUL\") != 1",
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen25",
+            "promptIdx": 15
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 31,
+            "__rowNum__": 30,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 16
+          },
+          {
+            "type": "select_one",
+            "values_list": "StatusGrav",
+            "name": "ESTADOGRAV",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Status on pregnancy",
+                  "default": "Estado da gravidez"
+                }
+              }
+            },
+            "required": true,
+            "_row_num": 32,
+            "__rowNum__": 31,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 17
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen35",
+            "promptIdx": 18
+          },
+          {
+            "type": "select_one",
+            "values_list": "nvnmab",
+            "name": "NVNMAB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How did the pregnancy end?",
+                  "default": "Como terminou a gravidez?"
+                }
+              }
+            },
+            "constraint": "data(\"NVNMAB\") != null || data(\"ESTADOGRAV\") != 1",
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen35",
+            "promptIdx": 19
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 41,
+            "__rowNum__": 40,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen40",
+            "promptIdx": 20
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "GEM",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the woman give birth to twins?",
+                  "default": "A mulher deu à luz gêmeos?"
+                }
+              }
+            },
+            "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1",
+            "_row_num": 42,
+            "__rowNum__": 41,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen40",
+            "promptIdx": 21
+          },
+          {
+            "type": "integer",
+            "name": "GEMNUM",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How many did she give birth to?",
+                  "default": "A quantos ela deu à luz?"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If number of children born is unknown write \"33\"",
+                  "default": "Se o número de crianças nascidas for desconhecido, escreva \"33\""
+                }
+              },
+              "constraint_message": {
+                "text": {
+                  "english": "Must be between 1 and 5. If unknown 33.",
+                  "default": "Deve estar entre 1 e 5. Se desconhecido, 33."
+                }
+              }
+            },
+            "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
+            "_row_num": 44,
+            "__rowNum__": 43,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen40",
+            "promptIdx": 22
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 50,
+            "__rowNum__": 49,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen49",
+            "promptIdx": 23
+          },
+          {
+            "type": "linked_table",
+            "values_list": "children",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "List of children born from this pregnancy",
+                  "default": "Lista de crianças nascidas desta gravidez"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "Register a new child for <b>every</b> live born child",
+                  "default": "Registre uma nova criança para <b>cada</b> criança nado vivo"
+                }
+              }
+            },
+            "_row_num": 51,
+            "__rowNum__": 50,
+            "_token_type": "prompt",
+            "_type": "linked_table",
+            "_branch_label_enclosing_screen": "survey/_screen49",
+            "promptIdx": 24
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 56,
+            "__rowNum__": 55,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 25
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "The questionnaire is now finished.",
+                  "default": "O questionário está concluído."
+                }
+              }
+            },
+            "_row_num": 57,
+            "__rowNum__": 56,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 26
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Thank you for your time.",
+                  "default": "Obrigado pelo seu tempo."
+                }
+              }
+            },
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 27
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 60,
+            "_branch_label_enclosing_screen": "survey/_screen60",
+            "promptIdx": 28
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": [
+            6,
+            8,
+            10,
+            12,
+            13,
+            15,
+            17,
+            19,
+            21,
+            22
+          ]
+        },
+        "operations": [
+          {
+            "clause": "begin screen",
+            "_row_num": 2,
+            "__rowNum__": 1,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 12,
+              "__rowNum__": 11,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 0
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 16,
+              "__rowNum__": 15,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 1
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 23,
+              "__rowNum__": 22,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nif (data(\"ESTADOMUL\") == \"2\" || data(\"ESTADOMUL\") == \"3\") {\nactivePromptIndicies.push(13);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"ESTADOMUL\") == \"1\" && data(\"CICATRIZMAE\") == null",
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "goto_label",
+            "_branch_label": "_then24",
+            "operationIdx": 3
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else29",
+            "_row_num": 29,
+            "operationIdx": 4
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 28,
+              "__rowNum__": 27,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 5
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif29",
+            "_row_num": 29,
+            "operationIdx": 6
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 33,
+              "__rowNum__": 32,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 7
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"ESTADOGRAV\") == \"1\"",
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "goto_label",
+            "_branch_label": "_then34",
+            "operationIdx": 8
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else54",
+            "_row_num": 54,
+            "operationIdx": 9
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 38,
+              "__rowNum__": 37,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 10
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"NVNMAB\") != \"3\"",
+            "_row_num": 39,
+            "__rowNum__": 38,
+            "_token_type": "goto_label",
+            "_branch_label": "_then39",
+            "operationIdx": 11
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else47",
+            "_row_num": 47,
+            "operationIdx": 12
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 40,
+            "__rowNum__": 39,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 46,
+              "__rowNum__": 45,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nif (data(\"GEM\") == \"1\") {\nactivePromptIndicies.push(22);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 13
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif47",
+            "_row_num": 47,
+            "operationIdx": 14
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"NVNMAB\") == \"1\"",
+            "_row_num": 48,
+            "__rowNum__": 47,
+            "_token_type": "goto_label",
+            "_branch_label": "_then48",
+            "operationIdx": 15
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else53",
+            "_row_num": 53,
+            "operationIdx": 16
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 52,
+              "__rowNum__": 51,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 17
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif53",
+            "_row_num": 53,
+            "operationIdx": 18
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif54",
+            "_row_num": 54,
+            "operationIdx": 19
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 55,
+            "__rowNum__": 54,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 59,
+              "__rowNum__": 58,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 20
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 60,
+            "operationIdx": 21
+          },
+          {
+            "_row_num": 60,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 22
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 60,
+            "operationIdx": 23
+          }
+        ],
+        "branch_label_map": {
+          "_screen2": 0,
+          "_screen13": 1,
+          "_screen17": 2,
+          "_then24": 5,
+          "_screen25": 5,
+          "_else29": 7,
+          "_endif29": 7,
+          "_screen30": 7,
+          "_then34": 10,
+          "_screen35": 10,
+          "_then39": 13,
+          "_screen40": 13,
+          "_else47": 15,
+          "_endif47": 15,
+          "_then48": 17,
+          "_screen49": 17,
+          "_else53": 19,
+          "_endif53": 19,
+          "_else54": 20,
+          "_endif54": 20,
+          "_screen55": 20,
+          "_contents": 22,
+          "_screen60": 22
+        }
+      },
+      "initial": {
+        "section_name": "initial",
+        "nested_sections": {
+          "survey": true
+        },
+        "reachable_sections": {
+          "survey": true
+        },
+        "prompts": [
+          {
+            "_row_num": 3,
+            "type": "opening",
+            "display": {
+              "text": "Edit form"
+            },
+            "_token_type": "prompt",
+            "_type": "opening",
+            "_branch_label_enclosing_screen": "initial/_screen3",
+            "promptIdx": 0
+          },
+          {
+            "_row_num": 4,
+            "clause": "do section survey",
+            "_token_type": "prompt",
+            "_do_section_name": "survey",
+            "_type": "_section",
+            "promptIdx": 1,
+            "display": {
+              "title": {
+                "text": {
+                  "english": "Follow-up to pregnancies in CS-BCG",
+                  "default": "Seguimento de gravidezes em CS-BCG"
+                }
+              }
+            },
+            "_branch_label_enclosing_screen": "survey/0"
+          },
+          {
+            "_row_num": 5,
+            "type": "finalize",
+            "display": {
+              "text": "Save form"
+            },
+            "_token_type": "prompt",
+            "_type": "finalize",
+            "_branch_label_enclosing_screen": "initial/_screen5",
+            "promptIdx": 2
+          },
+          {
+            "_row_num": 7,
+            "type": "instances",
+            "display": {
+              "text": "Saved instances"
+            },
+            "_token_type": "prompt",
+            "_type": "instances",
+            "_branch_label_enclosing_screen": "initial/_screen7",
+            "promptIdx": 3
+          },
+          {
+            "_token_type": "prompt",
+            "type": "contents",
+            "_type": "contents",
+            "_row_num": 9,
+            "_branch_label_enclosing_screen": "initial/_screen9",
+            "promptIdx": 4
+          }
+        ],
+        "validation_tag_map": {
+          "finalize": []
+        },
+        "operations": [
+          {
+            "_row_num": 2,
+            "clause": "if // start",
+            "condition": "(opendatakit.getCurrentInstanceId() != null)",
+            "_token_type": "goto_label",
+            "_tag_name": "start",
+            "_branch_label": "_then2",
+            "operationIdx": 0
+          },
+          {
+            "clause": "else // start",
+            "_token_type": "goto_label",
+            "_branch_label": "_else6",
+            "_row_num": 6,
+            "operationIdx": 1
+          },
+          {
+            "_row_num": 3,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "_row_num": 4,
+            "clause": "do section survey",
+            "_token_type": "do_section",
+            "_do_section_name": "survey",
+            "operationIdx": 3
+          },
+          {
+            "_row_num": 5,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 4
+          },
+          {
+            "clause": "end if // start",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif8",
+            "_row_num": 8,
+            "operationIdx": 5
+          },
+          {
+            "_row_num": 7,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(3);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 9,
+            "operationIdx": 7
+          },
+          {
+            "_row_num": 9,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 8
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 9,
+            "operationIdx": 9
+          },
+          {
+            "_token_type": "validate",
+            "clause": "validate finalize",
+            "_sweep_name": "finalize",
+            "_row_num": 9,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 10
+          },
+          {
+            "_token_type": "save_and_terminate",
+            "clause": "save and terminate",
+            "calculation": true,
+            "_row_num": 9,
+            "screen": {
+              "hideInBackHistory": true
+            },
+            "operationIdx": 11
+          },
+          {
+            "_token_type": "resume",
+            "clause": "resume",
+            "_row_num": 9,
+            "operationIdx": 12
+          }
+        ],
+        "branch_label_map": {
+          "_then2": 2,
+          "_screen3": 2,
+          "_screen5": 4,
+          "_else6": 6,
+          "_screen7": 6,
+          "_endif8": 7,
+          "_contents": 8,
+          "_screen9": 8,
+          "_finalize": 10
+        }
+      }
+    },
+    "dataTableModel": {
+      "REG": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 2,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REG",
+        "elementName": "REG",
+        "elementSet": "data",
+        "elementPath": "REG"
+      },
+      "REGNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNOME",
+        "elementName": "REGNOME",
+        "elementSet": "data",
+        "elementPath": "REGNOME"
+      },
+      "HCAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREA",
+        "elementName": "HCAREA",
+        "elementSet": "data",
+        "elementPath": "HCAREA"
+      },
+      "HCAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREANOME",
+        "elementName": "HCAREANOME",
+        "elementSet": "data",
+        "elementPath": "HCAREANOME"
+      },
+      "SUBAREA": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREA",
+        "elementName": "SUBAREA",
+        "elementSet": "data",
+        "elementPath": "SUBAREA"
+      },
+      "SUBAREANOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SUBAREANOME",
+        "elementName": "SUBAREANOME",
+        "elementSet": "data",
+        "elementPath": "SUBAREANOME"
+      },
+      "TAB": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TAB",
+        "elementName": "TAB",
+        "elementSet": "data",
+        "elementPath": "TAB"
+      },
+      "TABNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABNOME",
+        "elementName": "TABNOME",
+        "elementSet": "data",
+        "elementPath": "TABNOME"
+      },
+      "MOR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MOR",
+        "elementName": "MOR",
+        "elementSet": "data",
+        "elementPath": "MOR"
+      },
+      "VISNO": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNO",
+        "elementName": "VISNO",
+        "elementSet": "data",
+        "elementPath": "VISNO"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMEST",
+        "elementName": "NUMEST",
+        "elementSet": "data",
+        "elementPath": "NUMEST"
+      },
+      "REGDIA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDIA",
+        "elementName": "REGDIA",
+        "elementSet": "data",
+        "elementPath": "REGDIA"
+      },
+      "NOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NOME",
+        "elementName": "NOME",
+        "elementSet": "data",
+        "elementPath": "NOME"
+      },
+      "CONSENT": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONSENT",
+        "elementName": "CONSENT",
+        "elementSet": "data",
+        "elementPath": "CONSENT"
+      },
+      "CICATRIZMAE": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CICATRIZMAE",
+        "elementName": "CICATRIZMAE",
+        "elementSet": "data",
+        "elementPath": "CICATRIZMAE"
+      },
+      "ESTADOMUL": {
+        "type": "string",
+        "valuesList": "StatusFu",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOMUL",
+        "elementName": "ESTADOMUL",
+        "elementSet": "data",
+        "elementPath": "ESTADOMUL"
+      },
+      "DATASEG": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASEG",
+        "elementName": "DATASEG",
+        "elementSet": "data",
+        "elementPath": "DATASEG"
+      },
+      "ESTADOGRAV": {
+        "type": "string",
+        "valuesList": "StatusGrav",
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOGRAV",
+        "elementName": "ESTADOGRAV",
+        "elementSet": "data",
+        "elementPath": "ESTADOGRAV"
+      },
+      "NVNMAB": {
+        "type": "string",
+        "valuesList": "nvnmab",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NVNMAB",
+        "elementName": "NVNMAB",
+        "elementSet": "data",
+        "elementPath": "NVNMAB"
+      },
+      "GEM": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 42,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEM",
+        "elementName": "GEM",
+        "elementSet": "data",
+        "elementPath": "GEM"
+      },
+      "GEMNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEMNUM",
+        "elementName": "GEMNUM",
+        "elementSet": "data",
+        "elementPath": "GEMNUM"
+      },
+      "DATASAI": {
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          }
+        ],
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "elementKey": "DATASAI",
+        "elementName": "DATASAI",
+        "elementSet": "data",
+        "elementPath": "DATASAI"
+      },
+      "_id": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_id",
+        "elementName": "_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_id"
+      },
+      "_row_etag": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_etag",
+        "elementName": "_row_etag",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_etag"
+      },
+      "_sync_state": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_sync_state",
+        "elementName": "_sync_state",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_sync_state"
+      },
+      "_conflict_type": {
+        "type": "integer",
+        "isNotNullable": false,
+        "elementKey": "_conflict_type",
+        "elementName": "_conflict_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_conflict_type"
+      },
+      "_default_access": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_default_access",
+        "elementName": "_default_access",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_default_access"
+      },
+      "_form_id": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_form_id",
+        "elementName": "_form_id",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_form_id"
+      },
+      "_group_modify": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_modify",
+        "elementName": "_group_modify",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_modify"
+      },
+      "_group_privileged": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_privileged",
+        "elementName": "_group_privileged",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_privileged"
+      },
+      "_group_read_only": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_group_read_only",
+        "elementName": "_group_read_only",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_group_read_only"
+      },
+      "_locale": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_locale",
+        "elementName": "_locale",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_locale"
+      },
+      "_row_owner": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_row_owner",
+        "elementName": "_row_owner",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_row_owner"
+      },
+      "_savepoint_type": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_type",
+        "elementName": "_savepoint_type",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_type"
+      },
+      "_savepoint_timestamp": {
+        "type": "string",
+        "isNotNullable": true,
+        "elementKey": "_savepoint_timestamp",
+        "elementName": "_savepoint_timestamp",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_timestamp"
+      },
+      "_savepoint_creator": {
+        "type": "string",
+        "isNotNullable": false,
+        "elementKey": "_savepoint_creator",
+        "elementName": "_savepoint_creator",
+        "elementSet": "instanceMetadata",
+        "elementPath": "_savepoint_creator"
+      }
+    }
+  }
+}

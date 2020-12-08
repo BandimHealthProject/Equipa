@@ -240,7 +240,7 @@ window.odkFrameworkDefinitions = {
       "string_token": "take_image_button_label",
       "text": {
         "english": "Take Photo",
-        "default": "Fazer foto"
+        "default": "Tire uma foto"
       },
       "_row_num": 32
     },
