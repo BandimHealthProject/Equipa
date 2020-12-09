@@ -10,7 +10,7 @@ util.DEBUG = false;
  * Get a string to append to a url that will contain information the date and
  * time. The values can then be retrieved using getQueryParameter.
  */
-util.setQuerystringParams = function(date, bairro, tabz, zone, houseGroup, camo, fam, famName, hhoid, assistant, random) {
+util.setQuerystringParams = function(date, reg, regNome, hcarea, hcareaNome, subarea, subareaNome, tab, tabNome) {
 
     var that = this;
     var first = true;
@@ -22,44 +22,36 @@ util.setQuerystringParams = function(date, bairro, tabz, zone, houseGroup, camo,
         adaptProps['date'] = date;
     }  
     
-    if (bairro) {
-        adaptProps['bairro'] = bairro;
+    if (reg) {
+        adaptProps['reg'] = reg;
     }
 
-    if (tabz) {
-        adaptProps['tabz'] = tabz;
+    if (regNome) {
+        adaptProps['regNome'] = regNome;
     }  
 
-    if (zone) {
-        adaptProps['zone'] = zone;
+    if (hcarea) {
+        adaptProps['hcarea'] = hcarea;
     }  
 
-    if (houseGroup) {
-        adaptProps['houseGroup'] = houseGroup;
+    if (hcareaNome) {
+        adaptProps['hcareaNome'] = hcareaNome;
     }  
 
-    if (camo) {
-        adaptProps['camo'] = camo;
+    if (subarea) {
+        adaptProps['subarea'] = subarea;
     }  
 
-    if (fam) {
-        adaptProps['fam'] = fam;
+    if (subareaNome) {
+        adaptProps['subareaNome'] = subareaNome;
     }  
 
-    if (famName) {
-        adaptProps['famName'] = famName;
+    if (tab) {
+        adaptProps['tab'] = tab;
     } 
 
-    if (hhoid) {
-        adaptProps['hhoid'] = hhoid;
-    } 
-
-    if (assistant) {
-        adaptProps['assistant'] = assistant;
-    } 
-
-    if (random) {
-        adaptProps['random'] = random;
+    if (tabNome) {
+        adaptProps['tabNome'] = tabNome;
     } 
 
     for (var prop in adaptProps) {

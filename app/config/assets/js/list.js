@@ -18,8 +18,8 @@
         .form-group {
             margin:30px 0;
         }
-        .btnTab {
-            background-color: darkslateblue;
+        .btnInc {
+            background-color: darkseagreen;
             color: white;
             font-size: 25px;
             border-radius: 4px;
@@ -27,7 +27,7 @@
             border: none;
             margin: 0;
         }
-        .btnPhoto {
+        .btnFU {
             background-color: lightseagreen;
             color: white;
             font-size: 25px;
@@ -36,19 +36,31 @@
             border: none;
             margin: 0;
         }
+        .btnSync {
+            background-color: purple;
+            color: white;
+            font-size: 25px;
+            border-radius: 4px;
+            display: inline-block;
+            border: none;
+            margin-top: 0;
+        }
         </style>
     </head>
 
     <body onload="display();">
         <div id="main" class="container" style="height: 100vh;">
-            <h1>Estudo de CS-BCG</h1>
+            <h1>Estudo de máscara</h1>
             <div id="wrapper">
                 <div class="form-group">
-                    <button id="btnTab" class="btnTab">Trabalho nas tabancas</button> 
+                    <button id="btnInc" class="btnInc">Inclusão</button> 
+                </div>
+                <div class="form-group">
+                    <button id="btnFU" class="btnFU">Seguimento</button> 
                 </div>
                 <hr/>
                 <div class="form-group">
-                    <button id="btnPhoto" class="btnPhoto">Foto de fichas</button> 
+                    <button id="btnSync" class="btnSync">Sincronizar</button>
                 </div>
             </div>
         </div>
