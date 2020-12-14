@@ -383,6 +383,12 @@
               "english": "How did the pregnancy end?",
               "default": "Como terminou a gravidez?"
             }
+          },
+          "hint": {
+            "text": {
+              "english": "Still birth: after 6 months of pregnancy <\\br>\nMiscarriage: before 6 months of pregnancy",
+              "default": "Nado morto: após 6 meses de gravidez <\\br> \nAborto espontâneo: antes de 6 meses de gravidez"
+            }
           }
         },
         "constraint": "data(\"NVNMAB\") != null || data(\"ESTADOGRAV\") != 1",
@@ -415,6 +421,89 @@
       },
       {
         "type": "select_one",
+        "values_list": "PlaceOfBirth",
+        "name": "LOCPAR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Place of birth",
+              "default": "Local de nascimento"
+            }
+          }
+        },
+        "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+        "_row_num": 42
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"LOCPAR\") == \"1\"",
+        "_row_num": 43
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "PARTAB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the woman give birth in this tabanca?",
+              "default": "A mulher deu à luz nesta tabanca?"
+            }
+          }
+        },
+        "constraint": "data(\"PARTAB\") != null || data(\"LOCPAR\") != 1",
+        "_row_num": 44
+      },
+      {
+        "clause": "end if",
+        "_row_num": 45
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\"",
+        "_row_num": 46
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "PARHCHOSP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the women go directly to this tabanca after giving birth?",
+              "default": "As mulheres foram diretamente para esta tabanca após o parto?"
+            }
+          }
+        },
+        "constraint": "data(\"PARTAB\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+        "_row_num": 47
+      },
+      {
+        "clause": "end if",
+        "_row_num": 48
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 49
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 50
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "type": "select_one",
         "values_list": "YesNoDontknow",
         "name": "GEM",
         "display": {
@@ -425,13 +514,13 @@
             }
           }
         },
-        "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1",
-        "_row_num": 42
+        "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+        "_row_num": 52
       },
       {
         "clause": "if",
         "condition": "data(\"GEM\") == \"1\"",
-        "_row_num": 43
+        "_row_num": 53
       },
       {
         "type": "integer",
@@ -457,28 +546,28 @@
           }
         },
         "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
-        "_row_num": 44
+        "_row_num": 54
       },
       {
         "clause": "end if",
-        "_row_num": 45
+        "_row_num": 55
       },
       {
         "clause": "end screen",
-        "_row_num": 46
+        "_row_num": 56
       },
       {
         "clause": "end if",
-        "_row_num": 47
+        "_row_num": 57
       },
       {
         "clause": "if",
-        "condition": "data(\"NVNMAB\") == \"1\"",
-        "_row_num": 48
+        "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
+        "_row_num": 58
       },
       {
         "clause": "begin screen",
-        "_row_num": 49
+        "_row_num": 59
       },
       {
         "type": "note",
@@ -490,7 +579,7 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 60
       },
       {
         "type": "linked_table",
@@ -509,23 +598,23 @@
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 61
       },
       {
         "clause": "end screen",
-        "_row_num": 52
+        "_row_num": 62
       },
       {
         "clause": "end if",
-        "_row_num": 53
+        "_row_num": 63
       },
       {
         "clause": "end if",
-        "_row_num": 54
+        "_row_num": 64
       },
       {
         "clause": "begin screen",
-        "_row_num": 55
+        "_row_num": 65
       },
       {
         "type": "note",
@@ -537,7 +626,7 @@
             }
           }
         },
-        "_row_num": 56
+        "_row_num": 66
       },
       {
         "type": "note",
@@ -549,7 +638,7 @@
             }
           }
         },
-        "_row_num": 57
+        "_row_num": 67
       },
       {
         "type": "note",
@@ -561,11 +650,11 @@
             }
           }
         },
-        "_row_num": 58
+        "_row_num": 68
       },
       {
         "clause": "end screen",
-        "_row_num": 59
+        "_row_num": 69
       }
     ],
     "queries": [
@@ -718,8 +807,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Moved before given birth",
-              "default": "Modou antes do parto"
+              "english": "Moved / died before given birth",
+              "default": "Modou / faleceu antes do parto"
             }
           }
         },
@@ -783,12 +872,77 @@
         "display": {
           "title": {
             "text": {
-              "english": "Abortion",
+              "english": "Miscarriage",
               "default": "Aborto"
             }
           }
         },
         "_row_num": 20
+      },
+      {
+        "choice_list_name": "nvnmab",
+        "data_value": "33",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Home",
+              "default": "Casa"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Health centre",
+              "default": "Centro de Saúde"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Hospital",
+              "default": "Hospital"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "PlaceOfBirth",
+        "data_value": "33",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 26
       }
     ],
     "calculates": [
@@ -923,16 +1077,34 @@
         "_row_num": 23
       },
       {
-        "name": "GEM",
+        "name": "LOCPAR",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 24
       },
       {
+        "name": "PARTAB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 25
+      },
+      {
+        "name": "PARHCHOSP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 26
+      },
+      {
+        "name": "GEM",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 27
+      },
+      {
         "name": "GEMNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 25
+        "_row_num": 28
       }
     ]
   },
@@ -1194,8 +1366,8 @@
           "display": {
             "title": {
               "text": {
-                "english": "Moved before given birth",
-                "default": "Modou antes do parto"
+                "english": "Moved / died before given birth",
+                "default": "Modou / faleceu antes do parto"
               }
             }
           },
@@ -1261,12 +1433,79 @@
           "display": {
             "title": {
               "text": {
-                "english": "Abortion",
+                "english": "Miscarriage",
                 "default": "Aborto"
               }
             }
           },
           "_row_num": 20
+        },
+        {
+          "choice_list_name": "nvnmab",
+          "data_value": "33",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 21
+        }
+      ],
+      "PlaceOfBirth": [
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Home",
+                "default": "Casa"
+              }
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Health centre",
+                "default": "Centro de Saúde"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Hospital",
+                "default": "Hospital"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "PlaceOfBirth",
+          "data_value": "33",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 26
         }
       ]
     },
@@ -1542,9 +1781,9 @@
         "isSessionVariable": false,
         "elementKey": "NVNMAB"
       },
-      "GEM": {
+      "LOCPAR": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "PlaceOfBirth",
         "_defn": [
           {
             "_row_num": 42,
@@ -1556,10 +1795,11 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "GEM"
+        "elementKey": "LOCPAR"
       },
-      "GEMNUM": {
-        "type": "integer",
+      "PARTAB": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
             "_row_num": 44,
@@ -1567,6 +1807,53 @@
           },
           {
             "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARTAB"
+      },
+      "PARHCHOSP": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 47,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARHCHOSP"
+      },
+      "GEM": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 27,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEM"
+      },
+      "GEMNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -1954,6 +2241,12 @@
                   "english": "How did the pregnancy end?",
                   "default": "Como terminou a gravidez?"
                 }
+              },
+              "hint": {
+                "text": {
+                  "english": "Still birth: after 6 months of pregnancy <\\br>\nMiscarriage: before 6 months of pregnancy",
+                  "default": "Nado morto: após 6 meses de gravidez <\\br> \nAborto espontâneo: antes de 6 meses de gravidez"
+                }
               }
             },
             "constraint": "data(\"NVNMAB\") != null || data(\"ESTADOGRAV\") != 1",
@@ -1983,6 +2276,83 @@
           },
           {
             "type": "select_one",
+            "values_list": "PlaceOfBirth",
+            "name": "LOCPAR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Place of birth",
+                  "default": "Local de nascimento"
+                }
+              }
+            },
+            "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+            "_row_num": 42,
+            "__rowNum__": 41,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen40",
+            "promptIdx": 21
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "PARTAB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the woman give birth in this tabanca?",
+                  "default": "A mulher deu à luz nesta tabanca?"
+                }
+              }
+            },
+            "constraint": "data(\"PARTAB\") != null || data(\"LOCPAR\") != 1",
+            "_row_num": 44,
+            "__rowNum__": 43,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen40",
+            "promptIdx": 22
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "PARHCHOSP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the women go directly to this tabanca after giving birth?",
+                  "default": "As mulheres foram diretamente para esta tabanca após o parto?"
+                }
+              }
+            },
+            "constraint": "data(\"PARTAB\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+            "_row_num": 47,
+            "__rowNum__": 46,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen40",
+            "promptIdx": 23
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 51,
+            "__rowNum__": 50,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 24
+          },
+          {
+            "type": "select_one",
             "values_list": "YesNoDontknow",
             "name": "GEM",
             "display": {
@@ -1993,13 +2363,13 @@
                 }
               }
             },
-            "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1",
-            "_row_num": 42,
-            "__rowNum__": 41,
+            "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen40",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 25
           },
           {
             "type": "integer",
@@ -2025,12 +2395,12 @@
               }
             },
             "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen40",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 26
           },
           {
             "type": "note",
@@ -2042,12 +2412,12 @@
                 }
               }
             },
-            "_row_num": 50,
-            "__rowNum__": 49,
+            "_row_num": 60,
+            "__rowNum__": 59,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen49",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 27
           },
           {
             "type": "linked_table",
@@ -2066,12 +2436,12 @@
                 }
               }
             },
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 61,
+            "__rowNum__": 60,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen49",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 28
           },
           {
             "type": "note",
@@ -2083,12 +2453,12 @@
                 }
               }
             },
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 66,
+            "__rowNum__": 65,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen55",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "survey/_screen65",
+            "promptIdx": 29
           },
           {
             "type": "note",
@@ -2100,12 +2470,12 @@
                 }
               }
             },
-            "_row_num": 57,
-            "__rowNum__": 56,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen55",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "survey/_screen65",
+            "promptIdx": 30
           },
           {
             "type": "note",
@@ -2117,20 +2487,20 @@
                 }
               }
             },
-            "_row_num": 58,
-            "__rowNum__": 57,
+            "_row_num": 68,
+            "__rowNum__": 67,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen55",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "survey/_screen65",
+            "promptIdx": 31
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 60,
-            "_branch_label_enclosing_screen": "survey/_screen60",
-            "promptIdx": 28
+            "_row_num": 70,
+            "_branch_label_enclosing_screen": "survey/_screen70",
+            "promptIdx": 32
           }
         ],
         "validation_tag_map": {
@@ -2144,7 +2514,10 @@
             17,
             19,
             21,
-            22
+            22,
+            23,
+            25,
+            26
           ]
         },
         "operations": [
@@ -2253,8 +2626,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else54",
-            "_row_num": 54,
+            "_branch_label": "_else64",
+            "_row_num": 64,
             "operationIdx": 9
           },
           {
@@ -2283,8 +2656,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else47",
-            "_row_num": 47,
+            "_branch_label": "_else57",
+            "_row_num": 57,
             "operationIdx": 12
           },
           {
@@ -2294,98 +2667,112 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 46,
-              "__rowNum__": 45,
+              "_row_num": 49,
+              "__rowNum__": 48,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nif (data(\"GEM\") == \"1\") {\nactivePromptIndicies.push(22);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nif (data(\"LOCPAR\") == \"1\") {\nactivePromptIndicies.push(22);\n}\nif (data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\") {\nactivePromptIndicies.push(23);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif47",
-            "_row_num": 47,
-            "operationIdx": 14
-          },
-          {
-            "clause": "if",
-            "condition": "data(\"NVNMAB\") == \"1\"",
-            "_row_num": 48,
-            "__rowNum__": 47,
-            "_token_type": "goto_label",
-            "_branch_label": "_then48",
-            "operationIdx": 15
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else53",
-            "_row_num": 53,
-            "operationIdx": 16
-          },
-          {
             "clause": "begin screen",
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 52,
-              "__rowNum__": 51,
+              "_row_num": 56,
+              "__rowNum__": 55,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 17
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nif (data(\"GEM\") == \"1\") {\nactivePromptIndicies.push(26);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 14
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif53",
-            "_row_num": 53,
+            "_branch_label": "_endif57",
+            "_row_num": 57,
+            "operationIdx": 15
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "goto_label",
+            "_branch_label": "_then58",
+            "operationIdx": 16
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else63",
+            "_row_num": 63,
+            "operationIdx": 17
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 62,
+              "__rowNum__": 61,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif54",
-            "_row_num": 54,
+            "_branch_label": "_endif63",
+            "_row_num": 63,
             "operationIdx": 19
           },
           {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif64",
+            "_row_num": 64,
+            "operationIdx": 20
+          },
+          {
             "clause": "begin screen",
-            "_row_num": 55,
-            "__rowNum__": 54,
+            "_row_num": 65,
+            "__rowNum__": 64,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 59,
-              "__rowNum__": 58,
+              "_row_num": 69,
+              "__rowNum__": 68,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 20
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 21
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 60,
-            "operationIdx": 21
+            "_row_num": 70,
+            "operationIdx": 22
           },
           {
-            "_row_num": 60,
+            "_row_num": 70,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 22
+            "operationIdx": 23
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 60,
-            "operationIdx": 23
+            "_row_num": 70,
+            "operationIdx": 24
           }
         ],
         "branch_label_map": {
@@ -2401,17 +2788,18 @@
           "_screen35": 10,
           "_then39": 13,
           "_screen40": 13,
-          "_else47": 15,
-          "_endif47": 15,
-          "_then48": 17,
-          "_screen49": 17,
-          "_else53": 19,
-          "_endif53": 19,
-          "_else54": 20,
-          "_endif54": 20,
-          "_screen55": 20,
-          "_contents": 22,
-          "_screen60": 22
+          "_screen50": 14,
+          "_else57": 16,
+          "_endif57": 16,
+          "_then58": 18,
+          "_screen59": 18,
+          "_else63": 20,
+          "_endif63": 20,
+          "_else64": 21,
+          "_endif64": 21,
+          "_screen65": 21,
+          "_contents": 23,
+          "_screen70": 23
         }
       },
       "initial": {
@@ -2904,9 +3292,9 @@
         "elementSet": "data",
         "elementPath": "NVNMAB"
       },
-      "GEM": {
+      "LOCPAR": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "PlaceOfBirth",
         "_defn": [
           {
             "_row_num": 42,
@@ -2914,6 +3302,63 @@
           },
           {
             "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPAR",
+        "elementName": "LOCPAR",
+        "elementSet": "data",
+        "elementPath": "LOCPAR"
+      },
+      "PARTAB": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARTAB",
+        "elementName": "PARTAB",
+        "elementSet": "data",
+        "elementPath": "PARTAB"
+      },
+      "PARHCHOSP": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 47,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARHCHOSP",
+        "elementName": "PARHCHOSP",
+        "elementSet": "data",
+        "elementPath": "PARHCHOSP"
+      },
+      "GEM": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -2927,11 +3372,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 54,
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],

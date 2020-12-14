@@ -13,56 +13,87 @@
         <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
         
         <script type="text/javascript" src="js/util.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/ist.js"></script>
         <style>
-        .form-group {
-            margin:30px 0;
+        ul {
+            list-style:none;
         }
-        .btnInc {
+        button.participantgreen {
             background-color: darkseagreen;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin: 0;
+            text-align:left;
+            font-size: x-large;
+            padding-left: 10px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            color: darkslategray; 
         }
-        .btnFU {
-            background-color: lightseagreen;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin: 0;
+        button.participantyellow {
+            background-color: gold;
+            text-align:left;
+            font-size: x-large;
+            padding-left: 10px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            color: darkslategray; 
+        }button.participantred {
+            background-color: lightcoral;
+            text-align:left;
+            font-size: x-large;
+            padding-left: 10px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            color: darkslategray; 
         }
-        .btnSync {
-            background-color: purple;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin-top: 0;
+        button.getResults {
+            background-color: mediumpurple;
+            text-align:left;
+            font-size: x-large;
+            padding-left: 10px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            color: darkslategray; 
+        }
+        button.called{
+            opacity:.5;
+            background-image: url(./img/checkMarkBlack.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+        }
+        button.calledgetResults {
+            opacity:.5;
+            background-image: url(./img/checkMarkBlack.png);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: contain;
+            background-color: mediumpurple;
+            text-align:left;
+            font-size: x-large;
+            padding-left: 10px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            color: darkslategray; 
         }
         </style>
     </head>
 
-    <body onload="display();">
+   
+    <body>
         <div id="main" class="container" style="height: 100vh;">
-            <h1>Estudo de máscara</h1>
-            <div id="wrapper">
-                <div class="form-group">
-                    <button id="btnInc" class="btnInc">Inclusão</button> 
-                </div>
-                <div class="form-group">
-                    <button id="btnFU" class="btnFU">Seguimento</button> 
-                </div>
-                <hr/>
-                <div class="form-group">
-                    <button id="btnSync" class="btnSync">Sincronizar</button>
-                </div>
+            <div class="form-group">
+                <ul id="li" style="padding:20px;">            
+                </ul>
             </div>
         </div>
+        <script>
+        $(function() {
+            display();
+        });
+        </script>
     </body>
 </html>
