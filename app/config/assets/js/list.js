@@ -30,70 +30,50 @@ function doSanityCheck() {
 
 function loadPregnancies() {
     // SQL to get pregnancies
-    var varNames = "_id, _savepoint_type, BAIRRO, CALLBACK, CAMO, COVID, DATINC, DATSEG, DOB, ESTADO, FU, GETRESULTS, LASTINTERVIEW, LASTTELSUC, NOME, NUMEST, POID, SEX, TABZ, TELE, TELMTN1, TELMTN2, TELMTN3, TELORA1, TELORA2, TELORA3, TELOU1, TELOU2, TELSUC, TESTERESUL";
-    var sql = "SELECT " + varNames +
-        " FROM OPVCOVID" + 
-        " WHERE BAIRRO = " + bairro + " AND TABZ = " + tabz + 
-        " GROUP BY POID HAVING MAX(FU)" +
-        " ORDER BY CAMO, POID";
+    var sql = "SELECT P._id, P._savepoint_type, P.CICATRIZMAE, P.CONSENT, P.ESTADOMUL, P.HCAREA, P.IDADE, P.MOR, P.NOME, P.NUMEST, P.REG, P.REGDIA, P.SUBAREA, P.TAB, P.VISNO" +
+        " SELECT F._id, F._savepoint_type, F.CICATRIZMAE, F.CONSENT, F.DATASEG, F.ESTADOGRAV, F.ESTADOMUL, F.MOR, F.NOME, F.VISNO" + 
+        " FROM PREGNANCIES AS P, PREGNACYFU AS F" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND SUBARAEA = " + subarea + " AND TAB = " + tab + 
+        " GROUP BY POID HAVING MAX(F.VISNO) OR F.VISNO IS NULL" +
+        " ORDER BY P.MOR, P.NOME";
         pregnancies = [];
     console.log("Querying database for pregnancies...");
     console.log(sql);
     var successFn = function( result ) {
         console.log("Found " + result.getCount() + " pregnancies");
         for (var row = 0; row < result.getCount(); row++) {
-            var rowId = result.getData(row,"_id"); // row ID 
-            var savepoint = result.getData(row,"_savepoint_type")
+            var rowId = result.getData(row,"P._id"); // row ID 
+            var savepoint = result.getData(row,"P._savepoint_type")
 
-            var BAIRRO = result.getData(row,"BAIRRO");
-            var CALLBACK = result.getData(row,"CALLBACK");
-            var CAMO = result.getData(row,"CAMO");
-            var COVID = result.getData(row,"COVID");
-            var DATINC = result.getData(row,"DATINC");
-            var DATSEG = result.getData(row,"DATSEG");
-            var DOB = result.getData(row,"DOB");
-            var ESTADO = result.getData(row,"ESTADO");
-            var FU = result.getData(row,"FU");
-            var GETRESULTS = result.getData(row,"GETRESULTS");
-            var LASTINTERVIEW = result.getData(row,"LASTINTERVIEW");
-            var LASTTELSUC = result.getData(row,"LASTTELSUC");
-            var NOME = titleCase(result.getData(row,"NOME"));
-            var NUMEST = result.getData(row,"NUMEST");
-            var POID = result.getData(row,"POID");
-            var SEX = result.getData(row,"SEX");
-            var TABZ = result.getData(row,"TABZ");
-            var TELE = result.getData(row,"TELE");
-            var TELMTN1 = result.getData(row,"TELMTN1");
-            var TELMTN2 = result.getData(row,"TELMTN2");
-            var TELMTN3 = result.getData(row,"TELMTN3");
-            var TELORA1 = result.getData(row,"TELORA1");
-            var TELORA2 = result.getData(row,"TELORA2");
-            var TELORA3 = result.getData(row,"TELORA3");
-            var TELOU1 = result.getData(row,"TELOU1");
-            var TELOU2 = result.getData(row,"TELOU2");
-            var TELSUC = result.getData(row,"TELSUC");
-            var TESTERESUL = result.getData(row,"TESTERESUL");
+            var CICATRIZMAE = result.getData(row,"P.CICATRIZMAE");
+            var CONSENT = result.getData(row,"P.CONSENT");
+            var ESTADOMUL = result.getData(row,"P.ESTADOMUL");
+            var HCAREA = result.getData(row,"P.HCAREA");
+            var IDADE = result.getData(row,"P.IDADE");
+            var MOR = result.getData(row,"P.MOR");
+            var NOME = result.getData(row,"P.NOME");
+            var NUMEST = result.getData(row,"P.NUMEST");
+            var REG = result.getData(row,"P.REG");
+            var REGDIA = result.getData(row,"P.REGDIA");
+            var SUBAREA = result.getData(row,"P.SUBAREA");
+            var TAB = result.getData(row,"P.TAB");
+            var VISNO = result.getData(row,"P.VISNO");
+            
+            var DATASEG = result.getData(row,"F.DATASEG");
+            var ESTADOGRAV = result.getData(row,"F.ESTADOGRAV");
 
+            if (ESTADOGRAV != null) {
+                rowIdFU = result.getData(row,"F._id"); // row ID FU
+                savepoint = result.getData(row,"F._savepoint_type")
+                CICATRIZMAE = result.getData(row,"F.CICATRIZMAE");
+                CONSENT = result.getData(row,"F.CONSENT");
+                ESTADOMUL = result.getData(row,"F.ESTADOMUL");
+                MOR = result.getData(row,"F.MOR");
+                NOME = result.getData(row,"F.NOME");
+                VISNO = result.getData(row,"F.VISNO");
+            }
 
-            // generate follow-up date (28 days after last interview with succes follow up)
-            if (FU == 1 & (COVID == null | CALLBACK == "1" | TESTERESUL == "3")) {
-                var incD = Number(DATINC.slice(2, DATINC.search("M")-1));
-                var incM = DATINC.slice(DATINC.search("M")+2, DATINC.search("Y")-1);
-                var incY = DATINC.slice(DATINC.search("Y")+2);
-                var FUDate = new Date(incY, incM-1, incD + 28);
-            } else if (COVID == null | CALLBACK == "1" | TESTERESUL == "3") {
-                var segD = Number(DATSEG.slice(2, DATSEG.search("M")-1));
-                var segM = DATSEG.slice(DATSEG.search("M")+2, DATSEG.search("Y")-1);
-                var segY = DATSEG.slice(DATSEG.search("Y")+2);
-                var FUDate = new Date(segY, segM-1, segD);
-            } else {
-                var segD = Number(DATSEG.slice(2, DATSEG.search("M")-1));
-                var segM = DATSEG.slice(DATSEG.search("M")+2, DATSEG.search("Y")-1);
-                var segY = DATSEG.slice(DATSEG.search("Y")+2);
-                var FUDate = new Date(segY, segM-1, segD + 28);
-            }   
-
-            var p = {type: 'pregnancy', rowId, savepoint, BAIRRO, CALLBACK, CAMO, COVID, DATINC, DATSEG, DOB, ESTADO, FU, FUDate, GETRESULTS, LASTINTERVIEW, LASTTELSUC, NOME, NUMEST, POID, SEX, TABZ, TELE, TELMTN1, TELMTN2, TELMTN3, TELORA1, TELORA2, TELORA3, TELOU1, TELOU2, TELSUC, TESTERESUL};
+            var p = {type: 'pregnancy', rowId, savepoint, CICATRIZMAE, CONSENT, ESTADOMUL, HCAREA, MOR, NOME, NUMEST, REG, REGDIA, SUBAREA, TAB, VISNO, DATASEG, ESTADOGRAV};
             pregnancies.push(p);
         }
         console.log("Pregnancies:", pregnancies)
@@ -118,80 +98,39 @@ function populateView() {
     var ul = $('#li');
 
     // list
-    $.each(participants, function() {
+    $.each(pregnancies, function() {
         var that = this;  
 
         // Check if called today
         var called = '';
-        if (this.DATSEG == todayAdate & this.savepoint == "COMPLETE") {
+        if ((this.DATSEG == todayAdate | this.REGDIA == todayAdate) & this.savepoint == "COMPLETE") {
             called = "called";
         };
-
-        // check if we only call for test result to change color
-        var getResults = "";
-        if (this.TESTERESUL == "3" & this.CALLBACK != "1" & called != "called" | this.GETRESULTS == "1") {
-            getResults = "getResults";
-        };
-        
-        // set color according to urgency of follow up
-        var color = "";
-        if (today > addDays(this.FUDate, 14)) {
-            color = "red";
-        } else if (today > addDays(this.FUDate, 7)) {
-            color = "yellow";
-        } else {
-            color = "green";
-        }
 
         // set text to display
         var displayText = setDisplayText(that);
         
         // list
-        if (this.FUDate <= today & ((this.ESTADO != "2" & this.ESTADO != "3") | this.CALLBACK == "1" | this.TESTERESUL == "3") | this.DATSEG == todayAdate) {
-            ul.append($("<li />").append($("<button />").attr('id',this.POID).attr('class', called + getResults + ' btn ' + this.type + color).append(displayText)));
+        if (this.ESTADOMUL != null) {
+            ul.append($("<li />").append($("<button />").attr('id',this.NUMEST).attr('class', called + ' btn ' + this.type).append(displayText)));
         }
         
         // Buttons
-        var btn = ul.find('#' + this.POID);
+        var btn = ul.find('#' + this.NUMEST);
         btn.on("click", function() {
             openForm(that);
         })        
     });
 }
 
-function addDays(date, days) {
-    var newDate = new Date(date);
-    newDate.setDate(date.getDate() + days);
-    return newDate;
-}
+function setDisplayText(woman) {
+    
+    var regdia = formatDate(woman.REGDIA);
 
-function setDisplayText(person) {
-    var dob;
-    if (person.DOB == "D:NS,M:NS,Y:NS" | person.DOB === null) {
-        dob = "Não Sabe";
-    } else {
-        dob = formatDate(person.DOB);
-    }
-
-    var datinc;
-    if (person.DATINC == "D:NS,M:NS,Y:NS" | person.DATINC === null) {
-        datinc = "Não Sabe";
-    } else {
-        datinc = formatDate(person.DATINC);
-    }
-
-    var sex;
-    if (person.SEX == 1) {
-        sex = "Masculino"
-    } else {
-        sex = "Feminino"
-    }
-
-    var displayText = "Nome: " + person.NOME + "<br />" + 
-        "Sexo: " + sex + "<br />" +
-        "Nacimento: " + dob + "<br />" +
-        "Tabz: " + person.TABZ + "; Camo: " + person.CAMO + "<br />" +
-        "Inclusão: " + datinc;
+    var displayText = "Morança: " + woman.MOR + "<br />" +
+        "Nome: " + woman.NOME + "<br />" + 
+        "Idade: " + woman.IDADE + "<br />" +
+        "Inclusão: " + regdia;
     return displayText
 }
 
@@ -210,10 +149,10 @@ function openForm(person) {
     var todayAdate = "D:" + today.getDate() + ",M:" + (Number(today.getMonth()) + 1) + ",Y:" + today.getFullYear();
 
     var rowId = person.rowId;
-    var tableId = 'OPVCOVID';
-    var formId = 'OPVCOVID';
+    var tableId = 'OPVCOVID'; // Change according to woman/child
+    var formId = 'OPVCOVID'; // Change according to woman/child
     
-    if ((person.FU == 1 & person.DATSEG == null) | person.DATSEG == todayAdate) {
+    if (person.REGDIA == todayAdate | person.DATASEG == todayAdate) {
         odkTables.editRowWithSurvey(
             null,
             tableId,
@@ -223,11 +162,6 @@ function openForm(person) {
         }
     else {
         var defaults = getDefaults(person);
-        // if we need test results and callback do total interview, else only test results
-        if (person.TESTERESUL == "3" & person.CALLBACK != "1") {
-            defaults["GETRESULTS"] = 1;
-            defaults["ESTADO"] = person.ESTADO;
-        }
         console.log("Opening form with: ", defaults); 
         odkTables.addRowWithSurvey(
             null,
@@ -243,62 +177,25 @@ function toAdate(date) {
     return "D:" + jsDate.getDate() + ",M:" + (Number(jsDate.getMonth()) + 1) + ",Y:" + jsDate.getFullYear();
 }
 
-function getDefaults(person) {
+function getDefaultsWoman(person) {
     var defaults = {};
-    defaults['BAIRRO'] = person.BAIRRO;
-    defaults['CAMO'] = person.CAMO;
-    defaults['DATINC'] = person.DATINC;
-    defaults['DATSEG'] = toAdate(date);
-    defaults['DOB'] = person.DOB;
-    defaults['FU'] = getFU(person);
-    defaults['LASTINTERVIEW'] = getLastInterview(person);
-    defaults['LASTTELSUC'] = getLastTelSuc(person);
+    defaults['CICATRIZMAE'] = person.CICATRIZMAE;
+    defaults['CONSENT'] = person.CONSENT;
+    defaults['DATASEG'] = toAdate(date);
+    defaults['HCAREA'] = hcarea;
+    defaults['HCAREANOME'] = hcareaNome;
+    defaults['MOR'] = person.MOR;
     defaults['NOME'] = person.NOME;
     defaults['NUMEST'] = person.NUMEST;
-    defaults['POID'] = person.POID;
-    defaults['SEX'] = person.SEX;
-    defaults['TABZ'] = person.TABZ;
-    defaults['TELE'] = person.TELE;
-    defaults['TELMTN1'] = person.TELMTN1;
-    defaults['TELMTN2'] = person.TELMTN2;
-    defaults['TELMTN3'] = person.TELMTN3;
-    defaults['TELORA1'] = person.TELORA1;
-    defaults['TELORA2'] = person.TELORA2;
-    defaults['TELORA3'] = person.TELORA3;
-    defaults['TELOU1'] = person.TELOU1;
-    defaults['TELOU2'] = person.TELOU2;
-
+    defaults['REG'] = reg;
+    defaults['REGNOME'] = regNome;
+    defaults['REGDIA'] = person.REGDIA;
+    defaults['SUBAREA'] = subarea;
+    defaults['SUBAREANOME'] = subareaNome;
+    defaults['TAB'] = tab;
+    defaults['TABNOME'] = tabNome;
+    defaults['VISNO'] = person.VISNO + 1;
     return defaults;
-}
-
-function getFU(person) {
-    var FU;
-    if (person.COVID != null & person.CALLBACK != "1" & person.TESTERESUL != "3")  {
-        FU = Math.floor(person.FU) + 1;
-    } else {
-        FU = person.FU + 0.01;
-    }
-    return FU;
-} 
-
-function getLastInterview(person) {
-    var lastInterview;
-    if (person.COVID != null & person.CALLBACK != "1" & person.TESTERESUL != "3")  {
-        lastInterview = person.DATSEG;
-    } else {
-        lastInterview = person.LASTINTERVIEW;
-    }
-    return lastInterview;
-}
-
-function getLastTelSuc(person) {
-    var lastTelSuc;
-    if (person.COVID != null & person.CALLBACK != "1")  {
-        lastTelSuc = person.TELSUC;
-    } else {
-        lastTelSuc = person.LASTTELSUC;
-    }
-    return lastTelSuc;
 }
 
 function titleCase(str) {
