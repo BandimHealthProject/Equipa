@@ -87,8 +87,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Region: {{data.REGNOME}}",
-              "default": "Região: {{data.REGNOME}}"
+              "english": "Region: <b>{{data.REGNOME}}</b>",
+              "default": "Região: <b>{{data.REGNOME}}</b>"
             }
           }
         },
@@ -99,8 +99,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Health centre area: {{data.HCNOME}}",
-              "default": "Área sanitárias: {{data.HCNOME}}"
+              "english": "Health centre area: <b>{{data.HCAREANOME}}</b>",
+              "default": "Área sanitárias: <b>{{data.HCAREANOME}}</b>"
             }
           }
         },
@@ -111,8 +111,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Subarea: {{data.SUBAREANOME}}",
-              "default": "Subarea: {{data.SUBAREANOME}}"
+              "english": "Subarea: <b>{{data.SUBAREANOME}}<b>",
+              "default": "Subarea: <b>{{data.SUBAREANOME}}</b>"
             }
           }
         },
@@ -123,8 +123,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Village: {{data.TABNOME}}",
-              "default": "Tabanca: {{data.TABNOME}}"
+              "english": "Village: <b>{{data.TABNOME}}</b>",
+              "default": "Tabanca: <b>{{data.TABNOME}}</b>"
             }
           }
         },
@@ -135,8 +135,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Household: {{data.MOR}}",
-              "default": "Morança: {{data.MOR}}"
+              "english": "Household: <b>{{data.MOR}}</b>",
+              "default": "Morança: <b>{{data.MOR}}</b>"
             }
           }
         },
@@ -148,8 +148,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Name of mother: {{data.NOME}}",
-              "default": "Nome da mãe: {{data.NOME}}"
+              "english": "Name of mother: <b>{{data.NOME}}</b>",
+              "default": "Nome da mãe: <b>{{data.NOME}}</b>"
             }
           }
         },
@@ -1442,154 +1442,191 @@
         "_row_num": 10
       },
       {
-        "name": "VISNO",
+        "name": "GRAV",
         "type": "integer",
         "isSessionVariable": false,
         "_row_num": 11
       },
       {
+        "name": "VISNO",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 12
+      },
+      {
         "name": "NUMEST",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 13
+        "_row_num": 14
       },
       {
         "name": "REGDIA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 14
+        "_row_num": 15
       },
       {
         "name": "NOME",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 15
+        "_row_num": 16
+      },
+      {
+        "name": "REGDIACRI",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 18
+      },
+      {
+        "name": "NUMESTCRI",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 19
       },
       {
         "name": "DATASEG",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 20
       },
       {
         "name": "NOMECRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 22
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 19
+        "_row_num": 23
       },
       {
         "name": "DOB",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 20
+        "_row_num": 24
       },
       {
         "name": "ESTADOCRI",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 25
       },
       {
         "name": "DATASAI",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 22
+        "_row_num": 26
       },
       {
         "name": "VACINAS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 23
+        "_row_num": 27
       },
       {
         "name": "VACINFO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 24
+        "_row_num": 28
       },
       {
         "name": "BCG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 25
+        "_row_num": 29
       },
       {
         "name": "BCGDATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 26
+        "_row_num": 30
       },
       {
         "name": "VACINASOU",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 27
+        "_row_num": 31
+      },
+      {
+        "name": "OUTROVAC",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 32
+      },
+      {
+        "name": "OUTRODATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 33
       },
       {
         "name": "VACINASIMG",
         "type": "image",
         "isSessionVariable": false,
-        "_row_num": 28
+        "_row_num": 34
       },
       {
         "name": "POLIO0",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 29
+        "_row_num": 35
       },
       {
         "name": "POLIO0DATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 36
       },
       {
         "name": "MUAC",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 37
       },
       {
         "name": "BCGREACT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 38
       },
       {
         "name": "HOSP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 39
       },
       {
         "name": "HOSPDATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 40
       },
       {
         "name": "NOMECRICON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 36
+        "comment": "fu",
+        "_row_num": 42
       },
       {
         "name": "SEXCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 37
+        "_row_num": 43
       },
       {
         "name": "DOBCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 38
+        "_row_num": 44
+      },
+      {
+        "name": "POBCON",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 45
       }
     ]
   },
@@ -2186,11 +2223,22 @@
         "isSessionVariable": false,
         "elementKey": "MOR"
       },
-      "VISNO": {
+      "GRAV": {
         "type": "integer",
         "_defn": [
           {
             "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GRAV"
+      },
+      "VISNO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -2201,7 +2249,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -2217,7 +2265,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -2228,12 +2276,39 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "NOME"
+      },
+      "REGDIACRI": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDIACRI"
+      },
+      "NUMESTCRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMESTCRI"
       },
       "DATASEG": {
         "prompt_type_name": "adate",
@@ -2248,7 +2323,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -2263,7 +2338,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -2279,7 +2354,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -2299,7 +2374,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -2315,7 +2390,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -2335,7 +2410,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -2351,7 +2426,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -2367,7 +2442,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -2383,7 +2458,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -2403,7 +2478,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -2419,12 +2494,52 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "VACINASOU"
+      },
+      "OUTROVAC": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OUTROVAC_items"
+        },
+        "valuesList": "Vaccines",
+        "_defn": [
+          {
+            "_row_num": 80,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OUTROVAC"
+      },
+      "OUTRODATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OUTRODATA"
       },
       "VACINASIMG": {
         "type": "object",
@@ -2448,7 +2563,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -2459,7 +2574,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 29,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -2475,7 +2590,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -2490,7 +2605,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -2506,7 +2621,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -2522,7 +2637,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -2542,7 +2657,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -2558,11 +2673,12 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
+        "comment": "fu",
         "elementKey": "NOMECRICON"
       },
       "SEXCON": {
@@ -2574,7 +2690,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -2590,12 +2706,23 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "DOBCON"
+      },
+      "POBCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POBCON"
       },
       "POLIO": {
         "_defn": [
@@ -2620,34 +2747,6 @@
         "elementType": "string",
         "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
         "elementKey": "POLIODATA"
-      },
-      "OUTROVAC": {
-        "_defn": [
-          {
-            "_row_num": 80,
-            "section_name": "survey"
-          }
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OUTROVAC_items"
-        },
-        "valuesList": "Vaccines",
-        "elementKey": "OUTROVAC"
-      },
-      "OUTRODATA": {
-        "_defn": [
-          {
-            "_row_num": 81,
-            "section_name": "survey"
-          }
-        ],
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "elementKey": "OUTRODATA"
       }
     },
     "section_names": [
@@ -2699,8 +2798,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Region: {{data.REGNOME}}",
-                  "default": "Região: {{data.REGNOME}}"
+                  "english": "Region: <b>{{data.REGNOME}}</b>",
+                  "default": "Região: <b>{{data.REGNOME}}</b>"
                 }
               }
             },
@@ -2716,8 +2815,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Health centre area: {{data.HCNOME}}",
-                  "default": "Área sanitárias: {{data.HCNOME}}"
+                  "english": "Health centre area: <b>{{data.HCAREANOME}}</b>",
+                  "default": "Área sanitárias: <b>{{data.HCAREANOME}}</b>"
                 }
               }
             },
@@ -2733,8 +2832,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Subarea: {{data.SUBAREANOME}}",
-                  "default": "Subarea: {{data.SUBAREANOME}}"
+                  "english": "Subarea: <b>{{data.SUBAREANOME}}<b>",
+                  "default": "Subarea: <b>{{data.SUBAREANOME}}</b>"
                 }
               }
             },
@@ -2750,8 +2849,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Village: {{data.TABNOME}}",
-                  "default": "Tabanca: {{data.TABNOME}}"
+                  "english": "Village: <b>{{data.TABNOME}}</b>",
+                  "default": "Tabanca: <b>{{data.TABNOME}}</b>"
                 }
               }
             },
@@ -2767,8 +2866,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Household: {{data.MOR}}",
-                  "default": "Morança: {{data.MOR}}"
+                  "english": "Household: <b>{{data.MOR}}</b>",
+                  "default": "Morança: <b>{{data.MOR}}</b>"
                 }
               }
             },
@@ -2785,8 +2884,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Name of mother: {{data.NOME}}",
-                  "default": "Nome da mãe: {{data.NOME}}"
+                  "english": "Name of mother: <b>{{data.NOME}}</b>",
+                  "default": "Nome da mãe: <b>{{data.NOME}}</b>"
                 }
               }
             },
@@ -4292,11 +4391,25 @@
         "elementSet": "data",
         "elementPath": "MOR"
       },
-      "VISNO": {
+      "GRAV": {
         "type": "integer",
         "_defn": [
           {
             "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GRAV",
+        "elementName": "GRAV",
+        "elementSet": "data",
+        "elementPath": "GRAV"
+      },
+      "VISNO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -4310,7 +4423,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -4329,7 +4442,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -4343,7 +4456,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -4352,6 +4465,39 @@
         "elementName": "NOME",
         "elementSet": "data",
         "elementPath": "NOME"
+      },
+      "REGDIACRI": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGDIACRI",
+        "elementName": "REGDIACRI",
+        "elementSet": "data",
+        "elementPath": "REGDIACRI"
+      },
+      "NUMESTCRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "NUMESTCRI",
+        "elementName": "NUMESTCRI",
+        "elementSet": "data",
+        "elementPath": "NUMESTCRI"
       },
       "DATASEG": {
         "prompt_type_name": "adate",
@@ -4366,7 +4512,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -4384,7 +4530,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -4403,7 +4549,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -4426,7 +4572,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -4445,7 +4591,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -4468,7 +4614,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -4487,7 +4633,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -4506,7 +4652,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -4525,7 +4671,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -4548,7 +4694,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -4567,7 +4713,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -4576,6 +4722,59 @@
         "elementName": "VACINASOU",
         "elementSet": "data",
         "elementPath": "VACINASOU"
+      },
+      "OUTROVAC": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OUTROVAC_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OUTROVAC.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "Vaccines",
+        "_defn": [
+          {
+            "_row_num": 80,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OUTROVAC",
+        "elementName": "OUTROVAC",
+        "elementSet": "data",
+        "elementPath": "OUTROVAC",
+        "listChildElementKeys": [
+          "OUTROVAC_items"
+        ]
+      },
+      "OUTRODATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OUTRODATA",
+        "elementName": "OUTRODATA",
+        "elementSet": "data",
+        "elementPath": "OUTRODATA"
       },
       "VACINASIMG": {
         "type": "object",
@@ -4605,7 +4804,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -4624,7 +4823,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 29,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -4643,7 +4842,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -4661,7 +4860,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -4680,7 +4879,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -4699,7 +4898,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -4722,7 +4921,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -4741,11 +4940,12 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
+        "comment": "fu",
         "elementKey": "NOMECRICON",
         "elementName": "NOMECRICON",
         "elementSet": "data",
@@ -4760,7 +4960,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -4779,7 +4979,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -4788,6 +4988,20 @@
         "elementName": "DOBCON",
         "elementSet": "data",
         "elementPath": "DOBCON"
+      },
+      "POBCON": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POBCON",
+        "elementName": "POBCON",
+        "elementSet": "data",
+        "elementPath": "POBCON"
       },
       "POLIO": {
         "_defn": [
@@ -4819,46 +5033,13 @@
         "elementSet": "data",
         "elementPath": "POLIODATA"
       },
-      "OUTROVAC": {
-        "_defn": [
-          {
-            "_row_num": 80,
-            "section_name": "survey"
-          }
-        ],
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OUTROVAC_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "OUTROVAC.items",
-          "notUnitOfRetention": true
-        },
-        "valuesList": "Vaccines",
-        "elementKey": "OUTROVAC",
-        "elementName": "OUTROVAC",
-        "elementSet": "data",
-        "elementPath": "OUTROVAC",
-        "listChildElementKeys": [
-          "OUTROVAC_items"
-        ]
-      },
-      "OUTRODATA": {
-        "_defn": [
-          {
-            "_row_num": 81,
-            "section_name": "survey"
-          }
-        ],
-        "prompt_type_name": "adate",
+      "OUTROVAC_items": {
         "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "elementKey": "OUTRODATA",
-        "elementName": "OUTRODATA",
+        "elementKey": "OUTROVAC_items",
+        "elementName": "items",
         "elementSet": "data",
-        "elementPath": "OUTRODATA"
+        "elementPath": "OUTROVAC.items",
+        "notUnitOfRetention": true
       },
       "VACINASIMG_uriFragment": {
         "type": "string",
@@ -4876,14 +5057,6 @@
         "elementName": "contentType",
         "elementSet": "data",
         "elementPath": "VACINASIMG.contentType"
-      },
-      "OUTROVAC_items": {
-        "type": "string",
-        "elementKey": "OUTROVAC_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "OUTROVAC.items",
-        "notUnitOfRetention": true
       },
       "_id": {
         "type": "string",

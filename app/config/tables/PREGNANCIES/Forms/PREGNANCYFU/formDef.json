@@ -87,8 +87,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Region: {{data.REGNOME}}",
-              "default": "Região: {{data.REGNOME}}"
+              "english": "Region: <b>{{data.REGNOME}}</b>",
+              "default": "Região: <b>{{data.REGNOME}}</b>"
             }
           }
         },
@@ -99,8 +99,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Health centre area: {{data.HCNOME}}",
-              "default": "Área sanitárias: {{data.HCNOME}}"
+              "english": "Health centre area: <b>{{data.HCAREANOME}}</b>",
+              "default": "Área sanitárias: <b>{{data.HCAREANOME}}</b>"
             }
           }
         },
@@ -111,8 +111,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Subarea: {{data.SUBAREANOME}}",
-              "default": "Subarea: {{data.SUBAREANOME}}"
+              "english": "Subarea: <b>{{data.SUBAREANOME}}<b>",
+              "default": "Subarea: <b>{{data.SUBAREANOME}}</b>"
             }
           }
         },
@@ -123,8 +123,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Village: {{data.TABNOME}}",
-              "default": "Tabanca: {{data.TABNOME}}"
+              "english": "Village: <b>{{data.TABNOME}}</b>",
+              "default": "Tabanca: <b>{{data.TABNOME}}</b>"
             }
           }
         },
@@ -275,7 +275,7 @@
       },
       {
         "clause": "if",
-        "condition": "data(\"ESTADOMUL\") == \"1\" && data(\"CICATRIZMAE\") == null",
+        "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CICATRIZMAE\") == null || data(\"cicatrizmae\") == null)",
         "_row_num": 24
       },
       {
@@ -665,7 +665,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "NUMEST = ?",
         "selectionArgs": "[data('NUMEST')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\")}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\"), REGDIACRI: data(\"DATASEG\"), VISNO: \"1\", NUMESTCRI: data(\"NUMEST\") + \"01\"}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -966,89 +966,107 @@
         "name": "REG",
         "type": "integer",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 2
       },
       {
         "name": "REGNOME",
         "type": "text",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 3
       },
       {
         "name": "HCAREA",
         "type": "integer",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 4
       },
       {
         "name": "HCAREANOME",
         "type": "text",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 5
       },
       {
         "name": "SUBAREA",
         "type": "integer",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 6
       },
       {
         "name": "SUBAREANOME",
         "type": "text",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 7
       },
       {
         "name": "TAB",
         "type": "integer",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 8
       },
       {
         "name": "TABNOME",
         "type": "text",
         "isSessionVariable": false,
+        "comment": "From tables",
         "_row_num": 9
       },
       {
-        "name": "MOR",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 10
-      },
-      {
-        "name": "VISNO",
+        "name": "GRAV",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 11
+        "comment": "From tables",
+        "_row_num": 10
       },
       {
         "name": "NUMEST",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 13
+        "comment": "From tables",
+        "_row_num": 11
       },
       {
-        "name": "REGDIA",
-        "type": "adate",
+        "name": "VISNO",
+        "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 14
+        "comment": "From tables",
+        "_row_num": 12
       },
       {
-        "name": "NOME",
+        "name": "MOR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 15
+        "comment": "Inclusion",
+        "_row_num": 14
       },
       {
         "name": "CONSENT",
         "type": "select_one",
         "isSessionVariable": false,
+        "_row_num": 15
+      },
+      {
+        "name": "REGDIA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 16
+      },
+      {
+        "name": "CHWREG",
+        "type": "select_one",
+        "isSessionVariable": false,
         "_row_num": 17
       },
       {
-        "name": "CICATRIZMAE",
-        "type": "select_one",
+        "name": "NOME",
+        "type": "text",
         "isSessionVariable": false,
         "_row_num": 18
       },
@@ -1056,55 +1074,86 @@
         "name": "ESTADOMUL",
         "type": "select_one",
         "isSessionVariable": false,
+        "_row_num": 19
+      },
+      {
+        "name": "IDADE",
+        "type": "integer",
+        "isSessionVariable": false,
         "_row_num": 20
       },
       {
-        "name": "DATASEG",
-        "type": "adate",
+        "name": "ESCO",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 21
       },
       {
-        "name": "ESTADOGRAV",
-        "type": "select_one",
+        "name": "PARITY",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 22
       },
       {
-        "name": "NVNMAB",
+        "name": "CICATRIZMAE",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 23
       },
       {
-        "name": "LOCPAR",
-        "type": "select_one",
+        "name": "DATASEG",
+        "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 24
-      },
-      {
-        "name": "PARTAB",
-        "type": "select_one",
-        "isSessionVariable": false,
+        "comment": "FU",
         "_row_num": 25
       },
       {
-        "name": "PARHCHOSP",
+        "name": "ESTADOGRAV",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 26
       },
       {
-        "name": "GEM",
+        "name": "NVNMAB",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 27
       },
       {
+        "name": "LOCPAR",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 28
+      },
+      {
+        "name": "PARTAB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 29
+      },
+      {
+        "name": "PARHCHOSP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 30
+      },
+      {
+        "name": "GEM",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 31
+      },
+      {
         "name": "GEMNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 28
+        "_row_num": 32
+      },
+      {
+        "name": "cicatrizmae",
+        "type": "integer",
+        "isSessionVariable": true,
+        "_row_num": 33
       }
     ]
   },
@@ -1517,7 +1566,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "NUMEST = ?",
         "selectionArgs": "[data('NUMEST')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\")}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\"), REGDIACRI: data(\"DATASEG\"), VISNO: \"1\", NUMESTCRI: data(\"NUMEST\") + \"01\"}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -1539,6 +1588,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "REG"
       },
       "REGNOME": {
@@ -1550,6 +1600,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "REGNOME"
       },
       "HCAREA": {
@@ -1561,6 +1612,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "HCAREA"
       },
       "HCAREANOME": {
@@ -1572,6 +1624,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "HCAREANOME"
       },
       "SUBAREA": {
@@ -1583,6 +1636,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "SUBAREA"
       },
       "SUBAREANOME": {
@@ -1594,6 +1648,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "SUBAREANOME"
       },
       "TAB": {
@@ -1605,6 +1660,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "TAB"
       },
       "TABNOME": {
@@ -1616,7 +1672,44 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "TABNOME"
+      },
+      "GRAV": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "From tables",
+        "elementKey": "GRAV"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "From tables",
+        "elementKey": "NUMEST"
+      },
+      "VISNO": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "From tables",
+        "elementKey": "VISNO"
       },
       "MOR": {
         "type": "string",
@@ -1626,34 +1719,24 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
+        "comment": "Inclusion",
         "elementKey": "MOR"
       },
-      "VISNO": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VISNO"
-      },
-      "NUMEST": {
+      "CONSENT": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NUMEST"
+        "elementKey": "CONSENT"
       },
       "REGDIA": {
         "prompt_type_name": "adate",
@@ -1664,12 +1747,23 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "REGDIA"
+      },
+      "CHWREG": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHWREG"
       },
       "NOME": {
         "type": "string",
@@ -1679,39 +1773,12 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "NOME"
-      },
-      "CONSENT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 17,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "CONSENT"
-      },
-      "CICATRIZMAE": {
-        "type": "string",
-        "valuesList": "YesNoDontknow",
-        "_defn": [
-          {
-            "_row_num": 27,
-            "section_name": "survey"
-          },
-          {
             "_row_num": 18,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CICATRIZMAE"
+        "elementKey": "NOME"
       },
       "ESTADOMUL": {
         "type": "string",
@@ -1722,18 +1789,67 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "ESTADOMUL"
       },
+      "IDADE": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDADE"
+      },
+      "ESCO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESCO"
+      },
+      "PARITY": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARITY"
+      },
+      "CICATRIZMAE": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CICATRIZMAE"
+      },
       "DATASEG": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "comment": "FU",
         "_row_num": 2,
         "__rowNum__": 1,
         "_defn": [
@@ -1742,7 +1858,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -1758,7 +1874,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -1774,7 +1890,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -1790,7 +1906,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -1806,7 +1922,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -1822,7 +1938,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -1838,7 +1954,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -1853,12 +1969,23 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "GEMNUM"
+      },
+      "cicatrizmae": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "cicatrizmae"
       },
       "DATASAI": {
         "_defn": [
@@ -1923,8 +2050,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Region: {{data.REGNOME}}",
-                  "default": "Região: {{data.REGNOME}}"
+                  "english": "Region: <b>{{data.REGNOME}}</b>",
+                  "default": "Região: <b>{{data.REGNOME}}</b>"
                 }
               }
             },
@@ -1940,8 +2067,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Health centre area: {{data.HCNOME}}",
-                  "default": "Área sanitárias: {{data.HCNOME}}"
+                  "english": "Health centre area: <b>{{data.HCAREANOME}}</b>",
+                  "default": "Área sanitárias: <b>{{data.HCAREANOME}}</b>"
                 }
               }
             },
@@ -1957,8 +2084,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Subarea: {{data.SUBAREANOME}}",
-                  "default": "Subarea: {{data.SUBAREANOME}}"
+                  "english": "Subarea: <b>{{data.SUBAREANOME}}<b>",
+                  "default": "Subarea: <b>{{data.SUBAREANOME}}</b>"
                 }
               }
             },
@@ -1974,8 +2101,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Village: {{data.TABNOME}}",
-                  "default": "Tabanca: {{data.TABNOME}}"
+                  "english": "Village: <b>{{data.TABNOME}}</b>",
+                  "default": "Tabanca: <b>{{data.TABNOME}}</b>"
                 }
               }
             },
@@ -2565,7 +2692,7 @@
           },
           {
             "clause": "if",
-            "condition": "data(\"ESTADOMUL\") == \"1\" && data(\"CICATRIZMAE\") == null",
+            "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CICATRIZMAE\") == null || data(\"cicatrizmae\") == null)",
             "_row_num": 24,
             "__rowNum__": 23,
             "_token_type": "goto_label",
@@ -2993,6 +3120,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "REG",
         "elementName": "REG",
         "elementSet": "data",
@@ -3007,6 +3135,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "REGNOME",
         "elementName": "REGNOME",
         "elementSet": "data",
@@ -3021,6 +3150,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "HCAREA",
         "elementName": "HCAREA",
         "elementSet": "data",
@@ -3035,6 +3165,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "HCAREANOME",
         "elementName": "HCAREANOME",
         "elementSet": "data",
@@ -3049,6 +3180,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "SUBAREA",
         "elementName": "SUBAREA",
         "elementSet": "data",
@@ -3063,6 +3195,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "SUBAREANOME",
         "elementName": "SUBAREANOME",
         "elementSet": "data",
@@ -3077,6 +3210,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "TAB",
         "elementName": "TAB",
         "elementSet": "data",
@@ -3091,10 +3225,56 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From tables",
         "elementKey": "TABNOME",
         "elementName": "TABNOME",
         "elementSet": "data",
         "elementPath": "TABNOME"
+      },
+      "GRAV": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "From tables",
+        "elementKey": "GRAV",
+        "elementName": "GRAV",
+        "elementSet": "data",
+        "elementPath": "GRAV"
+      },
+      "NUMEST": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "From tables",
+        "elementKey": "NUMEST",
+        "elementName": "NUMEST",
+        "elementSet": "data",
+        "elementPath": "NUMEST"
+      },
+      "VISNO": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "comment": "From tables",
+        "elementKey": "VISNO",
+        "elementName": "VISNO",
+        "elementSet": "data",
+        "elementPath": "VISNO"
       },
       "MOR": {
         "type": "string",
@@ -3104,43 +3284,30 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
+        "comment": "Inclusion",
         "elementKey": "MOR",
         "elementName": "MOR",
         "elementSet": "data",
         "elementPath": "MOR"
       },
-      "VISNO": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "VISNO",
-        "elementName": "VISNO",
-        "elementSet": "data",
-        "elementPath": "VISNO"
-      },
-      "NUMEST": {
+      "CONSENT": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NUMEST",
-        "elementName": "NUMEST",
+        "elementKey": "CONSENT",
+        "elementName": "CONSENT",
         "elementSet": "data",
-        "elementPath": "NUMEST"
+        "elementPath": "CONSENT"
       },
       "REGDIA": {
         "prompt_type_name": "adate",
@@ -3151,7 +3318,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -3161,25 +3328,7 @@
         "elementSet": "data",
         "elementPath": "REGDIA"
       },
-      "NOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 15,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "NOME",
-        "elementName": "NOME",
-        "elementSet": "data",
-        "elementPath": "NOME"
-      },
-      "CONSENT": {
+      "CHWREG": {
         "type": "string",
         "_defn": [
           {
@@ -3188,17 +3337,16 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CONSENT",
-        "elementName": "CONSENT",
+        "elementKey": "CHWREG",
+        "elementName": "CHWREG",
         "elementSet": "data",
-        "elementPath": "CONSENT"
+        "elementPath": "CHWREG"
       },
-      "CICATRIZMAE": {
+      "NOME": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 11,
             "section_name": "survey"
           },
           {
@@ -3207,10 +3355,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CICATRIZMAE",
-        "elementName": "CICATRIZMAE",
+        "elementKey": "NOME",
+        "elementName": "NOME",
         "elementSet": "data",
-        "elementPath": "CICATRIZMAE"
+        "elementPath": "NOME"
       },
       "ESTADOMUL": {
         "type": "string",
@@ -3221,7 +3369,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -3231,11 +3379,72 @@
         "elementSet": "data",
         "elementPath": "ESTADOMUL"
       },
+      "IDADE": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IDADE",
+        "elementName": "IDADE",
+        "elementSet": "data",
+        "elementPath": "IDADE"
+      },
+      "ESCO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESCO",
+        "elementName": "ESCO",
+        "elementSet": "data",
+        "elementPath": "ESCO"
+      },
+      "PARITY": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARITY",
+        "elementName": "PARITY",
+        "elementSet": "data",
+        "elementPath": "PARITY"
+      },
+      "CICATRIZMAE": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 27,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CICATRIZMAE",
+        "elementName": "CICATRIZMAE",
+        "elementSet": "data",
+        "elementPath": "CICATRIZMAE"
+      },
       "DATASEG": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "comment": "FU",
         "_row_num": 2,
         "__rowNum__": 1,
         "_defn": [
@@ -3244,7 +3453,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -3263,7 +3472,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -3282,7 +3491,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -3301,7 +3510,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -3320,7 +3529,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -3339,7 +3548,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -3358,7 +3567,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -3376,7 +3585,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -3385,6 +3594,20 @@
         "elementName": "GEMNUM",
         "elementSet": "data",
         "elementPath": "GEMNUM"
+      },
+      "cicatrizmae": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "cicatrizmae",
+        "elementName": "cicatrizmae",
+        "elementSet": "data",
+        "elementPath": "cicatrizmae"
       },
       "DATASAI": {
         "_defn": [

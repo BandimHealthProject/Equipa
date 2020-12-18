@@ -13,87 +13,61 @@
         <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
         
         <script type="text/javascript" src="js/util.js"></script>
-        <script type="text/javascript" src="js/ist.js"></script>
+        <script type="text/javascript" src="js/list.js"></script>
         <style>
         ul {
             list-style:none;
         }
-        button.participantgreen {
-            background-color: darkseagreen;
-            text-align:left;
-            font-size: x-large;
-            padding-left: 10px;
-            margin:10px;
-            height:auto;
-            width:100%;
-            color: darkslategray; 
+        .form-group {
+            margin:30px 0;
         }
-        button.participantyellow {
-            background-color: gold;
-            text-align:left;
-            font-size: x-large;
-            padding-left: 10px;
-            margin:10px;
-            height:auto;
-            width:100%;
-            color: darkslategray; 
-        }button.participantred {
-            background-color: lightcoral;
-            text-align:left;
-            font-size: x-large;
-            padding-left: 10px;
-            margin:10px;
-            height:auto;
-            width:100%;
-            color: darkslategray; 
-        }
-        button.getResults {
+        .NewPreg {
             background-color: mediumpurple;
+            color: white;
+            font-size: 25px;
+            border-radius: 4px;
+            display: inline-block;
+            border: none;
+            margin: 0;
+        }
+        .pregnancy {
+            background-color: darkcyan;
             text-align:left;
             font-size: x-large;
-            padding-left: 10px;
+            padding-left: 90px;
             margin:10px;
             height:auto;
             width:100%;
-            color: darkslategray; 
-        }
-        button.called{
-            opacity:.5;
-            background-image: url(./img/checkMarkBlack.png);
+            background-image: url(./img/pregnant.png);
+            background-position: left;
             background-repeat: no-repeat;
-            background-position: right;
             background-size: contain;
+            background-position-x: 5px;
+            color: white; 
         }
-        button.calledgetResults {
+        .visited.pregnancy{
             opacity:.5;
-            background-image: url(./img/checkMarkBlack.png);
+            background-image: url(./img/pregnant.png), url(./img/checkMarkBlack.png);
             background-repeat: no-repeat;
-            background-position: right;
+            background-position-x: 5px, 99%;
             background-size: contain;
-            background-color: mediumpurple;
-            text-align:left;
-            font-size: x-large;
-            padding-left: 10px;
-            margin:10px;
-            height:auto;
-            width:100%;
-            color: darkslategray; 
         }
         </style>
     </head>
 
    
-    <body>
+    <body onload="display();">
         <div id="main" class="container" style="height: 100vh;">
-            <div class="form-group">
-                <ul id="li" style="padding:20px;">            
-                </ul>
+            <div id="wrapper">
+                <div class="form-group">
+                    <button id="newPreg" class="NewPreg">Nova gravidez</button>            
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <ul id="li" style="padding:20px;">            
+                    </ul>
+                </div>
             </div>
         </div>
-        <script>
-        $(function() {
-            display();
-        });
-        </script>
     </body>
 </html>
