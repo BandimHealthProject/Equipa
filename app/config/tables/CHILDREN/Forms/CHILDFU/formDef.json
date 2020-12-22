@@ -903,7 +903,7 @@
             }
           }
         },
-        "constraint": "data(\"BCGREACT\") != null || data(\"BCG\") != 1",
+        "constraint": "data(\"BCGREACT\") != null || data(\"BCG\") != 1 || data('ESTADOCRI') != 1",
         "_row_num": 96
       },
       {
@@ -3630,7 +3630,7 @@
                 }
               }
             },
-            "constraint": "data(\"BCGREACT\") != null || data(\"BCG\") != 1",
+            "constraint": "data(\"BCGREACT\") != null || data(\"BCG\") != 1 || data('ESTADOCRI') != 1",
             "_row_num": 96,
             "__rowNum__": 95,
             "_token_type": "prompt",
