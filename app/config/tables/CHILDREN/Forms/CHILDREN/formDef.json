@@ -51,6 +51,11 @@
           }
         },
         "_row_num": 7
+      },
+      {
+        "setting_name": "instance_name",
+        "value": "NOMECRI",
+        "_row_num": 8
       }
     ],
     "survey": [
@@ -1279,13 +1284,13 @@
         "_row_num": 34
       },
       {
-        "name": "POLIO0",
+        "name": "POLIO",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 35
       },
       {
-        "name": "POLIO0DATA",
+        "name": "POLIODATA",
         "type": "adate",
         "isSessionVariable": false,
         "_row_num": 36
@@ -1408,6 +1413,11 @@
           }
         },
         "_row_num": 7
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "NOMECRI",
+        "_row_num": 8
       },
       "_locales": {
         "setting_name": "_locales",
@@ -2196,18 +2206,23 @@
         "isSessionVariable": false,
         "elementKey": "VACINASIMG"
       },
-      "POLIO0": {
+      "POLIO": {
         "type": "string",
+        "valuesList": "YesNo",
         "_defn": [
+          {
+            "_row_num": 41,
+            "section_name": "survey"
+          },
           {
             "_row_num": 35,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "POLIO0"
+        "elementKey": "POLIO"
       },
-      "POLIO0DATA": {
+      "POLIODATA": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -2216,12 +2231,16 @@
         "__rowNum__": 1,
         "_defn": [
           {
+            "_row_num": 43,
+            "section_name": "survey"
+          },
+          {
             "_row_num": 36,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "POLIO0DATA"
+        "elementKey": "POLIODATA"
       },
       "MUAC": {
         "type": "integer",
@@ -2334,30 +2353,6 @@
         ],
         "isSessionVariable": false,
         "elementKey": "POBCON"
-      },
-      "POLIO": {
-        "_defn": [
-          {
-            "_row_num": 41,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "valuesList": "YesNo",
-        "elementKey": "POLIO"
-      },
-      "POLIODATA": {
-        "_defn": [
-          {
-            "_row_num": 43,
-            "section_name": "survey"
-          }
-        ],
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "elementKey": "POLIODATA"
       }
     },
     "section_names": [
@@ -4237,21 +4232,26 @@
         ],
         "notUnitOfRetention": true
       },
-      "POLIO0": {
+      "POLIO": {
         "type": "string",
+        "valuesList": "YesNo",
         "_defn": [
+          {
+            "_row_num": 41,
+            "section_name": "survey"
+          },
           {
             "_row_num": 35,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "POLIO0",
-        "elementName": "POLIO0",
+        "elementKey": "POLIO",
+        "elementName": "POLIO",
         "elementSet": "data",
-        "elementPath": "POLIO0"
+        "elementPath": "POLIO"
       },
-      "POLIO0DATA": {
+      "POLIODATA": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -4260,15 +4260,19 @@
         "__rowNum__": 1,
         "_defn": [
           {
+            "_row_num": 43,
+            "section_name": "survey"
+          },
+          {
             "_row_num": 36,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "POLIO0DATA",
-        "elementName": "POLIO0DATA",
+        "elementKey": "POLIODATA",
+        "elementName": "POLIODATA",
         "elementSet": "data",
-        "elementPath": "POLIO0DATA"
+        "elementPath": "POLIODATA"
       },
       "MUAC": {
         "type": "integer",
@@ -4405,36 +4409,6 @@
         "elementName": "POBCON",
         "elementSet": "data",
         "elementPath": "POBCON"
-      },
-      "POLIO": {
-        "_defn": [
-          {
-            "_row_num": 41,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "valuesList": "YesNo",
-        "elementKey": "POLIO",
-        "elementName": "POLIO",
-        "elementSet": "data",
-        "elementPath": "POLIO"
-      },
-      "POLIODATA": {
-        "_defn": [
-          {
-            "_row_num": 43,
-            "section_name": "survey"
-          }
-        ],
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "elementKey": "POLIODATA",
-        "elementName": "POLIODATA",
-        "elementSet": "data",
-        "elementPath": "POLIODATA"
       },
       "OUTROVAC_items": {
         "type": "string",

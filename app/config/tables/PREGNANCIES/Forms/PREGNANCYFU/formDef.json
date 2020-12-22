@@ -51,6 +51,11 @@
           }
         },
         "_row_num": 7
+      },
+      {
+        "setting_name": "instance_name",
+        "value": "NOME",
+        "_row_num": 8
       }
     ],
     "survey": [
@@ -475,7 +480,7 @@
             }
           }
         },
-        "constraint": "data(\"PARTAB\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+        "constraint": "data(\"PARHCHOSP\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
         "_row_num": 47
       },
       {
@@ -1224,6 +1229,11 @@
           }
         },
         "_row_num": 7
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "NOME",
+        "_row_num": 8
       },
       "_locales": {
         "setting_name": "_locales",
@@ -2453,7 +2463,7 @@
                 }
               }
             },
-            "constraint": "data(\"PARTAB\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+            "constraint": "data(\"PARHCHOSP\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
             "_row_num": 47,
             "__rowNum__": 46,
             "_token_type": "prompt",

@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var pregnancies, children, date, reg, regNome, hcarea, hcareaNome, subarea, subareaNome, tab, tabNome;
+var pregnancies, children, personList, date, reg, regNome, hcarea, hcareaNome, subarea, subareaNome, tab, tabNome;
 function display() {
     console.log("Person list loading");
     date = util.getQueryParameter('date');
@@ -97,7 +97,7 @@ function loadChildren() {
             var savepoint = result.getData(row,"_savepoint_type")
 
             var BCG = result.getData(row,"BCG");
-            var BCGDATA = result.getData(row,"CICATRIZMAE");
+            var BCGDATA = result.getData(row,"BCGDATA");
             var DATASEG = result.getData(row,"DATASEG");
             var DOB = result.getData(row,"DOB");
             var GRAV = result.getData(row,"GRAV");
@@ -121,7 +121,7 @@ function loadChildren() {
             children.push(p);
         }
         console.log("Children:", children)
-        populateView();
+        combinedList();
         return;
     }
     var failureFn = function( errorMsg ) {
@@ -133,13 +133,37 @@ function loadChildren() {
     odkData.arbitraryQuery('CHILDREN', sql, null, null, null, successFn, failureFn);
 }
 
+function combinedList() {
+    // make combined list
+    personList = [];
+    pregnancies.forEach(function(preg) {
+        personList.push(preg);
+        var thisPregChild = children.filter(function(obj) {
+            return obj.NUMEST == preg.NUMEST;
+        });
+        thisPregChild.forEach(function(child) {
+            personList.push(child);
+            children.splice(children.findIndex(function(obj) {
+                return obj.NUMEST == preg.NUMEST;
+            }), 1);
+        });
+    });
+
+    // Add any remaining (orphaned) children to the beginning of the list - hence 'unshift'
+    children.forEach(function(child) {  
+        personList.unshift(child);     
+    });
+    console.log('personList', personList);
+
+    populateView();
+}
 
 function populateView() {
     var today = new Date(date);
     var todayAdate = "D:" + today.getDate() + ",M:" + (Number(today.getMonth()) + 1) + ",Y:" + today.getFullYear();
     console.log("today", today);
     console.log("todayAdate", todayAdate);
-    
+
     // button for new pregnancy
     var newPreg = $('#newPreg')
     newPreg.on("click", function() {
@@ -149,7 +173,7 @@ function populateView() {
     var ul = $('#li');
 
     // list
-    $.each(pregnancies, function() {
+    $.each(personList, function() {
         var that = this;  
 
         // Check if visited today
@@ -162,36 +186,63 @@ function populateView() {
         var displayText = setDisplayText(that);
         
         // list
-        if (this.ESTADOMUL != null) {
-            ul.append($("<li />").append($("<button />").attr('id',this.NUMEST).attr('class', visited + ' btn ' + this.type).append(displayText)));
-        }
+        // preg criterias
+        if (this.type == "pregnancy") {
+            ul.append($("<li />").append($("<button />").attr('id',this.NUMEST).attr('class', visited + " " + this.type).append(displayText)));
+         
+            // Buttons
+            var btn = ul.find('#' + this.NUMEST);
+            btn.on("click", function() {
+                openForm(that);
+            }) 
+        } 
+        // child criteria
+        if (this.type == "child") {
+            ul.append($("<li />").append($("<button />").attr('id',this.NUMESTCRI).attr('class', visited + " " + this.type + " sex" + this.SEX).append(displayText)));
         
-        // Buttons
-        var btn = ul.find('#' + this.NUMEST);
-        btn.on("click", function() {
-            openForm(that);
-        })        
+            // Buttons
+            var btn = ul.find('#' + this.NUMESTCRI);
+            btn.on("click", function() {
+                openForm(that);
+            }) 
+        }       
     });
 }
 
-function setDisplayText(woman) {
+function setDisplayText(person) {
+    var displayText, regdia;
     
-    var regdia = formatDate(woman.REGDIA);
+    if (person.type == "pregnancy") {
+        regdia = formatDate(person.REGDIA);
+        var obs = "";
+        if (person.CICATRIZMAE == null & person.CONSENT == null) {
+            obs = "Cicatriz & consentimento"
+        } else if (person.CICATRIZMAE == null) {
+            obs = "Cicatriz"
+        } else if (person.CONSENT == null) {
+            obs = "Consentimento"
+        }
 
-    var obs = "";
-    if (woman.CICATRIZMAE == null & woman.CONSENT == null) {
-        obs = "Cicatriz & consentimento"
-    } else if (woman.CICATRIZMAE == null) {
-        obs = "Cicatriz"
-    } else if (woman.CONSENT == null) {
-        obs = "Consentimento"
+        displayText = "Morança: " + person.MOR + "<br />" +
+            "Nome: " + person.NOME + "<br />" + 
+            "Idade: " + person.IDADE + "<br />" +
+            "Inclusão: " + regdia+ "<br />" +
+            "OBS: " + obs;
+    } else {
+        regdia = formatDate(person.REGDIA);
+        var dob = formatDate(person.DOB);
+        var sex = "Não sabe";
+        if (person.SEX == 1) {
+            sex = "Masculino";
+        } else if (person.SEX == 2) {
+            sex = "Fêmea";
+        }
+
+        displayText = "Nome: " + person.NOMECRI + "<br />" + 
+            "Sexo: " + sex + "<br />" + 
+            "Dia de nascimento: " + dob + "<br />" +
+            "Inclusão: " + regdia 
     }
-
-    var displayText = "Morança: " + woman.MOR + "<br />" +
-        "Nome: " + woman.NOME + "<br />" + 
-        "Idade: " + woman.IDADE + "<br />" +
-        "Inclusão: " + regdia+ "<br />" +
-        "OBS: " + obs;
     return displayText
 }
 
@@ -340,7 +391,7 @@ function getDefaults(person) {
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
         defaults['VISNO'] = person.VISNO + 1;
-    } else { // child defaults: missing a lot 
+    } else { // child defaults
         defaults['BCG'] = person.BCG;
         defaults['BCGDATA'] = person.BCGDATA;
         defaults['DATASEG'] = toAdate(date);

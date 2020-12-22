@@ -24,8 +24,6 @@ OUTROVAC,OUTROVAC,array,"[""OUTROVAC_items""]"
 OUTROVAC_items,items,string,[]
 POBCON,POBCON,string,[]
 POLIO,POLIO,string,[]
-POLIO0,POLIO0,string,[]
-POLIO0DATA,POLIO0DATA,string,[]
 POLIODATA,POLIODATA,string,[]
 REG,REG,integer,[]
 REGDIA,REGDIA,string,[]

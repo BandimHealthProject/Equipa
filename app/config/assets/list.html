@@ -17,6 +17,7 @@
         <style>
         ul {
             list-style:none;
+            border-radius: none;
         }
         .form-group {
             margin:30px 0;
@@ -27,6 +28,7 @@
             font-size: 25px;
             border-radius: 4px;
             display: inline-block;
+            width: 98%;
             border: none;
             margin: 0;
         }
@@ -34,23 +36,58 @@
             background-color: darkcyan;
             text-align:left;
             font-size: x-large;
-            padding-left: 90px;
+            border-radius: 4px;
+            padding-left: 75px;
             margin:10px;
             height:auto;
             width:100%;
             background-image: url(./img/pregnant.png);
             background-position: left;
             background-repeat: no-repeat;
-            background-size: contain;
+            background-size: 10%;
             background-position-x: 5px;
             color: white; 
+            border: none;
         }
         .visited.pregnancy{
             opacity:.5;
             background-image: url(./img/pregnant.png), url(./img/checkMarkBlack.png);
             background-repeat: no-repeat;
-            background-position-x: 5px, 99%;
-            background-size: contain;
+            background-position-x: 1%, 99%;
+            background-size: 10%, 25%;
+        }
+        .child {
+            text-align:left;
+            font-size: x-large;
+            border-radius: 4px;
+            padding-left: 70px;
+            margin:10px;
+            margin-left: 50px;
+            height:auto;
+            width:94%;
+            background-image: url(./img/baby.png);
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size:10%;
+            background-position-x: 1%;
+            color: black; 
+            border: none;
+        }
+        .visited.child {
+            opacity:.5;
+            background-image: url(./img/baby.png), url(./img/checkMarkBlack.png);
+            background-repeat: no-repeat;
+            background-position-x: 1%, 95%;
+            background-size: 10%, 25%;
+        }
+        .child.sex1 {
+            background-color: powderblue;
+        }
+        .child.sex2 {
+            background-color: pink;
+        }
+        .child.sex3 {
+            background-color: lightyellow;
         }
         </style>
     </head>

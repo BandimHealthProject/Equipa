@@ -51,6 +51,11 @@
           }
         },
         "_row_num": 7
+      },
+      {
+        "setting_name": "instance_name",
+        "value": "NOME",
+        "_row_num": 8
       }
     ],
     "survey": [
@@ -1013,6 +1018,11 @@
           }
         },
         "_row_num": 7
+      },
+      "instance_name": {
+        "setting_name": "instance_name",
+        "value": "NOME",
+        "_row_num": 8
       },
       "_locales": {
         "setting_name": "_locales",
