@@ -30,11 +30,11 @@ function doSanityCheck() {
 
 function loadPregnancies() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMAE, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOME, NUMEST, PARITY, REG, REGDIA, SUBAREA, TAB, VISNO" +
+    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, SUBAREA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND SUBAREA = " + subarea + " AND TAB = " + tab + 
-        " GROUP BY NUMEST HAVING MAX(VISNO)" +
-        " ORDER BY MOR, NOME";
+        " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
+        " ORDER BY MOR, NOMEMUL";
     pregnancies = [];
     console.log("Querying database for pregnancies...");
     console.log(sql);
@@ -45,7 +45,7 @@ function loadPregnancies() {
             var savepoint = result.getData(row,"_savepoint_type")
 
             var CHWREG = result.getData(row,"CHWREG");
-            var CICATRIZMAE = result.getData(row,"CICATRIZMAE");
+            var CICATRIZMUL = result.getData(row,"CICATRIZMUL");
             var CONSENT = result.getData(row,"CONSENT");
             var DATASEG = result.getData(row,"DATASEG");
             var ESCO = result.getData(row,"ESCO");
@@ -55,16 +55,17 @@ function loadPregnancies() {
             var HCAREA = result.getData(row,"HCAREA");
             var IDADE = result.getData(row,"IDADE");
             var MOR = result.getData(row,"MOR");
-            var NOME = result.getData(row,"NOME");
-            var NUMEST = result.getData(row,"NUMEST");
+            var NOMEMUL = result.getData(row,"NOMEMUL");
+            var IDMUL = result.getData(row,"IDMUL");
             var PARITY = result.getData(row,"PARITY");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var SUBAREA = result.getData(row,"SUBAREA");
             var TAB = result.getData(row,"TAB");
-            var VISNO = result.getData(row,"VISNO");
+            var TELE = result.getData(row,"TELE")
+            var VISNOMUL = result.getData(row,"VISNOMUL");
 
-            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMAE, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOME, NUMEST, PARITY, REG, REGDIA, SUBAREA, TAB, VISNO};
+            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, SUBAREA, TAB, TELE, VISNOMUL};
             pregnancies.push(p);
         }
         console.log("Pregnancies:", pregnancies)
@@ -82,10 +83,10 @@ function loadPregnancies() {
 
 function loadChildren() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOME, NOMECRI, NUMEST, NUMESTCRI, POLIO, POLIODATA, REG, REGDIA, REGDIACRI, SEX, SUBAREA, TAB, VISNO" +
+    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, SUBAREA, TAB, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND SUBAREA = " + subarea + " AND TAB = " + tab + 
-        " GROUP BY NUMESTCRI HAVING MAX(VISNO)" +
+        " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
         " ORDER BY MOR, NOMECRI";
     children = [];
     console.log("Querying database for children...");
@@ -103,21 +104,20 @@ function loadChildren() {
             var GRAV = result.getData(row,"GRAV");
             var HCAREA = result.getData(row,"HCAREA");
             var MOR = result.getData(row,"MOR");
-            var NOME = result.getData(row,"NOME");
+            var NOMEMUL = result.getData(row,"NOMEMUL");
             var NOMECRI = result.getData(row,"NOMECRI");
-            var NUMEST = result.getData(row,"NUMEST");
-            var NUMESTCRI = result.getData(row,"NUMESTCRI");
+            var IDMUL = result.getData(row,"IDMUL");
+            var IDCRI = result.getData(row,"IDCRI");
             var POLIO = result.getData(row,"POLIO");
             var POLIODATA = result.getData(row,"POLIODATA");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
-            var REGDIACRI = result.getData(row,"REGDIACRI");
             var SEX = result.getData(row,"SEX");
             var SUBAREA = result.getData(row,"SUBAREA");
             var TAB = result.getData(row,"TAB");
-            var VISNO = result.getData(row,"VISNO");
+            var VISNOCRI = result.getData(row,"VISNOCRI");
 
-            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOME, NOMECRI, NUMEST, NUMESTCRI, POLIO, POLIODATA, REG, REGDIA, REGDIACRI, SEX, SUBAREA, TAB, VISNO};
+            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, SUBAREA, TAB, VISNOCRI};
             children.push(p);
         }
         console.log("Children:", children)
@@ -139,12 +139,12 @@ function combinedList() {
     pregnancies.forEach(function(preg) {
         personList.push(preg);
         var thisPregChild = children.filter(function(obj) {
-            return obj.NUMEST == preg.NUMEST;
+            return obj.IDMUL == preg.IDMUL;
         });
         thisPregChild.forEach(function(child) {
             personList.push(child);
             children.splice(children.findIndex(function(obj) {
-                return obj.NUMEST == preg.NUMEST;
+                return obj.IDMUL == preg.IDMUL;
             }), 1);
         });
     });
@@ -188,20 +188,20 @@ function populateView() {
         // list
         // preg criterias
         if (this.type == "pregnancy") {
-            ul.append($("<li />").append($("<button />").attr('id',this.NUMEST).attr('class', visited + " " + this.type).append(displayText)));
+            ul.append($("<li />").append($("<button />").attr('id',this.IDMUL).attr('class', visited + " " + this.type).append(displayText)));
          
             // Buttons
-            var btn = ul.find('#' + this.NUMEST);
+            var btn = ul.find('#' + this.IDMUL);
             btn.on("click", function() {
                 openForm(that);
             }) 
         } 
         // child criteria
         if (this.type == "child") {
-            ul.append($("<li />").append($("<button />").attr('id',this.NUMESTCRI).attr('class', visited + " " + this.type + " sex" + this.SEX).append(displayText)));
+            ul.append($("<li />").append($("<button />").attr('id',this.IDCRI).attr('class', visited + " " + this.type + " sex" + this.SEX).append(displayText)));
         
             // Buttons
-            var btn = ul.find('#' + this.NUMESTCRI);
+            var btn = ul.find('#' + this.IDCRI);
             btn.on("click", function() {
                 openForm(that);
             }) 
@@ -215,16 +215,16 @@ function setDisplayText(person) {
     if (person.type == "pregnancy") {
         regdia = formatDate(person.REGDIA);
         var obs = "";
-        if (person.CICATRIZMAE == null & person.CONSENT == null) {
+        if (person.CICATRIZMUL == null & person.CONSENT == null) {
             obs = "Cicatriz & consentimento"
-        } else if (person.CICATRIZMAE == null) {
+        } else if (person.CICATRIZMUL == null) {
             obs = "Cicatriz"
         } else if (person.CONSENT == null) {
             obs = "Consentimento"
         }
 
         displayText = "Morança: " + person.MOR + "<br />" +
-            "Nome: " + person.NOME + "<br />" + 
+            "Nome: " + person.NOMEMUL + "<br />" + 
             "Idade: " + person.IDADE + "<br />" +
             "Inclusão: " + regdia+ "<br />" +
             "OBS: " + obs;
@@ -261,7 +261,7 @@ function openFormNewPreg() {
     defaults['GRAV'] = getGrav();
     defaults['HCAREA'] = hcarea;
     defaults['HCAREANOME'] = hcareaNome;
-    defaults['NUMEST'] = getNumest();
+    defaults['IDMUL'] = getIdMul();
     defaults['REG'] = reg;
     defaults['REGNOME'] = regNome;
     defaults['REGDIA'] = toAdate(date);
@@ -269,7 +269,7 @@ function openFormNewPreg() {
     defaults['SUBAREANOME'] = subareaNome;
     defaults['TAB'] = tab;
     defaults['TABNOME'] = tabNome;
-    defaults['VISNO'] = 1;
+    defaults['VISNOMUL'] = 1;
     
     console.log("Opening form with: ", defaults); 
     odkTables.addRowWithSurvey(
@@ -290,11 +290,11 @@ function getGrav() {
     return grav;
 }
 
-function getNumest() {
-    var numest;
+function getIdMul() {
+    var idmul;
     var grav = getGrav();
-    numest = ((reg*100+hcarea)*100+tab)*10000+grav;
-    return numest;
+    idmul = ((reg*100+hcarea)*100+tab)*10000+grav;
+    return idmul;
 }
 
 function openForm(person) {
@@ -332,15 +332,7 @@ function openForm(person) {
                 defaults);
         }
     } else { // child
-        if (person.REGDIACRI == todayAdate) {
-            console.log("Edit form for child: ", person)
-            odkTables.editRowWithSurvey(
-                null,
-                'CHILDREN',
-                rowId,
-                'CHILDREN',
-                null,);
-        } else if (person.DATASEG == todayAdate) {
+        if (person.DATASEG == todayAdate) {
             console.log("Edit form for child: ", person)
             odkTables.editRowWithSurvey(
                 null,
@@ -370,9 +362,10 @@ function getDefaults(person) {
     var defaults = {};
     if (person.type == "pregnancy") { // pregnancy defaults 
         defaults['CHWREG'] = person.CHWREG;
-        defaults['CICATRIZMAE'] = person.CICATRIZMAE;
-        defaults['cicatrizmae'] = person.CICATRIZMAE;
+        defaults['CICATRIZMUL'] = person.CICATRIZMUL;
+        defaults['cicatrizmul'] = person.CICATRIZMUL;
         defaults['CONSENT'] = person.CONSENT;
+        defaults['consent'] = person.CONSENT;
         defaults['ESCO'] = person.ESCO;
         defaults['DATASEG'] = toAdate(date);
         defaults['GRAV'] = person.GRAV;
@@ -380,8 +373,8 @@ function getDefaults(person) {
         defaults['HCAREANOME'] = hcareaNome;
         defaults['IDADE'] = person.IDADE;
         defaults['MOR'] = person.MOR;
-        defaults['NOME'] = person.NOME;
-        defaults['NUMEST'] = person.NUMEST;
+        defaults['NOMEMUL'] = person.NOMEMUL;
+        defaults['IDMUL'] = person.IDMUL;
         defaults['PARITY'] = person.PARITY;
         defaults['REG'] = reg;
         defaults['REGNOME'] = regNome;
@@ -390,7 +383,8 @@ function getDefaults(person) {
         defaults['SUBAREANOME'] = subareaNome;
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
-        defaults['VISNO'] = person.VISNO + 1;
+        defaults['TELE'] = person.TELE;
+        defaults['VISNOMUL'] = person.VISNOMUL + 1;
     } else { // child defaults
         defaults['BCG'] = person.BCG;
         defaults['BCGDATA'] = person.BCGDATA;
@@ -400,22 +394,21 @@ function getDefaults(person) {
         defaults['HCAREA'] = hcarea;
         defaults['HCAREANOME'] = hcareaNome;
         defaults['MOR'] = person.MOR;
-        defaults['NOME'] = person.NOME;
+        defaults['NOMEMUL'] = person.NOMEMUL;
         defaults['NOMECRI'] = person.NOMECRI;
-        defaults['NUMEST'] = person.NUMEST;
-        defaults['NUMESTCRI'] = person.NUMESTCRI;
+        defaults['IDMUL'] = person.IDMUL;
+        defaults['IDCRI'] = person.IDCRI;
         defaults['POLIO'] = person.POLIO;
         defaults['POLIODATA'] = person.POLIODATA;
         defaults['REG'] = reg;
         defaults['REGNOME'] = regNome;
         defaults['REGDIA'] = person.REGDIA;
-        defaults['REGDIACRI'] = person.REGDIACRI;
         defaults['SEX'] = person.SEX;
         defaults['SUBAREA'] = subarea;
         defaults['SUBAREANOME'] = subareaNome;
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
-        defaults['VISNO'] = person.VISNO + 1;
+        defaults['VISNOCRI'] = person.VISNOCRI + 1;
     }
     return defaults;
 }

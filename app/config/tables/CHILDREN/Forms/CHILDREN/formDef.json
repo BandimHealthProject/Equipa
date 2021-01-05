@@ -68,8 +68,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -153,8 +153,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Name of mother: <b>{{data.NOME}}</b>",
-              "default": "Nome da mãe: <b>{{data.NOME}}</b>"
+              "english": "Name of mother: <b>{{data.NOMEMUL}}</b>",
+              "default": "Nome da mãe: <b>{{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -173,8 +173,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -211,8 +211,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -225,7 +225,7 @@
           "prompt": {
             "text": {
               "english": "Name of child",
-              "default": "Nome da criança"
+              "default": "NOMEMUL da criança"
             }
           }
         },
@@ -278,8 +278,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -307,7 +307,7 @@
       },
       {
         "type": "adate",
-        "name": "DATASAI",
+        "name": "DATASAICRI",
         "display": {
           "prompt": {
             "text": {
@@ -319,7 +319,7 @@
             "helperText": false
           }
         },
-        "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+        "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAICRI\") != null && adate.ageInYears(data(\"DATASAICRI\")) != -9999 && adate.ageInYears(data(\"DATASAICRI\")) < 2019)",
         "_row_num": 26
       },
       {
@@ -339,8 +339,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -394,8 +394,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -496,8 +496,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -536,8 +536,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -590,8 +590,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -647,8 +647,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -721,8 +721,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -782,8 +782,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -1107,6 +1107,7 @@
         "name": "REG",
         "type": "integer",
         "isSessionVariable": false,
+        "comment": "From MUL",
         "_row_num": 2
       },
       {
@@ -1164,13 +1165,13 @@
         "_row_num": 11
       },
       {
-        "name": "VISNO",
+        "name": "VISNOCRI",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 12
       },
       {
-        "name": "NUMEST",
+        "name": "IDMUL",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 14
@@ -1182,167 +1183,174 @@
         "_row_num": 15
       },
       {
-        "name": "NOME",
+        "name": "NOMEMUL",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 16
       },
       {
-        "name": "REGDIACRI",
+        "name": "ESTADOMUL",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 17
+      },
+      {
+        "name": "DATASAIMUL",
         "type": "adate",
         "isSessionVariable": false,
         "_row_num": 18
       },
       {
-        "name": "NUMESTCRI",
+        "name": "IDCRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 19
+        "_row_num": 20
       },
       {
         "name": "DATASEG",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 20
+        "comment": "First visit",
+        "_row_num": 22
       },
       {
         "name": "NOMECRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 22
+        "_row_num": 23
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 23
+        "_row_num": 24
       },
       {
         "name": "DOB",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 24
+        "_row_num": 25
       },
       {
         "name": "ESTADOCRI",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 25
+        "_row_num": 26
       },
       {
-        "name": "DATASAI",
+        "name": "DATASAICRI",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 26
+        "_row_num": 27
       },
       {
         "name": "VACINAS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 27
+        "_row_num": 28
       },
       {
         "name": "VACINFO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 28
+        "_row_num": 29
       },
       {
         "name": "BCG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 29
+        "_row_num": 30
       },
       {
         "name": "BCGDATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 31
       },
       {
         "name": "VACINASOU",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 32
       },
       {
         "name": "OUTROVAC",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 33
       },
       {
         "name": "OUTRODATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 34
       },
       {
         "name": "VACINASIMG",
         "type": "image",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 35
       },
       {
         "name": "POLIO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 35
+        "_row_num": 36
       },
       {
         "name": "POLIODATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 37
       },
       {
         "name": "MUAC",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 37
+        "_row_num": 38
       },
       {
         "name": "BCGREACT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 38
+        "_row_num": 39
       },
       {
         "name": "HOSP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 39
+        "_row_num": 40
       },
       {
         "name": "HOSPDATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 40
+        "_row_num": 41
       },
       {
         "name": "NOMECRICON",
         "type": "select_one",
         "isSessionVariable": false,
-        "comment": "fu",
-        "_row_num": 42
+        "comment": "FU",
+        "_row_num": 43
       },
       {
         "name": "SEXCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 43
+        "_row_num": 44
       },
       {
         "name": "DOBCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 44
+        "_row_num": 45
       },
       {
         "name": "POBCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 45
+        "_row_num": 46
       }
     ]
   },
@@ -1769,6 +1777,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From MUL",
         "elementKey": "REG"
       },
       "REGNOME": {
@@ -1870,7 +1879,7 @@
         "isSessionVariable": false,
         "elementKey": "GRAV"
       },
-      "VISNO": {
+      "VISNOCRI": {
         "type": "string",
         "_defn": [
           {
@@ -1879,9 +1888,9 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "VISNO"
+        "elementKey": "VISNOCRI"
       },
-      "NUMEST": {
+      "IDMUL": {
         "type": "string",
         "_defn": [
           {
@@ -1890,7 +1899,7 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NUMEST"
+        "elementKey": "IDMUL"
       },
       "REGDIA": {
         "prompt_type_name": "adate",
@@ -1908,7 +1917,7 @@
         "isSessionVariable": false,
         "elementKey": "REGDIA"
       },
-      "NOME": {
+      "NOMEMUL": {
         "type": "string",
         "_defn": [
           {
@@ -1917,9 +1926,20 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NOME"
+        "elementKey": "NOMEMUL"
       },
-      "REGDIACRI": {
+      "ESTADOMUL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOMUL"
+      },
+      "DATASAIMUL": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -1933,24 +1953,24 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "REGDIACRI"
+        "elementKey": "DATASAIMUL"
       },
-      "NUMESTCRI": {
+      "IDCRI": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NUMESTCRI"
+        "elementKey": "IDCRI"
       },
       "DATASEG": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "comment": "First visit",
         "_row_num": 2,
         "__rowNum__": 1,
         "_defn": [
@@ -1959,7 +1979,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1974,7 +1994,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -1990,7 +2010,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -2010,7 +2030,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -2026,14 +2046,14 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "ESTADOCRI"
       },
-      "DATASAI": {
+      "DATASAICRI": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -2046,12 +2066,12 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "DATASAI"
+        "elementKey": "DATASAICRI"
       },
       "VACINAS": {
         "type": "string",
@@ -2062,7 +2082,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -2078,7 +2098,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -2094,7 +2114,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -2114,7 +2134,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -2130,7 +2150,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -2150,7 +2170,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -2170,7 +2190,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -2199,7 +2219,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -2215,7 +2235,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -2235,7 +2255,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -2250,7 +2270,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -2266,7 +2286,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -2282,7 +2302,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -2302,7 +2322,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -2313,19 +2333,19 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "comment": "fu",
+        "comment": "FU",
         "elementKey": "NOMECRICON"
       },
       "SEXCON": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -2336,7 +2356,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -2347,7 +2367,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -2370,8 +2390,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2490,8 +2510,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Name of mother: <b>{{data.NOME}}</b>",
-                  "default": "Nome da mãe: <b>{{data.NOME}}</b>"
+                  "english": "Name of mother: <b>{{data.NOMEMUL}}</b>",
+                  "default": "Nome da mãe: <b>{{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2507,8 +2527,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2547,8 +2567,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2566,7 +2586,7 @@
               "prompt": {
                 "text": {
                   "english": "Name of child",
-                  "default": "Nome da criança"
+                  "default": "NOMEMUL da criança"
                 }
               }
             },
@@ -2626,8 +2646,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2660,7 +2680,7 @@
           },
           {
             "type": "adate",
-            "name": "DATASAI",
+            "name": "DATASAICRI",
             "display": {
               "prompt": {
                 "text": {
@@ -2672,7 +2692,7 @@
                 "helperText": false
               }
             },
-            "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+            "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAICRI\") != null && adate.ageInYears(data(\"DATASAICRI\")) != -9999 && adate.ageInYears(data(\"DATASAICRI\")) < 2019)",
             "_row_num": 26,
             "__rowNum__": 25,
             "_token_type": "prompt",
@@ -2685,8 +2705,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2742,8 +2762,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2843,8 +2863,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2880,8 +2900,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2936,8 +2956,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2978,8 +2998,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -3046,8 +3066,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -3105,8 +3125,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -3687,6 +3707,7 @@
           }
         ],
         "isSessionVariable": false,
+        "comment": "From MUL",
         "elementKey": "REG",
         "elementName": "REG",
         "elementSet": "data",
@@ -3818,7 +3839,7 @@
         "elementSet": "data",
         "elementPath": "GRAV"
       },
-      "VISNO": {
+      "VISNOCRI": {
         "type": "string",
         "_defn": [
           {
@@ -3827,12 +3848,12 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "VISNO",
-        "elementName": "VISNO",
+        "elementKey": "VISNOCRI",
+        "elementName": "VISNOCRI",
         "elementSet": "data",
-        "elementPath": "VISNO"
+        "elementPath": "VISNOCRI"
       },
-      "NUMEST": {
+      "IDMUL": {
         "type": "string",
         "_defn": [
           {
@@ -3841,10 +3862,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NUMEST",
-        "elementName": "NUMEST",
+        "elementKey": "IDMUL",
+        "elementName": "IDMUL",
         "elementSet": "data",
-        "elementPath": "NUMEST"
+        "elementPath": "IDMUL"
       },
       "REGDIA": {
         "prompt_type_name": "adate",
@@ -3865,7 +3886,7 @@
         "elementSet": "data",
         "elementPath": "REGDIA"
       },
-      "NOME": {
+      "NOMEMUL": {
         "type": "string",
         "_defn": [
           {
@@ -3874,12 +3895,26 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NOME",
-        "elementName": "NOME",
+        "elementKey": "NOMEMUL",
+        "elementName": "NOMEMUL",
         "elementSet": "data",
-        "elementPath": "NOME"
+        "elementPath": "NOMEMUL"
       },
-      "REGDIACRI": {
+      "ESTADOMUL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESTADOMUL",
+        "elementName": "ESTADOMUL",
+        "elementSet": "data",
+        "elementPath": "ESTADOMUL"
+      },
+      "DATASAIMUL": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -3893,30 +3928,30 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "REGDIACRI",
-        "elementName": "REGDIACRI",
+        "elementKey": "DATASAIMUL",
+        "elementName": "DATASAIMUL",
         "elementSet": "data",
-        "elementPath": "REGDIACRI"
+        "elementPath": "DATASAIMUL"
       },
-      "NUMESTCRI": {
+      "IDCRI": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 19,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NUMESTCRI",
-        "elementName": "NUMESTCRI",
+        "elementKey": "IDCRI",
+        "elementName": "IDCRI",
         "elementSet": "data",
-        "elementPath": "NUMESTCRI"
+        "elementPath": "IDCRI"
       },
       "DATASEG": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "comment": "First visit",
         "_row_num": 2,
         "__rowNum__": 1,
         "_defn": [
@@ -3925,7 +3960,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -3943,7 +3978,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -3962,7 +3997,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -3985,7 +4020,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -4004,7 +4039,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -4014,7 +4049,7 @@
         "elementSet": "data",
         "elementPath": "ESTADOCRI"
       },
-      "DATASAI": {
+      "DATASAICRI": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -4027,15 +4062,15 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "DATASAI",
-        "elementName": "DATASAI",
+        "elementKey": "DATASAICRI",
+        "elementName": "DATASAICRI",
         "elementSet": "data",
-        "elementPath": "DATASAI"
+        "elementPath": "DATASAICRI"
       },
       "VACINAS": {
         "type": "string",
@@ -4046,7 +4081,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -4065,7 +4100,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -4084,7 +4119,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -4107,7 +4142,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -4126,7 +4161,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -4153,7 +4188,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -4179,7 +4214,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -4217,7 +4252,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -4241,7 +4276,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -4264,7 +4299,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -4282,7 +4317,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -4301,7 +4336,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -4320,7 +4355,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -4343,7 +4378,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -4357,12 +4392,12 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "comment": "fu",
+        "comment": "FU",
         "elementKey": "NOMECRICON",
         "elementName": "NOMECRICON",
         "elementSet": "data",
@@ -4372,7 +4407,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -4386,7 +4421,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -4400,7 +4435,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],

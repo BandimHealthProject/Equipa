@@ -163,12 +163,12 @@
       },
       {
         "type": "text",
-        "name": "NOME",
+        "name": "NOMEMULMUL",
         "display": {
           "prompt": {
             "text": {
               "english": "Name of woman",
-              "default": "Nome de mulher"
+              "default": "NOMEMUL de mulher"
             }
           }
         },
@@ -188,8 +188,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -226,8 +226,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -255,7 +255,7 @@
       },
       {
         "type": "adate",
-        "name": "DATASAI",
+        "name": "DATASAIMUL",
         "display": {
           "prompt": {
             "text": {
@@ -267,7 +267,7 @@
             "helperText": false
           }
         },
-        "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+        "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAIMUL\") != null && adate.ageInYears(data(\"DATASAIMUL\")) != -9999 && adate.ageInYears(data(\"DATASAIMUL\")) < 2019)",
         "_row_num": 21
       },
       {
@@ -280,7 +280,7 @@
       },
       {
         "clause": "if",
-        "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CICATRIZMAE\") == null || data(\"cicatrizmae\") == null)",
+        "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CICATRIZMUL\") == null || data(\"cicatrizmul\") == null)",
         "_row_num": 24
       },
       {
@@ -292,8 +292,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
@@ -302,7 +302,7 @@
       {
         "type": "select_one",
         "values_list": "YesNoDontknow",
-        "name": "CICATRIZMAE",
+        "name": "CICATRIZMUL",
         "display": {
           "prompt": {
             "text": {
@@ -311,7 +311,7 @@
             }
           }
         },
-        "constraint": "data(\"CICATRIZMAE\") != null || data(\"ESTADOMUL\") != 1",
+        "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1",
         "_row_num": 27
       },
       {
@@ -323,20 +323,165 @@
         "_row_num": 29
       },
       {
-        "clause": "begin screen",
+        "clause": "if",
+        "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CONSENT\") != \"1\" || data(\"consent\") != \"1\")",
         "_row_num": 30
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 31
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 32
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Explanation of the study:",
+              "default": "Explicação do estudo:"
+            }
+          }
+        },
+        "_row_num": 33
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow your pregnancy until the moment of delivery and your child within the first months.",
+              "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez até o momento do parto e seu filho nos primeiros meses."
+            }
+          }
+        },
+        "_row_num": 34
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "This study is to assess the effects of how vaccines are provided at the health centers.",
+              "default": "O objetivo deste estudo é avaliar os efeitos de como as vacinas são fornecidas nos centros de saúde."
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "All information collected here will be used for the study only and will be kept confidential.",
+              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If you do not want to participate, you and your child will continue to be treated in the same way as others who have accepted.",
+              "default": "Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram."
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If you accept now and later do not want to continue, you can withdraw your consent.",
+              "default": "Se você aceitar agora e depois não quiser continuar, pode retirar seu consentimento."
+            }
+          }
+        },
+        "_row_num": 38
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If you have any questions about this work later, you can contact us by phone: 96016462/955946796",
+              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Do you have any questions now?",
+              "default": "Você tem alguma pergunta agora?"
+            }
+          }
+        },
+        "_row_num": 40
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "CONSENT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Do you accept that you and your future child will participate?",
+              "default": "Você aceita que você e seu futuro filho participem?"
+            }
+          }
+        },
+        "constraint": "data(\"CONSENT\") !=null || data(\"ESTADOMUL\") != 1",
+        "_row_num": 41
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 42
+      },
+      {
+        "clause": "end if",
+        "_row_num": 43
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"CONSENT\") != \"2\"",
+        "_row_num": 44
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 45
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
+            }
+          }
+        },
+        "_row_num": 46
       },
       {
         "type": "select_one",
@@ -350,33 +495,33 @@
             }
           }
         },
-        "required": true,
-        "_row_num": 32
+        "constraint": "data(\"ESTADOGRAV\") != null || data(\"CONSENT\") == 2",
+        "_row_num": 47
       },
       {
         "clause": "end screen",
-        "_row_num": 33
+        "_row_num": 48
       },
       {
         "clause": "if",
         "condition": "data(\"ESTADOGRAV\") == \"1\"",
-        "_row_num": 34
+        "_row_num": 49
       },
       {
         "clause": "begin screen",
-        "_row_num": 35
+        "_row_num": 50
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 51
       },
       {
         "type": "select_one",
@@ -397,32 +542,32 @@
           }
         },
         "constraint": "data(\"NVNMAB\") != null || data(\"ESTADOGRAV\") != 1",
-        "_row_num": 37
+        "_row_num": 52
       },
       {
         "clause": "end screen",
-        "_row_num": 38
+        "_row_num": 53
       },
       {
         "clause": "if",
         "condition": "data(\"NVNMAB\") != \"3\"",
-        "_row_num": 39
+        "_row_num": 54
       },
       {
         "clause": "begin screen",
-        "_row_num": 40
+        "_row_num": 55
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
-        "_row_num": 41
+        "_row_num": 56
       },
       {
         "type": "select_one",
@@ -437,12 +582,12 @@
           }
         },
         "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
-        "_row_num": 42
+        "_row_num": 57
       },
       {
         "clause": "if",
         "condition": "data(\"LOCPAR\") == \"1\"",
-        "_row_num": 43
+        "_row_num": 58
       },
       {
         "type": "select_one",
@@ -457,16 +602,16 @@
           }
         },
         "constraint": "data(\"PARTAB\") != null || data(\"LOCPAR\") != 1",
-        "_row_num": 44
+        "_row_num": 59
       },
       {
         "clause": "end if",
-        "_row_num": 45
+        "_row_num": 60
       },
       {
         "clause": "if",
         "condition": "data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\"",
-        "_row_num": 46
+        "_row_num": 61
       },
       {
         "type": "select_one",
@@ -481,31 +626,31 @@
           }
         },
         "constraint": "data(\"PARHCHOSP\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
-        "_row_num": 47
+        "_row_num": 62
       },
       {
         "clause": "end if",
-        "_row_num": 48
+        "_row_num": 63
       },
       {
         "clause": "end screen",
-        "_row_num": 49
+        "_row_num": 64
       },
       {
         "clause": "begin screen",
-        "_row_num": 50
+        "_row_num": 65
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 66
       },
       {
         "type": "select_one",
@@ -520,12 +665,12 @@
           }
         },
         "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
-        "_row_num": 52
+        "_row_num": 67
       },
       {
         "clause": "if",
         "condition": "data(\"GEM\") == \"1\"",
-        "_row_num": 53
+        "_row_num": 68
       },
       {
         "type": "integer",
@@ -551,40 +696,40 @@
           }
         },
         "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
-        "_row_num": 54
+        "_row_num": 69
       },
       {
         "clause": "end if",
-        "_row_num": 55
+        "_row_num": 70
       },
       {
         "clause": "end screen",
-        "_row_num": 56
+        "_row_num": 71
       },
       {
         "clause": "end if",
-        "_row_num": 57
+        "_row_num": 72
       },
       {
         "clause": "if",
         "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
-        "_row_num": 58
+        "_row_num": 73
       },
       {
         "clause": "begin screen",
-        "_row_num": 59
+        "_row_num": 74
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 75
       },
       {
         "type": "linked_table",
@@ -603,35 +748,39 @@
             }
           }
         },
-        "_row_num": 61
+        "_row_num": 76
       },
       {
         "clause": "end screen",
-        "_row_num": 62
+        "_row_num": 77
       },
       {
         "clause": "end if",
-        "_row_num": 63
+        "_row_num": 78
       },
       {
         "clause": "end if",
-        "_row_num": 64
+        "_row_num": 79
+      },
+      {
+        "clause": "end if",
+        "_row_num": 80
       },
       {
         "clause": "begin screen",
-        "_row_num": 65
+        "_row_num": 81
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
             }
           }
         },
-        "_row_num": 66
+        "_row_num": 82
       },
       {
         "type": "note",
@@ -643,7 +792,7 @@
             }
           }
         },
-        "_row_num": 67
+        "_row_num": 83
       },
       {
         "type": "note",
@@ -655,11 +804,11 @@
             }
           }
         },
-        "_row_num": 68
+        "_row_num": 84
       },
       {
         "clause": "end screen",
-        "_row_num": 69
+        "_row_num": 85
       }
     ],
     "queries": [
@@ -670,7 +819,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "NUMEST = ?",
         "selectionArgs": "[data('NUMEST')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\"), REGDIACRI: data(\"DATASEG\"), VISNO: \"1\", NUMESTCRI: data(\"NUMEST\") + \"01\"}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -781,6 +930,32 @@
         "_row_num": 10
       },
       {
+        "choice_list_name": "YesNo",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 13
+      },
+      {
         "choice_list_name": "StatusGrav",
         "data_value": "1",
         "display": {
@@ -791,7 +966,7 @@
             }
           }
         },
-        "_row_num": 12
+        "_row_num": 15
       },
       {
         "choice_list_name": "StatusGrav",
@@ -804,7 +979,7 @@
             }
           }
         },
-        "_row_num": 13
+        "_row_num": 16
       },
       {
         "choice_list_name": "StatusGrav",
@@ -817,7 +992,7 @@
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 17
       },
       {
         "choice_list_name": "StatusGrav",
@@ -830,7 +1005,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 18
       },
       {
         "choice_list_name": "StatusGrav",
@@ -843,7 +1018,7 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 19
       },
       {
         "choice_list_name": "nvnmab",
@@ -856,7 +1031,7 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 21
       },
       {
         "choice_list_name": "nvnmab",
@@ -869,7 +1044,7 @@
             }
           }
         },
-        "_row_num": 19
+        "_row_num": 22
       },
       {
         "choice_list_name": "nvnmab",
@@ -882,7 +1057,7 @@
             }
           }
         },
-        "_row_num": 20
+        "_row_num": 23
       },
       {
         "choice_list_name": "nvnmab",
@@ -895,7 +1070,7 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 24
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -908,7 +1083,7 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 26
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -921,7 +1096,7 @@
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 27
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -934,7 +1109,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 28
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -947,7 +1122,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 29
       }
     ],
     "calculates": [
@@ -978,70 +1153,60 @@
         "name": "REGNOME",
         "type": "text",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 3
       },
       {
         "name": "HCAREA",
         "type": "integer",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 4
       },
       {
         "name": "HCAREANOME",
         "type": "text",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 5
       },
       {
         "name": "SUBAREA",
         "type": "integer",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 6
       },
       {
         "name": "SUBAREANOME",
         "type": "text",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 7
       },
       {
         "name": "TAB",
         "type": "integer",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 8
       },
       {
         "name": "TABNOME",
         "type": "text",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 9
       },
       {
         "name": "GRAV",
         "type": "integer",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 10
       },
       {
-        "name": "NUMEST",
+        "name": "IDMUL",
         "type": "text",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 11
       },
       {
-        "name": "VISNO",
+        "name": "VISNOMUL",
         "type": "integer",
         "isSessionVariable": false,
-        "comment": "From tables",
         "_row_num": 12
       },
       {
@@ -1052,113 +1217,143 @@
         "_row_num": 14
       },
       {
-        "name": "CONSENT",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 15
-      },
-      {
         "name": "REGDIA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "name": "CHWREG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 17
+        "_row_num": 16
       },
       {
-        "name": "NOME",
+        "name": "NOMEMUL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 17
       },
       {
         "name": "ESTADOMUL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 19
-      },
-      {
-        "name": "IDADE",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 20
-      },
-      {
-        "name": "ESCO",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 21
-      },
-      {
-        "name": "PARITY",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 22
-      },
-      {
-        "name": "CICATRIZMAE",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 23
+        "_row_num": 18
       },
       {
         "name": "DATASEG",
         "type": "adate",
         "isSessionVariable": false,
-        "comment": "FU",
+        "_row_num": 19
+      },
+      {
+        "name": "CONSENT",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 20
+      },
+      {
+        "name": "TELE",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 21
+      },
+      {
+        "name": "CALL",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 22
+      },
+      {
+        "name": "CONSENTOU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 23
+      },
+      {
+        "name": "IDADE",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 24
+      },
+      {
+        "name": "ESCO",
+        "type": "select_one",
+        "isSessionVariable": false,
         "_row_num": 25
       },
       {
-        "name": "ESTADOGRAV",
-        "type": "select_one",
+        "name": "PARITY",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 26
       },
       {
-        "name": "NVNMAB",
+        "name": "CICATRIZMUL",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 27
       },
       {
-        "name": "LOCPAR",
-        "type": "select_one",
+        "name": "DATASAIMUL",
+        "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 28
-      },
-      {
-        "name": "PARTAB",
-        "type": "select_one",
-        "isSessionVariable": false,
+        "comment": "FU",
         "_row_num": 29
       },
       {
-        "name": "PARHCHOSP",
+        "name": "ESTADOGRAV",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 30
       },
       {
-        "name": "GEM",
+        "name": "NVNMAB",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 31
       },
       {
-        "name": "GEMNUM",
-        "type": "integer",
+        "name": "LOCPAR",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 32
       },
       {
-        "name": "cicatrizmae",
+        "name": "PARTAB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 33
+      },
+      {
+        "name": "PARHCHOSP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 34
+      },
+      {
+        "name": "GEM",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 35
+      },
+      {
+        "name": "GEMNUM",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 36
+      },
+      {
+        "name": "cicatrizmul",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 33
+        "_row_num": 37
+      },
+      {
+        "name": "consent",
+        "type": "integer",
+        "isSessionVariable": true,
+        "_row_num": 38
       }
     ]
   },
@@ -1392,6 +1587,34 @@
           "_row_num": 10
         }
       ],
+      "YesNo": [
+        {
+          "choice_list_name": "YesNo",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 12
+        },
+        {
+          "choice_list_name": "YesNo",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 13
+        }
+      ],
       "StatusGrav": [
         {
           "choice_list_name": "StatusGrav",
@@ -1404,7 +1627,7 @@
               }
             }
           },
-          "_row_num": 12
+          "_row_num": 15
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1417,7 +1640,7 @@
               }
             }
           },
-          "_row_num": 13
+          "_row_num": 16
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1430,7 +1653,7 @@
               }
             }
           },
-          "_row_num": 14
+          "_row_num": 17
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1443,7 +1666,7 @@
               }
             }
           },
-          "_row_num": 15
+          "_row_num": 18
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1456,7 +1679,7 @@
               }
             }
           },
-          "_row_num": 16
+          "_row_num": 19
         }
       ],
       "nvnmab": [
@@ -1471,7 +1694,7 @@
               }
             }
           },
-          "_row_num": 18
+          "_row_num": 21
         },
         {
           "choice_list_name": "nvnmab",
@@ -1484,7 +1707,7 @@
               }
             }
           },
-          "_row_num": 19
+          "_row_num": 22
         },
         {
           "choice_list_name": "nvnmab",
@@ -1497,7 +1720,7 @@
               }
             }
           },
-          "_row_num": 20
+          "_row_num": 23
         },
         {
           "choice_list_name": "nvnmab",
@@ -1510,7 +1733,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 24
         }
       ],
       "PlaceOfBirth": [
@@ -1525,7 +1748,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 26
         },
         {
           "choice_list_name": "PlaceOfBirth",
@@ -1538,7 +1761,7 @@
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 27
         },
         {
           "choice_list_name": "PlaceOfBirth",
@@ -1551,7 +1774,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 28
         },
         {
           "choice_list_name": "PlaceOfBirth",
@@ -1564,7 +1787,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 29
         }
       ]
     },
@@ -1576,7 +1799,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "NUMEST = ?",
         "selectionArgs": "[data('NUMEST')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), NUMEST: data(\"NUMEST\"), REGDIA: data(\"REGDIA\"), NOME: data(\"NOME\"), DATASEG: data(\"DATASEG\"), REGDIACRI: data(\"DATASEG\"), VISNO: \"1\", NUMESTCRI: data(\"NUMEST\") + \"01\"}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -1610,7 +1833,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "REGNOME"
       },
       "HCAREA": {
@@ -1622,7 +1844,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "HCAREA"
       },
       "HCAREANOME": {
@@ -1634,7 +1855,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "HCAREANOME"
       },
       "SUBAREA": {
@@ -1646,7 +1866,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "SUBAREA"
       },
       "SUBAREANOME": {
@@ -1658,7 +1877,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "SUBAREANOME"
       },
       "TAB": {
@@ -1670,7 +1888,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "TAB"
       },
       "TABNOME": {
@@ -1682,7 +1899,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "TABNOME"
       },
       "GRAV": {
@@ -1694,10 +1910,9 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "GRAV"
       },
-      "NUMEST": {
+      "IDMUL": {
         "type": "string",
         "_defn": [
           {
@@ -1706,10 +1921,9 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
-        "elementKey": "NUMEST"
+        "elementKey": "IDMUL"
       },
-      "VISNO": {
+      "VISNOMUL": {
         "type": "integer",
         "_defn": [
           {
@@ -1718,8 +1932,7 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
-        "elementKey": "VISNO"
+        "elementKey": "VISNOMUL"
       },
       "MOR": {
         "type": "string",
@@ -1737,17 +1950,6 @@
         "comment": "Inclusion",
         "elementKey": "MOR"
       },
-      "CONSENT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 15,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "CONSENT"
-      },
       "REGDIA": {
         "prompt_type_name": "adate",
         "type": "string",
@@ -1757,7 +1959,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -1768,27 +1970,23 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "CHWREG"
       },
-      "NOME": {
+      "NOMEMUL": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 11,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 18,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NOME"
+        "elementKey": "NOMEMUL"
       },
       "ESTADOMUL": {
         "type": "string",
@@ -1799,18 +1997,87 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "ESTADOMUL"
       },
+      "DATASEG": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASEG"
+      },
+      "CONSENT": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 41,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONSENT"
+      },
+      "TELE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELE"
+      },
+      "CALL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CALL"
+      },
+      "CONSENTOU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONSENTOU"
+      },
       "IDADE": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -1821,7 +2088,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -1832,14 +2099,14 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "PARITY"
       },
-      "CICATRIZMAE": {
+      "CICATRIZMUL": {
         "type": "string",
         "valuesList": "YesNoDontknow",
         "_defn": [
@@ -1848,14 +2115,14 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CICATRIZMAE"
+        "elementKey": "CICATRIZMUL"
       },
-      "DATASEG": {
+      "DATASAIMUL": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -1864,71 +2131,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 15,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 25,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "DATASEG"
-      },
-      "ESTADOGRAV": {
-        "type": "string",
-        "valuesList": "StatusGrav",
-        "_defn": [
-          {
-            "_row_num": 32,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 26,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "ESTADOGRAV"
-      },
-      "NVNMAB": {
-        "type": "string",
-        "valuesList": "nvnmab",
-        "_defn": [
-          {
-            "_row_num": 37,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 27,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "NVNMAB"
-      },
-      "LOCPAR": {
-        "type": "string",
-        "valuesList": "PlaceOfBirth",
-        "_defn": [
-          {
-            "_row_num": 42,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 28,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "LOCPAR"
-      },
-      "PARTAB": {
-        "type": "string",
-        "valuesList": "YesNoDontknow",
-        "_defn": [
-          {
-            "_row_num": 44,
+            "_row_num": 21,
             "section_name": "survey"
           },
           {
@@ -1937,11 +2140,11 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "PARTAB"
+        "elementKey": "DATASAIMUL"
       },
-      "PARHCHOSP": {
+      "ESTADOGRAV": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "StatusGrav",
         "_defn": [
           {
             "_row_num": 47,
@@ -1953,11 +2156,11 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "PARHCHOSP"
+        "elementKey": "ESTADOGRAV"
       },
-      "GEM": {
+      "NVNMAB": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "nvnmab",
         "_defn": [
           {
             "_row_num": 52,
@@ -1969,13 +2172,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "GEM"
+        "elementKey": "NVNMAB"
       },
-      "GEMNUM": {
-        "type": "integer",
+      "LOCPAR": {
+        "type": "string",
+        "valuesList": "PlaceOfBirth",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 57,
             "section_name": "survey"
           },
           {
@@ -1984,31 +2188,102 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "GEMNUM"
+        "elementKey": "LOCPAR"
       },
-      "cicatrizmae": {
-        "type": "integer",
+      "PARTAB": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "survey"
+          },
           {
             "_row_num": 33,
             "section_name": "model"
           }
         ],
-        "isSessionVariable": true,
-        "elementKey": "cicatrizmae"
+        "isSessionVariable": false,
+        "elementKey": "PARTAB"
       },
-      "DATASAI": {
+      "PARHCHOSP": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 62,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARHCHOSP"
+      },
+      "GEM": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEM"
+      },
+      "GEMNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEMNUM"
+      },
+      "cicatrizmul": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "cicatrizmul"
+      },
+      "consent": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "consent"
+      },
+      "NOMEMULMUL": {
+        "_defn": [
+          {
+            "_row_num": 11,
             "section_name": "survey"
           }
         ],
-        "prompt_type_name": "adate",
         "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "elementKey": "DATASAI"
+        "elementKey": "NOMEMULMUL"
       }
     },
     "section_names": [
@@ -2161,12 +2436,12 @@
           },
           {
             "type": "text",
-            "name": "NOME",
+            "name": "NOMEMULMUL",
             "display": {
               "prompt": {
                 "text": {
                   "english": "Name of woman",
-                  "default": "Nome de mulher"
+                  "default": "NOMEMUL de mulher"
                 }
               }
             },
@@ -2183,8 +2458,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2223,8 +2498,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2257,7 +2532,7 @@
           },
           {
             "type": "adate",
-            "name": "DATASAI",
+            "name": "DATASAIMUL",
             "display": {
               "prompt": {
                 "text": {
@@ -2269,7 +2544,7 @@
                 "helperText": false
               }
             },
-            "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAI\") != null && adate.ageInYears(data(\"DATASAI\")) != -9999 && adate.ageInYears(data(\"DATASAI\")) < 2019)",
+            "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAIMUL\") != null && adate.ageInYears(data(\"DATASAIMUL\")) != -9999 && adate.ageInYears(data(\"DATASAIMUL\")) < 2019)",
             "_row_num": 21,
             "__rowNum__": 20,
             "_token_type": "prompt",
@@ -2282,8 +2557,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
@@ -2297,7 +2572,7 @@
           {
             "type": "select_one",
             "values_list": "YesNoDontknow",
-            "name": "CICATRIZMAE",
+            "name": "CICATRIZMUL",
             "display": {
               "prompt": {
                 "text": {
@@ -2306,7 +2581,7 @@
                 }
               }
             },
-            "constraint": "data(\"CICATRIZMAE\") != null || data(\"ESTADOMUL\") != 1",
+            "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1",
             "_row_num": 27,
             "__rowNum__": 26,
             "_token_type": "prompt",
@@ -2319,17 +2594,190 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 32,
+            "__rowNum__": 31,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen30",
+            "_branch_label_enclosing_screen": "survey/_screen31",
             "promptIdx": 16
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Explanation of the study:",
+                  "default": "Explicação do estudo:"
+                }
+              }
+            },
+            "_row_num": 33,
+            "__rowNum__": 32,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 17
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow your pregnancy until the moment of delivery and your child within the first months.",
+                  "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez até o momento do parto e seu filho nos primeiros meses."
+                }
+              }
+            },
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 18
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "This study is to assess the effects of how vaccines are provided at the health centers.",
+                  "default": "O objetivo deste estudo é avaliar os efeitos de como as vacinas são fornecidas nos centros de saúde."
+                }
+              }
+            },
+            "_row_num": 35,
+            "__rowNum__": 34,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 19
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "All information collected here will be used for the study only and will be kept confidential.",
+                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
+                }
+              }
+            },
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 20
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If you do not want to participate, you and your child will continue to be treated in the same way as others who have accepted.",
+                  "default": "Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram."
+                }
+              }
+            },
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 21
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If you accept now and later do not want to continue, you can withdraw your consent.",
+                  "default": "Se você aceitar agora e depois não quiser continuar, pode retirar seu consentimento."
+                }
+              }
+            },
+            "_row_num": 38,
+            "__rowNum__": 37,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 22
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If you have any questions about this work later, you can contact us by phone: 96016462/955946796",
+                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
+                }
+              }
+            },
+            "_row_num": 39,
+            "__rowNum__": 38,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 23
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Do you have any questions now?",
+                  "default": "Você tem alguma pergunta agora?"
+                }
+              }
+            },
+            "_row_num": 40,
+            "__rowNum__": 39,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 24
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "CONSENT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Do you accept that you and your future child will participate?",
+                  "default": "Você aceita que você e seu futuro filho participem?"
+                }
+              }
+            },
+            "constraint": "data(\"CONSENT\") !=null || data(\"ESTADOMUL\") != 1",
+            "_row_num": 41,
+            "__rowNum__": 40,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen31",
+            "promptIdx": 25
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
+                }
+              }
+            },
+            "_row_num": 46,
+            "__rowNum__": 45,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen45",
+            "promptIdx": 26
           },
           {
             "type": "select_one",
@@ -2343,30 +2791,30 @@
                 }
               }
             },
-            "required": true,
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "constraint": "data(\"ESTADOGRAV\") != null || data(\"CONSENT\") == 2",
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen30",
-            "promptIdx": 17
+            "_branch_label_enclosing_screen": "survey/_screen45",
+            "promptIdx": 27
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "_row_num": 36,
-            "__rowNum__": 35,
+            "_row_num": 51,
+            "__rowNum__": 50,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen35",
-            "promptIdx": 18
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 28
           },
           {
             "type": "select_one",
@@ -2387,29 +2835,29 @@
               }
             },
             "constraint": "data(\"NVNMAB\") != null || data(\"ESTADOGRAV\") != 1",
-            "_row_num": 37,
-            "__rowNum__": 36,
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen35",
-            "promptIdx": 19
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 29
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "_row_num": 41,
-            "__rowNum__": 40,
+            "_row_num": 56,
+            "__rowNum__": 55,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen40",
-            "promptIdx": 20
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 30
           },
           {
             "type": "select_one",
@@ -2424,12 +2872,12 @@
               }
             },
             "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
-            "_row_num": 42,
-            "__rowNum__": 41,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen40",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 31
           },
           {
             "type": "select_one",
@@ -2444,12 +2892,12 @@
               }
             },
             "constraint": "data(\"PARTAB\") != null || data(\"LOCPAR\") != 1",
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen40",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 32
           },
           {
             "type": "select_one",
@@ -2464,29 +2912,29 @@
               }
             },
             "constraint": "data(\"PARHCHOSP\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
-            "_row_num": 47,
-            "__rowNum__": 46,
+            "_row_num": 62,
+            "__rowNum__": 61,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen40",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 33
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 66,
+            "__rowNum__": 65,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen50",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "survey/_screen65",
+            "promptIdx": 34
           },
           {
             "type": "select_one",
@@ -2501,12 +2949,12 @@
               }
             },
             "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
-            "_row_num": 52,
-            "__rowNum__": 51,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen50",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "survey/_screen65",
+            "promptIdx": 35
           },
           {
             "type": "integer",
@@ -2532,29 +2980,29 @@
               }
             },
             "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
-            "_row_num": 54,
-            "__rowNum__": 53,
+            "_row_num": 69,
+            "__rowNum__": 68,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen50",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "survey/_screen65",
+            "promptIdx": 36
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen59",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "survey/_screen74",
+            "promptIdx": 37
           },
           {
             "type": "linked_table",
@@ -2573,29 +3021,29 @@
                 }
               }
             },
-            "_row_num": 61,
-            "__rowNum__": 60,
+            "_row_num": 76,
+            "__rowNum__": 75,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen59",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "survey/_screen74",
+            "promptIdx": 38
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}}</b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "_row_num": 66,
-            "__rowNum__": 65,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen65",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "survey/_screen81",
+            "promptIdx": 39
           },
           {
             "type": "note",
@@ -2607,12 +3055,12 @@
                 }
               }
             },
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 83,
+            "__rowNum__": 82,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen65",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "survey/_screen81",
+            "promptIdx": 40
           },
           {
             "type": "note",
@@ -2624,20 +3072,20 @@
                 }
               }
             },
-            "_row_num": 68,
-            "__rowNum__": 67,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen65",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "survey/_screen81",
+            "promptIdx": 41
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 70,
-            "_branch_label_enclosing_screen": "survey/_screen70",
-            "promptIdx": 32
+            "_row_num": 86,
+            "_branch_label_enclosing_screen": "survey/_screen86",
+            "promptIdx": 42
           }
         ],
         "validation_tag_map": {
@@ -2648,13 +3096,14 @@
             12,
             13,
             15,
-            17,
-            19,
-            21,
-            22,
-            23,
             25,
-            26
+            27,
+            29,
+            31,
+            32,
+            33,
+            35,
+            36
           ]
         },
         "operations": [
@@ -2702,7 +3151,7 @@
           },
           {
             "clause": "if",
-            "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CICATRIZMAE\") == null || data(\"cicatrizmae\") == null)",
+            "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CICATRIZMUL\") == null || data(\"cicatrizmul\") == null)",
             "_row_num": 24,
             "__rowNum__": 23,
             "_token_type": "goto_label",
@@ -2738,78 +3187,87 @@
             "operationIdx": 6
           },
           {
-            "clause": "begin screen",
+            "clause": "if",
+            "condition": "data(\"ESTADOMUL\") == \"1\" && (data(\"CONSENT\") != \"1\" || data(\"consent\") != \"1\")",
             "_row_num": 30,
             "__rowNum__": 29,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 33,
-              "__rowNum__": 32,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 7
-          },
-          {
-            "clause": "if",
-            "condition": "data(\"ESTADOGRAV\") == \"1\"",
-            "_row_num": 34,
-            "__rowNum__": 33,
             "_token_type": "goto_label",
-            "_branch_label": "_then34",
-            "operationIdx": 8
+            "_branch_label": "_then30",
+            "operationIdx": 7
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else64",
-            "_row_num": 64,
-            "operationIdx": 9
+            "_branch_label": "_else43",
+            "_row_num": 43,
+            "operationIdx": 8
           },
           {
             "clause": "begin screen",
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 38,
-              "__rowNum__": 37,
+              "_row_num": 42,
+              "__rowNum__": 41,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif43",
+            "_row_num": 43,
             "operationIdx": 10
           },
           {
             "clause": "if",
-            "condition": "data(\"NVNMAB\") != \"3\"",
-            "_row_num": 39,
-            "__rowNum__": 38,
+            "condition": "data(\"CONSENT\") != \"2\"",
+            "_row_num": 44,
+            "__rowNum__": 43,
             "_token_type": "goto_label",
-            "_branch_label": "_then39",
+            "_branch_label": "_then44",
             "operationIdx": 11
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else57",
-            "_row_num": 57,
+            "_branch_label": "_else80",
+            "_row_num": 80,
             "operationIdx": 12
           },
           {
             "clause": "begin screen",
-            "_row_num": 40,
-            "__rowNum__": 39,
+            "_row_num": 45,
+            "__rowNum__": 44,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 49,
-              "__rowNum__": 48,
+              "_row_num": 48,
+              "__rowNum__": 47,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nif (data(\"LOCPAR\") == \"1\") {\nactivePromptIndicies.push(22);\n}\nif (data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\") {\nactivePromptIndicies.push(23);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"ESTADOGRAV\") == \"1\"",
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "goto_label",
+            "_branch_label": "_then49",
+            "operationIdx": 14
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else79",
+            "_row_num": 79,
+            "operationIdx": 15
           },
           {
             "clause": "begin screen",
@@ -2818,63 +3276,42 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 56,
-              "__rowNum__": 55,
+              "_row_num": 53,
+              "__rowNum__": 52,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nif (data(\"GEM\") == \"1\") {\nactivePromptIndicies.push(26);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 14
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif57",
-            "_row_num": 57,
-            "operationIdx": 15
-          },
-          {
-            "clause": "if",
-            "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
-            "_row_num": 58,
-            "__rowNum__": 57,
-            "_token_type": "goto_label",
-            "_branch_label": "_then58",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
-            "clause": "end if",
+            "clause": "if",
+            "condition": "data(\"NVNMAB\") != \"3\"",
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "goto_label",
-            "_branch_label": "_else63",
-            "_row_num": 63,
+            "_branch_label": "_then54",
             "operationIdx": 17
           },
           {
-            "clause": "begin screen",
-            "_row_num": 59,
-            "__rowNum__": 58,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 62,
-              "__rowNum__": 61,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else72",
+            "_row_num": 72,
             "operationIdx": 18
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif63",
-            "_row_num": 63,
+            "clause": "begin screen",
+            "_row_num": 55,
+            "__rowNum__": 54,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 64,
+              "__rowNum__": 63,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data(\"LOCPAR\") == \"1\") {\nactivePromptIndicies.push(32);\n}\nif (data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\") {\nactivePromptIndicies.push(33);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 19
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif64",
-            "_row_num": 64,
-            "operationIdx": 20
           },
           {
             "clause": "begin screen",
@@ -2883,33 +3320,105 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 69,
-              "__rowNum__": 68,
+              "_row_num": 71,
+              "__rowNum__": 70,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nif (data(\"GEM\") == \"1\") {\nactivePromptIndicies.push(36);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 20
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif72",
+            "_row_num": 72,
             "operationIdx": 21
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
+            "_row_num": 73,
+            "__rowNum__": 72,
+            "_token_type": "goto_label",
+            "_branch_label": "_then73",
+            "operationIdx": 22
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else78",
+            "_row_num": 78,
+            "operationIdx": 23
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 74,
+            "__rowNum__": 73,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 77,
+              "__rowNum__": 76,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 24
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif78",
+            "_row_num": 78,
+            "operationIdx": 25
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif79",
+            "_row_num": 79,
+            "operationIdx": 26
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif80",
+            "_row_num": 80,
+            "operationIdx": 27
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 81,
+            "__rowNum__": 80,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 85,
+              "__rowNum__": 84,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 28
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 70,
-            "operationIdx": 22
+            "_row_num": 86,
+            "operationIdx": 29
           },
           {
-            "_row_num": 70,
+            "_row_num": 86,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 23
+            "operationIdx": 30
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 70,
-            "operationIdx": 24
+            "_row_num": 86,
+            "operationIdx": 31
           }
         ],
         "branch_label_map": {
@@ -2920,23 +3429,30 @@
           "_screen25": 5,
           "_else29": 7,
           "_endif29": 7,
-          "_screen30": 7,
-          "_then34": 10,
-          "_screen35": 10,
-          "_then39": 13,
-          "_screen40": 13,
-          "_screen50": 14,
-          "_else57": 16,
-          "_endif57": 16,
-          "_then58": 18,
-          "_screen59": 18,
-          "_else63": 20,
-          "_endif63": 20,
-          "_else64": 21,
-          "_endif64": 21,
-          "_screen65": 21,
-          "_contents": 23,
-          "_screen70": 23
+          "_then30": 9,
+          "_screen31": 9,
+          "_else43": 11,
+          "_endif43": 11,
+          "_then44": 13,
+          "_screen45": 13,
+          "_then49": 16,
+          "_screen50": 16,
+          "_then54": 19,
+          "_screen55": 19,
+          "_screen65": 20,
+          "_else72": 22,
+          "_endif72": 22,
+          "_then73": 24,
+          "_screen74": 24,
+          "_else78": 26,
+          "_endif78": 26,
+          "_else79": 27,
+          "_endif79": 27,
+          "_else80": 28,
+          "_endif80": 28,
+          "_screen81": 28,
+          "_contents": 30,
+          "_screen86": 30
         }
       },
       "initial": {
@@ -3145,7 +3661,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "REGNOME",
         "elementName": "REGNOME",
         "elementSet": "data",
@@ -3160,7 +3675,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "HCAREA",
         "elementName": "HCAREA",
         "elementSet": "data",
@@ -3175,7 +3689,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "HCAREANOME",
         "elementName": "HCAREANOME",
         "elementSet": "data",
@@ -3190,7 +3703,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "SUBAREA",
         "elementName": "SUBAREA",
         "elementSet": "data",
@@ -3205,7 +3717,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "SUBAREANOME",
         "elementName": "SUBAREANOME",
         "elementSet": "data",
@@ -3220,7 +3731,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "TAB",
         "elementName": "TAB",
         "elementSet": "data",
@@ -3235,7 +3745,6 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "TABNOME",
         "elementName": "TABNOME",
         "elementSet": "data",
@@ -3250,13 +3759,12 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
         "elementKey": "GRAV",
         "elementName": "GRAV",
         "elementSet": "data",
         "elementPath": "GRAV"
       },
-      "NUMEST": {
+      "IDMUL": {
         "type": "string",
         "_defn": [
           {
@@ -3265,13 +3773,12 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
-        "elementKey": "NUMEST",
-        "elementName": "NUMEST",
+        "elementKey": "IDMUL",
+        "elementName": "IDMUL",
         "elementSet": "data",
-        "elementPath": "NUMEST"
+        "elementPath": "IDMUL"
       },
-      "VISNO": {
+      "VISNOMUL": {
         "type": "integer",
         "_defn": [
           {
@@ -3280,11 +3787,10 @@
           }
         ],
         "isSessionVariable": false,
-        "comment": "From tables",
-        "elementKey": "VISNO",
-        "elementName": "VISNO",
+        "elementKey": "VISNOMUL",
+        "elementName": "VISNOMUL",
         "elementSet": "data",
-        "elementPath": "VISNO"
+        "elementPath": "VISNOMUL"
       },
       "MOR": {
         "type": "string",
@@ -3305,20 +3811,6 @@
         "elementSet": "data",
         "elementPath": "MOR"
       },
-      "CONSENT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 15,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "CONSENT",
-        "elementName": "CONSENT",
-        "elementSet": "data",
-        "elementPath": "CONSENT"
-      },
       "REGDIA": {
         "prompt_type_name": "adate",
         "type": "string",
@@ -3328,7 +3820,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -3342,7 +3834,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -3352,23 +3844,19 @@
         "elementSet": "data",
         "elementPath": "CHWREG"
       },
-      "NOME": {
+      "NOMEMUL": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 11,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 18,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "NOME",
-        "elementName": "NOME",
+        "elementKey": "NOMEMUL",
+        "elementName": "NOMEMUL",
         "elementSet": "data",
-        "elementPath": "NOME"
+        "elementPath": "NOMEMUL"
       },
       "ESTADOMUL": {
         "type": "string",
@@ -3379,7 +3867,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -3389,11 +3877,95 @@
         "elementSet": "data",
         "elementPath": "ESTADOMUL"
       },
+      "DATASEG": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DATASEG",
+        "elementName": "DATASEG",
+        "elementSet": "data",
+        "elementPath": "DATASEG"
+      },
+      "CONSENT": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 41,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONSENT",
+        "elementName": "CONSENT",
+        "elementSet": "data",
+        "elementPath": "CONSENT"
+      },
+      "TELE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELE",
+        "elementName": "TELE",
+        "elementSet": "data",
+        "elementPath": "TELE"
+      },
+      "CALL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CALL",
+        "elementName": "CALL",
+        "elementSet": "data",
+        "elementPath": "CALL"
+      },
+      "CONSENTOU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONSENTOU",
+        "elementName": "CONSENTOU",
+        "elementSet": "data",
+        "elementPath": "CONSENTOU"
+      },
       "IDADE": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -3407,7 +3979,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -3421,7 +3993,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -3431,7 +4003,7 @@
         "elementSet": "data",
         "elementPath": "PARITY"
       },
-      "CICATRIZMAE": {
+      "CICATRIZMUL": {
         "type": "string",
         "valuesList": "YesNoDontknow",
         "_defn": [
@@ -3440,17 +4012,17 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "CICATRIZMAE",
-        "elementName": "CICATRIZMAE",
+        "elementKey": "CICATRIZMUL",
+        "elementName": "CICATRIZMUL",
         "elementSet": "data",
-        "elementPath": "CICATRIZMAE"
+        "elementPath": "CICATRIZMUL"
       },
-      "DATASEG": {
+      "DATASAIMUL": {
         "prompt_type_name": "adate",
         "type": "string",
         "elementType": "string",
@@ -3459,30 +4031,30 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "DATASEG",
-        "elementName": "DATASEG",
+        "elementKey": "DATASAIMUL",
+        "elementName": "DATASAIMUL",
         "elementSet": "data",
-        "elementPath": "DATASEG"
+        "elementPath": "DATASAIMUL"
       },
       "ESTADOGRAV": {
         "type": "string",
         "valuesList": "StatusGrav",
         "_defn": [
           {
-            "_row_num": 32,
+            "_row_num": 47,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -3497,11 +4069,11 @@
         "valuesList": "nvnmab",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -3516,11 +4088,11 @@
         "valuesList": "PlaceOfBirth",
         "_defn": [
           {
-            "_row_num": 42,
+            "_row_num": 57,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -3535,11 +4107,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -3554,11 +4126,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 62,
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -3573,11 +4145,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 67,
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -3591,11 +4163,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 69,
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -3605,35 +4177,46 @@
         "elementSet": "data",
         "elementPath": "GEMNUM"
       },
-      "cicatrizmae": {
+      "cicatrizmul": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
         "isSessionVariable": true,
-        "elementKey": "cicatrizmae",
-        "elementName": "cicatrizmae",
+        "elementKey": "cicatrizmul",
+        "elementName": "cicatrizmul",
         "elementSet": "data",
-        "elementPath": "cicatrizmae"
+        "elementPath": "cicatrizmul"
       },
-      "DATASAI": {
+      "consent": {
+        "type": "integer",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "consent",
+        "elementName": "consent",
+        "elementSet": "data",
+        "elementPath": "consent"
+      },
+      "NOMEMULMUL": {
+        "_defn": [
+          {
+            "_row_num": 11,
             "section_name": "survey"
           }
         ],
-        "prompt_type_name": "adate",
         "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "elementKey": "DATASAI",
-        "elementName": "DATASAI",
+        "elementKey": "NOMEMULMUL",
+        "elementName": "NOMEMULMUL",
         "elementSet": "data",
-        "elementPath": "DATASAI"
+        "elementPath": "NOMEMULMUL"
       },
       "_id": {
         "type": "string",
