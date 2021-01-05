@@ -225,7 +225,7 @@
           "prompt": {
             "text": {
               "english": "Name of child",
-              "default": "NOMEMUL da criança"
+              "default": "Nome da criança"
             }
           }
         },
@@ -2586,7 +2586,7 @@
               "prompt": {
                 "text": {
                   "english": "Name of child",
-                  "default": "NOMEMUL da criança"
+                  "default": "Nome da criança"
                 }
               }
             },

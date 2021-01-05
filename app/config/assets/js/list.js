@@ -177,10 +177,13 @@ function populateView() {
         var that = this;  
 
         // Check if visited today
-        var visited = '';
+        var option = '';
         if ((this.DATASEG == todayAdate | this.REGDIA == todayAdate) & this.savepoint == "COMPLETE") {
-            visited = "visited";
-        };
+            option = "visited";
+        }
+        if (this.CONSENT == 2 & this.savepoint == "COMPLETE") {
+            option = "refused";
+        }
 
         // set text to display
         var displayText = setDisplayText(that);
@@ -188,7 +191,7 @@ function populateView() {
         // list
         // preg criterias
         if (this.type == "pregnancy") {
-            ul.append($("<li />").append($("<button />").attr('id',this.IDMUL).attr('class', visited + " " + this.type).append(displayText)));
+            ul.append($("<li />").append($("<button />").attr('id',this.IDMUL).attr('class', option + " " + this.type).append(displayText)));
          
             // Buttons
             var btn = ul.find('#' + this.IDMUL);
@@ -198,7 +201,7 @@ function populateView() {
         } 
         // child criteria
         if (this.type == "child") {
-            ul.append($("<li />").append($("<button />").attr('id',this.IDCRI).attr('class', visited + " " + this.type + " sex" + this.SEX).append(displayText)));
+            ul.append($("<li />").append($("<button />").attr('id',this.IDCRI).attr('class', option + " " + this.type + " sex" + this.SEX).append(displayText)));
         
             // Buttons
             var btn = ul.find('#' + this.IDCRI);
@@ -223,11 +226,20 @@ function setDisplayText(person) {
             obs = "Consentimento"
         }
 
-        displayText = "Morança: " + person.MOR + "<br />" +
+        if (person.CONSENT == 2) {
+            displayText = "Morança: " + person.MOR + "<br />" +
+            "Nome: " + person.NOMEMUL + "<br />" +
+            "Inclusão: " + regdia+ "<br />" +
+            "OBS: Participação recusada! <br />" + 
+            "Não pergunte novamente";
+        } else {
+            displayText = "Morança: " + person.MOR + "<br />" +
             "Nome: " + person.NOMEMUL + "<br />" + 
             "Idade: " + person.IDADE + "<br />" +
             "Inclusão: " + regdia+ "<br />" +
             "OBS: " + obs;
+        }
+        
     } else {
         regdia = formatDate(person.REGDIA);
         var dob = formatDate(person.DOB);
@@ -241,7 +253,8 @@ function setDisplayText(person) {
         displayText = "Nome: " + person.NOMECRI + "<br />" + 
             "Sexo: " + sex + "<br />" + 
             "Dia de nascimento: " + dob + "<br />" +
-            "Inclusão: " + regdia 
+            "Nome da mãe: " + person.NOMEMUL + "<br />" + 
+            "Inclusão: " + regdia;
     }
     return displayText
 }

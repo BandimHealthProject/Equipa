@@ -54,7 +54,7 @@
       },
       {
         "setting_name": "instance_name",
-        "value": "NOME",
+        "value": "NOMEMUL",
         "_row_num": 8
       }
     ],
@@ -1275,7 +1275,7 @@
       },
       "instance_name": {
         "setting_name": "instance_name",
-        "value": "NOME",
+        "value": "NOMEMUL",
         "_row_num": 8
       },
       "_locales": {

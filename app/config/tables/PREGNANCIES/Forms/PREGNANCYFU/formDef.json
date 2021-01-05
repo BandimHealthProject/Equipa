@@ -54,7 +54,7 @@
       },
       {
         "setting_name": "instance_name",
-        "value": "NOME",
+        "value": "NOMEMUL",
         "_row_num": 8
       }
     ],
@@ -163,12 +163,12 @@
       },
       {
         "type": "text",
-        "name": "NOMEMULMUL",
+        "name": "NOMEMUL",
         "display": {
           "prompt": {
             "text": {
               "english": "Name of woman",
-              "default": "NOMEMUL de mulher"
+              "default": "Nome de mulher"
             }
           }
         },
@@ -817,8 +817,8 @@
         "query_type": "linked_table",
         "linked_form_id": "CHILDREN",
         "linked_table_id": "CHILDREN",
-        "selection": "NUMEST = ?",
-        "selectionArgs": "[data('NUMEST')]",
+        "selection": "IDMUL = ?",
+        "selectionArgs": "[data('IDMUL')]",
         "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
@@ -1427,7 +1427,7 @@
       },
       "instance_name": {
         "setting_name": "instance_name",
-        "value": "NOME",
+        "value": "NOMEMUL",
         "_row_num": 8
       },
       "_locales": {
@@ -1797,8 +1797,8 @@
         "query_type": "linked_table",
         "linked_form_id": "CHILDREN",
         "linked_table_id": "CHILDREN",
-        "selection": "NUMEST = ?",
-        "selectionArgs": "[data('NUMEST')]",
+        "selection": "IDMUL = ?",
+        "selectionArgs": "[data('IDMUL')]",
         "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
@@ -1980,6 +1980,10 @@
       "NOMEMUL": {
         "type": "string",
         "_defn": [
+          {
+            "_row_num": 11,
+            "section_name": "survey"
+          },
           {
             "_row_num": 17,
             "section_name": "model"
@@ -2274,16 +2278,6 @@
         ],
         "isSessionVariable": true,
         "elementKey": "consent"
-      },
-      "NOMEMULMUL": {
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "elementKey": "NOMEMULMUL"
       }
     },
     "section_names": [
@@ -2436,12 +2430,12 @@
           },
           {
             "type": "text",
-            "name": "NOMEMULMUL",
+            "name": "NOMEMUL",
             "display": {
               "prompt": {
                 "text": {
                   "english": "Name of woman",
-                  "default": "NOMEMUL de mulher"
+                  "default": "Nome de mulher"
                 }
               }
             },
@@ -3848,6 +3842,10 @@
         "type": "string",
         "_defn": [
           {
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
             "_row_num": 17,
             "section_name": "model"
           }
@@ -4204,19 +4202,6 @@
         "elementName": "consent",
         "elementSet": "data",
         "elementPath": "consent"
-      },
-      "NOMEMULMUL": {
-        "_defn": [
-          {
-            "_row_num": 11,
-            "section_name": "survey"
-          }
-        ],
-        "type": "string",
-        "elementKey": "NOMEMULMUL",
-        "elementName": "NOMEMULMUL",
-        "elementSet": "data",
-        "elementPath": "NOMEMULMUL"
       },
       "_id": {
         "type": "string",
