@@ -668,56 +668,21 @@
         "_row_num": 67
       },
       {
-        "clause": "if",
-        "condition": "data(\"GEM\") == \"1\"",
+        "clause": "end screen",
         "_row_num": 68
       },
       {
-        "type": "integer",
-        "name": "GEMNUM",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "How many did she give birth to?",
-              "default": "A quantos ela deu à luz?"
-            }
-          },
-          "hint": {
-            "text": {
-              "english": "If number of children born is unknown write \"33\"",
-              "default": "Se o número de crianças nascidas for desconhecido, escreva \"33\""
-            }
-          },
-          "constraint_message": {
-            "text": {
-              "english": "Must be between 1 and 5. If unknown 33.",
-              "default": "Deve estar entre 1 e 5. Se desconhecido, 33."
-            }
-          }
-        },
-        "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
+        "clause": "end if",
         "_row_num": 69
-      },
-      {
-        "clause": "end if",
-        "_row_num": 70
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 71
-      },
-      {
-        "clause": "end if",
-        "_row_num": 72
       },
       {
         "clause": "if",
         "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
-        "_row_num": 73
+        "_row_num": 70
       },
       {
         "clause": "begin screen",
-        "_row_num": 74
+        "_row_num": 71
       },
       {
         "type": "note",
@@ -729,7 +694,7 @@
             }
           }
         },
-        "_row_num": 75
+        "_row_num": 72
       },
       {
         "type": "linked_table",
@@ -748,27 +713,27 @@
             }
           }
         },
-        "_row_num": 76
+        "_row_num": 73
       },
       {
         "clause": "end screen",
+        "_row_num": 74
+      },
+      {
+        "clause": "end if",
+        "_row_num": 75
+      },
+      {
+        "clause": "end if",
+        "_row_num": 76
+      },
+      {
+        "clause": "end if",
         "_row_num": 77
       },
       {
-        "clause": "end if",
-        "_row_num": 78
-      },
-      {
-        "clause": "end if",
-        "_row_num": 79
-      },
-      {
-        "clause": "end if",
-        "_row_num": 80
-      },
-      {
         "clause": "begin screen",
-        "_row_num": 81
+        "_row_num": 78
       },
       {
         "type": "note",
@@ -780,7 +745,7 @@
             }
           }
         },
-        "_row_num": 82
+        "_row_num": 79
       },
       {
         "type": "note",
@@ -792,7 +757,7 @@
             }
           }
         },
-        "_row_num": 83
+        "_row_num": 80
       },
       {
         "type": "note",
@@ -804,24 +769,11 @@
             }
           }
         },
-        "_row_num": 84
+        "_row_num": 81
       },
       {
         "clause": "end screen",
-        "_row_num": 85
-      }
-    ],
-    "queries": [
-      {
-        "query_name": "children",
-        "query_type": "linked_table",
-        "linked_form_id": "CHILDREN",
-        "linked_table_id": "CHILDREN",
-        "selection": "IDMUL = ?",
-        "selectionArgs": "[data('IDMUL')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\")}",
-        "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 2
+        "_row_num": 82
       }
     ],
     "choices": [
@@ -1125,6 +1077,19 @@
         "_row_num": 29
       }
     ],
+    "queries": [
+      {
+        "query_name": "children",
+        "query_type": "linked_table",
+        "linked_form_id": "CHILDREN",
+        "linked_table_id": "CHILDREN",
+        "selection": "IDMUL = ?",
+        "selectionArgs": "[data('IDMUL')]",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\")}",
+        "openRowInitialElementKeyToValueMap": "{}",
+        "_row_num": 2
+      }
+    ],
     "calculates": [
       {
         "calculation_name": "displayREGDIA",
@@ -1338,22 +1303,16 @@
         "_row_num": 35
       },
       {
-        "name": "GEMNUM",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 36
-      },
-      {
         "name": "cicatrizmul",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 37
+        "_row_num": 36
       },
       {
         "name": "consent",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 38
+        "_row_num": 37
       }
     ]
   },
@@ -1799,7 +1758,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "IDMUL = ?",
         "selectionArgs": "[data('IDMUL')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\")}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), SUBAREA: data(\"SUBAREA\"), SUBAREANOME: data(\"SUBAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -2242,26 +2201,11 @@
         "isSessionVariable": false,
         "elementKey": "GEM"
       },
-      "GEMNUM": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 69,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 36,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "GEMNUM"
-      },
       "cicatrizmul": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -2272,7 +2216,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -2951,37 +2895,6 @@
             "promptIdx": 35
           },
           {
-            "type": "integer",
-            "name": "GEMNUM",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "How many did she give birth to?",
-                  "default": "A quantos ela deu à luz?"
-                }
-              },
-              "hint": {
-                "text": {
-                  "english": "If number of children born is unknown write \"33\"",
-                  "default": "Se o número de crianças nascidas for desconhecido, escreva \"33\""
-                }
-              },
-              "constraint_message": {
-                "text": {
-                  "english": "Must be between 1 and 5. If unknown 33.",
-                  "default": "Deve estar entre 1 e 5. Se desconhecido, 33."
-                }
-              }
-            },
-            "constraint": "((data(\"GEMNUM\") > 0 && data(\"GEMNUM\") <6) || data(\"GEMNUM\") ==33) || data(\"GEM\") != 1",
-            "_row_num": 69,
-            "__rowNum__": 68,
-            "_token_type": "prompt",
-            "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen65",
-            "promptIdx": 36
-          },
-          {
             "type": "note",
             "display": {
               "prompt": {
@@ -2991,12 +2904,12 @@
                 }
               }
             },
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen74",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 36
           },
           {
             "type": "linked_table",
@@ -3015,12 +2928,12 @@
                 }
               }
             },
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 73,
+            "__rowNum__": 72,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen74",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 37
           },
           {
             "type": "note",
@@ -3032,12 +2945,12 @@
                 }
               }
             },
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "_row_num": 79,
+            "__rowNum__": 78,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen81",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "survey/_screen78",
+            "promptIdx": 38
           },
           {
             "type": "note",
@@ -3049,12 +2962,12 @@
                 }
               }
             },
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen81",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "survey/_screen78",
+            "promptIdx": 39
           },
           {
             "type": "note",
@@ -3066,20 +2979,20 @@
                 }
               }
             },
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen81",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "survey/_screen78",
+            "promptIdx": 40
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 86,
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 42
+            "_row_num": 83,
+            "_branch_label_enclosing_screen": "survey/_screen83",
+            "promptIdx": 41
           }
         ],
         "validation_tag_map": {
@@ -3096,8 +3009,7 @@
             31,
             32,
             33,
-            35,
-            36
+            35
           ]
         },
         "operations": [
@@ -3229,8 +3141,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else80",
-            "_row_num": 80,
+            "_branch_label": "_else77",
+            "_row_num": 77,
             "operationIdx": 12
           },
           {
@@ -3259,8 +3171,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else79",
-            "_row_num": 79,
+            "_branch_label": "_else76",
+            "_row_num": 76,
             "operationIdx": 15
           },
           {
@@ -3289,8 +3201,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else72",
-            "_row_num": 72,
+            "_branch_label": "_else69",
+            "_row_num": 69,
             "operationIdx": 18
           },
           {
@@ -3314,95 +3226,95 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 71,
-              "__rowNum__": 70,
+              "_row_num": 68,
+              "__rowNum__": 67,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nif (data(\"GEM\") == \"1\") {\nactivePromptIndicies.push(36);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 20
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif72",
-            "_row_num": 72,
+            "_branch_label": "_endif69",
+            "_row_num": 69,
             "operationIdx": 21
           },
           {
             "clause": "if",
             "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "goto_label",
-            "_branch_label": "_then73",
+            "_branch_label": "_then70",
             "operationIdx": 22
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else78",
-            "_row_num": 78,
+            "_branch_label": "_else75",
+            "_row_num": 75,
             "operationIdx": 23
           },
           {
             "clause": "begin screen",
-            "_row_num": 74,
-            "__rowNum__": 73,
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 77,
-              "__rowNum__": 76,
+              "_row_num": 74,
+              "__rowNum__": 73,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 24
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif78",
-            "_row_num": 78,
+            "_branch_label": "_endif75",
+            "_row_num": 75,
             "operationIdx": 25
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif79",
-            "_row_num": 79,
+            "_branch_label": "_endif76",
+            "_row_num": 76,
             "operationIdx": 26
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif80",
-            "_row_num": 80,
+            "_branch_label": "_endif77",
+            "_row_num": 77,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 78,
+            "__rowNum__": 77,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 85,
-              "__rowNum__": 84,
+              "_row_num": 82,
+              "__rowNum__": 81,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 86,
+            "_row_num": 83,
             "operationIdx": 29
           },
           {
-            "_row_num": 86,
+            "_row_num": 83,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -3411,7 +3323,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 86,
+            "_row_num": 83,
             "operationIdx": 31
           }
         ],
@@ -3434,19 +3346,19 @@
           "_then54": 19,
           "_screen55": 19,
           "_screen65": 20,
-          "_else72": 22,
-          "_endif72": 22,
-          "_then73": 24,
-          "_screen74": 24,
-          "_else78": 26,
-          "_endif78": 26,
-          "_else79": 27,
-          "_endif79": 27,
-          "_else80": 28,
-          "_endif80": 28,
-          "_screen81": 28,
+          "_else69": 22,
+          "_endif69": 22,
+          "_then70": 24,
+          "_screen71": 24,
+          "_else75": 26,
+          "_endif75": 26,
+          "_else76": 27,
+          "_endif76": 27,
+          "_else77": 28,
+          "_endif77": 28,
+          "_screen78": 28,
           "_contents": 30,
-          "_screen86": 30
+          "_screen83": 30
         }
       },
       "initial": {
@@ -4157,29 +4069,11 @@
         "elementSet": "data",
         "elementPath": "GEM"
       },
-      "GEMNUM": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 69,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 36,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "GEMNUM",
-        "elementName": "GEMNUM",
-        "elementSet": "data",
-        "elementPath": "GEMNUM"
-      },
       "cicatrizmul": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -4193,7 +4087,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
