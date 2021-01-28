@@ -449,6 +449,12 @@
               "english": "Do you accept that you and your future child will participate?",
               "default": "Você aceita que você e seu futuro filho participem?"
             }
+          },
+          "hint": {
+            "text": {
+              "english": "Remember to give the women the description",
+              "default": "Lembre-se de dar a descrição às mulheres"
+            }
           }
         },
         "constraint": "data(\"CONSENT\") !=null || data(\"ESTADOMUL\") != 1",
@@ -536,8 +542,8 @@
           },
           "hint": {
             "text": {
-              "english": "Still birth: after 6 months of pregnancy <\\br>\nMiscarriage: before 6 months of pregnancy",
-              "default": "Nado morto: após 6 meses de gravidez <\\br> \nAborto espontâneo: antes de 6 meses de gravidez"
+              "english": "Still birth: after 6 months of pregnancy </br> Miscarriage: before 6 months of pregnancy",
+              "default": "Nado morto: após 6 meses de gravidez </br> Aborto espontâneo: antes de 6 meses de gravidez"
             }
           }
         },
@@ -772,8 +778,21 @@
         "_row_num": 81
       },
       {
-        "clause": "end screen",
+        "type": "text",
+        "name": "OBSMUL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<i> If you have any comment or observations about the woman, write them here </i>",
+              "default": "<i> Se você tiver qualquer comentário ou observação sobre a mulher, escreva aqui </i>"
+            }
+          }
+        },
         "_row_num": 82
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 83
       }
     ],
     "choices": [
@@ -2222,6 +2241,16 @@
         ],
         "isSessionVariable": true,
         "elementKey": "consent"
+      },
+      "OBSMUL": {
+        "_defn": [
+          {
+            "_row_num": 82,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "OBSMUL"
       }
     },
     "section_names": [
@@ -2690,6 +2719,12 @@
                   "english": "Do you accept that you and your future child will participate?",
                   "default": "Você aceita que você e seu futuro filho participem?"
                 }
+              },
+              "hint": {
+                "text": {
+                  "english": "Remember to give the women the description",
+                  "default": "Lembre-se de dar a descrição às mulheres"
+                }
               }
             },
             "constraint": "data(\"CONSENT\") !=null || data(\"ESTADOMUL\") != 1",
@@ -2767,8 +2802,8 @@
               },
               "hint": {
                 "text": {
-                  "english": "Still birth: after 6 months of pregnancy <\\br>\nMiscarriage: before 6 months of pregnancy",
-                  "default": "Nado morto: após 6 meses de gravidez <\\br> \nAborto espontâneo: antes de 6 meses de gravidez"
+                  "english": "Still birth: after 6 months of pregnancy </br> Miscarriage: before 6 months of pregnancy",
+                  "default": "Nado morto: após 6 meses de gravidez </br> Aborto espontâneo: antes de 6 meses de gravidez"
                 }
               }
             },
@@ -2987,12 +3022,30 @@
             "promptIdx": 40
           },
           {
+            "type": "text",
+            "name": "OBSMUL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<i> If you have any comment or observations about the woman, write them here </i>",
+                  "default": "<i> Se você tiver qualquer comentário ou observação sobre a mulher, escreva aqui </i>"
+                }
+              }
+            },
+            "_row_num": 82,
+            "__rowNum__": 81,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen78",
+            "promptIdx": 41
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 83,
-            "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 41
+            "_row_num": 84,
+            "_branch_label_enclosing_screen": "survey/_screen84",
+            "promptIdx": 42
           }
         ],
         "validation_tag_map": {
@@ -3298,23 +3351,23 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 82,
-              "__rowNum__": 81,
+              "_row_num": 83,
+              "__rowNum__": 82,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 83,
+            "_row_num": 84,
             "operationIdx": 29
           },
           {
-            "_row_num": 83,
+            "_row_num": 84,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -3323,7 +3376,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 83,
+            "_row_num": 84,
             "operationIdx": 31
           }
         ],
@@ -3358,7 +3411,7 @@
           "_endif77": 28,
           "_screen78": 28,
           "_contents": 30,
-          "_screen83": 30
+          "_screen84": 30
         }
       },
       "initial": {
@@ -4096,6 +4149,19 @@
         "elementName": "consent",
         "elementSet": "data",
         "elementPath": "consent"
+      },
+      "OBSMUL": {
+        "_defn": [
+          {
+            "_row_num": 82,
+            "section_name": "survey"
+          }
+        ],
+        "type": "string",
+        "elementKey": "OBSMUL",
+        "elementName": "OBSMUL",
+        "elementSet": "data",
+        "elementPath": "OBSMUL"
       },
       "_id": {
         "type": "string",
