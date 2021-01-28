@@ -957,7 +957,7 @@
       },
       {
         "type": "text",
-        "name": "OBS",
+        "name": "OBSCRI",
         "display": {
           "prompt": {
             "text": {
@@ -1564,7 +1564,7 @@
         "_row_num": 47
       },
       {
-        "name": "OBS",
+        "name": "OBSCRI",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 48
@@ -2716,7 +2716,7 @@
         "isSessionVariable": false,
         "elementKey": "HOSPDATA"
       },
-      "OBS": {
+      "OBSCRI": {
         "type": "string",
         "_defn": [
           {
@@ -2729,7 +2729,7 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "OBS"
+        "elementKey": "OBSCRI"
       },
       "NOMECRICON": {
         "type": "string",
@@ -3706,7 +3706,7 @@
           },
           {
             "type": "text",
-            "name": "OBS",
+            "name": "OBSCRI",
             "display": {
               "prompt": {
                 "text": {
@@ -5092,7 +5092,7 @@
         "elementSet": "data",
         "elementPath": "HOSPDATA"
       },
-      "OBS": {
+      "OBSCRI": {
         "type": "string",
         "_defn": [
           {
@@ -5105,10 +5105,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "OBS",
-        "elementName": "OBS",
+        "elementKey": "OBSCRI",
+        "elementName": "OBSCRI",
         "elementSet": "data",
-        "elementPath": "OBS"
+        "elementPath": "OBSCRI"
       },
       "NOMECRICON": {
         "type": "string",
