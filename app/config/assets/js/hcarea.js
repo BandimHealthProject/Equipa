@@ -34,7 +34,7 @@ function getMasterList(data) {
     for (var row = 1; row < allRows.length; row++) {  // start at row = 1 to skip header
             allRows[row] = allRows[row].replace(/"/g,""); // remove quotes from strings
             var rowValues = allRows[row].split(",");
-            var p = {reg: rowValues[0], regNome: rowValues[1], hcarea: rowValues[2], hcareaNome: rowValues[3], subarea: rowValues[4], subareaNome: rowValues[5], tab: rowValues[6], tabNome: rowValues[7]};
+            var p = {reg: rowValues[0], regNome: rowValues[1], hcarea: rowValues[2], hcareaNome: rowValues[3], tab: rowValues[4], tabNome: rowValues[5]};
             if (p.reg != "") { // only push rows with reg number
                 masterList.push(p);
             }
@@ -68,7 +68,7 @@ function initButtons() {
         var btn = ul.find('#' + this.hcarea);
         btn.on("click", function() {
             var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome);
-            odkTables.launchHTML(null, 'config/assets/subarea.html' + queryParams);
+            odkTables.launchHTML(null, 'config/assets/tab.html' + queryParams);
         })        
     });
 }

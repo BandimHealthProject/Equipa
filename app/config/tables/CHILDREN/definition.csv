@@ -39,8 +39,6 @@ STICKERS,STICKERS,string,[]
 STICKERSIMG,STICKERSIMG,mimeUri,"[""STICKERSIMG_contentType"",""STICKERSIMG_uriFragment""]"
 STICKERSIMG_contentType,contentType,mimeType,[]
 STICKERSIMG_uriFragment,uriFragment,rowpath,[]
-SUBAREA,SUBAREA,integer,[]
-SUBAREANOME,SUBAREANOME,string,[]
 TAB,TAB,integer,[]
 TABNOME,TABNOME,string,[]
 VACINAS,VACINAS,string,[]

@@ -68,8 +68,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
@@ -116,24 +116,12 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Subarea: <b>{{data.SUBAREANOME}}<b>",
-              "default": "Subarea: <b>{{data.SUBAREANOME}}</b>"
-            }
-          }
-        },
-        "_row_num": 7
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
               "english": "Village: <b>{{data.TABNOME}}</b>",
               "default": "Tabanca: <b>{{data.TABNOME}}</b>"
             }
           }
         },
-        "_row_num": 8
+        "_row_num": 7
       },
       {
         "type": "note",
@@ -146,7 +134,7 @@
           }
         },
         "required": true,
-        "_row_num": 9
+        "_row_num": 8
       },
       {
         "type": "note",
@@ -158,27 +146,27 @@
             }
           }
         },
-        "_row_num": 10
+        "_row_num": 9
       },
       {
         "clause": "end screen",
-        "_row_num": 11
+        "_row_num": 10
       },
       {
         "clause": "begin screen",
-        "_row_num": 12
+        "_row_num": 11
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 13
+        "_row_num": 12
       },
       {
         "type": "adate",
@@ -196,27 +184,27 @@
         },
         "required": true,
         "constraint": "not(adate.hasUncertainty(data(\"DATASEG\"))) && data(\"DATASEG\") != null && adate.ageInYears(data(\"DATASEG\")) != -9999 && adate.ageInYears(data(\"DATASEG\")) < 2019",
-        "_row_num": 14
+        "_row_num": 13
       },
       {
         "clause": "end screen",
-        "_row_num": 15
+        "_row_num": 14
       },
       {
         "clause": "begin screen",
-        "_row_num": 16
+        "_row_num": 15
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 17
+        "_row_num": 16
       },
       {
         "type": "select_one",
@@ -231,12 +219,12 @@
           }
         },
         "required": true,
-        "_row_num": 18
+        "_row_num": 17
       },
       {
         "clause": "if",
         "condition": "data(\"ESTADOMUL\") == \"2\" || data(\"ESTADOMUL\") == \"3\"",
-        "_row_num": 19
+        "_row_num": 18
       },
       {
         "type": "adate",
@@ -248,36 +236,42 @@
               "default": "Data de mudança / morte"
             }
           },
+          "constraint_message": {
+            "text": {
+              "english": "Date is after today:",
+              "default": "A data é depois de hoje:"
+            }
+          },
           "adate": {
             "helperText": false
           }
         },
-        "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAIMUL\") != null && adate.ageInYears(data(\"DATASAIMUL\")) != -9999 && adate.ageInYears(data(\"DATASAIMUL\")) < 2019)",
-        "_row_num": 20
+        "constraint": "((adate.diffInDays(data(\"DATASAIMUL\"),data(\"DATASEG\")) >= 0 || adate.dayUnknown(data(\"DATASAIMUL\"))) && data(\"DATASAIMUL\") != null && adate.ageInYears(data(\"DATASAIMUL\")) != -9999 && adate.ageInYears(data(\"DATASAIMUL\")) < 2019) || (data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3)",
+        "_row_num": 19
       },
       {
         "clause": "end if",
-        "_row_num": 21
+        "_row_num": 20
       },
       {
         "clause": "end screen",
-        "_row_num": 22
+        "_row_num": 21
       },
       {
         "clause": "begin screen",
-        "_row_num": 23
+        "_row_num": 22
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 23
       },
       {
         "type": "note",
@@ -289,7 +283,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 24
       },
       {
         "type": "select_one",
@@ -310,12 +304,12 @@
           }
         },
         "required": true,
-        "_row_num": 26
+        "_row_num": 25
       },
       {
         "clause": "if",
         "condition": "data(\"NOMECRICON\") == \"2\"",
-        "_row_num": 27
+        "_row_num": 26
       },
       {
         "type": "text",
@@ -328,32 +322,32 @@
             }
           }
         },
-        "required": true,
-        "_row_num": 28
+        "constraint": "data(\"NOMECRI\") != null || data(\"NOMECRICON\") !=2",
+        "_row_num": 27
       },
       {
         "clause": "end if",
-        "_row_num": 29
+        "_row_num": 28
       },
       {
         "clause": "end screen",
-        "_row_num": 30
+        "_row_num": 29
       },
       {
         "clause": "begin screen",
-        "_row_num": 31
+        "_row_num": 30
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 31
       },
       {
         "type": "note",
@@ -365,12 +359,12 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 32
       },
       {
         "clause": "if",
         "condition": "data(\"SEX\") == \"1\"",
-        "_row_num": 34
+        "_row_num": 33
       },
       {
         "type": "note",
@@ -383,16 +377,16 @@
           }
         },
         "required": true,
-        "_row_num": 35
+        "_row_num": 34
       },
       {
         "clause": "end if",
-        "_row_num": 36
+        "_row_num": 35
       },
       {
         "clause": "if",
         "condition": "data(\"SEX\") == \"2\"",
-        "_row_num": 37
+        "_row_num": 36
       },
       {
         "type": "note",
@@ -405,16 +399,16 @@
           }
         },
         "required": true,
-        "_row_num": 38
+        "_row_num": 37
       },
       {
         "clause": "end if",
-        "_row_num": 39
+        "_row_num": 38
       },
       {
         "clause": "if",
         "condition": "data(\"SEX\") == \"3\" || data(\"SEX\") == null",
-        "_row_num": 40
+        "_row_num": 39
       },
       {
         "type": "note",
@@ -427,22 +421,22 @@
           }
         },
         "required": true,
-        "_row_num": 41
+        "_row_num": 40
       },
       {
         "clause": "end if",
-        "_row_num": 42
+        "_row_num": 41
       },
       {
         "type": "select_one",
         "values_list": "Change",
         "name": "SEXCON",
-        "_row_num": 43
+        "_row_num": 42
       },
       {
         "clause": "if",
         "condition": "data(\"SEXCON\") == \"2\"",
-        "_row_num": 44
+        "_row_num": 43
       },
       {
         "type": "select_one",
@@ -456,32 +450,32 @@
             }
           }
         },
-        "required": true,
-        "_row_num": 45
+        "constraint": "data(\"SEX\") != null || data(\"SEXCON\") !=2",
+        "_row_num": 44
       },
       {
         "clause": "end if",
-        "_row_num": 46
+        "_row_num": 45
       },
       {
         "clause": "end screen",
-        "_row_num": 47
+        "_row_num": 46
       },
       {
         "clause": "begin screen",
-        "_row_num": 48
+        "_row_num": 47
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 48
       },
       {
         "type": "note",
@@ -493,7 +487,7 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 49
       },
       {
         "type": "select_one",
@@ -508,12 +502,12 @@
           }
         },
         "required": true,
-        "_row_num": 51
+        "_row_num": 50
       },
       {
         "clause": "if",
         "condition": "data(\"DOBCON\") == \"2\"",
-        "_row_num": 52
+        "_row_num": 51
       },
       {
         "type": "adate",
@@ -525,37 +519,42 @@
               "default": "Data de nascimento"
             }
           },
+          "constraint_message": {
+            "text": {
+              "english": "Date of birth is after today or before regdia:",
+              "default": "A data de nascimento é depois de hoje ou antes do regdia:"
+            }
+          },
           "adate": {
             "helperText": false
           }
         },
-        "required": true,
-        "constraint": "adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
-        "_row_num": 53
+        "constraint": "(adate.diffInDays(data(\"DOB\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"DOB\")) >= 0 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) || data(\"DOBCON\") !=2",
+        "_row_num": 52
       },
       {
         "clause": "end if",
-        "_row_num": 54
+        "_row_num": 53
       },
       {
         "clause": "end screen",
-        "_row_num": 55
+        "_row_num": 54
       },
       {
         "clause": "begin screen",
-        "_row_num": 56
+        "_row_num": 55
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 57
+        "_row_num": 56
       },
       {
         "type": "select_one",
@@ -570,12 +569,12 @@
           }
         },
         "required": true,
-        "_row_num": 58
+        "_row_num": 57
       },
       {
         "clause": "if",
         "condition": "data(\"ESTADOCRI\") == \"2\" || data(\"ESTADOCRI\") == \"3\"",
-        "_row_num": 59
+        "_row_num": 58
       },
       {
         "type": "adate",
@@ -587,36 +586,42 @@
               "default": "Data de mudança / morte"
             }
           },
+          "constraint_message": {
+            "text": {
+              "english": "Date is after today:",
+              "default": "A data é depois de hoje:"
+            }
+          },
           "adate": {
             "helperText": false
           }
         },
-        "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAICRI\") != null && adate.ageInYears(data(\"DATASAICRI\")) != -9999 && adate.ageInYears(data(\"DATASAICRI\")) < 2019)",
-        "_row_num": 60
+        "constraint": "((adate.diffInDays(data(\"DATASAICRI\"),data(\"DATASEG\")) >= 0 || adate.dayUnknown(data(\"DATASAICRI\"))) && adate.ageInYears(data(\"DATASAICRI\")) != -9999 && adate.ageInYears(data(\"DATASAICRI\")) < 2019) || (data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3)",
+        "_row_num": 59
       },
       {
         "clause": "end if",
-        "_row_num": 61
+        "_row_num": 60
       },
       {
         "clause": "end screen",
-        "_row_num": 62
+        "_row_num": 61
       },
       {
         "clause": "begin screen",
-        "_row_num": 63
+        "_row_num": 62
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 64
+        "_row_num": 63
       },
       {
         "type": "select_one",
@@ -631,7 +636,7 @@
           }
         },
         "required": true,
-        "_row_num": 65
+        "_row_num": 64
       },
       {
         "type": "select_one",
@@ -646,12 +651,12 @@
           }
         },
         "required": true,
-        "_row_num": 66
+        "_row_num": 65
       },
       {
         "clause": "if",
         "condition": "data(\"VACINFO\") == \"4\"",
-        "_row_num": 67
+        "_row_num": 66
       },
       {
         "type": "text",
@@ -665,36 +670,36 @@
           }
         },
         "constraint": "data(\"VACINFOOU\") != null || data(\"VACINFO\") != 4",
-        "_row_num": 68
+        "_row_num": 67
       },
       {
         "clause": "end if",
-        "_row_num": 69
+        "_row_num": 68
       },
       {
         "clause": "end screen",
-        "_row_num": 70
+        "_row_num": 69
       },
       {
         "clause": "if",
         "condition": "data(\"VACINAS\") == \"1\"",
-        "_row_num": 71
+        "_row_num": 70
       },
       {
         "clause": "begin screen",
-        "_row_num": 72
+        "_row_num": 71
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 73
+        "_row_num": 72
       },
       {
         "type": "select_one",
@@ -709,12 +714,12 @@
           }
         },
         "constraint": "data(\"BCG\") != null || data(\"VACINAS\") !=1",
-        "_row_num": 74
+        "_row_num": 73
       },
       {
         "clause": "if",
         "condition": "data(\"BCG\") != \"2\"",
-        "_row_num": 75
+        "_row_num": 74
       },
       {
         "type": "adate",
@@ -731,11 +736,11 @@
           }
         },
         "constraint": "(data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019) || data(\"BCG\") != 1",
-        "_row_num": 76
+        "_row_num": 75
       },
       {
         "clause": "end if",
-        "_row_num": 77
+        "_row_num": 76
       },
       {
         "type": "select_one",
@@ -750,12 +755,12 @@
           }
         },
         "constraint": "data(\"POLIO\") != null || data(\"VACINAS\") !=1",
-        "_row_num": 78
+        "_row_num": 77
       },
       {
         "clause": "if",
         "condition": "data(\"POLIO\") != \"2\"",
-        "_row_num": 79
+        "_row_num": 78
       },
       {
         "type": "adate",
@@ -772,31 +777,31 @@
           }
         },
         "constraint": "(data(\"POLIODATA\") != null && adate.ageInYears(data(\"POLIODATA\")) != -9999 && adate.ageInYears(data(\"POLIODATA\")) < 2019) || data(\"POLIO\") != 1",
-        "_row_num": 80
+        "_row_num": 79
       },
       {
         "clause": "end if",
-        "_row_num": 81
+        "_row_num": 80
       },
       {
         "clause": "end screen",
-        "_row_num": 82
+        "_row_num": 81
       },
       {
         "clause": "begin screen",
-        "_row_num": 83
+        "_row_num": 82
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 84
+        "_row_num": 83
       },
       {
         "type": "select_one",
@@ -811,32 +816,32 @@
           }
         },
         "constraint": "data(\"VACINASOU\") != null || data(\"VACINAS\") !=1",
-        "_row_num": 85
+        "_row_num": 84
       },
       {
         "clause": "end screen",
-        "_row_num": 86
+        "_row_num": 85
       },
       {
         "clause": "if",
         "condition": "data(\"VACINASOU\") == \"1\"",
-        "_row_num": 87
+        "_row_num": 86
       },
       {
         "clause": "begin screen",
-        "_row_num": 88
+        "_row_num": 87
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-              "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 89
+        "_row_num": 88
       },
       {
         "type": "select_multiple",
@@ -851,12 +856,12 @@
           }
         },
         "constraint": "data(\"OUTROVAC\") != null || data(\"VACINASOU\") !=1",
-        "_row_num": 90
+        "_row_num": 89
       },
       {
         "clause": "if",
         "condition": "selected(data(\"OUTROVAC\"),\"Other\")",
-        "_row_num": 91
+        "_row_num": 90
       },
       {
         "type": "text",
@@ -870,11 +875,11 @@
           }
         },
         "constraint": "data(\"OUTROVACOU\") != null || not(selected(data(\"OUTROVAC\"),\"Other\"))",
-        "_row_num": 92
+        "_row_num": 91
       },
       {
         "clause": "end if",
-        "_row_num": 93
+        "_row_num": 92
       },
       {
         "type": "adate",
@@ -885,30 +890,33 @@
               "english": "Date of first vaccine received after polio or BCG",
               "default": "Data da primeira vacina recebida após a poliomielite ou BCG"
             }
+          },
+          "adate": {
+            "helperText": false
           }
         },
-        "constraint": "data(\"OUTRODATA\") != null || data(\"VACINASOU\") !=1",
-        "_row_num": 94
+        "constraint": "(data(\"OUTRODATA\") != null && adate.ageInYears(data(\"OUTRODATA\")) != -9999 && adate.ageInYears(data(\"OUTRODATA\")) < 2019) || data(\"VACINASOU\") !=1",
+        "_row_num": 93
       },
       {
         "clause": "end screen",
-        "_row_num": 95
+        "_row_num": 94
       },
       {
         "clause": "begin screen",
-        "_row_num": 96
+        "_row_num": 95
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 97
+        "_row_num": 96
       },
       {
         "type": "image",
@@ -928,10 +936,14 @@
             }
           }
         },
-        "_row_num": 98
+        "_row_num": 97
       },
       {
         "clause": "end screen",
+        "_row_num": 98
+      },
+      {
+        "clause": "end if",
         "_row_num": 99
       },
       {
@@ -939,29 +951,25 @@
         "_row_num": 100
       },
       {
-        "clause": "end if",
+        "clause": "if",
+        "condition": "data(\"VACINFO\") != \"3\"",
         "_row_num": 101
       },
       {
-        "clause": "if",
-        "condition": "data(\"VACINFO\") != \"3\"",
-        "_row_num": 102
-      },
-      {
         "clause": "begin screen",
-        "_row_num": 103
+        "_row_num": 102
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 104
+        "_row_num": 103
       },
       {
         "type": "select_one",
@@ -977,12 +985,12 @@
           }
         },
         "constraint": "data(\"STICKERS\") != null || data(\"VACINFO\") == \"3\"",
-        "_row_num": 105
+        "_row_num": 104
       },
       {
         "clause": "if",
         "condition": "data(\"STICKERS\") == \"1\"",
-        "_row_num": 106
+        "_row_num": 105
       },
       {
         "type": "image",
@@ -995,40 +1003,40 @@
             }
           }
         },
+        "_row_num": 106
+      },
+      {
+        "clause": "end if",
         "_row_num": 107
       },
       {
-        "clause": "end if",
+        "clause": "end screen",
         "_row_num": 108
       },
       {
-        "clause": "end screen",
-        "_row_num": 109
-      },
-      {
         "clause": "end if",
-        "_row_num": 110
+        "_row_num": 109
       },
       {
         "clause": "if",
         "condition": "data(\"ESTADOCRI\") == \"1\"",
-        "_row_num": 111
+        "_row_num": 110
       },
       {
         "clause": "begin screen",
-        "_row_num": 112
+        "_row_num": 111
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 113
+        "_row_num": 112
       },
       {
         "type": "integer",
@@ -1038,7 +1046,8 @@
             "text": {
               "english": "Measure of the mid-upper-arm circumference",
               "default": "Medida da circunferência do braço"
-            }
+            },
+            "image": "muac.jpg"
           },
           "hint": {
             "text": {
@@ -1054,7 +1063,27 @@
           }
         },
         "constraint": "(data(\"MUAC\")>49 && data(\"MUAC\")<343 && data(\"MUAC\")%2 == 0) || data(\"MUAC\") == 999  || data(\"MUAC\") == \"11\" || data('ESTADOCRI') != 1",
+        "_row_num": 113
+      },
+      {
+        "clause": "end screen",
         "_row_num": 114
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 115
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
+            }
+          }
+        },
+        "_row_num": 116
       },
       {
         "type": "select_one",
@@ -1065,7 +1094,8 @@
             "text": {
               "english": "Is there a reaction where the child got the BCG vaccine?",
               "default": "Existe alguma reação onde a criança tomou a vacina BCG?"
-            }
+            },
+            "image": "reactions.jpg"
           },
           "hint": {
             "text": {
@@ -1075,31 +1105,31 @@
           }
         },
         "constraint": "data(\"BCGREACT\") != null || data('ESTADOCRI') != 1",
-        "_row_num": 115
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 116
-      },
-      {
-        "clause": "end if",
         "_row_num": 117
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 118
+      },
+      {
+        "clause": "end if",
+        "_row_num": 119
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 120
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 119
+        "_row_num": 121
       },
       {
         "type": "select_one",
@@ -1108,18 +1138,24 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Has the child been hospitalised since birth?",
-              "default": "A criança está hospitalizada desde o nascimento?"
+              "english": "Has the child been hospitalised since birth ({{calculates.displayDOB}})?",
+              "default": "A criança está hospitalizada desde o nascimento ({{calculates.displayDOB}})?"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "Stayed overnight or died",
+              "default": "Passou a noite ou morreu"
             }
           }
         },
         "required": true,
-        "_row_num": 120
+        "_row_num": 122
       },
       {
         "clause": "if",
         "condition": "data(\"HOSP\") ==\"1\"",
-        "_row_num": 121
+        "_row_num": 123
       },
       {
         "type": "adate",
@@ -1131,36 +1167,42 @@
               "default": "Data da primeira admissão hospitalar"
             }
           },
+          "constraint_message": {
+            "text": {
+              "english": "Date is after today or before birth:",
+              "default": "A data é depois de hoje ou antes do nascimento:"
+            }
+          },
           "adate": {
             "helperText": false
           }
         },
-        "constraint": "(data(\"HOSPDATA\") != null && adate.ageInYears(data(\"HOSPDATA\")) != -9999 && adate.ageInYears(data(\"HOSPDATA\")) < 2019) || data(\"HOSP\") != 1",
-        "_row_num": 122
-      },
-      {
-        "clause": "end if",
-        "_row_num": 123
-      },
-      {
-        "clause": "end screen",
+        "constraint": "(((adate.diffInDays(data(\"HOSPDATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"HOSPDATA\")) >= 0) || adate.dayUnknown(data(\"HOSPDATA\"))) &&\ndata(\"HOSPDATA\") != null && adate.ageInYears(data(\"HOSPDATA\")) != -9999 && adate.ageInYears(data(\"HOSPDATA\")) < 2019) || data(\"HOSP\") != 1",
         "_row_num": 124
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 125
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 126
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 127
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-              "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+              "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
             }
           }
         },
-        "_row_num": 126
+        "_row_num": 128
       },
       {
         "type": "note",
@@ -1172,7 +1214,7 @@
             }
           }
         },
-        "_row_num": 127
+        "_row_num": 129
       },
       {
         "type": "note",
@@ -1184,7 +1226,7 @@
             }
           }
         },
-        "_row_num": 128
+        "_row_num": 130
       },
       {
         "type": "text",
@@ -1197,11 +1239,11 @@
             }
           }
         },
-        "_row_num": 129
+        "_row_num": 131
       },
       {
         "clause": "end screen",
-        "_row_num": 130
+        "_row_num": 132
       }
     ],
     "choices": [
@@ -1568,6 +1610,19 @@
           }
         },
         "_row_num": 36
+      },
+      {
+        "choice_list_name": "Vaccines",
+        "data_value": "Other",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Other",
+              "default": "Outro"
+            }
+          }
+        },
+        "_row_num": 37
       }
     ],
     "calculates": [
@@ -1575,6 +1630,11 @@
         "calculation_name": "displayDOB",
         "calculation": "adate.display(data(\"DOB\"))",
         "_row_num": 2
+      },
+      {
+        "calculation_name": "displayREGDIA",
+        "calculation": "adate.display(data(\"REGDIA\"))",
+        "_row_num": 3
       }
     ],
     "prompt_types": [
@@ -1613,213 +1673,213 @@
         "_row_num": 5
       },
       {
-        "name": "SUBAREA",
+        "name": "TAB",
         "type": "integer",
         "isSessionVariable": false,
         "_row_num": 6
       },
       {
-        "name": "SUBAREANOME",
+        "name": "TABNOME",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 7
       },
       {
-        "name": "TAB",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 8
-      },
-      {
-        "name": "TABNOME",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 9
-      },
-      {
         "name": "MOR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 10
+        "_row_num": 8
       },
       {
         "name": "GRAV",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 11
+        "_row_num": 9
       },
       {
         "name": "VISNOCRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 12
+        "_row_num": 10
       },
       {
         "name": "IDMUL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 14
+        "_row_num": 12
       },
       {
         "name": "REGDIA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 15
+        "_row_num": 13
       },
       {
         "name": "NOMEMUL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 14
       },
       {
         "name": "ESTADOMUL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 17
+        "_row_num": 15
       },
       {
         "name": "DATASAIMUL",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 16
       },
       {
         "name": "IDCRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 20
+        "_row_num": 18
       },
       {
         "name": "GEM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 19
       },
       {
         "name": "idcount",
         "type": "async_assign_count",
         "isSessionVariable": true,
         "comment": "First visit",
-        "_row_num": 23
+        "_row_num": 21
       },
       {
         "name": "DATASEG",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 24
+        "_row_num": 22
       },
       {
         "name": "NOMECRI",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 25
+        "_row_num": 23
       },
       {
         "name": "SEX",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 26
+        "_row_num": 24
       },
       {
         "name": "DOB",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 27
+        "_row_num": 25
       },
       {
         "name": "ESTADOCRI",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 28
+        "_row_num": 26
       },
       {
         "name": "DATASAICRI",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 29
+        "_row_num": 27
       },
       {
         "name": "VACINAS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 28
       },
       {
         "name": "VACINFO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 29
       },
       {
         "name": "VACINFOOU",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 30
       },
       {
         "name": "BCG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 31
       },
       {
         "name": "BCGDATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 34
-      },
-      {
-        "name": "VACINASOU",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 35
-      },
-      {
-        "name": "OUTROVAC",
-        "type": "select_multiple",
-        "isSessionVariable": false,
-        "_row_num": 36
-      },
-      {
-        "name": "OUTROVACOU",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 37
-      },
-      {
-        "name": "OUTRODATA",
-        "type": "adate",
-        "isSessionVariable": false,
-        "_row_num": 38
-      },
-      {
-        "name": "VACINASIMG",
-        "type": "image",
-        "isSessionVariable": false,
-        "_row_num": 39
-      },
-      {
-        "name": "STICKERS",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 40
-      },
-      {
-        "name": "STICKERSIMG",
-        "type": "image",
-        "isSessionVariable": false,
-        "_row_num": 41
+        "_row_num": 32
       },
       {
         "name": "POLIO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 42
+        "_row_num": 33
       },
       {
         "name": "POLIODATA",
         "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 34
+      },
+      {
+        "name": "bcgcheck",
+        "type": "integer",
+        "isSessionVariable": true,
+        "_row_num": 35
+      },
+      {
+        "name": "poliocheck",
+        "type": "integer",
+        "isSessionVariable": true,
+        "_row_num": 36
+      },
+      {
+        "name": "VACINASOU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 37
+      },
+      {
+        "name": "OUTROVAC",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 38
+      },
+      {
+        "name": "OUTROVACOU",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
+        "name": "OUTRODATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 40
+      },
+      {
+        "name": "VACINASIMG",
+        "type": "image",
+        "isSessionVariable": false,
+        "_row_num": 41
+      },
+      {
+        "name": "STICKERS",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 42
+      },
+      {
+        "name": "STICKERSIMG",
+        "type": "image",
         "isSessionVariable": false,
         "_row_num": 43
       },
@@ -2380,6 +2440,19 @@
             }
           },
           "_row_num": 36
+        },
+        {
+          "choice_list_name": "Vaccines",
+          "data_value": "Other",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Other",
+                "default": "Outro"
+              }
+            }
+          },
+          "_row_num": 37
         }
       ]
     },
@@ -2389,6 +2462,11 @@
         "calculation_name": "displayDOB",
         "calculation": "adate.display(data(\"DOB\"))",
         "_row_num": 2
+      },
+      "displayREGDIA": {
+        "calculation_name": "displayREGDIA",
+        "calculation": "adate.display(data(\"REGDIA\"))",
+        "_row_num": 3
       }
     },
     "model": {
@@ -2437,33 +2515,11 @@
         "isSessionVariable": false,
         "elementKey": "HCAREANOME"
       },
-      "SUBAREA": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "SUBAREA"
-      },
-      "SUBAREANOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 7,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "SUBAREANOME"
-      },
       "TAB": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -2474,7 +2530,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -2485,7 +2541,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
@@ -2496,7 +2552,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -2507,7 +2563,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -2518,7 +2574,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -2534,7 +2590,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -2545,7 +2601,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -2557,11 +2613,11 @@
         "valuesList": "Status",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 17,
             "section_name": "survey"
           },
           {
-            "_row_num": 17,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -2577,11 +2633,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -2592,7 +2648,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -2603,7 +2659,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -2613,7 +2669,7 @@
       "idcount": {
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -2631,11 +2687,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 13,
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -2646,11 +2702,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 27,
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -2662,11 +2718,11 @@
         "valuesList": "Sex",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 44,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -2682,11 +2738,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -2698,11 +2754,11 @@
         "valuesList": "Status",
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 57,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -2718,11 +2774,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -2734,11 +2790,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 64,
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -2750,11 +2806,11 @@
         "valuesList": "VaccineInfo",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 65,
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -2765,11 +2821,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 67,
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -2781,11 +2837,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 73,
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -2801,7 +2857,43 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 75,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGDATA"
+      },
+      "POLIO": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIO"
+      },
+      "POLIODATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 79,
             "section_name": "survey"
           },
           {
@@ -2810,18 +2902,40 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "BCGDATA"
+        "elementKey": "POLIODATA"
+      },
+      "bcgcheck": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "bcgcheck"
+      },
+      "poliocheck": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "poliocheck"
       },
       "VACINASOU": {
         "type": "string",
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 85,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -2837,11 +2951,11 @@
         "valuesList": "Vaccines",
         "_defn": [
           {
-            "_row_num": 90,
+            "_row_num": 89,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -2852,11 +2966,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 91,
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -2872,11 +2986,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 93,
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -2901,11 +3015,11 @@
         },
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -2917,11 +3031,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 105,
+            "_row_num": 104,
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -2946,43 +3060,7 @@
         },
         "_defn": [
           {
-            "_row_num": 107,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 41,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "STICKERSIMG"
-      },
-      "POLIO": {
-        "type": "string",
-        "valuesList": "YesNo",
-        "_defn": [
-          {
-            "_row_num": 78,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 42,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "POLIO"
-      },
-      "POLIODATA": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 80,
+            "_row_num": 106,
             "section_name": "survey"
           },
           {
@@ -2991,13 +3069,13 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "POLIODATA"
+        "elementKey": "STICKERSIMG"
       },
       "MUAC": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 114,
+            "_row_num": 113,
             "section_name": "survey"
           },
           {
@@ -3013,7 +3091,7 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 115,
+            "_row_num": 117,
             "section_name": "survey"
           },
           {
@@ -3029,7 +3107,7 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 122,
             "section_name": "survey"
           },
           {
@@ -3049,7 +3127,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 124,
             "section_name": "survey"
           },
           {
@@ -3064,7 +3142,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 129,
+            "_row_num": 131,
             "section_name": "survey"
           },
           {
@@ -3080,7 +3158,7 @@
         "valuesList": "Change",
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 25,
             "section_name": "survey"
           },
           {
@@ -3097,7 +3175,7 @@
         "valuesList": "Change",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
@@ -3113,7 +3191,7 @@
         "valuesList": "Change",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {
@@ -3151,8 +3229,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
@@ -3219,8 +3297,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Subarea: <b>{{data.SUBAREANOME}}<b>",
-                  "default": "Subarea: <b>{{data.SUBAREANOME}}</b>"
+                  "english": "Village: <b>{{data.TABNOME}}</b>",
+                  "default": "Tabanca: <b>{{data.TABNOME}}</b>"
                 }
               }
             },
@@ -3236,11 +3314,12 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Village: <b>{{data.TABNOME}}</b>",
-                  "default": "Tabanca: <b>{{data.TABNOME}}</b>"
+                  "english": "Household: <b>{{data.MOR}}</b>",
+                  "default": "Morança: <b>{{data.MOR}}</b>"
                 }
               }
             },
+            "required": true,
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
@@ -3253,12 +3332,11 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Household: <b>{{data.MOR}}</b>",
-                  "default": "Morança: <b>{{data.MOR}}</b>"
+                  "english": "Name of mother: <b>{{data.NOMEMUL}}</b>",
+                  "default": "Nome da mãe: <b>{{data.NOMEMUL}}</b>"
                 }
               }
             },
-            "required": true,
             "_row_num": 9,
             "__rowNum__": 8,
             "_token_type": "prompt",
@@ -3271,34 +3349,17 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Name of mother: <b>{{data.NOMEMUL}}</b>",
-                  "default": "Nome da mãe: <b>{{data.NOMEMUL}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen2",
+            "_branch_label_enclosing_screen": "survey/_screen11",
             "promptIdx": 7
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
-                }
-              }
-            },
-            "_row_num": 13,
-            "__rowNum__": 12,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen12",
-            "promptIdx": 8
           },
           {
             "type": "adate",
@@ -3316,29 +3377,29 @@
             },
             "required": true,
             "constraint": "not(adate.hasUncertainty(data(\"DATASEG\"))) && data(\"DATASEG\") != null && adate.ageInYears(data(\"DATASEG\")) != -9999 && adate.ageInYears(data(\"DATASEG\")) < 2019",
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 13,
+            "__rowNum__": 12,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen12",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "survey/_screen11",
+            "promptIdx": 8
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 17,
-            "__rowNum__": 16,
+            "_row_num": 16,
+            "__rowNum__": 15,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen16",
-            "promptIdx": 10
+            "_branch_label_enclosing_screen": "survey/_screen15",
+            "promptIdx": 9
           },
           {
             "type": "select_one",
@@ -3353,12 +3414,12 @@
               }
             },
             "required": true,
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "_row_num": 17,
+            "__rowNum__": 16,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen16",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "survey/_screen15",
+            "promptIdx": 10
           },
           {
             "type": "adate",
@@ -3370,34 +3431,40 @@
                   "default": "Data de mudança / morte"
                 }
               },
+              "constraint_message": {
+                "text": {
+                  "english": "Date is after today:",
+                  "default": "A data é depois de hoje:"
+                }
+              },
               "adate": {
                 "helperText": false
               }
             },
-            "constraint": "(data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3) || ((data(\"ESTADOMUL\") == 2 || data(\"ESTADOMUL\") == 3) && data(\"DATASAIMUL\") != null && adate.ageInYears(data(\"DATASAIMUL\")) != -9999 && adate.ageInYears(data(\"DATASAIMUL\")) < 2019)",
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "constraint": "((adate.diffInDays(data(\"DATASAIMUL\"),data(\"DATASEG\")) >= 0 || adate.dayUnknown(data(\"DATASAIMUL\"))) && data(\"DATASAIMUL\") != null && adate.ageInYears(data(\"DATASAIMUL\")) != -9999 && adate.ageInYears(data(\"DATASAIMUL\")) < 2019) || (data(\"ESTADOMUL\") != 2 && data(\"ESTADOMUL\") != 3)",
+            "_row_num": 19,
+            "__rowNum__": 18,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen16",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "survey/_screen15",
+            "promptIdx": 11
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 24,
-            "__rowNum__": 23,
+            "_row_num": 23,
+            "__rowNum__": 22,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen23",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "survey/_screen22",
+            "promptIdx": 12
           },
           {
             "type": "note",
@@ -3409,12 +3476,12 @@
                 }
               }
             },
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 24,
+            "__rowNum__": 23,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen23",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "survey/_screen22",
+            "promptIdx": 13
           },
           {
             "type": "select_one",
@@ -3435,12 +3502,12 @@
               }
             },
             "required": true,
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 25,
+            "__rowNum__": 24,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen23",
-            "promptIdx": 15
+            "_branch_label_enclosing_screen": "survey/_screen22",
+            "promptIdx": 14
           },
           {
             "type": "text",
@@ -3453,30 +3520,30 @@
                 }
               }
             },
-            "required": true,
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "constraint": "data(\"NOMECRI\") != null || data(\"NOMECRICON\") !=2",
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen23",
-            "promptIdx": 16
+            "_branch_label_enclosing_screen": "survey/_screen22",
+            "promptIdx": 15
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 17
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 16
           },
           {
             "type": "note",
@@ -3488,12 +3555,12 @@
                 }
               }
             },
-            "_row_num": 33,
-            "__rowNum__": 32,
+            "_row_num": 32,
+            "__rowNum__": 31,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 18
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 17
           },
           {
             "type": "note",
@@ -3506,12 +3573,12 @@
               }
             },
             "required": true,
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 34,
+            "__rowNum__": 33,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 19
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 18
           },
           {
             "type": "note",
@@ -3524,12 +3591,12 @@
               }
             },
             "required": true,
-            "_row_num": 38,
-            "__rowNum__": 37,
+            "_row_num": 37,
+            "__rowNum__": 36,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 20
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 19
           },
           {
             "type": "note",
@@ -3542,23 +3609,23 @@
               }
             },
             "required": true,
-            "_row_num": 41,
-            "__rowNum__": 40,
+            "_row_num": 40,
+            "__rowNum__": 39,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 20
           },
           {
             "type": "select_one",
             "values_list": "Change",
             "name": "SEXCON",
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 21
           },
           {
             "type": "select_one",
@@ -3572,30 +3639,30 @@
                 }
               }
             },
-            "required": true,
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "constraint": "data(\"SEX\") != null || data(\"SEXCON\") !=2",
+            "_row_num": 44,
+            "__rowNum__": 43,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen31",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 22
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen48",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 23
           },
           {
             "type": "note",
@@ -3607,12 +3674,12 @@
                 }
               }
             },
-            "_row_num": 50,
-            "__rowNum__": 49,
+            "_row_num": 49,
+            "__rowNum__": 48,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen48",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 24
           },
           {
             "type": "select_one",
@@ -3627,12 +3694,12 @@
               }
             },
             "required": true,
-            "_row_num": 51,
-            "__rowNum__": 50,
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen48",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 25
           },
           {
             "type": "adate",
@@ -3644,35 +3711,40 @@
                   "default": "Data de nascimento"
                 }
               },
+              "constraint_message": {
+                "text": {
+                  "english": "Date of birth is after today or before regdia:",
+                  "default": "A data de nascimento é depois de hoje ou antes do regdia:"
+                }
+              },
               "adate": {
                 "helperText": false
               }
             },
-            "required": true,
-            "constraint": "adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "constraint": "(adate.diffInDays(data(\"DOB\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"DOB\")) >= 0 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) || data(\"DOBCON\") !=2",
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen48",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 26
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 57,
-            "__rowNum__": 56,
+            "_row_num": 56,
+            "__rowNum__": 55,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen56",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 27
           },
           {
             "type": "select_one",
@@ -3687,12 +3759,12 @@
               }
             },
             "required": true,
-            "_row_num": 58,
-            "__rowNum__": 57,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen56",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 28
           },
           {
             "type": "adate",
@@ -3704,34 +3776,40 @@
                   "default": "Data de mudança / morte"
                 }
               },
+              "constraint_message": {
+                "text": {
+                  "english": "Date is after today:",
+                  "default": "A data é depois de hoje:"
+                }
+              },
               "adate": {
                 "helperText": false
               }
             },
-            "constraint": "(data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3) || ((data(\"ESTADOCRI\") == 2 || data(\"ESTADOCRI\") == 3) && data(\"DATASAICRI\") != null && adate.ageInYears(data(\"DATASAICRI\")) != -9999 && adate.ageInYears(data(\"DATASAICRI\")) < 2019)",
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "constraint": "((adate.diffInDays(data(\"DATASAICRI\"),data(\"DATASEG\")) >= 0 || adate.dayUnknown(data(\"DATASAICRI\"))) && adate.ageInYears(data(\"DATASAICRI\")) != -9999 && adate.ageInYears(data(\"DATASAICRI\")) < 2019) || (data(\"ESTADOCRI\") != 2 && data(\"ESTADOCRI\") != 3)",
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen56",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 29
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 64,
-            "__rowNum__": 63,
+            "_row_num": 63,
+            "__rowNum__": 62,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen63",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "survey/_screen62",
+            "promptIdx": 30
           },
           {
             "type": "select_one",
@@ -3746,12 +3824,12 @@
               }
             },
             "required": true,
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen63",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "survey/_screen62",
+            "promptIdx": 31
           },
           {
             "type": "select_one",
@@ -3766,12 +3844,12 @@
               }
             },
             "required": true,
-            "_row_num": 66,
-            "__rowNum__": 65,
+            "_row_num": 65,
+            "__rowNum__": 64,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen63",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "survey/_screen62",
+            "promptIdx": 32
           },
           {
             "type": "text",
@@ -3785,29 +3863,29 @@
               }
             },
             "constraint": "data(\"VACINFOOU\") != null || data(\"VACINFO\") != 4",
-            "_row_num": 68,
-            "__rowNum__": 67,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen63",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "survey/_screen62",
+            "promptIdx": 33
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 34
           },
           {
             "type": "select_one",
@@ -3822,12 +3900,12 @@
               }
             },
             "constraint": "data(\"BCG\") != null || data(\"VACINAS\") !=1",
-            "_row_num": 74,
-            "__rowNum__": 73,
+            "_row_num": 73,
+            "__rowNum__": 72,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 36
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 35
           },
           {
             "type": "adate",
@@ -3844,12 +3922,12 @@
               }
             },
             "constraint": "(data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019) || data(\"BCG\") != 1",
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 36
           },
           {
             "type": "select_one",
@@ -3864,12 +3942,12 @@
               }
             },
             "constraint": "data(\"POLIO\") != null || data(\"VACINAS\") !=1",
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 77,
+            "__rowNum__": 76,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 37
           },
           {
             "type": "adate",
@@ -3886,29 +3964,29 @@
               }
             },
             "constraint": "(data(\"POLIODATA\") != null && adate.ageInYears(data(\"POLIODATA\")) != -9999 && adate.ageInYears(data(\"POLIODATA\")) < 2019) || data(\"POLIO\") != 1",
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 79,
+            "__rowNum__": 78,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "survey/_screen71",
+            "promptIdx": 38
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 83,
+            "__rowNum__": 82,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "survey/_screen82",
+            "promptIdx": 39
           },
           {
             "type": "select_one",
@@ -3923,29 +4001,29 @@
               }
             },
             "constraint": "data(\"VACINASOU\") != null || data(\"VACINAS\") !=1",
-            "_row_num": 85,
-            "__rowNum__": 84,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "survey/_screen82",
+            "promptIdx": 40
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on registered pregnancy to {{data.NOME}}</b>",
-                  "default": "<b>Seguimento de gravidez registrada para {{data.NOME}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 89,
-            "__rowNum__": 88,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen88",
-            "promptIdx": 42
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 41
           },
           {
             "type": "select_multiple",
@@ -3960,12 +4038,12 @@
               }
             },
             "constraint": "data(\"OUTROVAC\") != null || data(\"VACINASOU\") !=1",
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 89,
+            "__rowNum__": 88,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen88",
-            "promptIdx": 43
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 42
           },
           {
             "type": "text",
@@ -3979,12 +4057,12 @@
               }
             },
             "constraint": "data(\"OUTROVACOU\") != null || not(selected(data(\"OUTROVAC\"),\"Other\"))",
-            "_row_num": 92,
-            "__rowNum__": 91,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen88",
-            "promptIdx": 44
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 43
           },
           {
             "type": "adate",
@@ -3995,32 +4073,35 @@
                   "english": "Date of first vaccine received after polio or BCG",
                   "default": "Data da primeira vacina recebida após a poliomielite ou BCG"
                 }
+              },
+              "adate": {
+                "helperText": false
               }
             },
-            "constraint": "data(\"OUTRODATA\") != null || data(\"VACINASOU\") !=1",
-            "_row_num": 94,
-            "__rowNum__": 93,
+            "constraint": "(data(\"OUTRODATA\") != null && adate.ageInYears(data(\"OUTRODATA\")) != -9999 && adate.ageInYears(data(\"OUTRODATA\")) < 2019) || data(\"VACINASOU\") !=1",
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen88",
-            "promptIdx": 45
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 44
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 96,
+            "__rowNum__": 95,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen96",
-            "promptIdx": 46
+            "_branch_label_enclosing_screen": "survey/_screen95",
+            "promptIdx": 45
           },
           {
             "type": "image",
@@ -4040,29 +4121,29 @@
                 }
               }
             },
-            "_row_num": 98,
-            "__rowNum__": 97,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "survey/_screen96",
-            "promptIdx": 47
+            "_branch_label_enclosing_screen": "survey/_screen95",
+            "promptIdx": 46
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 104,
-            "__rowNum__": 103,
+            "_row_num": 103,
+            "__rowNum__": 102,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 48
+            "_branch_label_enclosing_screen": "survey/_screen102",
+            "promptIdx": 47
           },
           {
             "type": "select_one",
@@ -4078,12 +4159,12 @@
               }
             },
             "constraint": "data(\"STICKERS\") != null || data(\"VACINFO\") == \"3\"",
-            "_row_num": 105,
-            "__rowNum__": 104,
+            "_row_num": 104,
+            "__rowNum__": 103,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 49
+            "_branch_label_enclosing_screen": "survey/_screen102",
+            "promptIdx": 48
           },
           {
             "type": "image",
@@ -4096,29 +4177,29 @@
                 }
               }
             },
-            "_row_num": 107,
-            "__rowNum__": 106,
+            "_row_num": 106,
+            "__rowNum__": 105,
             "_token_type": "prompt",
             "_type": "image",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 50
+            "_branch_label_enclosing_screen": "survey/_screen102",
+            "promptIdx": 49
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 113,
-            "__rowNum__": 112,
+            "_row_num": 112,
+            "__rowNum__": 111,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 51
+            "_branch_label_enclosing_screen": "survey/_screen111",
+            "promptIdx": 50
           },
           {
             "type": "integer",
@@ -4128,7 +4209,8 @@
                 "text": {
                   "english": "Measure of the mid-upper-arm circumference",
                   "default": "Medida da circunferência do braço"
-                }
+                },
+                "image": "muac.jpg"
               },
               "hint": {
                 "text": {
@@ -4144,11 +4226,28 @@
               }
             },
             "constraint": "(data(\"MUAC\")>49 && data(\"MUAC\")<343 && data(\"MUAC\")%2 == 0) || data(\"MUAC\") == 999  || data(\"MUAC\") == \"11\" || data('ESTADOCRI') != 1",
-            "_row_num": 114,
-            "__rowNum__": 113,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen112",
+            "_branch_label_enclosing_screen": "survey/_screen111",
+            "promptIdx": 51
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
+                }
+              }
+            },
+            "_row_num": 116,
+            "__rowNum__": 115,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen115",
             "promptIdx": 52
           },
           {
@@ -4160,7 +4259,8 @@
                 "text": {
                   "english": "Is there a reaction where the child got the BCG vaccine?",
                   "default": "Existe alguma reação onde a criança tomou a vacina BCG?"
-                }
+                },
+                "image": "reactions.jpg"
               },
               "hint": {
                 "text": {
@@ -4170,11 +4270,11 @@
               }
             },
             "constraint": "data(\"BCGREACT\") != null || data('ESTADOCRI') != 1",
-            "_row_num": 115,
-            "__rowNum__": 114,
+            "_row_num": 117,
+            "__rowNum__": 116,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen112",
+            "_branch_label_enclosing_screen": "survey/_screen115",
             "promptIdx": 53
           },
           {
@@ -4182,16 +4282,16 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 119,
-            "__rowNum__": 118,
+            "_row_num": 121,
+            "__rowNum__": 120,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen118",
+            "_branch_label_enclosing_screen": "survey/_screen120",
             "promptIdx": 54
           },
           {
@@ -4201,17 +4301,23 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Has the child been hospitalised since birth?",
-                  "default": "A criança está hospitalizada desde o nascimento?"
+                  "english": "Has the child been hospitalised since birth ({{calculates.displayDOB}})?",
+                  "default": "A criança está hospitalizada desde o nascimento ({{calculates.displayDOB}})?"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "Stayed overnight or died",
+                  "default": "Passou a noite ou morreu"
                 }
               }
             },
             "required": true,
-            "_row_num": 120,
-            "__rowNum__": 119,
+            "_row_num": 122,
+            "__rowNum__": 121,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen118",
+            "_branch_label_enclosing_screen": "survey/_screen120",
             "promptIdx": 55
           },
           {
@@ -4224,16 +4330,22 @@
                   "default": "Data da primeira admissão hospitalar"
                 }
               },
+              "constraint_message": {
+                "text": {
+                  "english": "Date is after today or before birth:",
+                  "default": "A data é depois de hoje ou antes do nascimento:"
+                }
+              },
               "adate": {
                 "helperText": false
               }
             },
-            "constraint": "(data(\"HOSPDATA\") != null && adate.ageInYears(data(\"HOSPDATA\")) != -9999 && adate.ageInYears(data(\"HOSPDATA\")) < 2019) || data(\"HOSP\") != 1",
-            "_row_num": 122,
-            "__rowNum__": 121,
+            "constraint": "(((adate.diffInDays(data(\"HOSPDATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"HOSPDATA\")) >= 0) || adate.dayUnknown(data(\"HOSPDATA\"))) &&\ndata(\"HOSPDATA\") != null && adate.ageInYears(data(\"HOSPDATA\")) != -9999 && adate.ageInYears(data(\"HOSPDATA\")) < 2019) || data(\"HOSP\") != 1",
+            "_row_num": 124,
+            "__rowNum__": 123,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen118",
+            "_branch_label_enclosing_screen": "survey/_screen120",
             "promptIdx": 56
           },
           {
@@ -4241,16 +4353,16 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<b>Follow-up on child {{data.NOMECRI}}</b>",
-                  "default": "<b>Seguimento da criança {{data.NOMECRI}}</b>"
+                  "english": "<b>Follow-up on child {{data.NOMECRI}} regida: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento da criança {{data.NOMECRI}} regdia: {{calculates.displayREGDIA}} </b>"
                 }
               }
             },
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "_row_num": 128,
+            "__rowNum__": 127,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen125",
+            "_branch_label_enclosing_screen": "survey/_screen127",
             "promptIdx": 57
           },
           {
@@ -4263,11 +4375,11 @@
                 }
               }
             },
-            "_row_num": 127,
-            "__rowNum__": 126,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen125",
+            "_branch_label_enclosing_screen": "survey/_screen127",
             "promptIdx": 58
           },
           {
@@ -4280,11 +4392,11 @@
                 }
               }
             },
-            "_row_num": 128,
-            "__rowNum__": 127,
+            "_row_num": 130,
+            "__rowNum__": 129,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen125",
+            "_branch_label_enclosing_screen": "survey/_screen127",
             "promptIdx": 59
           },
           {
@@ -4298,51 +4410,51 @@
                 }
               }
             },
-            "_row_num": 129,
-            "__rowNum__": 128,
+            "_row_num": 131,
+            "__rowNum__": 130,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen125",
+            "_branch_label_enclosing_screen": "survey/_screen127",
             "promptIdx": 60
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 131,
-            "_branch_label_enclosing_screen": "survey/_screen131",
+            "_row_num": 133,
+            "_branch_label_enclosing_screen": "survey/_screen133",
             "promptIdx": 61
           }
         ],
         "validation_tag_map": {
           "finalize": [
-            6,
-            9,
+            5,
+            8,
+            10,
             11,
-            12,
+            14,
             15,
-            16,
+            18,
             19,
             20,
-            21,
-            23,
+            22,
+            25,
             26,
-            27,
+            28,
             29,
-            30,
+            31,
             32,
             33,
-            34,
+            35,
             36,
             37,
             38,
-            39,
-            41,
+            40,
+            42,
             43,
             44,
-            45,
-            49,
-            52,
+            48,
+            51,
             53,
             55,
             56
@@ -4356,368 +4468,383 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 11,
-              "__rowNum__": 10,
+              "_row_num": 10,
+              "__rowNum__": 9,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "begin screen",
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "_row_num": 11,
+            "__rowNum__": 10,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 15,
-              "__rowNum__": 14,
+              "_row_num": 14,
+              "__rowNum__": 13,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
             "clause": "begin screen",
-            "_row_num": 16,
-            "__rowNum__": 15,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 22,
-              "__rowNum__": 21,
+              "_row_num": 21,
+              "__rowNum__": 20,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\nif (data(\"ESTADOMUL\") == \"2\" || data(\"ESTADOMUL\") == \"3\") {\nactivePromptIndicies.push(12);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nif (data(\"ESTADOMUL\") == \"2\" || data(\"ESTADOMUL\") == \"3\") {\nactivePromptIndicies.push(11);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
             "clause": "begin screen",
-            "_row_num": 23,
-            "__rowNum__": 22,
+            "_row_num": 22,
+            "__rowNum__": 21,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 30,
-              "__rowNum__": 29,
+              "_row_num": 29,
+              "__rowNum__": 28,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\nif (data(\"NOMECRICON\") == \"2\") {\nactivePromptIndicies.push(16);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nif (data(\"NOMECRICON\") == \"2\") {\nactivePromptIndicies.push(15);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
           },
           {
             "clause": "begin screen",
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 30,
+            "__rowNum__": 29,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 47,
-              "__rowNum__": 46,
+              "_row_num": 46,
+              "__rowNum__": 45,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nif (data(\"SEX\") == \"1\") {\nactivePromptIndicies.push(19);\n}\nif (data(\"SEX\") == \"2\") {\nactivePromptIndicies.push(20);\n}\nif (data(\"SEX\") == \"3\" || data(\"SEX\") == null) {\nactivePromptIndicies.push(21);\n}\nactivePromptIndicies.push(22);\nif (data(\"SEXCON\") == \"2\") {\nactivePromptIndicies.push(23);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nif (data(\"SEX\") == \"1\") {\nactivePromptIndicies.push(18);\n}\nif (data(\"SEX\") == \"2\") {\nactivePromptIndicies.push(19);\n}\nif (data(\"SEX\") == \"3\" || data(\"SEX\") == null) {\nactivePromptIndicies.push(20);\n}\nactivePromptIndicies.push(21);\nif (data(\"SEXCON\") == \"2\") {\nactivePromptIndicies.push(22);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 4
           },
           {
             "clause": "begin screen",
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 55,
-              "__rowNum__": 54,
+              "_row_num": 54,
+              "__rowNum__": 53,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nif (data(\"DOBCON\") == \"2\") {\nactivePromptIndicies.push(27);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nif (data(\"DOBCON\") == \"2\") {\nactivePromptIndicies.push(26);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
             "clause": "begin screen",
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 55,
+            "__rowNum__": 54,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 62,
-              "__rowNum__": 61,
+              "_row_num": 61,
+              "__rowNum__": 60,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nif (data(\"ESTADOCRI\") == \"2\" || data(\"ESTADOCRI\") == \"3\") {\nactivePromptIndicies.push(30);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nif (data(\"ESTADOCRI\") == \"2\" || data(\"ESTADOCRI\") == \"3\") {\nactivePromptIndicies.push(29);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 6
           },
           {
             "clause": "begin screen",
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 62,
+            "__rowNum__": 61,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 70,
-              "__rowNum__": 69,
+              "_row_num": 69,
+              "__rowNum__": 68,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nif (data(\"VACINFO\") == \"4\") {\nactivePromptIndicies.push(34);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nif (data(\"VACINFO\") == \"4\") {\nactivePromptIndicies.push(33);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "if",
             "condition": "data(\"VACINAS\") == \"1\"",
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "goto_label",
-            "_branch_label": "_then71",
+            "_branch_label": "_then70",
             "operationIdx": 8
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else101",
-            "_row_num": 101,
-            "operationIdx": 9
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 72,
-            "__rowNum__": 71,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 82,
-              "__rowNum__": 81,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nif (data(\"BCG\") != \"2\") {\nactivePromptIndicies.push(37);\n}\nactivePromptIndicies.push(38);\nif (data(\"POLIO\") != \"2\") {\nactivePromptIndicies.push(39);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 10
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 83,
-            "__rowNum__": 82,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 86,
-              "__rowNum__": 85,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 11
-          },
-          {
-            "clause": "if",
-            "condition": "data(\"VACINASOU\") == \"1\"",
-            "_row_num": 87,
-            "__rowNum__": 86,
-            "_token_type": "goto_label",
-            "_branch_label": "_then87",
-            "operationIdx": 12
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
             "_branch_label": "_else100",
             "_row_num": 100,
+            "operationIdx": 9
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 71,
+            "__rowNum__": 70,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 81,
+              "__rowNum__": 80,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nif (data(\"BCG\") != \"2\") {\nactivePromptIndicies.push(36);\n}\nactivePromptIndicies.push(37);\nif (data(\"POLIO\") != \"2\") {\nactivePromptIndicies.push(38);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 10
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 82,
+            "__rowNum__": 81,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 85,
+              "__rowNum__": 84,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 11
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"VACINASOU\") == \"1\"",
+            "_row_num": 86,
+            "__rowNum__": 85,
+            "_token_type": "goto_label",
+            "_branch_label": "_then86",
+            "operationIdx": 12
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else99",
+            "_row_num": 99,
             "operationIdx": 13
           },
           {
             "clause": "begin screen",
-            "_row_num": 88,
-            "__rowNum__": 87,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 95,
-              "__rowNum__": 94,
+              "_row_num": 94,
+              "__rowNum__": 93,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nif (selected(data(\"OUTROVAC\"),\"Other\")) {\nactivePromptIndicies.push(44);\n}\nactivePromptIndicies.push(45);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nif (selected(data(\"OUTROVAC\"),\"Other\")) {\nactivePromptIndicies.push(43);\n}\nactivePromptIndicies.push(44);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
             "clause": "begin screen",
-            "_row_num": 96,
-            "__rowNum__": 95,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 99,
-              "__rowNum__": 98,
+              "_row_num": 98,
+              "__rowNum__": 97,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 15
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif99",
+            "_row_num": 99,
+            "operationIdx": 16
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
             "_branch_label": "_endif100",
             "_row_num": 100,
-            "operationIdx": 16
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif101",
-            "_row_num": 101,
             "operationIdx": 17
           },
           {
             "clause": "if",
             "condition": "data(\"VACINFO\") != \"3\"",
-            "_row_num": 102,
-            "__rowNum__": 101,
+            "_row_num": 101,
+            "__rowNum__": 100,
             "_token_type": "goto_label",
-            "_branch_label": "_then102",
+            "_branch_label": "_then101",
             "operationIdx": 18
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else110",
-            "_row_num": 110,
+            "_branch_label": "_else109",
+            "_row_num": 109,
             "operationIdx": 19
           },
           {
             "clause": "begin screen",
-            "_row_num": 103,
-            "__rowNum__": 102,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 109,
-              "__rowNum__": 108,
+              "_row_num": 108,
+              "__rowNum__": 107,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nif (data(\"STICKERS\") == \"1\") {\nactivePromptIndicies.push(50);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nif (data(\"STICKERS\") == \"1\") {\nactivePromptIndicies.push(49);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 20
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif110",
-            "_row_num": 110,
+            "_branch_label": "_endif109",
+            "_row_num": 109,
             "operationIdx": 21
           },
           {
             "clause": "if",
             "condition": "data(\"ESTADOCRI\") == \"1\"",
-            "_row_num": 111,
-            "__rowNum__": 110,
+            "_row_num": 110,
+            "__rowNum__": 109,
             "_token_type": "goto_label",
-            "_branch_label": "_then111",
+            "_branch_label": "_then110",
             "operationIdx": 22
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else117",
-            "_row_num": 117,
+            "_branch_label": "_else119",
+            "_row_num": 119,
             "operationIdx": 23
           },
           {
             "clause": "begin screen",
-            "_row_num": 112,
-            "__rowNum__": 111,
+            "_row_num": 111,
+            "__rowNum__": 110,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 116,
-              "__rowNum__": 115,
+              "_row_num": 114,
+              "__rowNum__": 113,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 24
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 115,
+            "__rowNum__": 114,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 118,
+              "__rowNum__": 117,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 25
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif117",
-            "_row_num": 117,
-            "operationIdx": 25
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 118,
-            "__rowNum__": 117,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 124,
-              "__rowNum__": 123,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nif (data(\"HOSP\") ==\"1\") {\nactivePromptIndicies.push(56);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_branch_label": "_endif119",
+            "_row_num": 119,
             "operationIdx": 26
           },
           {
             "clause": "begin screen",
-            "_row_num": 125,
-            "__rowNum__": 124,
+            "_row_num": 120,
+            "__rowNum__": 119,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 130,
-              "__rowNum__": 129,
+              "_row_num": 126,
+              "__rowNum__": 125,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nif (data(\"HOSP\") ==\"1\") {\nactivePromptIndicies.push(56);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 27
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 127,
+            "__rowNum__": 126,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 132,
+              "__rowNum__": 131,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\nactivePromptIndicies.push(58);\nactivePromptIndicies.push(59);\nactivePromptIndicies.push(60);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 27
+            "operationIdx": 28
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 131,
-            "operationIdx": 28
+            "_row_num": 133,
+            "operationIdx": 29
           },
           {
-            "_row_num": 131,
+            "_row_num": 133,
             "_token_type": "begin_screen",
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(61);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 29
+            "operationIdx": 30
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 131,
-            "operationIdx": 30
+            "_row_num": 133,
+            "operationIdx": 31
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen12": 1,
-          "_screen16": 2,
-          "_screen23": 3,
-          "_screen31": 4,
-          "_screen48": 5,
-          "_screen56": 6,
-          "_screen63": 7,
-          "_then71": 10,
-          "_screen72": 10,
-          "_screen83": 11,
-          "_then87": 14,
-          "_screen88": 14,
-          "_screen96": 15,
-          "_else100": 17,
-          "_endif100": 17,
-          "_else101": 18,
-          "_endif101": 18,
-          "_then102": 20,
-          "_screen103": 20,
-          "_else110": 22,
-          "_endif110": 22,
-          "_then111": 24,
-          "_screen112": 24,
-          "_else117": 26,
-          "_endif117": 26,
-          "_screen118": 26,
-          "_screen125": 27,
-          "_contents": 29,
-          "_screen131": 29
+          "_screen11": 1,
+          "_screen15": 2,
+          "_screen22": 3,
+          "_screen30": 4,
+          "_screen47": 5,
+          "_screen55": 6,
+          "_screen62": 7,
+          "_then70": 10,
+          "_screen71": 10,
+          "_screen82": 11,
+          "_then86": 14,
+          "_screen87": 14,
+          "_screen95": 15,
+          "_else99": 17,
+          "_endif99": 17,
+          "_else100": 18,
+          "_endif100": 18,
+          "_then101": 20,
+          "_screen102": 20,
+          "_else109": 22,
+          "_endif109": 22,
+          "_then110": 24,
+          "_screen111": 24,
+          "_screen115": 25,
+          "_else119": 27,
+          "_endif119": 27,
+          "_screen120": 27,
+          "_screen127": 28,
+          "_contents": 30,
+          "_screen133": 30
         }
       },
       "initial": {
@@ -4959,39 +5086,11 @@
         "elementSet": "data",
         "elementPath": "HCAREANOME"
       },
-      "SUBAREA": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 6,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "SUBAREA",
-        "elementName": "SUBAREA",
-        "elementSet": "data",
-        "elementPath": "SUBAREA"
-      },
-      "SUBAREANOME": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 7,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "SUBAREANOME",
-        "elementName": "SUBAREANOME",
-        "elementSet": "data",
-        "elementPath": "SUBAREANOME"
-      },
       "TAB": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 6,
             "section_name": "model"
           }
         ],
@@ -5005,7 +5104,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 9,
+            "_row_num": 7,
             "section_name": "model"
           }
         ],
@@ -5019,7 +5118,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 8,
             "section_name": "model"
           }
         ],
@@ -5033,7 +5132,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -5047,7 +5146,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -5061,7 +5160,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -5080,7 +5179,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -5094,7 +5193,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -5109,11 +5208,11 @@
         "valuesList": "Status",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 17,
             "section_name": "survey"
           },
           {
-            "_row_num": 17,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -5132,11 +5231,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 19,
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -5150,7 +5249,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -5164,7 +5263,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -5177,7 +5276,7 @@
       "idcount": {
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -5198,11 +5297,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 13,
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -5216,11 +5315,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 27,
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -5235,11 +5334,11 @@
         "valuesList": "Sex",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 44,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -5258,11 +5357,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -5277,11 +5376,11 @@
         "valuesList": "Status",
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 57,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -5300,11 +5399,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -5319,11 +5418,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 64,
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -5338,11 +5437,11 @@
         "valuesList": "VaccineInfo",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 65,
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -5356,11 +5455,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 67,
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -5375,11 +5474,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 73,
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -5398,11 +5497,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 76,
+            "_row_num": 75,
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -5412,16 +5511,86 @@
         "elementSet": "data",
         "elementPath": "BCGDATA"
       },
+      "POLIO": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIO",
+        "elementName": "POLIO",
+        "elementSet": "data",
+        "elementPath": "POLIO"
+      },
+      "POLIODATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 79,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "POLIODATA",
+        "elementName": "POLIODATA",
+        "elementSet": "data",
+        "elementPath": "POLIODATA"
+      },
+      "bcgcheck": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "bcgcheck",
+        "elementName": "bcgcheck",
+        "elementSet": "data",
+        "elementPath": "bcgcheck"
+      },
+      "poliocheck": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "poliocheck",
+        "elementName": "poliocheck",
+        "elementSet": "data",
+        "elementPath": "poliocheck"
+      },
       "VACINASOU": {
         "type": "string",
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 85,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -5444,11 +5613,11 @@
         "valuesList": "Vaccines",
         "_defn": [
           {
-            "_row_num": 90,
+            "_row_num": 89,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -5465,11 +5634,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 91,
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -5488,11 +5657,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 93,
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -5526,11 +5695,11 @@
         },
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -5550,11 +5719,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 105,
+            "_row_num": 104,
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -5588,11 +5757,11 @@
         },
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 106,
             "section_name": "survey"
           },
           {
-            "_row_num": 41,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -5607,53 +5776,11 @@
         ],
         "notUnitOfRetention": true
       },
-      "POLIO": {
-        "type": "string",
-        "valuesList": "YesNo",
-        "_defn": [
-          {
-            "_row_num": 78,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 42,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "POLIO",
-        "elementName": "POLIO",
-        "elementSet": "data",
-        "elementPath": "POLIO"
-      },
-      "POLIODATA": {
-        "prompt_type_name": "adate",
-        "type": "string",
-        "elementType": "string",
-        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
-        "_row_num": 2,
-        "__rowNum__": 1,
-        "_defn": [
-          {
-            "_row_num": 80,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 43,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "POLIODATA",
-        "elementName": "POLIODATA",
-        "elementSet": "data",
-        "elementPath": "POLIODATA"
-      },
       "MUAC": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 114,
+            "_row_num": 113,
             "section_name": "survey"
           },
           {
@@ -5672,7 +5799,7 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 115,
+            "_row_num": 117,
             "section_name": "survey"
           },
           {
@@ -5691,7 +5818,7 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 122,
             "section_name": "survey"
           },
           {
@@ -5714,7 +5841,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 124,
             "section_name": "survey"
           },
           {
@@ -5732,7 +5859,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 129,
+            "_row_num": 131,
             "section_name": "survey"
           },
           {
@@ -5751,7 +5878,7 @@
         "valuesList": "Change",
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 25,
             "section_name": "survey"
           },
           {
@@ -5771,7 +5898,7 @@
         "valuesList": "Change",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
@@ -5790,7 +5917,7 @@
         "valuesList": "Change",
         "_defn": [
           {
-            "_row_num": 51,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {

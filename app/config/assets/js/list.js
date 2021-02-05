@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var pregnancies, children, personList, date, reg, regNome, hcarea, hcareaNome, subarea, subareaNome, tab, tabNome;
+var pregnancies, children, personList, date, reg, regNome, hcarea, hcareaNome, tab, tabNome;
 function display() {
     console.log("Person list loading");
     date = util.getQueryParameter('date');
@@ -11,8 +11,6 @@ function display() {
     regNome = util.getQueryParameter('regNome');
     hcarea = util.getQueryParameter('hcarea');
     hcareaNome = util.getQueryParameter('hcareaNome');
-    subarea = util.getQueryParameter('subarea');
-    subareaNome = util.getQueryParameter('subareaNome');
     tab = util.getQueryParameter('tab');
     tabNome = util.getQueryParameter('tabNome');
 
@@ -30,9 +28,9 @@ function doSanityCheck() {
 
 function loadPregnancies() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, SUBAREA, TAB, TELE, VISNOMUL" +
+    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
-        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND SUBAREA = " + subarea + " AND TAB = " + tab + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
         " ORDER BY MOR, NOMEMUL";
     pregnancies = [];
@@ -60,12 +58,11 @@ function loadPregnancies() {
             var PARITY = result.getData(row,"PARITY");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
-            var SUBAREA = result.getData(row,"SUBAREA");
             var TAB = result.getData(row,"TAB");
             var TELE = result.getData(row,"TELE")
             var VISNOMUL = result.getData(row,"VISNOMUL");
 
-            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, SUBAREA, TAB, TELE, VISNOMUL};
+            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL};
             pregnancies.push(p);
         }
         console.log("Pregnancies:", pregnancies)
@@ -83,9 +80,9 @@ function loadPregnancies() {
 
 function loadChildren() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, SUBAREA, TAB, VISNOCRI" +
+    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI" +
         " FROM CHILDREN" + 
-        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND SUBAREA = " + subarea + " AND TAB = " + tab + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
         " ORDER BY MOR, NOMECRI";
     children = [];
@@ -113,11 +110,10 @@ function loadChildren() {
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var SEX = result.getData(row,"SEX");
-            var SUBAREA = result.getData(row,"SUBAREA");
             var TAB = result.getData(row,"TAB");
             var VISNOCRI = result.getData(row,"VISNOCRI");
 
-            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, SUBAREA, TAB, VISNOCRI};
+            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI};
             children.push(p);
         }
         console.log("Children:", children)
@@ -278,8 +274,6 @@ function openFormNewPreg() {
     defaults['REG'] = reg;
     defaults['REGNOME'] = regNome;
     defaults['REGDIA'] = toAdate(date);
-    defaults['SUBAREA'] = subarea;
-    defaults['SUBAREANOME'] = subareaNome;
     defaults['TAB'] = tab;
     defaults['TABNOME'] = tabNome;
     defaults['VISNOMUL'] = 1;
@@ -392,8 +386,6 @@ function getDefaults(person) {
         defaults['REG'] = reg;
         defaults['REGNOME'] = regNome;
         defaults['REGDIA'] = person.REGDIA;
-        defaults['SUBAREA'] = subarea;
-        defaults['SUBAREANOME'] = subareaNome;
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
         defaults['TELE'] = person.TELE;
@@ -417,8 +409,6 @@ function getDefaults(person) {
         defaults['REGNOME'] = regNome;
         defaults['REGDIA'] = person.REGDIA;
         defaults['SEX'] = person.SEX;
-        defaults['SUBAREA'] = subarea;
-        defaults['SUBAREANOME'] = subareaNome;
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
         defaults['VISNOCRI'] = person.VISNOCRI + 1;
