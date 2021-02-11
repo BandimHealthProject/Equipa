@@ -339,7 +339,15 @@ function openForm(person) {
                 defaults);
         }
     } else { // child
-        if (person.DATASEG == todayAdate) {
+        if (person.DATASEG == todayAdate & person.VISNOCRI == 1) {
+            console.log("Edit form for child: ", person)
+            odkTables.editRowWithSurvey(
+                null,
+                'CHILDREN',
+                rowId,
+                'CHILDREN',
+                null,);
+        } else if (person.DATASEG == todayAdate) {
             console.log("Edit form for child: ", person)
             odkTables.editRowWithSurvey(
                 null,
