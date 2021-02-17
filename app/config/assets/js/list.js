@@ -300,7 +300,7 @@ function getGrav() {
 function getIdMul() {
     var idmul;
     var grav = getGrav();
-    idmul = ((reg*100+hcarea)*100+tab)*10000+grav;
+    idmul = ((Number(reg)*100+Number(hcarea))*100+Number(tab))*1000+Number(grav);
     return idmul;
 }
 
@@ -397,7 +397,7 @@ function getDefaults(person) {
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
         defaults['TELE'] = person.TELE;
-        defaults['VISNOMUL'] = person.VISNOMUL + 1;
+        defaults['VISNOMUL'] = Number(person.VISNOMUL) + 1;
     } else { // child defaults
         defaults['BCG'] = person.BCG;
         defaults['BCGDATA'] = person.BCGDATA;
@@ -419,7 +419,7 @@ function getDefaults(person) {
         defaults['SEX'] = person.SEX;
         defaults['TAB'] = tab;
         defaults['TABNOME'] = tabNome;
-        defaults['VISNOCRI'] = person.VISNOCRI + 1;
+        defaults['VISNOCRI'] = Number(person.VISNOCRI) + 1;
     }
     return defaults;
 }

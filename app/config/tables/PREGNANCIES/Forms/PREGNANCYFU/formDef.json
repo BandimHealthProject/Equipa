@@ -304,6 +304,12 @@
               "default": "A mulher tem uma cicatriz da vacina BCG?"
             },
             "image": "scar_mul.jpg"
+          },
+          "hint": {
+            "text": {
+              "english": "Please examine the upper arms of the woman",
+              "default": "Por favor, examine os braços da mulher"
+            }
           }
         },
         "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1",
@@ -447,8 +453,8 @@
           },
           "hint": {
             "text": {
-              "english": "Remember to leave a description at someone in the house",
-              "default": "Lembre-se de deixar uma descrição em alguém da casa"
+              "english": "Remember to leave a description with someone in the house",
+              "default": "Lembre-se de deixar uma descrição com alguém da casa"
             }
           }
         },
@@ -1099,7 +1105,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "IDMUL = ?",
         "selectionArgs": "[data('IDMUL')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\")}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"1\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -1760,7 +1766,7 @@
         "linked_table_id": "CHILDREN",
         "selection": "IDMUL = ?",
         "selectionArgs": "[data('IDMUL')]",
-        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"01\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\")}",
+        "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"1\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\")}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 2
       }
@@ -2497,6 +2503,12 @@
                   "default": "A mulher tem uma cicatriz da vacina BCG?"
                 },
                 "image": "scar_mul.jpg"
+              },
+              "hint": {
+                "text": {
+                  "english": "Please examine the upper arms of the woman",
+                  "default": "Por favor, examine os braços da mulher"
+                }
               }
             },
             "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1",
@@ -2673,8 +2685,8 @@
               },
               "hint": {
                 "text": {
-                  "english": "Remember to leave a description at someone in the house",
-                  "default": "Lembre-se de deixar uma descrição em alguém da casa"
+                  "english": "Remember to leave a description with someone in the house",
+                  "default": "Lembre-se de deixar uma descrição com alguém da casa"
                 }
               }
             },

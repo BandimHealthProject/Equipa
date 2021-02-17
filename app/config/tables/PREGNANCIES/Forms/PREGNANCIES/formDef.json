@@ -409,8 +409,8 @@
           },
           "hint": {
             "text": {
-              "english": "Remember to leave a description at someone in the house",
-              "default": "Lembre-se de deixar uma descrição em alguém da casa"
+              "english": "Remember to leave a description with someone in the house",
+              "default": "Lembre-se de deixar uma descrição com alguém da casa"
             }
           }
         },
@@ -619,8 +619,8 @@
           },
           "hint": {
             "text": {
-              "english": "Remember to leave a description at someone in the house",
-              "default": "Lembre-se de deixar uma descrição em alguém da casa"
+              "english": "Remember to leave a description with someone in the house",
+              "default": "Lembre-se de deixar uma descrição com alguém da casa"
             }
           }
         },
@@ -890,6 +890,12 @@
               "default": "A mulher tem uma cicatriz da vacina BCG?"
             },
             "image": "scar_mul.jpg"
+          },
+          "hint": {
+            "text": {
+              "english": "Please examine the upper arms of the woman",
+              "default": "Por favor, examine os braços da mulher"
+            }
           }
         },
         "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1 || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
@@ -2657,8 +2663,8 @@
               },
               "hint": {
                 "text": {
-                  "english": "Remember to leave a description at someone in the house",
-                  "default": "Lembre-se de deixar uma descrição em alguém da casa"
+                  "english": "Remember to leave a description with someone in the house",
+                  "default": "Lembre-se de deixar uma descrição com alguém da casa"
                 }
               }
             },
@@ -2912,8 +2918,8 @@
               },
               "hint": {
                 "text": {
-                  "english": "Remember to leave a description at someone in the house",
-                  "default": "Lembre-se de deixar uma descrição em alguém da casa"
+                  "english": "Remember to leave a description with someone in the house",
+                  "default": "Lembre-se de deixar uma descrição com alguém da casa"
                 }
               }
             },
@@ -3225,6 +3231,12 @@
                   "default": "A mulher tem uma cicatriz da vacina BCG?"
                 },
                 "image": "scar_mul.jpg"
+              },
+              "hint": {
+                "text": {
+                  "english": "Please examine the upper arms of the woman",
+                  "default": "Por favor, examine os braços da mulher"
+                }
               }
             },
             "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1 || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
