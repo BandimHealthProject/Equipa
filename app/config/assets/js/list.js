@@ -28,7 +28,7 @@ function doSanityCheck() {
 
 function loadPregnancies() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
+    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
@@ -52,9 +52,10 @@ function loadPregnancies() {
             var GRAV = result.getData(row,"GRAV");
             var HCAREA = result.getData(row,"HCAREA");
             var IDADE = result.getData(row,"IDADE");
+            var IDMUL = result.getData(row,"IDMUL");
             var MOR = result.getData(row,"MOR");
             var NOMEMUL = result.getData(row,"NOMEMUL");
-            var IDMUL = result.getData(row,"IDMUL");
+            var NVNMAB = result.getData(row,"NVNMAB");
             var PARITY = result.getData(row,"PARITY");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
@@ -62,7 +63,7 @@ function loadPregnancies() {
             var TELE = result.getData(row,"TELE")
             var VISNOMUL = result.getData(row,"VISNOMUL");
 
-            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, MOR, NOMEMUL, IDMUL, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL};
+            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL};
             pregnancies.push(p);
         }
         console.log("Pregnancies:", pregnancies)
@@ -80,7 +81,7 @@ function loadPregnancies() {
 
 function loadChildren() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI" +
+    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
@@ -98,6 +99,7 @@ function loadChildren() {
             var BCGDATA = result.getData(row,"BCGDATA");
             var DATASEG = result.getData(row,"DATASEG");
             var DOB = result.getData(row,"DOB");
+            var ESTADOCRI = result.getData(row,"ESTADOCRI");
             var GRAV = result.getData(row,"GRAV");
             var HCAREA = result.getData(row,"HCAREA");
             var MOR = result.getData(row,"MOR");
@@ -113,7 +115,23 @@ function loadChildren() {
             var TAB = result.getData(row,"TAB");
             var VISNOCRI = result.getData(row,"VISNOCRI");
 
-            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI};
+            // js dates
+            // End up FU: dob+42
+            var dobD = Number(DOB.slice(2, DOB.search("M")-1));
+            var dobM = DOB.slice(DOB.search("M")+2, DOB.search("Y")-1);
+            var dobY = DOB.slice(DOB.search("Y")+2);
+            var FUend = new Date(dobY, dobM-1, dobD +42);
+            if (FUend == "Invalid Date") {
+                FUend = new Date(dobY, dobM-1, 15 +42);
+            }
+            // last visit
+            var segD = Number(DATASEG.slice(2, DATASEG.search("M")-1));
+            var segM = DATASEG.slice(DATASEG.search("M")+2, DATASEG.search("Y")-1);
+            var segY = DATASEG.slice(DATASEG.search("Y")+2);
+            var lastVisit = new Date(segY, segM-1, segD);
+            
+
+            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI, FUend, lastVisit};
             children.push(p);
         }
         console.log("Children:", children)
@@ -170,8 +188,8 @@ function populateView() {
 
     // list
     $.each(personList, function() {
-        var that = this;  
-
+        var that = this; 
+        
         // Check if visited today
         var option = '';
         if ((this.DATASEG == todayAdate | this.REGDIA == todayAdate) & this.savepoint == "COMPLETE") {
@@ -186,7 +204,9 @@ function populateView() {
         
         // list
         // preg criterias
-        if (this.type == "pregnancy") {
+        if (this.type == "pregnancy" & 
+            (((this.ESTADOGRAV != 1 & this.ESTADOGRAV != 3 & this.ESTADOGRAV != 4) | 
+            (this.ESTADOGRAV == 1 & this.NVNMAB == 33 )) | option != '')) {
             ul.append($("<li />").append($("<button />").attr('id',this.IDMUL).attr('class', option + " " + this.type).append(displayText)));
          
             // Buttons
@@ -196,7 +216,9 @@ function populateView() {
             }) 
         } 
         // child criteria
-        if (this.type == "child") {
+        if (this.type == "child" &
+            ((this.ESTADOCRI != 2 & this.ESTADOCRI != 3 &
+            this.lastVisit < this.FUend) | option != '')) {
             ul.append($("<li />").append($("<button />").attr('id',this.IDCRI).attr('class', option + " " + this.type + " sex" + this.SEX).append(displayText)));
         
             // Buttons
@@ -225,14 +247,14 @@ function setDisplayText(person) {
         if (person.CONSENT == 2) {
             displayText = "Morança: " + person.MOR + "<br />" +
             "Nome: " + person.NOMEMUL + "<br />" +
-            "Inclusão: " + regdia+ "<br />" +
+            "Dia de inclusão: " + regdia + "<br />" +
             "OBS: Participação recusada! <br />" + 
             "Não pergunte novamente";
         } else {
             displayText = "Morança: " + person.MOR + "<br />" +
             "Nome: " + person.NOMEMUL + "<br />" + 
             "Idade: " + person.IDADE + "<br />" +
-            "Inclusão: " + regdia+ "<br />" +
+            "Dia de inclusão: " + regdia + "<br />" +
             "OBS: " + obs;
         }
         
@@ -244,13 +266,14 @@ function setDisplayText(person) {
             sex = "Masculino";
         } else if (person.SEX == 2) {
             sex = "Fêmea";
-        }
+        } 
 
-        displayText = "Nome: " + person.NOMECRI + "<br />" + 
+        displayText = "Morança: " + person.MOR + "<br />" +
+            "Nome da mãe: " + person.NOMEMUL + "<br />" +
+            "Nome da criança: " + person.NOMECRI + "<br />" + 
             "Sexo: " + sex + "<br />" + 
-            "Dia de nascimento: " + dob + "<br />" +
-            "Nome da mãe: " + person.NOMEMUL + "<br />" + 
-            "Inclusão: " + regdia;
+            "Dia de nascimento: " + dob + "<br />" + 
+            "Dia de inclusão: " + regdia;
     }
     return displayText
 }
