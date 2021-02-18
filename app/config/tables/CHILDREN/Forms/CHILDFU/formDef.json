@@ -73,6 +73,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 3
       },
       {
@@ -85,6 +86,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 4
       },
       {
@@ -97,6 +99,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 5
       },
       {
@@ -109,6 +112,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 6
       },
       {
@@ -122,6 +126,7 @@
           }
         },
         "required": true,
+        "hideInContents": true,
         "_row_num": 7
       },
       {
@@ -134,6 +139,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 8
       },
       {
@@ -146,6 +152,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 9
       },
       {
@@ -166,6 +173,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 12
       },
       {
@@ -204,6 +212,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 16
       },
       {
@@ -271,6 +280,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 23
       },
       {
@@ -283,6 +293,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 24
       },
       {
@@ -304,6 +315,7 @@
           }
         },
         "required": true,
+        "hideInContents": true,
         "_row_num": 25
       },
       {
@@ -347,6 +359,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 31
       },
       {
@@ -359,6 +372,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 32
       },
       {
@@ -377,6 +391,7 @@
           }
         },
         "required": true,
+        "hideInContents": true,
         "_row_num": 34
       },
       {
@@ -399,6 +414,7 @@
           }
         },
         "required": true,
+        "hideInContents": true,
         "_row_num": 37
       },
       {
@@ -421,6 +437,7 @@
           }
         },
         "required": true,
+        "hideInContents": true,
         "_row_num": 40
       },
       {
@@ -431,6 +448,7 @@
         "type": "select_one",
         "values_list": "Change",
         "name": "SEXCON",
+        "hideInContents": true,
         "_row_num": 42
       },
       {
@@ -475,6 +493,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 48
       },
       {
@@ -487,6 +506,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 49
       },
       {
@@ -502,6 +522,7 @@
           }
         },
         "required": true,
+        "hideInContents": true,
         "_row_num": 50
       },
       {
@@ -554,6 +575,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 56
       },
       {
@@ -621,6 +643,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 63
       },
       {
@@ -700,6 +723,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 72
       },
       {
@@ -793,11 +817,11 @@
         "type": "assign",
         "name": "bcgcheck",
         "calculation": 2,
+        "hideInContents": true,
         "_row_num": 82
       },
       {
         "clause": "end if",
-        "calculation": 2,
         "_row_num": 83
       },
       {
@@ -809,11 +833,11 @@
         "type": "assign",
         "name": "poliocheck",
         "calculation": 2,
+        "hideInContents": true,
         "_row_num": 85
       },
       {
         "clause": "end if",
-        "calculation": 2,
         "_row_num": 86
       },
       {
@@ -828,6 +852,7 @@
       {
         "branch_label": "obsbcg",
         "clause": "begin screen",
+        "hideInContents": true,
         "_row_num": 89
       },
       {
@@ -840,6 +865,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 90
       },
       {
@@ -852,6 +878,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 91
       },
       {
@@ -888,6 +915,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 97
       },
       {
@@ -900,12 +928,14 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 98
       },
       {
         "type": "assign",
         "name": "poliocheck",
         "calculation": 1,
+        "hideInContents": true,
         "_row_num": 99
       },
       {
@@ -943,6 +973,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 106
       },
       {
@@ -984,6 +1015,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 111
       },
       {
@@ -1050,11 +1082,11 @@
         "type": "assign",
         "name": "outrocheck",
         "calculation": 2,
+        "hideInContents": true,
         "_row_num": 118
       },
       {
         "clause": "end if",
-        "calculation": 2,
         "_row_num": 119
       },
       {
@@ -1081,6 +1113,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 123
       },
       {
@@ -1093,12 +1126,14 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 124
       },
       {
         "type": "assign",
         "name": "outrocheck",
         "calculation": 1,
+        "hideInContents": true,
         "_row_num": 125
       },
       {
@@ -1154,6 +1189,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 136
       },
       {
@@ -1198,6 +1234,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 141
       },
       {
@@ -1265,6 +1302,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 150
       },
       {
@@ -1320,6 +1358,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 157
       },
       {
@@ -1360,6 +1399,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 162
       },
       {
@@ -1409,6 +1449,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 168
       },
       {
@@ -1456,6 +1497,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 172
       },
       {
@@ -1502,6 +1544,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 177
       },
       {
@@ -1575,6 +1618,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 184
       },
       {
@@ -1587,6 +1631,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 185
       },
       {
@@ -1599,6 +1644,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 186
       },
       {
@@ -3671,6 +3717,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
@@ -3688,6 +3735,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 4,
             "__rowNum__": 3,
             "_token_type": "prompt",
@@ -3705,6 +3753,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
@@ -3722,6 +3771,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 6,
             "__rowNum__": 5,
             "_token_type": "prompt",
@@ -3740,6 +3790,7 @@
               }
             },
             "required": true,
+            "hideInContents": true,
             "_row_num": 7,
             "__rowNum__": 6,
             "_token_type": "prompt",
@@ -3757,6 +3808,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
@@ -3774,6 +3826,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 9,
             "__rowNum__": 8,
             "_token_type": "prompt",
@@ -3791,6 +3844,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 12,
             "__rowNum__": 11,
             "_token_type": "prompt",
@@ -3831,6 +3885,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 16,
             "__rowNum__": 15,
             "_token_type": "prompt",
@@ -3896,6 +3951,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 23,
             "__rowNum__": 22,
             "_token_type": "prompt",
@@ -3913,6 +3969,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 24,
             "__rowNum__": 23,
             "_token_type": "prompt",
@@ -3939,6 +3996,7 @@
               }
             },
             "required": true,
+            "hideInContents": true,
             "_row_num": 25,
             "__rowNum__": 24,
             "_token_type": "prompt",
@@ -3975,6 +4033,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 31,
             "__rowNum__": 30,
             "_token_type": "prompt",
@@ -3992,6 +4051,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 32,
             "__rowNum__": 31,
             "_token_type": "prompt",
@@ -4010,6 +4070,7 @@
               }
             },
             "required": true,
+            "hideInContents": true,
             "_row_num": 34,
             "__rowNum__": 33,
             "_token_type": "prompt",
@@ -4028,6 +4089,7 @@
               }
             },
             "required": true,
+            "hideInContents": true,
             "_row_num": 37,
             "__rowNum__": 36,
             "_token_type": "prompt",
@@ -4046,6 +4108,7 @@
               }
             },
             "required": true,
+            "hideInContents": true,
             "_row_num": 40,
             "__rowNum__": 39,
             "_token_type": "prompt",
@@ -4057,6 +4120,7 @@
             "type": "select_one",
             "values_list": "Change",
             "name": "SEXCON",
+            "hideInContents": true,
             "_row_num": 42,
             "__rowNum__": 41,
             "_token_type": "prompt",
@@ -4094,6 +4158,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 48,
             "__rowNum__": 47,
             "_token_type": "prompt",
@@ -4111,6 +4176,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 49,
             "__rowNum__": 48,
             "_token_type": "prompt",
@@ -4131,6 +4197,7 @@
               }
             },
             "required": true,
+            "hideInContents": true,
             "_row_num": 50,
             "__rowNum__": 49,
             "_token_type": "prompt",
@@ -4176,6 +4243,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 56,
             "__rowNum__": 55,
             "_token_type": "prompt",
@@ -4241,6 +4309,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 63,
             "__rowNum__": 62,
             "_token_type": "prompt",
@@ -4317,6 +4386,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 72,
             "__rowNum__": 71,
             "_token_type": "prompt",
@@ -4418,6 +4488,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 90,
             "__rowNum__": 89,
             "_token_type": "prompt",
@@ -4435,6 +4506,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 91,
             "__rowNum__": 90,
             "_token_type": "prompt",
@@ -4452,6 +4524,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 97,
             "__rowNum__": 96,
             "_token_type": "prompt",
@@ -4469,6 +4542,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 98,
             "__rowNum__": 97,
             "_token_type": "prompt",
@@ -4486,6 +4560,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 106,
             "__rowNum__": 105,
             "_token_type": "prompt",
@@ -4523,6 +4598,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 111,
             "__rowNum__": 110,
             "_token_type": "prompt",
@@ -4601,6 +4677,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 123,
             "__rowNum__": 122,
             "_token_type": "prompt",
@@ -4618,6 +4695,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 124,
             "__rowNum__": 123,
             "_token_type": "prompt",
@@ -4635,6 +4713,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 136,
             "__rowNum__": 135,
             "_token_type": "prompt",
@@ -4677,6 +4756,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 141,
             "__rowNum__": 140,
             "_token_type": "prompt",
@@ -4733,6 +4813,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 150,
             "__rowNum__": 149,
             "_token_type": "prompt",
@@ -4776,6 +4857,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 157,
             "__rowNum__": 156,
             "_token_type": "prompt",
@@ -4813,6 +4895,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 162,
             "__rowNum__": 161,
             "_token_type": "prompt",
@@ -4856,6 +4939,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 168,
             "__rowNum__": 167,
             "_token_type": "prompt",
@@ -4905,6 +4989,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 172,
             "__rowNum__": 171,
             "_token_type": "prompt",
@@ -4949,6 +5034,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 177,
             "__rowNum__": 176,
             "_token_type": "prompt",
@@ -5020,6 +5106,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 184,
             "__rowNum__": 183,
             "_token_type": "prompt",
@@ -5037,6 +5124,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 185,
             "__rowNum__": 184,
             "_token_type": "prompt",
@@ -5054,6 +5142,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 186,
             "__rowNum__": 185,
             "_token_type": "prompt",
@@ -5286,6 +5375,7 @@
           },
           {
             "clause": "begin screen",
+            "hideInContents": true,
             "_row_num": 89,
             "__rowNum__": 88,
             "_token_type": "begin_screen",

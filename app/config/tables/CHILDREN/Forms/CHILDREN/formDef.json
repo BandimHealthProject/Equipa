@@ -73,6 +73,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 3
       },
       {
@@ -85,6 +86,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 4
       },
       {
@@ -97,6 +99,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 5
       },
       {
@@ -109,6 +112,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 6
       },
       {
@@ -121,6 +125,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 7
       },
       {
@@ -133,6 +138,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 8
       },
       {
@@ -145,6 +151,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 9
       },
       {
@@ -154,6 +161,7 @@
         "display": {
           "hide_adate": true
         },
+        "hideInContents": true,
         "_row_num": 10
       },
       {
@@ -174,6 +182,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 14
       },
       {
@@ -203,12 +212,14 @@
         "type": "assign",
         "name": "IDCRI",
         "calculation": "parseInt(data(\"IDCRI\"))+parseInt(data(\"idcount\"))-1",
+        "hideInContents": true,
         "_row_num": 17
       },
       {
         "type": "assign",
         "name": "idcount",
         "calculation": 1,
+        "hideInContents": true,
         "_row_num": 18
       },
       {
@@ -233,6 +244,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 22
       },
       {
@@ -311,6 +323,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 28
       },
       {
@@ -378,6 +391,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 35
       },
       {
@@ -457,6 +471,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 44
       },
       {
@@ -562,11 +577,11 @@
         "type": "assign",
         "name": "bcgcheck",
         "calculation": 2,
+        "hideInContents": true,
         "_row_num": 54
       },
       {
         "clause": "end if",
-        "calculation": 2,
         "_row_num": 55
       },
       {
@@ -578,11 +593,11 @@
         "type": "assign",
         "name": "poliocheck",
         "calculation": 2,
+        "hideInContents": true,
         "_row_num": 57
       },
       {
         "clause": "end if",
-        "calculation": 2,
         "_row_num": 58
       },
       {
@@ -609,6 +624,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 62
       },
       {
@@ -621,12 +637,14 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 63
       },
       {
         "type": "assign",
         "name": "bcgcheck",
         "calculation": 1,
+        "hideInContents": true,
         "_row_num": 64
       },
       {
@@ -657,6 +675,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 69
       },
       {
@@ -669,12 +688,14 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 70
       },
       {
         "type": "assign",
         "name": "poliocheck",
         "calculation": 1,
+        "hideInContents": true,
         "_row_num": 71
       },
       {
@@ -712,6 +733,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 78
       },
       {
@@ -753,6 +775,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 83
       },
       {
@@ -765,6 +788,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 84
       },
       {
@@ -831,11 +855,11 @@
         "type": "assign",
         "name": "outrocheck",
         "calculation": 2,
+        "hideInContents": true,
         "_row_num": 91
       },
       {
         "clause": "end if",
-        "calculation": 2,
         "_row_num": 92
       },
       {
@@ -862,6 +886,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 96
       },
       {
@@ -874,12 +899,14 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 97
       },
       {
         "type": "assign",
         "name": "outrocheck",
         "calculation": 1,
+        "hideInContents": true,
         "_row_num": 98
       },
       {
@@ -935,6 +962,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 109
       },
       {
@@ -979,6 +1007,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 114
       },
       {
@@ -1046,6 +1075,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 123
       },
       {
@@ -1101,6 +1131,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 130
       },
       {
@@ -1141,6 +1172,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 135
       },
       {
@@ -1190,6 +1222,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 141
       },
       {
@@ -1237,6 +1270,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 145
       },
       {
@@ -1283,6 +1317,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 150
       },
       {
@@ -1356,6 +1391,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 157
       },
       {
@@ -1368,6 +1404,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 158
       },
       {
@@ -1380,6 +1417,7 @@
             }
           }
         },
+        "hideInContents": true,
         "_row_num": 159
       },
       {
@@ -3331,6 +3369,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
@@ -3348,6 +3387,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 4,
             "__rowNum__": 3,
             "_token_type": "prompt",
@@ -3365,6 +3405,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 5,
             "__rowNum__": 4,
             "_token_type": "prompt",
@@ -3382,6 +3423,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 6,
             "__rowNum__": 5,
             "_token_type": "prompt",
@@ -3399,6 +3441,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 7,
             "__rowNum__": 6,
             "_token_type": "prompt",
@@ -3416,6 +3459,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
@@ -3433,6 +3477,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 9,
             "__rowNum__": 8,
             "_token_type": "prompt",
@@ -3447,6 +3492,7 @@
             "display": {
               "hide_adate": true
             },
+            "hideInContents": true,
             "_row_num": 10,
             "__rowNum__": 9,
             "_token_type": "prompt",
@@ -3464,6 +3510,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 14,
             "__rowNum__": 13,
             "_token_type": "prompt",
@@ -3504,6 +3551,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 22,
             "__rowNum__": 21,
             "_token_type": "prompt",
@@ -3594,6 +3642,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 28,
             "__rowNum__": 27,
             "_token_type": "prompt",
@@ -3659,6 +3708,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 35,
             "__rowNum__": 34,
             "_token_type": "prompt",
@@ -3735,6 +3785,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 44,
             "__rowNum__": 43,
             "_token_type": "prompt",
@@ -3848,6 +3899,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 62,
             "__rowNum__": 61,
             "_token_type": "prompt",
@@ -3865,6 +3917,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 63,
             "__rowNum__": 62,
             "_token_type": "prompt",
@@ -3882,6 +3935,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 69,
             "__rowNum__": 68,
             "_token_type": "prompt",
@@ -3899,6 +3953,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 70,
             "__rowNum__": 69,
             "_token_type": "prompt",
@@ -3916,6 +3971,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 78,
             "__rowNum__": 77,
             "_token_type": "prompt",
@@ -3953,6 +4009,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 83,
             "__rowNum__": 82,
             "_token_type": "prompt",
@@ -3970,6 +4027,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 84,
             "__rowNum__": 83,
             "_token_type": "prompt",
@@ -4048,6 +4106,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 96,
             "__rowNum__": 95,
             "_token_type": "prompt",
@@ -4065,6 +4124,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 97,
             "__rowNum__": 96,
             "_token_type": "prompt",
@@ -4082,6 +4142,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 109,
             "__rowNum__": 108,
             "_token_type": "prompt",
@@ -4124,6 +4185,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 114,
             "__rowNum__": 113,
             "_token_type": "prompt",
@@ -4180,6 +4242,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 123,
             "__rowNum__": 122,
             "_token_type": "prompt",
@@ -4223,6 +4286,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 130,
             "__rowNum__": 129,
             "_token_type": "prompt",
@@ -4260,6 +4324,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 135,
             "__rowNum__": 134,
             "_token_type": "prompt",
@@ -4303,6 +4368,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 141,
             "__rowNum__": 140,
             "_token_type": "prompt",
@@ -4352,6 +4418,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 145,
             "__rowNum__": 144,
             "_token_type": "prompt",
@@ -4396,6 +4463,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 150,
             "__rowNum__": 149,
             "_token_type": "prompt",
@@ -4467,6 +4535,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 157,
             "__rowNum__": 156,
             "_token_type": "prompt",
@@ -4484,6 +4553,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 158,
             "__rowNum__": 157,
             "_token_type": "prompt",
@@ -4501,6 +4571,7 @@
                 }
               }
             },
+            "hideInContents": true,
             "_row_num": 159,
             "__rowNum__": 158,
             "_token_type": "prompt",
