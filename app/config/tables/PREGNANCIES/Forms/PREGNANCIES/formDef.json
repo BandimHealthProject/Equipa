@@ -264,6 +264,30 @@
         "_row_num": 21
       },
       {
+        "type": "text",
+        "name": "TELE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Number of woman or person in the household",
+              "default": "Número de telefone de mulher ou pessoa na casa"
+            }
+          },
+          "hint": {
+            "text": {
+              "english": "If it is not possible to get a phone number write \"999\"",
+              "default": "Se não for possível obter um número de telefone escreva \"999\""
+            }
+          }
+        },
+        "required": true,
+        "constraint": "(data(\"TELE\")>100000000 && data(\"TELE\")<1000000000) || data(\"TELE\") == 999",
+        "inputAttributes": {
+          "type": "number"
+        },
+        "_row_num": 22
+      },
+      {
         "type": "select_one",
         "values_list": "Status",
         "name": "ESTADOMUL",
@@ -276,27 +300,27 @@
           }
         },
         "required": true,
-        "_row_num": 22
+        "_row_num": 23
       },
       {
         "type": "assign",
         "name": "DATASEG",
         "calculation": "data(\"REGDIA\")",
         "hideInContents": true,
-        "_row_num": 23
+        "_row_num": 24
       },
       {
         "clause": "end screen",
-        "_row_num": 24
+        "_row_num": 25
       },
       {
         "clause": "if",
         "condition": "data(\"ESTADOMUL\") == \"1\"",
-        "_row_num": 25
+        "_row_num": 26
       },
       {
         "clause": "begin screen",
-        "_row_num": 26
+        "_row_num": 27
       },
       {
         "type": "note",
@@ -309,7 +333,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 27
+        "_row_num": 28
       },
       {
         "type": "note",
@@ -322,20 +346,20 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 28
+        "_row_num": 29
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow your pregnancy until the moment of delivery and your child within the first months.",
-              "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez até o momento do parto e seu filho nos primeiros meses."
+              "english": "<b>Bandim Health Project</b> is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to <b>follow your pregnancy</b> until the moment of delivery and your child within the first months.",
+              "default": "O <b>Projeto Saúde Bandim</b> está realizando um estudo sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez e seu filho nos primeiros meses."
             }
           }
         },
         "hideInContents": true,
-        "_row_num": 29
+        "_row_num": 30
       },
       {
         "type": "note",
@@ -348,19 +372,6 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 30
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "All information collected here will be used for the study only and will be kept confidential.",
-              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
-            }
-          }
-        },
-        "hideInContents": true,
         "_row_num": 31
       },
       {
@@ -368,8 +379,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "If you do not want to participate, you and your child will continue to be treated in the same way as others who have accepted.",
-              "default": "Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram."
+              "english": "All information collected here will be used for the study only and will be kept <b>confidential</b>.",
+              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas  <b>confidenciais</b>."
             }
           }
         },
@@ -381,8 +392,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "If you accept now and later do not want to continue, you can withdraw your consent.",
-              "default": "Se você aceitar agora e depois não quiser continuar, pode retirar seu consentimento."
+              "english": "If you do not want to participate, <b>you and your child will continue to be treated in the same way as others</b> who have accepted. If you accept now and later do not want to continue, <b>you can withdraw</b> your consent.",
+              "default": "A participação neste estudo é <b>voluntário</b>. Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram. Se você aceitar agora e depois não quiser continuar, você pode retirar seu consentimento a qualquer momento."
             }
           }
         },
@@ -394,8 +405,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "If you have any questions about this work later, you can contact us by phone: 96016462/955946796",
-              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
+              "english": "If you have any questions about this work later, you can contact us by phone: 969006817 / 956701084.",
+              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 969006817 / 956701084."
             }
           }
         },
@@ -407,8 +418,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Do you have any questions now?",
-              "default": "Você tem alguma pergunta agora?"
+              "english": "<b>Do you have any questions now?</b>",
+              "default": "<b>Você tem alguma pergunta agora?</b>"
             }
           }
         },
@@ -466,30 +477,13 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "<i>Please try to call the woman</i>",
-              "default": "<i>Por favor, tente ligar para a mulher</i>"
+              "english": "<i>Please try to call the woman </br> Number: {{data.TELE}}</i>",
+              "default": "<i>Por favor, tente ligar para a mulher </br> Telefone: {{data.TELE}}</i>"
             }
           }
         },
         "hideInContents": true,
         "_row_num": 41
-      },
-      {
-        "type": "text",
-        "name": "TELE",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Number of woman or person in the household",
-              "default": "Número de mulheres ou pessoas na casa"
-            }
-          }
-        },
-        "constraint": "data(\"TELE\") !=null || data(\"ESTADOMUL\") == 1",
-        "inputAttributes": {
-          "type": "number"
-        },
-        "_row_num": 42
       },
       {
         "type": "select_one",
@@ -504,20 +498,20 @@
           }
         },
         "constraint": "data(\"CALL\") !=null || data(\"ESTADOMUL\") == 1",
-        "_row_num": 43
+        "_row_num": 42
       },
       {
         "clause": "end screen",
-        "_row_num": 44
+        "_row_num": 43
       },
       {
         "clause": "begin screen",
-        "_row_num": 45
+        "_row_num": 44
       },
       {
         "clause": "if",
         "condition": "data(\"CALL\") == \"1\"",
-        "_row_num": 46
+        "_row_num": 45
       },
       {
         "type": "note",
@@ -530,7 +524,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 47
+        "_row_num": 46
       },
       {
         "type": "note",
@@ -543,20 +537,20 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 48
+        "_row_num": 47
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow your pregnancy until the moment of delivery and your child within the first months.",
-              "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez até o momento do parto e seu filho nos primeiros meses."
+              "english": "<b>Bandim Health Project</b> is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to <b>follow your pregnancy</b> until the moment of delivery and your child within the first months.",
+              "default": "O <b>Projeto Saúde Bandim</b> está realizando um estudo sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez e seu filho nos primeiros meses."
             }
           }
         },
         "hideInContents": true,
-        "_row_num": 49
+        "_row_num": 48
       },
       {
         "type": "note",
@@ -569,6 +563,19 @@
           }
         },
         "hideInContents": true,
+        "_row_num": 49
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "All information collected here will be used for the study only and will be kept <b>confidential</b>.",
+              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas  <b>confidenciais</b>."
+            }
+          }
+        },
+        "hideInContents": true,
         "_row_num": 50
       },
       {
@@ -576,8 +583,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "All information collected here will be used for the study only and will be kept confidential.",
-              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
+              "english": "If you do not want to participate, <b>you and your child will continue to be treated in the same way as others</b> who have accepted. If you accept now and later do not want to continue, <b>you can withdraw</b> your consent.",
+              "default": "A participação neste estudo é <b>voluntário</b>. Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram. Se você aceitar agora e depois não quiser continuar, você pode retirar seu consentimento a qualquer momento."
             }
           }
         },
@@ -589,8 +596,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "If you do not want to participate, you and your child will continue to be treated in the same way as others who have accepted.",
-              "default": "Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram."
+              "english": "If you have any questions about this work later, you can contact us by phone: 969006817 / 956701084.",
+              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 969006817 / 956701084."
             }
           }
         },
@@ -602,39 +609,13 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "If you accept now and later do not want to continue, you can withdraw your consent.",
-              "default": "Se você aceitar agora e depois não quiser continuar, pode retirar seu consentimento."
+              "english": "<b>Do you have any questions now?</b>",
+              "default": "<b>Você tem alguma pergunta agora?</b>"
             }
           }
         },
         "hideInContents": true,
         "_row_num": 53
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "If you have any questions about this work later, you can contact us by phone: 96016462/955946796",
-              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
-            }
-          }
-        },
-        "hideInContents": true,
-        "_row_num": 54
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Do you have any questions now?",
-              "default": "Você tem alguma pergunta agora?"
-            }
-          }
-        },
-        "hideInContents": true,
-        "_row_num": 55
       },
       {
         "type": "select_one",
@@ -655,11 +636,11 @@
           }
         },
         "constraint": "data(\"CONSENT\") !=null || data(\"ESTADOMUL\") == 1 || data(\"CALL\") != 1",
-        "_row_num": 56
+        "_row_num": 54
       },
       {
         "clause": "else",
-        "_row_num": 57
+        "_row_num": 55
       },
       {
         "type": "note",
@@ -672,7 +653,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 58
+        "_row_num": 56
       },
       {
         "type": "note",
@@ -685,20 +666,20 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 59
+        "_row_num": 57
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow the womans pregnancy until the moment of delivery and her child within the first months.",
-              "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar a gestação da mulher até o momento do parto e seu filho nos primeiros meses."
+              "english": "<b>Bandim Health Project</b> is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to <b>follow your pregnancy</b> until the moment of delivery and your child within the first months.",
+              "default": "O <b>Projeto Saúde Bandim</b> está realizando um estudo sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez e seu filho nos primeiros meses."
             }
           }
         },
         "hideInContents": true,
-        "_row_num": 60
+        "_row_num": 58
       },
       {
         "type": "note",
@@ -711,6 +692,32 @@
           }
         },
         "hideInContents": true,
+        "_row_num": 59
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "All information collected here will be used for the study only and will be kept <b>confidential</b>.",
+              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas  <b>confidenciais</b>."
+            }
+          }
+        },
+        "hideInContents": true,
+        "_row_num": 60
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If you do not want to participate, <b>you and your child will continue to be treated in the same way as others</b> who have accepted. If you accept now and later do not want to continue, <b>you can withdraw</b> your consent.",
+              "default": "A participação neste estudo é <b>voluntário</b>. Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram. Se você aceitar agora e depois não quiser continuar, você pode retirar seu consentimento a qualquer momento."
+            }
+          }
+        },
+        "hideInContents": true,
         "_row_num": 61
       },
       {
@@ -718,8 +725,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "All information collected here will be used for the study only and will be kept confidential.",
-              "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
+              "english": "If you have any questions about this work later, you can contact us by phone: 969006817 / 956701084.",
+              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 969006817 / 956701084."
             }
           }
         },
@@ -731,52 +738,13 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "If the woman do not want to participate, her and her child will continue to be treated in the same way as others who have accepted.",
-              "default": "Se a mulher não quiser participar, ela e seu filho continuarão a ser tratados da mesma forma que outras pessoas que o aceitaram."
+              "english": "<b>Do you have any questions now?</b>",
+              "default": "<b>Você tem alguma pergunta agora?</b>"
             }
           }
         },
         "hideInContents": true,
         "_row_num": 63
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "If she later do not want to continue, she can withdraw her consent.",
-              "default": "Se mais tarde ela não quiser continuar, ela pode retirar seu consentimento."
-            }
-          }
-        },
-        "hideInContents": true,
-        "_row_num": 64
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "If you or her have any questions about this work later, you can contact us by phone: 96016462/955946796",
-              "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
-            }
-          }
-        },
-        "hideInContents": true,
-        "_row_num": 65
-      },
-      {
-        "type": "note",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Do you have any questions now?",
-              "default": "Você tem alguma pergunta agora?"
-            }
-          }
-        },
-        "hideInContents": true,
-        "_row_num": 66
       },
       {
         "type": "select_one",
@@ -797,28 +765,28 @@
           }
         },
         "constraint": "data(\"CONSENTOU\") !=null || data(\"ESTADOMUL\") == 1 || data(\"CALL\") == 1",
-        "_row_num": 67
+        "_row_num": 64
       },
       {
         "clause": "end if",
-        "_row_num": 68
+        "_row_num": 65
       },
       {
         "clause": "end screen",
-        "_row_num": 69
+        "_row_num": 66
       },
       {
         "clause": "end if",
-        "_row_num": 70
+        "_row_num": 67
       },
       {
         "clause": "if",
         "condition": "data(\"CONSENT\") ==  \"1\" || data(\"CONSENTOU\") ==  \"1\"",
-        "_row_num": 71
+        "_row_num": 68
       },
       {
         "clause": "begin screen",
-        "_row_num": 72
+        "_row_num": 69
       },
       {
         "type": "note",
@@ -831,7 +799,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 73
+        "_row_num": 70
       },
       {
         "type": "integer",
@@ -845,28 +813,13 @@
           },
           "constraint_message": {
             "text": {
-              "english": "Must be between 10 and 100.",
-              "default": "Deve estar entre 10 e 100."
+              "english": "Must be between 0 and 100.",
+              "default": "Deve estar entre 0 e 100."
             }
           }
         },
-        "constraint": "(data(\"IDADE\") >=9 && data(\"IDADE\") <100 &&  data(\"IDADE\") !=null) || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-        "_row_num": 74
-      },
-      {
-        "type": "select_one",
-        "values_list": "School",
-        "name": "ESCO",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Highest level of schooling finished",
-              "default": "Maior nível de escolaridade concluído"
-            }
-          }
-        },
-        "constraint": "data(\"ESCO\") !=null || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-        "_row_num": 75
+        "constraint": "(data(\"IDADE\") >=0 && data(\"IDADE\") <100 &&  data(\"IDADE\") !=null) || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
+        "_row_num": 71
       },
       {
         "type": "integer",
@@ -874,8 +827,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Number of previous births",
-              "default": "Número de nascimentos anteriores"
+              "english": "Number of previous births (including stillbirths)",
+              "default": "Número de nascimentos (incluindo nado mortos)"
             }
           },
           "hint": {
@@ -892,20 +845,15 @@
           }
         },
         "constraint": "(((data(\"PARITY\") >=0 && data(\"PARITY\") <20) || data(\"PARITY\") == 33) &&  data(\"PARITY\") != null) || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-        "_row_num": 76
+        "_row_num": 72
       },
       {
         "clause": "end screen",
-        "_row_num": 77
-      },
-      {
-        "clause": "if",
-        "condition": "data(\"ESTADOMUL\") == \"1\"",
-        "_row_num": 78
+        "_row_num": 73
       },
       {
         "clause": "begin screen",
-        "_row_num": 79
+        "_row_num": 74
       },
       {
         "type": "note",
@@ -918,7 +866,72 @@
           }
         },
         "hideInContents": true,
+        "_row_num": 75
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "ESCO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Has the woman attended school?",
+              "default": "A mulher foi à escola?"
+            }
+          }
+        },
+        "constraint": "data(\"ESCO\") !=null || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
+        "_row_num": 76
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESCO\") == \"1\"",
+        "_row_num": 77
+      },
+      {
+        "type": "select_one",
+        "values_list": "SchoolLevel",
+        "name": "ESCONIVEL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Highest level of schooling finished",
+              "default": "Maior nível de escolaridade concluído"
+            }
+          }
+        },
+        "constraint": "data(\"ESCONIVEL\") !=null || data(\"ESCO\") !=  \"1\"",
+        "_row_num": 78
+      },
+      {
+        "clause": "end if",
+        "_row_num": 79
+      },
+      {
+        "clause": "end screen",
         "_row_num": 80
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ESTADOMUL\") == \"1\"",
+        "_row_num": 81
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 82
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Registration of new pregnancy</b>",
+              "default": "<b>Registro de nova gravidez</b>"
+            }
+          }
+        },
+        "hideInContents": true,
+        "_row_num": 83
       },
       {
         "type": "select_one",
@@ -940,23 +953,59 @@
           }
         },
         "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1 || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-        "_row_num": 81
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 82
-      },
-      {
-        "clause": "end if",
-        "_row_num": 83
-      },
-      {
-        "clause": "end if",
         "_row_num": 84
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 85
+      },
+      {
+        "clause": "end if",
+        "_row_num": 86
+      },
+      {
+        "clause": "else",
+        "_row_num": 87
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 88
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Registration of new pregnancy</b>",
+              "default": "<b>Registro de nova gravidez</b>"
+            }
+          }
+        },
+        "_row_num": 89
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<font color = \"red\"> Consent is not given and the interview will end. Please press back, if this is a mistake. </font>",
+              "default": "<font color = \"red\"> O consentimento não é dado e a entrevista será encerrada. Por favor, pressione \"Atrás\", se isso for um erro. </font>"
+            }
+          }
+        },
+        "_row_num": 90
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 91
+      },
+      {
+        "clause": "end if",
+        "_row_num": 92
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 93
       },
       {
         "type": "note",
@@ -969,7 +1018,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 86
+        "_row_num": 94
       },
       {
         "type": "note",
@@ -982,7 +1031,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 87
+        "_row_num": 95
       },
       {
         "type": "note",
@@ -995,7 +1044,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 88
+        "_row_num": 96
       },
       {
         "type": "text",
@@ -1008,11 +1057,11 @@
             }
           }
         },
-        "_row_num": 89
+        "_row_num": 97
       },
       {
         "clause": "end screen",
-        "_row_num": 90
+        "_row_num": 98
       }
     ],
     "choices": [
@@ -1121,72 +1170,189 @@
         "_row_num": 11
       },
       {
-        "choice_list_name": "School",
-        "data_value": "1",
+        "choice_list_name": "SchoolLevel",
+        "data_value": "0",
         "display": {
           "title": {
             "text": {
-              "english": "0-3 years",
-              "default": "0-3 anos"
+              "english": "None",
+              "default": "Nenhum"
             }
           }
         },
         "_row_num": 13
       },
       {
-        "choice_list_name": "School",
-        "data_value": "2",
+        "choice_list_name": "SchoolLevel",
+        "data_value": "1",
         "display": {
           "title": {
             "text": {
-              "english": "4-6 years",
-              "default": "4-6 anos"
+              "english": "1st year",
+              "default": "1º ano"
             }
           }
         },
         "_row_num": 14
       },
       {
-        "choice_list_name": "School",
-        "data_value": "3",
+        "choice_list_name": "SchoolLevel",
+        "data_value": "2",
         "display": {
           "title": {
             "text": {
-              "english": "7-9 years",
-              "default": "7-9 anos"
+              "english": "2nd year",
+              "default": "2º ano"
             }
           }
         },
         "_row_num": 15
       },
       {
-        "choice_list_name": "School",
-        "data_value": "4",
+        "choice_list_name": "SchoolLevel",
+        "data_value": "3",
         "display": {
           "title": {
             "text": {
-              "english": "10-12 years",
-              "default": "10-12 anos"
+              "english": "3th year",
+              "default": "3º ano"
             }
           }
         },
         "_row_num": 16
       },
       {
-        "choice_list_name": "School",
-        "data_value": "5",
+        "choice_list_name": "SchoolLevel",
+        "data_value": "4",
         "display": {
           "title": {
             "text": {
-              "english": "University / other",
-              "default": "Universidade / outro"
+              "english": "4th year",
+              "default": "4º ano"
             }
           }
         },
         "_row_num": 17
       },
       {
-        "choice_list_name": "School",
+        "choice_list_name": "SchoolLevel",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "5th year",
+              "default": "5º ano"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "6th year",
+              "default": "6º ano"
+            }
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "7",
+        "display": {
+          "title": {
+            "text": {
+              "english": "7th year",
+              "default": "7º ano"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "8",
+        "display": {
+          "title": {
+            "text": {
+              "english": "8th year",
+              "default": "8º ano"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "9",
+        "display": {
+          "title": {
+            "text": {
+              "english": "9th year",
+              "default": "9º ano"
+            }
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "10",
+        "display": {
+          "title": {
+            "text": {
+              "english": "10th year",
+              "default": "10º ano"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "11",
+        "display": {
+          "title": {
+            "text": {
+              "english": "11th year",
+              "default": "11º ano"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "12",
+        "display": {
+          "title": {
+            "text": {
+              "english": "12th year",
+              "default": "12º ano"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "SchoolLevel",
+        "data_value": "20",
+        "display": {
+          "title": {
+            "text": {
+              "english": "More than 12 years (University or other)",
+              "default": "Mais de 12 anos (universidade ou outro)"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "SchoolLevel",
         "data_value": "33",
         "display": {
           "title": {
@@ -1196,7 +1362,7 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 27
       }
     ],
     "queries": [
@@ -1326,26 +1492,26 @@
         "_row_num": 16
       },
       {
+        "name": "TELE",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 17
+      },
+      {
         "name": "ESTADOMUL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 17
+        "_row_num": 18
       },
       {
         "name": "DATASEG",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 19
       },
       {
         "name": "CONSENT",
         "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 19
-      },
-      {
-        "name": "TELE",
-        "type": "text",
         "isSessionVariable": false,
         "_row_num": 20
       },
@@ -1368,83 +1534,89 @@
         "_row_num": 23
       },
       {
-        "name": "ESCO",
-        "type": "select_one",
+        "name": "PARITY",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 24
       },
       {
-        "name": "PARITY",
-        "type": "integer",
+        "name": "ESCO",
+        "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 25
       },
       {
-        "name": "CICATRIZMUL",
+        "name": "ESCONIVEL",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 26
       },
       {
+        "name": "CICATRIZMUL",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 27
+      },
+      {
         "name": "OBSMUL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 27
+        "_row_num": 28
       },
       {
         "name": "DATASAIMUL",
         "type": "adate",
         "isSessionVariable": false,
         "comment": "FU",
-        "_row_num": 29
+        "_row_num": 30
       },
       {
         "name": "ESTADOGRAV",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 31
       },
       {
         "name": "NVNMAB",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 32
       },
       {
         "name": "LOCPAR",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 33
       },
       {
         "name": "PARTAB",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 34
       },
       {
         "name": "PARHCHOSP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 35
       },
       {
         "name": "GEM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 35
+        "_row_num": 36
       },
       {
         "name": "cicatrizmul",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 36
+        "_row_num": 37
       },
       {
         "name": "consent",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 37
+        "_row_num": 38
       }
     ],
     "table_specific_translations": [
@@ -1690,74 +1862,191 @@
           "_row_num": 11
         }
       ],
-      "School": [
+      "SchoolLevel": [
         {
-          "choice_list_name": "School",
-          "data_value": "1",
+          "choice_list_name": "SchoolLevel",
+          "data_value": "0",
           "display": {
             "title": {
               "text": {
-                "english": "0-3 years",
-                "default": "0-3 anos"
+                "english": "None",
+                "default": "Nenhum"
               }
             }
           },
           "_row_num": 13
         },
         {
-          "choice_list_name": "School",
-          "data_value": "2",
+          "choice_list_name": "SchoolLevel",
+          "data_value": "1",
           "display": {
             "title": {
               "text": {
-                "english": "4-6 years",
-                "default": "4-6 anos"
+                "english": "1st year",
+                "default": "1º ano"
               }
             }
           },
           "_row_num": 14
         },
         {
-          "choice_list_name": "School",
-          "data_value": "3",
+          "choice_list_name": "SchoolLevel",
+          "data_value": "2",
           "display": {
             "title": {
               "text": {
-                "english": "7-9 years",
-                "default": "7-9 anos"
+                "english": "2nd year",
+                "default": "2º ano"
               }
             }
           },
           "_row_num": 15
         },
         {
-          "choice_list_name": "School",
-          "data_value": "4",
+          "choice_list_name": "SchoolLevel",
+          "data_value": "3",
           "display": {
             "title": {
               "text": {
-                "english": "10-12 years",
-                "default": "10-12 anos"
+                "english": "3th year",
+                "default": "3º ano"
               }
             }
           },
           "_row_num": 16
         },
         {
-          "choice_list_name": "School",
-          "data_value": "5",
+          "choice_list_name": "SchoolLevel",
+          "data_value": "4",
           "display": {
             "title": {
               "text": {
-                "english": "University / other",
-                "default": "Universidade / outro"
+                "english": "4th year",
+                "default": "4º ano"
               }
             }
           },
           "_row_num": 17
         },
         {
-          "choice_list_name": "School",
+          "choice_list_name": "SchoolLevel",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "5th year",
+                "default": "5º ano"
+              }
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "6th year",
+                "default": "6º ano"
+              }
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "7",
+          "display": {
+            "title": {
+              "text": {
+                "english": "7th year",
+                "default": "7º ano"
+              }
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "8",
+          "display": {
+            "title": {
+              "text": {
+                "english": "8th year",
+                "default": "8º ano"
+              }
+            }
+          },
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "9",
+          "display": {
+            "title": {
+              "text": {
+                "english": "9th year",
+                "default": "9º ano"
+              }
+            }
+          },
+          "_row_num": 22
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "10",
+          "display": {
+            "title": {
+              "text": {
+                "english": "10th year",
+                "default": "10º ano"
+              }
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "11",
+          "display": {
+            "title": {
+              "text": {
+                "english": "11th year",
+                "default": "11º ano"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "12",
+          "display": {
+            "title": {
+              "text": {
+                "english": "12th year",
+                "default": "12º ano"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "SchoolLevel",
+          "data_value": "20",
+          "display": {
+            "title": {
+              "text": {
+                "english": "More than 12 years (University or other)",
+                "default": "Mais de 12 anos (universidade ou outro)"
+              }
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "SchoolLevel",
           "data_value": "33",
           "display": {
             "title": {
@@ -1767,7 +2056,7 @@
               }
             }
           },
-          "_row_num": 18
+          "_row_num": 27
         }
       ]
     },
@@ -1999,9 +2288,8 @@
         "isSessionVariable": false,
         "elementKey": "NOMEMUL"
       },
-      "ESTADOMUL": {
+      "TELE": {
         "type": "string",
-        "valuesList": "Status",
         "_defn": [
           {
             "_row_num": 22,
@@ -2009,6 +2297,22 @@
           },
           {
             "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELE"
+      },
+      "ESTADOMUL": {
+        "type": "string",
+        "valuesList": "Status",
+        "_defn": [
+          {
+            "_row_num": 23,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -2024,7 +2328,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -2040,22 +2344,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 19,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "CONSENT"
-      },
-      "TELE": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 42,
+            "_row_num": 54,
             "section_name": "survey"
           },
           {
@@ -2064,14 +2353,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "TELE"
+        "elementKey": "CONSENT"
       },
       "CALL": {
         "type": "string",
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
@@ -2087,7 +2376,7 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 64,
             "section_name": "survey"
           },
           {
@@ -2102,7 +2391,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 71,
             "section_name": "survey"
           },
           {
@@ -2113,12 +2402,11 @@
         "isSessionVariable": false,
         "elementKey": "IDADE"
       },
-      "ESCO": {
-        "type": "string",
-        "valuesList": "School",
+      "PARITY": {
+        "type": "integer",
         "_defn": [
           {
-            "_row_num": 75,
+            "_row_num": 72,
             "section_name": "survey"
           },
           {
@@ -2127,10 +2415,11 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "ESCO"
+        "elementKey": "PARITY"
       },
-      "PARITY": {
-        "type": "integer",
+      "ESCO": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
             "_row_num": 76,
@@ -2142,18 +2431,34 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "PARITY"
+        "elementKey": "ESCO"
+      },
+      "ESCONIVEL": {
+        "type": "string",
+        "valuesList": "SchoolLevel",
+        "_defn": [
+          {
+            "_row_num": 78,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESCONIVEL"
       },
       "CICATRIZMUL": {
         "type": "string",
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -2164,11 +2469,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -2184,7 +2489,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 29,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -2195,7 +2500,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -2206,7 +2511,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -2217,7 +2522,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 32,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -2228,7 +2533,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -2239,7 +2544,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 34,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -2250,7 +2555,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -2261,7 +2566,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -2272,7 +2577,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -2531,6 +2836,35 @@
             "promptIdx": 12
           },
           {
+            "type": "text",
+            "name": "TELE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Number of woman or person in the household",
+                  "default": "Número de telefone de mulher ou pessoa na casa"
+                }
+              },
+              "hint": {
+                "text": {
+                  "english": "If it is not possible to get a phone number write \"999\"",
+                  "default": "Se não for possível obter um número de telefone escreva \"999\""
+                }
+              }
+            },
+            "required": true,
+            "constraint": "(data(\"TELE\")>100000000 && data(\"TELE\")<1000000000) || data(\"TELE\") == 999",
+            "inputAttributes": {
+              "type": "number"
+            },
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen19",
+            "promptIdx": 13
+          },
+          {
             "type": "select_one",
             "values_list": "Status",
             "name": "ESTADOMUL",
@@ -2543,12 +2877,12 @@
               }
             },
             "required": true,
-            "_row_num": 22,
-            "__rowNum__": 21,
+            "_row_num": 23,
+            "__rowNum__": 22,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 13
+            "promptIdx": 14
           },
           {
             "type": "note",
@@ -2561,12 +2895,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 27,
-            "__rowNum__": 26,
+            "_row_num": 28,
+            "__rowNum__": 27,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "survey/_screen27",
+            "promptIdx": 15
           },
           {
             "type": "note",
@@ -2579,30 +2913,30 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "_row_num": 29,
+            "__rowNum__": 28,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
-            "promptIdx": 15
+            "_branch_label_enclosing_screen": "survey/_screen27",
+            "promptIdx": 16
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow your pregnancy until the moment of delivery and your child within the first months.",
-                  "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez até o momento do parto e seu filho nos primeiros meses."
+                  "english": "<b>Bandim Health Project</b> is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to <b>follow your pregnancy</b> until the moment of delivery and your child within the first months.",
+                  "default": "O <b>Projeto Saúde Bandim</b> está realizando um estudo sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez e seu filho nos primeiros meses."
                 }
               }
             },
             "hideInContents": true,
-            "_row_num": 29,
-            "__rowNum__": 28,
+            "_row_num": 30,
+            "__rowNum__": 29,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
-            "promptIdx": 16
+            "_branch_label_enclosing_screen": "survey/_screen27",
+            "promptIdx": 17
           },
           {
             "type": "note",
@@ -2615,29 +2949,11 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 30,
-            "__rowNum__": 29,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
-            "promptIdx": 17
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "All information collected here will be used for the study only and will be kept confidential.",
-                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
-                }
-              }
-            },
-            "hideInContents": true,
             "_row_num": 31,
             "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 18
           },
           {
@@ -2645,8 +2961,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "If you do not want to participate, you and your child will continue to be treated in the same way as others who have accepted.",
-                  "default": "Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram."
+                  "english": "All information collected here will be used for the study only and will be kept <b>confidential</b>.",
+                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas  <b>confidenciais</b>."
                 }
               }
             },
@@ -2655,7 +2971,7 @@
             "__rowNum__": 31,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 19
           },
           {
@@ -2663,8 +2979,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "If you accept now and later do not want to continue, you can withdraw your consent.",
-                  "default": "Se você aceitar agora e depois não quiser continuar, pode retirar seu consentimento."
+                  "english": "If you do not want to participate, <b>you and your child will continue to be treated in the same way as others</b> who have accepted. If you accept now and later do not want to continue, <b>you can withdraw</b> your consent.",
+                  "default": "A participação neste estudo é <b>voluntário</b>. Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram. Se você aceitar agora e depois não quiser continuar, você pode retirar seu consentimento a qualquer momento."
                 }
               }
             },
@@ -2673,7 +2989,7 @@
             "__rowNum__": 32,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 20
           },
           {
@@ -2681,8 +2997,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "If you have any questions about this work later, you can contact us by phone: 96016462/955946796",
-                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
+                  "english": "If you have any questions about this work later, you can contact us by phone: 969006817 / 956701084.",
+                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 969006817 / 956701084."
                 }
               }
             },
@@ -2691,7 +3007,7 @@
             "__rowNum__": 33,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 21
           },
           {
@@ -2699,8 +3015,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Do you have any questions now?",
-                  "default": "Você tem alguma pergunta agora?"
+                  "english": "<b>Do you have any questions now?</b>",
+                  "default": "<b>Você tem alguma pergunta agora?</b>"
                 }
               }
             },
@@ -2709,7 +3025,7 @@
             "__rowNum__": 34,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 22
           },
           {
@@ -2735,7 +3051,7 @@
             "__rowNum__": 35,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen26",
+            "_branch_label_enclosing_screen": "survey/_screen27",
             "promptIdx": 23
           },
           {
@@ -2761,8 +3077,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "<i>Please try to call the woman</i>",
-                  "default": "<i>Por favor, tente ligar para a mulher</i>"
+                  "english": "<i>Please try to call the woman </br> Number: {{data.TELE}}</i>",
+                  "default": "<i>Por favor, tente ligar para a mulher </br> Telefone: {{data.TELE}}</i>"
                 }
               }
             },
@@ -2773,28 +3089,6 @@
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen39",
             "promptIdx": 25
-          },
-          {
-            "type": "text",
-            "name": "TELE",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Number of woman or person in the household",
-                  "default": "Número de mulheres ou pessoas na casa"
-                }
-              }
-            },
-            "constraint": "data(\"TELE\") !=null || data(\"ESTADOMUL\") == 1",
-            "inputAttributes": {
-              "type": "number"
-            },
-            "_row_num": 42,
-            "__rowNum__": 41,
-            "_token_type": "prompt",
-            "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen39",
-            "promptIdx": 26
           },
           {
             "type": "select_one",
@@ -2809,12 +3103,12 @@
               }
             },
             "constraint": "data(\"CALL\") !=null || data(\"ESTADOMUL\") == 1",
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen39",
-            "promptIdx": 27
+            "promptIdx": 26
           },
           {
             "type": "note",
@@ -2827,12 +3121,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 47,
-            "__rowNum__": 46,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 27
           },
           {
             "type": "note",
@@ -2845,30 +3139,30 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 28
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow your pregnancy until the moment of delivery and your child within the first months.",
-                  "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez até o momento do parto e seu filho nos primeiros meses."
+                  "english": "<b>Bandim Health Project</b> is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to <b>follow your pregnancy</b> until the moment of delivery and your child within the first months.",
+                  "default": "O <b>Projeto Saúde Bandim</b> está realizando um estudo sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez e seu filho nos primeiros meses."
                 }
               }
             },
             "hideInContents": true,
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 29
           },
           {
             "type": "note",
@@ -2881,11 +3175,29 @@
               }
             },
             "hideInContents": true,
+            "_row_num": 49,
+            "__rowNum__": 48,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 30
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "All information collected here will be used for the study only and will be kept <b>confidential</b>.",
+                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas  <b>confidenciais</b>."
+                }
+              }
+            },
+            "hideInContents": true,
             "_row_num": 50,
             "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 31
           },
           {
@@ -2893,8 +3205,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "All information collected here will be used for the study only and will be kept confidential.",
-                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
+                  "english": "If you do not want to participate, <b>you and your child will continue to be treated in the same way as others</b> who have accepted. If you accept now and later do not want to continue, <b>you can withdraw</b> your consent.",
+                  "default": "A participação neste estudo é <b>voluntário</b>. Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram. Se você aceitar agora e depois não quiser continuar, você pode retirar seu consentimento a qualquer momento."
                 }
               }
             },
@@ -2903,7 +3215,7 @@
             "__rowNum__": 50,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 32
           },
           {
@@ -2911,8 +3223,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "If you do not want to participate, you and your child will continue to be treated in the same way as others who have accepted.",
-                  "default": "Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram."
+                  "english": "If you have any questions about this work later, you can contact us by phone: 969006817 / 956701084.",
+                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 969006817 / 956701084."
                 }
               }
             },
@@ -2921,7 +3233,7 @@
             "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 33
           },
           {
@@ -2929,8 +3241,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "If you accept now and later do not want to continue, you can withdraw your consent.",
-                  "default": "Se você aceitar agora e depois não quiser continuar, pode retirar seu consentimento."
+                  "english": "<b>Do you have any questions now?</b>",
+                  "default": "<b>Você tem alguma pergunta agora?</b>"
                 }
               }
             },
@@ -2939,44 +3251,8 @@
             "__rowNum__": 52,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 34
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "If you have any questions about this work later, you can contact us by phone: 96016462/955946796",
-                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
-                }
-              }
-            },
-            "hideInContents": true,
-            "_row_num": 54,
-            "__rowNum__": 53,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 35
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Do you have any questions now?",
-                  "default": "Você tem alguma pergunta agora?"
-                }
-              }
-            },
-            "hideInContents": true,
-            "_row_num": 55,
-            "__rowNum__": 54,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 36
           },
           {
             "type": "select_one",
@@ -2997,12 +3273,12 @@
               }
             },
             "constraint": "data(\"CONSENT\") !=null || data(\"ESTADOMUL\") == 1 || data(\"CALL\") != 1",
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 35
           },
           {
             "type": "note",
@@ -3015,12 +3291,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 58,
-            "__rowNum__": 57,
+            "_row_num": 56,
+            "__rowNum__": 55,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 36
           },
           {
             "type": "note",
@@ -3033,30 +3309,30 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 59,
-            "__rowNum__": 58,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 37
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Bandim Health Project is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to follow the womans pregnancy until the moment of delivery and her child within the first months.",
-                  "default": "O Projeto Saúde Bandim está realizando um estudo de acompanhamento sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar a gestação da mulher até o momento do parto e seu filho nos primeiros meses."
+                  "english": "<b>Bandim Health Project</b> is carrying out a follow-up study on the health and survival of children in Oio, Biombo and Farim. Therefore, we would like to <b>follow your pregnancy</b> until the moment of delivery and your child within the first months.",
+                  "default": "O <b>Projeto Saúde Bandim</b> está realizando um estudo sobre a saúde e sobrevivência das crianças de Oio, Biombo e Farim. Portanto, gostaríamos de acompanhar sua gravidez e seu filho nos primeiros meses."
                 }
               }
             },
             "hideInContents": true,
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 38
           },
           {
             "type": "note",
@@ -3069,11 +3345,47 @@
               }
             },
             "hideInContents": true,
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 39
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "All information collected here will be used for the study only and will be kept <b>confidential</b>.",
+                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas  <b>confidenciais</b>."
+                }
+              }
+            },
+            "hideInContents": true,
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 40
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If you do not want to participate, <b>you and your child will continue to be treated in the same way as others</b> who have accepted. If you accept now and later do not want to continue, <b>you can withdraw</b> your consent.",
+                  "default": "A participação neste estudo é <b>voluntário</b>. Se você não quiser participar, você e seu filho continuarão a ser tratados da mesma forma que os outros que o aceitaram. Se você aceitar agora e depois não quiser continuar, você pode retirar seu consentimento a qualquer momento."
+                }
+              }
+            },
+            "hideInContents": true,
             "_row_num": 61,
             "__rowNum__": 60,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 41
           },
           {
@@ -3081,8 +3393,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "All information collected here will be used for the study only and will be kept confidential.",
-                  "default": "Todas as informações coletadas aqui serão usadas apenas para o estudo e serão mantidas em sigilo."
+                  "english": "If you have any questions about this work later, you can contact us by phone: 969006817 / 956701084.",
+                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 969006817 / 956701084."
                 }
               }
             },
@@ -3091,7 +3403,7 @@
             "__rowNum__": 61,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 42
           },
           {
@@ -3099,8 +3411,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "If the woman do not want to participate, her and her child will continue to be treated in the same way as others who have accepted.",
-                  "default": "Se a mulher não quiser participar, ela e seu filho continuarão a ser tratados da mesma forma que outras pessoas que o aceitaram."
+                  "english": "<b>Do you have any questions now?</b>",
+                  "default": "<b>Você tem alguma pergunta agora?</b>"
                 }
               }
             },
@@ -3109,62 +3421,8 @@
             "__rowNum__": 62,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
+            "_branch_label_enclosing_screen": "survey/_screen44",
             "promptIdx": 43
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "If she later do not want to continue, she can withdraw her consent.",
-                  "default": "Se mais tarde ela não quiser continuar, ela pode retirar seu consentimento."
-                }
-              }
-            },
-            "hideInContents": true,
-            "_row_num": 64,
-            "__rowNum__": 63,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 44
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "If you or her have any questions about this work later, you can contact us by phone: 96016462/955946796",
-                  "default": "Se você tiver alguma dúvida sobre este trabalho posteriormente, pode entrar em contato conosco pelo telefone: 96016462/955946796"
-                }
-              }
-            },
-            "hideInContents": true,
-            "_row_num": 65,
-            "__rowNum__": 64,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 45
-          },
-          {
-            "type": "note",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Do you have any questions now?",
-                  "default": "Você tem alguma pergunta agora?"
-                }
-              }
-            },
-            "hideInContents": true,
-            "_row_num": 66,
-            "__rowNum__": 65,
-            "_token_type": "prompt",
-            "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 46
           },
           {
             "type": "select_one",
@@ -3185,12 +3443,12 @@
               }
             },
             "constraint": "data(\"CONSENTOU\") !=null || data(\"ESTADOMUL\") == 1 || data(\"CALL\") == 1",
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen45",
-            "promptIdx": 47
+            "_branch_label_enclosing_screen": "survey/_screen44",
+            "promptIdx": 44
           },
           {
             "type": "note",
@@ -3203,12 +3461,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 73,
-            "__rowNum__": 72,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 48
+            "_branch_label_enclosing_screen": "survey/_screen69",
+            "promptIdx": 45
           },
           {
             "type": "integer",
@@ -3222,38 +3480,18 @@
               },
               "constraint_message": {
                 "text": {
-                  "english": "Must be between 10 and 100.",
-                  "default": "Deve estar entre 10 e 100."
+                  "english": "Must be between 0 and 100.",
+                  "default": "Deve estar entre 0 e 100."
                 }
               }
             },
-            "constraint": "(data(\"IDADE\") >=9 && data(\"IDADE\") <100 &&  data(\"IDADE\") !=null) || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-            "_row_num": 74,
-            "__rowNum__": 73,
+            "constraint": "(data(\"IDADE\") >=0 && data(\"IDADE\") <100 &&  data(\"IDADE\") !=null) || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 49
-          },
-          {
-            "type": "select_one",
-            "values_list": "School",
-            "name": "ESCO",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Highest level of schooling finished",
-                  "default": "Maior nível de escolaridade concluído"
-                }
-              }
-            },
-            "constraint": "data(\"ESCO\") !=null || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-            "_row_num": 75,
-            "__rowNum__": 74,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 50
+            "_branch_label_enclosing_screen": "survey/_screen69",
+            "promptIdx": 46
           },
           {
             "type": "integer",
@@ -3261,8 +3499,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Number of previous births",
-                  "default": "Número de nascimentos anteriores"
+                  "english": "Number of previous births (including stillbirths)",
+                  "default": "Número de nascimentos (incluindo nado mortos)"
                 }
               },
               "hint": {
@@ -3279,12 +3517,12 @@
               }
             },
             "constraint": "(((data(\"PARITY\") >=0 && data(\"PARITY\") <20) || data(\"PARITY\") == 33) &&  data(\"PARITY\") != null) || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen72",
-            "promptIdx": 51
+            "_branch_label_enclosing_screen": "survey/_screen69",
+            "promptIdx": 47
           },
           {
             "type": "note",
@@ -3297,12 +3535,70 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 52
+            "_branch_label_enclosing_screen": "survey/_screen74",
+            "promptIdx": 48
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "ESCO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Has the woman attended school?",
+                  "default": "A mulher foi à escola?"
+                }
+              }
+            },
+            "constraint": "data(\"ESCO\") !=null || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
+            "_row_num": 76,
+            "__rowNum__": 75,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen74",
+            "promptIdx": 49
+          },
+          {
+            "type": "select_one",
+            "values_list": "SchoolLevel",
+            "name": "ESCONIVEL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Highest level of schooling finished",
+                  "default": "Maior nível de escolaridade concluído"
+                }
+              }
+            },
+            "constraint": "data(\"ESCONIVEL\") !=null || data(\"ESCO\") !=  \"1\"",
+            "_row_num": 78,
+            "__rowNum__": 77,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen74",
+            "promptIdx": 50
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Registration of new pregnancy</b>",
+                  "default": "<b>Registro de nova gravidez</b>"
+                }
+              }
+            },
+            "hideInContents": true,
+            "_row_num": 83,
+            "__rowNum__": 82,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen82",
+            "promptIdx": 51
           },
           {
             "type": "select_one",
@@ -3324,12 +3620,46 @@
               }
             },
             "constraint": "data(\"CICATRIZMUL\") != null || data(\"ESTADOMUL\") != 1 || (data(\"CONSENT\") !=  \"1\" && data(\"CONSENTOU\") !=  \"1\")",
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen79",
+            "_branch_label_enclosing_screen": "survey/_screen82",
+            "promptIdx": 52
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Registration of new pregnancy</b>",
+                  "default": "<b>Registro de nova gravidez</b>"
+                }
+              }
+            },
+            "_row_num": 89,
+            "__rowNum__": 88,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen88",
             "promptIdx": 53
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<font color = \"red\"> Consent is not given and the interview will end. Please press back, if this is a mistake. </font>",
+                  "default": "<font color = \"red\"> O consentimento não é dado e a entrevista será encerrada. Por favor, pressione \"Atrás\", se isso for um erro. </font>"
+                }
+              }
+            },
+            "_row_num": 90,
+            "__rowNum__": 89,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen88",
+            "promptIdx": 54
           },
           {
             "type": "note",
@@ -3342,12 +3672,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 94,
+            "__rowNum__": 93,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen85",
-            "promptIdx": 54
+            "_branch_label_enclosing_screen": "survey/_screen93",
+            "promptIdx": 55
           },
           {
             "type": "note",
@@ -3360,12 +3690,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 87,
-            "__rowNum__": 86,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen85",
-            "promptIdx": 55
+            "_branch_label_enclosing_screen": "survey/_screen93",
+            "promptIdx": 56
           },
           {
             "type": "note",
@@ -3378,12 +3708,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 88,
-            "__rowNum__": 87,
+            "_row_num": 96,
+            "__rowNum__": 95,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen85",
-            "promptIdx": 56
+            "_branch_label_enclosing_screen": "survey/_screen93",
+            "promptIdx": 57
           },
           {
             "type": "text",
@@ -3396,20 +3726,20 @@
                 }
               }
             },
-            "_row_num": 89,
-            "__rowNum__": 88,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen85",
-            "promptIdx": 57
+            "_branch_label_enclosing_screen": "survey/_screen93",
+            "promptIdx": 58
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 91,
-            "_branch_label_enclosing_screen": "survey/_screen91",
-            "promptIdx": 58
+            "_row_num": 99,
+            "_branch_label_enclosing_screen": "survey/_screen99",
+            "promptIdx": 59
           }
         ],
         "validation_tag_map": {
@@ -3418,15 +3748,16 @@
             9,
             12,
             13,
+            14,
             23,
             26,
-            27,
-            37,
+            35,
+            44,
+            46,
             47,
             49,
             50,
-            51,
-            53
+            52
           ]
         },
         "operations": [
@@ -3465,20 +3796,20 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 24,
-              "__rowNum__": 23,
+              "_row_num": 25,
+              "__rowNum__": 24,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nassign('DATASEG', data(\"REGDIA\"));\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nassign('DATASEG', data(\"REGDIA\"));\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
             "clause": "if",
             "condition": "data(\"ESTADOMUL\") == \"1\"",
-            "_row_num": 25,
-            "__rowNum__": 24,
+            "_row_num": 26,
+            "__rowNum__": 25,
             "_token_type": "goto_label",
-            "_branch_label": "_then25",
+            "_branch_label": "_then26",
             "operationIdx": 3
           },
           {
@@ -3490,8 +3821,8 @@
           },
           {
             "clause": "begin screen",
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
@@ -3499,14 +3830,14 @@
               "__rowNum__": 36,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif70",
-            "_row_num": 70,
+            "_branch_label": "_endif67",
+            "_row_num": 67,
             "operationIdx": 6
           },
           {
@@ -3516,158 +3847,188 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 44,
-              "__rowNum__": 43,
+              "_row_num": 43,
+              "__rowNum__": 42,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "begin screen",
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "_row_num": 44,
+            "__rowNum__": 43,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 69,
-              "__rowNum__": 68,
+              "_row_num": 66,
+              "__rowNum__": 65,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nif (data(\"CALL\") == \"1\") {\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\n}\nelse {\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nif (data(\"CALL\") == \"1\") {\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n}\nelse {\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
             "clause": "if",
             "condition": "data(\"CONSENT\") ==  \"1\" || data(\"CONSENTOU\") ==  \"1\"",
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 68,
+            "__rowNum__": 67,
             "_token_type": "goto_label",
-            "_branch_label": "_then71",
+            "_branch_label": "_then68",
             "operationIdx": 9
           },
           {
-            "clause": "end if",
+            "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else84",
-            "_row_num": 84,
+            "_branch_label": "_else87",
+            "_row_num": 87,
             "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 69,
+            "__rowNum__": 68,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 77,
-              "__rowNum__": 76,
+              "_row_num": 73,
+              "__rowNum__": 72,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 74,
+            "__rowNum__": 73,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 80,
+              "__rowNum__": 79,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nif (data(\"ESCO\") == \"1\") {\nactivePromptIndicies.push(50);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 12
           },
           {
             "clause": "if",
             "condition": "data(\"ESTADOMUL\") == \"1\"",
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "goto_label",
-            "_branch_label": "_then78",
-            "operationIdx": 12
-          },
-          {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else83",
-            "_row_num": 83,
+            "_branch_label": "_then81",
             "operationIdx": 13
           },
           {
-            "clause": "begin screen",
-            "_row_num": 79,
-            "__rowNum__": 78,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 82,
-              "__rowNum__": 81,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else86",
+            "_row_num": 86,
             "operationIdx": 14
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif83",
-            "_row_num": 83,
+            "clause": "begin screen",
+            "_row_num": 82,
+            "__rowNum__": 81,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 85,
+              "__rowNum__": 84,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 15
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif84",
-            "_row_num": 84,
+            "_branch_label": "_endif86",
+            "_row_num": 86,
             "operationIdx": 16
           },
           {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif92",
+            "_row_num": 92,
+            "operationIdx": 17
+          },
+          {
             "clause": "begin screen",
-            "_row_num": 85,
-            "__rowNum__": 84,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 90,
-              "__rowNum__": 89,
+              "_row_num": 91,
+              "__rowNum__": 90,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\nactivePromptIndicies.push(57);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 17
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(53);\nactivePromptIndicies.push(54);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 18
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 93,
+            "__rowNum__": 92,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 98,
+              "__rowNum__": 97,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\nactivePromptIndicies.push(57);\nactivePromptIndicies.push(58);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 91,
-            "operationIdx": 18
+            "_row_num": 99,
+            "operationIdx": 20
           },
           {
-            "_row_num": 91,
+            "_row_num": 99,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(58);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(59);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 19
+            "operationIdx": 21
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 91,
-            "operationIdx": 20
+            "_row_num": 99,
+            "operationIdx": 22
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_screen11": 1,
           "_screen19": 2,
-          "_then25": 5,
-          "_screen26": 5,
+          "_then26": 5,
+          "_screen27": 5,
           "_else38": 7,
           "_screen39": 7,
-          "_screen45": 8,
-          "_endif70": 9,
-          "_then71": 11,
-          "_screen72": 11,
-          "_then78": 14,
-          "_screen79": 14,
-          "_else83": 16,
-          "_endif83": 16,
-          "_else84": 17,
-          "_endif84": 17,
-          "_screen85": 17,
-          "_contents": 19,
-          "_screen91": 19
+          "_screen44": 8,
+          "_endif67": 9,
+          "_then68": 11,
+          "_screen69": 11,
+          "_screen74": 12,
+          "_then81": 15,
+          "_screen82": 15,
+          "_else86": 17,
+          "_endif86": 17,
+          "_else87": 18,
+          "_screen88": 18,
+          "_endif92": 19,
+          "_screen93": 19,
+          "_contents": 21,
+          "_screen99": 21
         }
       },
       "initial": {
@@ -4083,9 +4444,8 @@
         "elementSet": "data",
         "elementPath": "NOMEMUL"
       },
-      "ESTADOMUL": {
+      "TELE": {
         "type": "string",
-        "valuesList": "Status",
         "_defn": [
           {
             "_row_num": 22,
@@ -4093,6 +4453,25 @@
           },
           {
             "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TELE",
+        "elementName": "TELE",
+        "elementSet": "data",
+        "elementPath": "TELE"
+      },
+      "ESTADOMUL": {
+        "type": "string",
+        "valuesList": "Status",
+        "_defn": [
+          {
+            "_row_num": 23,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -4111,7 +4490,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -4130,11 +4509,11 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 54,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -4144,30 +4523,12 @@
         "elementSet": "data",
         "elementPath": "CONSENT"
       },
-      "TELE": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 42,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 20,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "TELE",
-        "elementName": "TELE",
-        "elementSet": "data",
-        "elementPath": "TELE"
-      },
       "CALL": {
         "type": "string",
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
@@ -4186,7 +4547,7 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 64,
             "section_name": "survey"
           },
           {
@@ -4204,7 +4565,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 71,
             "section_name": "survey"
           },
           {
@@ -4218,12 +4579,11 @@
         "elementSet": "data",
         "elementPath": "IDADE"
       },
-      "ESCO": {
-        "type": "string",
-        "valuesList": "School",
+      "PARITY": {
+        "type": "integer",
         "_defn": [
           {
-            "_row_num": 75,
+            "_row_num": 72,
             "section_name": "survey"
           },
           {
@@ -4232,13 +4592,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "ESCO",
-        "elementName": "ESCO",
+        "elementKey": "PARITY",
+        "elementName": "PARITY",
         "elementSet": "data",
-        "elementPath": "ESCO"
+        "elementPath": "PARITY"
       },
-      "PARITY": {
-        "type": "integer",
+      "ESCO": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
             "_row_num": 76,
@@ -4250,21 +4611,40 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "PARITY",
-        "elementName": "PARITY",
+        "elementKey": "ESCO",
+        "elementName": "ESCO",
         "elementSet": "data",
-        "elementPath": "PARITY"
+        "elementPath": "ESCO"
+      },
+      "ESCONIVEL": {
+        "type": "string",
+        "valuesList": "SchoolLevel",
+        "_defn": [
+          {
+            "_row_num": 78,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ESCONIVEL",
+        "elementName": "ESCONIVEL",
+        "elementSet": "data",
+        "elementPath": "ESCONIVEL"
       },
       "CICATRIZMUL": {
         "type": "string",
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -4278,11 +4658,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -4301,7 +4681,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 29,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -4315,7 +4695,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -4329,7 +4709,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -4343,7 +4723,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 32,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -4357,7 +4737,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -4371,7 +4751,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 34,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -4385,7 +4765,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -4399,7 +4779,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -4413,7 +4793,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -4577,7 +4957,14 @@
         "_aspect": "ESCO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"School\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"0-3 years\",\"default\":\"0-3 anos\"}}},\"_row_num\":13},{\"choice_list_name\":\"School\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"4-6 years\",\"default\":\"4-6 anos\"}}},\"_row_num\":14},{\"choice_list_name\":\"School\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"7-9 years\",\"default\":\"7-9 anos\"}}},\"_row_num\":15},{\"choice_list_name\":\"School\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"10-12 years\",\"default\":\"10-12 anos\"}}},\"_row_num\":16},{\"choice_list_name\":\"School\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"University / other\",\"default\":\"Universidade / outro\"}}},\"_row_num\":17},{\"choice_list_name\":\"School\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":18}]"
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":5},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":6},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":7}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ESCONIVEL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"0\",\"display\":{\"title\":{\"text\":{\"english\":\"None\",\"default\":\"Nenhum\"}}},\"_row_num\":13},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"1st year\",\"default\":\"1º ano\"}}},\"_row_num\":14},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"2nd year\",\"default\":\"2º ano\"}}},\"_row_num\":15},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"3th year\",\"default\":\"3º ano\"}}},\"_row_num\":16},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"4th year\",\"default\":\"4º ano\"}}},\"_row_num\":17},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"5th year\",\"default\":\"5º ano\"}}},\"_row_num\":18},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"6th year\",\"default\":\"6º ano\"}}},\"_row_num\":19},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"7th year\",\"default\":\"7º ano\"}}},\"_row_num\":20},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"8th year\",\"default\":\"8º ano\"}}},\"_row_num\":21},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"9th year\",\"default\":\"9º ano\"}}},\"_row_num\":22},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"10\",\"display\":{\"title\":{\"text\":{\"english\":\"10th year\",\"default\":\"10º ano\"}}},\"_row_num\":23},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"11\",\"display\":{\"title\":{\"text\":{\"english\":\"11th year\",\"default\":\"11º ano\"}}},\"_row_num\":24},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"12\",\"display\":{\"title\":{\"text\":{\"english\":\"12th year\",\"default\":\"12º ano\"}}},\"_row_num\":25},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"20\",\"display\":{\"title\":{\"text\":{\"english\":\"More than 12 years (University or other)\",\"default\":\"Mais de 12 anos (universidade ou outro)\"}}},\"_row_num\":26},{\"choice_list_name\":\"SchoolLevel\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":27}]"
       },
       {
         "_partition": "Column",

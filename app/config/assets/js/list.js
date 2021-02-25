@@ -28,7 +28,7 @@ function doSanityCheck() {
 
 function loadPregnancies() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
+    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
@@ -47,6 +47,7 @@ function loadPregnancies() {
             var CONSENT = result.getData(row,"CONSENT");
             var DATASEG = result.getData(row,"DATASEG");
             var ESCO = result.getData(row,"ESCO");
+            var ESCONIVEL = result.getData(row,"ESCONIVEL");
             var ESTADOGRAV = result.getData(row,"ESTADOGRAV");
             var ESTADOMUL = result.getData(row,"ESTADOMUL");
             var GRAV = result.getData(row,"GRAV");
@@ -63,7 +64,7 @@ function loadPregnancies() {
             var TELE = result.getData(row,"TELE")
             var VISNOMUL = result.getData(row,"VISNOMUL");
 
-            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL};
+            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL};
             pregnancies.push(p);
         }
         console.log("Pregnancies:", pregnancies)
@@ -81,7 +82,7 @@ function loadPregnancies() {
 
 function loadChildren() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI" +
+    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
@@ -102,17 +103,21 @@ function loadChildren() {
             var ESTADOCRI = result.getData(row,"ESTADOCRI");
             var GRAV = result.getData(row,"GRAV");
             var HCAREA = result.getData(row,"HCAREA");
-            var MOR = result.getData(row,"MOR");
-            var NOMEMUL = result.getData(row,"NOMEMUL");
-            var NOMECRI = result.getData(row,"NOMECRI");
-            var IDMUL = result.getData(row,"IDMUL");
             var IDCRI = result.getData(row,"IDCRI");
+            var IDMUL = result.getData(row,"IDMUL");
+            var MOR = result.getData(row,"MOR");
+            var NOMECRI = result.getData(row,"NOMECRI");
+            var NOMEMUL = result.getData(row,"NOMEMUL");
+            var OUTRODATA = result.getData(row,"OUTRODATA");
+            var OUTROVAC = result.getData(row,"OUTROVAC");
+            var OUTROVACOU = result.getData(row,"OUTROVACOU");
             var POLIO = result.getData(row,"POLIO");
             var POLIODATA = result.getData(row,"POLIODATA");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var SEX = result.getData(row,"SEX");
             var TAB = result.getData(row,"TAB");
+            var TELE = result.getData(row,"TELE");
             var VISNOCRI = result.getData(row,"VISNOCRI");
 
             // js dates
@@ -131,7 +136,7 @@ function loadChildren() {
             var lastVisit = new Date(segY, segM-1, segD);
             
 
-            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, MOR, NOMEMUL, NOMECRI, IDMUL, IDCRI, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, VISNOCRI, FUend, lastVisit};
+            var p = {type: 'child', rowId, savepoint, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI, FUend, lastVisit};
             children.push(p);
         }
         console.log("Children:", children)
@@ -253,6 +258,7 @@ function setDisplayText(person) {
         } else {
             displayText = "Morança: " + person.MOR + "<br />" +
             "Nome: " + person.NOMEMUL + "<br />" + 
+            "Telefone: " + person.TELE + "<br / >" +
             "Idade: " + person.IDADE + "<br />" +
             "Dia de inclusão: " + regdia + "<br />" +
             "OBS: " + obs;
@@ -270,6 +276,7 @@ function setDisplayText(person) {
 
         displayText = "Morança: " + person.MOR + "<br />" +
             "Nome da mãe: " + person.NOMEMUL + "<br />" +
+            "Telefone: " + person.TELE + "<br / >" +
             "Nome da criança: " + person.NOMECRI + "<br />" + 
             "Sexo: " + sex + "<br />" + 
             "Dia de nascimento: " + dob + "<br />" + 
@@ -405,14 +412,15 @@ function getDefaults(person) {
         defaults['CONSENT'] = person.CONSENT;
         defaults['consent'] = person.CONSENT;
         defaults['ESCO'] = person.ESCO;
+        defaults['ESCONIVEL'] = person.ESCONIVEL;
         defaults['DATASEG'] = toAdate(date);
         defaults['GRAV'] = person.GRAV;
         defaults['HCAREA'] = hcarea;
         defaults['HCAREANOME'] = hcareaNome;
         defaults['IDADE'] = person.IDADE;
+        defaults['IDMUL'] = person.IDMUL;
         defaults['MOR'] = person.MOR;
         defaults['NOMEMUL'] = person.NOMEMUL;
-        defaults['IDMUL'] = person.IDMUL;
         defaults['PARITY'] = person.PARITY;
         defaults['REG'] = reg;
         defaults['REGNOME'] = regNome;
@@ -429,11 +437,13 @@ function getDefaults(person) {
         defaults['GRAV'] = person.GRAV;
         defaults['HCAREA'] = hcarea;
         defaults['HCAREANOME'] = hcareaNome;
-        defaults['MOR'] = person.MOR;
-        defaults['NOMEMUL'] = person.NOMEMUL;
-        defaults['NOMECRI'] = person.NOMECRI;
-        defaults['IDMUL'] = person.IDMUL;
         defaults['IDCRI'] = person.IDCRI;
+        defaults['IDMUL'] = person.IDMUL;
+        defaults['MOR'] = person.MOR;
+        defaults['NOMECRI'] = person.NOMECRI;
+        defaults['NOMEMUL'] = person.NOMEMUL;
+        defaults['OUTRODATA'] = person.OUTRODATA;
+        defaults['OUTROVACOU'] = person.OUTROVACOU;
         defaults['POLIO'] = person.POLIO;
         defaults['POLIODATA'] = person.POLIODATA;
         defaults['REG'] = reg;
@@ -441,6 +451,7 @@ function getDefaults(person) {
         defaults['REGDIA'] = person.REGDIA;
         defaults['SEX'] = person.SEX;
         defaults['TAB'] = tab;
+        defaults['TELE'] = person.TELE;
         defaults['TABNOME'] = tabNome;
         defaults['VISNOCRI'] = Number(person.VISNOCRI) + 1;
     }

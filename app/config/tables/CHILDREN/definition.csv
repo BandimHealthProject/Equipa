@@ -43,6 +43,7 @@ STICKERSIMG_contentType,contentType,mimeType,[]
 STICKERSIMG_uriFragment,uriFragment,rowpath,[]
 TAB,TAB,integer,[]
 TABNOME,TABNOME,string,[]
+TELE,TELE,string,[]
 VACINAS,VACINAS,string,[]
 VACINASIMG,VACINASIMG,mimeUri,"[""VACINASIMG_contentType"",""VACINASIMG_uriFragment""]"
 VACINASIMG_contentType,contentType,mimeType,[]
