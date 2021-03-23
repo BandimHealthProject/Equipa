@@ -935,7 +935,7 @@
       },
       {
         "type": "select_one",
-        "values_list": "YesNoDontknow",
+        "values_list": "Scar",
         "name": "CICATRIZMUL",
         "display": {
           "prompt": {
@@ -1363,6 +1363,58 @@
           }
         },
         "_row_num": 27
+      },
+      {
+        "choice_list_name": "Scar",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 29
+      },
+      {
+        "choice_list_name": "Scar",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "choice_list_name": "Scar",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Have scar, uncertain if BCG",
+              "default": "Tem cicatriz, não tenho certeza se BCG"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "choice_list_name": "Scar",
+        "data_value": "33",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 32
       }
     ],
     "queries": [
@@ -2058,6 +2110,60 @@
           },
           "_row_num": 27
         }
+      ],
+      "Scar": [
+        {
+          "choice_list_name": "Scar",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 29
+        },
+        {
+          "choice_list_name": "Scar",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 30
+        },
+        {
+          "choice_list_name": "Scar",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Have scar, uncertain if BCG",
+                "default": "Tem cicatriz, não tenho certeza se BCG"
+              }
+            }
+          },
+          "_row_num": 31
+        },
+        {
+          "choice_list_name": "Scar",
+          "data_value": "33",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 32
+        }
       ]
     },
     "table_specific_definitions": {
@@ -2451,7 +2557,7 @@
       },
       "CICATRIZMUL": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "Scar",
         "_defn": [
           {
             "_row_num": 84,
@@ -3602,7 +3708,7 @@
           },
           {
             "type": "select_one",
-            "values_list": "YesNoDontknow",
+            "values_list": "Scar",
             "name": "CICATRIZMUL",
             "display": {
               "prompt": {
@@ -4637,7 +4743,7 @@
       },
       "CICATRIZMUL": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "Scar",
         "_defn": [
           {
             "_row_num": 84,
@@ -4936,7 +5042,7 @@
         "_aspect": "CICATRIZMUL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":5},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":6},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":7}]"
+        "_value": "[{\"choice_list_name\":\"Scar\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":29},{\"choice_list_name\":\"Scar\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":30},{\"choice_list_name\":\"Scar\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Have scar, uncertain if BCG\",\"default\":\"Tem cicatriz, não tenho certeza se BCG\"}}},\"_row_num\":31},{\"choice_list_name\":\"Scar\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",

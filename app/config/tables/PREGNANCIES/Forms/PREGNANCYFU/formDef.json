@@ -328,7 +328,7 @@
       },
       {
         "type": "select_one",
-        "values_list": "YesNoDontknow",
+        "values_list": "Scar",
         "name": "CICATRIZMUL",
         "display": {
           "prompt": {
@@ -975,7 +975,7 @@
         "_row_num": 10
       },
       {
-        "choice_list_name": "YesNo",
+        "choice_list_name": "Scar",
         "data_value": "1",
         "display": {
           "title": {
@@ -988,7 +988,7 @@
         "_row_num": 12
       },
       {
-        "choice_list_name": "YesNo",
+        "choice_list_name": "Scar",
         "data_value": "2",
         "display": {
           "title": {
@@ -1001,6 +1001,58 @@
         "_row_num": 13
       },
       {
+        "choice_list_name": "Scar",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Have scar, uncertain if BCG",
+              "default": "Tem cicatriz, não tenho certeza se BCG"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "choice_list_name": "Scar",
+        "data_value": "33",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
         "choice_list_name": "StatusGrav",
         "data_value": "1",
         "display": {
@@ -1011,7 +1063,7 @@
             }
           }
         },
-        "_row_num": 15
+        "_row_num": 20
       },
       {
         "choice_list_name": "StatusGrav",
@@ -1024,7 +1076,7 @@
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 21
       },
       {
         "choice_list_name": "StatusGrav",
@@ -1037,7 +1089,7 @@
             }
           }
         },
-        "_row_num": 17
+        "_row_num": 22
       },
       {
         "choice_list_name": "StatusGrav",
@@ -1050,7 +1102,7 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 23
       },
       {
         "choice_list_name": "StatusGrav",
@@ -1063,7 +1115,7 @@
             }
           }
         },
-        "_row_num": 19
+        "_row_num": 24
       },
       {
         "choice_list_name": "nvnmab",
@@ -1076,7 +1128,7 @@
             }
           }
         },
-        "_row_num": 21
+        "_row_num": 26
       },
       {
         "choice_list_name": "nvnmab",
@@ -1089,7 +1141,7 @@
             }
           }
         },
-        "_row_num": 22
+        "_row_num": 27
       },
       {
         "choice_list_name": "nvnmab",
@@ -1102,7 +1154,7 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 28
       },
       {
         "choice_list_name": "nvnmab",
@@ -1115,7 +1167,7 @@
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 29
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -1128,7 +1180,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 31
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -1141,7 +1193,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 32
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -1154,7 +1206,7 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 33
       },
       {
         "choice_list_name": "PlaceOfBirth",
@@ -1167,7 +1219,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 34
       }
     ],
     "queries": [
@@ -1645,9 +1697,9 @@
           "_row_num": 10
         }
       ],
-      "YesNo": [
+      "Scar": [
         {
-          "choice_list_name": "YesNo",
+          "choice_list_name": "Scar",
           "data_value": "1",
           "display": {
             "title": {
@@ -1660,7 +1712,7 @@
           "_row_num": 12
         },
         {
-          "choice_list_name": "YesNo",
+          "choice_list_name": "Scar",
           "data_value": "2",
           "display": {
             "title": {
@@ -1671,6 +1723,60 @@
             }
           },
           "_row_num": 13
+        },
+        {
+          "choice_list_name": "Scar",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Have scar, uncertain if BCG",
+                "default": "Tem cicatriz, não tenho certeza se BCG"
+              }
+            }
+          },
+          "_row_num": 14
+        },
+        {
+          "choice_list_name": "Scar",
+          "data_value": "33",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 15
+        }
+      ],
+      "YesNo": [
+        {
+          "choice_list_name": "YesNo",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 17
+        },
+        {
+          "choice_list_name": "YesNo",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 18
         }
       ],
       "StatusGrav": [
@@ -1685,7 +1791,7 @@
               }
             }
           },
-          "_row_num": 15
+          "_row_num": 20
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1698,7 +1804,7 @@
               }
             }
           },
-          "_row_num": 16
+          "_row_num": 21
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1711,7 +1817,7 @@
               }
             }
           },
-          "_row_num": 17
+          "_row_num": 22
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1724,7 +1830,7 @@
               }
             }
           },
-          "_row_num": 18
+          "_row_num": 23
         },
         {
           "choice_list_name": "StatusGrav",
@@ -1737,7 +1843,7 @@
               }
             }
           },
-          "_row_num": 19
+          "_row_num": 24
         }
       ],
       "nvnmab": [
@@ -1752,7 +1858,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 26
         },
         {
           "choice_list_name": "nvnmab",
@@ -1765,7 +1871,7 @@
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 27
         },
         {
           "choice_list_name": "nvnmab",
@@ -1778,7 +1884,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 28
         },
         {
           "choice_list_name": "nvnmab",
@@ -1791,7 +1897,7 @@
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 29
         }
       ],
       "PlaceOfBirth": [
@@ -1806,7 +1912,7 @@
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 31
         },
         {
           "choice_list_name": "PlaceOfBirth",
@@ -1819,7 +1925,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 32
         },
         {
           "choice_list_name": "PlaceOfBirth",
@@ -1832,7 +1938,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 33
         },
         {
           "choice_list_name": "PlaceOfBirth",
@@ -1845,7 +1951,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 34
         }
       ]
     },
@@ -2174,7 +2280,7 @@
       },
       "CICATRIZMUL": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "Scar",
         "_defn": [
           {
             "_row_num": 27,
@@ -2654,7 +2760,7 @@
           },
           {
             "type": "select_one",
-            "values_list": "YesNoDontknow",
+            "values_list": "Scar",
             "name": "CICATRIZMUL",
             "display": {
               "prompt": {
@@ -4144,7 +4250,7 @@
       },
       "CICATRIZMUL": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "Scar",
         "_defn": [
           {
             "_row_num": 27,
