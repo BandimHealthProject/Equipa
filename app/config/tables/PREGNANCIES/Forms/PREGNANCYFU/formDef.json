@@ -668,16 +668,27 @@
         "_row_num": 61
       },
       {
-        "clause": "end if",
+        "type": "assign",
+        "name": "regpar",
+        "calculation": "data(\"REG\")",
         "_row_num": 62
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 63
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 64
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\"",
+        "_row_num": 65
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 66
       },
       {
         "type": "note",
@@ -690,7 +701,108 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 65
+        "_row_num": 67
+      },
+      {
+        "type": "select_one_dropdown",
+        "values_list": "reg_csv",
+        "name": "regpar",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Region",
+              "default": "Região"
+            }
+          }
+        },
+        "_row_num": 68
+      },
+      {
+        "type": "select_one_dropdown",
+        "values_list": "hc_csv",
+        "name": "LOCPARCODE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Place of birth",
+              "default": "Local de nascimento"
+            }
+          }
+        },
+        "constraint": "data(\"LOCPARCODE\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+        "choice_filter": "choice_item.reg === data(\"regpar\")",
+        "_row_num": 69
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "NotOnList",
+        "name": "locparcodens",
+        "hideInContents": true,
+        "_row_num": 70
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"locparcodens\") != null",
+        "_row_num": 71
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"locparcodens\") == \"8888\"",
+        "_row_num": 72
+      },
+      {
+        "type": "text",
+        "name": "LOCPAROU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Where?",
+              "default": "Onde?"
+            }
+          }
+        },
+        "constraint": "data(\"LOCPAROU\") != null || data(\"locparcodens\") != \"8888\" || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+        "_row_num": 73
+      },
+      {
+        "clause": "end if",
+        "_row_num": 74
+      },
+      {
+        "type": "assign",
+        "name": "LOCPARCODE",
+        "calculation": "data(\"locparcodens\")",
+        "hideInContents": true,
+        "_row_num": 75
+      },
+      {
+        "clause": "end if",
+        "_row_num": 76
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 77
+      },
+      {
+        "clause": "end if",
+        "_row_num": 78
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 79
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}} regdia: {{calculates.displayREGDIA}} </b>",
+              "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}} regdia: {{calculates.displayREGDIA}}</b>"
+            }
+          }
+        },
+        "hideInContents": true,
+        "_row_num": 80
       },
       {
         "type": "select_one",
@@ -705,24 +817,24 @@
           }
         },
         "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
-        "_row_num": 66
+        "_row_num": 81
       },
       {
         "clause": "end screen",
-        "_row_num": 67
+        "_row_num": 82
       },
       {
         "clause": "end if",
-        "_row_num": 68
+        "_row_num": 83
       },
       {
         "clause": "if",
         "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
-        "_row_num": 69
+        "_row_num": 84
       },
       {
         "clause": "begin screen",
-        "_row_num": 70
+        "_row_num": 85
       },
       {
         "type": "note",
@@ -735,7 +847,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 71
+        "_row_num": 86
       },
       {
         "type": "linked_table",
@@ -754,27 +866,27 @@
             }
           }
         },
-        "_row_num": 72
+        "_row_num": 87
       },
       {
         "clause": "end screen",
-        "_row_num": 73
+        "_row_num": 88
       },
       {
         "clause": "end if",
-        "_row_num": 74
+        "_row_num": 89
       },
       {
         "clause": "end if",
-        "_row_num": 75
+        "_row_num": 90
       },
       {
         "clause": "else",
-        "_row_num": 76
+        "_row_num": 91
       },
       {
         "clause": "begin screen",
-        "_row_num": 77
+        "_row_num": 92
       },
       {
         "type": "note",
@@ -786,7 +898,7 @@
             }
           }
         },
-        "_row_num": 78
+        "_row_num": 93
       },
       {
         "type": "note",
@@ -798,19 +910,19 @@
             }
           }
         },
-        "_row_num": 79
+        "_row_num": 94
       },
       {
         "clause": "end screen",
-        "_row_num": 80
+        "_row_num": 95
       },
       {
         "clause": "end if",
-        "_row_num": 81
+        "_row_num": 96
       },
       {
         "clause": "begin screen",
-        "_row_num": 82
+        "_row_num": 97
       },
       {
         "type": "note",
@@ -823,7 +935,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 83
+        "_row_num": 98
       },
       {
         "type": "note",
@@ -836,7 +948,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 84
+        "_row_num": 99
       },
       {
         "type": "note",
@@ -849,7 +961,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 85
+        "_row_num": 100
       },
       {
         "type": "text",
@@ -862,11 +974,11 @@
             }
           }
         },
-        "_row_num": 86
+        "_row_num": 101
       },
       {
         "clause": "end screen",
-        "_row_num": 87
+        "_row_num": 102
       }
     ],
     "choices": [
@@ -1220,9 +1332,49 @@
           }
         },
         "_row_num": 34
+      },
+      {
+        "choice_list_name": "NotOnList",
+        "data_value": "8888",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Other place",
+              "default": "Outro lugar"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "NotOnList",
+        "data_value": "9999",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 37
       }
     ],
     "queries": [
+      {
+        "query_name": "reg_csv",
+        "query_type": "csv",
+        "uri": "\"HEALTHCENTRES.csv\"",
+        "callback": "_.chain(context)\n.uniq(function(x) {\nreturn x.reg\n})\n.map(function(place){\nreturn {\ndata_value:place.reg,\ndisplay:{title: {text: place.regname} } };\n}).value()",
+        "_row_num": 2
+      },
+      {
+        "query_name": "hc_csv",
+        "query_type": "csv",
+        "uri": "\"HEALTHCENTRES.csv\"",
+        "callback": "_.map(context, function(place){place.data_value = place.cscode;\nplace.display = {title: {text: place.csname} };\nreturn place;\n})",
+        "_row_num": 3
+      },
       {
         "query_name": "children",
         "query_type": "linked_table",
@@ -1232,7 +1384,7 @@
         "selectionArgs": "[data('IDMUL')]",
         "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"1\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\"), TELE: data(\"TELE\")}",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 2
+        "_row_num": 5
       }
     ],
     "calculates": [
@@ -1448,22 +1600,46 @@
         "_row_num": 35
       },
       {
+        "name": "regpar",
+        "type": "select_one_dropdown",
+        "isSessionVariable": true,
+        "_row_num": 36
+      },
+      {
+        "name": "LOCPARCODE",
+        "type": "select_one_dropdown",
+        "isSessionVariable": false,
+        "_row_num": 37
+      },
+      {
+        "name": "locparcodens",
+        "type": "select_multiple",
+        "isSessionVariable": true,
+        "_row_num": 38
+      },
+      {
+        "name": "LOCPAROU",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
         "name": "GEM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 40
       },
       {
         "name": "cicatrizmul",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 37
+        "_row_num": 41
       },
       {
         "name": "consent",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 38
+        "_row_num": 42
       }
     ]
   },
@@ -1953,9 +2129,51 @@
           },
           "_row_num": 34
         }
+      ],
+      "NotOnList": [
+        {
+          "choice_list_name": "NotOnList",
+          "data_value": "8888",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Other place",
+                "default": "Outro lugar"
+              }
+            }
+          },
+          "_row_num": 36
+        },
+        {
+          "choice_list_name": "NotOnList",
+          "data_value": "9999",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 37
+        }
       ]
     },
     "queries": {
+      "reg_csv": {
+        "query_name": "reg_csv",
+        "query_type": "csv",
+        "uri": "\"HEALTHCENTRES.csv\"",
+        "callback": "_.chain(context)\n.uniq(function(x) {\nreturn x.reg\n})\n.map(function(place){\nreturn {\ndata_value:place.reg,\ndisplay:{title: {text: place.regname} } };\n}).value()",
+        "_row_num": 2
+      },
+      "hc_csv": {
+        "query_name": "hc_csv",
+        "query_type": "csv",
+        "uri": "\"HEALTHCENTRES.csv\"",
+        "callback": "_.map(context, function(place){place.data_value = place.cscode;\nplace.display = {title: {text: place.csname} };\nreturn place;\n})",
+        "_row_num": 3
+      },
       "children": {
         "query_name": "children",
         "query_type": "linked_table",
@@ -1965,7 +2183,7 @@
         "selectionArgs": "[data('IDMUL')]",
         "newRowInitialElementKeyToValueMap": "{REG: data(\"REG\"), REGNOME: data(\"REGNOME\"), HCAREA: data(\"HCAREA\"), HCAREANOME: data(\"HCAREANOME\"), TAB: data(\"TAB\"), TABNOME: data(\"TABNOME\"), MOR: data(\"MOR\"), GRAV: data(\"GRAV\"), IDMUL: data(\"IDMUL\"), REGDIA: data(\"REGDIA\"), NOMEMUL: data(\"NOMEMUL\"), DATASEG: data(\"DATASEG\"), VISNOCRI: \"1\", IDCRI: data(\"IDMUL\") + \"1\", ESTADOMUL: data(\"ESTADOMUL\"), DATASAIMUL: data(\"DATASAIMUL\"), GEM: data(\"GEM\"), TELE: data(\"TELE\")}",
         "openRowInitialElementKeyToValueMap": "{}",
-        "_row_num": 2
+        "_row_num": 5
       }
     },
     "calculates": {
@@ -2298,7 +2516,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 101,
             "section_name": "survey"
           },
           {
@@ -2409,16 +2627,83 @@
         "isSessionVariable": false,
         "elementKey": "PARHCHOSP"
       },
+      "regpar": {
+        "type": "string",
+        "valuesList": "reg_csv",
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "regpar"
+      },
+      "LOCPARCODE": {
+        "type": "string",
+        "valuesList": "hc_csv",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPARCODE"
+      },
+      "locparcodens": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "locparcodens_items"
+        },
+        "valuesList": "NotOnList",
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "locparcodens"
+      },
+      "LOCPAROU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPAROU"
+      },
       "GEM": {
         "type": "string",
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 81,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -2429,7 +2714,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -2440,7 +2725,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -3126,12 +3411,101 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen64",
+            "_branch_label_enclosing_screen": "survey/_screen66",
             "promptIdx": 33
+          },
+          {
+            "type": "select_one_dropdown",
+            "values_list": "reg_csv",
+            "name": "regpar",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Region",
+                  "default": "Região"
+                }
+              }
+            },
+            "_row_num": 68,
+            "__rowNum__": 67,
+            "_token_type": "prompt",
+            "_type": "select_one_dropdown",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 34
+          },
+          {
+            "type": "select_one_dropdown",
+            "values_list": "hc_csv",
+            "name": "LOCPARCODE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Place of birth",
+                  "default": "Local de nascimento"
+                }
+              }
+            },
+            "constraint": "data(\"LOCPARCODE\") != null || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+            "choice_filter": "choice_item.reg === data(\"regpar\")",
+            "_row_num": 69,
+            "__rowNum__": 68,
+            "_token_type": "prompt",
+            "_type": "select_one_dropdown",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 35
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "NotOnList",
+            "name": "locparcodens",
+            "hideInContents": true,
+            "_row_num": 70,
+            "__rowNum__": 69,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 36
+          },
+          {
+            "type": "text",
+            "name": "LOCPAROU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Where?",
+                  "default": "Onde?"
+                }
+              }
+            },
+            "constraint": "data(\"LOCPAROU\") != null || data(\"locparcodens\") != \"8888\" || (data(\"LOCPAR\") != 2 && data(\"LOCPAR\") != 3)",
+            "_row_num": 73,
+            "__rowNum__": 72,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 37
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "<b>Follow-up on registered pregnancy to {{data.NOMEMUL}} regdia: {{calculates.displayREGDIA}} </b>",
+                  "default": "<b>Seguimento de gravidez registrada para {{data.NOMEMUL}} regdia: {{calculates.displayREGDIA}}</b>"
+                }
+              }
+            },
+            "hideInContents": true,
+            "_row_num": 80,
+            "__rowNum__": 79,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 38
           },
           {
             "type": "select_one",
@@ -3146,12 +3520,12 @@
               }
             },
             "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
-            "_row_num": 66,
-            "__rowNum__": 65,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen64",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 39
           },
           {
             "type": "note",
@@ -3164,12 +3538,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 86,
+            "__rowNum__": 85,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen70",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "survey/_screen85",
+            "promptIdx": 40
           },
           {
             "type": "linked_table",
@@ -3188,12 +3562,12 @@
                 }
               }
             },
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen70",
-            "promptIdx": 36
+            "_branch_label_enclosing_screen": "survey/_screen85",
+            "promptIdx": 41
           },
           {
             "type": "note",
@@ -3205,12 +3579,12 @@
                 }
               }
             },
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen77",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "survey/_screen92",
+            "promptIdx": 42
           },
           {
             "type": "note",
@@ -3222,12 +3596,12 @@
                 }
               }
             },
-            "_row_num": 79,
-            "__rowNum__": 78,
+            "_row_num": 94,
+            "__rowNum__": 93,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen77",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "survey/_screen92",
+            "promptIdx": 43
           },
           {
             "type": "note",
@@ -3240,12 +3614,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 98,
+            "__rowNum__": 97,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen82",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "survey/_screen97",
+            "promptIdx": 44
           },
           {
             "type": "note",
@@ -3258,12 +3632,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 99,
+            "__rowNum__": 98,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen82",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "survey/_screen97",
+            "promptIdx": 45
           },
           {
             "type": "note",
@@ -3276,12 +3650,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 85,
-            "__rowNum__": 84,
+            "_row_num": 100,
+            "__rowNum__": 99,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen82",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "survey/_screen97",
+            "promptIdx": 46
           },
           {
             "type": "text",
@@ -3294,20 +3668,20 @@
                 }
               }
             },
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 101,
+            "__rowNum__": 100,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen82",
-            "promptIdx": 42
+            "_branch_label_enclosing_screen": "survey/_screen97",
+            "promptIdx": 47
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 88,
-            "_branch_label_enclosing_screen": "survey/_screen88",
-            "promptIdx": 43
+            "_row_num": 103,
+            "_branch_label_enclosing_screen": "survey/_screen103",
+            "promptIdx": 48
           }
         ],
         "validation_tag_map": {
@@ -3325,7 +3699,9 @@
             30,
             31,
             32,
-            34
+            35,
+            37,
+            39
           ]
         },
         "operations": [
@@ -3457,8 +3833,8 @@
           {
             "clause": "else",
             "_token_type": "goto_label",
-            "_branch_label": "_else76",
-            "_row_num": 76,
+            "_branch_label": "_else91",
+            "_row_num": 91,
             "operationIdx": 12
           },
           {
@@ -3487,8 +3863,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else75",
-            "_row_num": 75,
+            "_branch_label": "_else90",
+            "_row_num": 90,
             "operationIdx": 15
           },
           {
@@ -3517,8 +3893,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else68",
-            "_row_num": 68,
+            "_branch_label": "_else83",
+            "_row_num": 83,
             "operationIdx": 18
           },
           {
@@ -3528,133 +3904,170 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 63,
-              "__rowNum__": 62,
+              "_row_num": 64,
+              "__rowNum__": 63,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nif (data(\"LOCPAR\") == \"1\") {\nactivePromptIndicies.push(31);\n}\nif (data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\") {\nactivePromptIndicies.push(32);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\nif (data(\"LOCPAR\") == \"1\") {\nactivePromptIndicies.push(31);\n}\nif (data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\") {\nactivePromptIndicies.push(32);\nassign('regpar', data(\"REG\"));\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 19
           },
           {
-            "clause": "begin screen",
-            "_row_num": 64,
-            "__rowNum__": 63,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 67,
-              "__rowNum__": 66,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "if",
+            "condition": "data(\"LOCPAR\") == \"2\" || data(\"LOCPAR\") == \"3\"",
+            "_row_num": 65,
+            "__rowNum__": 64,
+            "_token_type": "goto_label",
+            "_branch_label": "_then65",
             "operationIdx": 20
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif68",
-            "_row_num": 68,
+            "_branch_label": "_else78",
+            "_row_num": 78,
             "operationIdx": 21
           },
           {
-            "clause": "if",
-            "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
-            "_row_num": 69,
-            "__rowNum__": 68,
-            "_token_type": "goto_label",
-            "_branch_label": "_then69",
+            "clause": "begin screen",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 77,
+              "__rowNum__": 76,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nif (data(\"locparcodens\") != null) {\nif (data(\"locparcodens\") == \"8888\") {\nactivePromptIndicies.push(37);\n}\nassign('LOCPARCODE', data(\"locparcodens\"));\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 22
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else74",
-            "_row_num": 74,
+            "_branch_label": "_endif78",
+            "_row_num": 78,
             "operationIdx": 23
           },
           {
             "clause": "begin screen",
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 79,
+            "__rowNum__": 78,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 73,
-              "__rowNum__": 72,
+              "_row_num": 82,
+              "__rowNum__": 81,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 24
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif74",
-            "_row_num": 74,
+            "_branch_label": "_endif83",
+            "_row_num": 83,
             "operationIdx": 25
           },
           {
-            "clause": "end if",
+            "clause": "if",
+            "condition": "data(\"NVNMAB\") == \"1\" && (data(\"PARTAB\") == \"1\" || data(\"PARHCHOSP\") == \"1\")",
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "goto_label",
-            "_branch_label": "_endif75",
-            "_row_num": 75,
+            "_branch_label": "_then84",
             "operationIdx": 26
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif81",
-            "_row_num": 81,
+            "_branch_label": "_else89",
+            "_row_num": 89,
             "operationIdx": 27
           },
           {
             "clause": "begin screen",
-            "_row_num": 77,
-            "__rowNum__": 76,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 80,
-              "__rowNum__": 79,
+              "_row_num": 88,
+              "__rowNum__": 87,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 28
           },
           {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif89",
+            "_row_num": 89,
+            "operationIdx": 29
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif90",
+            "_row_num": 90,
+            "operationIdx": 30
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif96",
+            "_row_num": 96,
+            "operationIdx": 31
+          },
+          {
             "clause": "begin screen",
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 87,
-              "__rowNum__": 86,
+              "_row_num": 95,
+              "__rowNum__": 94,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 29
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 32
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 97,
+            "__rowNum__": 96,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 102,
+              "__rowNum__": 101,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 33
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 88,
-            "operationIdx": 30
+            "_row_num": 103,
+            "operationIdx": 34
           },
           {
-            "_row_num": 88,
+            "_row_num": 103,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(43);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(48);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 31
+            "operationIdx": 35
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 88,
-            "operationIdx": 32
+            "_row_num": 103,
+            "operationIdx": 36
           }
         ],
         "branch_label_map": {
@@ -3675,21 +4088,25 @@
           "_screen49": 16,
           "_then53": 19,
           "_screen54": 19,
-          "_screen64": 20,
-          "_else68": 22,
-          "_endif68": 22,
-          "_then69": 24,
-          "_screen70": 24,
-          "_else74": 26,
-          "_endif74": 26,
-          "_else75": 27,
-          "_endif75": 27,
-          "_else76": 28,
-          "_screen77": 28,
-          "_endif81": 29,
-          "_screen82": 29,
-          "_contents": 31,
-          "_screen88": 31
+          "_then65": 22,
+          "_screen66": 22,
+          "_else78": 24,
+          "_endif78": 24,
+          "_screen79": 24,
+          "_else83": 26,
+          "_endif83": 26,
+          "_then84": 28,
+          "_screen85": 28,
+          "_else89": 30,
+          "_endif89": 30,
+          "_else90": 31,
+          "_endif90": 31,
+          "_else91": 32,
+          "_screen92": 32,
+          "_endif96": 33,
+          "_screen97": 33,
+          "_contents": 35,
+          "_screen103": 35
         }
       },
       "initial": {
@@ -4271,7 +4688,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 101,
             "section_name": "survey"
           },
           {
@@ -4403,16 +4820,103 @@
         "elementSet": "data",
         "elementPath": "PARHCHOSP"
       },
+      "regpar": {
+        "type": "string",
+        "valuesList": "reg_csv",
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "regpar",
+        "elementName": "regpar",
+        "elementSet": "data",
+        "elementPath": "regpar"
+      },
+      "LOCPARCODE": {
+        "type": "string",
+        "valuesList": "hc_csv",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPARCODE",
+        "elementName": "LOCPARCODE",
+        "elementSet": "data",
+        "elementPath": "LOCPARCODE"
+      },
+      "locparcodens": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "locparcodens_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "locparcodens.items",
+          "isSessionVariable": true,
+          "notUnitOfRetention": true
+        },
+        "valuesList": "NotOnList",
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "locparcodens",
+        "elementName": "locparcodens",
+        "elementSet": "data",
+        "elementPath": "locparcodens",
+        "listChildElementKeys": [
+          "locparcodens_items"
+        ]
+      },
+      "LOCPAROU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPAROU",
+        "elementName": "LOCPAROU",
+        "elementSet": "data",
+        "elementPath": "LOCPAROU"
+      },
       "GEM": {
         "type": "string",
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 66,
+            "_row_num": 81,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -4426,7 +4930,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -4440,7 +4944,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -4449,6 +4953,15 @@
         "elementName": "consent",
         "elementSet": "data",
         "elementPath": "consent"
+      },
+      "locparcodens_items": {
+        "type": "string",
+        "elementKey": "locparcodens_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "locparcodens.items",
+        "isSessionVariable": true,
+        "notUnitOfRetention": true
       },
       "_id": {
         "type": "string",

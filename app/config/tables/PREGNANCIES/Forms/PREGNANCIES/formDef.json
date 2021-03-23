@@ -1653,22 +1653,46 @@
         "_row_num": 35
       },
       {
+        "name": "regpar",
+        "type": "select_one_dropdown",
+        "isSessionVariable": true,
+        "_row_num": 36
+      },
+      {
+        "name": "LOCPARCODE",
+        "type": "select_one_dropdown",
+        "isSessionVariable": false,
+        "_row_num": 37
+      },
+      {
+        "name": "locparcodens",
+        "type": "select_multiple",
+        "isSessionVariable": true,
+        "_row_num": 38
+      },
+      {
+        "name": "LOCPAROU",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
         "name": "GEM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 40
       },
       {
         "name": "cicatrizmul",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 37
+        "_row_num": 41
       },
       {
         "name": "consent",
         "type": "integer",
         "isSessionVariable": true,
-        "_row_num": 38
+        "_row_num": 42
       }
     ],
     "table_specific_translations": [
@@ -2657,11 +2681,59 @@
         "isSessionVariable": false,
         "elementKey": "PARHCHOSP"
       },
-      "GEM": {
+      "regpar": {
         "type": "string",
         "_defn": [
           {
             "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "regpar"
+      },
+      "LOCPARCODE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPARCODE"
+      },
+      "locparcodens": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "locparcodens_items"
+        },
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "locparcodens"
+      },
+      "LOCPAROU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPAROU"
+      },
+      "GEM": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -2672,7 +2744,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -2683,7 +2755,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -4867,11 +4939,79 @@
         "elementSet": "data",
         "elementPath": "PARHCHOSP"
       },
-      "GEM": {
+      "regpar": {
         "type": "string",
         "_defn": [
           {
             "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "regpar",
+        "elementName": "regpar",
+        "elementSet": "data",
+        "elementPath": "regpar"
+      },
+      "LOCPARCODE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPARCODE",
+        "elementName": "LOCPARCODE",
+        "elementSet": "data",
+        "elementPath": "LOCPARCODE"
+      },
+      "locparcodens": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "locparcodens_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "locparcodens.items",
+          "isSessionVariable": true,
+          "notUnitOfRetention": true
+        },
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "locparcodens",
+        "elementName": "locparcodens",
+        "elementSet": "data",
+        "elementPath": "locparcodens",
+        "listChildElementKeys": [
+          "locparcodens_items"
+        ]
+      },
+      "LOCPAROU": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "LOCPAROU",
+        "elementName": "LOCPAROU",
+        "elementSet": "data",
+        "elementPath": "LOCPAROU"
+      },
+      "GEM": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -4885,7 +5025,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -4899,7 +5039,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -4908,6 +5048,15 @@
         "elementName": "consent",
         "elementSet": "data",
         "elementPath": "consent"
+      },
+      "locparcodens_items": {
+        "type": "string",
+        "elementKey": "locparcodens_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "locparcodens.items",
+        "isSessionVariable": true,
+        "notUnitOfRetention": true
       },
       "_id": {
         "type": "string",
