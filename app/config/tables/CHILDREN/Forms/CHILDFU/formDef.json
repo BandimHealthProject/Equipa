@@ -846,7 +846,7 @@
       },
       {
         "clause": "if",
-        "condition": "data(\"bcgcheck\") != \"2\" && not(adate.diffInDays(data(\"BCGDATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"BCGDATA\")) >= 0 && data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019) && data(\"BCG\") == 1",
+        "condition": "data(\"bcgcheck\") != \"2\" && not(adate.diffInDays(data(\"BCGDATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"BCGDATA\")) >= 0 && data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) && data(\"BCG\") == 1",
         "_row_num": 88
       },
       {
@@ -897,7 +897,7 @@
       },
       {
         "clause": "if",
-        "condition": "data(\"poliocheck\") != \"2\" && not(adate.diffInDays(data(\"POLIODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"POLIODATA\")) >= 0 && data(\"POLIODATA\") != null && adate.ageInYears(data(\"POLIODATA\")) != -9999 && adate.ageInYears(data(\"POLIODATA\")) < 2019) && data(\"POLIO\") == 1",
+        "condition": "data(\"poliocheck\") != \"2\" && not(adate.diffInDays(data(\"POLIODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"POLIODATA\")) >= 0 && data(\"POLIODATA\") != null && adate.ageInYears(data(\"POLIODATA\")) != -9999 && adate.ageInYears(data(\"POLIODATA\")) < 2019 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) && data(\"POLIO\") == 1",
         "_row_num": 95
       },
       {
@@ -1095,7 +1095,7 @@
       },
       {
         "clause": "if",
-        "condition": "data(\"outrocheck\") != \"2\" && not(adate.diffInDays(data(\"OUTRODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"OUTRODATA\")) >= 0 && data(\"OUTRODATA\") != null && adate.ageInYears(data(\"OUTRODATA\")) != -9999 && adate.ageInYears(data(\"OUTRODATA\")) < 2019) && data(\"VACINASOU\") == 1",
+        "condition": "data(\"outrocheck\") != \"2\" && not(adate.diffInDays(data(\"OUTRODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"OUTRODATA\")) >= 0 && data(\"OUTRODATA\") != null && adate.ageInYears(data(\"OUTRODATA\")) != -9999 && adate.ageInYears(data(\"OUTRODATA\")) < 2019 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) && data(\"VACINASOU\") == 1",
         "_row_num": 121
       },
       {
@@ -2047,12 +2047,12 @@
     "calculates": [
       {
         "calculation_name": "displayDOB",
-        "calculation": "adate.display(data(\"BCGDATA\"))",
+        "calculation": "adate.display(data(\"DOB\"))",
         "_row_num": 2
       },
       {
         "calculation_name": "displayREGDIA",
-        "calculation": "adate.display(data(\"POLIODATA\"))",
+        "calculation": "adate.display(data(\"REGDIA\"))",
         "_row_num": 3
       }
     ],
@@ -2903,12 +2903,12 @@
     "calculates": {
       "displayDOB": {
         "calculation_name": "displayDOB",
-        "calculation": "adate.display(data(\"BCGDATA\"))",
+        "calculation": "adate.display(data(\"DOB\"))",
         "_row_num": 2
       },
       "displayREGDIA": {
         "calculation_name": "displayREGDIA",
-        "calculation": "adate.display(data(\"POLIODATA\"))",
+        "calculation": "adate.display(data(\"REGDIA\"))",
         "_row_num": 3
       }
     },
@@ -5376,7 +5376,7 @@
           },
           {
             "clause": "if",
-            "condition": "data(\"bcgcheck\") != \"2\" && not(adate.diffInDays(data(\"BCGDATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"BCGDATA\")) >= 0 && data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019) && data(\"BCG\") == 1",
+            "condition": "data(\"bcgcheck\") != \"2\" && not(adate.diffInDays(data(\"BCGDATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"BCGDATA\")) >= 0 && data(\"BCGDATA\") != null && adate.ageInYears(data(\"BCGDATA\")) != -9999 && adate.ageInYears(data(\"BCGDATA\")) < 2019 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) && data(\"BCG\") == 1",
             "_row_num": 88,
             "__rowNum__": 87,
             "_token_type": "goto_label",
@@ -5414,7 +5414,7 @@
           },
           {
             "clause": "if",
-            "condition": "data(\"poliocheck\") != \"2\" && not(adate.diffInDays(data(\"POLIODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"POLIODATA\")) >= 0 && data(\"POLIODATA\") != null && adate.ageInYears(data(\"POLIODATA\")) != -9999 && adate.ageInYears(data(\"POLIODATA\")) < 2019) && data(\"POLIO\") == 1",
+            "condition": "data(\"poliocheck\") != \"2\" && not(adate.diffInDays(data(\"POLIODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"POLIODATA\")) >= 0 && data(\"POLIODATA\") != null && adate.ageInYears(data(\"POLIODATA\")) != -9999 && adate.ageInYears(data(\"POLIODATA\")) < 2019 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) && data(\"POLIO\") == 1",
             "_row_num": 95,
             "__rowNum__": 94,
             "_token_type": "goto_label",
@@ -5526,7 +5526,7 @@
           },
           {
             "clause": "if",
-            "condition": "data(\"outrocheck\") != \"2\" && not(adate.diffInDays(data(\"OUTRODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"OUTRODATA\")) >= 0 && data(\"OUTRODATA\") != null && adate.ageInYears(data(\"OUTRODATA\")) != -9999 && adate.ageInYears(data(\"OUTRODATA\")) < 2019) && data(\"VACINASOU\") == 1",
+            "condition": "data(\"outrocheck\") != \"2\" && not(adate.diffInDays(data(\"OUTRODATA\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"DOB\"),data(\"OUTRODATA\")) >= 0 && data(\"OUTRODATA\") != null && adate.ageInYears(data(\"OUTRODATA\")) != -9999 && adate.ageInYears(data(\"OUTRODATA\")) < 2019 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019) && data(\"VACINASOU\") == 1",
             "_row_num": 121,
             "__rowNum__": 120,
             "_token_type": "goto_label",
