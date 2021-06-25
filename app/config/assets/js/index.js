@@ -20,9 +20,9 @@ function initButtons() {
     btnTab.on("click", function() {
         odkTables.launchHTML(null, 'config/assets/reg.html');
     });
-    // Follow-up
-    var btnPhoto = $('#btnPhoto');
-    btnPhoto.on("click", function() {
-        odkTables.launchHTML(null, 'config/assets/reg.html');
+    // Sync
+    var btnSync = $('#btnSync');
+    btnSync.on("click", function() {
+        odkCommon.doAction(null, "org.opendatakit.services.sync.actions.activities.SyncActivity", {"componentPackage": "org.opendatakit.services", "componentActivity": "org.opendatakit.services.sync.actions.activities.SyncActivity"});   
     });
 }
