@@ -15,3 +15,6 @@ FormType,default,FormType.formType,string,SURVEY
 SurveyUtil,default,SurveyUtil.formId,string,CHILDREN
 Table,default,defaultViewType,string,SPREADSHEET
 Table,default,displayName,object,"{""text"":{""english"":""Child in CS-BCG"",""default"":""Criança em CS-BCG""}}"
+Table,security,defaultAccessOnCreation,string,HIDDEN
+Table,security,locked,boolean,FALSE
+Table,security,unverifiedUserCanCreate,boolean,TRUE

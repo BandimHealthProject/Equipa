@@ -11,3 +11,6 @@ FormType,default,FormType.formType,string,SURVEY
 SurveyUtil,default,SurveyUtil.formId,string,PREGNANCIES
 Table,default,defaultViewType,string,SPREADSHEET
 Table,default,displayName,object,"{""text"":{""english"":""Inclusion to CS-BCG"",""default"":""Inclusão no CS-BCG""}}"
+Table,security,defaultAccessOnCreation,string,HIDDEN
+Table,security,locked,boolean,FALSE
+Table,security,unverifiedUserCanCreate,boolean,TRUE

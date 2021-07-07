@@ -28,11 +28,21 @@ function doSanityCheck() {
 
 function loadPregnancies() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
+    var user = odkCommon.getActiveUser();
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker") {
+        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
-        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab +
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
         " ORDER BY MOR, NOMEMUL";
+    } else {
+        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
+        " FROM PREGNANCIES" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND _row_owner = '" + user + "' " +
+        " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
+        " ORDER BY MOR, NOMEMUL";
+    }
+    
     pregnancies = [];
     console.log("Querying database for pregnancies...");
     console.log(sql);
@@ -82,11 +92,21 @@ function loadPregnancies() {
 
 function loadChildren() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
+    var user = odkCommon.getActiveUser();
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker") {
+        var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
         " ORDER BY MOR, NOMECRI";
+    } else {
+        var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
+        " FROM CHILDREN" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND _row_owner = '" + user + "' " + 
+        " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
+        " ORDER BY MOR, NOMECRI";
+    }
+    
     children = [];
     console.log("Querying database for children...");
     console.log(sql);
