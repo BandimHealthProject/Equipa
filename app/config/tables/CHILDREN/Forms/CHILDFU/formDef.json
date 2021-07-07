@@ -586,7 +586,7 @@
           "prompt": {
             "text": {
               "english": "Status of child",
-              "default": "Estodo da criança"
+              "default": "Estado da criança"
             }
           }
         },
@@ -4276,7 +4276,7 @@
               "prompt": {
                 "text": {
                   "english": "Status of child",
-                  "default": "Estodo da criança"
+                  "default": "Estado da criança"
                 }
               }
             },

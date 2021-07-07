@@ -1210,7 +1210,7 @@
           "title": {
             "text": {
               "english": "Not pregnant anyway",
-              "default": "Nom era um gravidez"
+              "default": "Nâo era uma gravidez"
             }
           }
         },
@@ -1300,8 +1300,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Health centre",
-              "default": "Centro de Saúde"
+              "english": "Health centre / Clinic",
+              "default": "Centro de Saúde / Clínica"
             }
           }
         },
@@ -2002,7 +2002,7 @@
             "title": {
               "text": {
                 "english": "Not pregnant anyway",
-                "default": "Nom era um gravidez"
+                "default": "Nâo era uma gravidez"
               }
             }
           },
@@ -2096,8 +2096,8 @@
           "display": {
             "title": {
               "text": {
-                "english": "Health centre",
-                "default": "Centro de Saúde"
+                "english": "Health centre / Clinic",
+                "default": "Centro de Saúde / Clínica"
               }
             }
           },
