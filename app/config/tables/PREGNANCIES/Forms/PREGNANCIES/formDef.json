@@ -1363,7 +1363,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Have scar, uncertain if BCG",
+              "english": "Has scar, uncertain if BCG",
               "default": "Tem cicatriz, não tenho certeza se BCG"
             }
           }
@@ -2162,7 +2162,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Have scar, uncertain if BCG",
+                "english": "Has scar, uncertain if BCG",
                 "default": "Tem cicatriz, não tenho certeza se BCG"
               }
             }
@@ -5131,7 +5131,7 @@
         "_aspect": "CICATRIZMUL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Scar\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":29},{\"choice_list_name\":\"Scar\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":30},{\"choice_list_name\":\"Scar\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Have scar, uncertain if BCG\",\"default\":\"Tem cicatriz, não tenho certeza se BCG\"}}},\"_row_num\":31},{\"choice_list_name\":\"Scar\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":32}]"
+        "_value": "[{\"choice_list_name\":\"Scar\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":29},{\"choice_list_name\":\"Scar\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":30},{\"choice_list_name\":\"Scar\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Has scar, uncertain if BCG\",\"default\":\"Tem cicatriz, não tenho certeza se BCG\"}}},\"_row_num\":31},{\"choice_list_name\":\"Scar\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",

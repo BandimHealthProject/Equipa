@@ -30,7 +30,6 @@ OUTRODATA,OUTRODATA,string,[]
 OUTROVAC,OUTROVAC,array,"[""OUTROVAC_items""]"
 OUTROVACOU,OUTROVACOU,string,[]
 OUTROVAC_items,items,string,[]
-POBCON,POBCON,string,[]
 POLIO,POLIO,string,[]
 POLIODATA,POLIODATA,string,[]
 REG,REG,integer,[]

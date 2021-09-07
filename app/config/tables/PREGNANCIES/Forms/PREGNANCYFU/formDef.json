@@ -1118,7 +1118,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Have scar, uncertain if BCG",
+              "english": "Has scar, uncertain if BCG",
               "default": "Tem cicatriz, não tenho certeza se BCG"
             }
           }
@@ -1906,7 +1906,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Have scar, uncertain if BCG",
+                "english": "Has scar, uncertain if BCG",
                 "default": "Tem cicatriz, não tenho certeza se BCG"
               }
             }

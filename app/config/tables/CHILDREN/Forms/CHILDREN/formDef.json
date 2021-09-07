@@ -2114,12 +2114,6 @@
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 57
-      },
-      {
-        "name": "POBCON",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 58
       }
     ],
     "properties": [
@@ -3410,17 +3404,6 @@
         ],
         "isSessionVariable": false,
         "elementKey": "DOBCON"
-      },
-      "POBCON": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 58,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "POBCON"
       }
     },
     "section_names": [
@@ -6553,20 +6536,6 @@
         "elementName": "DOBCON",
         "elementSet": "data",
         "elementPath": "DOBCON"
-      },
-      "POBCON": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 58,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "POBCON",
-        "elementName": "POBCON",
-        "elementSet": "data",
-        "elementPath": "POBCON"
       },
       "OUTROVAC_items": {
         "type": "string",
