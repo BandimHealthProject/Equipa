@@ -1597,16 +1597,30 @@
         "_row_num": 180
       },
       {
-        "clause": "end if",
+        "type": "text",
+        "name": "HOSPREASON",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What happened? / Why did the child get hospitalised?",
+              "default": "O que aconteceu? / Por que a criança foi hospitalizada?"
+            }
+          }
+        },
+        "constraint": "data(\"HOSPREASON\") != null || data(\"HOSP\") != 1",
         "_row_num": 181
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 182
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 183
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 184
       },
       {
         "type": "note",
@@ -1619,7 +1633,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 184
+        "_row_num": 185
       },
       {
         "type": "note",
@@ -1632,7 +1646,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 185
+        "_row_num": 186
       },
       {
         "type": "note",
@@ -1645,7 +1659,7 @@
           }
         },
         "hideInContents": true,
-        "_row_num": 186
+        "_row_num": 187
       },
       {
         "type": "text",
@@ -1658,11 +1672,11 @@
             }
           }
         },
-        "_row_num": 187
+        "_row_num": 188
       },
       {
         "clause": "end screen",
-        "_row_num": 188
+        "_row_num": 189
       }
     ],
     "choices": [
@@ -2351,35 +2365,41 @@
         "_row_num": 51
       },
       {
-        "name": "OBSCRI",
+        "name": "HOSPREASON",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 52
+      },
+      {
+        "name": "OBSCRI",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 53
       },
       {
         "name": "NOMECRICON",
         "type": "select_one",
         "isSessionVariable": false,
         "comment": "FU",
-        "_row_num": 54
+        "_row_num": 55
       },
       {
         "name": "SEXCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 55
+        "_row_num": 56
       },
       {
         "name": "DOBCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 56
+        "_row_num": 57
       },
       {
         "name": "POBCON",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 57
+        "_row_num": 58
       }
     ]
   },
@@ -3638,15 +3658,30 @@
         "isSessionVariable": false,
         "elementKey": "HOSPDATA"
       },
-      "OBSCRI": {
+      "HOSPREASON": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 187,
+            "_row_num": 181,
             "section_name": "survey"
           },
           {
             "_row_num": 52,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HOSPREASON"
+      },
+      "OBSCRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 188,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -3662,7 +3697,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 54,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -3679,7 +3714,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 55,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -3695,7 +3730,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -3706,7 +3741,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -5114,6 +5149,25 @@
             "promptIdx": 68
           },
           {
+            "type": "text",
+            "name": "HOSPREASON",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What happened? / Why did the child get hospitalised?",
+                  "default": "O que aconteceu? / Por que a criança foi hospitalizada?"
+                }
+              }
+            },
+            "constraint": "data(\"HOSPREASON\") != null || data(\"HOSP\") != 1",
+            "_row_num": 181,
+            "__rowNum__": 180,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen176",
+            "promptIdx": 69
+          },
+          {
             "type": "note",
             "display": {
               "prompt": {
@@ -5124,12 +5178,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 184,
-            "__rowNum__": 183,
+            "_row_num": 185,
+            "__rowNum__": 184,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen183",
-            "promptIdx": 69
+            "_branch_label_enclosing_screen": "survey/_screen184",
+            "promptIdx": 70
           },
           {
             "type": "note",
@@ -5142,12 +5196,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 185,
-            "__rowNum__": 184,
+            "_row_num": 186,
+            "__rowNum__": 185,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen183",
-            "promptIdx": 70
+            "_branch_label_enclosing_screen": "survey/_screen184",
+            "promptIdx": 71
           },
           {
             "type": "note",
@@ -5160,12 +5214,12 @@
               }
             },
             "hideInContents": true,
-            "_row_num": 186,
-            "__rowNum__": 185,
+            "_row_num": 187,
+            "__rowNum__": 186,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen183",
-            "promptIdx": 71
+            "_branch_label_enclosing_screen": "survey/_screen184",
+            "promptIdx": 72
           },
           {
             "type": "text",
@@ -5178,20 +5232,20 @@
                 }
               }
             },
-            "_row_num": 187,
-            "__rowNum__": 186,
+            "_row_num": 188,
+            "__rowNum__": 187,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen183",
-            "promptIdx": 72
+            "_branch_label_enclosing_screen": "survey/_screen184",
+            "promptIdx": 73
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 189,
-            "_branch_label_enclosing_screen": "survey/_screen189",
-            "promptIdx": 73
+            "_row_num": 190,
+            "_branch_label_enclosing_screen": "survey/_screen190",
+            "promptIdx": 74
           }
         ],
         "validation_tag_map": {
@@ -5228,7 +5282,8 @@
             63,
             65,
             67,
-            68
+            68,
+            69
           ]
         },
         "operations": [
@@ -5849,37 +5904,37 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 182,
-              "__rowNum__": 181,
+              "_row_num": 183,
+              "__rowNum__": 182,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(66);\nactivePromptIndicies.push(67);\nif (data(\"HOSP\") ==\"1\") {\nactivePromptIndicies.push(68);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(66);\nactivePromptIndicies.push(67);\nif (data(\"HOSP\") ==\"1\") {\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 62
           },
           {
             "clause": "begin screen",
-            "_row_num": 183,
-            "__rowNum__": 182,
+            "_row_num": 184,
+            "__rowNum__": 183,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 188,
-              "__rowNum__": 187,
+              "_row_num": 189,
+              "__rowNum__": 188,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(69);\nactivePromptIndicies.push(70);\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(70);\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nactivePromptIndicies.push(73);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 63
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 189,
+            "_row_num": 190,
             "operationIdx": 64
           },
           {
-            "_row_num": 189,
+            "_row_num": 190,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(73);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(74);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -5888,7 +5943,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 189,
+            "_row_num": 190,
             "operationIdx": 66
           }
         ],
@@ -5959,9 +6014,9 @@
           "_else175": 62,
           "_endif175": 62,
           "_screen176": 62,
-          "_screen183": 63,
+          "_screen184": 63,
           "_contents": 65,
-          "_screen189": 65
+          "_screen190": 65
         }
       },
       "initial": {
@@ -7041,15 +7096,33 @@
         "elementSet": "data",
         "elementPath": "HOSPDATA"
       },
-      "OBSCRI": {
+      "HOSPREASON": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 187,
+            "_row_num": 181,
             "section_name": "survey"
           },
           {
             "_row_num": 52,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HOSPREASON",
+        "elementName": "HOSPREASON",
+        "elementSet": "data",
+        "elementPath": "HOSPREASON"
+      },
+      "OBSCRI": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 188,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -7068,7 +7141,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 54,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -7088,7 +7161,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 55,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -7107,7 +7180,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -7121,7 +7194,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
