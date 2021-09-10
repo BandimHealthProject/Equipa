@@ -620,7 +620,7 @@
             }
           }
         },
-        "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+        "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNMAB\") == 3",
         "_row_num": 56
       },
       {
@@ -816,7 +816,7 @@
             }
           }
         },
-        "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+        "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNMAB\") == 3",
         "_row_num": 81
       },
       {
@@ -3352,7 +3352,7 @@
                 }
               }
             },
-            "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+            "constraint": "data(\"LOCPAR\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNMAB\") == 3",
             "_row_num": 56,
             "__rowNum__": 55,
             "_token_type": "prompt",
@@ -3519,7 +3519,7 @@
                 }
               }
             },
-            "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNNAM\") == 3",
+            "constraint": "data(\"GEM\") != null || data(\"ESTADOGRAV\") != 1 || data(\"NVNMAB\") == 3",
             "_row_num": 81,
             "__rowNum__": 80,
             "_token_type": "prompt",
