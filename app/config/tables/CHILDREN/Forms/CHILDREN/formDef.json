@@ -1137,8 +1137,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Has the child received a vaccination card?",
-              "default": "A criança recebeu cartão de vacinação?"
+              "english": "Has the child received a vaccination card from the health centre?",
+              "default": "A criança recebeu cartão de vacinação do centro de saúde?"
             }
           }
         },
@@ -4340,8 +4340,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Has the child received a vaccination card?",
-                  "default": "A criança recebeu cartão de vacinação?"
+                  "english": "Has the child received a vaccination card from the health centre?",
+                  "default": "A criança recebeu cartão de vacinação do centro de saúde?"
                 }
               }
             },
