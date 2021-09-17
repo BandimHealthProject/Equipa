@@ -654,7 +654,7 @@
       },
       {
         "type": "select_one",
-        "values_list": "YesNoDontknow",
+        "values_list": "PlaceOfBirthReturn",
         "name": "PARHCHOSP",
         "display": {
           "prompt": {
@@ -1334,6 +1334,58 @@
         "_row_num": 34
       },
       {
+        "choice_list_name": "PlaceOfBirthReturn",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "PlaceOfBirthReturn",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "choice_list_name": "PlaceOfBirthReturn",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Woman is still at the centre/hospital",
+              "default": "Mulher ainda está no centro/hospital"
+            }
+          }
+        },
+        "_row_num": 38
+      },
+      {
+        "choice_list_name": "PlaceOfBirthReturn",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Don't know",
+              "default": "Não sabe"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
         "choice_list_name": "NotOnList",
         "data_value": "8888",
         "display": {
@@ -1344,7 +1396,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 41
       },
       {
         "choice_list_name": "NotOnList",
@@ -1357,7 +1409,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 42
       }
     ],
     "queries": [
@@ -2130,6 +2182,60 @@
           "_row_num": 34
         }
       ],
+      "PlaceOfBirthReturn": [
+        {
+          "choice_list_name": "PlaceOfBirthReturn",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Yes",
+                "default": "Sim"
+              }
+            }
+          },
+          "_row_num": 36
+        },
+        {
+          "choice_list_name": "PlaceOfBirthReturn",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "No",
+                "default": "Não"
+              }
+            }
+          },
+          "_row_num": 37
+        },
+        {
+          "choice_list_name": "PlaceOfBirthReturn",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Woman is still at the centre/hospital",
+                "default": "Mulher ainda está no centro/hospital"
+              }
+            }
+          },
+          "_row_num": 38
+        },
+        {
+          "choice_list_name": "PlaceOfBirthReturn",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Don't know",
+                "default": "Não sabe"
+              }
+            }
+          },
+          "_row_num": 39
+        }
+      ],
       "NotOnList": [
         {
           "choice_list_name": "NotOnList",
@@ -2142,7 +2248,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 41
         },
         {
           "choice_list_name": "NotOnList",
@@ -2155,7 +2261,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 42
         }
       ]
     },
@@ -2613,7 +2719,7 @@
       },
       "PARHCHOSP": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "PlaceOfBirthReturn",
         "_defn": [
           {
             "_row_num": 61,
@@ -3382,7 +3488,7 @@
           },
           {
             "type": "select_one",
-            "values_list": "YesNoDontknow",
+            "values_list": "PlaceOfBirthReturn",
             "name": "PARHCHOSP",
             "display": {
               "prompt": {
@@ -4803,7 +4909,7 @@
       },
       "PARHCHOSP": {
         "type": "string",
-        "valuesList": "YesNoDontknow",
+        "valuesList": "PlaceOfBirthReturn",
         "_defn": [
           {
             "_row_num": 61,

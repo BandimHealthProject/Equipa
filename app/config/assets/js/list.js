@@ -30,13 +30,13 @@ function loadPregnancies() {
     // SQL to get pregnancies
     var user = odkCommon.getActiveUser();
     if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker") {
-        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
+        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab +
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
         " ORDER BY MOR, NOMEMUL";
     } else {
-        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL" +
+        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND _row_owner = '" + user + "' " +
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
@@ -68,13 +68,14 @@ function loadPregnancies() {
             var NOMEMUL = result.getData(row,"NOMEMUL");
             var NVNMAB = result.getData(row,"NVNMAB");
             var PARITY = result.getData(row,"PARITY");
+            var PARHCHOSP = result.getData(row,"PARHCHOSP");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var TAB = result.getData(row,"TAB");
             var TELE = result.getData(row,"TELE")
             var VISNOMUL = result.getData(row,"VISNOMUL");
 
-            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, REG, REGDIA, TAB, TELE, VISNOMUL};
+            var p = {type: 'pregnancy', rowId, savepoint, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL};
             pregnancies.push(p);
         }
         console.log("Pregnancies:", pregnancies)
@@ -231,7 +232,8 @@ function populateView() {
         // preg criterias
         if (this.type == "pregnancy" & 
             (((this.ESTADOGRAV != 1 & this.ESTADOGRAV != 3 & this.ESTADOGRAV != 4) | 
-            (this.ESTADOGRAV == 1 & this.NVNMAB == 33 )) | option != '')) {
+            (this.ESTADOGRAV == 1 & this.NVNMAB == 33 ) |
+            (this.ESTADOGRAV == 1 & this.PARHCHOSP == 4)) | option != '')) {
             ul.append($("<li />").append($("<button />").attr('id',this.IDMUL).attr('class', option + " " + this.type).append(displayText)));
          
             // Buttons
