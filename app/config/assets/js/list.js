@@ -94,7 +94,7 @@ function loadPregnancies() {
 function loadChildren() {
     // SQL to get pregnancies
     var user = odkCommon.getActiveUser();
-    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker") {
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:student") {
         var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
