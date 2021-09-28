@@ -63,100 +63,1467 @@
         "_row_num": 2
       },
       {
-        "type": "note",
+        "type": "select_one_with_other",
+        "values_list": "Assistants",
+        "name": "SUPERVISOR",
         "display": {
           "prompt": {
             "text": {
-              "english": "text",
-              "default": "text"
+              "english": "Supervisor",
+              "default": "Supervisor"
             }
           }
         },
         "_row_num": 3
-      },
-      {
-        "type": "text",
-        "name": "test",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "test",
-              "default": "test"
-            }
-          }
-        },
-        "_row_num": 4
       },
       {
         "clause": "end screen",
-        "_row_num": 5
-      }
-    ],
-    "choices": [
-      {
-        "choice_list_name": "YesNo",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Yes",
-              "default": "Sim"
-            }
-          }
-        },
-        "_row_num": 2
+        "_row_num": 4
       },
       {
-        "choice_list_name": "YesNo",
-        "data_value": "2",
-        "display": {
-          "title": {
-            "text": {
-              "english": "No",
-              "default": "Não"
-            }
-          }
-        },
-        "_row_num": 3
-      },
-      {
-        "choice_list_name": "YesNoDontknow",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Yes",
-              "default": "Sim"
-            }
-          }
-        },
+        "clause": "begin screen",
         "_row_num": 5
       },
       {
-        "choice_list_name": "YesNoDontknow",
-        "data_value": "2",
+        "type": "text",
+        "name": "SOT",
         "display": {
-          "title": {
+          "prompt": {
             "text": {
-              "english": "No",
-              "default": "Não"
+              "english": "Name of SOT",
+              "default": "Nome de SOT"
             }
           }
         },
         "_row_num": 6
       },
       {
-        "choice_list_name": "YesNoDontknow",
-        "data_value": "3",
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "ASCPRES",
         "display": {
-          "title": {
+          "prompt": {
             "text": {
-              "english": "Don't know",
-              "default": "Não sabe"
+              "english": "Is ASC present?",
+              "default": "ASC presente?"
             }
           }
         },
         "_row_num": 7
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ASCPRES\") == \"2\"",
+        "_row_num": 8
+      },
+      {
+        "type": "text",
+        "name": "ACTNP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Why not?",
+              "default": "Por quê?"
+            }
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "clause": "end if",
+        "_row_num": 10
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 11
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 12
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "SOTFIND",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Was it diffecult to find the SOT?",
+              "default": "Foi difícil encontrar o SOT?"
+            }
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "PlaceOfMeeting",
+        "name": "SOTMEET",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Where did you meet the SOT?",
+              "default": "Onde você encontrou o SOT?"
+            }
+          }
+        },
+        "_row_num": 14
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "Transportation",
+        "name": "TRANSPORT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How did you get to the village?",
+              "default": "Como você chegou à tabanca?"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "clause": "if",
+        "condition": "selected(data(\"TRANSPORT\"),\"2\")",
+        "_row_num": 16
+      },
+      {
+        "type": "text",
+        "name": "DRIVER",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which driver?",
+              "default": "Qual condutor?"
+            }
+          }
+        },
+        "_row_num": 17
+      },
+      {
+        "clause": "end if",
+        "_row_num": 18
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 19
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 20
+      },
+      {
+        "type": "time",
+        "name": "BISLEAVE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What time did you leave Bissau?",
+              "default": "A que horas você saiu de Bissau?"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "type": "time",
+        "name": "TABARRIVE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What time did you arrive at the village?",
+              "default": "A que horas você chegou na tabanca?"
+            }
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 23
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 24
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "MaterialSOT",
+        "name": "MATSOT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which materials did the SOT bring to the village?",
+              "default": "Que materiais o SOT trouxe para a tabanca?"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 26
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 27
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "MaterialASS",
+        "name": "MATASS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which extra materials did you bring to the village?",
+              "default": "Que materiais extras você trouxe para a tabanca?"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 29
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 30
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "MaterialGiven",
+        "name": "MATGIVEN",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which extra materials did the SOT need?",
+              "default": "De quais materiais extras o SOT precisava?"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 32
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 33
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "PREGNEW",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Were any new pregnancies registered?",
+              "default": "Foi registrada alguma nova gravidez?"
+            }
+          }
+        },
+        "_row_num": 34
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"PREGNEW\") == \"1\"",
+        "_row_num": 35
+      },
+      {
+        "type": "integer",
+        "name": "PREGNEWNUM",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How many?",
+              "default": "Quantos?"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "PREGNEWTIME",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the SOT take sufficient time to explain the study?",
+              "default": "O SOT demorou tempo suficiente para explicar o estudo?"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "PREGNEWCONS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the SOT get the woman’s or a relative’s consent?",
+              "default": "O SOT obteve o consentimento da mulher ou de um parente?"
+            }
+          }
+        },
+        "_row_num": 38
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "PREGNEWEXPL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the SOT leave a study explanation at the house?",
+              "default": "O SOT deixou uma explicação do estudo em casa?"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "clause": "end if",
+        "_row_num": 40
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 41
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 42
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "PREGEND",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Had any pregnancies ended since last visit?",
+              "default": "Alguma gravidez terminou desde a última visita?"
+            }
+          }
+        },
+        "_row_num": 43
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"PREGEND\") == \"1\"",
+        "_row_num": 44
+      },
+      {
+        "type": "integer",
+        "name": "PREGENDNUM",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How many?",
+              "default": "Quantos?"
+            }
+          }
+        },
+        "_row_num": 45
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "PREGENDTAB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If live birth or stillbirth in a village – did the SOT ask whether it was this exact village?",
+              "default": "Se nasceu vivo ou ainda nasceu em uma aldeia - o SOT perguntou se era exatamente esta tabanca?"
+            }
+          }
+        },
+        "_row_num": 46
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "PREGENDHC",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If live birth or still birth at a health facility – did the SOT ask whether the woman and child came directly to this exact village after the birth?",
+              "default": "Se nasceu vivo ou ainda nasceu em uma unidade de saúde - o SOT perguntou se a mulher e a criança vieram diretamente para esta tabanca após o nascimento?"
+            }
+          }
+        },
+        "_row_num": 47
+      },
+      {
+        "clause": "end if",
+        "_row_num": 48
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 49
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 50
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "CHILDFU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Was follow up conducted on any children?",
+              "default": "Foi o acompanhamento realizado em todas as crianças?"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"CHILDFU\") == \"1\"",
+        "_row_num": 52
+      },
+      {
+        "type": "integer",
+        "name": "CHILDFUNUM",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How many?",
+              "default": "Quantos?"
+            }
+          }
+        },
+        "_row_num": 53
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "CHILDFUCARD",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the SOT ask to see the vaccination card?",
+              "default": "O SOT pediu para ver o cartõe de vacinação?"
+            }
+          }
+        },
+        "_row_num": 54
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "CHILDFUNEWCARD",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If the child was present AND did not already have a vaccination card – did the SOT hand out a vaccination card?",
+              "default": "Se a criança estava presente E ainda não tinha cartão de vacinação - o SOT entregou cartão de vacinação?"
+            }
+          }
+        },
+        "_row_num": 55
+      },
+      {
+        "clause": "end if",
+        "_row_num": 56
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 57
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"CHILDFU\") == \"1\"",
+        "_row_num": 58
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 59
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "CHILDFUBCGOPV",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If the child had received BCG and/or OPV – did the SOT register the dates of BCG and OPV correctly?",
+              "default": "Se a criança recebeu BCG e/ou OPV - o SOT registrou corretamente as datas de BCG e OPV?"
+            }
+          }
+        },
+        "_row_num": 60
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "CHILDFUID",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If the child either had a vaccination card OR was given one – did the SOT write the study ID number correctly at the vaccination card?",
+              "default": "Se a criança tinha um cartão de vacinação OU recebeu um - o SOT escreveu o número de identificação do estudo corretamente no cartão de vacinação?"
+            }
+          }
+        },
+        "_row_num": 61
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "CHILDFUHOSP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If the child was born alive – did the SOT ask whether the child had spent a night at the hospital/health centre?",
+              "default": "Se a criança nasceu viva - o SOT perguntou se a criança havia passado uma noite no hospital / posto de saúde?"
+            }
+          }
+        },
+        "_row_num": 62
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoNotapplicable",
+        "name": "CHILDFUDIED",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If the child had died – did the SOT ask whether the child had spent a night at the hospital/health centre OR died at the hospital/health centre?",
+              "default": "Se a criança havia morrido - o SOT perguntou se a criança havia passado uma noite no hospital / posto de saúde OU morreu no hospital / posto de saúde?"
+            }
+          }
+        },
+        "_row_num": 63
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 64
+      },
+      {
+        "clause": "end if",
+        "_row_num": 65
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 66
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "SOTPROB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Was the SOT unsure of anything during the work?",
+              "default": "O SOT não teve certeza de alguma coisa durante o trabalho?"
+            }
+          }
+        },
+        "_row_num": 67
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"SOTPROB\") == \"1\"",
+        "_row_num": 68
+      },
+      {
+        "type": "text",
+        "name": "SOTPROBDISCR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What?",
+              "default": "Que?"
+            }
+          }
+        },
+        "_row_num": 69
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "SOTPROBHELP",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Were you able to help the SOT?",
+              "default": "Você conseguiu ajudar o SOT?"
+            }
+          }
+        },
+        "_row_num": 70
+      },
+      {
+        "clause": "end if",
+        "_row_num": 71
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 72
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 73
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "ASSPROB",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Were you unsure of anything during the work?",
+              "default": "Você não teve certeza de alguma coisa durante o trabalho?"
+            }
+          }
+        },
+        "_row_num": 74
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"ASSPROB\") == \"1\"",
+        "_row_num": 75
+      },
+      {
+        "type": "text",
+        "name": "ASSPROBDISCR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What?",
+              "default": "Que?"
+            }
+          }
+        },
+        "_row_num": 76
+      },
+      {
+        "type": "text",
+        "name": "ASSPROBRESOL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "How did you solve it?",
+              "default": "Como você resolveu isso?"
+            }
+          }
+        },
+        "_row_num": 77
+      },
+      {
+        "clause": "end if",
+        "_row_num": 78
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 79
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 80
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "SOTWORK",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did the SOT complete the questionnaires satisfactorily?",
+              "default": "O SOT respondeu aos questionários de forma satisfatória?"
+            }
+          }
+        },
+        "_row_num": 81
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"SOTWORK\") == \"2\"",
+        "_row_num": 82
+      },
+      {
+        "type": "text",
+        "name": "SOTWORKDISCR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Why?",
+              "default": "Porque?"
+            }
+          }
+        },
+        "_row_num": 83
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "SOTWORKTELL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did you tell the SOT?",
+              "default": "Você contou ao SOT?"
+            }
+          }
+        },
+        "_row_num": 84
+      },
+      {
+        "clause": "end if",
+        "_row_num": 85
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 86
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 87
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "PROBLEM",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Were there any problems during the day?",
+              "default": "Houve algum problema durante o dia?"
+            }
+          }
+        },
+        "_row_num": 88
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"PROBLEM\") == \"1\"",
+        "_row_num": 89
+      },
+      {
+        "type": "text",
+        "name": "PROBLEMDISCR",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which?",
+              "default": "Que?"
+            }
+          }
+        },
+        "_row_num": 90
+      },
+      {
+        "clause": "end if",
+        "_row_num": 91
+      },
+      {
+        "type": "text",
+        "name": "OBS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Other relevant observations? Anything the investigators and/or other supervisors should know?",
+              "default": "Outras observações relevantes? Algo que os investigadores e/ou outros supervisores devem saber?"
+            }
+          }
+        },
+        "_row_num": 92
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 93
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 94
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "SYNC",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Did you synchronize the SOT's tablet?",
+              "default": "Você sincronizou o tablet do SOT?"
+            }
+          }
+        },
+        "_row_num": 95
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"SYNC\") == \"2\"",
+        "_row_num": 96
+      },
+      {
+        "type": "text",
+        "name": "SYNCNO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Why not?",
+              "default": "Por que não?"
+            }
+          }
+        },
+        "_row_num": 97
+      },
+      {
+        "clause": "end if",
+        "_row_num": 98
+      },
+      {
+        "type": "time",
+        "name": "TABLEAVE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What time did you leave the village?",
+              "default": "A que horas você saiu da tabanca?"
+            }
+          }
+        },
+        "_row_num": 99
+      },
+      {
+        "type": "time",
+        "name": "BISARRIVE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "What time did you arrive at Bissau?",
+              "default": "A que horas você chegou a Bissau?"
+            }
+          }
+        },
+        "_row_num": 100
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 101
+      }
+    ],
+    "choices": [
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Igualdino",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Igualdino",
+              "default": "Igualdino"
+            }
+          }
+        },
+        "_row_num": 2
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Jailson",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Jailson",
+              "default": "Jailson"
+            }
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Laerte",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Laerte",
+              "default": "Laerte"
+            }
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Abdel",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Abdel",
+              "default": "Abdel"
+            }
+          }
+        },
+        "_row_num": 5
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Andreas",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Andreas",
+              "default": "Andreas"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Julie",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Julie",
+              "default": "Julie"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 9
+      },
+      {
+        "choice_list_name": "YesNo",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "PlaceOfMeeting",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Village",
+              "default": "Tabanca"
+            }
+          }
+        },
+        "_row_num": 12
+      },
+      {
+        "choice_list_name": "PlaceOfMeeting",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Health centre",
+              "default": "Centro de saúde"
+            }
+          }
+        },
+        "_row_num": 13
+      },
+      {
+        "choice_list_name": "Transportation",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Scooter",
+              "default": "Mota"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
+        "choice_list_name": "Transportation",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Car",
+              "default": "Carro"
+            }
+          }
+        },
+        "_row_num": 16
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Tablet",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet",
+              "default": "Tablet"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Tablet pouch",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet pouch",
+              "default": "Bolsa para tablet"
+            }
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Tablet charger",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet charger",
+              "default": "Carregador para tablet"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Clipboard",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Clipboard",
+              "default": "Pasta"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "MUAC",
+        "display": {
+          "title": {
+            "text": {
+              "english": "MUAC",
+              "default": "Fita perimetro"
+            }
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Pen",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Pen",
+              "default": "Caneta"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Vaccination cards",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Vaccination cards",
+              "default": "Cartões de vacinação"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Study explaination sheets",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Study explaination sheets",
+              "default": "Folhas de explicação do estudo"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Village calendar",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Village calendar",
+              "default": "Calendário da tabanca"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Phone with saldo",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Phone with saldo",
+              "default": "Telefone com saldo"
+            }
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "choice_list_name": "MaterialSOT",
+        "data_value": "Phone without saldo",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Phone without saldo",
+              "default": "Telefone sem saldo"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Tablet",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet",
+              "default": "Tablet"
+            }
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Tablet pouch",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet pouch",
+              "default": "Bolsa para tablet"
+            }
+          }
+        },
+        "_row_num": 31
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Tablet charger",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet charger",
+              "default": "Carregador para tablet"
+            }
+          }
+        },
+        "_row_num": 32
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Clipboard",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Clipboard",
+              "default": "Pasta"
+            }
+          }
+        },
+        "_row_num": 33
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "MUAC",
+        "display": {
+          "title": {
+            "text": {
+              "english": "MUAC",
+              "default": "Fita perimetro"
+            }
+          }
+        },
+        "_row_num": 34
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Pen",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Pen",
+              "default": "Caneta"
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Vaccination cards",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Vaccination cards",
+              "default": "Cartões de vacinação"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Study explaination sheets",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Study explaination sheets",
+              "default": "Folhas de explicação do estudo"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Village calendar",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Village calendar",
+              "default": "Calendário da tabanca"
+            }
+          }
+        },
+        "_row_num": 38
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Saldo",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Saldo",
+              "default": "Saldo"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "choice_list_name": "MaterialASS",
+        "data_value": "Inernet box",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Inernet box",
+              "default": "Caixa de internet"
+            }
+          }
+        },
+        "_row_num": 40
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Tablet",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet",
+              "default": "Tablet"
+            }
+          }
+        },
+        "_row_num": 42
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Tablet pouch",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet pouch",
+              "default": "Bolsa para tablet"
+            }
+          }
+        },
+        "_row_num": 43
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Tablet charger",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tablet charger",
+              "default": "Carregador para tablet"
+            }
+          }
+        },
+        "_row_num": 44
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Clipboard",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Clipboard",
+              "default": "Pasta"
+            }
+          }
+        },
+        "_row_num": 45
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "MUAC",
+        "display": {
+          "title": {
+            "text": {
+              "english": "MUAC",
+              "default": "Fita perimetro"
+            }
+          }
+        },
+        "_row_num": 46
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Pen",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Pen",
+              "default": "Caneta"
+            }
+          }
+        },
+        "_row_num": 47
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Vaccination cards",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Vaccination cards",
+              "default": "Cartões de vacinação"
+            }
+          }
+        },
+        "_row_num": 48
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Study explaination sheets",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Study explaination sheets",
+              "default": "Folhas de explicação do estudo"
+            }
+          }
+        },
+        "_row_num": 49
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Village calendar",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Village calendar",
+              "default": "Calendário da tabanca"
+            }
+          }
+        },
+        "_row_num": 50
+      },
+      {
+        "choice_list_name": "MaterialGiven",
+        "data_value": "Saldo",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Saldo",
+              "default": "Saldo"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "choice_list_name": "YesNoNotapplicable",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Yes",
+              "default": "Sim"
+            }
+          }
+        },
+        "_row_num": 53
+      },
+      {
+        "choice_list_name": "YesNoNotapplicable",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "No",
+              "default": "Não"
+            }
+          }
+        },
+        "_row_num": 54
+      },
+      {
+        "choice_list_name": "YesNoNotapplicable",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Not applicable",
+              "default": "Não aplicável"
+            }
+          }
+        },
+        "_row_num": 55
       }
     ],
     "prompt_types": [
@@ -175,10 +1542,280 @@
     ],
     "model": [
       {
-        "name": "test",
-        "type": "text",
+        "name": "SUPERVISOR",
+        "type": "select_one_with_other",
         "isSessionVariable": false,
         "_row_num": 2
+      },
+      {
+        "name": "SOT",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 3
+      },
+      {
+        "name": "ASCPRES",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 4
+      },
+      {
+        "name": "ACTNP",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 5
+      },
+      {
+        "name": "SOTFIND",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 6
+      },
+      {
+        "name": "SOTMEET",
+        "type": "select_one_with_other",
+        "isSessionVariable": false,
+        "_row_num": 7
+      },
+      {
+        "name": "TRANSPORT",
+        "type": "select_one_with_other",
+        "isSessionVariable": false,
+        "_row_num": 8
+      },
+      {
+        "name": "DRIVER",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 9
+      },
+      {
+        "name": "BISLEAVE",
+        "type": "time",
+        "isSessionVariable": false,
+        "_row_num": 10
+      },
+      {
+        "name": "TABARRIVE",
+        "type": "time",
+        "isSessionVariable": false,
+        "_row_num": 11
+      },
+      {
+        "name": "MATSOT",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 12
+      },
+      {
+        "name": "MATASS",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 13
+      },
+      {
+        "name": "MATGIVEN",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 14
+      },
+      {
+        "name": "PREGNEW",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 15
+      },
+      {
+        "name": "PREGNEWNUM",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 16
+      },
+      {
+        "name": "PREGNEWTIME",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 17
+      },
+      {
+        "name": "PREGNEWCONS",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 18
+      },
+      {
+        "name": "PREGNEWEXPL",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 19
+      },
+      {
+        "name": "PREGEND",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 20
+      },
+      {
+        "name": "PREGENDNUM",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 21
+      },
+      {
+        "name": "PREGENDTAB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 22
+      },
+      {
+        "name": "PREGENDHC",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 23
+      },
+      {
+        "name": "CHILDFU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 24
+      },
+      {
+        "name": "CHILDFUNUM",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 25
+      },
+      {
+        "name": "CHILDFUCARD",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 26
+      },
+      {
+        "name": "CHILDFUNEWCARD",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 27
+      },
+      {
+        "name": "CHILDFUBCGOPV",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 28
+      },
+      {
+        "name": "CHILDFUID",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 29
+      },
+      {
+        "name": "CHILDFUHOSP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 30
+      },
+      {
+        "name": "CHILDFUDIED",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 31
+      },
+      {
+        "name": "SOTPROB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 32
+      },
+      {
+        "name": "SOTPROBDISCR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 33
+      },
+      {
+        "name": "SOTPROBHELP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 34
+      },
+      {
+        "name": "ASSPROB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 35
+      },
+      {
+        "name": "ASSPROBDISCR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 36
+      },
+      {
+        "name": "ASSPROBRESOL",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 37
+      },
+      {
+        "name": "SOTWORK",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 38
+      },
+      {
+        "name": "SOTWORKDISCR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
+        "name": "SOTWORKTELL",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 40
+      },
+      {
+        "name": "PROBLEM",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 41
+      },
+      {
+        "name": "PROBLEMDISCR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 42
+      },
+      {
+        "name": "OBS",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 43
+      },
+      {
+        "name": "SYNC",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 44
+      },
+      {
+        "name": "SYNCNO",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 45
+      },
+      {
+        "name": "TABLEAVE",
+        "type": "time",
+        "isSessionVariable": false,
+        "_row_num": 46
+      },
+      {
+        "name": "BISARRIVE",
+        "type": "time",
+        "isSessionVariable": false,
+        "_row_num": 47
       }
     ],
     "properties": [
@@ -329,6 +1966,86 @@
       }
     },
     "choices": {
+      "Assistants": [
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Igualdino",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Igualdino",
+                "default": "Igualdino"
+              }
+            }
+          },
+          "_row_num": 2
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Jailson",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Jailson",
+                "default": "Jailson"
+              }
+            }
+          },
+          "_row_num": 3
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Laerte",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Laerte",
+                "default": "Laerte"
+              }
+            }
+          },
+          "_row_num": 4
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Abdel",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Abdel",
+                "default": "Abdel"
+              }
+            }
+          },
+          "_row_num": 5
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Andreas",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Andreas",
+                "default": "Andreas"
+              }
+            }
+          },
+          "_row_num": 6
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Julie",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Julie",
+                "default": "Julie"
+              }
+            }
+          },
+          "_row_num": 7
+        }
+      ],
       "YesNo": [
         {
           "choice_list_name": "YesNo",
@@ -341,7 +2058,7 @@
               }
             }
           },
-          "_row_num": 2
+          "_row_num": 9
         },
         {
           "choice_list_name": "YesNo",
@@ -354,12 +2071,490 @@
               }
             }
           },
-          "_row_num": 3
+          "_row_num": 10
         }
       ],
-      "YesNoDontknow": [
+      "PlaceOfMeeting": [
         {
-          "choice_list_name": "YesNoDontknow",
+          "choice_list_name": "PlaceOfMeeting",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Village",
+                "default": "Tabanca"
+              }
+            }
+          },
+          "_row_num": 12
+        },
+        {
+          "choice_list_name": "PlaceOfMeeting",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Health centre",
+                "default": "Centro de saúde"
+              }
+            }
+          },
+          "_row_num": 13
+        }
+      ],
+      "Transportation": [
+        {
+          "choice_list_name": "Transportation",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Scooter",
+                "default": "Mota"
+              }
+            }
+          },
+          "_row_num": 15
+        },
+        {
+          "choice_list_name": "Transportation",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Car",
+                "default": "Carro"
+              }
+            }
+          },
+          "_row_num": 16
+        }
+      ],
+      "MaterialSOT": [
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Tablet",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet",
+                "default": "Tablet"
+              }
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Tablet pouch",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet pouch",
+                "default": "Bolsa para tablet"
+              }
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Tablet charger",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet charger",
+                "default": "Carregador para tablet"
+              }
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Clipboard",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Clipboard",
+                "default": "Pasta"
+              }
+            }
+          },
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "MUAC",
+          "display": {
+            "title": {
+              "text": {
+                "english": "MUAC",
+                "default": "Fita perimetro"
+              }
+            }
+          },
+          "_row_num": 22
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Pen",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Pen",
+                "default": "Caneta"
+              }
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Vaccination cards",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Vaccination cards",
+                "default": "Cartões de vacinação"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Study explaination sheets",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Study explaination sheets",
+                "default": "Folhas de explicação do estudo"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Village calendar",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Village calendar",
+                "default": "Calendário da tabanca"
+              }
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Phone with saldo",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Phone with saldo",
+                "default": "Telefone com saldo"
+              }
+            }
+          },
+          "_row_num": 27
+        },
+        {
+          "choice_list_name": "MaterialSOT",
+          "data_value": "Phone without saldo",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Phone without saldo",
+                "default": "Telefone sem saldo"
+              }
+            }
+          },
+          "_row_num": 28
+        }
+      ],
+      "MaterialASS": [
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Tablet",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet",
+                "default": "Tablet"
+              }
+            }
+          },
+          "_row_num": 30
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Tablet pouch",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet pouch",
+                "default": "Bolsa para tablet"
+              }
+            }
+          },
+          "_row_num": 31
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Tablet charger",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet charger",
+                "default": "Carregador para tablet"
+              }
+            }
+          },
+          "_row_num": 32
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Clipboard",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Clipboard",
+                "default": "Pasta"
+              }
+            }
+          },
+          "_row_num": 33
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "MUAC",
+          "display": {
+            "title": {
+              "text": {
+                "english": "MUAC",
+                "default": "Fita perimetro"
+              }
+            }
+          },
+          "_row_num": 34
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Pen",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Pen",
+                "default": "Caneta"
+              }
+            }
+          },
+          "_row_num": 35
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Vaccination cards",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Vaccination cards",
+                "default": "Cartões de vacinação"
+              }
+            }
+          },
+          "_row_num": 36
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Study explaination sheets",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Study explaination sheets",
+                "default": "Folhas de explicação do estudo"
+              }
+            }
+          },
+          "_row_num": 37
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Village calendar",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Village calendar",
+                "default": "Calendário da tabanca"
+              }
+            }
+          },
+          "_row_num": 38
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Saldo",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Saldo",
+                "default": "Saldo"
+              }
+            }
+          },
+          "_row_num": 39
+        },
+        {
+          "choice_list_name": "MaterialASS",
+          "data_value": "Inernet box",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Inernet box",
+                "default": "Caixa de internet"
+              }
+            }
+          },
+          "_row_num": 40
+        }
+      ],
+      "MaterialGiven": [
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Tablet",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet",
+                "default": "Tablet"
+              }
+            }
+          },
+          "_row_num": 42
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Tablet pouch",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet pouch",
+                "default": "Bolsa para tablet"
+              }
+            }
+          },
+          "_row_num": 43
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Tablet charger",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tablet charger",
+                "default": "Carregador para tablet"
+              }
+            }
+          },
+          "_row_num": 44
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Clipboard",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Clipboard",
+                "default": "Pasta"
+              }
+            }
+          },
+          "_row_num": 45
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "MUAC",
+          "display": {
+            "title": {
+              "text": {
+                "english": "MUAC",
+                "default": "Fita perimetro"
+              }
+            }
+          },
+          "_row_num": 46
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Pen",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Pen",
+                "default": "Caneta"
+              }
+            }
+          },
+          "_row_num": 47
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Vaccination cards",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Vaccination cards",
+                "default": "Cartões de vacinação"
+              }
+            }
+          },
+          "_row_num": 48
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Study explaination sheets",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Study explaination sheets",
+                "default": "Folhas de explicação do estudo"
+              }
+            }
+          },
+          "_row_num": 49
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Village calendar",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Village calendar",
+                "default": "Calendário da tabanca"
+              }
+            }
+          },
+          "_row_num": 50
+        },
+        {
+          "choice_list_name": "MaterialGiven",
+          "data_value": "Saldo",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Saldo",
+                "default": "Saldo"
+              }
+            }
+          },
+          "_row_num": 51
+        }
+      ],
+      "YesNoNotapplicable": [
+        {
+          "choice_list_name": "YesNoNotapplicable",
           "data_value": "1",
           "display": {
             "title": {
@@ -369,10 +2564,10 @@
               }
             }
           },
-          "_row_num": 5
+          "_row_num": 53
         },
         {
-          "choice_list_name": "YesNoDontknow",
+          "choice_list_name": "YesNoNotapplicable",
           "data_value": "2",
           "display": {
             "title": {
@@ -382,20 +2577,20 @@
               }
             }
           },
-          "_row_num": 6
+          "_row_num": 54
         },
         {
-          "choice_list_name": "YesNoDontknow",
+          "choice_list_name": "YesNoNotapplicable",
           "data_value": "3",
           "display": {
             "title": {
               "text": {
-                "english": "Don't know",
-                "default": "Não sabe"
+                "english": "Not applicable",
+                "default": "Não aplicável"
               }
             }
           },
-          "_row_num": 7
+          "_row_num": 55
         }
       ]
     },
@@ -405,11 +2600,12 @@
     "queries": {},
     "calculates": {},
     "model": {
-      "test": {
+      "SUPERVISOR": {
         "type": "string",
+        "valuesList": "Assistants",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 3,
             "section_name": "survey"
           },
           {
@@ -418,7 +2614,726 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "test"
+        "elementKey": "SUPERVISOR"
+      },
+      "SOT": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOT"
+      },
+      "ASCPRES": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASCPRES"
+      },
+      "ACTNP": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ACTNP"
+      },
+      "SOTFIND": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTFIND"
+      },
+      "SOTMEET": {
+        "type": "string",
+        "valuesList": "PlaceOfMeeting",
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTMEET"
+      },
+      "TRANSPORT": {
+        "type": "string",
+        "valuesList": "Transportation",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRANSPORT"
+      },
+      "DRIVER": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DRIVER"
+      },
+      "BISLEAVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BISLEAVE"
+      },
+      "TABARRIVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABARRIVE"
+      },
+      "MATSOT": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MATSOT_items"
+        },
+        "valuesList": "MaterialSOT",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MATSOT"
+      },
+      "MATASS": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MATASS_items"
+        },
+        "valuesList": "MaterialASS",
+        "_defn": [
+          {
+            "_row_num": 28,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MATASS"
+      },
+      "MATGIVEN": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MATGIVEN_items"
+        },
+        "valuesList": "MaterialGiven",
+        "_defn": [
+          {
+            "_row_num": 31,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MATGIVEN"
+      },
+      "PREGNEW": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 34,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEW"
+      },
+      "PREGNEWNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWNUM"
+      },
+      "PREGNEWTIME": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWTIME"
+      },
+      "PREGNEWCONS": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWCONS"
+      },
+      "PREGNEWEXPL": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWEXPL"
+      },
+      "PREGEND": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 43,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGEND"
+      },
+      "PREGENDNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGENDNUM"
+      },
+      "PREGENDTAB": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 46,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGENDTAB"
+      },
+      "PREGENDHC": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 47,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGENDHC"
+      },
+      "CHILDFU": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 51,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFU"
+      },
+      "CHILDFUNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 53,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUNUM"
+      },
+      "CHILDFUCARD": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUCARD"
+      },
+      "CHILDFUNEWCARD": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 55,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 27,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUNEWCARD"
+      },
+      "CHILDFUBCGOPV": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUBCGOPV"
+      },
+      "CHILDFUID": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 29,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUID"
+      },
+      "CHILDFUHOSP": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 30,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUHOSP"
+      },
+      "CHILDFUDIED": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 31,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUDIED"
+      },
+      "SOTPROB": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTPROB"
+      },
+      "SOTPROBDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTPROBDISCR"
+      },
+      "SOTPROBHELP": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTPROBHELP"
+      },
+      "ASSPROB": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSPROB"
+      },
+      "ASSPROBDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 76,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSPROBDISCR"
+      },
+      "ASSPROBRESOL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSPROBRESOL"
+      },
+      "SOTWORK": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTWORK"
+      },
+      "SOTWORKDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTWORKDISCR"
+      },
+      "SOTWORKTELL": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 84,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 40,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTWORKTELL"
+      },
+      "PROBLEM": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 88,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 41,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PROBLEM"
+      },
+      "PROBLEMDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 90,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 42,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PROBLEMDISCR"
+      },
+      "OBS": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 92,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 43,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OBS"
+      },
+      "SYNC": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 95,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 44,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SYNC"
+      },
+      "SYNCNO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 97,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 45,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SYNCNO"
+      },
+      "TABLEAVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 99,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 46,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABLEAVE"
+      },
+      "BISARRIVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 100,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 47,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BISARRIVE"
       }
     },
     "section_names": [
@@ -432,47 +3347,869 @@
         "reachable_sections": {},
         "prompts": [
           {
-            "type": "note",
+            "type": "select_one_with_other",
+            "values_list": "Assistants",
+            "name": "SUPERVISOR",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "text",
-                  "default": "text"
+                  "english": "Supervisor",
+                  "default": "Supervisor"
                 }
               }
             },
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
-            "_type": "note",
+            "_type": "select_one_with_other",
             "_branch_label_enclosing_screen": "survey/_screen2",
             "promptIdx": 0
           },
           {
             "type": "text",
-            "name": "test",
+            "name": "SOT",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "test",
-                  "default": "test"
+                  "english": "Name of SOT",
+                  "default": "Nome de SOT"
                 }
               }
             },
-            "_row_num": 4,
-            "__rowNum__": 3,
+            "_row_num": 6,
+            "__rowNum__": 5,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen2",
+            "_branch_label_enclosing_screen": "survey/_screen5",
             "promptIdx": 1
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "ASCPRES",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Is ASC present?",
+                  "default": "ASC presente?"
+                }
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 2
+          },
+          {
+            "type": "text",
+            "name": "ACTNP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Why not?",
+                  "default": "Por quê?"
+                }
+              }
+            },
+            "_row_num": 9,
+            "__rowNum__": 8,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen5",
+            "promptIdx": 3
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "SOTFIND",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Was it diffecult to find the SOT?",
+                  "default": "Foi difícil encontrar o SOT?"
+                }
+              }
+            },
+            "_row_num": 13,
+            "__rowNum__": 12,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 4
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "PlaceOfMeeting",
+            "name": "SOTMEET",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Where did you meet the SOT?",
+                  "default": "Onde você encontrou o SOT?"
+                }
+              }
+            },
+            "_row_num": 14,
+            "__rowNum__": 13,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 5
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "Transportation",
+            "name": "TRANSPORT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How did you get to the village?",
+                  "default": "Como você chegou à tabanca?"
+                }
+              }
+            },
+            "_row_num": 15,
+            "__rowNum__": 14,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 6
+          },
+          {
+            "type": "text",
+            "name": "DRIVER",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which driver?",
+                  "default": "Qual condutor?"
+                }
+              }
+            },
+            "_row_num": 17,
+            "__rowNum__": 16,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen12",
+            "promptIdx": 7
+          },
+          {
+            "type": "time",
+            "name": "BISLEAVE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What time did you leave Bissau?",
+                  "default": "A que horas você saiu de Bissau?"
+                }
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "time",
+            "_branch_label_enclosing_screen": "survey/_screen20",
+            "promptIdx": 8
+          },
+          {
+            "type": "time",
+            "name": "TABARRIVE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What time did you arrive at the village?",
+                  "default": "A que horas você chegou na tabanca?"
+                }
+              }
+            },
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "prompt",
+            "_type": "time",
+            "_branch_label_enclosing_screen": "survey/_screen20",
+            "promptIdx": 9
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "MaterialSOT",
+            "name": "MATSOT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which materials did the SOT bring to the village?",
+                  "default": "Que materiais o SOT trouxe para a tabanca?"
+                }
+              }
+            },
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen24",
+            "promptIdx": 10
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "MaterialASS",
+            "name": "MATASS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which extra materials did you bring to the village?",
+                  "default": "Que materiais extras você trouxe para a tabanca?"
+                }
+              }
+            },
+            "_row_num": 28,
+            "__rowNum__": 27,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen27",
+            "promptIdx": 11
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "MaterialGiven",
+            "name": "MATGIVEN",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which extra materials did the SOT need?",
+                  "default": "De quais materiais extras o SOT precisava?"
+                }
+              }
+            },
+            "_row_num": 31,
+            "__rowNum__": 30,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 12
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "PREGNEW",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Were any new pregnancies registered?",
+                  "default": "Foi registrada alguma nova gravidez?"
+                }
+              }
+            },
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 13
+          },
+          {
+            "type": "integer",
+            "name": "PREGNEWNUM",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How many?",
+                  "default": "Quantos?"
+                }
+              }
+            },
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 14
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "PREGNEWTIME",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the SOT take sufficient time to explain the study?",
+                  "default": "O SOT demorou tempo suficiente para explicar o estudo?"
+                }
+              }
+            },
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 15
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "PREGNEWCONS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the SOT get the woman’s or a relative’s consent?",
+                  "default": "O SOT obteve o consentimento da mulher ou de um parente?"
+                }
+              }
+            },
+            "_row_num": 38,
+            "__rowNum__": 37,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 16
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "PREGNEWEXPL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the SOT leave a study explanation at the house?",
+                  "default": "O SOT deixou uma explicação do estudo em casa?"
+                }
+              }
+            },
+            "_row_num": 39,
+            "__rowNum__": 38,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen33",
+            "promptIdx": 17
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "PREGEND",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Had any pregnancies ended since last visit?",
+                  "default": "Alguma gravidez terminou desde a última visita?"
+                }
+              }
+            },
+            "_row_num": 43,
+            "__rowNum__": 42,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen42",
+            "promptIdx": 18
+          },
+          {
+            "type": "integer",
+            "name": "PREGENDNUM",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How many?",
+                  "default": "Quantos?"
+                }
+              }
+            },
+            "_row_num": 45,
+            "__rowNum__": 44,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen42",
+            "promptIdx": 19
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "PREGENDTAB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If live birth or stillbirth in a village – did the SOT ask whether it was this exact village?",
+                  "default": "Se nasceu vivo ou ainda nasceu em uma aldeia - o SOT perguntou se era exatamente esta tabanca?"
+                }
+              }
+            },
+            "_row_num": 46,
+            "__rowNum__": 45,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen42",
+            "promptIdx": 20
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "PREGENDHC",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If live birth or still birth at a health facility – did the SOT ask whether the woman and child came directly to this exact village after the birth?",
+                  "default": "Se nasceu vivo ou ainda nasceu em uma unidade de saúde - o SOT perguntou se a mulher e a criança vieram diretamente para esta tabanca após o nascimento?"
+                }
+              }
+            },
+            "_row_num": 47,
+            "__rowNum__": 46,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen42",
+            "promptIdx": 21
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "CHILDFU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Was follow up conducted on any children?",
+                  "default": "Foi o acompanhamento realizado em todas as crianças?"
+                }
+              }
+            },
+            "_row_num": 51,
+            "__rowNum__": 50,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 22
+          },
+          {
+            "type": "integer",
+            "name": "CHILDFUNUM",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How many?",
+                  "default": "Quantos?"
+                }
+              }
+            },
+            "_row_num": 53,
+            "__rowNum__": 52,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 23
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "CHILDFUCARD",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the SOT ask to see the vaccination card?",
+                  "default": "O SOT pediu para ver o cartõe de vacinação?"
+                }
+              }
+            },
+            "_row_num": 54,
+            "__rowNum__": 53,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 24
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "CHILDFUNEWCARD",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If the child was present AND did not already have a vaccination card – did the SOT hand out a vaccination card?",
+                  "default": "Se a criança estava presente E ainda não tinha cartão de vacinação - o SOT entregou cartão de vacinação?"
+                }
+              }
+            },
+            "_row_num": 55,
+            "__rowNum__": 54,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen50",
+            "promptIdx": 25
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "CHILDFUBCGOPV",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If the child had received BCG and/or OPV – did the SOT register the dates of BCG and OPV correctly?",
+                  "default": "Se a criança recebeu BCG e/ou OPV - o SOT registrou corretamente as datas de BCG e OPV?"
+                }
+              }
+            },
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 26
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "CHILDFUID",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If the child either had a vaccination card OR was given one – did the SOT write the study ID number correctly at the vaccination card?",
+                  "default": "Se a criança tinha um cartão de vacinação OU recebeu um - o SOT escreveu o número de identificação do estudo corretamente no cartão de vacinação?"
+                }
+              }
+            },
+            "_row_num": 61,
+            "__rowNum__": 60,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 27
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "CHILDFUHOSP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If the child was born alive – did the SOT ask whether the child had spent a night at the hospital/health centre?",
+                  "default": "Se a criança nasceu viva - o SOT perguntou se a criança havia passado uma noite no hospital / posto de saúde?"
+                }
+              }
+            },
+            "_row_num": 62,
+            "__rowNum__": 61,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 28
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoNotapplicable",
+            "name": "CHILDFUDIED",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If the child had died – did the SOT ask whether the child had spent a night at the hospital/health centre OR died at the hospital/health centre?",
+                  "default": "Se a criança havia morrido - o SOT perguntou se a criança havia passado uma noite no hospital / posto de saúde OU morreu no hospital / posto de saúde?"
+                }
+              }
+            },
+            "_row_num": 63,
+            "__rowNum__": 62,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 29
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "SOTPROB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Was the SOT unsure of anything during the work?",
+                  "default": "O SOT não teve certeza de alguma coisa durante o trabalho?"
+                }
+              }
+            },
+            "_row_num": 67,
+            "__rowNum__": 66,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 30
+          },
+          {
+            "type": "text",
+            "name": "SOTPROBDISCR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What?",
+                  "default": "Que?"
+                }
+              }
+            },
+            "_row_num": 69,
+            "__rowNum__": 68,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 31
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "SOTPROBHELP",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Were you able to help the SOT?",
+                  "default": "Você conseguiu ajudar o SOT?"
+                }
+              }
+            },
+            "_row_num": 70,
+            "__rowNum__": 69,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen66",
+            "promptIdx": 32
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "ASSPROB",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Were you unsure of anything during the work?",
+                  "default": "Você não teve certeza de alguma coisa durante o trabalho?"
+                }
+              }
+            },
+            "_row_num": 74,
+            "__rowNum__": 73,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen73",
+            "promptIdx": 33
+          },
+          {
+            "type": "text",
+            "name": "ASSPROBDISCR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What?",
+                  "default": "Que?"
+                }
+              }
+            },
+            "_row_num": 76,
+            "__rowNum__": 75,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen73",
+            "promptIdx": 34
+          },
+          {
+            "type": "text",
+            "name": "ASSPROBRESOL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "How did you solve it?",
+                  "default": "Como você resolveu isso?"
+                }
+              }
+            },
+            "_row_num": 77,
+            "__rowNum__": 76,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen73",
+            "promptIdx": 35
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "SOTWORK",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did the SOT complete the questionnaires satisfactorily?",
+                  "default": "O SOT respondeu aos questionários de forma satisfatória?"
+                }
+              }
+            },
+            "_row_num": 81,
+            "__rowNum__": 80,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 36
+          },
+          {
+            "type": "text",
+            "name": "SOTWORKDISCR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Why?",
+                  "default": "Porque?"
+                }
+              }
+            },
+            "_row_num": 83,
+            "__rowNum__": 82,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 37
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "SOTWORKTELL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did you tell the SOT?",
+                  "default": "Você contou ao SOT?"
+                }
+              }
+            },
+            "_row_num": 84,
+            "__rowNum__": 83,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 38
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "PROBLEM",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Were there any problems during the day?",
+                  "default": "Houve algum problema durante o dia?"
+                }
+              }
+            },
+            "_row_num": 88,
+            "__rowNum__": 87,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 39
+          },
+          {
+            "type": "text",
+            "name": "PROBLEMDISCR",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which?",
+                  "default": "Que?"
+                }
+              }
+            },
+            "_row_num": 90,
+            "__rowNum__": 89,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 40
+          },
+          {
+            "type": "text",
+            "name": "OBS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Other relevant observations? Anything the investigators and/or other supervisors should know?",
+                  "default": "Outras observações relevantes? Algo que os investigadores e/ou outros supervisores devem saber?"
+                }
+              }
+            },
+            "_row_num": 92,
+            "__rowNum__": 91,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen87",
+            "promptIdx": 41
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "SYNC",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Did you synchronize the SOT's tablet?",
+                  "default": "Você sincronizou o tablet do SOT?"
+                }
+              }
+            },
+            "_row_num": 95,
+            "__rowNum__": 94,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen94",
+            "promptIdx": 42
+          },
+          {
+            "type": "text",
+            "name": "SYNCNO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Why not?",
+                  "default": "Por que não?"
+                }
+              }
+            },
+            "_row_num": 97,
+            "__rowNum__": 96,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen94",
+            "promptIdx": 43
+          },
+          {
+            "type": "time",
+            "name": "TABLEAVE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What time did you leave the village?",
+                  "default": "A que horas você saiu da tabanca?"
+                }
+              }
+            },
+            "_row_num": 99,
+            "__rowNum__": 98,
+            "_token_type": "prompt",
+            "_type": "time",
+            "_branch_label_enclosing_screen": "survey/_screen94",
+            "promptIdx": 44
+          },
+          {
+            "type": "time",
+            "name": "BISARRIVE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "What time did you arrive at Bissau?",
+                  "default": "A que horas você chegou a Bissau?"
+                }
+              }
+            },
+            "_row_num": 100,
+            "__rowNum__": 99,
+            "_token_type": "prompt",
+            "_type": "time",
+            "_branch_label_enclosing_screen": "survey/_screen94",
+            "promptIdx": 45
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 6,
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 2
+            "_row_num": 102,
+            "_branch_label_enclosing_screen": "survey/_screen102",
+            "promptIdx": 46
           }
         ],
         "validation_tag_map": {
@@ -486,39 +4223,290 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 5,
-              "__rowNum__": 4,
+              "_row_num": 4,
+              "__rowNum__": 3,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 11,
+              "__rowNum__": 10,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nif (data(\"ASCPRES\") == \"2\") {\nactivePromptIndicies.push(3);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 1
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 19,
+              "__rowNum__": 18,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\nif (selected(data(\"TRANSPORT\"),\"2\")) {\nactivePromptIndicies.push(7);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 2
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 20,
+            "__rowNum__": 19,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 23,
+              "__rowNum__": 22,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 3
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 26,
+              "__rowNum__": 25,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 4
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 29,
+              "__rowNum__": 28,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 5
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 32,
+              "__rowNum__": 31,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 33,
+            "__rowNum__": 32,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 41,
+              "__rowNum__": 40,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\nif (data(\"PREGNEW\") == \"1\") {\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 7
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 42,
+            "__rowNum__": 41,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 49,
+              "__rowNum__": 48,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nif (data(\"PREGEND\") == \"1\") {\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 8
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 50,
+            "__rowNum__": 49,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 57,
+              "__rowNum__": 56,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nif (data(\"CHILDFU\") == \"1\") {\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"CHILDFU\") == \"1\"",
+            "_row_num": 58,
+            "__rowNum__": 57,
+            "_token_type": "goto_label",
+            "_branch_label": "_then58",
+            "operationIdx": 10
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else65",
+            "_row_num": 65,
+            "operationIdx": 11
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 64,
+              "__rowNum__": 63,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 12
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif65",
+            "_row_num": 65,
+            "operationIdx": 13
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 66,
+            "__rowNum__": 65,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 72,
+              "__rowNum__": 71,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nif (data(\"SOTPROB\") == \"1\") {\nactivePromptIndicies.push(31);\nactivePromptIndicies.push(32);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 14
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 73,
+            "__rowNum__": 72,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 79,
+              "__rowNum__": 78,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\nif (data(\"ASSPROB\") == \"1\") {\nactivePromptIndicies.push(34);\nactivePromptIndicies.push(35);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 15
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 80,
+            "__rowNum__": 79,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 86,
+              "__rowNum__": 85,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\nif (data(\"SOTWORK\") == \"2\") {\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 87,
+            "__rowNum__": 86,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 93,
+              "__rowNum__": 92,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nif (data(\"PROBLEM\") == \"1\") {\nactivePromptIndicies.push(40);\n}\nactivePromptIndicies.push(41);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 17
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 94,
+            "__rowNum__": 93,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 101,
+              "__rowNum__": 100,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(42);\nif (data(\"SYNC\") == \"2\") {\nactivePromptIndicies.push(43);\n}\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 18
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 6,
-            "operationIdx": 1
+            "_row_num": 102,
+            "operationIdx": 19
           },
           {
-            "_row_num": 6,
+            "_row_num": 102,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 2
+            "operationIdx": 20
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 6,
-            "operationIdx": 3
+            "_row_num": 102,
+            "operationIdx": 21
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_contents": 2,
-          "_screen6": 2
+          "_screen5": 1,
+          "_screen12": 2,
+          "_screen20": 3,
+          "_screen24": 4,
+          "_screen27": 5,
+          "_screen30": 6,
+          "_screen33": 7,
+          "_screen42": 8,
+          "_screen50": 9,
+          "_then58": 12,
+          "_screen59": 12,
+          "_else65": 14,
+          "_endif65": 14,
+          "_screen66": 14,
+          "_screen73": 15,
+          "_screen80": 16,
+          "_screen87": 17,
+          "_screen94": 18,
+          "_contents": 20,
+          "_screen102": 20
         }
       },
       "initial": {
@@ -703,11 +4691,12 @@
       }
     },
     "dataTableModel": {
-      "test": {
+      "SUPERVISOR": {
         "type": "string",
+        "valuesList": "Assistants",
         "_defn": [
           {
-            "_row_num": 4,
+            "_row_num": 3,
             "section_name": "survey"
           },
           {
@@ -716,10 +4705,909 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "test",
-        "elementName": "test",
+        "elementKey": "SUPERVISOR",
+        "elementName": "SUPERVISOR",
         "elementSet": "data",
-        "elementPath": "test"
+        "elementPath": "SUPERVISOR"
+      },
+      "SOT": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 6,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOT",
+        "elementName": "SOT",
+        "elementSet": "data",
+        "elementPath": "SOT"
+      },
+      "ASCPRES": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASCPRES",
+        "elementName": "ASCPRES",
+        "elementSet": "data",
+        "elementPath": "ASCPRES"
+      },
+      "ACTNP": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 9,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ACTNP",
+        "elementName": "ACTNP",
+        "elementSet": "data",
+        "elementPath": "ACTNP"
+      },
+      "SOTFIND": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 13,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTFIND",
+        "elementName": "SOTFIND",
+        "elementSet": "data",
+        "elementPath": "SOTFIND"
+      },
+      "SOTMEET": {
+        "type": "string",
+        "valuesList": "PlaceOfMeeting",
+        "_defn": [
+          {
+            "_row_num": 14,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTMEET",
+        "elementName": "SOTMEET",
+        "elementSet": "data",
+        "elementPath": "SOTMEET"
+      },
+      "TRANSPORT": {
+        "type": "string",
+        "valuesList": "Transportation",
+        "_defn": [
+          {
+            "_row_num": 15,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRANSPORT",
+        "elementName": "TRANSPORT",
+        "elementSet": "data",
+        "elementPath": "TRANSPORT"
+      },
+      "DRIVER": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 17,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "DRIVER",
+        "elementName": "DRIVER",
+        "elementSet": "data",
+        "elementPath": "DRIVER"
+      },
+      "BISLEAVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 21,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BISLEAVE",
+        "elementName": "BISLEAVE",
+        "elementSet": "data",
+        "elementPath": "BISLEAVE"
+      },
+      "TABARRIVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABARRIVE",
+        "elementName": "TABARRIVE",
+        "elementSet": "data",
+        "elementPath": "TABARRIVE"
+      },
+      "MATSOT": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MATSOT_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "MATSOT.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "MaterialSOT",
+        "_defn": [
+          {
+            "_row_num": 25,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MATSOT",
+        "elementName": "MATSOT",
+        "elementSet": "data",
+        "elementPath": "MATSOT",
+        "listChildElementKeys": [
+          "MATSOT_items"
+        ]
+      },
+      "MATASS": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MATASS_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "MATASS.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "MaterialASS",
+        "_defn": [
+          {
+            "_row_num": 28,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MATASS",
+        "elementName": "MATASS",
+        "elementSet": "data",
+        "elementPath": "MATASS",
+        "listChildElementKeys": [
+          "MATASS_items"
+        ]
+      },
+      "MATGIVEN": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "MATGIVEN_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "MATGIVEN.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "MaterialGiven",
+        "_defn": [
+          {
+            "_row_num": 31,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "MATGIVEN",
+        "elementName": "MATGIVEN",
+        "elementSet": "data",
+        "elementPath": "MATGIVEN",
+        "listChildElementKeys": [
+          "MATGIVEN_items"
+        ]
+      },
+      "PREGNEW": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 34,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEW",
+        "elementName": "PREGNEW",
+        "elementSet": "data",
+        "elementPath": "PREGNEW"
+      },
+      "PREGNEWNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWNUM",
+        "elementName": "PREGNEWNUM",
+        "elementSet": "data",
+        "elementPath": "PREGNEWNUM"
+      },
+      "PREGNEWTIME": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWTIME",
+        "elementName": "PREGNEWTIME",
+        "elementSet": "data",
+        "elementPath": "PREGNEWTIME"
+      },
+      "PREGNEWCONS": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 38,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWCONS",
+        "elementName": "PREGNEWCONS",
+        "elementSet": "data",
+        "elementPath": "PREGNEWCONS"
+      },
+      "PREGNEWEXPL": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 39,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGNEWEXPL",
+        "elementName": "PREGNEWEXPL",
+        "elementSet": "data",
+        "elementPath": "PREGNEWEXPL"
+      },
+      "PREGEND": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 43,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 20,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGEND",
+        "elementName": "PREGEND",
+        "elementSet": "data",
+        "elementPath": "PREGEND"
+      },
+      "PREGENDNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 21,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGENDNUM",
+        "elementName": "PREGENDNUM",
+        "elementSet": "data",
+        "elementPath": "PREGENDNUM"
+      },
+      "PREGENDTAB": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 46,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 22,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGENDTAB",
+        "elementName": "PREGENDTAB",
+        "elementSet": "data",
+        "elementPath": "PREGENDTAB"
+      },
+      "PREGENDHC": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 47,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PREGENDHC",
+        "elementName": "PREGENDHC",
+        "elementSet": "data",
+        "elementPath": "PREGENDHC"
+      },
+      "CHILDFU": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 51,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFU",
+        "elementName": "CHILDFU",
+        "elementSet": "data",
+        "elementPath": "CHILDFU"
+      },
+      "CHILDFUNUM": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 53,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 25,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUNUM",
+        "elementName": "CHILDFUNUM",
+        "elementSet": "data",
+        "elementPath": "CHILDFUNUM"
+      },
+      "CHILDFUCARD": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUCARD",
+        "elementName": "CHILDFUCARD",
+        "elementSet": "data",
+        "elementPath": "CHILDFUCARD"
+      },
+      "CHILDFUNEWCARD": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 55,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 27,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUNEWCARD",
+        "elementName": "CHILDFUNEWCARD",
+        "elementSet": "data",
+        "elementPath": "CHILDFUNEWCARD"
+      },
+      "CHILDFUBCGOPV": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUBCGOPV",
+        "elementName": "CHILDFUBCGOPV",
+        "elementSet": "data",
+        "elementPath": "CHILDFUBCGOPV"
+      },
+      "CHILDFUID": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 29,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUID",
+        "elementName": "CHILDFUID",
+        "elementSet": "data",
+        "elementPath": "CHILDFUID"
+      },
+      "CHILDFUHOSP": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 30,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUHOSP",
+        "elementName": "CHILDFUHOSP",
+        "elementSet": "data",
+        "elementPath": "CHILDFUHOSP"
+      },
+      "CHILDFUDIED": {
+        "type": "string",
+        "valuesList": "YesNoNotapplicable",
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 31,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CHILDFUDIED",
+        "elementName": "CHILDFUDIED",
+        "elementSet": "data",
+        "elementPath": "CHILDFUDIED"
+      },
+      "SOTPROB": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTPROB",
+        "elementName": "SOTPROB",
+        "elementSet": "data",
+        "elementPath": "SOTPROB"
+      },
+      "SOTPROBDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 33,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTPROBDISCR",
+        "elementName": "SOTPROBDISCR",
+        "elementSet": "data",
+        "elementPath": "SOTPROBDISCR"
+      },
+      "SOTPROBHELP": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTPROBHELP",
+        "elementName": "SOTPROBHELP",
+        "elementSet": "data",
+        "elementPath": "SOTPROBHELP"
+      },
+      "ASSPROB": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 35,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSPROB",
+        "elementName": "ASSPROB",
+        "elementSet": "data",
+        "elementPath": "ASSPROB"
+      },
+      "ASSPROBDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 76,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSPROBDISCR",
+        "elementName": "ASSPROBDISCR",
+        "elementSet": "data",
+        "elementPath": "ASSPROBDISCR"
+      },
+      "ASSPROBRESOL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 37,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSPROBRESOL",
+        "elementName": "ASSPROBRESOL",
+        "elementSet": "data",
+        "elementPath": "ASSPROBRESOL"
+      },
+      "SOTWORK": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 38,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTWORK",
+        "elementName": "SOTWORK",
+        "elementSet": "data",
+        "elementPath": "SOTWORK"
+      },
+      "SOTWORKDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTWORKDISCR",
+        "elementName": "SOTWORKDISCR",
+        "elementSet": "data",
+        "elementPath": "SOTWORKDISCR"
+      },
+      "SOTWORKTELL": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 84,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 40,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SOTWORKTELL",
+        "elementName": "SOTWORKTELL",
+        "elementSet": "data",
+        "elementPath": "SOTWORKTELL"
+      },
+      "PROBLEM": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 88,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 41,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PROBLEM",
+        "elementName": "PROBLEM",
+        "elementSet": "data",
+        "elementPath": "PROBLEM"
+      },
+      "PROBLEMDISCR": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 90,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 42,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PROBLEMDISCR",
+        "elementName": "PROBLEMDISCR",
+        "elementSet": "data",
+        "elementPath": "PROBLEMDISCR"
+      },
+      "OBS": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 92,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 43,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OBS",
+        "elementName": "OBS",
+        "elementSet": "data",
+        "elementPath": "OBS"
+      },
+      "SYNC": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 95,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 44,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SYNC",
+        "elementName": "SYNC",
+        "elementSet": "data",
+        "elementPath": "SYNC"
+      },
+      "SYNCNO": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 97,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 45,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "SYNCNO",
+        "elementName": "SYNCNO",
+        "elementSet": "data",
+        "elementPath": "SYNCNO"
+      },
+      "TABLEAVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 99,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 46,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TABLEAVE",
+        "elementName": "TABLEAVE",
+        "elementSet": "data",
+        "elementPath": "TABLEAVE"
+      },
+      "BISARRIVE": {
+        "type": "string",
+        "elementType": "time",
+        "_defn": [
+          {
+            "_row_num": 100,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 47,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BISARRIVE",
+        "elementName": "BISARRIVE",
+        "elementSet": "data",
+        "elementPath": "BISARRIVE"
+      },
+      "MATSOT_items": {
+        "type": "string",
+        "elementKey": "MATSOT_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "MATSOT.items",
+        "notUnitOfRetention": true
+      },
+      "MATASS_items": {
+        "type": "string",
+        "elementKey": "MATASS_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "MATASS.items",
+        "notUnitOfRetention": true
+      },
+      "MATGIVEN_items": {
+        "type": "string",
+        "elementKey": "MATGIVEN_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "MATGIVEN.items",
+        "notUnitOfRetention": true
       },
       "_id": {
         "type": "string",
@@ -835,6 +5723,209 @@
       }
     },
     "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "ASCPRES",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ASSPROB",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFUBCGOPV",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFUCARD",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFUDIED",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFUHOSP",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFUID",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "CHILDFUNEWCARD",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "MATASS",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Tablet\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet\",\"default\":\"Tablet\"}}},\"_row_num\":30},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Tablet pouch\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet pouch\",\"default\":\"Bolsa para tablet\"}}},\"_row_num\":31},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Tablet charger\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet charger\",\"default\":\"Carregador para tablet\"}}},\"_row_num\":32},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Clipboard\",\"display\":{\"title\":{\"text\":{\"english\":\"Clipboard\",\"default\":\"Pasta\"}}},\"_row_num\":33},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"MUAC\",\"display\":{\"title\":{\"text\":{\"english\":\"MUAC\",\"default\":\"Fita perimetro\"}}},\"_row_num\":34},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Pen\",\"display\":{\"title\":{\"text\":{\"english\":\"Pen\",\"default\":\"Caneta\"}}},\"_row_num\":35},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Vaccination cards\",\"display\":{\"title\":{\"text\":{\"english\":\"Vaccination cards\",\"default\":\"Cartões de vacinação\"}}},\"_row_num\":36},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Study explaination sheets\",\"display\":{\"title\":{\"text\":{\"english\":\"Study explaination sheets\",\"default\":\"Folhas de explicação do estudo\"}}},\"_row_num\":37},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Village calendar\",\"display\":{\"title\":{\"text\":{\"english\":\"Village calendar\",\"default\":\"Calendário da tabanca\"}}},\"_row_num\":38},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Saldo\",\"display\":{\"title\":{\"text\":{\"english\":\"Saldo\",\"default\":\"Saldo\"}}},\"_row_num\":39},{\"choice_list_name\":\"MaterialASS\",\"data_value\":\"Inernet box\",\"display\":{\"title\":{\"text\":{\"english\":\"Inernet box\",\"default\":\"Caixa de internet\"}}},\"_row_num\":40}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "MATGIVEN",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Tablet\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet\",\"default\":\"Tablet\"}}},\"_row_num\":42},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Tablet pouch\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet pouch\",\"default\":\"Bolsa para tablet\"}}},\"_row_num\":43},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Tablet charger\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet charger\",\"default\":\"Carregador para tablet\"}}},\"_row_num\":44},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Clipboard\",\"display\":{\"title\":{\"text\":{\"english\":\"Clipboard\",\"default\":\"Pasta\"}}},\"_row_num\":45},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"MUAC\",\"display\":{\"title\":{\"text\":{\"english\":\"MUAC\",\"default\":\"Fita perimetro\"}}},\"_row_num\":46},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Pen\",\"display\":{\"title\":{\"text\":{\"english\":\"Pen\",\"default\":\"Caneta\"}}},\"_row_num\":47},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Vaccination cards\",\"display\":{\"title\":{\"text\":{\"english\":\"Vaccination cards\",\"default\":\"Cartões de vacinação\"}}},\"_row_num\":48},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Study explaination sheets\",\"display\":{\"title\":{\"text\":{\"english\":\"Study explaination sheets\",\"default\":\"Folhas de explicação do estudo\"}}},\"_row_num\":49},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Village calendar\",\"display\":{\"title\":{\"text\":{\"english\":\"Village calendar\",\"default\":\"Calendário da tabanca\"}}},\"_row_num\":50},{\"choice_list_name\":\"MaterialGiven\",\"data_value\":\"Saldo\",\"display\":{\"title\":{\"text\":{\"english\":\"Saldo\",\"default\":\"Saldo\"}}},\"_row_num\":51}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "MATSOT",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Tablet\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet\",\"default\":\"Tablet\"}}},\"_row_num\":18},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Tablet pouch\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet pouch\",\"default\":\"Bolsa para tablet\"}}},\"_row_num\":19},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Tablet charger\",\"display\":{\"title\":{\"text\":{\"english\":\"Tablet charger\",\"default\":\"Carregador para tablet\"}}},\"_row_num\":20},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Clipboard\",\"display\":{\"title\":{\"text\":{\"english\":\"Clipboard\",\"default\":\"Pasta\"}}},\"_row_num\":21},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"MUAC\",\"display\":{\"title\":{\"text\":{\"english\":\"MUAC\",\"default\":\"Fita perimetro\"}}},\"_row_num\":22},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Pen\",\"display\":{\"title\":{\"text\":{\"english\":\"Pen\",\"default\":\"Caneta\"}}},\"_row_num\":23},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Vaccination cards\",\"display\":{\"title\":{\"text\":{\"english\":\"Vaccination cards\",\"default\":\"Cartões de vacinação\"}}},\"_row_num\":24},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Study explaination sheets\",\"display\":{\"title\":{\"text\":{\"english\":\"Study explaination sheets\",\"default\":\"Folhas de explicação do estudo\"}}},\"_row_num\":25},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Village calendar\",\"display\":{\"title\":{\"text\":{\"english\":\"Village calendar\",\"default\":\"Calendário da tabanca\"}}},\"_row_num\":26},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Phone with saldo\",\"display\":{\"title\":{\"text\":{\"english\":\"Phone with saldo\",\"default\":\"Telefone com saldo\"}}},\"_row_num\":27},{\"choice_list_name\":\"MaterialSOT\",\"data_value\":\"Phone without saldo\",\"display\":{\"title\":{\"text\":{\"english\":\"Phone without saldo\",\"default\":\"Telefone sem saldo\"}}},\"_row_num\":28}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGEND",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGENDHC",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGENDTAB",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":53},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":54},{\"choice_list_name\":\"YesNoNotapplicable\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Not applicable\",\"default\":\"Não aplicável\"}}},\"_row_num\":55}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGNEW",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGNEWCONS",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGNEWEXPL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PREGNEWTIME",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "PROBLEM",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SOTFIND",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SOTMEET",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"PlaceOfMeeting\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Village\",\"default\":\"Tabanca\"}}},\"_row_num\":12},{\"choice_list_name\":\"PlaceOfMeeting\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Health centre\",\"default\":\"Centro de saúde\"}}},\"_row_num\":13}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SOTPROB",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SOTPROBHELP",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SOTWORK",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SOTWORKTELL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SUPERVISOR",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Assistants\",\"data_value\":\"Igualdino\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":2},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Jailson\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":3},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Laerte\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":4},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Abdel\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":5},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Andreas\",\"display\":{\"title\":{\"text\":{\"english\":\"Andreas\",\"default\":\"Andreas\"}}},\"_row_num\":6},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Julie\",\"display\":{\"title\":{\"text\":{\"english\":\"Julie\",\"default\":\"Julie\"}}},\"_row_num\":7}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "SYNC",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":9},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":10}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "TRANSPORT",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Transportation\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Scooter\",\"default\":\"Mota\"}}},\"_row_num\":15},{\"choice_list_name\":\"Transportation\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Car\",\"default\":\"Carro\"}}},\"_row_num\":16}]"
+      },
       {
         "_partition": "FormType",
         "_aspect": "default",
