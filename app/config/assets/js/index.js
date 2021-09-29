@@ -25,4 +25,16 @@ function initButtons() {
     btnSync.on("click", function() {
         odkCommon.doAction(null, "org.opendatakit.services.sync.actions.activities.SyncActivity", {"componentPackage": "org.opendatakit.services", "componentActivity": "org.opendatakit.services.sync.actions.activities.SyncActivity"});   
     });
+    // Supervise
+    var user = odkCommon.getActiveUser();
+    console.log("user", user);
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:student") {
+        var ul = $('#li');
+        ul.append($("<li />").append($("<button />").attr('id',"btnSup").attr('class',"btnSup").append("Supervisão")));
+        
+        var btnSup = $('#btnSup')
+        btnSup.on("click", function() {
+            odkTables.launchHTML(null, 'config/assets/supervision.html');
+        });
+    }
 }

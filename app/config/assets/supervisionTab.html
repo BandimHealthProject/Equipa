@@ -13,18 +13,20 @@
         <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
         
         <script type="text/javascript" src="js/util.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <style> 
+        <script type="text/javascript" src="js/supervisionTab.js"></script>
+        <style>
+        h3 {
+            margin-top: 30px;
+        }
         ul {
             list-style:none;
             border-radius: none;
-            padding: 0px;
         }
         .form-group {
             margin:30px 0;
         }
-        .btnTab {
-            background-color: darkslateblue;
+        .NewSup {
+            background-color: mediumseagreen;
             color: white;
             font-size: 25px;
             border-radius: 4px;
@@ -32,42 +34,33 @@
             border: none;
             margin: 0;
         }
-        .btnSync {
-            background-color: purple;
-            color: white;
-            font-size: 25px;
-            border-radius: 4px;
-            display: inline-block;
-            border: none;
-            margin-top: 0;
-        }
         .btnSup {
-            background-color: darkslategrey;
+            background-color: lightseagreen;
             color: white;
-            font-size: 25px;
             border-radius: 4px;
             display: inline-block;
             border: none;
-            margin-top: -30px;
+            margin: 0;
+            text-align:left;
+            font-size: x-large;
+            height:auto;
+            width:94%;
+            border: none;
         }
+        
         </style>
     </head>
 
+   
     <body onload="display();">
         <div id="main" class="container" style="height: 100vh;">
-            <h1>Estudo de CS-BCG</h1>
             <div id="wrapper">
                 <div class="form-group">
-                    <button id="btnTab" class="btnTab">Trabalho nas tabancas</button> 
+                    <button id="newSup" class="NewSup">Nova supervisão</button>            
                 </div>
                 <hr/>
-                <img src="img/form_logo.png" alt="BHP Logo" style="width:auto;">
-                <hr/>
                 <div class="form-group">
-                    <button id="btnSync" class="btnSync">Sincronizar</button> 
-                </div>
-                <div class="form-group">
-                    <ul id="li">            
+                    <ul id="li" style="padding:20px;">            
                     </ul>
                 </div>
             </div>

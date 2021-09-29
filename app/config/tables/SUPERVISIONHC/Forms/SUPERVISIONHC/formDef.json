@@ -63,26 +63,75 @@
         "_row_num": 2
       },
       {
-        "type": "select_one_with_other",
-        "values_list": "Assistants",
-        "name": "SUPERVISOR",
+        "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "Supervisor",
-              "default": "Supervisor"
+              "english": "You are about to supervise at:",
+              "default": "Você está prestes a supervisionar em:"
             }
           }
         },
         "_row_num": 3
       },
       {
-        "clause": "end screen",
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Region: <b>{{data.REGNOME}}</b>",
+              "default": "Região: <b>{{data.REGNOME}}</b>"
+            }
+          }
+        },
         "_row_num": 4
       },
       {
-        "clause": "begin screen",
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Health centre area: <b>{{data.HCAREANOME}}</b>",
+              "default": "Área sanitárias: <b>{{data.HCAREANOME}}</b>"
+            }
+          }
+        },
         "_row_num": 5
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "Assistants",
+        "name": "ASSISTANT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Assistant",
+              "default": "Assistente"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "type": "adate",
+        "name": "VISITDATE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Date",
+              "default": "Data"
+            }
+          }
+        },
+        "_row_num": 7
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 8
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 9
       },
       {
         "type": "select_one_with_other",
@@ -96,12 +145,12 @@
             }
           }
         },
-        "_row_num": 6
+        "_row_num": 10
       },
       {
         "clause": "if",
         "condition": "selected(data(\"TRANSPORT\"),\"2\")",
-        "_row_num": 7
+        "_row_num": 11
       },
       {
         "type": "text",
@@ -114,11 +163,11 @@
             }
           }
         },
-        "_row_num": 8
+        "_row_num": 12
       },
       {
         "clause": "end if",
-        "_row_num": 9
+        "_row_num": 13
       },
       {
         "type": "time",
@@ -131,7 +180,7 @@
             }
           }
         },
-        "_row_num": 10
+        "_row_num": 14
       },
       {
         "type": "time",
@@ -144,15 +193,15 @@
             }
           }
         },
-        "_row_num": 11
+        "_row_num": 15
       },
       {
         "clause": "end screen",
-        "_row_num": 12
+        "_row_num": 16
       },
       {
         "clause": "begin screen",
-        "_row_num": 13
+        "_row_num": 17
       },
       {
         "type": "select_one",
@@ -166,15 +215,15 @@
             }
           }
         },
-        "_row_num": 14
+        "_row_num": 18
       },
       {
         "clause": "end screen",
-        "_row_num": 15
+        "_row_num": 19
       },
       {
         "clause": "begin screen",
-        "_row_num": 16
+        "_row_num": 20
       },
       {
         "type": "integer",
@@ -187,15 +236,15 @@
             }
           }
         },
-        "_row_num": 17
+        "_row_num": 21
       },
       {
         "clause": "end screen",
-        "_row_num": 18
+        "_row_num": 22
       },
       {
         "clause": "begin screen",
-        "_row_num": 19
+        "_row_num": 23
       },
       {
         "type": "select_one",
@@ -209,12 +258,12 @@
             }
           }
         },
-        "_row_num": 20
+        "_row_num": 24
       },
       {
         "clause": "if",
         "condition": "data(\"BCG\") == \"1\"",
-        "_row_num": 21
+        "_row_num": 25
       },
       {
         "type": "integer",
@@ -227,7 +276,7 @@
             }
           }
         },
-        "_row_num": 22
+        "_row_num": 26
       },
       {
         "type": "select_one",
@@ -241,7 +290,7 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 27
       },
       {
         "type": "select_one",
@@ -255,12 +304,12 @@
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 28
       },
       {
         "clause": "if",
         "condition": "data(\"BCGMANU\") == \"2\"",
-        "_row_num": 25
+        "_row_num": 29
       },
       {
         "type": "text",
@@ -273,7 +322,7 @@
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 30
       },
       {
         "type": "text",
@@ -286,7 +335,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 31
       },
       {
         "type": "text",
@@ -299,28 +348,28 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 32
       },
       {
         "clause": "end if",
-        "_row_num": 29
+        "_row_num": 33
       },
       {
         "clause": "end if",
-        "_row_num": 30
+        "_row_num": 34
       },
       {
         "clause": "end screen",
-        "_row_num": 31
+        "_row_num": 35
       },
       {
         "clause": "if",
         "condition": "data(\"BCG\") == \"1\"",
-        "_row_num": 32
+        "_row_num": 36
       },
       {
         "clause": "begin screen",
-        "_row_num": 33
+        "_row_num": 37
       },
       {
         "type": "note",
@@ -332,7 +381,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 38
       },
       {
         "type": "time",
@@ -345,7 +394,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 39
       },
       {
         "type": "time",
@@ -358,7 +407,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 40
       },
       {
         "type": "time",
@@ -371,7 +420,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 41
       },
       {
         "type": "time",
@@ -384,7 +433,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 42
       },
       {
         "type": "time",
@@ -397,7 +446,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 43
       },
       {
         "type": "time",
@@ -410,15 +459,15 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 44
       },
       {
         "clause": "end screen",
-        "_row_num": 41
+        "_row_num": 45
       },
       {
         "clause": "begin screen",
-        "_row_num": 42
+        "_row_num": 46
       },
       {
         "type": "select_one",
@@ -432,7 +481,7 @@
             }
           }
         },
-        "_row_num": 43
+        "_row_num": 47
       },
       {
         "type": "integer",
@@ -445,7 +494,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 48
       },
       {
         "type": "integer",
@@ -458,7 +507,7 @@
             }
           }
         },
-        "_row_num": 45
+        "_row_num": 49
       },
       {
         "type": "select_one",
@@ -472,12 +521,12 @@
             }
           }
         },
-        "_row_num": 46
+        "_row_num": 50
       },
       {
         "clause": "if",
         "condition": "data(\"BCGTECHNIQUE\") == \"2\"",
-        "_row_num": 47
+        "_row_num": 51
       },
       {
         "type": "text",
@@ -490,7 +539,7 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 52
       },
       {
         "type": "select_one",
@@ -504,23 +553,23 @@
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 53
       },
       {
         "clause": "end if",
-        "_row_num": 50
+        "_row_num": 54
       },
       {
         "clause": "end screen",
-        "_row_num": 51
+        "_row_num": 55
       },
       {
         "clause": "end if",
-        "_row_num": 52
+        "_row_num": 56
       },
       {
         "clause": "begin screen",
-        "_row_num": 53
+        "_row_num": 57
       },
       {
         "type": "select_one",
@@ -534,12 +583,12 @@
             }
           }
         },
-        "_row_num": 54
+        "_row_num": 58
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGE\") == \"2\"",
-        "_row_num": 55
+        "_row_num": 59
       },
       {
         "type": "text",
@@ -552,16 +601,16 @@
             }
           }
         },
-        "_row_num": 56
+        "_row_num": 60
       },
       {
         "clause": "end if",
-        "_row_num": 57
+        "_row_num": 61
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGE\") == \"1\"",
-        "_row_num": 58
+        "_row_num": 62
       },
       {
         "type": "select_one",
@@ -575,12 +624,12 @@
             }
           }
         },
-        "_row_num": 59
+        "_row_num": 63
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEOTHER\") == \"1\"",
-        "_row_num": 60
+        "_row_num": 64
       },
       {
         "type": "text",
@@ -593,11 +642,11 @@
             }
           }
         },
-        "_row_num": 61
+        "_row_num": 65
       },
       {
         "clause": "end if",
-        "_row_num": 62
+        "_row_num": 66
       },
       {
         "type": "select_one",
@@ -611,12 +660,12 @@
             }
           }
         },
-        "_row_num": 63
+        "_row_num": 67
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEREG\") == \"2\"",
-        "_row_num": 64
+        "_row_num": 68
       },
       {
         "type": "text",
@@ -629,16 +678,16 @@
             }
           }
         },
-        "_row_num": 65
+        "_row_num": 69
       },
       {
         "clause": "end if",
-        "_row_num": 66
+        "_row_num": 70
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEREG\") == \"1\"",
-        "_row_num": 67
+        "_row_num": 71
       },
       {
         "type": "select_one",
@@ -652,12 +701,12 @@
             }
           }
         },
-        "_row_num": 68
+        "_row_num": 72
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEREGCOR\") == \"2\"",
-        "_row_num": 69
+        "_row_num": 73
       },
       {
         "type": "text",
@@ -670,27 +719,27 @@
             }
           }
         },
-        "_row_num": 70
-      },
-      {
-        "clause": "end if",
-        "_row_num": 71
-      },
-      {
-        "clause": "end if",
-        "_row_num": 72
-      },
-      {
-        "clause": "end if",
-        "_row_num": 73
-      },
-      {
-        "clause": "end screen",
         "_row_num": 74
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 75
+      },
+      {
+        "clause": "end if",
+        "_row_num": 76
+      },
+      {
+        "clause": "end if",
+        "_row_num": 77
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 78
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 79
       },
       {
         "type": "note",
@@ -702,7 +751,7 @@
             }
           }
         },
-        "_row_num": 76
+        "_row_num": 80
       },
       {
         "type": "integer",
@@ -715,7 +764,7 @@
             }
           }
         },
-        "_row_num": 77
+        "_row_num": 81
       },
       {
         "type": "adate",
@@ -728,7 +777,7 @@
             }
           }
         },
-        "_row_num": 78
+        "_row_num": 82
       },
       {
         "type": "integer",
@@ -741,7 +790,7 @@
             }
           }
         },
-        "_row_num": 79
+        "_row_num": 83
       },
       {
         "type": "adate",
@@ -754,7 +803,7 @@
             }
           }
         },
-        "_row_num": 80
+        "_row_num": 84
       },
       {
         "type": "integer",
@@ -767,7 +816,7 @@
             }
           }
         },
-        "_row_num": 81
+        "_row_num": 85
       },
       {
         "type": "adate",
@@ -780,7 +829,7 @@
             }
           }
         },
-        "_row_num": 82
+        "_row_num": 86
       },
       {
         "type": "integer",
@@ -793,7 +842,7 @@
             }
           }
         },
-        "_row_num": 83
+        "_row_num": 87
       },
       {
         "type": "adate",
@@ -806,15 +855,15 @@
             }
           }
         },
-        "_row_num": 84
+        "_row_num": 88
       },
       {
         "clause": "end screen",
-        "_row_num": 85
+        "_row_num": 89
       },
       {
         "clause": "begin screen",
-        "_row_num": 86
+        "_row_num": 90
       },
       {
         "type": "note",
@@ -826,7 +875,7 @@
             }
           }
         },
-        "_row_num": 87
+        "_row_num": 91
       },
       {
         "type": "integer",
@@ -839,7 +888,7 @@
             }
           }
         },
-        "_row_num": 88
+        "_row_num": 92
       },
       {
         "type": "adate",
@@ -852,7 +901,7 @@
             }
           }
         },
-        "_row_num": 89
+        "_row_num": 93
       },
       {
         "type": "integer",
@@ -865,7 +914,7 @@
             }
           }
         },
-        "_row_num": 90
+        "_row_num": 94
       },
       {
         "type": "adate",
@@ -878,7 +927,7 @@
             }
           }
         },
-        "_row_num": 91
+        "_row_num": 95
       },
       {
         "type": "integer",
@@ -891,7 +940,7 @@
             }
           }
         },
-        "_row_num": 92
+        "_row_num": 96
       },
       {
         "type": "adate",
@@ -904,7 +953,7 @@
             }
           }
         },
-        "_row_num": 93
+        "_row_num": 97
       },
       {
         "type": "integer",
@@ -917,7 +966,7 @@
             }
           }
         },
-        "_row_num": 94
+        "_row_num": 98
       },
       {
         "type": "adate",
@@ -930,15 +979,15 @@
             }
           }
         },
-        "_row_num": 95
+        "_row_num": 99
       },
       {
         "clause": "end screen",
-        "_row_num": 96
+        "_row_num": 100
       },
       {
         "clause": "begin screen",
-        "_row_num": 97
+        "_row_num": 101
       },
       {
         "type": "select_one",
@@ -952,12 +1001,12 @@
             }
           }
         },
-        "_row_num": 98
+        "_row_num": 102
       },
       {
         "clause": "if",
         "condition": "data(\"HEAT\") == \"1\"",
-        "_row_num": 99
+        "_row_num": 103
       },
       {
         "type": "integer",
@@ -970,19 +1019,19 @@
             }
           }
         },
-        "_row_num": 100
+        "_row_num": 104
       },
       {
         "clause": "end if",
-        "_row_num": 101
+        "_row_num": 105
       },
       {
         "clause": "end screen",
-        "_row_num": 102
+        "_row_num": 106
       },
       {
         "clause": "begin screen",
-        "_row_num": 103
+        "_row_num": 107
       },
       {
         "type": "note",
@@ -994,7 +1043,7 @@
             }
           }
         },
-        "_row_num": 104
+        "_row_num": 108
       },
       {
         "type": "note",
@@ -1006,7 +1055,7 @@
             }
           }
         },
-        "_row_num": 105
+        "_row_num": 109
       },
       {
         "type": "integer",
@@ -1019,7 +1068,7 @@
             }
           }
         },
-        "_row_num": 106
+        "_row_num": 110
       },
       {
         "type": "adate",
@@ -1032,7 +1081,7 @@
             }
           }
         },
-        "_row_num": 107
+        "_row_num": 111
       },
       {
         "type": "note",
@@ -1044,7 +1093,7 @@
             }
           }
         },
-        "_row_num": 108
+        "_row_num": 112
       },
       {
         "type": "integer",
@@ -1057,7 +1106,7 @@
             }
           }
         },
-        "_row_num": 109
+        "_row_num": 113
       },
       {
         "type": "adate",
@@ -1070,15 +1119,15 @@
             }
           }
         },
-        "_row_num": 110
+        "_row_num": 114
       },
       {
         "clause": "end screen",
-        "_row_num": 111
+        "_row_num": 115
       },
       {
         "clause": "begin screen",
-        "_row_num": 112
+        "_row_num": 116
       },
       {
         "type": "note",
@@ -1090,7 +1139,7 @@
             }
           }
         },
-        "_row_num": 113
+        "_row_num": 117
       },
       {
         "type": "note",
@@ -1102,7 +1151,7 @@
             }
           }
         },
-        "_row_num": 114
+        "_row_num": 118
       },
       {
         "type": "integer",
@@ -1115,7 +1164,7 @@
             }
           }
         },
-        "_row_num": 115
+        "_row_num": 119
       },
       {
         "type": "adate",
@@ -1128,7 +1177,7 @@
             }
           }
         },
-        "_row_num": 116
+        "_row_num": 120
       },
       {
         "type": "note",
@@ -1140,7 +1189,7 @@
             }
           }
         },
-        "_row_num": 117
+        "_row_num": 121
       },
       {
         "type": "integer",
@@ -1153,7 +1202,7 @@
             }
           }
         },
-        "_row_num": 118
+        "_row_num": 122
       },
       {
         "type": "adate",
@@ -1166,7 +1215,7 @@
             }
           }
         },
-        "_row_num": 119
+        "_row_num": 123
       },
       {
         "type": "select_one",
@@ -1180,12 +1229,12 @@
             }
           }
         },
-        "_row_num": 120
+        "_row_num": 124
       },
       {
         "clause": "if",
         "condition": "data(\"MISMATERIAL\") == \"1\"",
-        "_row_num": 121
+        "_row_num": 125
       },
       {
         "type": "text",
@@ -1198,19 +1247,19 @@
             }
           }
         },
-        "_row_num": 122
+        "_row_num": 126
       },
       {
         "clause": "end if",
-        "_row_num": 123
+        "_row_num": 127
       },
       {
         "clause": "end screen",
-        "_row_num": 124
+        "_row_num": 128
       },
       {
         "clause": "begin screen",
-        "_row_num": 125
+        "_row_num": 129
       },
       {
         "type": "select_one",
@@ -1224,12 +1273,12 @@
             }
           }
         },
-        "_row_num": 126
+        "_row_num": 130
       },
       {
         "clause": "if",
         "condition": "data(\"AXLYMPH\") == \"1\"",
-        "_row_num": 127
+        "_row_num": 131
       },
       {
         "type": "select_one",
@@ -1243,23 +1292,23 @@
             }
           }
         },
-        "_row_num": 128
+        "_row_num": 132
       },
       {
         "clause": "end if",
-        "_row_num": 129
+        "_row_num": 133
       },
       {
         "clause": "end screen",
-        "_row_num": 130
+        "_row_num": 134
       },
       {
         "branch_label": "PHOTOS",
-        "_row_num": 131
+        "_row_num": 135
       },
       {
         "clause": "begin screen",
-        "_row_num": 137
+        "_row_num": 141
       },
       {
         "type": "select_one",
@@ -1273,12 +1322,12 @@
             }
           }
         },
-        "_row_num": 138
+        "_row_num": 142
       },
       {
         "clause": "if",
         "condition": "data(\"HCPROB\") == \"1\"",
-        "_row_num": 139
+        "_row_num": 143
       },
       {
         "type": "text",
@@ -1291,7 +1340,7 @@
             }
           }
         },
-        "_row_num": 140
+        "_row_num": 144
       },
       {
         "type": "select_one",
@@ -1305,19 +1354,19 @@
             }
           }
         },
-        "_row_num": 141
+        "_row_num": 145
       },
       {
         "clause": "end if",
-        "_row_num": 142
+        "_row_num": 146
       },
       {
         "clause": "end screen",
-        "_row_num": 143
+        "_row_num": 147
       },
       {
         "clause": "begin screen",
-        "_row_num": 144
+        "_row_num": 148
       },
       {
         "type": "select_one",
@@ -1331,12 +1380,12 @@
             }
           }
         },
-        "_row_num": 145
+        "_row_num": 149
       },
       {
         "clause": "if",
         "condition": "data(\"ASSPROB\") == \"1\"",
-        "_row_num": 146
+        "_row_num": 150
       },
       {
         "type": "text",
@@ -1349,7 +1398,7 @@
             }
           }
         },
-        "_row_num": 147
+        "_row_num": 151
       },
       {
         "type": "text",
@@ -1362,19 +1411,19 @@
             }
           }
         },
-        "_row_num": 148
+        "_row_num": 152
       },
       {
         "clause": "end if",
-        "_row_num": 149
+        "_row_num": 153
       },
       {
         "clause": "end screen",
-        "_row_num": 150
+        "_row_num": 154
       },
       {
         "clause": "begin screen",
-        "_row_num": 151
+        "_row_num": 155
       },
       {
         "type": "select_one",
@@ -1388,12 +1437,12 @@
             }
           }
         },
-        "_row_num": 152
+        "_row_num": 156
       },
       {
         "clause": "if",
         "condition": "data(\"PROBLEM\") == \"1\"",
-        "_row_num": 153
+        "_row_num": 157
       },
       {
         "type": "text",
@@ -1406,11 +1455,11 @@
             }
           }
         },
-        "_row_num": 154
+        "_row_num": 158
       },
       {
         "clause": "end if",
-        "_row_num": 155
+        "_row_num": 159
       },
       {
         "type": "text",
@@ -1423,7 +1472,7 @@
             }
           }
         },
-        "_row_num": 156
+        "_row_num": 160
       },
       {
         "type": "time",
@@ -1436,7 +1485,7 @@
             }
           }
         },
-        "_row_num": 157
+        "_row_num": 161
       },
       {
         "type": "time",
@@ -1449,11 +1498,11 @@
             }
           }
         },
-        "_row_num": 158
+        "_row_num": 162
       },
       {
         "clause": "end screen",
-        "_row_num": 159
+        "_row_num": 163
       }
     ],
     "choices": [
@@ -1695,454 +1744,484 @@
     ],
     "model": [
       {
-        "name": "SUPERVISOR",
-        "type": "select_one_with_other",
+        "name": "HCAREA",
+        "type": "integer",
         "isSessionVariable": false,
         "_row_num": 2
+      },
+      {
+        "name": "HCAREANOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 3
+      },
+      {
+        "name": "REG",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 4
+      },
+      {
+        "name": "REGNOME",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 5
+      },
+      {
+        "name": "VISITDATE",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 6
+      },
+      {
+        "name": "ASSISTANT",
+        "type": "select_one_with_other",
+        "isSessionVariable": false,
+        "_row_num": 8
       },
       {
         "name": "TRANSPORT",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 3
+        "_row_num": 9
       },
       {
         "name": "DRIVER",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 4
+        "_row_num": 10
       },
       {
         "name": "BISLEAVE",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 5
+        "_row_num": 11
       },
       {
         "name": "HCARRIVE",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 6
+        "_row_num": 12
       },
       {
         "name": "RANDOM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 7
+        "_row_num": 13
       },
       {
         "name": "CHILDPRES",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 8
+        "_row_num": 14
       },
       {
         "name": "BCG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 9
+        "_row_num": 15
       },
       {
         "name": "BCGVIALS",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 10
+        "_row_num": 16
       },
       {
         "name": "BCGSOLVENT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 11
+        "_row_num": 17
       },
       {
         "name": "BCGMANU",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 12
+        "_row_num": 18
       },
       {
         "name": "MANUWHY",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 13
+        "_row_num": 19
       },
       {
         "name": "MANYVAC",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 14
+        "_row_num": 20
       },
       {
         "name": "MANUSOLVENT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 15
+        "_row_num": 21
       },
       {
         "name": "BCGRECON1",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 22
       },
       {
         "name": "BCGDISCARD1",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 17
+        "_row_num": 23
       },
       {
         "name": "BCGRECON2",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 24
       },
       {
         "name": "BCGDISCARD2",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 19
+        "_row_num": 25
       },
       {
         "name": "BCGRECON3",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 20
+        "_row_num": 26
       },
       {
         "name": "BCGDISCARD3",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 27
       },
       {
         "name": "BCGCOOL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 22
+        "_row_num": 28
       },
       {
         "name": "BCGNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 23
+        "_row_num": 29
       },
       {
         "name": "BCGWORKER",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 24
+        "_row_num": 30
       },
       {
         "name": "BCGTECHNIQUE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 25
+        "_row_num": 31
       },
       {
         "name": "BCGIMPR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 26
+        "_row_num": 32
       },
       {
         "name": "BCGIMPRTELL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 27
+        "_row_num": 33
       },
       {
         "name": "FRIDGE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 28
+        "_row_num": 34
       },
       {
         "name": "FRIDGENO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 29
+        "_row_num": 35
       },
       {
         "name": "FRIDGEOTHER",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 36
       },
       {
         "name": "FRIDGEOTHERWHAT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 37
       },
       {
         "name": "FRIDGEREG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 38
       },
       {
         "name": "FRIDGEREGNO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 39
       },
       {
         "name": "FRIDGEREGCOR",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 40
       },
       {
         "name": "FRIDGEREGCORNO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 35
+        "_row_num": 41
       },
       {
         "name": "JAPANVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 42
       },
       {
         "name": "JAPANVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 37
+        "_row_num": 43
       },
       {
         "name": "JAPANSVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 38
+        "_row_num": 44
       },
       {
         "name": "JAPANSEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 39
+        "_row_num": 45
       },
       {
         "name": "BBVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 40
+        "_row_num": 46
       },
       {
         "name": "BBVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 41
+        "_row_num": 47
       },
       {
         "name": "BBSVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 42
+        "_row_num": 48
       },
       {
         "name": "BBSEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 43
+        "_row_num": 49
       },
       {
         "name": "INDIAVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 44
+        "_row_num": 50
       },
       {
         "name": "INDIAVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 45
+        "_row_num": 51
       },
       {
         "name": "INDIASVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 46
+        "_row_num": 52
       },
       {
         "name": "INDASEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 47
+        "_row_num": 53
       },
       {
         "name": "AJVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 48
+        "_row_num": 54
       },
       {
         "name": "AJVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 49
+        "_row_num": 55
       },
       {
         "name": "AJSVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 50
+        "_row_num": 56
       },
       {
         "name": "AJSEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 51
+        "_row_num": 57
       },
       {
         "name": "HEAT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 52
+        "_row_num": 58
       },
       {
         "name": "HEATNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 53
+        "_row_num": 59
       },
       {
         "name": "S2MLNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 54
+        "_row_num": 60
       },
       {
         "name": "S2MLEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 55
+        "_row_num": 61
       },
       {
         "name": "S5MLNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 56
+        "_row_num": 62
       },
       {
         "name": "S5MLEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 57
+        "_row_num": 63
       },
       {
         "name": "NEEDLERECONNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 58
+        "_row_num": 64
       },
       {
         "name": "NEEDLERECONEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 59
+        "_row_num": 65
       },
       {
         "name": "SYRINGADMINNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 60
+        "_row_num": 66
       },
       {
         "name": "SYRINGADMINEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 61
+        "_row_num": 67
       },
       {
         "name": "MISMATERIAL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 68
       },
       {
         "name": "MISMATERIALWHAT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 69
       },
       {
         "name": "AXLYMPH",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 70
       },
       {
         "name": "AXLYMPHFICHA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 71
       },
       {
         "name": "HCPROB",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 72
       },
       {
         "name": "HCPROBDISCR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 73
       },
       {
         "name": "HCPROBHELP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 74
       },
       {
         "name": "ASSPROB",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 69
+        "_row_num": 75
       },
       {
         "name": "ASSPROBDISCR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 70
+        "_row_num": 76
       },
       {
         "name": "ASSPROBRESOL",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 71
+        "_row_num": 77
       },
       {
         "name": "PROBLEM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 72
+        "_row_num": 78
       },
       {
         "name": "PROBLEMDISCR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 73
+        "_row_num": 79
       },
       {
         "name": "OBS",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 74
+        "_row_num": 80
       },
       {
         "name": "HCLEAVE",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 75
+        "_row_num": 81
       },
       {
         "name": "BISARRIVE",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 76
+        "_row_num": 82
       }
     ],
     "properties": [
@@ -2533,32 +2612,96 @@
     "queries": {},
     "calculates": {},
     "model": {
-      "SUPERVISOR": {
-        "type": "string",
-        "valuesList": "Assistants",
+      "HCAREA": {
+        "type": "integer",
         "_defn": [
-          {
-            "_row_num": 3,
-            "section_name": "survey"
-          },
           {
             "_row_num": 2,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "SUPERVISOR"
+        "elementKey": "HCAREA"
       },
-      "TRANSPORT": {
+      "HCAREANOME": {
         "type": "string",
-        "valuesList": "Transportation",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREANOME"
+      },
+      "REG": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REG"
+      },
+      "REGNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNOME"
+      },
+      "VISITDATE": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISITDATE"
+      },
+      "ASSISTANT": {
+        "type": "string",
+        "valuesList": "Assistants",
         "_defn": [
           {
             "_row_num": 6,
             "section_name": "survey"
           },
           {
-            "_row_num": 3,
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSISTANT"
+      },
+      "TRANSPORT": {
+        "type": "string",
+        "valuesList": "Transportation",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -2569,11 +2712,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
-            "_row_num": 4,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -2585,11 +2728,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 14,
             "section_name": "survey"
           },
           {
-            "_row_num": 5,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -2601,11 +2744,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -2617,11 +2760,11 @@
         "valuesList": "Random",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 18,
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -2632,11 +2775,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 21,
             "section_name": "survey"
           },
           {
-            "_row_num": 8,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -2648,11 +2791,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -2663,11 +2806,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -2679,11 +2822,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -2695,11 +2838,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 28,
             "section_name": "survey"
           },
           {
-            "_row_num": 12,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -2710,7 +2853,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -2721,7 +2864,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -2732,7 +2875,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -2744,11 +2887,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 39,
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -2760,11 +2903,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 40,
             "section_name": "survey"
           },
           {
-            "_row_num": 17,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -2776,11 +2919,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 41,
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -2792,11 +2935,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -2808,11 +2951,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 43,
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -2824,11 +2967,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 40,
+            "_row_num": 44,
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -2840,11 +2983,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 47,
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -2855,11 +2998,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 48,
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -2870,11 +3013,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 49,
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -2886,11 +3029,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 46,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -2901,11 +3044,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -2917,11 +3060,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 53,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -2933,11 +3076,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 58,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -2948,11 +3091,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 60,
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -2964,11 +3107,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 63,
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -2979,11 +3122,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 65,
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -2995,11 +3138,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 67,
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -3010,11 +3153,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 69,
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -3026,11 +3169,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 72,
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -3041,11 +3184,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 74,
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -3056,11 +3199,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 81,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -3076,11 +3219,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 78,
+            "_row_num": 82,
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -3091,11 +3234,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 83,
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -3111,11 +3254,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 80,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -3126,11 +3269,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 85,
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -3146,11 +3289,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 86,
             "section_name": "survey"
           },
           {
-            "_row_num": 41,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -3161,11 +3304,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 87,
             "section_name": "survey"
           },
           {
-            "_row_num": 42,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -3181,11 +3324,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 88,
             "section_name": "survey"
           },
           {
-            "_row_num": 43,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -3196,11 +3339,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 88,
+            "_row_num": 92,
             "section_name": "survey"
           },
           {
-            "_row_num": 44,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -3216,11 +3359,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 93,
             "section_name": "survey"
           },
           {
-            "_row_num": 45,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -3231,11 +3374,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 90,
+            "_row_num": 94,
             "section_name": "survey"
           },
           {
-            "_row_num": 46,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -3251,11 +3394,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 91,
+            "_row_num": 95,
             "section_name": "survey"
           },
           {
-            "_row_num": 47,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -3266,11 +3409,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 96,
             "section_name": "survey"
           },
           {
-            "_row_num": 48,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -3286,11 +3429,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 49,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -3301,11 +3444,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 98,
             "section_name": "survey"
           },
           {
-            "_row_num": 50,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -3321,11 +3464,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 99,
             "section_name": "survey"
           },
           {
-            "_row_num": 51,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -3337,11 +3480,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 102,
             "section_name": "survey"
           },
           {
-            "_row_num": 52,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -3352,11 +3495,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 100,
+            "_row_num": 104,
             "section_name": "survey"
           },
           {
-            "_row_num": 53,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -3367,11 +3510,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 106,
+            "_row_num": 110,
             "section_name": "survey"
           },
           {
-            "_row_num": 54,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -3387,11 +3530,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 111,
             "section_name": "survey"
           },
           {
-            "_row_num": 55,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -3402,11 +3545,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 113,
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -3422,11 +3565,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 114,
             "section_name": "survey"
           },
           {
-            "_row_num": 57,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -3437,11 +3580,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 115,
+            "_row_num": 119,
             "section_name": "survey"
           },
           {
-            "_row_num": 58,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -3457,11 +3600,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 116,
+            "_row_num": 120,
             "section_name": "survey"
           },
           {
-            "_row_num": 59,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -3472,11 +3615,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 118,
+            "_row_num": 122,
             "section_name": "survey"
           },
           {
-            "_row_num": 60,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -3492,11 +3635,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 123,
             "section_name": "survey"
           },
           {
-            "_row_num": 61,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -3508,11 +3651,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 124,
             "section_name": "survey"
           },
           {
-            "_row_num": 62,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -3523,11 +3666,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 126,
             "section_name": "survey"
           },
           {
-            "_row_num": 63,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -3539,11 +3682,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 130,
             "section_name": "survey"
           },
           {
-            "_row_num": 64,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -3555,11 +3698,11 @@
         "valuesList": "Done",
         "_defn": [
           {
-            "_row_num": 128,
+            "_row_num": 132,
             "section_name": "survey"
           },
           {
-            "_row_num": 65,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -3571,11 +3714,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 138,
+            "_row_num": 142,
             "section_name": "survey"
           },
           {
-            "_row_num": 66,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -3586,11 +3729,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 140,
+            "_row_num": 144,
             "section_name": "survey"
           },
           {
-            "_row_num": 67,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -3602,11 +3745,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 141,
+            "_row_num": 145,
             "section_name": "survey"
           },
           {
-            "_row_num": 68,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -3618,11 +3761,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 145,
+            "_row_num": 149,
             "section_name": "survey"
           },
           {
-            "_row_num": 69,
+            "_row_num": 75,
             "section_name": "model"
           }
         ],
@@ -3633,11 +3776,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 147,
+            "_row_num": 151,
             "section_name": "survey"
           },
           {
-            "_row_num": 70,
+            "_row_num": 76,
             "section_name": "model"
           }
         ],
@@ -3648,11 +3791,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 148,
+            "_row_num": 152,
             "section_name": "survey"
           },
           {
-            "_row_num": 71,
+            "_row_num": 77,
             "section_name": "model"
           }
         ],
@@ -3664,11 +3807,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 152,
+            "_row_num": 156,
             "section_name": "survey"
           },
           {
-            "_row_num": 72,
+            "_row_num": 78,
             "section_name": "model"
           }
         ],
@@ -3679,11 +3822,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 158,
             "section_name": "survey"
           },
           {
-            "_row_num": 73,
+            "_row_num": 79,
             "section_name": "model"
           }
         ],
@@ -3694,11 +3837,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 156,
+            "_row_num": 160,
             "section_name": "survey"
           },
           {
-            "_row_num": 74,
+            "_row_num": 80,
             "section_name": "model"
           }
         ],
@@ -3710,11 +3853,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 157,
+            "_row_num": 161,
             "section_name": "survey"
           },
           {
-            "_row_num": 75,
+            "_row_num": 81,
             "section_name": "model"
           }
         ],
@@ -3726,11 +3869,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 162,
             "section_name": "survey"
           },
           {
-            "_row_num": 76,
+            "_row_num": 82,
             "section_name": "model"
           }
         ],
@@ -3740,7 +3883,7 @@
       "BCGMANUWHY": {
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "survey"
           }
         ],
@@ -3750,7 +3893,7 @@
       "BCGMANYVAC": {
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "survey"
           }
         ],
@@ -3760,7 +3903,7 @@
       "BCGMANUSOLVENT": {
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 32,
             "section_name": "survey"
           }
         ],
@@ -3779,23 +3922,92 @@
         "reachable_sections": {},
         "prompts": [
           {
-            "type": "select_one_with_other",
-            "values_list": "Assistants",
-            "name": "SUPERVISOR",
+            "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Supervisor",
-                  "default": "Supervisor"
+                  "english": "You are about to supervise at:",
+                  "default": "Você está prestes a supervisionar em:"
                 }
               }
             },
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
-            "_type": "select_one_with_other",
+            "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen2",
             "promptIdx": 0
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Region: <b>{{data.REGNOME}}</b>",
+                  "default": "Região: <b>{{data.REGNOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 4,
+            "__rowNum__": 3,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 1
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Health centre area: <b>{{data.HCAREANOME}}</b>",
+                  "default": "Área sanitárias: <b>{{data.HCAREANOME}}</b>"
+                }
+              }
+            },
+            "_row_num": 5,
+            "__rowNum__": 4,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 2
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "Assistants",
+            "name": "ASSISTANT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Assistant",
+                  "default": "Assistente"
+                }
+              }
+            },
+            "_row_num": 6,
+            "__rowNum__": 5,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 3
+          },
+          {
+            "type": "adate",
+            "name": "VISITDATE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Date",
+                  "default": "Data"
+                }
+              }
+            },
+            "_row_num": 7,
+            "__rowNum__": 6,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen2",
+            "promptIdx": 4
           },
           {
             "type": "select_one_with_other",
@@ -3809,12 +4021,12 @@
                 }
               }
             },
-            "_row_num": 6,
-            "__rowNum__": 5,
+            "_row_num": 10,
+            "__rowNum__": 9,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 1
+            "_branch_label_enclosing_screen": "survey/_screen9",
+            "promptIdx": 5
           },
           {
             "type": "text",
@@ -3827,12 +4039,12 @@
                 }
               }
             },
-            "_row_num": 8,
-            "__rowNum__": 7,
+            "_row_num": 12,
+            "__rowNum__": 11,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 2
+            "_branch_label_enclosing_screen": "survey/_screen9",
+            "promptIdx": 6
           },
           {
             "type": "time",
@@ -3845,12 +4057,12 @@
                 }
               }
             },
-            "_row_num": 10,
-            "__rowNum__": 9,
+            "_row_num": 14,
+            "__rowNum__": 13,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 3
+            "_branch_label_enclosing_screen": "survey/_screen9",
+            "promptIdx": 7
           },
           {
             "type": "time",
@@ -3863,12 +4075,12 @@
                 }
               }
             },
-            "_row_num": 11,
-            "__rowNum__": 10,
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen5",
-            "promptIdx": 4
+            "_branch_label_enclosing_screen": "survey/_screen9",
+            "promptIdx": 8
           },
           {
             "type": "select_one",
@@ -3882,12 +4094,12 @@
                 }
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "_row_num": 18,
+            "__rowNum__": 17,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen13",
-            "promptIdx": 5
+            "_branch_label_enclosing_screen": "survey/_screen17",
+            "promptIdx": 9
           },
           {
             "type": "integer",
@@ -3900,12 +4112,12 @@
                 }
               }
             },
-            "_row_num": 17,
-            "__rowNum__": 16,
+            "_row_num": 21,
+            "__rowNum__": 20,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen16",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "survey/_screen20",
+            "promptIdx": 10
           },
           {
             "type": "select_one",
@@ -3919,12 +4131,12 @@
                 }
               }
             },
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "_row_num": 24,
+            "__rowNum__": 23,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 11
           },
           {
             "type": "integer",
@@ -3937,12 +4149,12 @@
                 }
               }
             },
-            "_row_num": 22,
-            "__rowNum__": 21,
+            "_row_num": 26,
+            "__rowNum__": 25,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 12
           },
           {
             "type": "select_one",
@@ -3956,12 +4168,12 @@
                 }
               }
             },
-            "_row_num": 23,
-            "__rowNum__": 22,
+            "_row_num": 27,
+            "__rowNum__": 26,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 13
           },
           {
             "type": "select_one",
@@ -3975,12 +4187,12 @@
                 }
               }
             },
-            "_row_num": 24,
-            "__rowNum__": 23,
+            "_row_num": 28,
+            "__rowNum__": 27,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 10
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 14
           },
           {
             "type": "text",
@@ -3993,12 +4205,12 @@
                 }
               }
             },
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "_row_num": 30,
+            "__rowNum__": 29,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 15
           },
           {
             "type": "text",
@@ -4011,12 +4223,12 @@
                 }
               }
             },
-            "_row_num": 27,
-            "__rowNum__": 26,
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 16
           },
           {
             "type": "text",
@@ -4029,12 +4241,12 @@
                 }
               }
             },
-            "_row_num": 28,
-            "__rowNum__": 27,
+            "_row_num": 32,
+            "__rowNum__": 31,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen19",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "survey/_screen23",
+            "promptIdx": 17
           },
           {
             "type": "note",
@@ -4046,12 +4258,12 @@
                 }
               }
             },
-            "_row_num": 34,
-            "__rowNum__": 33,
+            "_row_num": 38,
+            "__rowNum__": 37,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 18
           },
           {
             "type": "time",
@@ -4064,12 +4276,12 @@
                 }
               }
             },
-            "_row_num": 35,
-            "__rowNum__": 34,
+            "_row_num": 39,
+            "__rowNum__": 38,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 15
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 19
           },
           {
             "type": "time",
@@ -4082,12 +4294,12 @@
                 }
               }
             },
-            "_row_num": 36,
-            "__rowNum__": 35,
+            "_row_num": 40,
+            "__rowNum__": 39,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 16
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 20
           },
           {
             "type": "time",
@@ -4100,12 +4312,12 @@
                 }
               }
             },
-            "_row_num": 37,
-            "__rowNum__": 36,
+            "_row_num": 41,
+            "__rowNum__": 40,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 17
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 21
           },
           {
             "type": "time",
@@ -4118,12 +4330,12 @@
                 }
               }
             },
-            "_row_num": 38,
-            "__rowNum__": 37,
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 18
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 22
           },
           {
             "type": "time",
@@ -4136,12 +4348,12 @@
                 }
               }
             },
-            "_row_num": 39,
-            "__rowNum__": 38,
+            "_row_num": 43,
+            "__rowNum__": 42,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 19
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 23
           },
           {
             "type": "time",
@@ -4154,12 +4366,12 @@
                 }
               }
             },
-            "_row_num": 40,
-            "__rowNum__": 39,
+            "_row_num": 44,
+            "__rowNum__": 43,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen33",
-            "promptIdx": 20
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 24
           },
           {
             "type": "select_one",
@@ -4173,12 +4385,12 @@
                 }
               }
             },
-            "_row_num": 43,
-            "__rowNum__": 42,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "survey/_screen46",
+            "promptIdx": 25
           },
           {
             "type": "integer",
@@ -4191,12 +4403,12 @@
                 }
               }
             },
-            "_row_num": 44,
-            "__rowNum__": 43,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "survey/_screen46",
+            "promptIdx": 26
           },
           {
             "type": "integer",
@@ -4209,12 +4421,12 @@
                 }
               }
             },
-            "_row_num": 45,
-            "__rowNum__": 44,
+            "_row_num": 49,
+            "__rowNum__": 48,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "survey/_screen46",
+            "promptIdx": 27
           },
           {
             "type": "select_one",
@@ -4228,12 +4440,12 @@
                 }
               }
             },
-            "_row_num": 46,
-            "__rowNum__": 45,
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "survey/_screen46",
+            "promptIdx": 28
           },
           {
             "type": "text",
@@ -4246,12 +4458,12 @@
                 }
               }
             },
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "survey/_screen46",
+            "promptIdx": 29
           },
           {
             "type": "select_one",
@@ -4265,12 +4477,12 @@
                 }
               }
             },
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 53,
+            "__rowNum__": 52,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen42",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "survey/_screen46",
+            "promptIdx": 30
           },
           {
             "type": "select_one",
@@ -4284,12 +4496,12 @@
                 }
               }
             },
-            "_row_num": 54,
-            "__rowNum__": 53,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 31
           },
           {
             "type": "text",
@@ -4302,12 +4514,12 @@
                 }
               }
             },
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "_row_num": 60,
+            "__rowNum__": 59,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 32
           },
           {
             "type": "select_one",
@@ -4321,12 +4533,12 @@
                 }
               }
             },
-            "_row_num": 59,
-            "__rowNum__": 58,
+            "_row_num": 63,
+            "__rowNum__": 62,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 33
           },
           {
             "type": "text",
@@ -4339,12 +4551,12 @@
                 }
               }
             },
-            "_row_num": 61,
-            "__rowNum__": 60,
+            "_row_num": 65,
+            "__rowNum__": 64,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 34
           },
           {
             "type": "select_one",
@@ -4358,12 +4570,12 @@
                 }
               }
             },
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 35
           },
           {
             "type": "text",
@@ -4376,12 +4588,12 @@
                 }
               }
             },
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 69,
+            "__rowNum__": 68,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 36
           },
           {
             "type": "select_one",
@@ -4395,12 +4607,12 @@
                 }
               }
             },
-            "_row_num": 68,
-            "__rowNum__": 67,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 37
           },
           {
             "type": "text",
@@ -4413,12 +4625,12 @@
                 }
               }
             },
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 74,
+            "__rowNum__": 73,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "survey/_screen57",
+            "promptIdx": 38
           },
           {
             "type": "note",
@@ -4430,12 +4642,12 @@
                 }
               }
             },
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 39
           },
           {
             "type": "integer",
@@ -4448,12 +4660,12 @@
                 }
               }
             },
-            "_row_num": 77,
-            "__rowNum__": 76,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 36
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 40
           },
           {
             "type": "adate",
@@ -4466,12 +4678,12 @@
                 }
               }
             },
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 41
           },
           {
             "type": "integer",
@@ -4484,12 +4696,12 @@
                 }
               }
             },
-            "_row_num": 79,
-            "__rowNum__": 78,
+            "_row_num": 83,
+            "__rowNum__": 82,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 42
           },
           {
             "type": "adate",
@@ -4502,12 +4714,12 @@
                 }
               }
             },
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 43
           },
           {
             "type": "integer",
@@ -4520,12 +4732,12 @@
                 }
               }
             },
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 44
           },
           {
             "type": "adate",
@@ -4538,12 +4750,12 @@
                 }
               }
             },
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "_row_num": 86,
+            "__rowNum__": 85,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 45
           },
           {
             "type": "integer",
@@ -4556,12 +4768,12 @@
                 }
               }
             },
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 42
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 46
           },
           {
             "type": "adate",
@@ -4574,12 +4786,12 @@
                 }
               }
             },
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen75",
-            "promptIdx": 43
+            "_branch_label_enclosing_screen": "survey/_screen79",
+            "promptIdx": 47
           },
           {
             "type": "note",
@@ -4591,12 +4803,12 @@
                 }
               }
             },
-            "_row_num": 87,
-            "__rowNum__": 86,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 44
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 48
           },
           {
             "type": "integer",
@@ -4609,12 +4821,12 @@
                 }
               }
             },
-            "_row_num": 88,
-            "__rowNum__": 87,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 45
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 49
           },
           {
             "type": "adate",
@@ -4627,12 +4839,12 @@
                 }
               }
             },
-            "_row_num": 89,
-            "__rowNum__": 88,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 46
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 50
           },
           {
             "type": "integer",
@@ -4645,12 +4857,12 @@
                 }
               }
             },
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 94,
+            "__rowNum__": 93,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 47
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 51
           },
           {
             "type": "adate",
@@ -4663,12 +4875,12 @@
                 }
               }
             },
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 48
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 52
           },
           {
             "type": "integer",
@@ -4681,12 +4893,12 @@
                 }
               }
             },
-            "_row_num": 92,
-            "__rowNum__": 91,
+            "_row_num": 96,
+            "__rowNum__": 95,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 49
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 53
           },
           {
             "type": "adate",
@@ -4699,12 +4911,12 @@
                 }
               }
             },
-            "_row_num": 93,
-            "__rowNum__": 92,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 50
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 54
           },
           {
             "type": "integer",
@@ -4717,12 +4929,12 @@
                 }
               }
             },
-            "_row_num": 94,
-            "__rowNum__": 93,
+            "_row_num": 98,
+            "__rowNum__": 97,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 51
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 55
           },
           {
             "type": "adate",
@@ -4735,12 +4947,12 @@
                 }
               }
             },
-            "_row_num": 95,
-            "__rowNum__": 94,
+            "_row_num": 99,
+            "__rowNum__": 98,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen86",
-            "promptIdx": 52
+            "_branch_label_enclosing_screen": "survey/_screen90",
+            "promptIdx": 56
           },
           {
             "type": "select_one",
@@ -4754,12 +4966,12 @@
                 }
               }
             },
-            "_row_num": 98,
-            "__rowNum__": 97,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen97",
-            "promptIdx": 53
+            "_branch_label_enclosing_screen": "survey/_screen101",
+            "promptIdx": 57
           },
           {
             "type": "integer",
@@ -4772,12 +4984,12 @@
                 }
               }
             },
-            "_row_num": 100,
-            "__rowNum__": 99,
+            "_row_num": 104,
+            "__rowNum__": 103,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen97",
-            "promptIdx": 54
+            "_branch_label_enclosing_screen": "survey/_screen101",
+            "promptIdx": 58
           },
           {
             "type": "note",
@@ -4789,12 +5001,12 @@
                 }
               }
             },
-            "_row_num": 104,
-            "__rowNum__": 103,
+            "_row_num": 108,
+            "__rowNum__": 107,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 55
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 59
           },
           {
             "type": "note",
@@ -4806,12 +5018,12 @@
                 }
               }
             },
-            "_row_num": 105,
-            "__rowNum__": 104,
+            "_row_num": 109,
+            "__rowNum__": 108,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 56
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 60
           },
           {
             "type": "integer",
@@ -4824,12 +5036,12 @@
                 }
               }
             },
-            "_row_num": 106,
-            "__rowNum__": 105,
+            "_row_num": 110,
+            "__rowNum__": 109,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 57
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 61
           },
           {
             "type": "adate",
@@ -4842,12 +5054,12 @@
                 }
               }
             },
-            "_row_num": 107,
-            "__rowNum__": 106,
+            "_row_num": 111,
+            "__rowNum__": 110,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 58
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 62
           },
           {
             "type": "note",
@@ -4859,12 +5071,12 @@
                 }
               }
             },
-            "_row_num": 108,
-            "__rowNum__": 107,
+            "_row_num": 112,
+            "__rowNum__": 111,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 59
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 63
           },
           {
             "type": "integer",
@@ -4877,12 +5089,12 @@
                 }
               }
             },
-            "_row_num": 109,
-            "__rowNum__": 108,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 60
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 64
           },
           {
             "type": "adate",
@@ -4895,12 +5107,12 @@
                 }
               }
             },
-            "_row_num": 110,
-            "__rowNum__": 109,
+            "_row_num": 114,
+            "__rowNum__": 113,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen103",
-            "promptIdx": 61
+            "_branch_label_enclosing_screen": "survey/_screen107",
+            "promptIdx": 65
           },
           {
             "type": "note",
@@ -4912,12 +5124,12 @@
                 }
               }
             },
-            "_row_num": 113,
-            "__rowNum__": 112,
+            "_row_num": 117,
+            "__rowNum__": 116,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 62
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 66
           },
           {
             "type": "note",
@@ -4929,12 +5141,12 @@
                 }
               }
             },
-            "_row_num": 114,
-            "__rowNum__": 113,
+            "_row_num": 118,
+            "__rowNum__": 117,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 63
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 67
           },
           {
             "type": "integer",
@@ -4947,12 +5159,12 @@
                 }
               }
             },
-            "_row_num": 115,
-            "__rowNum__": 114,
+            "_row_num": 119,
+            "__rowNum__": 118,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 64
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 68
           },
           {
             "type": "adate",
@@ -4965,12 +5177,12 @@
                 }
               }
             },
-            "_row_num": 116,
-            "__rowNum__": 115,
+            "_row_num": 120,
+            "__rowNum__": 119,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 65
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 69
           },
           {
             "type": "note",
@@ -4982,12 +5194,12 @@
                 }
               }
             },
-            "_row_num": 117,
-            "__rowNum__": 116,
+            "_row_num": 121,
+            "__rowNum__": 120,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 66
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 70
           },
           {
             "type": "integer",
@@ -5000,12 +5212,12 @@
                 }
               }
             },
-            "_row_num": 118,
-            "__rowNum__": 117,
+            "_row_num": 122,
+            "__rowNum__": 121,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 67
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 71
           },
           {
             "type": "adate",
@@ -5018,12 +5230,12 @@
                 }
               }
             },
-            "_row_num": 119,
-            "__rowNum__": 118,
+            "_row_num": 123,
+            "__rowNum__": 122,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 68
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 72
           },
           {
             "type": "select_one",
@@ -5037,12 +5249,12 @@
                 }
               }
             },
-            "_row_num": 120,
-            "__rowNum__": 119,
+            "_row_num": 124,
+            "__rowNum__": 123,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 69
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 73
           },
           {
             "type": "text",
@@ -5055,12 +5267,12 @@
                 }
               }
             },
-            "_row_num": 122,
-            "__rowNum__": 121,
+            "_row_num": 126,
+            "__rowNum__": 125,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 70
+            "_branch_label_enclosing_screen": "survey/_screen116",
+            "promptIdx": 74
           },
           {
             "type": "select_one",
@@ -5074,12 +5286,12 @@
                 }
               }
             },
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "_row_num": 130,
+            "__rowNum__": 129,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen125",
-            "promptIdx": 71
+            "_branch_label_enclosing_screen": "survey/_screen129",
+            "promptIdx": 75
           },
           {
             "type": "select_one",
@@ -5093,12 +5305,12 @@
                 }
               }
             },
-            "_row_num": 128,
-            "__rowNum__": 127,
+            "_row_num": 132,
+            "__rowNum__": 131,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen125",
-            "promptIdx": 72
+            "_branch_label_enclosing_screen": "survey/_screen129",
+            "promptIdx": 76
           },
           {
             "type": "select_one",
@@ -5112,12 +5324,12 @@
                 }
               }
             },
-            "_row_num": 138,
-            "__rowNum__": 137,
+            "_row_num": 142,
+            "__rowNum__": 141,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen137",
-            "promptIdx": 73
+            "_branch_label_enclosing_screen": "survey/_screen141",
+            "promptIdx": 77
           },
           {
             "type": "text",
@@ -5130,12 +5342,12 @@
                 }
               }
             },
-            "_row_num": 140,
-            "__rowNum__": 139,
+            "_row_num": 144,
+            "__rowNum__": 143,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen137",
-            "promptIdx": 74
+            "_branch_label_enclosing_screen": "survey/_screen141",
+            "promptIdx": 78
           },
           {
             "type": "select_one",
@@ -5149,12 +5361,12 @@
                 }
               }
             },
-            "_row_num": 141,
-            "__rowNum__": 140,
+            "_row_num": 145,
+            "__rowNum__": 144,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen137",
-            "promptIdx": 75
+            "_branch_label_enclosing_screen": "survey/_screen141",
+            "promptIdx": 79
           },
           {
             "type": "select_one",
@@ -5168,12 +5380,12 @@
                 }
               }
             },
-            "_row_num": 145,
-            "__rowNum__": 144,
+            "_row_num": 149,
+            "__rowNum__": 148,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen144",
-            "promptIdx": 76
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 80
           },
           {
             "type": "text",
@@ -5186,12 +5398,12 @@
                 }
               }
             },
-            "_row_num": 147,
-            "__rowNum__": 146,
+            "_row_num": 151,
+            "__rowNum__": 150,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen144",
-            "promptIdx": 77
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 81
           },
           {
             "type": "text",
@@ -5204,12 +5416,12 @@
                 }
               }
             },
-            "_row_num": 148,
-            "__rowNum__": 147,
+            "_row_num": 152,
+            "__rowNum__": 151,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen144",
-            "promptIdx": 78
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 82
           },
           {
             "type": "select_one",
@@ -5223,12 +5435,12 @@
                 }
               }
             },
-            "_row_num": 152,
-            "__rowNum__": 151,
+            "_row_num": 156,
+            "__rowNum__": 155,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen151",
-            "promptIdx": 79
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 83
           },
           {
             "type": "text",
@@ -5241,12 +5453,12 @@
                 }
               }
             },
-            "_row_num": 154,
-            "__rowNum__": 153,
+            "_row_num": 158,
+            "__rowNum__": 157,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen151",
-            "promptIdx": 80
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 84
           },
           {
             "type": "text",
@@ -5259,12 +5471,12 @@
                 }
               }
             },
-            "_row_num": 156,
-            "__rowNum__": 155,
+            "_row_num": 160,
+            "__rowNum__": 159,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen151",
-            "promptIdx": 81
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 85
           },
           {
             "type": "time",
@@ -5277,12 +5489,12 @@
                 }
               }
             },
-            "_row_num": 157,
-            "__rowNum__": 156,
+            "_row_num": 161,
+            "__rowNum__": 160,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen151",
-            "promptIdx": 82
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 86
           },
           {
             "type": "time",
@@ -5295,20 +5507,20 @@
                 }
               }
             },
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 162,
+            "__rowNum__": 161,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen151",
-            "promptIdx": 83
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 87
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 160,
-            "_branch_label_enclosing_screen": "survey/_screen160",
-            "promptIdx": 84
+            "_row_num": 164,
+            "_branch_label_enclosing_screen": "survey/_screen164",
+            "promptIdx": 88
           }
         ],
         "validation_tag_map": {
@@ -5322,270 +5534,270 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 4,
-              "__rowNum__": 3,
+              "_row_num": 8,
+              "__rowNum__": 7,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
             "clause": "begin screen",
-            "_row_num": 5,
-            "__rowNum__": 4,
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 12,
-              "__rowNum__": 11,
+              "_row_num": 16,
+              "__rowNum__": 15,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nif (selected(data(\"TRANSPORT\"),\"2\")) {\nactivePromptIndicies.push(2);\n}\nactivePromptIndicies.push(3);\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\nif (selected(data(\"TRANSPORT\"),\"2\")) {\nactivePromptIndicies.push(6);\n}\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
             "clause": "begin screen",
-            "_row_num": 13,
-            "__rowNum__": 12,
+            "_row_num": 17,
+            "__rowNum__": 16,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 15,
-              "__rowNum__": 14,
+              "_row_num": 19,
+              "__rowNum__": 18,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 2
           },
           {
             "clause": "begin screen",
-            "_row_num": 16,
-            "__rowNum__": 15,
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 18,
-              "__rowNum__": 17,
+              "_row_num": 22,
+              "__rowNum__": 21,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
           },
           {
             "clause": "begin screen",
-            "_row_num": 19,
-            "__rowNum__": 18,
+            "_row_num": 23,
+            "__rowNum__": 22,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 31,
-              "__rowNum__": 30,
+              "_row_num": 35,
+              "__rowNum__": 34,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nif (data(\"BCG\") == \"1\") {\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nif (data(\"BCGMANU\") == \"2\") {\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nif (data(\"BCG\") == \"1\") {\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\nif (data(\"BCGMANU\") == \"2\") {\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 4
           },
           {
             "clause": "if",
             "condition": "data(\"BCG\") == \"1\"",
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 36,
+            "__rowNum__": 35,
             "_token_type": "goto_label",
-            "_branch_label": "_then32",
+            "_branch_label": "_then36",
             "operationIdx": 5
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else52",
-            "_row_num": 52,
+            "_branch_label": "_else56",
+            "_row_num": 56,
             "operationIdx": 6
           },
           {
             "clause": "begin screen",
-            "_row_num": 33,
-            "__rowNum__": 32,
+            "_row_num": 37,
+            "__rowNum__": 36,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 41,
-              "__rowNum__": 40,
+              "_row_num": 45,
+              "__rowNum__": 44,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "begin screen",
-            "_row_num": 42,
-            "__rowNum__": 41,
+            "_row_num": 46,
+            "__rowNum__": 45,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 51,
-              "__rowNum__": 50,
+              "_row_num": 55,
+              "__rowNum__": 54,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nif (data(\"BCGTECHNIQUE\") == \"2\") {\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nif (data(\"BCGTECHNIQUE\") == \"2\") {\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif52",
-            "_row_num": 52,
+            "_branch_label": "_endif56",
+            "_row_num": 56,
             "operationIdx": 9
           },
           {
             "clause": "begin screen",
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 74,
-              "__rowNum__": 73,
+              "_row_num": 78,
+              "__rowNum__": 77,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nif (data(\"FRIDGE\") == \"2\") {\nactivePromptIndicies.push(28);\n}\nif (data(\"FRIDGE\") == \"1\") {\nactivePromptIndicies.push(29);\nif (data(\"FRIDGEOTHER\") == \"1\") {\nactivePromptIndicies.push(30);\n}\nactivePromptIndicies.push(31);\nif (data(\"FRIDGEREG\") == \"2\") {\nactivePromptIndicies.push(32);\n}\nif (data(\"FRIDGEREG\") == \"1\") {\nactivePromptIndicies.push(33);\nif (data(\"FRIDGEREGCOR\") == \"2\") {\nactivePromptIndicies.push(34);\n}\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\nif (data(\"FRIDGE\") == \"2\") {\nactivePromptIndicies.push(32);\n}\nif (data(\"FRIDGE\") == \"1\") {\nactivePromptIndicies.push(33);\nif (data(\"FRIDGEOTHER\") == \"1\") {\nactivePromptIndicies.push(34);\n}\nactivePromptIndicies.push(35);\nif (data(\"FRIDGEREG\") == \"2\") {\nactivePromptIndicies.push(36);\n}\nif (data(\"FRIDGEREG\") == \"1\") {\nactivePromptIndicies.push(37);\nif (data(\"FRIDGEREGCOR\") == \"2\") {\nactivePromptIndicies.push(38);\n}\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "_row_num": 79,
+            "__rowNum__": 78,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 85,
-              "__rowNum__": 84,
+              "_row_num": 89,
+              "__rowNum__": 88,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
           },
           {
             "clause": "begin screen",
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 90,
+            "__rowNum__": 89,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 96,
-              "__rowNum__": 95,
+              "_row_num": 100,
+              "__rowNum__": 99,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
             "clause": "begin screen",
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 101,
+            "__rowNum__": 100,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 102,
-              "__rowNum__": 101,
+              "_row_num": 106,
+              "__rowNum__": 105,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(53);\nif (data(\"HEAT\") == \"1\") {\nactivePromptIndicies.push(54);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\nif (data(\"HEAT\") == \"1\") {\nactivePromptIndicies.push(58);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
           },
           {
             "clause": "begin screen",
-            "_row_num": 103,
-            "__rowNum__": 102,
+            "_row_num": 107,
+            "__rowNum__": 106,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 111,
-              "__rowNum__": 110,
+              "_row_num": 115,
+              "__rowNum__": 114,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\nactivePromptIndicies.push(57);\nactivePromptIndicies.push(58);\nactivePromptIndicies.push(59);\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(59);\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\nactivePromptIndicies.push(62);\nactivePromptIndicies.push(63);\nactivePromptIndicies.push(64);\nactivePromptIndicies.push(65);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
             "clause": "begin screen",
-            "_row_num": 112,
-            "__rowNum__": 111,
+            "_row_num": 116,
+            "__rowNum__": 115,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 124,
-              "__rowNum__": 123,
+              "_row_num": 128,
+              "__rowNum__": 127,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(62);\nactivePromptIndicies.push(63);\nactivePromptIndicies.push(64);\nactivePromptIndicies.push(65);\nactivePromptIndicies.push(66);\nactivePromptIndicies.push(67);\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\nif (data(\"MISMATERIAL\") == \"1\") {\nactivePromptIndicies.push(70);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(66);\nactivePromptIndicies.push(67);\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\nactivePromptIndicies.push(70);\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nactivePromptIndicies.push(73);\nif (data(\"MISMATERIAL\") == \"1\") {\nactivePromptIndicies.push(74);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 15
           },
           {
             "clause": "begin screen",
-            "_row_num": 125,
-            "__rowNum__": 124,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 130,
-              "__rowNum__": 129,
+              "_row_num": 134,
+              "__rowNum__": 133,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(71);\nif (data(\"AXLYMPH\") == \"1\") {\nactivePromptIndicies.push(72);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(75);\nif (data(\"AXLYMPH\") == \"1\") {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
             "clause": "begin screen",
-            "_row_num": 137,
-            "__rowNum__": 136,
+            "_row_num": 141,
+            "__rowNum__": 140,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 143,
-              "__rowNum__": 142,
+              "_row_num": 147,
+              "__rowNum__": 146,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(73);\nif (data(\"HCPROB\") == \"1\") {\nactivePromptIndicies.push(74);\nactivePromptIndicies.push(75);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nif (data(\"HCPROB\") == \"1\") {\nactivePromptIndicies.push(78);\nactivePromptIndicies.push(79);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 17
           },
           {
             "clause": "begin screen",
-            "_row_num": 144,
-            "__rowNum__": 143,
+            "_row_num": 148,
+            "__rowNum__": 147,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 150,
-              "__rowNum__": 149,
+              "_row_num": 154,
+              "__rowNum__": 153,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(76);\nif (data(\"ASSPROB\") == \"1\") {\nactivePromptIndicies.push(77);\nactivePromptIndicies.push(78);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(80);\nif (data(\"ASSPROB\") == \"1\") {\nactivePromptIndicies.push(81);\nactivePromptIndicies.push(82);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
             "clause": "begin screen",
-            "_row_num": 151,
-            "__rowNum__": 150,
+            "_row_num": 155,
+            "__rowNum__": 154,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 159,
-              "__rowNum__": 158,
+              "_row_num": 163,
+              "__rowNum__": 162,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(79);\nif (data(\"PROBLEM\") == \"1\") {\nactivePromptIndicies.push(80);\n}\nactivePromptIndicies.push(81);\nactivePromptIndicies.push(82);\nactivePromptIndicies.push(83);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(83);\nif (data(\"PROBLEM\") == \"1\") {\nactivePromptIndicies.push(84);\n}\nactivePromptIndicies.push(85);\nactivePromptIndicies.push(86);\nactivePromptIndicies.push(87);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 19
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 160,
+            "_row_num": 164,
             "operationIdx": 20
           },
           {
-            "_row_num": 160,
+            "_row_num": 164,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(84);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(88);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -5594,34 +5806,34 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 160,
+            "_row_num": 164,
             "operationIdx": 22
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
-          "_screen5": 1,
-          "_screen13": 2,
-          "_screen16": 3,
-          "_screen19": 4,
-          "_then32": 7,
-          "_screen33": 7,
-          "_screen42": 8,
-          "_else52": 10,
-          "_endif52": 10,
-          "_screen53": 10,
-          "_screen75": 11,
-          "_screen86": 12,
-          "_screen97": 13,
-          "_screen103": 14,
-          "_screen112": 15,
-          "_screen125": 16,
+          "_screen9": 1,
+          "_screen17": 2,
+          "_screen20": 3,
+          "_screen23": 4,
+          "_then36": 7,
+          "_screen37": 7,
+          "_screen46": 8,
+          "_else56": 10,
+          "_endif56": 10,
+          "_screen57": 10,
+          "_screen79": 11,
+          "_screen90": 12,
+          "_screen101": 13,
+          "_screen107": 14,
+          "_screen116": 15,
+          "_screen129": 16,
           "PHOTOS": 17,
-          "_screen137": 17,
-          "_screen144": 18,
-          "_screen151": 19,
+          "_screen141": 17,
+          "_screen148": 18,
+          "_screen155": 19,
           "_contents": 21,
-          "_screen160": 21
+          "_screen164": 21
         }
       },
       "initial": {
@@ -5806,35 +6018,114 @@
       }
     },
     "dataTableModel": {
-      "SUPERVISOR": {
-        "type": "string",
-        "valuesList": "Assistants",
+      "HCAREA": {
+        "type": "integer",
         "_defn": [
-          {
-            "_row_num": 3,
-            "section_name": "survey"
-          },
           {
             "_row_num": 2,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "SUPERVISOR",
-        "elementName": "SUPERVISOR",
+        "elementKey": "HCAREA",
+        "elementName": "HCAREA",
         "elementSet": "data",
-        "elementPath": "SUPERVISOR"
+        "elementPath": "HCAREA"
       },
-      "TRANSPORT": {
+      "HCAREANOME": {
         "type": "string",
-        "valuesList": "Transportation",
+        "_defn": [
+          {
+            "_row_num": 3,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "HCAREANOME",
+        "elementName": "HCAREANOME",
+        "elementSet": "data",
+        "elementPath": "HCAREANOME"
+      },
+      "REG": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 4,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REG",
+        "elementName": "REG",
+        "elementSet": "data",
+        "elementPath": "REG"
+      },
+      "REGNOME": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 5,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "REGNOME",
+        "elementName": "REGNOME",
+        "elementSet": "data",
+        "elementPath": "REGNOME"
+      },
+      "VISITDATE": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 7,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 6,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISITDATE",
+        "elementName": "VISITDATE",
+        "elementSet": "data",
+        "elementPath": "VISITDATE"
+      },
+      "ASSISTANT": {
+        "type": "string",
+        "valuesList": "Assistants",
         "_defn": [
           {
             "_row_num": 6,
             "section_name": "survey"
           },
           {
-            "_row_num": 3,
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ASSISTANT",
+        "elementName": "ASSISTANT",
+        "elementSet": "data",
+        "elementPath": "ASSISTANT"
+      },
+      "TRANSPORT": {
+        "type": "string",
+        "valuesList": "Transportation",
+        "_defn": [
+          {
+            "_row_num": 10,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
             "section_name": "model"
           }
         ],
@@ -5848,11 +6139,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
-            "_row_num": 4,
+            "_row_num": 10,
             "section_name": "model"
           }
         ],
@@ -5867,11 +6158,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 14,
             "section_name": "survey"
           },
           {
-            "_row_num": 5,
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -5886,11 +6177,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
-            "_row_num": 6,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -5905,11 +6196,11 @@
         "valuesList": "Random",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 18,
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -5923,11 +6214,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 21,
             "section_name": "survey"
           },
           {
-            "_row_num": 8,
+            "_row_num": 14,
             "section_name": "model"
           }
         ],
@@ -5942,11 +6233,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 24,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 15,
             "section_name": "model"
           }
         ],
@@ -5960,11 +6251,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 26,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -5979,11 +6270,11 @@
         "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 27,
             "section_name": "survey"
           },
           {
-            "_row_num": 11,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -5998,11 +6289,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 28,
             "section_name": "survey"
           },
           {
-            "_row_num": 12,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -6016,7 +6307,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -6030,7 +6321,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -6044,7 +6335,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -6059,11 +6350,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 39,
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -6078,11 +6369,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 40,
             "section_name": "survey"
           },
           {
-            "_row_num": 17,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -6097,11 +6388,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 37,
+            "_row_num": 41,
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -6116,11 +6407,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 38,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -6135,11 +6426,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 39,
+            "_row_num": 43,
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -6154,11 +6445,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 40,
+            "_row_num": 44,
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -6173,11 +6464,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 43,
+            "_row_num": 47,
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -6191,11 +6482,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 44,
+            "_row_num": 48,
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -6209,11 +6500,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 45,
+            "_row_num": 49,
             "section_name": "survey"
           },
           {
-            "_row_num": 24,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -6228,11 +6519,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 46,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -6246,11 +6537,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -6265,11 +6556,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 53,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -6284,11 +6575,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 54,
+            "_row_num": 58,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -6302,11 +6593,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 60,
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -6321,11 +6612,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 59,
+            "_row_num": 63,
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -6339,11 +6630,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 61,
+            "_row_num": 65,
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -6358,11 +6649,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 67,
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -6376,11 +6667,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 69,
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -6395,11 +6686,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 72,
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -6413,11 +6704,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 74,
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -6431,11 +6722,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 77,
+            "_row_num": 81,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -6454,11 +6745,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 78,
+            "_row_num": 82,
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -6472,11 +6763,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 79,
+            "_row_num": 83,
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -6495,11 +6786,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 80,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -6513,11 +6804,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 85,
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -6536,11 +6827,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 86,
             "section_name": "survey"
           },
           {
-            "_row_num": 41,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -6554,11 +6845,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 87,
             "section_name": "survey"
           },
           {
-            "_row_num": 42,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -6577,11 +6868,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 88,
             "section_name": "survey"
           },
           {
-            "_row_num": 43,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -6595,11 +6886,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 88,
+            "_row_num": 92,
             "section_name": "survey"
           },
           {
-            "_row_num": 44,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -6618,11 +6909,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 89,
+            "_row_num": 93,
             "section_name": "survey"
           },
           {
-            "_row_num": 45,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -6636,11 +6927,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 90,
+            "_row_num": 94,
             "section_name": "survey"
           },
           {
-            "_row_num": 46,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -6659,11 +6950,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 91,
+            "_row_num": 95,
             "section_name": "survey"
           },
           {
-            "_row_num": 47,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -6677,11 +6968,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 96,
             "section_name": "survey"
           },
           {
-            "_row_num": 48,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -6700,11 +6991,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 49,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -6718,11 +7009,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 98,
             "section_name": "survey"
           },
           {
-            "_row_num": 50,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -6741,11 +7032,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 99,
             "section_name": "survey"
           },
           {
-            "_row_num": 51,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -6760,11 +7051,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 102,
             "section_name": "survey"
           },
           {
-            "_row_num": 52,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -6778,11 +7069,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 100,
+            "_row_num": 104,
             "section_name": "survey"
           },
           {
-            "_row_num": 53,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -6796,11 +7087,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 106,
+            "_row_num": 110,
             "section_name": "survey"
           },
           {
-            "_row_num": 54,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -6819,11 +7110,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 107,
+            "_row_num": 111,
             "section_name": "survey"
           },
           {
-            "_row_num": 55,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -6837,11 +7128,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 109,
+            "_row_num": 113,
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -6860,11 +7151,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 114,
             "section_name": "survey"
           },
           {
-            "_row_num": 57,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -6878,11 +7169,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 115,
+            "_row_num": 119,
             "section_name": "survey"
           },
           {
-            "_row_num": 58,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -6901,11 +7192,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 116,
+            "_row_num": 120,
             "section_name": "survey"
           },
           {
-            "_row_num": 59,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -6919,11 +7210,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 118,
+            "_row_num": 122,
             "section_name": "survey"
           },
           {
-            "_row_num": 60,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -6942,11 +7233,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 123,
             "section_name": "survey"
           },
           {
-            "_row_num": 61,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -6961,11 +7252,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 124,
             "section_name": "survey"
           },
           {
-            "_row_num": 62,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -6979,11 +7270,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 126,
             "section_name": "survey"
           },
           {
-            "_row_num": 63,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -6998,11 +7289,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 130,
             "section_name": "survey"
           },
           {
-            "_row_num": 64,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -7017,11 +7308,11 @@
         "valuesList": "Done",
         "_defn": [
           {
-            "_row_num": 128,
+            "_row_num": 132,
             "section_name": "survey"
           },
           {
-            "_row_num": 65,
+            "_row_num": 71,
             "section_name": "model"
           }
         ],
@@ -7036,11 +7327,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 138,
+            "_row_num": 142,
             "section_name": "survey"
           },
           {
-            "_row_num": 66,
+            "_row_num": 72,
             "section_name": "model"
           }
         ],
@@ -7054,11 +7345,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 140,
+            "_row_num": 144,
             "section_name": "survey"
           },
           {
-            "_row_num": 67,
+            "_row_num": 73,
             "section_name": "model"
           }
         ],
@@ -7073,11 +7364,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 141,
+            "_row_num": 145,
             "section_name": "survey"
           },
           {
-            "_row_num": 68,
+            "_row_num": 74,
             "section_name": "model"
           }
         ],
@@ -7092,11 +7383,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 145,
+            "_row_num": 149,
             "section_name": "survey"
           },
           {
-            "_row_num": 69,
+            "_row_num": 75,
             "section_name": "model"
           }
         ],
@@ -7110,11 +7401,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 147,
+            "_row_num": 151,
             "section_name": "survey"
           },
           {
-            "_row_num": 70,
+            "_row_num": 76,
             "section_name": "model"
           }
         ],
@@ -7128,11 +7419,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 148,
+            "_row_num": 152,
             "section_name": "survey"
           },
           {
-            "_row_num": 71,
+            "_row_num": 77,
             "section_name": "model"
           }
         ],
@@ -7147,11 +7438,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 152,
+            "_row_num": 156,
             "section_name": "survey"
           },
           {
-            "_row_num": 72,
+            "_row_num": 78,
             "section_name": "model"
           }
         ],
@@ -7165,11 +7456,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 154,
+            "_row_num": 158,
             "section_name": "survey"
           },
           {
-            "_row_num": 73,
+            "_row_num": 79,
             "section_name": "model"
           }
         ],
@@ -7183,11 +7474,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 156,
+            "_row_num": 160,
             "section_name": "survey"
           },
           {
-            "_row_num": 74,
+            "_row_num": 80,
             "section_name": "model"
           }
         ],
@@ -7202,11 +7493,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 157,
+            "_row_num": 161,
             "section_name": "survey"
           },
           {
-            "_row_num": 75,
+            "_row_num": 81,
             "section_name": "model"
           }
         ],
@@ -7221,11 +7512,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 162,
             "section_name": "survey"
           },
           {
-            "_row_num": 76,
+            "_row_num": 82,
             "section_name": "model"
           }
         ],
@@ -7238,7 +7529,7 @@
       "BCGMANUWHY": {
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 30,
             "section_name": "survey"
           }
         ],
@@ -7251,7 +7542,7 @@
       "BCGMANYVAC": {
         "_defn": [
           {
-            "_row_num": 27,
+            "_row_num": 31,
             "section_name": "survey"
           }
         ],
@@ -7264,7 +7555,7 @@
       "BCGMANUSOLVENT": {
         "_defn": [
           {
-            "_row_num": 28,
+            "_row_num": 32,
             "section_name": "survey"
           }
         ],
@@ -7388,6 +7679,13 @@
       }
     },
     "properties": [
+      {
+        "_partition": "Column",
+        "_aspect": "ASSISTANT",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Assistants\",\"data_value\":\"Igualdino\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":2},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Jailson\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":3},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Laerte\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":4},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Abdel\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":5},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Andreas\",\"display\":{\"title\":{\"text\":{\"english\":\"Andreas\",\"default\":\"Andreas\"}}},\"_row_num\":6},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Julie\",\"display\":{\"title\":{\"text\":{\"english\":\"Julie\",\"default\":\"Julie\"}}},\"_row_num\":7}]"
+      },
       {
         "_partition": "Column",
         "_aspect": "ASSPROB",
@@ -7520,13 +7818,6 @@
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"Random\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Intervention\",\"default\":\"Intervenção\"}}},\"_row_num\":12},{\"choice_list_name\":\"Random\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Control\",\"default\":\"Controle\"}}},\"_row_num\":13}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "SUPERVISOR",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Assistants\",\"data_value\":\"Igualdino\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":2},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Jailson\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":3},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Laerte\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":4},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Abdel\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":5},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Andreas\",\"display\":{\"title\":{\"text\":{\"english\":\"Andreas\",\"default\":\"Andreas\"}}},\"_row_num\":6},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Julie\",\"display\":{\"title\":{\"text\":{\"english\":\"Julie\",\"default\":\"Julie\"}}},\"_row_num\":7}]"
       },
       {
         "_partition": "Column",
