@@ -121,6 +121,9 @@
               "english": "Date",
               "default": "Data"
             }
+          },
+          "adate": {
+            "helperText": false
           }
         },
         "_row_num": 7
@@ -188,8 +191,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "What time did you arrive at the village?",
-              "default": "A que horas você chegou na tabanca?"
+              "english": "What time did you arrive at the health centre?",
+              "default": "A que horas você chegou ao centro de saúde?"
             }
           }
         },
@@ -294,7 +297,7 @@
       },
       {
         "type": "select_one",
-        "values_list": "YesNo",
+        "values_list": "YesNoDontknow",
         "name": "BCGMANU",
         "display": {
           "prompt": {
@@ -462,16 +465,29 @@
         "_row_num": 44
       },
       {
-        "clause": "end screen",
+        "type": "text",
+        "name": "BCGRECDIS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If you are unsure of the times please note it here",
+              "default": "Se você não tiver certeza dos horários, anote aqui"
+            }
+          }
+        },
         "_row_num": 45
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 46
       },
       {
+        "clause": "begin screen",
+        "_row_num": 47
+      },
+      {
         "type": "select_one",
-        "values_list": "YesNo",
+        "values_list": "YesNoDontknow",
         "name": "BCGCOOL",
         "display": {
           "prompt": {
@@ -481,7 +497,7 @@
             }
           }
         },
-        "_row_num": 47
+        "_row_num": 48
       },
       {
         "type": "integer",
@@ -494,7 +510,7 @@
             }
           }
         },
-        "_row_num": 48
+        "_row_num": 49
       },
       {
         "type": "integer",
@@ -507,11 +523,11 @@
             }
           }
         },
-        "_row_num": 49
+        "_row_num": 50
       },
       {
         "type": "select_one",
-        "values_list": "YesNo",
+        "values_list": "YesNoDontknow",
         "name": "BCGTECHNIQUE",
         "display": {
           "prompt": {
@@ -521,12 +537,12 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 51
       },
       {
         "clause": "if",
         "condition": "data(\"BCGTECHNIQUE\") == \"2\"",
-        "_row_num": 51
+        "_row_num": 52
       },
       {
         "type": "text",
@@ -539,7 +555,7 @@
             }
           }
         },
-        "_row_num": 52
+        "_row_num": 53
       },
       {
         "type": "select_one",
@@ -553,23 +569,23 @@
             }
           }
         },
-        "_row_num": 53
-      },
-      {
-        "clause": "end if",
         "_row_num": 54
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 55
       },
       {
-        "clause": "end if",
+        "clause": "end screen",
         "_row_num": 56
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 57
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 58
       },
       {
         "type": "select_one",
@@ -583,12 +599,12 @@
             }
           }
         },
-        "_row_num": 58
+        "_row_num": 59
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGE\") == \"2\"",
-        "_row_num": 59
+        "_row_num": 60
       },
       {
         "type": "text",
@@ -601,16 +617,16 @@
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 61
       },
       {
         "clause": "end if",
-        "_row_num": 61
+        "_row_num": 62
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGE\") == \"1\"",
-        "_row_num": 62
+        "_row_num": 63
       },
       {
         "type": "select_one",
@@ -624,12 +640,12 @@
             }
           }
         },
-        "_row_num": 63
+        "_row_num": 64
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEOTHER\") == \"1\"",
-        "_row_num": 64
+        "_row_num": 65
       },
       {
         "type": "text",
@@ -642,11 +658,11 @@
             }
           }
         },
-        "_row_num": 65
+        "_row_num": 66
       },
       {
         "clause": "end if",
-        "_row_num": 66
+        "_row_num": 67
       },
       {
         "type": "select_one",
@@ -660,12 +676,12 @@
             }
           }
         },
-        "_row_num": 67
+        "_row_num": 68
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEREG\") == \"2\"",
-        "_row_num": 68
+        "_row_num": 69
       },
       {
         "type": "text",
@@ -678,16 +694,16 @@
             }
           }
         },
-        "_row_num": 69
+        "_row_num": 70
       },
       {
         "clause": "end if",
-        "_row_num": 70
+        "_row_num": 71
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEREG\") == \"1\"",
-        "_row_num": 71
+        "_row_num": 72
       },
       {
         "type": "select_one",
@@ -701,12 +717,12 @@
             }
           }
         },
-        "_row_num": 72
+        "_row_num": 73
       },
       {
         "clause": "if",
         "condition": "data(\"FRIDGEREGCOR\") == \"2\"",
-        "_row_num": 73
+        "_row_num": 74
       },
       {
         "type": "text",
@@ -719,10 +735,6 @@
             }
           }
         },
-        "_row_num": 74
-      },
-      {
-        "clause": "end if",
         "_row_num": 75
       },
       {
@@ -734,12 +746,16 @@
         "_row_num": 77
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 78
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 79
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 80
       },
       {
         "type": "note",
@@ -751,7 +767,7 @@
             }
           }
         },
-        "_row_num": 80
+        "_row_num": 81
       },
       {
         "type": "integer",
@@ -764,7 +780,7 @@
             }
           }
         },
-        "_row_num": 81
+        "_row_num": 82
       },
       {
         "type": "adate",
@@ -775,9 +791,13 @@
               "english": "Japan BCG Laboratory: Vaccine expiration date",
               "default": "Japan BCG Laboratory: Data de validade da vacina"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 82
+        "_row_num": 83
       },
       {
         "type": "integer",
@@ -790,7 +810,7 @@
             }
           }
         },
-        "_row_num": 83
+        "_row_num": 84
       },
       {
         "type": "adate",
@@ -801,9 +821,13 @@
               "english": "Japan BCG Laboratory: Solvent expiration date",
               "default": "Japan BCG Laboratory: Data de validade do solvente"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 84
+        "_row_num": 85
       },
       {
         "type": "integer",
@@ -816,7 +840,7 @@
             }
           }
         },
-        "_row_num": 85
+        "_row_num": 86
       },
       {
         "type": "adate",
@@ -827,9 +851,13 @@
               "english": "BB-NCIPD Ltd: Vaccine expiration date",
               "default": "BB-NCIPD Ltd: Data de validade da vacina"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 86
+        "_row_num": 87
       },
       {
         "type": "integer",
@@ -842,7 +870,7 @@
             }
           }
         },
-        "_row_num": 87
+        "_row_num": 88
       },
       {
         "type": "adate",
@@ -853,17 +881,21 @@
               "english": "BB-NCIPD Ltd: Solvent expiration date",
               "default": "BB-NCIPD Ltd: Data de validade do solvente"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 88
-      },
-      {
-        "clause": "end screen",
         "_row_num": 89
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 90
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 91
       },
       {
         "type": "note",
@@ -875,7 +907,7 @@
             }
           }
         },
-        "_row_num": 91
+        "_row_num": 92
       },
       {
         "type": "integer",
@@ -888,7 +920,7 @@
             }
           }
         },
-        "_row_num": 92
+        "_row_num": 93
       },
       {
         "type": "adate",
@@ -899,9 +931,13 @@
               "english": "Serum Institute of India: Vaccine expiration date",
               "default": "Serum Institute of India: Data de validade da vacina"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 93
+        "_row_num": 94
       },
       {
         "type": "integer",
@@ -914,7 +950,7 @@
             }
           }
         },
-        "_row_num": 94
+        "_row_num": 95
       },
       {
         "type": "adate",
@@ -925,9 +961,13 @@
               "english": "Serum Institute of India: Solvent expiration date",
               "default": "Serum Institute of India: Data de validade do solvente"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 95
+        "_row_num": 96
       },
       {
         "type": "integer",
@@ -940,7 +980,7 @@
             }
           }
         },
-        "_row_num": 96
+        "_row_num": 97
       },
       {
         "type": "adate",
@@ -951,9 +991,13 @@
               "english": "AJ Vaccines A/S: Vaccine expiration date",
               "default": "AJ Vaccines A/S: Data de validade da vacina"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 97
+        "_row_num": 98
       },
       {
         "type": "integer",
@@ -966,7 +1010,7 @@
             }
           }
         },
-        "_row_num": 98
+        "_row_num": 99
       },
       {
         "type": "adate",
@@ -977,17 +1021,21 @@
               "english": "AJ Vaccines A/S: Solvent expiration date",
               "default": "AJ Vaccines A/S: Data de validade do solvente"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 99
-      },
-      {
-        "clause": "end screen",
         "_row_num": 100
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 101
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 102
       },
       {
         "type": "select_one",
@@ -1001,12 +1049,12 @@
             }
           }
         },
-        "_row_num": 102
+        "_row_num": 103
       },
       {
         "clause": "if",
         "condition": "data(\"HEAT\") == \"1\"",
-        "_row_num": 103
+        "_row_num": 104
       },
       {
         "type": "integer",
@@ -1019,19 +1067,19 @@
             }
           }
         },
-        "_row_num": 104
-      },
-      {
-        "clause": "end if",
         "_row_num": 105
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 106
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 107
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 108
       },
       {
         "type": "note",
@@ -1043,7 +1091,7 @@
             }
           }
         },
-        "_row_num": 108
+        "_row_num": 109
       },
       {
         "type": "note",
@@ -1055,7 +1103,7 @@
             }
           }
         },
-        "_row_num": 109
+        "_row_num": 110
       },
       {
         "type": "integer",
@@ -1068,7 +1116,7 @@
             }
           }
         },
-        "_row_num": 110
+        "_row_num": 111
       },
       {
         "type": "adate",
@@ -1079,9 +1127,13 @@
               "english": "Expiration date",
               "default": "Data de validade"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 111
+        "_row_num": 112
       },
       {
         "type": "note",
@@ -1093,7 +1145,7 @@
             }
           }
         },
-        "_row_num": 112
+        "_row_num": 113
       },
       {
         "type": "integer",
@@ -1106,7 +1158,7 @@
             }
           }
         },
-        "_row_num": 113
+        "_row_num": 114
       },
       {
         "type": "adate",
@@ -1117,17 +1169,21 @@
               "english": "Expiration date",
               "default": "Data de validade"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 114
-      },
-      {
-        "clause": "end screen",
         "_row_num": 115
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 116
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 117
       },
       {
         "type": "note",
@@ -1139,7 +1195,7 @@
             }
           }
         },
-        "_row_num": 117
+        "_row_num": 118
       },
       {
         "type": "note",
@@ -1151,7 +1207,7 @@
             }
           }
         },
-        "_row_num": 118
+        "_row_num": 119
       },
       {
         "type": "integer",
@@ -1164,7 +1220,7 @@
             }
           }
         },
-        "_row_num": 119
+        "_row_num": 120
       },
       {
         "type": "adate",
@@ -1175,9 +1231,13 @@
               "english": "Expiration date",
               "default": "Data de validade"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 120
+        "_row_num": 121
       },
       {
         "type": "note",
@@ -1189,7 +1249,7 @@
             }
           }
         },
-        "_row_num": 121
+        "_row_num": 122
       },
       {
         "type": "integer",
@@ -1202,7 +1262,7 @@
             }
           }
         },
-        "_row_num": 122
+        "_row_num": 123
       },
       {
         "type": "adate",
@@ -1213,9 +1273,13 @@
               "english": "Expiration date",
               "default": "Data de validade"
             }
+          },
+          "adate": {
+            "helperText": false,
+            "toYear": 2030
           }
         },
-        "_row_num": 123
+        "_row_num": 124
       },
       {
         "type": "select_one",
@@ -1229,12 +1293,12 @@
             }
           }
         },
-        "_row_num": 124
+        "_row_num": 125
       },
       {
         "clause": "if",
         "condition": "data(\"MISMATERIAL\") == \"1\"",
-        "_row_num": 125
+        "_row_num": 126
       },
       {
         "type": "text",
@@ -1247,23 +1311,356 @@
             }
           }
         },
-        "_row_num": 126
-      },
-      {
-        "clause": "end if",
         "_row_num": 127
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 128
       },
       {
-        "clause": "begin screen",
+        "clause": "end screen",
         "_row_num": 129
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 130
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Please take photos of the vaccination calendar (only the months since you or another supervisor was last at the health centre)",
+              "default": "Tire fotos do calendário de vacinação (apenas os meses desde que você ou outro supervisor esteve no centro de saúde)"
+            }
+          }
+        },
+        "_row_num": 131
+      },
+      {
+        "type": "text",
+        "name": "IMGVACCAL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "If it is not possible please explain why",
+              "default": "Se não for possível, explique o porquê"
+            }
+          }
+        },
+        "_row_num": 132
+      },
+      {
+        "type": "adate",
+        "name": "IMG1MONTH",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which month?",
+              "default": "Qual mês?"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "_row_num": 133
+      },
+      {
+        "type": "text",
+        "name": "IMG1NOTE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Note for the picture",
+              "default": "Nota para a foto"
+            }
+          }
+        },
+        "_row_num": 134
+      },
+      {
+        "type": "image",
+        "name": "IMG1",
+        "_row_num": 135
       },
       {
         "type": "select_one",
         "values_list": "YesNo",
+        "name": "photo2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Do you want to take another photo?",
+              "default": "Você quer tirar outra foto?"
+            }
+          }
+        },
+        "_row_num": 136
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 137
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"photo2\") == \"1\"",
+        "_row_num": 138
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 139
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Photo 2",
+              "default": "Foto 2"
+            }
+          }
+        },
+        "_row_num": 140
+      },
+      {
+        "type": "adate",
+        "name": "IMG2MONTH",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which month?",
+              "default": "Qual mês?"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "_row_num": 141
+      },
+      {
+        "type": "text",
+        "name": "IMG1NOTE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Note for the picture",
+              "default": "Nota para a foto"
+            }
+          }
+        },
+        "_row_num": 142
+      },
+      {
+        "type": "image",
+        "name": "IMG2",
+        "_row_num": 143
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "photo3",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Do you want to take another photo?",
+              "default": "Você quer tirar outra foto?"
+            }
+          }
+        },
+        "_row_num": 144
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 145
+      },
+      {
+        "clause": "end if",
+        "_row_num": 146
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"photo3\") == \"1\"",
+        "_row_num": 147
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 148
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Photo 3",
+              "default": "Foto 3"
+            }
+          }
+        },
+        "_row_num": 149
+      },
+      {
+        "type": "adate",
+        "name": "IMG3MONTH",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which month?",
+              "default": "Qual mês?"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "_row_num": 150
+      },
+      {
+        "type": "text",
+        "name": "IMG3NOTE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Note for the picture",
+              "default": "Nota para a foto"
+            }
+          }
+        },
+        "_row_num": 151
+      },
+      {
+        "type": "image",
+        "name": "IMG3",
+        "_row_num": 152
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "photo4",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Do you want to take another photo?",
+              "default": "Você quer tirar outra foto?"
+            }
+          }
+        },
+        "_row_num": 153
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 154
+      },
+      {
+        "clause": "end if",
+        "_row_num": 155
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"photo4\") == \"1\"",
+        "_row_num": 156
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 157
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Photo 4",
+              "default": "Foto 4"
+            }
+          }
+        },
+        "_row_num": 158
+      },
+      {
+        "type": "adate",
+        "name": "IMG4MONTH",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which month?",
+              "default": "Qual mês?"
+            }
+          },
+          "adate": {
+            "helperText": false
+          }
+        },
+        "_row_num": 159
+      },
+      {
+        "type": "text",
+        "name": "IMG4NOTE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Note for the picture",
+              "default": "Nota para a foto"
+            }
+          }
+        },
+        "_row_num": 160
+      },
+      {
+        "type": "image",
+        "name": "IMG4",
+        "_row_num": 161
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "photo5",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Do you want to take another photo?",
+              "default": "Você quer tirar outra foto?"
+            }
+          }
+        },
+        "_row_num": 162
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"photo5\") == \"1\"",
+        "_row_num": 163
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Please open a new supervision form and add the pictures to that one.",
+              "default": "Por favor, abra um novo formulário de supervisão e adicione as fotos a ele."
+            }
+          }
+        },
+        "_row_num": 164
+      },
+      {
+        "clause": "end if",
+        "_row_num": 165
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 166
+      },
+      {
+        "clause": "end if",
+        "_row_num": 167
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 168
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
         "name": "AXLYMPH",
         "display": {
           "prompt": {
@@ -1273,12 +1670,12 @@
             }
           }
         },
-        "_row_num": 130
+        "_row_num": 169
       },
       {
         "clause": "if",
         "condition": "data(\"AXLYMPH\") == \"1\"",
-        "_row_num": 131
+        "_row_num": 170
       },
       {
         "type": "select_one",
@@ -1292,23 +1689,19 @@
             }
           }
         },
-        "_row_num": 132
+        "_row_num": 171
       },
       {
         "clause": "end if",
-        "_row_num": 133
+        "_row_num": 172
       },
       {
         "clause": "end screen",
-        "_row_num": 134
-      },
-      {
-        "branch_label": "PHOTOS",
-        "_row_num": 135
+        "_row_num": 173
       },
       {
         "clause": "begin screen",
-        "_row_num": 141
+        "_row_num": 174
       },
       {
         "type": "select_one",
@@ -1322,12 +1715,12 @@
             }
           }
         },
-        "_row_num": 142
+        "_row_num": 175
       },
       {
         "clause": "if",
         "condition": "data(\"HCPROB\") == \"1\"",
-        "_row_num": 143
+        "_row_num": 176
       },
       {
         "type": "text",
@@ -1340,7 +1733,7 @@
             }
           }
         },
-        "_row_num": 144
+        "_row_num": 177
       },
       {
         "type": "select_one",
@@ -1354,19 +1747,19 @@
             }
           }
         },
-        "_row_num": 145
+        "_row_num": 178
       },
       {
         "clause": "end if",
-        "_row_num": 146
+        "_row_num": 179
       },
       {
         "clause": "end screen",
-        "_row_num": 147
+        "_row_num": 180
       },
       {
         "clause": "begin screen",
-        "_row_num": 148
+        "_row_num": 181
       },
       {
         "type": "select_one",
@@ -1380,12 +1773,12 @@
             }
           }
         },
-        "_row_num": 149
+        "_row_num": 182
       },
       {
         "clause": "if",
         "condition": "data(\"ASSPROB\") == \"1\"",
-        "_row_num": 150
+        "_row_num": 183
       },
       {
         "type": "text",
@@ -1398,7 +1791,7 @@
             }
           }
         },
-        "_row_num": 151
+        "_row_num": 184
       },
       {
         "type": "text",
@@ -1411,19 +1804,19 @@
             }
           }
         },
-        "_row_num": 152
+        "_row_num": 185
       },
       {
         "clause": "end if",
-        "_row_num": 153
+        "_row_num": 186
       },
       {
         "clause": "end screen",
-        "_row_num": 154
+        "_row_num": 187
       },
       {
         "clause": "begin screen",
-        "_row_num": 155
+        "_row_num": 188
       },
       {
         "type": "select_one",
@@ -1437,12 +1830,12 @@
             }
           }
         },
-        "_row_num": 156
+        "_row_num": 189
       },
       {
         "clause": "if",
         "condition": "data(\"PROBLEM\") == \"1\"",
-        "_row_num": 157
+        "_row_num": 190
       },
       {
         "type": "text",
@@ -1455,11 +1848,57 @@
             }
           }
         },
-        "_row_num": 158
+        "_row_num": 191
       },
       {
         "clause": "end if",
-        "_row_num": 159
+        "_row_num": 192
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"RANDOM\") == \"1\"",
+        "_row_num": 193
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "BCGPEOPLE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Are there enough health workers trained in BCG application to be able to BCG vaccinate every day?",
+              "default": "Há profissionais de saúde suficientes treinados na aplicação do BCG para poder vacinar o BCG todos os dias?"
+            }
+          }
+        },
+        "_row_num": 194
+      },
+      {
+        "clause": "end if",
+        "_row_num": 195
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"RANDOM\") == \"2\"",
+        "_row_num": 196
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNo",
+        "name": "BCGPEOPLE",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Are there enough health workers trained in BCG application to be able to BCG vaccination according to their normal vaccination schedule?",
+              "default": "Há profissionais de saúde suficientes treinados na aplicação de BCG para poderem vacinar com BCG de acordo com seu calendário normal de vacinação?"
+            }
+          }
+        },
+        "_row_num": 197
+      },
+      {
+        "clause": "end if",
+        "_row_num": 198
       },
       {
         "type": "text",
@@ -1472,7 +1911,15 @@
             }
           }
         },
-        "_row_num": 160
+        "_row_num": 199
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 200
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 201
       },
       {
         "type": "time",
@@ -1480,12 +1927,12 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "What time did you leave the village?",
-              "default": "A que horas você saiu da tabanca?"
+              "english": "What time did you leave the health centre?",
+              "default": "A que horas você saiu ao centro de saúde?"
             }
           }
         },
-        "_row_num": 161
+        "_row_num": 202
       },
       {
         "type": "time",
@@ -1498,40 +1945,14 @@
             }
           }
         },
-        "_row_num": 162
+        "_row_num": 203
       },
       {
         "clause": "end screen",
-        "_row_num": 163
+        "_row_num": 204
       }
     ],
     "choices": [
-      {
-        "choice_list_name": "Assistants",
-        "data_value": "Igualdino",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Igualdino",
-              "default": "Igualdino"
-            }
-          }
-        },
-        "_row_num": 2
-      },
-      {
-        "choice_list_name": "Assistants",
-        "data_value": "Jailson",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Jailson",
-              "default": "Jailson"
-            }
-          }
-        },
-        "_row_num": 3
-      },
       {
         "choice_list_name": "Assistants",
         "data_value": "Laerte",
@@ -1543,7 +1964,7 @@
             }
           }
         },
-        "_row_num": 4
+        "_row_num": 2
       },
       {
         "choice_list_name": "Assistants",
@@ -1553,6 +1974,32 @@
             "text": {
               "english": "Abdel",
               "default": "Abdel"
+            }
+          }
+        },
+        "_row_num": 3
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Igualdino",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Igualdino",
+              "default": "Igualdino"
+            }
+          }
+        },
+        "_row_num": 4
+      },
+      {
+        "choice_list_name": "Assistants",
+        "data_value": "Jailson",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Jailson",
+              "default": "Jailson"
             }
           }
         },
@@ -1586,7 +2033,7 @@
       },
       {
         "choice_list_name": "Transportation",
-        "data_value": "1",
+        "data_value": "Scooter",
         "display": {
           "title": {
             "text": {
@@ -1599,7 +2046,7 @@
       },
       {
         "choice_list_name": "Transportation",
-        "data_value": "2",
+        "data_value": "Car",
         "display": {
           "title": {
             "text": {
@@ -1894,334 +2341,448 @@
         "_row_num": 27
       },
       {
+        "name": "BCGRECDIS",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 28
+      },
+      {
         "name": "BCGCOOL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 28
+        "_row_num": 29
       },
       {
         "name": "BCGNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 29
+        "_row_num": 30
       },
       {
         "name": "BCGWORKER",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 30
+        "_row_num": 31
       },
       {
         "name": "BCGTECHNIQUE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 31
+        "_row_num": 32
       },
       {
         "name": "BCGIMPR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 32
+        "_row_num": 33
       },
       {
         "name": "BCGIMPRTELL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 34
       },
       {
         "name": "FRIDGE",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 35
       },
       {
         "name": "FRIDGENO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 35
+        "_row_num": 36
       },
       {
         "name": "FRIDGEOTHER",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 37
       },
       {
         "name": "FRIDGEOTHERWHAT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 37
+        "_row_num": 38
       },
       {
         "name": "FRIDGEREG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 38
+        "_row_num": 39
       },
       {
         "name": "FRIDGEREGNO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 39
+        "_row_num": 40
       },
       {
         "name": "FRIDGEREGCOR",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 40
+        "_row_num": 41
       },
       {
         "name": "FRIDGEREGCORNO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 41
+        "_row_num": 42
       },
       {
         "name": "JAPANVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 42
+        "_row_num": 43
       },
       {
         "name": "JAPANVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 43
+        "_row_num": 44
       },
       {
         "name": "JAPANSVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 44
+        "_row_num": 45
       },
       {
         "name": "JAPANSEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 45
+        "_row_num": 46
       },
       {
         "name": "BBVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 46
+        "_row_num": 47
       },
       {
         "name": "BBVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 47
+        "_row_num": 48
       },
       {
         "name": "BBSVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 48
+        "_row_num": 49
       },
       {
         "name": "BBSEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 49
+        "_row_num": 50
       },
       {
         "name": "INDIAVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 50
+        "_row_num": 51
       },
       {
         "name": "INDIAVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 51
+        "_row_num": 52
       },
       {
         "name": "INDIASVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 52
+        "_row_num": 53
       },
       {
         "name": "INDASEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 53
+        "_row_num": 54
       },
       {
         "name": "AJVVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 54
+        "_row_num": 55
       },
       {
         "name": "AJVEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 55
+        "_row_num": 56
       },
       {
         "name": "AJSVIAL",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 56
+        "_row_num": 57
       },
       {
         "name": "AJSEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 57
+        "_row_num": 58
       },
       {
         "name": "HEAT",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 58
+        "_row_num": 59
       },
       {
         "name": "HEATNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 59
+        "_row_num": 60
       },
       {
         "name": "S2MLNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 60
+        "_row_num": 61
       },
       {
         "name": "S2MLEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 61
+        "_row_num": 62
       },
       {
         "name": "S5MLNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 62
+        "_row_num": 63
       },
       {
         "name": "S5MLEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 63
+        "_row_num": 64
       },
       {
         "name": "NEEDLERECONNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 64
+        "_row_num": 65
       },
       {
         "name": "NEEDLERECONEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 65
+        "_row_num": 66
       },
       {
         "name": "SYRINGADMINNUM",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 66
+        "_row_num": 67
       },
       {
         "name": "SYRINGADMINEXP",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 67
+        "_row_num": 68
       },
       {
         "name": "MISMATERIAL",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 68
+        "_row_num": 69
       },
       {
         "name": "MISMATERIALWHAT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 69
-      },
-      {
-        "name": "AXLYMPH",
-        "type": "select_one",
-        "isSessionVariable": false,
         "_row_num": 70
       },
       {
-        "name": "AXLYMPHFICHA",
-        "type": "select_one",
+        "name": "IMGVACCAL",
+        "type": "text",
         "isSessionVariable": false,
         "_row_num": 71
       },
       {
-        "name": "HCPROB",
-        "type": "select_one",
+        "name": "IMG1MONTH",
+        "type": "adate",
         "isSessionVariable": false,
         "_row_num": 72
       },
       {
-        "name": "HCPROBDISCR",
+        "name": "IMG1NOTE",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 73
       },
       {
-        "name": "HCPROBHELP",
-        "type": "select_one",
+        "name": "IMG1",
+        "type": "image",
         "isSessionVariable": false,
         "_row_num": 74
       },
       {
-        "name": "ASSPROB",
+        "name": "photo2",
         "type": "select_one",
-        "isSessionVariable": false,
+        "isSessionVariable": true,
         "_row_num": 75
       },
       {
-        "name": "ASSPROBDISCR",
-        "type": "text",
+        "name": "IMG2MONTH",
+        "type": "adate",
         "isSessionVariable": false,
         "_row_num": 76
       },
       {
-        "name": "ASSPROBRESOL",
+        "name": "IMG2NOTE",
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 77
       },
       {
+        "name": "IMG2",
+        "type": "image",
+        "isSessionVariable": false,
+        "_row_num": 78
+      },
+      {
+        "name": "photo3",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "_row_num": 79
+      },
+      {
+        "name": "IMG3MONTH",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 80
+      },
+      {
+        "name": "IMG3NOTE",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 81
+      },
+      {
+        "name": "IMG3",
+        "type": "image",
+        "isSessionVariable": false,
+        "_row_num": 82
+      },
+      {
+        "name": "photo4",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "_row_num": 83
+      },
+      {
+        "name": "IMG4MONTH",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 84
+      },
+      {
+        "name": "IMG4NOTE",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 85
+      },
+      {
+        "name": "IMG4",
+        "type": "image",
+        "isSessionVariable": false,
+        "_row_num": 86
+      },
+      {
+        "name": "photo5",
+        "type": "select_one",
+        "isSessionVariable": true,
+        "_row_num": 87
+      },
+      {
+        "name": "AXLYMPH",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 88
+      },
+      {
+        "name": "AXLYMPHFICHA",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 89
+      },
+      {
+        "name": "HCPROB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 90
+      },
+      {
+        "name": "HCPROBDISCR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 91
+      },
+      {
+        "name": "HCPROBHELP",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 92
+      },
+      {
+        "name": "ASSPROB",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 93
+      },
+      {
+        "name": "ASSPROBDISCR",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 94
+      },
+      {
+        "name": "ASSPROBRESOL",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 95
+      },
+      {
         "name": "PROBLEM",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 78
+        "_row_num": 96
       },
       {
         "name": "PROBLEMDISCR",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 79
+        "_row_num": 97
+      },
+      {
+        "name": "BCGPEOPLE",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 98
       },
       {
         "name": "OBS",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 80
+        "_row_num": 99
       },
       {
         "name": "HCLEAVE",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 81
+        "_row_num": 100
       },
       {
         "name": "BISARRIVE",
         "type": "time",
         "isSessionVariable": false,
-        "_row_num": 82
+        "_row_num": 101
       }
     ],
     "properties": [
@@ -2375,32 +2936,6 @@
       "Assistants": [
         {
           "choice_list_name": "Assistants",
-          "data_value": "Igualdino",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Igualdino",
-                "default": "Igualdino"
-              }
-            }
-          },
-          "_row_num": 2
-        },
-        {
-          "choice_list_name": "Assistants",
-          "data_value": "Jailson",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Jailson",
-                "default": "Jailson"
-              }
-            }
-          },
-          "_row_num": 3
-        },
-        {
-          "choice_list_name": "Assistants",
           "data_value": "Laerte",
           "display": {
             "title": {
@@ -2410,7 +2945,7 @@
               }
             }
           },
-          "_row_num": 4
+          "_row_num": 2
         },
         {
           "choice_list_name": "Assistants",
@@ -2420,6 +2955,32 @@
               "text": {
                 "english": "Abdel",
                 "default": "Abdel"
+              }
+            }
+          },
+          "_row_num": 3
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Igualdino",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Igualdino",
+                "default": "Igualdino"
+              }
+            }
+          },
+          "_row_num": 4
+        },
+        {
+          "choice_list_name": "Assistants",
+          "data_value": "Jailson",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Jailson",
+                "default": "Jailson"
               }
             }
           },
@@ -2455,7 +3016,7 @@
       "Transportation": [
         {
           "choice_list_name": "Transportation",
-          "data_value": "1",
+          "data_value": "Scooter",
           "display": {
             "title": {
               "text": {
@@ -2468,7 +3029,7 @@
         },
         {
           "choice_list_name": "Transportation",
-          "data_value": "2",
+          "data_value": "Car",
           "display": {
             "title": {
               "text": {
@@ -2835,7 +3396,7 @@
       },
       "BCGMANU": {
         "type": "string",
-        "valuesList": "YesNo",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
             "_row_num": 28,
@@ -2978,12 +3539,11 @@
         "isSessionVariable": false,
         "elementKey": "BCGDISCARD3"
       },
-      "BCGCOOL": {
+      "BCGRECDIS": {
         "type": "string",
-        "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 45,
             "section_name": "survey"
           },
           {
@@ -2992,10 +3552,11 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "BCGCOOL"
+        "elementKey": "BCGRECDIS"
       },
-      "BCGNUM": {
-        "type": "integer",
+      "BCGCOOL": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
             "_row_num": 48,
@@ -3007,9 +3568,9 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "BCGNUM"
+        "elementKey": "BCGCOOL"
       },
-      "BCGWORKER": {
+      "BCGNUM": {
         "type": "integer",
         "_defn": [
           {
@@ -3022,11 +3583,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "BCGWORKER"
+        "elementKey": "BCGNUM"
       },
-      "BCGTECHNIQUE": {
-        "type": "string",
-        "valuesList": "YesNo",
+      "BCGWORKER": {
+        "type": "integer",
         "_defn": [
           {
             "_row_num": 50,
@@ -3038,13 +3598,14 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "BCGTECHNIQUE"
+        "elementKey": "BCGWORKER"
       },
-      "BCGIMPR": {
+      "BCGTECHNIQUE": {
         "type": "string",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 51,
             "section_name": "survey"
           },
           {
@@ -3053,11 +3614,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "BCGIMPR"
+        "elementKey": "BCGTECHNIQUE"
       },
-      "BCGIMPRTELL": {
+      "BCGIMPR": {
         "type": "string",
-        "valuesList": "YesNo",
         "_defn": [
           {
             "_row_num": 53,
@@ -3069,6 +3629,22 @@
           }
         ],
         "isSessionVariable": false,
+        "elementKey": "BCGIMPR"
+      },
+      "BCGIMPRTELL": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 34,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
         "elementKey": "BCGIMPRTELL"
       },
       "FRIDGE": {
@@ -3076,11 +3652,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -3091,11 +3667,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 61,
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -3107,11 +3683,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -3122,11 +3698,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 66,
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -3138,11 +3714,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 68,
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -3153,11 +3729,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 70,
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -3169,11 +3745,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 73,
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -3184,11 +3760,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 75,
             "section_name": "survey"
           },
           {
-            "_row_num": 41,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -3199,11 +3775,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 82,
             "section_name": "survey"
           },
           {
-            "_row_num": 42,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -3219,11 +3795,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 83,
             "section_name": "survey"
           },
           {
-            "_row_num": 43,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -3234,11 +3810,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 44,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -3254,11 +3830,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 85,
             "section_name": "survey"
           },
           {
-            "_row_num": 45,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -3269,11 +3845,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 85,
+            "_row_num": 86,
             "section_name": "survey"
           },
           {
-            "_row_num": 46,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -3289,11 +3865,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 87,
             "section_name": "survey"
           },
           {
-            "_row_num": 47,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -3304,11 +3880,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 87,
+            "_row_num": 88,
             "section_name": "survey"
           },
           {
-            "_row_num": 48,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -3324,11 +3900,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 88,
+            "_row_num": 89,
             "section_name": "survey"
           },
           {
-            "_row_num": 49,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -3339,11 +3915,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 93,
             "section_name": "survey"
           },
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -3359,11 +3935,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 94,
             "section_name": "survey"
           },
           {
-            "_row_num": 51,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -3374,11 +3950,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 95,
             "section_name": "survey"
           },
           {
-            "_row_num": 52,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -3394,11 +3970,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 96,
             "section_name": "survey"
           },
           {
-            "_row_num": 53,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -3409,11 +3985,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 96,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 54,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -3429,11 +4005,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 98,
             "section_name": "survey"
           },
           {
-            "_row_num": 55,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -3444,11 +4020,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 99,
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -3464,11 +4040,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 99,
+            "_row_num": 100,
             "section_name": "survey"
           },
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -3480,11 +4056,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 102,
+            "_row_num": 103,
             "section_name": "survey"
           },
           {
-            "_row_num": 58,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -3495,11 +4071,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 104,
+            "_row_num": 105,
             "section_name": "survey"
           },
           {
-            "_row_num": 59,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -3510,11 +4086,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 111,
             "section_name": "survey"
           },
           {
-            "_row_num": 60,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -3530,11 +4106,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 111,
+            "_row_num": 112,
             "section_name": "survey"
           },
           {
-            "_row_num": 61,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -3545,11 +4121,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 113,
+            "_row_num": 114,
             "section_name": "survey"
           },
           {
-            "_row_num": 62,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -3565,11 +4141,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 114,
+            "_row_num": 115,
             "section_name": "survey"
           },
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -3580,11 +4156,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 120,
             "section_name": "survey"
           },
           {
-            "_row_num": 64,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -3600,11 +4176,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 121,
             "section_name": "survey"
           },
           {
-            "_row_num": 65,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -3615,11 +4191,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 123,
             "section_name": "survey"
           },
           {
-            "_row_num": 66,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -3635,11 +4211,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 123,
+            "_row_num": 124,
             "section_name": "survey"
           },
           {
-            "_row_num": 67,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -3651,11 +4227,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 124,
+            "_row_num": 125,
             "section_name": "survey"
           },
           {
-            "_row_num": 68,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -3666,23 +4242,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 126,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 69,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "MISMATERIALWHAT"
-      },
-      "AXLYMPH": {
-        "type": "string",
-        "valuesList": "YesNo",
-        "_defn": [
-          {
-            "_row_num": 130,
+            "_row_num": 127,
             "section_name": "survey"
           },
           {
@@ -3691,11 +4251,10 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "AXLYMPH"
+        "elementKey": "MISMATERIALWHAT"
       },
-      "AXLYMPHFICHA": {
+      "IMGVACCAL": {
         "type": "string",
-        "valuesList": "Done",
         "_defn": [
           {
             "_row_num": 132,
@@ -3707,6 +4266,358 @@
           }
         ],
         "isSessionVariable": false,
+        "elementKey": "IMGVACCAL"
+      },
+      "IMG1MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 133,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 72,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG1MONTH"
+      },
+      "IMG1NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 134,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 142,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 73,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG1NOTE"
+      },
+      "IMG1": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG1_uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG1_contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 135,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 74,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG1"
+      },
+      "photo2": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 136,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo2"
+      },
+      "IMG2MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 141,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 76,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG2MONTH"
+      },
+      "IMG2NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG2NOTE"
+      },
+      "IMG2": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG2_uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG2_contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 143,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 78,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG2"
+      },
+      "photo3": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 144,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 79,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo3"
+      },
+      "IMG3MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 150,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 80,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG3MONTH"
+      },
+      "IMG3NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 151,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 81,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG3NOTE"
+      },
+      "IMG3": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG3_uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG3_contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 152,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 82,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG3"
+      },
+      "photo4": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 153,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 83,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo4"
+      },
+      "IMG4MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 159,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 84,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG4MONTH"
+      },
+      "IMG4NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 160,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 85,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG4NOTE"
+      },
+      "IMG4": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG4_uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG4_contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 161,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 86,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG4"
+      },
+      "photo5": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 162,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 87,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo5"
+      },
+      "AXLYMPH": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 169,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 88,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "AXLYMPH"
+      },
+      "AXLYMPHFICHA": {
+        "type": "string",
+        "valuesList": "Done",
+        "_defn": [
+          {
+            "_row_num": 171,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 89,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
         "elementKey": "AXLYMPHFICHA"
       },
       "HCPROB": {
@@ -3714,11 +4625,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 142,
+            "_row_num": 175,
             "section_name": "survey"
           },
           {
-            "_row_num": 72,
+            "_row_num": 90,
             "section_name": "model"
           }
         ],
@@ -3729,11 +4640,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 144,
+            "_row_num": 177,
             "section_name": "survey"
           },
           {
-            "_row_num": 73,
+            "_row_num": 91,
             "section_name": "model"
           }
         ],
@@ -3745,11 +4656,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 145,
+            "_row_num": 178,
             "section_name": "survey"
           },
           {
-            "_row_num": 74,
+            "_row_num": 92,
             "section_name": "model"
           }
         ],
@@ -3761,11 +4672,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 182,
             "section_name": "survey"
           },
           {
-            "_row_num": 75,
+            "_row_num": 93,
             "section_name": "model"
           }
         ],
@@ -3776,11 +4687,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 151,
+            "_row_num": 184,
             "section_name": "survey"
           },
           {
-            "_row_num": 76,
+            "_row_num": 94,
             "section_name": "model"
           }
         ],
@@ -3791,11 +4702,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 152,
+            "_row_num": 185,
             "section_name": "survey"
           },
           {
-            "_row_num": 77,
+            "_row_num": 95,
             "section_name": "model"
           }
         ],
@@ -3807,11 +4718,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 156,
+            "_row_num": 189,
             "section_name": "survey"
           },
           {
-            "_row_num": 78,
+            "_row_num": 96,
             "section_name": "model"
           }
         ],
@@ -3822,26 +4733,46 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 191,
             "section_name": "survey"
           },
           {
-            "_row_num": 79,
+            "_row_num": 97,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "PROBLEMDISCR"
       },
+      "BCGPEOPLE": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 194,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 197,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 98,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGPEOPLE"
+      },
       "OBS": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 160,
+            "_row_num": 199,
             "section_name": "survey"
           },
           {
-            "_row_num": 80,
+            "_row_num": 99,
             "section_name": "model"
           }
         ],
@@ -3853,11 +4784,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 161,
+            "_row_num": 202,
             "section_name": "survey"
           },
           {
-            "_row_num": 81,
+            "_row_num": 100,
             "section_name": "model"
           }
         ],
@@ -3869,11 +4800,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 162,
+            "_row_num": 203,
             "section_name": "survey"
           },
           {
-            "_row_num": 82,
+            "_row_num": 101,
             "section_name": "model"
           }
         ],
@@ -4000,6 +4931,9 @@
                   "english": "Date",
                   "default": "Data"
                 }
+              },
+              "adate": {
+                "helperText": false
               }
             },
             "_row_num": 7,
@@ -4070,8 +5004,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "What time did you arrive at the village?",
-                  "default": "A que horas você chegou na tabanca?"
+                  "english": "What time did you arrive at the health centre?",
+                  "default": "A que horas você chegou ao centro de saúde?"
                 }
               }
             },
@@ -4177,7 +5111,7 @@
           },
           {
             "type": "select_one",
-            "values_list": "YesNo",
+            "values_list": "YesNoDontknow",
             "name": "BCGMANU",
             "display": {
               "prompt": {
@@ -4374,8 +5308,26 @@
             "promptIdx": 24
           },
           {
+            "type": "text",
+            "name": "BCGRECDIS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If you are unsure of the times please note it here",
+                  "default": "Se você não tiver certeza dos horários, anote aqui"
+                }
+              }
+            },
+            "_row_num": 45,
+            "__rowNum__": 44,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen37",
+            "promptIdx": 25
+          },
+          {
             "type": "select_one",
-            "values_list": "YesNo",
+            "values_list": "YesNoDontknow",
             "name": "BCGCOOL",
             "display": {
               "prompt": {
@@ -4385,12 +5337,12 @@
                 }
               }
             },
-            "_row_num": 47,
-            "__rowNum__": 46,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 26
           },
           {
             "type": "integer",
@@ -4403,12 +5355,12 @@
                 }
               }
             },
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "_row_num": 49,
+            "__rowNum__": 48,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 27
           },
           {
             "type": "integer",
@@ -4421,16 +5373,16 @@
                 }
               }
             },
-            "_row_num": 49,
-            "__rowNum__": 48,
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 28
           },
           {
             "type": "select_one",
-            "values_list": "YesNo",
+            "values_list": "YesNoDontknow",
             "name": "BCGTECHNIQUE",
             "display": {
               "prompt": {
@@ -4440,12 +5392,12 @@
                 }
               }
             },
-            "_row_num": 50,
-            "__rowNum__": 49,
+            "_row_num": 51,
+            "__rowNum__": 50,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 29
           },
           {
             "type": "text",
@@ -4458,12 +5410,12 @@
                 }
               }
             },
-            "_row_num": 52,
-            "__rowNum__": 51,
+            "_row_num": 53,
+            "__rowNum__": 52,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 30
           },
           {
             "type": "select_one",
@@ -4477,12 +5429,12 @@
                 }
               }
             },
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen46",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "survey/_screen47",
+            "promptIdx": 31
           },
           {
             "type": "select_one",
@@ -4496,12 +5448,12 @@
                 }
               }
             },
-            "_row_num": 58,
-            "__rowNum__": 57,
+            "_row_num": 59,
+            "__rowNum__": 58,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 32
           },
           {
             "type": "text",
@@ -4514,12 +5466,12 @@
                 }
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 61,
+            "__rowNum__": 60,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 33
           },
           {
             "type": "select_one",
@@ -4533,12 +5485,12 @@
                 }
               }
             },
-            "_row_num": 63,
-            "__rowNum__": 62,
+            "_row_num": 64,
+            "__rowNum__": 63,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 34
           },
           {
             "type": "text",
@@ -4551,12 +5503,12 @@
                 }
               }
             },
-            "_row_num": 65,
-            "__rowNum__": 64,
+            "_row_num": 66,
+            "__rowNum__": 65,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 35
           },
           {
             "type": "select_one",
@@ -4570,12 +5522,12 @@
                 }
               }
             },
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 68,
+            "__rowNum__": 67,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 36
           },
           {
             "type": "text",
@@ -4588,12 +5540,12 @@
                 }
               }
             },
-            "_row_num": 69,
-            "__rowNum__": 68,
+            "_row_num": 70,
+            "__rowNum__": 69,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 36
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 37
           },
           {
             "type": "select_one",
@@ -4607,12 +5559,12 @@
                 }
               }
             },
-            "_row_num": 72,
-            "__rowNum__": 71,
+            "_row_num": 73,
+            "__rowNum__": 72,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 37
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 38
           },
           {
             "type": "text",
@@ -4625,12 +5577,12 @@
                 }
               }
             },
-            "_row_num": 74,
-            "__rowNum__": 73,
+            "_row_num": 75,
+            "__rowNum__": 74,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen57",
-            "promptIdx": 38
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 39
           },
           {
             "type": "note",
@@ -4642,12 +5594,12 @@
                 }
               }
             },
-            "_row_num": 80,
-            "__rowNum__": 79,
+            "_row_num": 81,
+            "__rowNum__": 80,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 39
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 40
           },
           {
             "type": "integer",
@@ -4660,12 +5612,12 @@
                 }
               }
             },
-            "_row_num": 81,
-            "__rowNum__": 80,
+            "_row_num": 82,
+            "__rowNum__": 81,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 40
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 41
           },
           {
             "type": "adate",
@@ -4676,14 +5628,18 @@
                   "english": "Japan BCG Laboratory: Vaccine expiration date",
                   "default": "Japan BCG Laboratory: Data de validade da vacina"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "_row_num": 83,
+            "__rowNum__": 82,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 41
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 42
           },
           {
             "type": "integer",
@@ -4696,12 +5652,12 @@
                 }
               }
             },
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 84,
+            "__rowNum__": 83,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 42
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 43
           },
           {
             "type": "adate",
@@ -4712,14 +5668,18 @@
                   "english": "Japan BCG Laboratory: Solvent expiration date",
                   "default": "Japan BCG Laboratory: Data de validade do solvente"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 43
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 44
           },
           {
             "type": "integer",
@@ -4732,12 +5692,12 @@
                 }
               }
             },
-            "_row_num": 85,
-            "__rowNum__": 84,
+            "_row_num": 86,
+            "__rowNum__": 85,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 44
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 45
           },
           {
             "type": "adate",
@@ -4748,14 +5708,18 @@
                   "english": "BB-NCIPD Ltd: Vaccine expiration date",
                   "default": "BB-NCIPD Ltd: Data de validade da vacina"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 86,
-            "__rowNum__": 85,
+            "_row_num": 87,
+            "__rowNum__": 86,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 45
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 46
           },
           {
             "type": "integer",
@@ -4768,12 +5732,12 @@
                 }
               }
             },
-            "_row_num": 87,
-            "__rowNum__": 86,
+            "_row_num": 88,
+            "__rowNum__": 87,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 46
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 47
           },
           {
             "type": "adate",
@@ -4784,14 +5748,18 @@
                   "english": "BB-NCIPD Ltd: Solvent expiration date",
                   "default": "BB-NCIPD Ltd: Data de validade do solvente"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 88,
-            "__rowNum__": 87,
+            "_row_num": 89,
+            "__rowNum__": 88,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen79",
-            "promptIdx": 47
+            "_branch_label_enclosing_screen": "survey/_screen80",
+            "promptIdx": 48
           },
           {
             "type": "note",
@@ -4803,12 +5771,12 @@
                 }
               }
             },
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "_row_num": 92,
+            "__rowNum__": 91,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 48
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 49
           },
           {
             "type": "integer",
@@ -4821,12 +5789,12 @@
                 }
               }
             },
-            "_row_num": 92,
-            "__rowNum__": 91,
+            "_row_num": 93,
+            "__rowNum__": 92,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 49
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 50
           },
           {
             "type": "adate",
@@ -4837,14 +5805,18 @@
                   "english": "Serum Institute of India: Vaccine expiration date",
                   "default": "Serum Institute of India: Data de validade da vacina"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 93,
-            "__rowNum__": 92,
+            "_row_num": 94,
+            "__rowNum__": 93,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 50
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 51
           },
           {
             "type": "integer",
@@ -4857,12 +5829,12 @@
                 }
               }
             },
-            "_row_num": 94,
-            "__rowNum__": 93,
+            "_row_num": 95,
+            "__rowNum__": 94,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 51
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 52
           },
           {
             "type": "adate",
@@ -4873,14 +5845,18 @@
                   "english": "Serum Institute of India: Solvent expiration date",
                   "default": "Serum Institute of India: Data de validade do solvente"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 95,
-            "__rowNum__": 94,
+            "_row_num": 96,
+            "__rowNum__": 95,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 52
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 53
           },
           {
             "type": "integer",
@@ -4893,12 +5869,12 @@
                 }
               }
             },
-            "_row_num": 96,
-            "__rowNum__": 95,
+            "_row_num": 97,
+            "__rowNum__": 96,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 53
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 54
           },
           {
             "type": "adate",
@@ -4909,14 +5885,18 @@
                   "english": "AJ Vaccines A/S: Vaccine expiration date",
                   "default": "AJ Vaccines A/S: Data de validade da vacina"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 97,
-            "__rowNum__": 96,
+            "_row_num": 98,
+            "__rowNum__": 97,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 54
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 55
           },
           {
             "type": "integer",
@@ -4929,12 +5909,12 @@
                 }
               }
             },
-            "_row_num": 98,
-            "__rowNum__": 97,
+            "_row_num": 99,
+            "__rowNum__": 98,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 55
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 56
           },
           {
             "type": "adate",
@@ -4945,14 +5925,18 @@
                   "english": "AJ Vaccines A/S: Solvent expiration date",
                   "default": "AJ Vaccines A/S: Data de validade do solvente"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 99,
-            "__rowNum__": 98,
+            "_row_num": 100,
+            "__rowNum__": 99,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen90",
-            "promptIdx": 56
+            "_branch_label_enclosing_screen": "survey/_screen91",
+            "promptIdx": 57
           },
           {
             "type": "select_one",
@@ -4966,12 +5950,12 @@
                 }
               }
             },
-            "_row_num": 102,
-            "__rowNum__": 101,
+            "_row_num": 103,
+            "__rowNum__": 102,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 57
+            "_branch_label_enclosing_screen": "survey/_screen102",
+            "promptIdx": 58
           },
           {
             "type": "integer",
@@ -4984,12 +5968,12 @@
                 }
               }
             },
-            "_row_num": 104,
-            "__rowNum__": 103,
+            "_row_num": 105,
+            "__rowNum__": 104,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen101",
-            "promptIdx": 58
+            "_branch_label_enclosing_screen": "survey/_screen102",
+            "promptIdx": 59
           },
           {
             "type": "note",
@@ -5001,12 +5985,12 @@
                 }
               }
             },
-            "_row_num": 108,
-            "__rowNum__": 107,
+            "_row_num": 109,
+            "__rowNum__": 108,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 59
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 60
           },
           {
             "type": "note",
@@ -5018,12 +6002,12 @@
                 }
               }
             },
-            "_row_num": 109,
-            "__rowNum__": 108,
+            "_row_num": 110,
+            "__rowNum__": 109,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 60
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 61
           },
           {
             "type": "integer",
@@ -5036,12 +6020,12 @@
                 }
               }
             },
-            "_row_num": 110,
-            "__rowNum__": 109,
+            "_row_num": 111,
+            "__rowNum__": 110,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 61
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 62
           },
           {
             "type": "adate",
@@ -5052,14 +6036,18 @@
                   "english": "Expiration date",
                   "default": "Data de validade"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 111,
-            "__rowNum__": 110,
+            "_row_num": 112,
+            "__rowNum__": 111,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 62
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 63
           },
           {
             "type": "note",
@@ -5071,12 +6059,12 @@
                 }
               }
             },
-            "_row_num": 112,
-            "__rowNum__": 111,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 63
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 64
           },
           {
             "type": "integer",
@@ -5089,12 +6077,12 @@
                 }
               }
             },
-            "_row_num": 113,
-            "__rowNum__": 112,
+            "_row_num": 114,
+            "__rowNum__": 113,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 64
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 65
           },
           {
             "type": "adate",
@@ -5105,14 +6093,18 @@
                   "english": "Expiration date",
                   "default": "Data de validade"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 114,
-            "__rowNum__": 113,
+            "_row_num": 115,
+            "__rowNum__": 114,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 65
+            "_branch_label_enclosing_screen": "survey/_screen108",
+            "promptIdx": 66
           },
           {
             "type": "note",
@@ -5124,12 +6116,12 @@
                 }
               }
             },
-            "_row_num": 117,
-            "__rowNum__": 116,
+            "_row_num": 118,
+            "__rowNum__": 117,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 66
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 67
           },
           {
             "type": "note",
@@ -5141,12 +6133,12 @@
                 }
               }
             },
-            "_row_num": 118,
-            "__rowNum__": 117,
+            "_row_num": 119,
+            "__rowNum__": 118,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 67
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 68
           },
           {
             "type": "integer",
@@ -5159,12 +6151,12 @@
                 }
               }
             },
-            "_row_num": 119,
-            "__rowNum__": 118,
+            "_row_num": 120,
+            "__rowNum__": 119,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 68
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 69
           },
           {
             "type": "adate",
@@ -5175,14 +6167,18 @@
                   "english": "Expiration date",
                   "default": "Data de validade"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 120,
-            "__rowNum__": 119,
+            "_row_num": 121,
+            "__rowNum__": 120,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 69
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 70
           },
           {
             "type": "note",
@@ -5194,12 +6190,12 @@
                 }
               }
             },
-            "_row_num": 121,
-            "__rowNum__": 120,
+            "_row_num": 122,
+            "__rowNum__": 121,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 70
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 71
           },
           {
             "type": "integer",
@@ -5212,12 +6208,12 @@
                 }
               }
             },
-            "_row_num": 122,
-            "__rowNum__": 121,
+            "_row_num": 123,
+            "__rowNum__": 122,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 71
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 72
           },
           {
             "type": "adate",
@@ -5228,14 +6224,18 @@
                   "english": "Expiration date",
                   "default": "Data de validade"
                 }
+              },
+              "adate": {
+                "helperText": false,
+                "toYear": 2030
               }
             },
-            "_row_num": 123,
-            "__rowNum__": 122,
+            "_row_num": 124,
+            "__rowNum__": 123,
             "_token_type": "prompt",
             "_type": "adate",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 72
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 73
           },
           {
             "type": "select_one",
@@ -5249,12 +6249,12 @@
                 }
               }
             },
-            "_row_num": 124,
-            "__rowNum__": 123,
+            "_row_num": 125,
+            "__rowNum__": 124,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 73
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 74
           },
           {
             "type": "text",
@@ -5267,16 +6267,391 @@
                 }
               }
             },
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "_row_num": 127,
+            "__rowNum__": 126,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 74
+            "_branch_label_enclosing_screen": "survey/_screen117",
+            "promptIdx": 75
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Please take photos of the vaccination calendar (only the months since you or another supervisor was last at the health centre)",
+                  "default": "Tire fotos do calendário de vacinação (apenas os meses desde que você ou outro supervisor esteve no centro de saúde)"
+                }
+              }
+            },
+            "_row_num": 131,
+            "__rowNum__": 130,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen130",
+            "promptIdx": 76
+          },
+          {
+            "type": "text",
+            "name": "IMGVACCAL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "If it is not possible please explain why",
+                  "default": "Se não for possível, explique o porquê"
+                }
+              }
+            },
+            "_row_num": 132,
+            "__rowNum__": 131,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen130",
+            "promptIdx": 77
+          },
+          {
+            "type": "adate",
+            "name": "IMG1MONTH",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which month?",
+                  "default": "Qual mês?"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "_row_num": 133,
+            "__rowNum__": 132,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen130",
+            "promptIdx": 78
+          },
+          {
+            "type": "text",
+            "name": "IMG1NOTE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Note for the picture",
+                  "default": "Nota para a foto"
+                }
+              }
+            },
+            "_row_num": 134,
+            "__rowNum__": 133,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen130",
+            "promptIdx": 79
+          },
+          {
+            "type": "image",
+            "name": "IMG1",
+            "_row_num": 135,
+            "__rowNum__": 134,
+            "_token_type": "prompt",
+            "_type": "image",
+            "_branch_label_enclosing_screen": "survey/_screen130",
+            "promptIdx": 80
           },
           {
             "type": "select_one",
             "values_list": "YesNo",
+            "name": "photo2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Do you want to take another photo?",
+                  "default": "Você quer tirar outra foto?"
+                }
+              }
+            },
+            "_row_num": 136,
+            "__rowNum__": 135,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen130",
+            "promptIdx": 81
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Photo 2",
+                  "default": "Foto 2"
+                }
+              }
+            },
+            "_row_num": 140,
+            "__rowNum__": 139,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen139",
+            "promptIdx": 82
+          },
+          {
+            "type": "adate",
+            "name": "IMG2MONTH",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which month?",
+                  "default": "Qual mês?"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "_row_num": 141,
+            "__rowNum__": 140,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen139",
+            "promptIdx": 83
+          },
+          {
+            "type": "text",
+            "name": "IMG1NOTE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Note for the picture",
+                  "default": "Nota para a foto"
+                }
+              }
+            },
+            "_row_num": 142,
+            "__rowNum__": 141,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen139",
+            "promptIdx": 84
+          },
+          {
+            "type": "image",
+            "name": "IMG2",
+            "_row_num": 143,
+            "__rowNum__": 142,
+            "_token_type": "prompt",
+            "_type": "image",
+            "_branch_label_enclosing_screen": "survey/_screen139",
+            "promptIdx": 85
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "photo3",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Do you want to take another photo?",
+                  "default": "Você quer tirar outra foto?"
+                }
+              }
+            },
+            "_row_num": 144,
+            "__rowNum__": 143,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen139",
+            "promptIdx": 86
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Photo 3",
+                  "default": "Foto 3"
+                }
+              }
+            },
+            "_row_num": 149,
+            "__rowNum__": 148,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 87
+          },
+          {
+            "type": "adate",
+            "name": "IMG3MONTH",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which month?",
+                  "default": "Qual mês?"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "_row_num": 150,
+            "__rowNum__": 149,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 88
+          },
+          {
+            "type": "text",
+            "name": "IMG3NOTE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Note for the picture",
+                  "default": "Nota para a foto"
+                }
+              }
+            },
+            "_row_num": 151,
+            "__rowNum__": 150,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 89
+          },
+          {
+            "type": "image",
+            "name": "IMG3",
+            "_row_num": 152,
+            "__rowNum__": 151,
+            "_token_type": "prompt",
+            "_type": "image",
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 90
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "photo4",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Do you want to take another photo?",
+                  "default": "Você quer tirar outra foto?"
+                }
+              }
+            },
+            "_row_num": 153,
+            "__rowNum__": 152,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen148",
+            "promptIdx": 91
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Photo 4",
+                  "default": "Foto 4"
+                }
+              }
+            },
+            "_row_num": 158,
+            "__rowNum__": 157,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen157",
+            "promptIdx": 92
+          },
+          {
+            "type": "adate",
+            "name": "IMG4MONTH",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which month?",
+                  "default": "Qual mês?"
+                }
+              },
+              "adate": {
+                "helperText": false
+              }
+            },
+            "_row_num": 159,
+            "__rowNum__": 158,
+            "_token_type": "prompt",
+            "_type": "adate",
+            "_branch_label_enclosing_screen": "survey/_screen157",
+            "promptIdx": 93
+          },
+          {
+            "type": "text",
+            "name": "IMG4NOTE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Note for the picture",
+                  "default": "Nota para a foto"
+                }
+              }
+            },
+            "_row_num": 160,
+            "__rowNum__": 159,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen157",
+            "promptIdx": 94
+          },
+          {
+            "type": "image",
+            "name": "IMG4",
+            "_row_num": 161,
+            "__rowNum__": 160,
+            "_token_type": "prompt",
+            "_type": "image",
+            "_branch_label_enclosing_screen": "survey/_screen157",
+            "promptIdx": 95
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "photo5",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Do you want to take another photo?",
+                  "default": "Você quer tirar outra foto?"
+                }
+              }
+            },
+            "_row_num": 162,
+            "__rowNum__": 161,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen157",
+            "promptIdx": 96
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Please open a new supervision form and add the pictures to that one.",
+                  "default": "Por favor, abra um novo formulário de supervisão e adicione as fotos a ele."
+                }
+              }
+            },
+            "_row_num": 164,
+            "__rowNum__": 163,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen157",
+            "promptIdx": 97
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
             "name": "AXLYMPH",
             "display": {
               "prompt": {
@@ -5286,12 +6661,12 @@
                 }
               }
             },
-            "_row_num": 130,
-            "__rowNum__": 129,
+            "_row_num": 169,
+            "__rowNum__": 168,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen129",
-            "promptIdx": 75
+            "_branch_label_enclosing_screen": "survey/_screen168",
+            "promptIdx": 98
           },
           {
             "type": "select_one",
@@ -5305,12 +6680,12 @@
                 }
               }
             },
-            "_row_num": 132,
-            "__rowNum__": 131,
+            "_row_num": 171,
+            "__rowNum__": 170,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen129",
-            "promptIdx": 76
+            "_branch_label_enclosing_screen": "survey/_screen168",
+            "promptIdx": 99
           },
           {
             "type": "select_one",
@@ -5324,12 +6699,12 @@
                 }
               }
             },
-            "_row_num": 142,
-            "__rowNum__": 141,
+            "_row_num": 175,
+            "__rowNum__": 174,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen141",
-            "promptIdx": 77
+            "_branch_label_enclosing_screen": "survey/_screen174",
+            "promptIdx": 100
           },
           {
             "type": "text",
@@ -5342,12 +6717,12 @@
                 }
               }
             },
-            "_row_num": 144,
-            "__rowNum__": 143,
+            "_row_num": 177,
+            "__rowNum__": 176,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen141",
-            "promptIdx": 78
+            "_branch_label_enclosing_screen": "survey/_screen174",
+            "promptIdx": 101
           },
           {
             "type": "select_one",
@@ -5361,12 +6736,12 @@
                 }
               }
             },
-            "_row_num": 145,
-            "__rowNum__": 144,
+            "_row_num": 178,
+            "__rowNum__": 177,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen141",
-            "promptIdx": 79
+            "_branch_label_enclosing_screen": "survey/_screen174",
+            "promptIdx": 102
           },
           {
             "type": "select_one",
@@ -5380,12 +6755,12 @@
                 }
               }
             },
-            "_row_num": 149,
-            "__rowNum__": 148,
+            "_row_num": 182,
+            "__rowNum__": 181,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen148",
-            "promptIdx": 80
+            "_branch_label_enclosing_screen": "survey/_screen181",
+            "promptIdx": 103
           },
           {
             "type": "text",
@@ -5398,12 +6773,12 @@
                 }
               }
             },
-            "_row_num": 151,
-            "__rowNum__": 150,
+            "_row_num": 184,
+            "__rowNum__": 183,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen148",
-            "promptIdx": 81
+            "_branch_label_enclosing_screen": "survey/_screen181",
+            "promptIdx": 104
           },
           {
             "type": "text",
@@ -5416,12 +6791,12 @@
                 }
               }
             },
-            "_row_num": 152,
-            "__rowNum__": 151,
+            "_row_num": 185,
+            "__rowNum__": 184,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen148",
-            "promptIdx": 82
+            "_branch_label_enclosing_screen": "survey/_screen181",
+            "promptIdx": 105
           },
           {
             "type": "select_one",
@@ -5435,12 +6810,12 @@
                 }
               }
             },
-            "_row_num": 156,
-            "__rowNum__": 155,
+            "_row_num": 189,
+            "__rowNum__": 188,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen155",
-            "promptIdx": 83
+            "_branch_label_enclosing_screen": "survey/_screen188",
+            "promptIdx": 106
           },
           {
             "type": "text",
@@ -5453,12 +6828,50 @@
                 }
               }
             },
-            "_row_num": 158,
-            "__rowNum__": 157,
+            "_row_num": 191,
+            "__rowNum__": 190,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen155",
-            "promptIdx": 84
+            "_branch_label_enclosing_screen": "survey/_screen188",
+            "promptIdx": 107
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "BCGPEOPLE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Are there enough health workers trained in BCG application to be able to BCG vaccinate every day?",
+                  "default": "Há profissionais de saúde suficientes treinados na aplicação do BCG para poder vacinar o BCG todos os dias?"
+                }
+              }
+            },
+            "_row_num": 194,
+            "__rowNum__": 193,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen188",
+            "promptIdx": 108
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNo",
+            "name": "BCGPEOPLE",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Are there enough health workers trained in BCG application to be able to BCG vaccination according to their normal vaccination schedule?",
+                  "default": "Há profissionais de saúde suficientes treinados na aplicação de BCG para poderem vacinar com BCG de acordo com seu calendário normal de vacinação?"
+                }
+              }
+            },
+            "_row_num": 197,
+            "__rowNum__": 196,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen188",
+            "promptIdx": 109
           },
           {
             "type": "text",
@@ -5471,12 +6884,12 @@
                 }
               }
             },
-            "_row_num": 160,
-            "__rowNum__": 159,
+            "_row_num": 199,
+            "__rowNum__": 198,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen155",
-            "promptIdx": 85
+            "_branch_label_enclosing_screen": "survey/_screen188",
+            "promptIdx": 110
           },
           {
             "type": "time",
@@ -5484,17 +6897,17 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "What time did you leave the village?",
-                  "default": "A que horas você saiu da tabanca?"
+                  "english": "What time did you leave the health centre?",
+                  "default": "A que horas você saiu ao centro de saúde?"
                 }
               }
             },
-            "_row_num": 161,
-            "__rowNum__": 160,
+            "_row_num": 202,
+            "__rowNum__": 201,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen155",
-            "promptIdx": 86
+            "_branch_label_enclosing_screen": "survey/_screen201",
+            "promptIdx": 111
           },
           {
             "type": "time",
@@ -5507,20 +6920,20 @@
                 }
               }
             },
-            "_row_num": 162,
-            "__rowNum__": 161,
+            "_row_num": 203,
+            "__rowNum__": 202,
             "_token_type": "prompt",
             "_type": "time",
-            "_branch_label_enclosing_screen": "survey/_screen155",
-            "promptIdx": 87
+            "_branch_label_enclosing_screen": "survey/_screen201",
+            "promptIdx": 112
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 164,
-            "_branch_label_enclosing_screen": "survey/_screen164",
-            "promptIdx": 88
+            "_row_num": 205,
+            "_branch_label_enclosing_screen": "survey/_screen205",
+            "promptIdx": 113
           }
         ],
         "validation_tag_map": {
@@ -5609,8 +7022,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else56",
-            "_row_num": 56,
+            "_branch_label": "_else57",
+            "_row_num": 57,
             "operationIdx": 6
           },
           {
@@ -5620,145 +7033,184 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 45,
-              "__rowNum__": 44,
+              "_row_num": 46,
+              "__rowNum__": 45,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 7
           },
           {
             "clause": "begin screen",
-            "_row_num": 46,
-            "__rowNum__": 45,
+            "_row_num": 47,
+            "__rowNum__": 46,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 55,
-              "__rowNum__": 54,
+              "_row_num": 56,
+              "__rowNum__": 55,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nif (data(\"BCGTECHNIQUE\") == \"2\") {\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nif (data(\"BCGTECHNIQUE\") == \"2\") {\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif56",
-            "_row_num": 56,
+            "_branch_label": "_endif57",
+            "_row_num": 57,
             "operationIdx": 9
           },
           {
             "clause": "begin screen",
-            "_row_num": 57,
-            "__rowNum__": 56,
+            "_row_num": 58,
+            "__rowNum__": 57,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 78,
-              "__rowNum__": 77,
+              "_row_num": 79,
+              "__rowNum__": 78,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\nif (data(\"FRIDGE\") == \"2\") {\nactivePromptIndicies.push(32);\n}\nif (data(\"FRIDGE\") == \"1\") {\nactivePromptIndicies.push(33);\nif (data(\"FRIDGEOTHER\") == \"1\") {\nactivePromptIndicies.push(34);\n}\nactivePromptIndicies.push(35);\nif (data(\"FRIDGEREG\") == \"2\") {\nactivePromptIndicies.push(36);\n}\nif (data(\"FRIDGEREG\") == \"1\") {\nactivePromptIndicies.push(37);\nif (data(\"FRIDGEREGCOR\") == \"2\") {\nactivePromptIndicies.push(38);\n}\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\nif (data(\"FRIDGE\") == \"2\") {\nactivePromptIndicies.push(33);\n}\nif (data(\"FRIDGE\") == \"1\") {\nactivePromptIndicies.push(34);\nif (data(\"FRIDGEOTHER\") == \"1\") {\nactivePromptIndicies.push(35);\n}\nactivePromptIndicies.push(36);\nif (data(\"FRIDGEREG\") == \"2\") {\nactivePromptIndicies.push(37);\n}\nif (data(\"FRIDGEREG\") == \"1\") {\nactivePromptIndicies.push(38);\nif (data(\"FRIDGEREGCOR\") == \"2\") {\nactivePromptIndicies.push(39);\n}\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 10
           },
           {
             "clause": "begin screen",
-            "_row_num": 79,
-            "__rowNum__": 78,
+            "_row_num": 80,
+            "__rowNum__": 79,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 89,
-              "__rowNum__": 88,
+              "_row_num": 90,
+              "__rowNum__": 89,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(40);\nactivePromptIndicies.push(41);\nactivePromptIndicies.push(42);\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nactivePromptIndicies.push(45);\nactivePromptIndicies.push(46);\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 11
           },
           {
             "clause": "begin screen",
-            "_row_num": 90,
-            "__rowNum__": 89,
+            "_row_num": 91,
+            "__rowNum__": 90,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 100,
-              "__rowNum__": 99,
+              "_row_num": 101,
+              "__rowNum__": 100,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(48);\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\nactivePromptIndicies.push(51);\nactivePromptIndicies.push(52);\nactivePromptIndicies.push(53);\nactivePromptIndicies.push(54);\nactivePromptIndicies.push(55);\nactivePromptIndicies.push(56);\nactivePromptIndicies.push(57);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 12
           },
           {
             "clause": "begin screen",
-            "_row_num": 101,
-            "__rowNum__": 100,
+            "_row_num": 102,
+            "__rowNum__": 101,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 106,
-              "__rowNum__": 105,
+              "_row_num": 107,
+              "__rowNum__": 106,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(57);\nif (data(\"HEAT\") == \"1\") {\nactivePromptIndicies.push(58);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(58);\nif (data(\"HEAT\") == \"1\") {\nactivePromptIndicies.push(59);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 13
           },
           {
             "clause": "begin screen",
-            "_row_num": 107,
-            "__rowNum__": 106,
+            "_row_num": 108,
+            "__rowNum__": 107,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 115,
-              "__rowNum__": 114,
+              "_row_num": 116,
+              "__rowNum__": 115,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(59);\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\nactivePromptIndicies.push(62);\nactivePromptIndicies.push(63);\nactivePromptIndicies.push(64);\nactivePromptIndicies.push(65);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(60);\nactivePromptIndicies.push(61);\nactivePromptIndicies.push(62);\nactivePromptIndicies.push(63);\nactivePromptIndicies.push(64);\nactivePromptIndicies.push(65);\nactivePromptIndicies.push(66);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
             "clause": "begin screen",
-            "_row_num": 116,
-            "__rowNum__": 115,
+            "_row_num": 117,
+            "__rowNum__": 116,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 128,
-              "__rowNum__": 127,
+              "_row_num": 129,
+              "__rowNum__": 128,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(66);\nactivePromptIndicies.push(67);\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\nactivePromptIndicies.push(70);\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nactivePromptIndicies.push(73);\nif (data(\"MISMATERIAL\") == \"1\") {\nactivePromptIndicies.push(74);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(67);\nactivePromptIndicies.push(68);\nactivePromptIndicies.push(69);\nactivePromptIndicies.push(70);\nactivePromptIndicies.push(71);\nactivePromptIndicies.push(72);\nactivePromptIndicies.push(73);\nactivePromptIndicies.push(74);\nif (data(\"MISMATERIAL\") == \"1\") {\nactivePromptIndicies.push(75);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 15
           },
           {
             "clause": "begin screen",
-            "_row_num": 129,
-            "__rowNum__": 128,
+            "_row_num": 130,
+            "__rowNum__": 129,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 134,
-              "__rowNum__": 133,
+              "_row_num": 137,
+              "__rowNum__": 136,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(75);\nif (data(\"AXLYMPH\") == \"1\") {\nactivePromptIndicies.push(76);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(76);\nactivePromptIndicies.push(77);\nactivePromptIndicies.push(78);\nactivePromptIndicies.push(79);\nactivePromptIndicies.push(80);\nactivePromptIndicies.push(81);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
+            "clause": "if",
+            "condition": "data(\"photo2\") == \"1\"",
+            "_row_num": 138,
+            "__rowNum__": 137,
+            "_token_type": "goto_label",
+            "_branch_label": "_then138",
+            "operationIdx": 17
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else146",
+            "_row_num": 146,
+            "operationIdx": 18
+          },
+          {
             "clause": "begin screen",
-            "_row_num": 141,
-            "__rowNum__": 140,
+            "_row_num": 139,
+            "__rowNum__": 138,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 147,
-              "__rowNum__": 146,
+              "_row_num": 145,
+              "__rowNum__": 144,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(77);\nif (data(\"HCPROB\") == \"1\") {\nactivePromptIndicies.push(78);\nactivePromptIndicies.push(79);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 17
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(82);\nactivePromptIndicies.push(83);\nactivePromptIndicies.push(84);\nactivePromptIndicies.push(85);\nactivePromptIndicies.push(86);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 19
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif146",
+            "_row_num": 146,
+            "operationIdx": 20
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"photo3\") == \"1\"",
+            "_row_num": 147,
+            "__rowNum__": 146,
+            "_token_type": "goto_label",
+            "_branch_label": "_then147",
+            "operationIdx": 21
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else155",
+            "_row_num": 155,
+            "operationIdx": 22
           },
           {
             "clause": "begin screen",
@@ -5771,43 +7223,143 @@
               "__rowNum__": 153,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(80);\nif (data(\"ASSPROB\") == \"1\") {\nactivePromptIndicies.push(81);\nactivePromptIndicies.push(82);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 18
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(87);\nactivePromptIndicies.push(88);\nactivePromptIndicies.push(89);\nactivePromptIndicies.push(90);\nactivePromptIndicies.push(91);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 23
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif155",
+            "_row_num": 155,
+            "operationIdx": 24
+          },
+          {
+            "clause": "if",
+            "condition": "data(\"photo4\") == \"1\"",
+            "_row_num": 156,
+            "__rowNum__": 155,
+            "_token_type": "goto_label",
+            "_branch_label": "_then156",
+            "operationIdx": 25
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else167",
+            "_row_num": 167,
+            "operationIdx": 26
           },
           {
             "clause": "begin screen",
-            "_row_num": 155,
-            "__rowNum__": 154,
+            "_row_num": 157,
+            "__rowNum__": 156,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 163,
-              "__rowNum__": 162,
+              "_row_num": 166,
+              "__rowNum__": 165,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(83);\nif (data(\"PROBLEM\") == \"1\") {\nactivePromptIndicies.push(84);\n}\nactivePromptIndicies.push(85);\nactivePromptIndicies.push(86);\nactivePromptIndicies.push(87);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 19
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(92);\nactivePromptIndicies.push(93);\nactivePromptIndicies.push(94);\nactivePromptIndicies.push(95);\nactivePromptIndicies.push(96);\nif (data(\"photo5\") == \"1\") {\nactivePromptIndicies.push(97);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 27
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif167",
+            "_row_num": 167,
+            "operationIdx": 28
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 168,
+            "__rowNum__": 167,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 173,
+              "__rowNum__": 172,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(98);\nif (data(\"AXLYMPH\") == \"1\") {\nactivePromptIndicies.push(99);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 29
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 174,
+            "__rowNum__": 173,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 180,
+              "__rowNum__": 179,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(100);\nif (data(\"HCPROB\") == \"1\") {\nactivePromptIndicies.push(101);\nactivePromptIndicies.push(102);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 30
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 181,
+            "__rowNum__": 180,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 187,
+              "__rowNum__": 186,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(103);\nif (data(\"ASSPROB\") == \"1\") {\nactivePromptIndicies.push(104);\nactivePromptIndicies.push(105);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 31
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 188,
+            "__rowNum__": 187,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 200,
+              "__rowNum__": 199,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(106);\nif (data(\"PROBLEM\") == \"1\") {\nactivePromptIndicies.push(107);\n}\nif (data(\"RANDOM\") == \"1\") {\nactivePromptIndicies.push(108);\n}\nif (data(\"RANDOM\") == \"2\") {\nactivePromptIndicies.push(109);\n}\nactivePromptIndicies.push(110);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 32
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 201,
+            "__rowNum__": 200,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 204,
+              "__rowNum__": 203,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(111);\nactivePromptIndicies.push(112);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 33
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 164,
-            "operationIdx": 20
+            "_row_num": 205,
+            "operationIdx": 34
           },
           {
-            "_row_num": 164,
+            "_row_num": 205,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(88);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(113);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 21
+            "operationIdx": 35
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 164,
-            "operationIdx": 22
+            "_row_num": 205,
+            "operationIdx": 36
           }
         ],
         "branch_label_map": {
@@ -5818,22 +7370,35 @@
           "_screen23": 4,
           "_then36": 7,
           "_screen37": 7,
-          "_screen46": 8,
-          "_else56": 10,
-          "_endif56": 10,
-          "_screen57": 10,
-          "_screen79": 11,
-          "_screen90": 12,
-          "_screen101": 13,
-          "_screen107": 14,
-          "_screen116": 15,
-          "_screen129": 16,
-          "PHOTOS": 17,
-          "_screen141": 17,
-          "_screen148": 18,
-          "_screen155": 19,
-          "_contents": 21,
-          "_screen164": 21
+          "_screen47": 8,
+          "_else57": 10,
+          "_endif57": 10,
+          "_screen58": 10,
+          "_screen80": 11,
+          "_screen91": 12,
+          "_screen102": 13,
+          "_screen108": 14,
+          "_screen117": 15,
+          "_screen130": 16,
+          "_then138": 19,
+          "_screen139": 19,
+          "_else146": 21,
+          "_endif146": 21,
+          "_then147": 23,
+          "_screen148": 23,
+          "_else155": 25,
+          "_endif155": 25,
+          "_then156": 27,
+          "_screen157": 27,
+          "_else167": 29,
+          "_endif167": 29,
+          "_screen168": 29,
+          "_screen174": 30,
+          "_screen181": 31,
+          "_screen188": 32,
+          "_screen201": 33,
+          "_contents": 35,
+          "_screen205": 35
         }
       },
       "initial": {
@@ -6286,7 +7851,7 @@
       },
       "BCGMANU": {
         "type": "string",
-        "valuesList": "YesNo",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
             "_row_num": 28,
@@ -6459,16 +8024,34 @@
         "elementSet": "data",
         "elementPath": "BCGDISCARD3"
       },
-      "BCGCOOL": {
+      "BCGRECDIS": {
         "type": "string",
-        "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 47,
+            "_row_num": 45,
             "section_name": "survey"
           },
           {
             "_row_num": 28,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGRECDIS",
+        "elementName": "BCGRECDIS",
+        "elementSet": "data",
+        "elementPath": "BCGRECDIS"
+      },
+      "BCGCOOL": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 48,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -6482,11 +8065,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 49,
             "section_name": "survey"
           },
           {
-            "_row_num": 29,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -6500,11 +8083,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 49,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {
-            "_row_num": 30,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -6516,14 +8099,14 @@
       },
       "BCGTECHNIQUE": {
         "type": "string",
-        "valuesList": "YesNo",
+        "valuesList": "YesNoDontknow",
         "_defn": [
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "survey"
           },
           {
-            "_row_num": 31,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -6537,11 +8120,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 52,
+            "_row_num": 53,
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -6556,11 +8139,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 53,
+            "_row_num": 54,
             "section_name": "survey"
           },
           {
-            "_row_num": 33,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -6575,11 +8158,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 58,
+            "_row_num": 59,
             "section_name": "survey"
           },
           {
-            "_row_num": 34,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -6593,11 +8176,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 61,
             "section_name": "survey"
           },
           {
-            "_row_num": 35,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -6612,11 +8195,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "survey"
           },
           {
-            "_row_num": 36,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -6630,11 +8213,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 65,
+            "_row_num": 66,
             "section_name": "survey"
           },
           {
-            "_row_num": 37,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -6649,11 +8232,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 67,
+            "_row_num": 68,
             "section_name": "survey"
           },
           {
-            "_row_num": 38,
+            "_row_num": 39,
             "section_name": "model"
           }
         ],
@@ -6667,11 +8250,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 69,
+            "_row_num": 70,
             "section_name": "survey"
           },
           {
-            "_row_num": 39,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -6686,11 +8269,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 72,
+            "_row_num": 73,
             "section_name": "survey"
           },
           {
-            "_row_num": 40,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -6704,11 +8287,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 74,
+            "_row_num": 75,
             "section_name": "survey"
           },
           {
-            "_row_num": 41,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -6722,11 +8305,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 81,
+            "_row_num": 82,
             "section_name": "survey"
           },
           {
-            "_row_num": 42,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -6745,11 +8328,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 82,
+            "_row_num": 83,
             "section_name": "survey"
           },
           {
-            "_row_num": 43,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -6763,11 +8346,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 84,
             "section_name": "survey"
           },
           {
-            "_row_num": 44,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -6786,11 +8369,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 84,
+            "_row_num": 85,
             "section_name": "survey"
           },
           {
-            "_row_num": 45,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -6804,11 +8387,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 85,
+            "_row_num": 86,
             "section_name": "survey"
           },
           {
-            "_row_num": 46,
+            "_row_num": 47,
             "section_name": "model"
           }
         ],
@@ -6827,11 +8410,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 86,
+            "_row_num": 87,
             "section_name": "survey"
           },
           {
-            "_row_num": 47,
+            "_row_num": 48,
             "section_name": "model"
           }
         ],
@@ -6845,11 +8428,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 87,
+            "_row_num": 88,
             "section_name": "survey"
           },
           {
-            "_row_num": 48,
+            "_row_num": 49,
             "section_name": "model"
           }
         ],
@@ -6868,11 +8451,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 88,
+            "_row_num": 89,
             "section_name": "survey"
           },
           {
-            "_row_num": 49,
+            "_row_num": 50,
             "section_name": "model"
           }
         ],
@@ -6886,11 +8469,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 92,
+            "_row_num": 93,
             "section_name": "survey"
           },
           {
-            "_row_num": 50,
+            "_row_num": 51,
             "section_name": "model"
           }
         ],
@@ -6909,11 +8492,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 93,
+            "_row_num": 94,
             "section_name": "survey"
           },
           {
-            "_row_num": 51,
+            "_row_num": 52,
             "section_name": "model"
           }
         ],
@@ -6927,11 +8510,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 94,
+            "_row_num": 95,
             "section_name": "survey"
           },
           {
-            "_row_num": 52,
+            "_row_num": 53,
             "section_name": "model"
           }
         ],
@@ -6950,11 +8533,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 95,
+            "_row_num": 96,
             "section_name": "survey"
           },
           {
-            "_row_num": 53,
+            "_row_num": 54,
             "section_name": "model"
           }
         ],
@@ -6968,11 +8551,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 96,
+            "_row_num": 97,
             "section_name": "survey"
           },
           {
-            "_row_num": 54,
+            "_row_num": 55,
             "section_name": "model"
           }
         ],
@@ -6991,11 +8574,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 97,
+            "_row_num": 98,
             "section_name": "survey"
           },
           {
-            "_row_num": 55,
+            "_row_num": 56,
             "section_name": "model"
           }
         ],
@@ -7009,11 +8592,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 98,
+            "_row_num": 99,
             "section_name": "survey"
           },
           {
-            "_row_num": 56,
+            "_row_num": 57,
             "section_name": "model"
           }
         ],
@@ -7032,11 +8615,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 99,
+            "_row_num": 100,
             "section_name": "survey"
           },
           {
-            "_row_num": 57,
+            "_row_num": 58,
             "section_name": "model"
           }
         ],
@@ -7051,11 +8634,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 102,
+            "_row_num": 103,
             "section_name": "survey"
           },
           {
-            "_row_num": 58,
+            "_row_num": 59,
             "section_name": "model"
           }
         ],
@@ -7069,11 +8652,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 104,
+            "_row_num": 105,
             "section_name": "survey"
           },
           {
-            "_row_num": 59,
+            "_row_num": 60,
             "section_name": "model"
           }
         ],
@@ -7087,11 +8670,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 111,
             "section_name": "survey"
           },
           {
-            "_row_num": 60,
+            "_row_num": 61,
             "section_name": "model"
           }
         ],
@@ -7110,11 +8693,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 111,
+            "_row_num": 112,
             "section_name": "survey"
           },
           {
-            "_row_num": 61,
+            "_row_num": 62,
             "section_name": "model"
           }
         ],
@@ -7128,11 +8711,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 113,
+            "_row_num": 114,
             "section_name": "survey"
           },
           {
-            "_row_num": 62,
+            "_row_num": 63,
             "section_name": "model"
           }
         ],
@@ -7151,11 +8734,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 114,
+            "_row_num": 115,
             "section_name": "survey"
           },
           {
-            "_row_num": 63,
+            "_row_num": 64,
             "section_name": "model"
           }
         ],
@@ -7169,11 +8752,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 119,
+            "_row_num": 120,
             "section_name": "survey"
           },
           {
-            "_row_num": 64,
+            "_row_num": 65,
             "section_name": "model"
           }
         ],
@@ -7192,11 +8775,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 120,
+            "_row_num": 121,
             "section_name": "survey"
           },
           {
-            "_row_num": 65,
+            "_row_num": 66,
             "section_name": "model"
           }
         ],
@@ -7210,11 +8793,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 123,
             "section_name": "survey"
           },
           {
-            "_row_num": 66,
+            "_row_num": 67,
             "section_name": "model"
           }
         ],
@@ -7233,11 +8816,11 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 123,
+            "_row_num": 124,
             "section_name": "survey"
           },
           {
-            "_row_num": 67,
+            "_row_num": 68,
             "section_name": "model"
           }
         ],
@@ -7252,11 +8835,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 124,
+            "_row_num": 125,
             "section_name": "survey"
           },
           {
-            "_row_num": 68,
+            "_row_num": 69,
             "section_name": "model"
           }
         ],
@@ -7270,11 +8853,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 126,
+            "_row_num": 127,
             "section_name": "survey"
           },
           {
-            "_row_num": 69,
+            "_row_num": 70,
             "section_name": "model"
           }
         ],
@@ -7284,16 +8867,446 @@
         "elementSet": "data",
         "elementPath": "MISMATERIALWHAT"
       },
-      "AXLYMPH": {
+      "IMGVACCAL": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 132,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 71,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMGVACCAL",
+        "elementName": "IMGVACCAL",
+        "elementSet": "data",
+        "elementPath": "IMGVACCAL"
+      },
+      "IMG1MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 133,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 72,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG1MONTH",
+        "elementName": "IMG1MONTH",
+        "elementSet": "data",
+        "elementPath": "IMG1MONTH"
+      },
+      "IMG1NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 134,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 142,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 73,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG1NOTE",
+        "elementName": "IMG1NOTE",
+        "elementSet": "data",
+        "elementPath": "IMG1NOTE"
+      },
+      "IMG1": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG1_uriFragment",
+            "elementName": "uriFragment",
+            "elementSet": "data",
+            "elementPath": "IMG1.uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG1_contentType",
+            "elementName": "contentType",
+            "elementSet": "data",
+            "elementPath": "IMG1.contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 135,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 74,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG1",
+        "elementName": "IMG1",
+        "elementSet": "data",
+        "elementPath": "IMG1",
+        "listChildElementKeys": [
+          "IMG1_contentType",
+          "IMG1_uriFragment"
+        ],
+        "notUnitOfRetention": true
+      },
+      "photo2": {
         "type": "string",
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 130,
+            "_row_num": 136,
             "section_name": "survey"
           },
           {
-            "_row_num": 70,
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo2",
+        "elementName": "photo2",
+        "elementSet": "data",
+        "elementPath": "photo2"
+      },
+      "IMG2MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 141,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 76,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG2MONTH",
+        "elementName": "IMG2MONTH",
+        "elementSet": "data",
+        "elementPath": "IMG2MONTH"
+      },
+      "IMG2NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG2NOTE",
+        "elementName": "IMG2NOTE",
+        "elementSet": "data",
+        "elementPath": "IMG2NOTE"
+      },
+      "IMG2": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG2_uriFragment",
+            "elementName": "uriFragment",
+            "elementSet": "data",
+            "elementPath": "IMG2.uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG2_contentType",
+            "elementName": "contentType",
+            "elementSet": "data",
+            "elementPath": "IMG2.contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 143,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 78,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG2",
+        "elementName": "IMG2",
+        "elementSet": "data",
+        "elementPath": "IMG2",
+        "listChildElementKeys": [
+          "IMG2_contentType",
+          "IMG2_uriFragment"
+        ],
+        "notUnitOfRetention": true
+      },
+      "photo3": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 144,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 79,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo3",
+        "elementName": "photo3",
+        "elementSet": "data",
+        "elementPath": "photo3"
+      },
+      "IMG3MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 150,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 80,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG3MONTH",
+        "elementName": "IMG3MONTH",
+        "elementSet": "data",
+        "elementPath": "IMG3MONTH"
+      },
+      "IMG3NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 151,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 81,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG3NOTE",
+        "elementName": "IMG3NOTE",
+        "elementSet": "data",
+        "elementPath": "IMG3NOTE"
+      },
+      "IMG3": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG3_uriFragment",
+            "elementName": "uriFragment",
+            "elementSet": "data",
+            "elementPath": "IMG3.uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG3_contentType",
+            "elementName": "contentType",
+            "elementSet": "data",
+            "elementPath": "IMG3.contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 152,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 82,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG3",
+        "elementName": "IMG3",
+        "elementSet": "data",
+        "elementPath": "IMG3",
+        "listChildElementKeys": [
+          "IMG3_contentType",
+          "IMG3_uriFragment"
+        ],
+        "notUnitOfRetention": true
+      },
+      "photo4": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 153,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 83,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo4",
+        "elementName": "photo4",
+        "elementSet": "data",
+        "elementPath": "photo4"
+      },
+      "IMG4MONTH": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 2,
+        "__rowNum__": 1,
+        "_defn": [
+          {
+            "_row_num": 159,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 84,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG4MONTH",
+        "elementName": "IMG4MONTH",
+        "elementSet": "data",
+        "elementPath": "IMG4MONTH"
+      },
+      "IMG4NOTE": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 160,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 85,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG4NOTE",
+        "elementName": "IMG4NOTE",
+        "elementSet": "data",
+        "elementPath": "IMG4NOTE"
+      },
+      "IMG4": {
+        "type": "object",
+        "elementType": "mimeUri",
+        "properties": {
+          "uriFragment": {
+            "type": "string",
+            "elementType": "rowpath",
+            "elementKey": "IMG4_uriFragment",
+            "elementName": "uriFragment",
+            "elementSet": "data",
+            "elementPath": "IMG4.uriFragment"
+          },
+          "contentType": {
+            "type": "string",
+            "elementType": "mimeType",
+            "default": "image/*",
+            "elementKey": "IMG4_contentType",
+            "elementName": "contentType",
+            "elementSet": "data",
+            "elementPath": "IMG4.contentType"
+          }
+        },
+        "_defn": [
+          {
+            "_row_num": 161,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 86,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "IMG4",
+        "elementName": "IMG4",
+        "elementSet": "data",
+        "elementPath": "IMG4",
+        "listChildElementKeys": [
+          "IMG4_contentType",
+          "IMG4_uriFragment"
+        ],
+        "notUnitOfRetention": true
+      },
+      "photo5": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 162,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 87,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": true,
+        "elementKey": "photo5",
+        "elementName": "photo5",
+        "elementSet": "data",
+        "elementPath": "photo5"
+      },
+      "AXLYMPH": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 169,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 88,
             "section_name": "model"
           }
         ],
@@ -7308,11 +9321,11 @@
         "valuesList": "Done",
         "_defn": [
           {
-            "_row_num": 132,
+            "_row_num": 171,
             "section_name": "survey"
           },
           {
-            "_row_num": 71,
+            "_row_num": 89,
             "section_name": "model"
           }
         ],
@@ -7327,11 +9340,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 142,
+            "_row_num": 175,
             "section_name": "survey"
           },
           {
-            "_row_num": 72,
+            "_row_num": 90,
             "section_name": "model"
           }
         ],
@@ -7345,11 +9358,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 144,
+            "_row_num": 177,
             "section_name": "survey"
           },
           {
-            "_row_num": 73,
+            "_row_num": 91,
             "section_name": "model"
           }
         ],
@@ -7364,11 +9377,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 145,
+            "_row_num": 178,
             "section_name": "survey"
           },
           {
-            "_row_num": 74,
+            "_row_num": 92,
             "section_name": "model"
           }
         ],
@@ -7383,11 +9396,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 149,
+            "_row_num": 182,
             "section_name": "survey"
           },
           {
-            "_row_num": 75,
+            "_row_num": 93,
             "section_name": "model"
           }
         ],
@@ -7401,11 +9414,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 151,
+            "_row_num": 184,
             "section_name": "survey"
           },
           {
-            "_row_num": 76,
+            "_row_num": 94,
             "section_name": "model"
           }
         ],
@@ -7419,11 +9432,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 152,
+            "_row_num": 185,
             "section_name": "survey"
           },
           {
-            "_row_num": 77,
+            "_row_num": 95,
             "section_name": "model"
           }
         ],
@@ -7438,11 +9451,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 156,
+            "_row_num": 189,
             "section_name": "survey"
           },
           {
-            "_row_num": 78,
+            "_row_num": 96,
             "section_name": "model"
           }
         ],
@@ -7456,11 +9469,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 158,
+            "_row_num": 191,
             "section_name": "survey"
           },
           {
-            "_row_num": 79,
+            "_row_num": 97,
             "section_name": "model"
           }
         ],
@@ -7470,15 +9483,38 @@
         "elementSet": "data",
         "elementPath": "PROBLEMDISCR"
       },
+      "BCGPEOPLE": {
+        "type": "string",
+        "valuesList": "YesNo",
+        "_defn": [
+          {
+            "_row_num": 194,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 197,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 98,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "BCGPEOPLE",
+        "elementName": "BCGPEOPLE",
+        "elementSet": "data",
+        "elementPath": "BCGPEOPLE"
+      },
       "OBS": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 160,
+            "_row_num": 199,
             "section_name": "survey"
           },
           {
-            "_row_num": 80,
+            "_row_num": 99,
             "section_name": "model"
           }
         ],
@@ -7493,11 +9529,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 161,
+            "_row_num": 202,
             "section_name": "survey"
           },
           {
-            "_row_num": 81,
+            "_row_num": 100,
             "section_name": "model"
           }
         ],
@@ -7512,11 +9548,11 @@
         "elementType": "time",
         "_defn": [
           {
-            "_row_num": 162,
+            "_row_num": 203,
             "section_name": "survey"
           },
           {
-            "_row_num": 82,
+            "_row_num": 101,
             "section_name": "model"
           }
         ],
@@ -7564,6 +9600,74 @@
         "elementName": "BCGMANUSOLVENT",
         "elementSet": "data",
         "elementPath": "BCGMANUSOLVENT"
+      },
+      "IMG1_uriFragment": {
+        "type": "string",
+        "elementType": "rowpath",
+        "elementKey": "IMG1_uriFragment",
+        "elementName": "uriFragment",
+        "elementSet": "data",
+        "elementPath": "IMG1.uriFragment"
+      },
+      "IMG1_contentType": {
+        "type": "string",
+        "elementType": "mimeType",
+        "default": "image/*",
+        "elementKey": "IMG1_contentType",
+        "elementName": "contentType",
+        "elementSet": "data",
+        "elementPath": "IMG1.contentType"
+      },
+      "IMG2_uriFragment": {
+        "type": "string",
+        "elementType": "rowpath",
+        "elementKey": "IMG2_uriFragment",
+        "elementName": "uriFragment",
+        "elementSet": "data",
+        "elementPath": "IMG2.uriFragment"
+      },
+      "IMG2_contentType": {
+        "type": "string",
+        "elementType": "mimeType",
+        "default": "image/*",
+        "elementKey": "IMG2_contentType",
+        "elementName": "contentType",
+        "elementSet": "data",
+        "elementPath": "IMG2.contentType"
+      },
+      "IMG3_uriFragment": {
+        "type": "string",
+        "elementType": "rowpath",
+        "elementKey": "IMG3_uriFragment",
+        "elementName": "uriFragment",
+        "elementSet": "data",
+        "elementPath": "IMG3.uriFragment"
+      },
+      "IMG3_contentType": {
+        "type": "string",
+        "elementType": "mimeType",
+        "default": "image/*",
+        "elementKey": "IMG3_contentType",
+        "elementName": "contentType",
+        "elementSet": "data",
+        "elementPath": "IMG3.contentType"
+      },
+      "IMG4_uriFragment": {
+        "type": "string",
+        "elementType": "rowpath",
+        "elementKey": "IMG4_uriFragment",
+        "elementName": "uriFragment",
+        "elementSet": "data",
+        "elementPath": "IMG4.uriFragment"
+      },
+      "IMG4_contentType": {
+        "type": "string",
+        "elementType": "mimeType",
+        "default": "image/*",
+        "elementKey": "IMG4_contentType",
+        "elementName": "contentType",
+        "elementSet": "data",
+        "elementPath": "IMG4.contentType"
       },
       "_id": {
         "type": "string",
@@ -7684,7 +9788,7 @@
         "_aspect": "ASSISTANT",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Assistants\",\"data_value\":\"Igualdino\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":2},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Jailson\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":3},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Laerte\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":4},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Abdel\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":5},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Andreas\",\"display\":{\"title\":{\"text\":{\"english\":\"Andreas\",\"default\":\"Andreas\"}}},\"_row_num\":6},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Julie\",\"display\":{\"title\":{\"text\":{\"english\":\"Julie\",\"default\":\"Julie\"}}},\"_row_num\":7}]"
+        "_value": "[{\"choice_list_name\":\"Assistants\",\"data_value\":\"Laerte\",\"display\":{\"title\":{\"text\":{\"english\":\"Laerte\",\"default\":\"Laerte\"}}},\"_row_num\":2},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Abdel\",\"display\":{\"title\":{\"text\":{\"english\":\"Abdel\",\"default\":\"Abdel\"}}},\"_row_num\":3},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Igualdino\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":4},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Jailson\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":5},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Andreas\",\"display\":{\"title\":{\"text\":{\"english\":\"Andreas\",\"default\":\"Andreas\"}}},\"_row_num\":6},{\"choice_list_name\":\"Assistants\",\"data_value\":\"Julie\",\"display\":{\"title\":{\"text\":{\"english\":\"Julie\",\"default\":\"Julie\"}}},\"_row_num\":7}]"
       },
       {
         "_partition": "Column",
@@ -7698,7 +9802,7 @@
         "_aspect": "AXLYMPH",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":15},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":18},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":19},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
@@ -7719,7 +9823,7 @@
         "_aspect": "BCGCOOL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":15},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":18},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":19},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
@@ -7731,6 +9835,13 @@
       {
         "_partition": "Column",
         "_aspect": "BCGMANU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":18},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":19},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":20}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "BCGPEOPLE",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":15},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":16}]"
@@ -7747,7 +9858,7 @@
         "_aspect": "BCGTECHNIQUE",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"YesNo\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":15},{\"choice_list_name\":\"YesNo\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":18},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":19},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":20}]"
       },
       {
         "_partition": "Column",
@@ -7824,7 +9935,7 @@
         "_aspect": "TRANSPORT",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Transportation\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Scooter\",\"default\":\"Mota\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transportation\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Car\",\"default\":\"Carro\"}}},\"_row_num\":10}]"
+        "_value": "[{\"choice_list_name\":\"Transportation\",\"data_value\":\"Scooter\",\"display\":{\"title\":{\"text\":{\"english\":\"Scooter\",\"default\":\"Mota\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transportation\",\"data_value\":\"Car\",\"display\":{\"title\":{\"text\":{\"english\":\"Car\",\"default\":\"Carro\"}}},\"_row_num\":10}]"
       },
       {
         "_partition": "FormType",
