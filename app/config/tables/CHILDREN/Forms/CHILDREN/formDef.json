@@ -311,7 +311,7 @@
             "helperText": false
           }
         },
-        "constraint": "adate.diffInDays(data(\"DOB\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"DOB\")) >= 0 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
+        "constraint": "adate.diffInDays(data(\"DOB\"),data(\"DATASEG\")) >= 0  && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
         "_row_num": 26
       },
       {
@@ -3681,7 +3681,7 @@
                 "helperText": false
               }
             },
-            "constraint": "adate.diffInDays(data(\"DOB\"),data(\"DATASEG\")) >= 0 && adate.diffInDays(data(\"REGDIA\"),data(\"DOB\")) >= 0 && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
+            "constraint": "adate.diffInDays(data(\"DOB\"),data(\"DATASEG\")) >= 0  && adate.ageInYears(data(\"DOB\")) != -9999 && adate.ageInYears(data(\"DOB\")) < 2019",
             "_row_num": 26,
             "__rowNum__": 25,
             "_token_type": "prompt",
