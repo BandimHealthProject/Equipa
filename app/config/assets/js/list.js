@@ -29,7 +29,7 @@ function doSanityCheck() {
 function loadPregnancies() {
     // SQL to get pregnancies
     var user = odkCommon.getActiveUser();
-    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:student") {
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:cbhp" | user == "username:abhp" | user == "username:student") {
         var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab +
@@ -38,7 +38,7 @@ function loadPregnancies() {
     } else {
         var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
-        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND _row_owner = '" + user + "' " +
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = '" + user + "' " + " OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' )" +
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
         " ORDER BY MOR, NOMEMUL";
     }
@@ -94,7 +94,7 @@ function loadPregnancies() {
 function loadChildren() {
     // SQL to get pregnancies
     var user = odkCommon.getActiveUser();
-    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:student") {
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:cbhp" | user == "username:abhp" | user == "username:student") {
         var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
@@ -103,7 +103,7 @@ function loadChildren() {
     } else {
         var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
-        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND _row_owner = '" + user + "' " + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = '" + user + "' " + " OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' )" +
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
         " ORDER BY MOR, NOMECRI";
     }
