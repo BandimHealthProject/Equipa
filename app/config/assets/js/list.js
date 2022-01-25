@@ -283,7 +283,8 @@ function setDisplayText(person) {
             "Telefone: " + person.TELE + "<br / >" +
             "Idade: " + person.IDADE + "<br />" +
             "Dia de inclusão: " + regdia + "<br />" +
-            "OBS: " + obs;
+            "OBS: " + obs + "<br />" +
+            "ID gravidez: " + person.IDMUL;
         }
         
     } else {
@@ -302,7 +303,8 @@ function setDisplayText(person) {
             "Nome da criança: " + person.NOMECRI + "<br />" + 
             "Sexo: " + sex + "<br />" + 
             "Dia de nascimento: " + dob + "<br />" + 
-            "Dia de inclusão: " + regdia;
+            "Dia de inclusão: " + regdia + "<br />" +
+            "ID criança: " + person.IDCRI; 
     }
     return displayText
 }
