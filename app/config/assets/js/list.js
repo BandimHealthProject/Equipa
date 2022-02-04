@@ -143,12 +143,16 @@ function loadChildren() {
 
             // js dates
             // End up FU: dob+42
-            var dobD = Number(DOB.slice(2, DOB.search("M")-1));
-            var dobM = DOB.slice(DOB.search("M")+2, DOB.search("Y")-1);
-            var dobY = DOB.slice(DOB.search("Y")+2);
-            var FUend = new Date(dobY, dobM-1, dobD +42);
-            if (FUend == "Invalid Date") {
-                FUend = new Date(dobY, dobM-1, 15 +42);
+            if (DOB != null) {
+                var dobD = Number(DOB.slice(2, DOB.search("M")-1));
+                var dobM = DOB.slice(DOB.search("M")+2, DOB.search("Y")-1);
+                var dobY = DOB.slice(DOB.search("Y")+2);
+                var FUend = new Date(dobY, dobM-1, dobD +42);
+                if (FUend == "Invalid Date") {
+                    FUend = new Date(dobY, dobM-1, 15 +42);
+                }
+            } else {
+                FUend = new Date(date);
             }
             // last visit
             var segD = Number(DATASEG.slice(2, DATASEG.search("M")-1));
@@ -310,11 +314,17 @@ function setDisplayText(person) {
 }
 
 function formatDate(adate) {
-    var d = adate.slice(2, adate.search("M")-1);
-    var m = adate.slice(adate.search("M")+2, adate.search("Y")-1);
-    var y = adate.slice(adate.search("Y")+2);
-    var date = d + "/" + m + "/" + y;
-    return date;
+    if (adate == null) {
+        var date = " "
+        return date;
+    } else {
+        var d = adate.slice(2, adate.search("M")-1);
+        var m = adate.slice(adate.search("M")+2, adate.search("Y")-1);
+        var y = adate.slice(adate.search("Y")+2);
+        var date = d + "/" + m + "/" + y;
+        return date;
+    }
+    
 }
 
 function openFormNewPreg() {
