@@ -34,7 +34,7 @@ function getMasterList(data) {
     for (var row = 1; row < allRows.length; row++) {  // start at row = 1 to skip header
             allRows[row] = allRows[row].replace(/"/g,""); // remove quotes from strings
             var rowValues = allRows[row].split(",");
-            var p = {reg: rowValues[0], regNome: rowValues[1], hcarea: rowValues[2], hcareaNome: rowValues[3], tab: rowValues[4], tabNome: rowValues[5]};
+            var p = {reg: rowValues[0], regNome: rowValues[1], hcarea: rowValues[2], hcareaNome: rowValues[3], tab: rowValues[4], tabNome: rowValues[5], listGroup: rowValues[6]};
             if (p.reg != "") { // only push rows with reg number
                 masterList.push(p);
             }
@@ -49,8 +49,8 @@ function initButtons() {
     const map = new Map();
     for (const item of masterList) {
         if (item.reg == reg) {
-            if(!map.has(item.hcarea)){
-                map.set(item.hcarea, true);    // set any value to Map
+            if(!map.has(item.listGroup)){
+                map.set(item.listGroup, true);    // set any value to Map
                 hcareas.push(item);
             }
         }
@@ -62,12 +62,12 @@ function initButtons() {
     $.each(hcareas, function() {
         var that = this;      
         
-        ul.append($("<li />").append($("<button />").attr('id',this.hcarea).attr('class','btn' + this.reg).append(this.hcareaNome)));
+        ul.append($("<li />").append($("<button />").attr('id',this.listGroup).attr('class','btn' + this.reg).append(this.hcareaNome)));
         
         // Buttons
-        var btn = ul.find('#' + this.hcarea);
+        var btn = ul.find('#' + this.listGroup);
         btn.on("click", function() {
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup);
             odkTables.launchHTML(null, 'config/assets/tab.html' + queryParams);
         })        
     });

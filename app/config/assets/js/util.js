@@ -10,7 +10,7 @@ util.DEBUG = false;
  * Get a string to append to a url that will contain information the date and
  * time. The values can then be retrieved using getQueryParameter.
  */
-util.setQuerystringParams = function(date, reg, regNome, hcarea, hcareaNome, tab, tabNome) {
+util.setQuerystringParams = function(date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome) {
 
     var that = this;
     var first = true;
@@ -36,7 +36,11 @@ util.setQuerystringParams = function(date, reg, regNome, hcarea, hcareaNome, tab
 
     if (hcareaNome) {
         adaptProps['hcareaNome'] = hcareaNome;
-    }  
+    } 
+
+    if (listGroup) {
+        adaptProps['listGroup'] = listGroup;
+    } 
 
     if (tab) {
         adaptProps['tab'] = tab;

@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var pregnancies, children, personList, date, reg, regNome, hcarea, hcareaNome, tab, tabNome;
+var pregnancies, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome;
 function display() {
     console.log("Person list loading");
     date = util.getQueryParameter('date');
@@ -11,6 +11,7 @@ function display() {
     regNome = util.getQueryParameter('regNome');
     hcarea = util.getQueryParameter('hcarea');
     hcareaNome = util.getQueryParameter('hcareaNome');
+    listGroup = util.getQueryParameter('listGroup');
     tab = util.getQueryParameter('tab');
     tabNome = util.getQueryParameter('tabNome');
 
@@ -29,10 +30,23 @@ function doSanityCheck() {
 function loadPregnancies() {
     // SQL to get pregnancies
     var user = odkCommon.getActiveUser();
+    console.log("user:" + user);
     if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:cbhp" | user == "username:abhp" | user == "username:student") {
         var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
         " FROM PREGNANCIES" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab +
+        " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
+        " ORDER BY MOR, NOMEMUL";
+    } else if (user == "username:oio02" | user == "username:oio11") {
+        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
+        " FROM PREGNANCIES" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = 'username:oio02' OR _row_owner = 'username:oio11' OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' OR _row_owner LIKE '%anonymous%' )" +
+        " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
+        " ORDER BY MOR, NOMEMUL";
+    } else if (user == "username:oio05" | user == "username:oio12") {
+        var sql = "SELECT _id, _savepoint_type, CHWREG, CICATRIZMUL, CONSENT, DATASEG, ESCO, ESCONIVEL, ESTADOGRAV, ESTADOMUL, GRAV, HCAREA, IDADE, IDMUL, MOR, NOMEMUL, NVNMAB, PARITY, PARHCHOSP, REG, REGDIA, TAB, TELE, VISNOMUL" +
+        " FROM PREGNANCIES" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = 'username:oio05' OR _row_owner = 'username:oio12' OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' OR _row_owner LIKE '%anonymous%' )" +
         " GROUP BY IDMUL HAVING MAX(VISNOMUL)" +
         " ORDER BY MOR, NOMEMUL";
     } else {
@@ -98,6 +112,18 @@ function loadChildren() {
         var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + 
+        " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
+        " ORDER BY MOR, NOMECRI";
+    } else if (user == "username:oio02" | user == "username:oio11") {
+        var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
+        " FROM CHILDREN" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = 'username:oio02' OR _row_owner = 'username:oio11' OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' OR _row_owner LIKE '%anonymous%' )" +
+        " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
+        " ORDER BY MOR, NOMECRI";
+    } else if (user == "username:oio05" | user == "username:oio11") {
+        var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
+        " FROM CHILDREN" + 
+        " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = 'username:oio05' OR _row_owner = 'username:oio12' OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' OR _row_owner LIKE '%anonymous%' )" +
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
         " ORDER BY MOR, NOMECRI";
     } else {
