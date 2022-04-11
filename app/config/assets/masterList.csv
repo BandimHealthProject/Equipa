@@ -1,885 +1,885 @@
-REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME
-1,"Oio",1,"Binar",1,"Berra"
-1,"Oio",1,"Binar",2,"Bidiur"
-1,"Oio",1,"Binar",3,"Binar"
-1,"Oio",1,"Binar",4,"Binomi"
-1,"Oio",1,"Binar",5,"Bissunaga"
-1,"Oio",1,"Binar",6,"Brum"
-1,"Oio",1,"Binar",7,"Cali"
-1,"Oio",1,"Binar",8,"Clack"
-1,"Oio",1,"Binar",9,"Cubui"
-1,"Oio",1,"Binar",10,"Cubum"
-1,"Oio",1,"Binar",11,"Cumbé"
-1,"Oio",1,"Binar",12,"Fabur"
-1,"Oio",1,"Binar",13,"Fontchó"
-1,"Oio",1,"Binar",14,"Gã Bas"
-1,"Oio",1,"Binar",15,"Gã Fula"
-1,"Oio",1,"Binar",16,"Mamgasinho"
-1,"Oio",1,"Binar",17,"Manchester"
-1,"Oio",1,"Binar",18,"Manga"
-1,"Oio",1,"Binar",19,"Manga Bisso"
-1,"Oio",1,"Binar",20,"Mpaba"
-1,"Oio",1,"Binar",21,"Mputchut"
-1,"Oio",1,"Binar",22,"Naga"
-1,"Oio",1,"Binar",23,"Ndambé"
-1,"Oio",1,"Binar",24,"Nfante"
-1,"Oio",1,"Binar",25,"Nguntché Besna"
-1,"Oio",1,"Binar",26,"Nguntché Samba"
-1,"Oio",1,"Binar",27,"Nhamat"
-1,"Oio",1,"Binar",28,"Nhengue"
-1,"Oio",1,"Binar",29,"Nogan"
-1,"Oio",1,"Binar",30,"Nsanta"
-1,"Oio",1,"Binar",31,"Nsumté"
-1,"Oio",1,"Binar",32,"Ntcherté"
-1,"Oio",1,"Binar",33,"Ntin"
-1,"Oio",1,"Binar",34,"Ntossolé"
-1,"Oio",1,"Binar",35,"Pamar"
-1,"Oio",1,"Binar",36,"Patche Pansau"
-1,"Oio",1,"Binar",37,"Patche Tam"
-1,"Oio",1,"Binar",38,"Patche Xala"
-1,"Oio",1,"Binar",39,"Ponta Nobu"
-1,"Oio",1,"Binar",40,"Ponta Nobu 2"
-1,"Oio",1,"Binar",41,"Queme"
-1,"Oio",1,"Binar",42,"Regue"
-1,"Oio",1,"Binar",43,"Rua Nobu"
-1,"Oio",1,"Binar",44,"Safar"
-1,"Oio",1,"Binar",45,"Tama"
-1,"Oio",1,"Binar",46,"Tchada"
-1,"Oio",1,"Binar",47,"Tchangué"
-1,"Oio",1,"Binar",48,"Tchill"
-1,"Oio",1,"Binar",49,"Tchocudul"
-1,"Oio",1,"Binar",50,"Tchumbum"
-1,"Oio",1,"Binar",51,"Tebdé"
-1,"Oio",1,"Binar",52,"Timguilin"
-1,"Oio",1,"Binar",53,"Tolum"
-1,"Oio",2,"Bissora",1,"Argentina"
-1,"Oio",2,"Bissora",2,"Banculen"
-1,"Oio",2,"Bissora",3,"Baque"
-1,"Oio",2,"Bissora",4,"Berco"
-1,"Oio",2,"Bissora",5,"Bianfoi"
-1,"Oio",2,"Bissora",6,"Bidir"
-1,"Oio",2,"Bissora",7,"Binaga"
-1,"Oio",2,"Bissora",8,"Bissau Nobo"
-1,"Oio",2,"Bissora",9,"Bitcha"
-1,"Oio",2,"Bissora",10,"Blassar 1"
-1,"Oio",2,"Bissora",11,"Blassar 2"
-1,"Oio",2,"Bissora",12,"Braga 1"
-1,"Oio",2,"Bissora",13,"Braga 2"
-1,"Oio",2,"Bissora",14,"Bucamar"
-1,"Oio",2,"Bissora",15,"Bucaur"
-1,"Oio",2,"Bissora",16,"Budi"
-1,"Oio",2,"Bissora",17,"Bugharan"
-1,"Oio",2,"Bissora",18,"California"
-1,"Oio",2,"Bissora",19,"Candjungudo"
-1,"Oio",2,"Bissora",20,"Canfran"
-1,"Oio",2,"Bissora",21,"Caual"
-1,"Oio",2,"Bissora",22,"Cobato"
-1,"Oio",2,"Bissora",23,"Concolin Balanta Mane"
-1,"Oio",2,"Bissora",24,"Concolin Mandiga"
-1,"Oio",2,"Bissora",25,"Coseeba"
-1,"Oio",2,"Bissora",26,"Cran-Cuta"
-1,"Oio",2,"Bissora",27,"Cran-Numbe"
-1,"Oio",2,"Bissora",28,"Culicunhe"
-1,"Oio",2,"Bissora",29,"Cunbran"
-1,"Oio",2,"Bissora",30,"Cunhuncun"
-1,"Oio",2,"Bissora",31,"Cunte"
-1,"Oio",2,"Bissora",32,"Cuntuba"
-1,"Oio",2,"Bissora",33,"Cussondon"
-1,"Oio",2,"Bissora",34,"Dame-Lipte"
-1,"Oio",2,"Bissora",35,"Dame-Nguabe"
-1,"Oio",2,"Bissora",36,"Dame-Nhae"
-1,"Oio",2,"Bissora",37,"Dame-Nquida"
-1,"Oio",2,"Bissora",38,"Dame-Pass"
-1,"Oio",2,"Bissora",39,"Dame-Sor"
-1,"Oio",2,"Bissora",40,"Dame-The"
-1,"Oio",2,"Bissora",41,"Danbur"
-1,"Oio",2,"Bissora",42,"Dandu"
-1,"Oio",2,"Bissora",43,"Djabel"
-1,"Oio",2,"Bissora",44,"Djacal"
-1,"Oio",2,"Bissora",45,"Djungoto"
-1,"Oio",2,"Bissora",46,"Farol"
-1,"Oio",2,"Bissora",47,"Fatcha"
-1,"Oio",2,"Bissora",48,"Fiuse"
-1,"Oio",2,"Bissora",49,"Flobe"
-1,"Oio",2,"Bissora",50,"Gã-Banana"
-1,"Oio",2,"Bissora",51,"Gã-Djugude"
-1,"Oio",2,"Bissora",52,"Ga-Sambu"
-1,"Oio",2,"Bissora",53,"Gã-Semitero"
-1,"Oio",2,"Bissora",54,"Iador Cangha"
-1,"Oio",2,"Bissora",55,"Iador Franbetche"
-1,"Oio",2,"Bissora",56,"Iara"
-1,"Oio",2,"Bissora",57,"J. Kom 1"
-1,"Oio",2,"Bissora",58,"J. Kom 2"
-1,"Oio",2,"Bissora",59,"Lenden"
-1,"Oio",2,"Bissora",60,"Libar"
-1,"Oio",2,"Bissora",61,"Madina"
-1,"Oio",2,"Bissora",62,"Mague"
-1,"Oio",2,"Bissora",63,"Mansabadin"
-1,"Oio",2,"Bissora",64,"Missira"
-1,"Oio",2,"Bissora",65,"Mon"
-1,"Oio",2,"Bissora",66,"Mun"
-1,"Oio",2,"Bissora",67,"Nam-Balanta"
-1,"Oio",2,"Bissora",68,"Nam-Mandinga"
-1,"Oio",2,"Bissora",69,"Nbundhe"
-1,"Oio",2,"Bissora",70,"N'Come"
-1,"Oio",2,"Bissora",71,"N'cor"
-1,"Oio",2,"Bissora",72,"Ndenden"
-1,"Oio",2,"Bissora",73,"Nhanfa"
-1,"Oio",2,"Bissora",74,"Nhengue"
-1,"Oio",2,"Bissora",75,"Npanquinhan"
-1,"Oio",2,"Bissora",76,"Ntchunpun"
-1,"Oio",2,"Bissora",77,"Ntebé"
-1,"Oio",2,"Bissora",78,"Otra Banda"
-1,"Oio",2,"Bissora",79,"Quibide"
-1,"Oio",2,"Bissora",80,"Quinana"
-1,"Oio",2,"Bissora",81,"Quincat"
-1,"Oio",2,"Bissora",82,"Quinhague"
-1,"Oio",2,"Bissora",83,"Quissef"
-1,"Oio",2,"Bissora",84,"Santa Lusia"
-1,"Oio",2,"Bissora",85,"Sanu"
-1,"Oio",2,"Bissora",86,"Saru"
-1,"Oio",2,"Bissora",87,"Sili"
-1,"Oio",2,"Bissora",88,"Sintchan"
-1,"Oio",2,"Bissora",89,"Sormon"
-1,"Oio",2,"Bissora",90,"Tama"
-1,"Oio",2,"Bissora",91,"Titilon"
-1,"Oio",2,"Bissora",92,"Touba"
-1,"Oio",2,"Bissora",93,"Unfar"
-1,"Oio",2,"Bissora",94,"Wacri"
-1,"Oio",2,"Bissora",95,"Walia"
-1,"Oio",2,"Bissora",96,"Watine"
-1,"Oio",2,"Bissora",97,"Wedegueia"
-1,"Oio",3,"Encheia",1,"Biambi"
-1,"Oio",3,"Encheia",2,"Blaftchur"
-1,"Oio",3,"Encheia",3,"Boda"
-1,"Oio",3,"Encheia",4,"Cadjaque"
-1,"Oio",3,"Encheia",5,"Cangha Cocry"
-1,"Oio",3,"Encheia",6,"Cangha Mar"
-1,"Oio",3,"Encheia",7,"Cangha Nhanque"
-1,"Oio",3,"Encheia",8,"Cangha Ntchucal"
-1,"Oio",3,"Encheia",9,"Catche"
-1,"Oio",3,"Encheia",10,"Clack"
-1,"Oio",3,"Encheia",11,"Clonque"
-1,"Oio",3,"Encheia",12,"Correnghe"
-1,"Oio",3,"Encheia",13,"Cumbulé"
-1,"Oio",3,"Encheia",14,"Cuthi"
-1,"Oio",3,"Encheia",15,"Embue"
-1,"Oio",3,"Encheia",16,"Entcanque"
-1,"Oio",3,"Encheia",17,"Infaidi"
-1,"Oio",3,"Encheia",18,"Late"
-1,"Oio",3,"Encheia",19,"Mbad"
-1,"Oio",3,"Encheia",20,"Mpas"
-1,"Oio",3,"Encheia",21,"Ngwenquen"
-1,"Oio",3,"Encheia",22,"N'huntche"
-1,"Oio",3,"Encheia",23,"Nquida"
-1,"Oio",3,"Encheia",24,"Nsanha"
-1,"Oio",3,"Encheia",25,"Ntchumbe"
-1,"Oio",3,"Encheia",26,"Ntchuté"
-1,"Oio",3,"Encheia",27,"Quere"
-1,"Oio",3,"Encheia",28,"Quinack"
-1,"Oio",3,"Encheia",29,"Quinhaque"
-1,"Oio",3,"Encheia",30,"Quisanque"
-1,"Oio",3,"Encheia",31,"Quitamo"
-1,"Oio",3,"Encheia",32,"Tchale"
-1,"Oio",3,"Encheia",33,"Tchondon"
-1,"Oio",3,"Encheia",34,"Tchungha"
-1,"Oio",3,"Encheia",35,"Tinca"
-1,"Oio",3,"Encheia",36,"Uflê"
-1,"Oio",3,"Encheia",37,"Wunkur"
-1,"Oio",4,"Ga-Mamudo",1,"Agri-Bissau"
-1,"Oio",4,"Ga-Mamudo",2,"Amedalai"
-1,"Oio",4,"Ga-Mamudo",3,"Antigo"
-1,"Oio",4,"Ga-Mamudo",4,"Bumal"
-1,"Oio",4,"Ga-Mamudo",5,"Cabuca"
-1,"Oio",4,"Ga-Mamudo",6,"Catio Zinho"
-1,"Oio",4,"Ga-Mamudo",7,"Coopac"
-1,"Oio",4,"Ga-Mamudo",8,"Coral de Alasana"
-1,"Oio",4,"Ga-Mamudo",9,"Coral de Amadu"
-1,"Oio",4,"Ga-Mamudo",10,"Coral de Braima"
-1,"Oio",4,"Ga-Mamudo",11,"Coral de Fadi"
-1,"Oio",4,"Ga-Mamudo",12,"Coral de Iero"
-1,"Oio",4,"Ga-Mamudo",13,"Dando-Zinho"
-1,"Oio",4,"Ga-Mamudo",14,"Dar-Salam"
-1,"Oio",4,"Ga-Mamudo",15,"Gã-Mamudo de Baixo"
-1,"Oio",4,"Ga-Mamudo",16,"Gã-Mamudo de Cima"
-1,"Oio",4,"Ga-Mamudo",17,"Gamol Zinho"
-1,"Oio",4,"Ga-Mamudo",18,"Horta de Nino"
-1,"Oio",4,"Ga-Mamudo",19,"Malafu 1"
-1,"Oio",4,"Ga-Mamudo",20,"Malafu 2"
-1,"Oio",4,"Ga-Mamudo",21,"Massina 1"
-1,"Oio",4,"Ga-Mamudo",22,"Massina 2"
-1,"Oio",4,"Ga-Mamudo",23,"Menten Fula"
-1,"Oio",4,"Ga-Mamudo",24,"Missira"
-1,"Oio",4,"Ga-Mamudo",25,"Missira Coral"
-1,"Oio",4,"Ga-Mamudo",26,"Ntchale de Baixo"
-1,"Oio",4,"Ga-Mamudo",27,"Ntchale de Estrada"
-1,"Oio",4,"Ga-Mamudo",28,"Ntchale de Metade"
-1,"Oio",4,"Ga-Mamudo",29,"Pluba"
-1,"Oio",4,"Ga-Mamudo",30,"Quindia"
-1,"Oio",4,"Ga-Mamudo",31,"Saifala"
-1,"Oio",4,"Ga-Mamudo",32,"Shara Balanta"
-1,"Oio",4,"Ga-Mamudo",33,"Shara Manjaco"
-1,"Oio",4,"Ga-Mamudo",34,"Tchere 1"
-1,"Oio",4,"Ga-Mamudo",35,"Tchere 2"
-1,"Oio",5,"Mansaba",1,"B. 24 Setembro"
-1,"Oio",5,"Mansaba",2,"Bagadadje"
-1,"Oio",5,"Mansaba",3,"Baite"
-1,"Oio",5,"Mansaba",4,"Bambaia"
-1,"Oio",5,"Mansaba",5,"Bandjara"
-1,"Oio",5,"Mansaba",6,"Bantandjam"
-1,"Oio",5,"Mansaba",7,"Baria"
-1,"Oio",5,"Mansaba",8,"Belel Oio"
-1,"Oio",5,"Mansaba",9,"Bercobato"
-1,"Oio",5,"Mansaba",10,"Bercorin"
-1,"Oio",5,"Mansaba",11,"Berendinto"
-1,"Oio",5,"Mansaba",12,"Bironque"
-1,"Oio",5,"Mansaba",13,"Boicunda"
-1,"Oio",5,"Mansaba",14,"Cabaceira"
-1,"Oio",5,"Mansaba",15,"Calenge-Fula"
-1,"Oio",5,"Mansaba",16,"Calenge-Mandinga"
-1,"Oio",5,"Mansaba",17,"Canpamento"
-1,"Oio",5,"Mansaba",18,"Cantchungo Zinho"
-1,"Oio",5,"Mansaba",19,"Casa Novo"
-1,"Oio",5,"Mansaba",20,"Cassucai"
-1,"Oio",5,"Mansaba",21,"Colombato"
-1,"Oio",5,"Mansaba",22,"Cooperativa D. Ramos"
-1,"Oio",5,"Mansaba",23,"Cubani"
-1,"Oio",5,"Mansaba",24,"Cussaraba"
-1,"Oio",5,"Mansaba",25,"Cussarafanca"
-1,"Oio",5,"Mansaba",26,"Demba-so Novo"
-1,"Oio",5,"Mansaba",27,"Demba-so Velho"
-1,"Oio",5,"Mansaba",28,"Djabicunda"
-1,"Oio",5,"Mansaba",29,"Djalicunda"
-1,"Oio",5,"Mansaba",30,"Djendo"
-1,"Oio",5,"Mansaba",31,"Djendo Madina"
-1,"Oio",5,"Mansaba",32,"Djifim"
-1,"Oio",5,"Mansaba",33,"Dumbali"
-1,"Oio",5,"Mansaba",34,"Dutatu"
-1,"Oio",5,"Mansaba",35,"Gansanima"
-1,"Oio",5,"Mansaba",36,"Iamoi"
-1,"Oio",5,"Mansaba",37,"Ionfarin"
-1,"Oio",5,"Mansaba",38,"Lindjane"
-1,"Oio",5,"Mansaba",39,"Manbonco Dar"
-1,"Oio",5,"Mansaba",40,"Manbonco I"
-1,"Oio",5,"Mansaba",41,"Mandongo"
-1,"Oio",5,"Mansaba",42,"Manguica"
-1,"Oio",5,"Mansaba",43,"Manhau"
-1,"Oio",5,"Mansaba",44,"Mansaba sutu"
-1,"Oio",5,"Mansaba",45,"Mansomine"
-1,"Oio",5,"Mansaba",46,"Mantita"
-1,"Oio",5,"Mansaba",47,"Matricom"
-1,"Oio",5,"Mansaba",48,"Morcunda"
-1,"Oio",5,"Mansaba",49,"N'damicunda"
-1,"Oio",5,"Mansaba",50,"Ndingui"
-1,"Oio",5,"Mansaba",51,"Njassane"
-1,"Oio",5,"Mansaba",52,"Pantufa Zinho"
-1,"Oio",5,"Mansaba",53,"Ponta Cumando"
-1,"Oio",5,"Mansaba",54,"Ponta Djabi"
-1,"Oio",5,"Mansaba",55,"Ponta Fernando"
-1,"Oio",5,"Mansaba",56,"Ponta Novo"
-1,"Oio",5,"Mansaba",57,"Ponta Paulo"
-1,"Oio",5,"Mansaba",58,"Sabalacunda"
-1,"Oio",5,"Mansaba",59,"Sambacul"
-1,"Oio",5,"Mansaba",60,"Sansagono"
-1,"Oio",5,"Mansaba",61,"Santa-Su"
-1,"Oio",5,"Mansaba",62,"Simbor"
-1,"Oio",5,"Mansaba",63,"Sindjam"
-1,"Oio",5,"Mansaba",64,"Sintcham Iaia"
-1,"Oio",5,"Mansaba",65,"Tambico"
-1,"Oio",5,"Mansaba",66,"Tumane"
-1,"Oio",5,"Mansaba",67,"Walia"
-1,"Oio",5,"Mansaba",68,"Wassadu"
-1,"Oio",6,"Mansoa",1,"Algodão"
-1,"Oio",6,"Mansoa",2,"Aria"
-1,"Oio",6,"Mansoa",3,"Bairro 15"
-1,"Oio",6,"Mansoa",4,"Bara"
-1,"Oio",6,"Mansoa",5,"Binduro"
-1,"Oio",6,"Mansoa",6,"Binibaque"
-1,"Oio",6,"Mansoa",7,"Braia"
-1,"Oio",6,"Mansoa",8,"Cambia"
-1,"Oio",6,"Mansoa",9,"Cantchur"
-1,"Oio",6,"Mansoa",10,"Clak Iala"
-1,"Oio",6,"Mansoa",11,"Clak Indjasse"
-1,"Oio",6,"Mansoa",12,"Clak Isna"
-1,"Oio",6,"Mansoa",13,"Cuboi"
-1,"Oio",6,"Mansoa",14,"Cubontche"
-1,"Oio",6,"Mansoa",15,"Culucunda"
-1,"Oio",6,"Mansoa",16,"Cumtubom"
-1,"Oio",6,"Mansoa",17,"Curreni"
-1,"Oio",6,"Mansoa",18,"Curva Samba"
-1,"Oio",6,"Mansoa",19,"Cussak"
-1,"Oio",6,"Mansoa",20,"Cussana"
-1,"Oio",6,"Mansoa",21,"Cussentche"
-1,"Oio",6,"Mansoa",22,"Cutia"
-1,"Oio",6,"Mansoa",23,"Dana"
-1,"Oio",6,"Mansoa",24,"Darsalam"
-1,"Oio",6,"Mansoa",25,"Date"
-1,"Oio",6,"Mansoa",26,"Jugudul"
-1,"Oio",6,"Mansoa",27,"Lotche"
-1,"Oio",6,"Mansoa",28,"Luanda"
-1,"Oio",6,"Mansoa",29,"Mambaque"
-1,"Oio",6,"Mansoa",30,"Mancalã"
-1,"Oio",6,"Mansoa",31,"Manconfi"
-1,"Oio",6,"Mansoa",32,"Mancunto"
-1,"Oio",6,"Mansoa",33,"Mandingara"
-1,"Oio",6,"Mansoa",34,"Manquintico"
-1,"Oio",6,"Mansoa",35,"Mansancrim"
-1,"Oio",6,"Mansoa",36,"Mantefan"
-1,"Oio",6,"Mansoa",37,"Ncom"
-1,"Oio",6,"Mansoa",38,"Ncor"
-1,"Oio",6,"Mansoa",39,"Nfandre"
-1,"Oio",6,"Mansoa",40,"Nghanhi"
-1,"Oio",6,"Mansoa",41,"Nhengue"
-1,"Oio",6,"Mansoa",42,"Nhimbe"
-1,"Oio",6,"Mansoa",43,"Niman"
-1,"Oio",6,"Mansoa",44,"Nlore"
-1,"Oio",6,"Mansoa",45,"Nquida"
-1,"Oio",6,"Mansoa",46,"Ntate"
-1,"Oio",6,"Mansoa",47,"Ntcham"
-1,"Oio",6,"Mansoa",48,"Ntchugal"
-1,"Oio",6,"Mansoa",49,"Ntchula"
-1,"Oio",6,"Mansoa",50,"Olon"
-1,"Oio",6,"Mansoa",51,"Polibak"
-1,"Oio",6,"Mansoa",52,"Ponta Correia"
-1,"Oio",6,"Mansoa",53,"Ponta E. Cabra"
-1,"Oio",6,"Mansoa",54,"Praca"
-1,"Oio",6,"Mansoa",55,"Psora"
-1,"Oio",6,"Mansoa",56,"Quibir"
-1,"Oio",6,"Mansoa",57,"Quidame"
-1,"Oio",6,"Mansoa",58,"Quinhaque"
-1,"Oio",6,"Mansoa",59,"Quinhequinto"
-1,"Oio",6,"Mansoa",60,"Ribada"
-1,"Oio",6,"Mansoa",61,"Rossum"
-1,"Oio",6,"Mansoa",62,"S. Tomé"
-1,"Oio",6,"Mansoa",63,"Saba"
-1,"Oio",6,"Mansoa",64,"Sansanghoto"
-1,"Oio",6,"Mansoa",65,"Somec"
-1,"Oio",6,"Mansoa",66,"Suarecunda"
-1,"Oio",6,"Mansoa",67,"Sugum"
-1,"Oio",6,"Mansoa",68,"Tcalana Grande"
-1,"Oio",6,"Mansoa",69,"Tchalana Djaila"
-1,"Oio",6,"Mansoa",70,"Tchalana Lumo"
-1,"Oio",6,"Mansoa",71,"Thcalana III"
-1,"Oio",6,"Mansoa",72,"Uque"
-1,"Oio",6,"Mansoa",73,"Waque"
-1,"Oio",6,"Mansoa",74,"Wediqueia"
-1,"Oio",6,"Mansoa",75,"Wonquilim"
-1,"Oio",7,"Mores",1,"Bidjime"
-1,"Oio",7,"Mores",2,"Buncuntum"
-1,"Oio",7,"Mores",3,"Caie 1"
-1,"Oio",7,"Mores",4,"Caie 2"
-1,"Oio",7,"Mores",5,"Caie 3"
-1,"Oio",7,"Mores",6,"Caie 4"
-1,"Oio",7,"Mores",7,"Cambedje Balanta"
-1,"Oio",7,"Mores",8,"Cambedje Mandinga"
-1,"Oio",7,"Mores",9,"Canquebo"
-1,"Oio",7,"Mores",10,"Concote"
-1,"Oio",7,"Mores",11,"Manaca"
-1,"Oio",7,"Mores",12,"Mansode"
-1,"Oio",7,"Mores",13,"Mores"
-1,"Oio",7,"Mores",14,"Ncurba"
-1,"Oio",7,"Mores",15,"Nemenaco Balanta"
-1,"Oio",7,"Mores",16,"Nemenaco Fula"
-1,"Oio",7,"Mores",17,"Nghantcha"
-1,"Oio",7,"Mores",18,"Ngharom"
-1,"Oio",7,"Mores",19,"Nrua"
-1,"Oio",7,"Mores",20,"Ponta Embana"
-1,"Oio",7,"Mores",21,"Santambato"
-1,"Oio",7,"Mores",22,"Tambato"
-1,"Oio",7,"Mores",23,"Ude"
-1,"Oio",8,"Nhacra",1,"Atchaca"
-1,"Oio",8,"Nhacra",41,"Bondade"
-1,"Oio",8,"Nhacra",2,"Bup"
-1,"Oio",8,"Nhacra",3,"Cade"
-1,"Oio",8,"Nhacra",4,"Caiana"
-1,"Oio",8,"Nhacra",42,"California"
-1,"Oio",8,"Nhacra",5,"Caramaco"
-1,"Oio",8,"Nhacra",6,"Cola"
-1,"Oio",8,"Nhacra",7,"Com Jangada"
-1,"Oio",8,"Nhacra",8,"Cumeré"
-1,"Oio",8,"Nhacra",9,"Cutanga"
-1,"Oio",8,"Nhacra",10,"Dam"
-1,"Oio",8,"Nhacra",11,"Dugal"
-1,"Oio",8,"Nhacra",12,"Dugal Raga"
-1,"Oio",8,"Nhacra",13,"Fanhe"
-1,"Oio",8,"Nhacra",14,"Fatime"
-1,"Oio",8,"Nhacra",15,"Iugume"
-1,"Oio",8,"Nhacra",16,"Jucudul Com"
-1,"Oio",8,"Nhacra",19,"Lessa"
-1,"Oio",8,"Nhacra",17,"Nague"
-1,"Oio",8,"Nhacra",18,"Nague Nrom"
-1,"Oio",8,"Nhacra",20,"Nhacra Tera"
-1,"Oio",8,"Nhacra",21,"Nhomazinho"
-1,"Oio",8,"Nhacra",22,"Novo Nhoma"
-1,"Oio",8,"Nhacra",23,"Ntchangue"
-1,"Oio",8,"Nhacra",24,"Oco-Grande"
-1,"Oio",8,"Nhacra",25,"Oco-Zinho"
-1,"Oio",8,"Nhacra",43,"Porto"
-1,"Oio",8,"Nhacra",26,"Quide"
-1,"Oio",8,"Nhacra",27,"Quidefa (Nhomo)"
-1,"Oio",8,"Nhacra",28,"Quindungue"
-1,"Oio",8,"Nhacra",29,"Rotchume"
-1,"Oio",8,"Nhacra",30,"Rucuto"
-1,"Oio",8,"Nhacra",31,"Sau"
-1,"Oio",8,"Nhacra",32,"Son"
-1,"Oio",8,"Nhacra",33,"Sucuto"
-1,"Oio",8,"Nhacra",34,"Sumo"
-1,"Oio",8,"Nhacra",44,"Tchada"
-1,"Oio",8,"Nhacra",35,"Tchugue"
-1,"Oio",8,"Nhacra",36,"Tchuluf"
-1,"Oio",8,"Nhacra",37,"Tchuluf Flum"
-1,"Oio",8,"Nhacra",38,"Tchuluf Nbonh"
-1,"Oio",8,"Nhacra",39,"Tchuluf Pabor"
-1,"Oio",8,"Nhacra",40,"Tim"
-1,"Oio",9,"Olossato",1,"Bafatandim"
-1,"Oio",9,"Olossato",2,"Baleia"
-1,"Oio",9,"Olossato",3,"Bantassu"
-1,"Oio",9,"Olossato",4,"Bissadjar Balanta"
-1,"Oio",9,"Olossato",5,"Bissadjar Mandinga"
-1,"Oio",9,"Olossato",6,"Bissancadji"
-1,"Oio",9,"Olossato",7,"Cancuncu Balanta"
-1,"Oio",9,"Olossato",8,"Cancuncu Mandinga"
-1,"Oio",9,"Olossato",9,"Candjadja Balanta"
-1,"Oio",9,"Olossato",10,"Candjadja Mandiga"
-1,"Oio",9,"Olossato",11,"Canfanda"
-1,"Oio",9,"Olossato",12,"Canfonda"
-1,"Oio",9,"Olossato",13,"Canico Balanta"
-1,"Oio",9,"Olossato",14,"Canico Mandinga"
-1,"Oio",9,"Olossato",15,"Cantaco"
-1,"Oio",9,"Olossato",16,"Colissar"
-1,"Oio",9,"Olossato",17,"Conton"
-1,"Oio",9,"Olossato",18,"Corinto"
-1,"Oio",9,"Olossato",19,"Dabocunda"
-1,"Oio",9,"Olossato",20,"Fajonquito"
-1,"Oio",9,"Olossato",21,"Farabato"
-1,"Oio",9,"Olossato",22,"Gã-Sambu 1"
-1,"Oio",9,"Olossato",23,"Gã-Sambu 2"
-1,"Oio",9,"Olossato",24,"Gã-Somco Balanta"
-1,"Oio",9,"Olossato",25,"Gã-Somco Mandinga"
-1,"Oio",9,"Olossato",26,"Iracunda"
-1,"Oio",9,"Olossato",27,"Leto Balanta"
-1,"Oio",9,"Olossato",28,"Leto Mandinga"
-1,"Oio",9,"Olossato",29,"Lubacunda"
-1,"Oio",9,"Olossato",30,"Mabar Balanta"
-1,"Oio",9,"Olossato",31,"Mabar Mandinga"
-1,"Oio",9,"Olossato",32,"Madina Saladala"
-1,"Oio",9,"Olossato",33,"Manambu"
-1,"Oio",9,"Olossato",34,"Mandina Balanta"
-1,"Oio",9,"Olossato",35,"Mandina Mandinga"
-1,"Oio",9,"Olossato",36,"Mindodu Balanta"
-1,"Oio",9,"Olossato",37,"Mindodu Mandinga"
-1,"Oio",9,"Olossato",38,"Missira Balanta"
-1,"Oio",9,"Olossato",39,"Missira Mandinga"
-1,"Oio",9,"Olossato",40,"N'djoboia"
-1,"Oio",9,"Olossato",41,"Nhani Balanta"
-1,"Oio",9,"Olossato",42,"Nhani Mandinga"
-1,"Oio",9,"Olossato",43,"Olossato"
-1,"Oio",9,"Olossato",44,"Pagda"
-1,"Oio",9,"Olossato",45,"Ponta Morato"
-1,"Oio",9,"Olossato",46,"Ponta Paulo"
-1,"Oio",9,"Olossato",47,"Sabalicunda"
-1,"Oio",9,"Olossato",48,"Sansambato Balanta"
-1,"Oio",9,"Olossato",49,"Sansambato Mandinga"
-1,"Oio",9,"Olossato",50,"Seide Cunda"
-1,"Oio",9,"Olossato",51,"Sibicunto"
-1,"Oio",9,"Olossato",52,"Solinto"
-1,"Oio",9,"Olossato",53,"Solinto Fula"
-1,"Oio",9,"Olossato",54,"Suntucuia"
-1,"Oio",9,"Olossato",55,"Tancrual Balanta"
-1,"Oio",9,"Olossato",56,"Tancrual Mandinga"
-1,"Oio",9,"Olossato",57,"Wediquindi"
-1,"Oio",10,"Portugol",1,"B. Militar"
-1,"Oio",10,"Portugol",2,"Bissa"
-1,"Oio",10,"Portugol",3,"Bissunha I"
-1,"Oio",10,"Portugol",4,"Bissunha II"
-1,"Oio",10,"Portugol",5,"Blasse"
-1,"Oio",10,"Portugol",6,"Blutcha"
-1,"Oio",10,"Portugol",7,"C. Sinho"
-1,"Oio",10,"Portugol",8,"Culucunda"
-1,"Oio",10,"Portugol",9,"Darsalam"
-1,"Oio",10,"Portugol",10,"Funcor"
-1,"Oio",10,"Portugol",11,"Glória"
-1,"Oio",10,"Portugol",12,"Nghafu"
-1,"Oio",10,"Portugol",13,"Nghason"
-1,"Oio",10,"Portugol",14,"Ponta Duarte Sambu"
-1,"Oio",10,"Portugol",15,"Ponta Novo"
-1,"Oio",10,"Portugol",16,"Ponta Una"
-1,"Oio",10,"Portugol",17,"Ponta Rut"
-1,"Oio",10,"Portugol",18,"Porto-gole"
-1,"Oio",10,"Portugol",19,"Quedemble"
-1,"Oio",10,"Portugol",20,"Quesse"
-1,"Oio",10,"Portugol",21,"Tchúbe"
-1,"Oio",10,"Portugol",22,"Tchumbe"
-1,"Oio",10,"Portugol",23,"Tiracamisa I"
-1,"Oio",10,"Portugol",24,"Tiracamisa II"
-1,"Oio",99,"Testo",99,"Testo"
-2,"Biombo",1,"Bijimita",1,"Bissucul"
-2,"Biombo",1,"Bijimita",2,"Blom"
-2,"Biombo",1,"Bijimita",3,"Claque"
-2,"Biombo",1,"Bijimita",4,"Janclaque"
-2,"Biombo",1,"Bijimita",5,"Nquitimol"
-2,"Biombo",1,"Bijimita",6,"Ome"
-2,"Biombo",1,"Bijimita",7,"Ponta Cabral"
-2,"Biombo",1,"Bijimita",8,"Quiuta"
-2,"Biombo",1,"Bijimita",9,"Reino"
-2,"Biombo",1,"Bijimita",10,"Sabor Balanta"
-2,"Biombo",1,"Bijimita",11,"Sabor Papel"
-2,"Biombo",2,"Cumura",1,"Afia"
-2,"Biombo",2,"Cumura",2,"Bairro Ameta"
-2,"Biombo",2,"Cumura",3,"Bambadinca de Baixo"
-2,"Biombo",2,"Cumura",4,"Bambadinca de Cima"
-2,"Biombo",2,"Cumura",5,"Belém"
-2,"Biombo",2,"Cumura",6,"Bôr"
-2,"Biombo",2,"Cumura",18,"California"
-2,"Biombo",2,"Cumura",7,"Catarina"
-2,"Biombo",2,"Cumura",8,"Centro"
-2,"Biombo",2,"Cumura",9,"Gardete"
-2,"Biombo",2,"Cumura",10,"Matandim"
-2,"Biombo",2,"Cumura",11,"Naguê de Baixo"
-2,"Biombo",2,"Cumura",12,"Naguê de Cima"
-2,"Biombo",2,"Cumura",13,"Uck"
-2,"Biombo",2,"Cumura",14,"Pefine Balanta"
-2,"Biombo",2,"Cumura",15,"Pefine de Areia"
-2,"Biombo",2,"Cumura",16,"Sintcham Bobo"
-2,"Biombo",2,"Cumura",17,"Ying"
-2,"Biombo",3,"Dorse",1,"Bissa de Baixo"
-2,"Biombo",3,"Dorse",2,"Bissa de Cima"
-2,"Biombo",3,"Dorse",3,"Cupedo"
-2,"Biombo",3,"Dorse",4,"Dorse"
-2,"Biombo",3,"Dorse",5,"Reno Tôr"
-2,"Biombo",4,"Ilonde",1,"Apetna"
-2,"Biombo",4,"Ilonde",2,"Bigilim"
-2,"Biombo",4,"Ilonde",3,"Bissalanca"
-2,"Biombo",4,"Ilonde",4,"Blimate"
-2,"Biombo",4,"Ilonde",5,"Brene A"
-2,"Biombo",4,"Ilonde",6,"Brene B"
-2,"Biombo",4,"Ilonde",7,"California"
-2,"Biombo",4,"Ilonde",8,"Colonato"
-2,"Biombo",4,"Ilonde",9,"Crato Balanta"
-2,"Biombo",4,"Ilonde",10,"Crato Papel"
-2,"Biombo",4,"Ilonde",11,"Enxude"
-2,"Biombo",4,"Ilonde",12,"Ilondé"
-2,"Biombo",4,"Ilonde",13,"Incaite"
-2,"Biombo",4,"Ilonde",14,"Pinis"
-2,"Biombo",4,"Ilonde",15,"Ponta José da Silva"
-2,"Biombo",4,"Ilonde",16,"Ponta Mbana"
-2,"Biombo",4,"Ilonde",17,"Ponta Nhara"
-2,"Biombo",4,"Ilonde",18,"Ponta Rapaz"
-2,"Biombo",4,"Ilonde",19,"Ponta Vicente da Mata"
-2,"Biombo",4,"Ilonde",20,"Ponta Vicente da Ptora"
-2,"Biombo",4,"Ilonde",21,"Ponta Victor"
-2,"Biombo",4,"Ilonde",22,"Ponta Ze da Silva"
-2,"Biombo",4,"Ilonde",23,"Ricardo Sores"
-2,"Biombo",4,"Ilonde",24,"Suga de Baixo"
-2,"Biombo",5,"Ondame",1,"Blimblim"
-2,"Biombo",5,"Ondame",2,"Blom"
-2,"Biombo",5,"Ondame",3,"Ondame"
-2,"Biombo",5,"Ondame",4,"Quinsana"
-2,"Biombo",5,"Ondame",5,"Quita"
-2,"Biombo",5,"Ondame",6,"Sidja"
-2,"Biombo",6,"Prabis",1,"Bairro Novo"
-2,"Biombo",6,"Prabis",2,"Bele"
-2,"Biombo",6,"Prabis",3,"Bidjala"
-2,"Biombo",6,"Prabis",4,"Biquedje"
-2,"Biombo",6,"Prabis",5,"Bitafite"
-2,"Biombo",6,"Prabis",6,"Bitesga"
-2,"Biombo",6,"Prabis",7,"Bolunde"
-2,"Biombo",6,"Prabis",8,"Brango"
-2,"Biombo",6,"Prabis",9,"Bugoto"
-2,"Biombo",6,"Prabis",10,"Bumine"
-2,"Biombo",6,"Prabis",11,"Buta"
-2,"Biombo",6,"Prabis",24,"Cricque"
-2,"Biombo",6,"Prabis",12,"Cumura Pepel"
-2,"Biombo",6,"Prabis",13,"Djogoro"
-2,"Biombo",6,"Prabis",14,"Lala"
-2,"Biombo",6,"Prabis",15,"N'Cumba"
-2,"Biombo",6,"Prabis",16,"N'Saguel"
-2,"Biombo",6,"Prabis",17,"N'Siquel"
-2,"Biombo",6,"Prabis",18,"Ponta Djamaica"
-2,"Biombo",6,"Prabis",19,"Ponta João Carlos"
-2,"Biombo",6,"Prabis",20,"Pa Kaque"
-2,"Biombo",6,"Prabis",21,"Pitate"
-2,"Biombo",6,"Prabis",22,"Postáo"
-2,"Biombo",6,"Prabis",23,"Prite"
-2,"Biombo",6,"Prabis",25,"Reino Prabis"
-2,"Biombo",6,"Prabis",26,"Reino Quisete"
-2,"Biombo",6,"Prabis",27,"Suru"
-2,"Biombo",6,"Prabis",28,"Tamara"
-2,"Biombo",7,"Quinhamel",1,"Augosto Felis"
-2,"Biombo",7,"Quinhamel",2,"Baixo Quinhamel"
-2,"Biombo",7,"Quinhamel",3,"Bi Djina"
-2,"Biombo",7,"Quinhamel",4,"Bissauzeinho"
-2,"Biombo",7,"Quinhamel",5,"Braganca"
-2,"Biombo",7,"Quinhamel",6,"Brim"
-2,"Biombo",7,"Quinhamel",7,"Bucoumul"
-2,"Biombo",7,"Quinhamel",8,"Cabo-Verde"
-2,"Biombo",7,"Quinhamel",9,"Cidade Quinhamel"
-2,"Biombo",7,"Quinhamel",10,"Clande"
-2,"Biombo",7,"Quinhamel",11,"Clatele 1"
-2,"Biombo",7,"Quinhamel",12,"Clatele 2"
-2,"Biombo",7,"Quinhamel",13,"Cool"
-2,"Biombo",7,"Quinhamel",14,"Cudjogoro"
-2,"Biombo",7,"Quinhamel",15,"Cufongho"
-2,"Biombo",7,"Quinhamel",16,"Farro"
-2,"Biombo",7,"Quinhamel",17,"Gorse"
-2,"Biombo",7,"Quinhamel",18,"Mato Honca"
-2,"Biombo",7,"Quinhamel",19,"Pandim"
-2,"Biombo",7,"Quinhamel",20,"Plak"
-2,"Biombo",7,"Quinhamel",21,"Ponta Brandaô"
-2,"Biombo",7,"Quinhamel",22,"Ponta Lion"
-2,"Biombo",7,"Quinhamel",23,"Ponta Mendes"
-2,"Biombo",7,"Quinhamel",24,"Ponta Rumana"
-2,"Biombo",7,"Quinhamel",25,"Quicene"
-2,"Biombo",7,"Quinhamel",26,"Quilum"
-2,"Biombo",7,"Quinhamel",27,"Tira Camisa"
-2,"Biombo",8,"Safim",1,"Beja-Quidele"
-2,"Biombo",8,"Safim",2,"Bilma"
-2,"Biombo",8,"Safim",3,"Bisaquel"
-2,"Biombo",8,"Safim",4,"Blom"
-2,"Biombo",8,"Safim",5,"Controlo"
-2,"Biombo",8,"Safim",6,"Cumano"
-2,"Biombo",8,"Safim",7,"Djall"
-2,"Biombo",8,"Safim",8,"Ensalma"
-2,"Biombo",8,"Safim",9,"Gua"
-2,"Biombo",8,"Safim",10,"Mbassini"
-2,"Biombo",8,"Safim",11,"Monte Cristo"
-2,"Biombo",8,"Safim",12,"Nbassine"
-2,"Biombo",8,"Safim",13,"Ngangan"
-2,"Biombo",8,"Safim",14,"Npelum"
-2,"Biombo",8,"Safim",15,"Ntingle"
-2,"Biombo",8,"Safim",16,"Ntuss"
-2,"Biombo",8,"Safim",17,"Ntussinho"
-2,"Biombo",8,"Safim",18,"Ponta Adolfo Ramos"
-2,"Biombo",8,"Safim",19,"Ponta Rocha"
-2,"Biombo",8,"Safim",20,"Qhinhag"
-2,"Biombo",8,"Safim",21,"Quindiga"
-2,"Biombo",8,"Safim",22,"Reino"
-2,"Biombo",99,"Testo",99,"Testo"
-3,"Farim",1,"Binta",1,"Banhima"
-3,"Farim",1,"Binta",2,"Binta"
-3,"Farim",1,"Binta",3,"Cansegha"
-3,"Farim",1,"Binta",4,"Caur Balanta"
-3,"Farim",1,"Binta",5,"Caur Mandingas"
-3,"Farim",1,"Binta",6,"Caurdim"
-3,"Farim",1,"Binta",7,"Djebacunda"
-3,"Farim",1,"Binta",8,"Djinicom Mancanha"
-3,"Farim",1,"Binta",9,"Djinicom Mandinga"
-3,"Farim",1,"Binta",10,"Faire"
-3,"Farim",1,"Binta",11,"Fode Siraia"
-3,"Farim",1,"Binta",12,"Ioncoia 1"
-3,"Farim",1,"Binta",13,"Ioncoia 2"
-3,"Farim",1,"Binta",14,"L'enquêto"
-3,"Farim",1,"Binta",15,"Macama"
-3,"Farim",1,"Binta",16,"Mane Cunda 1"
-3,"Farim",1,"Binta",17,"Mane Cunda 2"
-3,"Farim",1,"Binta",18,"Maqué"
-3,"Farim",1,"Binta",19,"N'Ghanor"
-3,"Farim",1,"Binta",20,"Quenedjara"
-3,"Farim",1,"Binta",21,"Sansancototo"
-3,"Farim",1,"Binta",22,"Santancoto"
-3,"Farim",1,"Binta",23,"Sintcham tcherno"
-3,"Farim",1,"Binta",24,"Temanto 1"
-3,"Farim",1,"Binta",25,"Temanto 2"
-3,"Farim",1,"Binta",26,"Urmaia"
-3,"Farim",2,"Candjambari",1,"Afia"
-3,"Farim",2,"Candjambari",2,"Bananto "
-3,"Farim",2,"Candjambari",3,"Bandim "
-3,"Farim",2,"Candjambari",4,"Canbadju"
-3,"Farim",2,"Candjambari",5,"Canbadju Fula"
-3,"Farim",2,"Candjambari",6,"Candjambari"
-3,"Farim",2,"Candjambari",7,"Candjambari Praca"
-3,"Farim",2,"Candjambari",8,"Dandum 1"
-3,"Farim",2,"Candjambari",9,"Dandum 2"
-3,"Farim",2,"Candjambari",10,"Djanghali"
-3,"Farim",2,"Candjambari",11,"Djumbenbe"
-3,"Farim",2,"Candjambari",12,"Farinco 1"
-3,"Farim",2,"Candjambari",13,"Farinco 2"
-3,"Farim",2,"Candjambari",14,"Guisel Djanco"
-3,"Farim",2,"Candjambari",15,"Mádia"
-3,"Farim",2,"Candjambari",16,"Madina Mutaro"
-3,"Farim",2,"Candjambari",17,"Manfonhe"
-3,"Farim",2,"Candjambari",18,"Ponta Iona"
-3,"Farim",2,"Candjambari",19,"Saicuro"
-3,"Farim",2,"Candjambari",20,"Samadjanco"
-3,"Farim",2,"Candjambari",21,"Samam"
-3,"Farim",2,"Candjambari",22,"Sare Kante"
-3,"Farim",2,"Candjambari",23,"Sare Djai"
-3,"Farim",2,"Candjambari",24,"Sare Famana"
-3,"Farim",2,"Candjambari",25,"Sare Lamine"
-3,"Farim",2,"Candjambari",26,"Sare Mali"
-3,"Farim",2,"Candjambari",27,"Sare Mancama"
-3,"Farim",2,"Candjambari",28,"Sare Moudo Bodo"
-3,"Farim",2,"Candjambari",29,"Sare N'dune"
-3,"Farim",2,"Candjambari",30,"Sare N'hado"
-3,"Farim",2,"Candjambari",31,"Sare N'haco"
-3,"Farim",2,"Candjambari",32,"Sare Paté"
-3,"Farim",2,"Candjambari",33,"Sare Querel"
-3,"Farim",2,"Candjambari",34,"Sare Sadjall"
-3,"Farim",2,"Candjambari",35,"Sare Sago"
-3,"Farim",2,"Candjambari",36,"Sare Soria"
-3,"Farim",2,"Candjambari",37,"Sare Sulo"
-3,"Farim",2,"Candjambari",38,"Sare Tenem"
-3,"Farim",2,"Candjambari",39,"Sare Yero "
-3,"Farim",2,"Candjambari",40,"Sintchan Adama"
-3,"Farim",2,"Candjambari",41,"Sintchan Aladjo"
-3,"Farim",2,"Candjambari",42,"Sintchan Alberto"
-3,"Farim",2,"Candjambari",43,"Sintchan Baido"
-3,"Farim",2,"Candjambari",44,"Sintchan Bubacar"
-3,"Farim",2,"Candjambari",45,"Sintchan Breima"
-3,"Farim",2,"Candjambari",46,"Sintchan Daine "
-3,"Farim",2,"Candjambari",47,"Sintchan Demburel"
-3,"Farim",2,"Candjambari",48,"Sintchan Denba Gaira"
-3,"Farim",2,"Candjambari",49,"Sintchan Denbatal"
-3,"Farim",2,"Candjambari",50,"Sintchan Djunbenbe"
-3,"Farim",2,"Candjambari",51,"Sintchan Fago"
-3,"Farim",2,"Candjambari",52,"Sintchan Fode"
-3,"Farim",2,"Candjambari",53,"Sintchan Gorqué"
-3,"Farim",2,"Candjambari",54,"Sintchan Idrissa"
-3,"Farim",2,"Candjambari",55,"Sintchan Ioba 2"
-3,"Farim",2,"Candjambari",56,"Sintchan Iona"
-3,"Farim",2,"Candjambari",57,"Sintchan Kufe"
-3,"Farim",2,"Candjambari",58,"Sintchan Lumbu Djol"
-3,"Farim",2,"Candjambari",59,"Sintchan Malique "
-3,"Farim",2,"Candjambari",60,"Sintchan Mansal"
-3,"Farim",2,"Candjambari",61,"Sintchan Muhare"
-3,"Farim",2,"Candjambari",62,"Sintchan Querel"
-3,"Farim",2,"Candjambari",63,"Sintchan Queta Cumba"
-3,"Farim",2,"Candjambari",64,"Sintchan Quicuta"
-3,"Farim",2,"Candjambari",65,"Sintchan Sadjo"
-3,"Farim",2,"Candjambari",66,"Sintchan Saido"
-3,"Farim",2,"Candjambari",67,"Sintchan Sanba"
-3,"Farim",2,"Candjambari",68,"Sintchan Sanba Sabali"
-3,"Farim",2,"Candjambari",69,"Sintchan Tumane"
-3,"Farim",2,"Candjambari",70,"Sintchan Úla"
-3,"Farim",2,"Candjambari",71,"Sintchan Vicente"
-3,"Farim",2,"Candjambari",72,"Sintchan Yoba 1"
-3,"Farim",2,"Candjambari",73,"Sintchan Yúnca"
-3,"Farim",2,"Candjambari",74,"Sororo"
-3,"Farim",2,"Candjambari",75,"Sumabanta"
-3,"Farim",2,"Candjambari",76,"Tabandinto"
-3,"Farim",3,"Cuntima",1,"Burdjala"
-3,"Farim",3,"Cuntima",2,"Cabele"
-3,"Farim",3,"Cuntima",3,"Cahaco"
-3,"Farim",3,"Cuntima",4,"Canhaco 1 (Pate Cande)"
-3,"Farim",3,"Cuntima",38,"Canhaco 2 (Mamudu Cande)"
-3,"Farim",3,"Cuntima",5,"Carantaba"
-3,"Farim",3,"Cuntima",6,"Cube Cunda"
-3,"Farim",3,"Cuntima",7,"Cumbidjam 1 (Bacar Mandjam)"
-3,"Farim",3,"Cuntima",8,"Cumbidjam 2 (Mama Sonco)"
-3,"Farim",3,"Cuntima",9,"Cuntima 1 (Braima Mané)"
-3,"Farim",3,"Cuntima",10,"Cuntima 2 (Francisco Iero Seide)"
-3,"Farim",3,"Cuntima",11,"Cuntima 3 (Quintino Man)"
-3,"Farim",3,"Cuntima",12,"Cuntima 4 (Saliu Balde)"
-3,"Farim",3,"Cuntima",13,"Cuntima 5 (Sute Sani)"
-3,"Farim",3,"Cuntima",14,"Djega"
-3,"Farim",3,"Cuntima",15,"Djimadi"
-3,"Farim",3,"Cuntima",16,"Faquina "
-3,"Farim",3,"Cuntima",17,"Muntchanco"
-3,"Farim",3,"Cuntima",18,"Norbanta"
-3,"Farim",3,"Cuntima",19,"Sare Demba Djico"
-3,"Farim",3,"Cuntima",20,"Sare Demba Taki"
-3,"Farim",3,"Cuntima",21,"Sare Yoba Candé"
-3,"Farim",3,"Cuntima",22,"Sintcham Braima"
-3,"Farim",3,"Cuntima",23,"Sintcham Denel"
-3,"Farim",3,"Cuntima",24,"Sintcham Djacaria"
-3,"Farim",3,"Cuntima",25,"Sintcham Metanhalin"
-3,"Farim",3,"Cuntima",26,"Sintcham Patron 1 (Luciano Biai)"
-3,"Farim",3,"Cuntima",27,"Sintcham Patron 2 (Opa Ciente)"
-3,"Farim",3,"Cuntima",28,"Sintcham Pulo 2 "
-3,"Farim",3,"Cuntima",29,"Sintcham Sidi"
-3,"Farim",3,"Cuntima",30,"Sintcham Tala"
-3,"Farim",3,"Cuntima",31,"Sitato 1 (Buba Candé)"
-3,"Farim",3,"Cuntima",32,"Sitato 2 (Ussumane Djau)"
-3,"Farim",3,"Cuntima",33,"Suluco 1 (Bacar Mandjam)"
-3,"Farim",3,"Cuntima",34,"Suluco 2 (Mariama Mandjam)"
-3,"Farim",3,"Cuntima",35,"Tonhataba"
-3,"Farim",3,"Cuntima",36,"Tuba"
-3,"Farim",3,"Cuntima",37,"Waranto"
-3,"Farim",4,"Farim",1,"Amedalai"
-3,"Farim",4,"Farim",2,"Bafata Oio"
-3,"Farim",4,"Farim",3,"Bairro Militar"
-3,"Farim",4,"Farim",4,"Bangladez"
-3,"Farim",4,"Farim",5,"Bani"
-3,"Farim",4,"Farim",6,"Bantandjam"
-3,"Farim",4,"Farim",7,"Berendinto"
-3,"Farim",4,"Farim",8,"Birbam"
-3,"Farim",4,"Farim",9,"Bissaré"
-3,"Farim",4,"Farim",10,"Bolombato"
-3,"Farim",4,"Farim",11,"Bricama"
-3,"Farim",4,"Farim",12,"Burro"
-3,"Farim",4,"Farim",13,"Cabeseco"
-3,"Farim",4,"Farim",14,"Candjanco"
-3,"Farim",4,"Farim",15,"Canico Leguecroto"
-3,"Farim",4,"Farim",16,"Canico Tumana"
-3,"Farim",4,"Farim",17,"Cuboroto"
-3,"Farim",4,"Farim",18,"Culmesencunda"
-3,"Farim",4,"Farim",19,"Demba Dado"
-3,"Farim",4,"Farim",20,"Djimbia"
-3,"Farim",4,"Farim",21,"Djobico"
-3,"Farim",4,"Farim",22,"Dutato"
-3,"Farim",4,"Farim",23,"Fafaco"
-3,"Farim",4,"Farim",24,"Fanbanta Morcunda"
-3,"Farim",4,"Farim",25,"Fanbanta Sansanhoto"
-3,"Farim",4,"Farim",26,"Farandinto"
-3,"Farim",4,"Farim",27,"Farinco"
-3,"Farim",4,"Farim",28,"Flak Crintim"
-3,"Farim",4,"Farim",29,"Gã-Gregorio"
-3,"Farim",4,"Farim",30,"Gã-Lomba"
-3,"Farim",4,"Farim",31,"Gã-Made"
-3,"Farim",4,"Farim",32,"Gã-Pinto"
-3,"Farim",4,"Farim",33,"Guissima"
-3,"Farim",4,"Farim",34,"Hafia"
-3,"Farim",4,"Farim",35,"Irabato"
-3,"Farim",4,"Farim",36,"K-3"
-3,"Farim",4,"Farim",37,"Lambam"
-3,"Farim",4,"Farim",38,"Lamel"
-3,"Farim",4,"Farim",39,"Lenquebato"
-3,"Farim",4,"Farim",40,"Madina"
-3,"Farim",4,"Farim",41,"Maninha"
-3,"Farim",4,"Farim",42,"Missira"
-3,"Farim",4,"Farim",43,"Morcunda"
-3,"Farim",4,"Farim",44,"Ndjoia"
-3,"Farim",4,"Farim",45,"Nema"
-3,"Farim",4,"Farim",46,"Nhambram"
-3,"Farim",4,"Farim",47,"Ponta Aribe"
-3,"Farim",4,"Farim",48,"Ponta Bala Mané"
-3,"Farim",4,"Farim",49,"Ponta Caer"
-3,"Farim",4,"Farim",50,"Ponta Duarte"
-3,"Farim",4,"Farim",51,"Ponta Maninha"
-3,"Farim",4,"Farim",52,"Ponta Zeca"
-3,"Farim",4,"Farim",53,"Praca"
-3,"Farim",4,"Farim",54,"Salguenhe Porto"
-3,"Farim",4,"Farim",55,"Salquenhe-Bá"
-3,"Farim",4,"Farim",56,"Sancalanco"
-3,"Farim",4,"Farim",57,"Sandjal"
-3,"Farim",4,"Farim",58,"Sare Djaie"
-3,"Farim",4,"Farim",59,"Sare Donha"
-3,"Farim",4,"Farim",60,"Sare Ioba"
-3,"Farim",4,"Farim",61,"Sere Dé"
-3,"Farim",4,"Farim",62,"Sintcham"
-3,"Farim",4,"Farim",63,"Sintcham Bacar"
-3,"Farim",4,"Farim",64,"Sintcham Demba"
-3,"Farim",4,"Farim",65,"Sintcham Djaie"
-3,"Farim",4,"Farim",66,"Sintcham Gundo"
-3,"Farim",4,"Farim",67,"Sobeia"
-3,"Farim",4,"Farim",68,"Tanbato Brasso"
-3,"Farim",4,"Farim",69,"Tanbato Oio"
-3,"Farim",4,"Farim",70,"Tunguinar"
-3,"Farim",4,"Farim",71,"Uensaco"
-3,"Farim",4,"Farim",72,"Ufude"
-3,"Farim",4,"Farim",73,"Urque"
-3,"Farim",5,"Guidage",1,"Binar"
-3,"Farim",5,"Guidage",2,"Bubo"
-3,"Farim",5,"Guidage",3,"Carantaba"
-3,"Farim",5,"Guidage",4,"Cufeu"
-3,"Farim",5,"Guidage",5,"Dungal"
-3,"Farim",5,"Guidage",6,"Enbalocunda"
-3,"Farim",5,"Guidage",7,"Fanhar"
-3,"Farim",5,"Guidage",8,"Guidage"
-3,"Farim",5,"Guidage",9,"Quenhato"
-3,"Farim",5,"Guidage",10,"Sintchan Gán Sambu"
-3,"Farim",5,"Guidage",11,"Sintchan Nduba"
-3,"Farim",5,"Guidage",12,"Sintchan Sulai"
-3,"Farim",5,"Guidage",13,"Sorba"
-3,"Farim",5,"Guidage",14,"Udjeque"
-3,"Farim",99,"Testo",99,"Testo"
+REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
+1,"Oio",1,"Binar",1,"Berra",1
+1,"Oio",1,"Binar",2,"Bidiur",1
+1,"Oio",1,"Binar",3,"Binar",1
+1,"Oio",1,"Binar",4,"Binomi",1
+1,"Oio",1,"Binar",5,"Bissunaga",1
+1,"Oio",1,"Binar",6,"Brum",1
+1,"Oio",1,"Binar",7,"Cali",1
+1,"Oio",1,"Binar",8,"Clack",1
+1,"Oio",1,"Binar",9,"Cubui",1
+1,"Oio",1,"Binar",10,"Cubum",1
+1,"Oio",1,"Binar",11,"Cumbé",1
+1,"Oio",1,"Binar",12,"Fabur",1
+1,"Oio",1,"Binar",13,"Fontchó",1
+1,"Oio",1,"Binar",14,"Gã Bas",1
+1,"Oio",1,"Binar",15,"Gã Fula",1
+1,"Oio",1,"Binar",16,"Mamgasinho",1
+1,"Oio",1,"Binar",17,"Manchester",1
+1,"Oio",1,"Binar",18,"Manga",1
+1,"Oio",1,"Binar",19,"Manga Bisso",1
+1,"Oio",1,"Binar",20,"Mpaba",1
+1,"Oio",1,"Binar",21,"Mputchut",1
+1,"Oio",1,"Binar",22,"Naga",1
+1,"Oio",1,"Binar",23,"Ndambé",1
+1,"Oio",1,"Binar",24,"Nfante",1
+1,"Oio",1,"Binar",25,"Nguntché Besna",1
+1,"Oio",1,"Binar",26,"Nguntché Samba",1
+1,"Oio",1,"Binar",27,"Nhamat",1
+1,"Oio",1,"Binar",28,"Nhengue",1
+1,"Oio",1,"Binar",29,"Nogan",1
+1,"Oio",1,"Binar",30,"Nsanta",1
+1,"Oio",1,"Binar",31,"Nsumté",1
+1,"Oio",1,"Binar",32,"Ntcherté",1
+1,"Oio",1,"Binar",33,"Ntin",1
+1,"Oio",1,"Binar",34,"Ntossolé",1
+1,"Oio",1,"Binar",35,"Pamar",1
+1,"Oio",1,"Binar",36,"Patche Pansau",1
+1,"Oio",1,"Binar",37,"Patche Tam",1
+1,"Oio",1,"Binar",38,"Patche Xala",1
+1,"Oio",1,"Binar",39,"Ponta Nobu",1
+1,"Oio",1,"Binar",40,"Ponta Nobu 2",1
+1,"Oio",1,"Binar",41,"Queme",1
+1,"Oio",1,"Binar",42,"Regue",1
+1,"Oio",1,"Binar",43,"Rua Nobu",1
+1,"Oio",1,"Binar",44,"Safar",1
+1,"Oio",1,"Binar",45,"Tama",1
+1,"Oio",1,"Binar",46,"Tchada",1
+1,"Oio",1,"Binar",47,"Tchangué",1
+1,"Oio",1,"Binar",48,"Tchill",1
+1,"Oio",1,"Binar",49,"Tchocudul",1
+1,"Oio",1,"Binar",50,"Tchumbum",1
+1,"Oio",1,"Binar",51,"Tebdé",1
+1,"Oio",1,"Binar",52,"Timguilin",1
+1,"Oio",1,"Binar",53,"Tolum",1
+1,"Oio",2,"Bissora",2,"Banculen",2
+1,"Oio",2,"Bissora",3,"Baque",2
+1,"Oio",2,"Bissora",4,"Berco",2
+1,"Oio",2,"Bissora",5,"Bianfoi",2
+1,"Oio",2,"Bissora",6,"Bidir",2
+1,"Oio",2,"Bissora",7,"Binaga",2
+1,"Oio",2,"Bissora",8,"Bissau Nobo",2
+1,"Oio",2,"Bissora",9,"Bitcha",2
+1,"Oio",2,"Bissora",15,"Bucaur",2
+1,"Oio",2,"Bissora",16,"Budi",2
+1,"Oio",2,"Bissora",17,"Bugharan",2
+1,"Oio",2,"Bissora",18,"California",2
+1,"Oio",2,"Bissora",19,"Candjungudo",2
+1,"Oio",2,"Bissora",20,"Canfran",2
+1,"Oio",2,"Bissora",23,"Concolin Balanta Mane",2
+1,"Oio",2,"Bissora",24,"Concolin Mandiga",2
+1,"Oio",2,"Bissora",25,"Coseeba",2
+1,"Oio",2,"Bissora",26,"Cran-Cuta",2
+1,"Oio",2,"Bissora",27,"Cran-Numbe",2
+1,"Oio",2,"Bissora",30,"Cunhuncun",2
+1,"Oio",2,"Bissora",31,"Cunte",2
+1,"Oio",2,"Bissora",32,"Cuntuba",2
+1,"Oio",2,"Bissora",33,"Cussondon",2
+1,"Oio",2,"Bissora",37,"Dame-Nquida",2
+1,"Oio",2,"Bissora",41,"Danbur",2
+1,"Oio",2,"Bissora",42,"Dandu",2
+1,"Oio",2,"Bissora",43,"Djabel",2
+1,"Oio",2,"Bissora",44,"Djacal",2
+1,"Oio",2,"Bissora",45,"Djungoto",2
+1,"Oio",2,"Bissora",46,"Farol",2
+1,"Oio",2,"Bissora",47,"Fatcha",2
+1,"Oio",2,"Bissora",48,"Fiuse",2
+1,"Oio",2,"Bissora",49,"Flobe",2
+1,"Oio",2,"Bissora",52,"Ga-Sambu",2
+1,"Oio",2,"Bissora",54,"Iador Cangha",2
+1,"Oio",2,"Bissora",55,"Iador Franbetche",2
+1,"Oio",2,"Bissora",56,"Iara",2
+1,"Oio",2,"Bissora",60,"Libar",2
+1,"Oio",2,"Bissora",62,"Mague",2
+1,"Oio",2,"Bissora",66,"Mun",2
+1,"Oio",2,"Bissora",67,"Nam-Balanta",2
+1,"Oio",2,"Bissora",68,"Nam-Mandinga",2
+1,"Oio",2,"Bissora",72,"Ndenden",2
+1,"Oio",2,"Bissora",73,"Nhanfa",2
+1,"Oio",2,"Bissora",74,"Nhengue",2
+1,"Oio",2,"Bissora",77,"Ntebé",2
+1,"Oio",2,"Bissora",79,"Quibide",2
+1,"Oio",2,"Bissora",80,"Quinana",2
+1,"Oio",2,"Bissora",81,"Quincat",2
+1,"Oio",2,"Bissora",83,"Quissef",2
+1,"Oio",2,"Bissora",85,"Sanu",2
+1,"Oio",2,"Bissora",86,"Saru",2
+1,"Oio",2,"Bissora",87,"Sili",2
+1,"Oio",2,"Bissora",90,"Tama",2
+1,"Oio",2,"Bissora",91,"Titilon",2
+1,"Oio",2,"Bissora",93,"Unfar",2
+1,"Oio",2,"Bissora",94,"Wacri",2
+1,"Oio",2,"Bissora",97,"Wedegueia",2
+1,"Oio",2,"Bissora",1,"Argentina",22
+1,"Oio",2,"Bissora",10,"Blassar 1",22
+1,"Oio",2,"Bissora",11,"Blassar 2",22
+1,"Oio",2,"Bissora",12,"Braga 1",22
+1,"Oio",2,"Bissora",13,"Braga 2",22
+1,"Oio",2,"Bissora",14,"Bucamar",22
+1,"Oio",2,"Bissora",21,"Caual",22
+1,"Oio",2,"Bissora",22,"Cobato",22
+1,"Oio",2,"Bissora",28,"Culicunhe",22
+1,"Oio",2,"Bissora",29,"Cunbran",22
+1,"Oio",2,"Bissora",34,"Dame-Lipte",22
+1,"Oio",2,"Bissora",35,"Dame-Nguabe",22
+1,"Oio",2,"Bissora",36,"Dame-Nhae",22
+1,"Oio",2,"Bissora",38,"Dame-Pass",22
+1,"Oio",2,"Bissora",39,"Dame-Sor",22
+1,"Oio",2,"Bissora",40,"Dame-The",22
+1,"Oio",2,"Bissora",50,"Gã-Banana",22
+1,"Oio",2,"Bissora",51,"Gã-Djugude",22
+1,"Oio",2,"Bissora",53,"Gã-Semitero",22
+1,"Oio",2,"Bissora",57,"J. Kom 1",22
+1,"Oio",2,"Bissora",58,"J. Kom 2",22
+1,"Oio",2,"Bissora",59,"Lenden",22
+1,"Oio",2,"Bissora",61,"Madina",22
+1,"Oio",2,"Bissora",63,"Mansabadin",22
+1,"Oio",2,"Bissora",64,"Missira",22
+1,"Oio",2,"Bissora",65,"Mon",22
+1,"Oio",2,"Bissora",69,"Nbundhe",22
+1,"Oio",2,"Bissora",70,"N'Come",22
+1,"Oio",2,"Bissora",71,"N'cor",22
+1,"Oio",2,"Bissora",75,"Npanquinhan",22
+1,"Oio",2,"Bissora",76,"Ntchunpun",22
+1,"Oio",2,"Bissora",78,"Otra Banda",22
+1,"Oio",2,"Bissora",82,"Quinhague",22
+1,"Oio",2,"Bissora",84,"Santa Lusia",22
+1,"Oio",2,"Bissora",88,"Sintchan",22
+1,"Oio",2,"Bissora",89,"Sormon",22
+1,"Oio",2,"Bissora",92,"Touba",22
+1,"Oio",2,"Bissora",95,"Walia",22
+1,"Oio",2,"Bissora",96,"Watine",22
+1,"Oio",3,"Encheia",1,"Biambi",3
+1,"Oio",3,"Encheia",2,"Blaftchur",3
+1,"Oio",3,"Encheia",3,"Boda",3
+1,"Oio",3,"Encheia",4,"Cadjaque",3
+1,"Oio",3,"Encheia",5,"Cangha Cocry",3
+1,"Oio",3,"Encheia",6,"Cangha Mar",3
+1,"Oio",3,"Encheia",7,"Cangha Nhanque",3
+1,"Oio",3,"Encheia",8,"Cangha Ntchucal",3
+1,"Oio",3,"Encheia",9,"Catche",3
+1,"Oio",3,"Encheia",10,"Clack",3
+1,"Oio",3,"Encheia",11,"Clonque",3
+1,"Oio",3,"Encheia",12,"Correnghe",3
+1,"Oio",3,"Encheia",13,"Cumbulé",3
+1,"Oio",3,"Encheia",14,"Cuthi",3
+1,"Oio",3,"Encheia",15,"Embue",3
+1,"Oio",3,"Encheia",16,"Entcanque",3
+1,"Oio",3,"Encheia",17,"Infaidi",3
+1,"Oio",3,"Encheia",18,"Late",3
+1,"Oio",3,"Encheia",19,"Mbad",3
+1,"Oio",3,"Encheia",20,"Mpas",3
+1,"Oio",3,"Encheia",21,"Ngwenquen",3
+1,"Oio",3,"Encheia",22,"N'huntche",3
+1,"Oio",3,"Encheia",23,"Nquida",3
+1,"Oio",3,"Encheia",24,"Nsanha",3
+1,"Oio",3,"Encheia",25,"Ntchumbe",3
+1,"Oio",3,"Encheia",26,"Ntchuté",3
+1,"Oio",3,"Encheia",27,"Quere",3
+1,"Oio",3,"Encheia",28,"Quinack",3
+1,"Oio",3,"Encheia",29,"Quinhaque",3
+1,"Oio",3,"Encheia",30,"Quisanque",3
+1,"Oio",3,"Encheia",31,"Quitamo",3
+1,"Oio",3,"Encheia",32,"Tchale",3
+1,"Oio",3,"Encheia",33,"Tchondon",3
+1,"Oio",3,"Encheia",34,"Tchungha",3
+1,"Oio",3,"Encheia",35,"Tinca",3
+1,"Oio",3,"Encheia",36,"Uflê",3
+1,"Oio",3,"Encheia",37,"Wunkur",3
+1,"Oio",4,"Ga-Mamudo",1,"Agri-Bissau",4
+1,"Oio",4,"Ga-Mamudo",2,"Amedalai",4
+1,"Oio",4,"Ga-Mamudo",3,"Antigo",4
+1,"Oio",4,"Ga-Mamudo",4,"Bumal",4
+1,"Oio",4,"Ga-Mamudo",5,"Cabuca",4
+1,"Oio",4,"Ga-Mamudo",6,"Catio Zinho",4
+1,"Oio",4,"Ga-Mamudo",7,"Coopac",4
+1,"Oio",4,"Ga-Mamudo",8,"Coral de Alasana",4
+1,"Oio",4,"Ga-Mamudo",9,"Coral de Amadu",4
+1,"Oio",4,"Ga-Mamudo",10,"Coral de Braima",4
+1,"Oio",4,"Ga-Mamudo",11,"Coral de Fadi",4
+1,"Oio",4,"Ga-Mamudo",12,"Coral de Iero",4
+1,"Oio",4,"Ga-Mamudo",13,"Dando-Zinho",4
+1,"Oio",4,"Ga-Mamudo",14,"Dar-Salam",4
+1,"Oio",4,"Ga-Mamudo",15,"Gã-Mamudo de Baixo",4
+1,"Oio",4,"Ga-Mamudo",16,"Gã-Mamudo de Cima",4
+1,"Oio",4,"Ga-Mamudo",17,"Gamol Zinho",4
+1,"Oio",4,"Ga-Mamudo",18,"Horta de Nino",4
+1,"Oio",4,"Ga-Mamudo",19,"Malafu 1",4
+1,"Oio",4,"Ga-Mamudo",20,"Malafu 2",4
+1,"Oio",4,"Ga-Mamudo",21,"Massina 1",4
+1,"Oio",4,"Ga-Mamudo",22,"Massina 2",4
+1,"Oio",4,"Ga-Mamudo",23,"Menten Fula",4
+1,"Oio",4,"Ga-Mamudo",24,"Missira",4
+1,"Oio",4,"Ga-Mamudo",25,"Missira Coral",4
+1,"Oio",4,"Ga-Mamudo",26,"Ntchale de Baixo",4
+1,"Oio",4,"Ga-Mamudo",27,"Ntchale de Estrada",4
+1,"Oio",4,"Ga-Mamudo",28,"Ntchale de Metade",4
+1,"Oio",4,"Ga-Mamudo",29,"Pluba",4
+1,"Oio",4,"Ga-Mamudo",30,"Quindia",4
+1,"Oio",4,"Ga-Mamudo",31,"Saifala",4
+1,"Oio",4,"Ga-Mamudo",32,"Shara Balanta",4
+1,"Oio",4,"Ga-Mamudo",33,"Shara Manjaco",4
+1,"Oio",4,"Ga-Mamudo",34,"Tchere 1",4
+1,"Oio",4,"Ga-Mamudo",35,"Tchere 2",4
+1,"Oio",5,"Mansaba",1,"B. 24 Setembro",5
+1,"Oio",5,"Mansaba",4,"Bambaia",5
+1,"Oio",5,"Mansaba",5,"Bandjara",5
+1,"Oio",5,"Mansaba",6,"Bantandjam",5
+1,"Oio",5,"Mansaba",8,"Belel Oio",5
+1,"Oio",5,"Mansaba",9,"Bercobato",5
+1,"Oio",5,"Mansaba",10,"Bercorin",5
+1,"Oio",5,"Mansaba",12,"Bironque",5
+1,"Oio",5,"Mansaba",13,"Boicunda",5
+1,"Oio",5,"Mansaba",17,"Canpamento",5
+1,"Oio",5,"Mansaba",19,"Casa Novo",5
+1,"Oio",5,"Mansaba",21,"Colombato",5
+1,"Oio",5,"Mansaba",24,"Cussaraba",5
+1,"Oio",5,"Mansaba",25,"Cussarafanca",5
+1,"Oio",5,"Mansaba",26,"Demba-so Novo",5
+1,"Oio",5,"Mansaba",28,"Djabicunda",5
+1,"Oio",5,"Mansaba",30,"Djendo",5
+1,"Oio",5,"Mansaba",31,"Djendo Madina",5
+1,"Oio",5,"Mansaba",33,"Dumbali",5
+1,"Oio",5,"Mansaba",34,"Dutatu",5
+1,"Oio",5,"Mansaba",38,"Lindjane",5
+1,"Oio",5,"Mansaba",39,"Manbonco Dar",5
+1,"Oio",5,"Mansaba",40,"Manbonco I",5
+1,"Oio",5,"Mansaba",41,"Mandongo",5
+1,"Oio",5,"Mansaba",42,"Manguica",5
+1,"Oio",5,"Mansaba",43,"Manhau",5
+1,"Oio",5,"Mansaba",45,"Mansomine",5
+1,"Oio",5,"Mansaba",46,"Mantita",5
+1,"Oio",5,"Mansaba",47,"Matricom",5
+1,"Oio",5,"Mansaba",48,"Morcunda",5
+1,"Oio",5,"Mansaba",49,"N'damicunda",5
+1,"Oio",5,"Mansaba",50,"Ndingui",5
+1,"Oio",5,"Mansaba",51,"Njassane",5
+1,"Oio",5,"Mansaba",54,"Ponta Djabi",5
+1,"Oio",5,"Mansaba",55,"Ponta Fernando",5
+1,"Oio",5,"Mansaba",58,"Sabalacunda",5
+1,"Oio",5,"Mansaba",59,"Sambacul",5
+1,"Oio",5,"Mansaba",60,"Sansagono",5
+1,"Oio",5,"Mansaba",61,"Santa-Su",5
+1,"Oio",5,"Mansaba",63,"Sindjam",5
+1,"Oio",5,"Mansaba",64,"Sintcham Iaia",5
+1,"Oio",5,"Mansaba",65,"Tambico",5
+1,"Oio",5,"Mansaba",66,"Tumane",5
+1,"Oio",5,"Mansaba",67,"Walia",5
+1,"Oio",5,"Mansaba",2,"Bagadadje",55
+1,"Oio",5,"Mansaba",3,"Baite",55
+1,"Oio",5,"Mansaba",7,"Baria",55
+1,"Oio",5,"Mansaba",11,"Berendinto",55
+1,"Oio",5,"Mansaba",14,"Cabaceira",55
+1,"Oio",5,"Mansaba",15,"Calenge-Fula",55
+1,"Oio",5,"Mansaba",16,"Calenge-Mandinga",55
+1,"Oio",5,"Mansaba",18,"Cantchungo Zinho",55
+1,"Oio",5,"Mansaba",20,"Cassucai",55
+1,"Oio",5,"Mansaba",22,"Cooperativa D. Ramos",55
+1,"Oio",5,"Mansaba",23,"Cubani",55
+1,"Oio",5,"Mansaba",27,"Demba-so Velho",55
+1,"Oio",5,"Mansaba",29,"Djalicunda",55
+1,"Oio",5,"Mansaba",32,"Djifim",55
+1,"Oio",5,"Mansaba",35,"Gansanima",55
+1,"Oio",5,"Mansaba",36,"Iamoi",55
+1,"Oio",5,"Mansaba",37,"Ionfarin",55
+1,"Oio",5,"Mansaba",44,"Mansaba sutu",55
+1,"Oio",5,"Mansaba",52,"Pantufa Zinho",55
+1,"Oio",5,"Mansaba",53,"Ponta Cumando",55
+1,"Oio",5,"Mansaba",56,"Ponta Novo",55
+1,"Oio",5,"Mansaba",57,"Ponta Paulo",55
+1,"Oio",5,"Mansaba",62,"Simbor",55
+1,"Oio",5,"Mansaba",68,"Wassadu",55
+1,"Oio",6,"Mansoa",1,"Algodão",6
+1,"Oio",6,"Mansoa",2,"Aria",6
+1,"Oio",6,"Mansoa",3,"Bairro 15",6
+1,"Oio",6,"Mansoa",4,"Bara",6
+1,"Oio",6,"Mansoa",5,"Binduro",6
+1,"Oio",6,"Mansoa",6,"Binibaque",6
+1,"Oio",6,"Mansoa",7,"Braia",6
+1,"Oio",6,"Mansoa",8,"Cambia",6
+1,"Oio",6,"Mansoa",9,"Cantchur",6
+1,"Oio",6,"Mansoa",10,"Clak Iala",6
+1,"Oio",6,"Mansoa",11,"Clak Indjasse",6
+1,"Oio",6,"Mansoa",12,"Clak Isna",6
+1,"Oio",6,"Mansoa",13,"Cuboi",6
+1,"Oio",6,"Mansoa",14,"Cubontche",6
+1,"Oio",6,"Mansoa",15,"Culucunda",6
+1,"Oio",6,"Mansoa",16,"Cumtubom",6
+1,"Oio",6,"Mansoa",17,"Curreni",6
+1,"Oio",6,"Mansoa",18,"Curva Samba",6
+1,"Oio",6,"Mansoa",19,"Cussak",6
+1,"Oio",6,"Mansoa",20,"Cussana",6
+1,"Oio",6,"Mansoa",21,"Cussentche",6
+1,"Oio",6,"Mansoa",22,"Cutia",6
+1,"Oio",6,"Mansoa",23,"Dana",6
+1,"Oio",6,"Mansoa",24,"Darsalam",6
+1,"Oio",6,"Mansoa",25,"Date",6
+1,"Oio",6,"Mansoa",26,"Jugudul",6
+1,"Oio",6,"Mansoa",27,"Lotche",6
+1,"Oio",6,"Mansoa",28,"Luanda",6
+1,"Oio",6,"Mansoa",29,"Mambaque",6
+1,"Oio",6,"Mansoa",30,"Mancalã",6
+1,"Oio",6,"Mansoa",31,"Manconfi",6
+1,"Oio",6,"Mansoa",32,"Mancunto",6
+1,"Oio",6,"Mansoa",33,"Mandingara",6
+1,"Oio",6,"Mansoa",34,"Manquintico",6
+1,"Oio",6,"Mansoa",35,"Mansancrim",6
+1,"Oio",6,"Mansoa",36,"Mantefan",6
+1,"Oio",6,"Mansoa",37,"Ncom",6
+1,"Oio",6,"Mansoa",38,"Ncor",6
+1,"Oio",6,"Mansoa",39,"Nfandre",6
+1,"Oio",6,"Mansoa",40,"Nghanhi",6
+1,"Oio",6,"Mansoa",41,"Nhengue",6
+1,"Oio",6,"Mansoa",42,"Nhimbe",6
+1,"Oio",6,"Mansoa",43,"Niman",6
+1,"Oio",6,"Mansoa",44,"Nlore",6
+1,"Oio",6,"Mansoa",45,"Nquida",6
+1,"Oio",6,"Mansoa",46,"Ntate",6
+1,"Oio",6,"Mansoa",47,"Ntcham",6
+1,"Oio",6,"Mansoa",48,"Ntchugal",6
+1,"Oio",6,"Mansoa",49,"Ntchula",6
+1,"Oio",6,"Mansoa",50,"Olon",6
+1,"Oio",6,"Mansoa",51,"Polibak",6
+1,"Oio",6,"Mansoa",52,"Ponta Correia",6
+1,"Oio",6,"Mansoa",53,"Ponta E. Cabra",6
+1,"Oio",6,"Mansoa",54,"Praca",6
+1,"Oio",6,"Mansoa",55,"Psora",6
+1,"Oio",6,"Mansoa",56,"Quibir",6
+1,"Oio",6,"Mansoa",57,"Quidame",6
+1,"Oio",6,"Mansoa",58,"Quinhaque",6
+1,"Oio",6,"Mansoa",59,"Quinhequinto",6
+1,"Oio",6,"Mansoa",60,"Ribada",6
+1,"Oio",6,"Mansoa",61,"Rossum",6
+1,"Oio",6,"Mansoa",62,"S. Tomé",6
+1,"Oio",6,"Mansoa",63,"Saba",6
+1,"Oio",6,"Mansoa",64,"Sansanghoto",6
+1,"Oio",6,"Mansoa",65,"Somec",6
+1,"Oio",6,"Mansoa",66,"Suarecunda",6
+1,"Oio",6,"Mansoa",67,"Sugum",6
+1,"Oio",6,"Mansoa",68,"Tcalana Grande",6
+1,"Oio",6,"Mansoa",69,"Tchalana Djaila",6
+1,"Oio",6,"Mansoa",70,"Tchalana Lumo",6
+1,"Oio",6,"Mansoa",71,"Thcalana III",6
+1,"Oio",6,"Mansoa",72,"Uque",6
+1,"Oio",6,"Mansoa",73,"Waque",6
+1,"Oio",6,"Mansoa",74,"Wediqueia",6
+1,"Oio",6,"Mansoa",75,"Wonquilim",6
+1,"Oio",7,"Mores",1,"Bidjime",7
+1,"Oio",7,"Mores",2,"Buncuntum",7
+1,"Oio",7,"Mores",3,"Caie 1",7
+1,"Oio",7,"Mores",4,"Caie 2",7
+1,"Oio",7,"Mores",5,"Caie 3",7
+1,"Oio",7,"Mores",6,"Caie 4",7
+1,"Oio",7,"Mores",7,"Cambedje Balanta",7
+1,"Oio",7,"Mores",8,"Cambedje Mandinga",7
+1,"Oio",7,"Mores",9,"Canquebo",7
+1,"Oio",7,"Mores",10,"Concote",7
+1,"Oio",7,"Mores",11,"Manaca",7
+1,"Oio",7,"Mores",12,"Mansode",7
+1,"Oio",7,"Mores",13,"Mores",7
+1,"Oio",7,"Mores",14,"Ncurba",7
+1,"Oio",7,"Mores",15,"Nemenaco Balanta",7
+1,"Oio",7,"Mores",16,"Nemenaco Fula",7
+1,"Oio",7,"Mores",17,"Nghantcha",7
+1,"Oio",7,"Mores",18,"Ngharom",7
+1,"Oio",7,"Mores",19,"Nrua",7
+1,"Oio",7,"Mores",20,"Ponta Embana",7
+1,"Oio",7,"Mores",21,"Santambato",7
+1,"Oio",7,"Mores",22,"Tambato",7
+1,"Oio",7,"Mores",23,"Ude",7
+1,"Oio",8,"Nhacra",1,"Atchaca",8
+1,"Oio",8,"Nhacra",41,"Bondade",8
+1,"Oio",8,"Nhacra",2,"Bup",8
+1,"Oio",8,"Nhacra",3,"Cade",8
+1,"Oio",8,"Nhacra",4,"Caiana",8
+1,"Oio",8,"Nhacra",42,"California",8
+1,"Oio",8,"Nhacra",5,"Caramaco",8
+1,"Oio",8,"Nhacra",6,"Cola",8
+1,"Oio",8,"Nhacra",7,"Com Jangada",8
+1,"Oio",8,"Nhacra",8,"Cumeré",8
+1,"Oio",8,"Nhacra",9,"Cutanga",8
+1,"Oio",8,"Nhacra",10,"Dam",8
+1,"Oio",8,"Nhacra",11,"Dugal",8
+1,"Oio",8,"Nhacra",12,"Dugal Raga",8
+1,"Oio",8,"Nhacra",13,"Fanhe",8
+1,"Oio",8,"Nhacra",14,"Fatime",8
+1,"Oio",8,"Nhacra",15,"Iugume",8
+1,"Oio",8,"Nhacra",16,"Jucudul Com",8
+1,"Oio",8,"Nhacra",19,"Lessa",8
+1,"Oio",8,"Nhacra",17,"Nague",8
+1,"Oio",8,"Nhacra",18,"Nague Nrom",8
+1,"Oio",8,"Nhacra",20,"Nhacra Tera",8
+1,"Oio",8,"Nhacra",21,"Nhomazinho",8
+1,"Oio",8,"Nhacra",22,"Novo Nhoma",8
+1,"Oio",8,"Nhacra",23,"Ntchangue",8
+1,"Oio",8,"Nhacra",24,"Oco-Grande",8
+1,"Oio",8,"Nhacra",25,"Oco-Zinho",8
+1,"Oio",8,"Nhacra",43,"Porto",8
+1,"Oio",8,"Nhacra",26,"Quide",8
+1,"Oio",8,"Nhacra",27,"Quidefa (Nhomo)",8
+1,"Oio",8,"Nhacra",28,"Quindungue",8
+1,"Oio",8,"Nhacra",29,"Rotchume",8
+1,"Oio",8,"Nhacra",30,"Rucuto",8
+1,"Oio",8,"Nhacra",31,"Sau",8
+1,"Oio",8,"Nhacra",32,"Son",8
+1,"Oio",8,"Nhacra",33,"Sucuto",8
+1,"Oio",8,"Nhacra",34,"Sumo",8
+1,"Oio",8,"Nhacra",44,"Tchada",8
+1,"Oio",8,"Nhacra",35,"Tchugue",8
+1,"Oio",8,"Nhacra",36,"Tchuluf",8
+1,"Oio",8,"Nhacra",37,"Tchuluf Flum",8
+1,"Oio",8,"Nhacra",38,"Tchuluf Nbonh",8
+1,"Oio",8,"Nhacra",39,"Tchuluf Pabor",8
+1,"Oio",8,"Nhacra",40,"Tim",8
+1,"Oio",9,"Olossato",1,"Bafatandim",9
+1,"Oio",9,"Olossato",2,"Baleia",9
+1,"Oio",9,"Olossato",3,"Bantassu",9
+1,"Oio",9,"Olossato",4,"Bissadjar Balanta",9
+1,"Oio",9,"Olossato",5,"Bissadjar Mandinga",9
+1,"Oio",9,"Olossato",6,"Bissancadji",9
+1,"Oio",9,"Olossato",7,"Cancuncu Balanta",9
+1,"Oio",9,"Olossato",8,"Cancuncu Mandinga",9
+1,"Oio",9,"Olossato",9,"Candjadja Balanta",9
+1,"Oio",9,"Olossato",10,"Candjadja Mandiga",9
+1,"Oio",9,"Olossato",11,"Canfanda",9
+1,"Oio",9,"Olossato",12,"Canfonda",9
+1,"Oio",9,"Olossato",13,"Canico Balanta",9
+1,"Oio",9,"Olossato",14,"Canico Mandinga",9
+1,"Oio",9,"Olossato",15,"Cantaco",9
+1,"Oio",9,"Olossato",16,"Colissar",9
+1,"Oio",9,"Olossato",17,"Conton",9
+1,"Oio",9,"Olossato",18,"Corinto",9
+1,"Oio",9,"Olossato",19,"Dabocunda",9
+1,"Oio",9,"Olossato",20,"Fajonquito",9
+1,"Oio",9,"Olossato",21,"Farabato",9
+1,"Oio",9,"Olossato",22,"Gã-Sambu 1",9
+1,"Oio",9,"Olossato",23,"Gã-Sambu 2",9
+1,"Oio",9,"Olossato",24,"Gã-Somco Balanta",9
+1,"Oio",9,"Olossato",25,"Gã-Somco Mandinga",9
+1,"Oio",9,"Olossato",26,"Iracunda",9
+1,"Oio",9,"Olossato",27,"Leto Balanta",9
+1,"Oio",9,"Olossato",28,"Leto Mandinga",9
+1,"Oio",9,"Olossato",29,"Lubacunda",9
+1,"Oio",9,"Olossato",30,"Mabar Balanta",9
+1,"Oio",9,"Olossato",31,"Mabar Mandinga",9
+1,"Oio",9,"Olossato",32,"Madina Saladala",9
+1,"Oio",9,"Olossato",33,"Manambu",9
+1,"Oio",9,"Olossato",34,"Mandina Balanta",9
+1,"Oio",9,"Olossato",35,"Mandina Mandinga",9
+1,"Oio",9,"Olossato",36,"Mindodu Balanta",9
+1,"Oio",9,"Olossato",37,"Mindodu Mandinga",9
+1,"Oio",9,"Olossato",38,"Missira Balanta",9
+1,"Oio",9,"Olossato",39,"Missira Mandinga",9
+1,"Oio",9,"Olossato",40,"N'djoboia",9
+1,"Oio",9,"Olossato",41,"Nhani Balanta",9
+1,"Oio",9,"Olossato",42,"Nhani Mandinga",9
+1,"Oio",9,"Olossato",43,"Olossato",9
+1,"Oio",9,"Olossato",44,"Pagda",9
+1,"Oio",9,"Olossato",45,"Ponta Morato",9
+1,"Oio",9,"Olossato",46,"Ponta Paulo",9
+1,"Oio",9,"Olossato",47,"Sabalicunda",9
+1,"Oio",9,"Olossato",48,"Sansambato Balanta",9
+1,"Oio",9,"Olossato",49,"Sansambato Mandinga",9
+1,"Oio",9,"Olossato",50,"Seide Cunda",9
+1,"Oio",9,"Olossato",51,"Sibicunto",9
+1,"Oio",9,"Olossato",52,"Solinto",9
+1,"Oio",9,"Olossato",53,"Solinto Fula",9
+1,"Oio",9,"Olossato",54,"Suntucuia",9
+1,"Oio",9,"Olossato",55,"Tancrual Balanta",9
+1,"Oio",9,"Olossato",56,"Tancrual Mandinga",9
+1,"Oio",9,"Olossato",57,"Wediquindi",9
+1,"Oio",10,"Portugol",1,"B. Militar",10
+1,"Oio",10,"Portugol",2,"Bissa",10
+1,"Oio",10,"Portugol",3,"Bissunha I",10
+1,"Oio",10,"Portugol",4,"Bissunha II",10
+1,"Oio",10,"Portugol",5,"Blasse",10
+1,"Oio",10,"Portugol",6,"Blutcha",10
+1,"Oio",10,"Portugol",7,"C. Sinho",10
+1,"Oio",10,"Portugol",8,"Culucunda",10
+1,"Oio",10,"Portugol",9,"Darsalam",10
+1,"Oio",10,"Portugol",10,"Funcor",10
+1,"Oio",10,"Portugol",11,"Glória",10
+1,"Oio",10,"Portugol",12,"Nghafu",10
+1,"Oio",10,"Portugol",13,"Nghason",10
+1,"Oio",10,"Portugol",14,"Ponta Duarte Sambu",10
+1,"Oio",10,"Portugol",15,"Ponta Novo",10
+1,"Oio",10,"Portugol",16,"Ponta Una",10
+1,"Oio",10,"Portugol",17,"Ponta Rut",10
+1,"Oio",10,"Portugol",18,"Porto-gole",10
+1,"Oio",10,"Portugol",19,"Quedemble",10
+1,"Oio",10,"Portugol",20,"Quesse",10
+1,"Oio",10,"Portugol",21,"Tchúbe",10
+1,"Oio",10,"Portugol",22,"Tchumbe",10
+1,"Oio",10,"Portugol",23,"Tiracamisa I",10
+1,"Oio",10,"Portugol",24,"Tiracamisa II",10
+1,"Oio",99,"Testo",99,"Testo",99
+2,"Biombo",1,"Bijimita",1,"Bissucul",1
+2,"Biombo",1,"Bijimita",2,"Blom",1
+2,"Biombo",1,"Bijimita",3,"Claque",1
+2,"Biombo",1,"Bijimita",4,"Janclaque",1
+2,"Biombo",1,"Bijimita",5,"Nquitimol",1
+2,"Biombo",1,"Bijimita",6,"Ome",1
+2,"Biombo",1,"Bijimita",7,"Ponta Cabral",1
+2,"Biombo",1,"Bijimita",8,"Quiuta",1
+2,"Biombo",1,"Bijimita",9,"Reino",1
+2,"Biombo",1,"Bijimita",10,"Sabor Balanta",1
+2,"Biombo",1,"Bijimita",11,"Sabor Papel",1
+2,"Biombo",2,"Cumura",1,"Afia",2
+2,"Biombo",2,"Cumura",2,"Bairro Ameta",2
+2,"Biombo",2,"Cumura",3,"Bambadinca de Baixo",2
+2,"Biombo",2,"Cumura",4,"Bambadinca de Cima",2
+2,"Biombo",2,"Cumura",5,"Belém",2
+2,"Biombo",2,"Cumura",6,"Bôr",2
+2,"Biombo",2,"Cumura",18,"California",2
+2,"Biombo",2,"Cumura",7,"Catarina",2
+2,"Biombo",2,"Cumura",8,"Centro",2
+2,"Biombo",2,"Cumura",9,"Gardete",2
+2,"Biombo",2,"Cumura",10,"Matandim",2
+2,"Biombo",2,"Cumura",11,"Naguê de Baixo",2
+2,"Biombo",2,"Cumura",12,"Naguê de Cima",2
+2,"Biombo",2,"Cumura",13,"Uck",2
+2,"Biombo",2,"Cumura",14,"Pefine Balanta",2
+2,"Biombo",2,"Cumura",15,"Pefine de Areia",2
+2,"Biombo",2,"Cumura",16,"Sintcham Bobo",2
+2,"Biombo",2,"Cumura",17,"Ying",2
+2,"Biombo",3,"Dorse",1,"Bissa de Baixo",3
+2,"Biombo",3,"Dorse",2,"Bissa de Cima",3
+2,"Biombo",3,"Dorse",3,"Cupedo",3
+2,"Biombo",3,"Dorse",4,"Dorse",3
+2,"Biombo",3,"Dorse",5,"Reno Tôr",3
+2,"Biombo",4,"Ilonde",1,"Apetna",4
+2,"Biombo",4,"Ilonde",2,"Bigilim",4
+2,"Biombo",4,"Ilonde",3,"Bissalanca",4
+2,"Biombo",4,"Ilonde",4,"Blimate",4
+2,"Biombo",4,"Ilonde",5,"Brene A",4
+2,"Biombo",4,"Ilonde",6,"Brene B",4
+2,"Biombo",4,"Ilonde",7,"California",4
+2,"Biombo",4,"Ilonde",8,"Colonato",4
+2,"Biombo",4,"Ilonde",9,"Crato Balanta",4
+2,"Biombo",4,"Ilonde",10,"Crato Papel",4
+2,"Biombo",4,"Ilonde",11,"Enxude",4
+2,"Biombo",4,"Ilonde",12,"Ilondé",4
+2,"Biombo",4,"Ilonde",13,"Incaite",4
+2,"Biombo",4,"Ilonde",14,"Pinis",4
+2,"Biombo",4,"Ilonde",15,"Ponta José da Silva",4
+2,"Biombo",4,"Ilonde",16,"Ponta Mbana",4
+2,"Biombo",4,"Ilonde",17,"Ponta Nhara",4
+2,"Biombo",4,"Ilonde",18,"Ponta Rapaz",4
+2,"Biombo",4,"Ilonde",19,"Ponta Vicente da Mata",4
+2,"Biombo",4,"Ilonde",20,"Ponta Vicente da Ptora",4
+2,"Biombo",4,"Ilonde",21,"Ponta Victor",4
+2,"Biombo",4,"Ilonde",22,"Ponta Ze da Silva",4
+2,"Biombo",4,"Ilonde",23,"Ricardo Sores",4
+2,"Biombo",4,"Ilonde",24,"Suga de Baixo",4
+2,"Biombo",5,"Ondame",1,"Blimblim",5
+2,"Biombo",5,"Ondame",2,"Blom",5
+2,"Biombo",5,"Ondame",3,"Ondame",5
+2,"Biombo",5,"Ondame",4,"Quinsana",5
+2,"Biombo",5,"Ondame",5,"Quita",5
+2,"Biombo",5,"Ondame",6,"Sidja",5
+2,"Biombo",6,"Prabis",1,"Bairro Novo",6
+2,"Biombo",6,"Prabis",2,"Bele",6
+2,"Biombo",6,"Prabis",3,"Bidjala",6
+2,"Biombo",6,"Prabis",4,"Biquedje",6
+2,"Biombo",6,"Prabis",5,"Bitafite",6
+2,"Biombo",6,"Prabis",6,"Bitesga",6
+2,"Biombo",6,"Prabis",7,"Bolunde",6
+2,"Biombo",6,"Prabis",8,"Brango",6
+2,"Biombo",6,"Prabis",9,"Bugoto",6
+2,"Biombo",6,"Prabis",10,"Bumine",6
+2,"Biombo",6,"Prabis",11,"Buta",6
+2,"Biombo",6,"Prabis",24,"Cricque",6
+2,"Biombo",6,"Prabis",12,"Cumura Pepel",6
+2,"Biombo",6,"Prabis",13,"Djogoro",6
+2,"Biombo",6,"Prabis",14,"Lala",6
+2,"Biombo",6,"Prabis",15,"N'Cumba",6
+2,"Biombo",6,"Prabis",16,"N'Saguel",6
+2,"Biombo",6,"Prabis",17,"N'Siquel",6
+2,"Biombo",6,"Prabis",18,"Ponta Djamaica",6
+2,"Biombo",6,"Prabis",19,"Ponta João Carlos",6
+2,"Biombo",6,"Prabis",20,"Pa Kaque",6
+2,"Biombo",6,"Prabis",21,"Pitate",6
+2,"Biombo",6,"Prabis",22,"Postáo",6
+2,"Biombo",6,"Prabis",23,"Prite",6
+2,"Biombo",6,"Prabis",25,"Reino Prabis",6
+2,"Biombo",6,"Prabis",26,"Reino Quisete",6
+2,"Biombo",6,"Prabis",27,"Suru",6
+2,"Biombo",6,"Prabis",28,"Tamara",6
+2,"Biombo",7,"Quinhamel",1,"Augosto Felis",7
+2,"Biombo",7,"Quinhamel",2,"Baixo Quinhamel",7
+2,"Biombo",7,"Quinhamel",3,"Bi Djina",7
+2,"Biombo",7,"Quinhamel",4,"Bissauzeinho",7
+2,"Biombo",7,"Quinhamel",5,"Braganca",7
+2,"Biombo",7,"Quinhamel",6,"Brim",7
+2,"Biombo",7,"Quinhamel",7,"Bucoumul",7
+2,"Biombo",7,"Quinhamel",8,"Cabo-Verde",7
+2,"Biombo",7,"Quinhamel",9,"Cidade Quinhamel",7
+2,"Biombo",7,"Quinhamel",10,"Clande",7
+2,"Biombo",7,"Quinhamel",11,"Clatele 1",7
+2,"Biombo",7,"Quinhamel",12,"Clatele 2",7
+2,"Biombo",7,"Quinhamel",13,"Cool",7
+2,"Biombo",7,"Quinhamel",14,"Cudjogoro",7
+2,"Biombo",7,"Quinhamel",15,"Cufongho",7
+2,"Biombo",7,"Quinhamel",16,"Farro",7
+2,"Biombo",7,"Quinhamel",17,"Gorse",7
+2,"Biombo",7,"Quinhamel",18,"Mato Honca",7
+2,"Biombo",7,"Quinhamel",19,"Pandim",7
+2,"Biombo",7,"Quinhamel",20,"Plak",7
+2,"Biombo",7,"Quinhamel",21,"Ponta Brandaô",7
+2,"Biombo",7,"Quinhamel",22,"Ponta Lion",7
+2,"Biombo",7,"Quinhamel",23,"Ponta Mendes",7
+2,"Biombo",7,"Quinhamel",24,"Ponta Rumana",7
+2,"Biombo",7,"Quinhamel",25,"Quicene",7
+2,"Biombo",7,"Quinhamel",26,"Quilum",7
+2,"Biombo",7,"Quinhamel",27,"Tira Camisa",7
+2,"Biombo",8,"Safim",1,"Beja-Quidele",8
+2,"Biombo",8,"Safim",2,"Bilma",8
+2,"Biombo",8,"Safim",3,"Bisaquel",8
+2,"Biombo",8,"Safim",4,"Blom",8
+2,"Biombo",8,"Safim",5,"Controlo",8
+2,"Biombo",8,"Safim",6,"Cumano",8
+2,"Biombo",8,"Safim",7,"Djall",8
+2,"Biombo",8,"Safim",8,"Ensalma",8
+2,"Biombo",8,"Safim",9,"Gua",8
+2,"Biombo",8,"Safim",10,"Mbassini",8
+2,"Biombo",8,"Safim",11,"Monte Cristo",8
+2,"Biombo",8,"Safim",12,"Nbassine",8
+2,"Biombo",8,"Safim",13,"Ngangan",8
+2,"Biombo",8,"Safim",14,"Npelum",8
+2,"Biombo",8,"Safim",15,"Ntingle",8
+2,"Biombo",8,"Safim",16,"Ntuss",8
+2,"Biombo",8,"Safim",17,"Ntussinho",8
+2,"Biombo",8,"Safim",18,"Ponta Adolfo Ramos",8
+2,"Biombo",8,"Safim",19,"Ponta Rocha",8
+2,"Biombo",8,"Safim",20,"Qhinhag",8
+2,"Biombo",8,"Safim",21,"Quindiga",8
+2,"Biombo",8,"Safim",22,"Reino",8
+2,"Biombo",99,"Testo",99,"Testo",99
+3,"Farim",1,"Binta",1,"Banhima",1
+3,"Farim",1,"Binta",2,"Binta",1
+3,"Farim",1,"Binta",3,"Cansegha",1
+3,"Farim",1,"Binta",4,"Caur Balanta",1
+3,"Farim",1,"Binta",5,"Caur Mandingas",1
+3,"Farim",1,"Binta",6,"Caurdim",1
+3,"Farim",1,"Binta",7,"Djebacunda",1
+3,"Farim",1,"Binta",8,"Djinicom Mancanha",1
+3,"Farim",1,"Binta",9,"Djinicom Mandinga",1
+3,"Farim",1,"Binta",10,"Faire",1
+3,"Farim",1,"Binta",11,"Fode Siraia",1
+3,"Farim",1,"Binta",12,"Ioncoia 1",1
+3,"Farim",1,"Binta",13,"Ioncoia 2",1
+3,"Farim",1,"Binta",14,"L'enquêto",1
+3,"Farim",1,"Binta",15,"Macama",1
+3,"Farim",1,"Binta",16,"Mane Cunda 1",1
+3,"Farim",1,"Binta",17,"Mane Cunda 2",1
+3,"Farim",1,"Binta",18,"Maqué",1
+3,"Farim",1,"Binta",19,"N'Ghanor",1
+3,"Farim",1,"Binta",20,"Quenedjara",1
+3,"Farim",1,"Binta",21,"Sansancototo",1
+3,"Farim",1,"Binta",22,"Santancoto",1
+3,"Farim",1,"Binta",23,"Sintcham tcherno",1
+3,"Farim",1,"Binta",24,"Temanto 1",1
+3,"Farim",1,"Binta",25,"Temanto 2",1
+3,"Farim",1,"Binta",26,"Urmaia",1
+3,"Farim",2,"Candjambari",1,"Afia",2
+3,"Farim",2,"Candjambari",2,"Bananto ",2
+3,"Farim",2,"Candjambari",3,"Bandim ",2
+3,"Farim",2,"Candjambari",4,"Canbadju",2
+3,"Farim",2,"Candjambari",5,"Canbadju Fula",2
+3,"Farim",2,"Candjambari",6,"Candjambari",2
+3,"Farim",2,"Candjambari",7,"Candjambari Praca",2
+3,"Farim",2,"Candjambari",8,"Dandum 1",2
+3,"Farim",2,"Candjambari",9,"Dandum 2",2
+3,"Farim",2,"Candjambari",10,"Djanghali",2
+3,"Farim",2,"Candjambari",11,"Djumbenbe",2
+3,"Farim",2,"Candjambari",12,"Farinco 1",2
+3,"Farim",2,"Candjambari",13,"Farinco 2",2
+3,"Farim",2,"Candjambari",14,"Guisel Djanco",2
+3,"Farim",2,"Candjambari",15,"Mádia",2
+3,"Farim",2,"Candjambari",16,"Madina Mutaro",2
+3,"Farim",2,"Candjambari",17,"Manfonhe",2
+3,"Farim",2,"Candjambari",18,"Ponta Iona",2
+3,"Farim",2,"Candjambari",19,"Saicuro",2
+3,"Farim",2,"Candjambari",20,"Samadjanco",2
+3,"Farim",2,"Candjambari",21,"Samam",2
+3,"Farim",2,"Candjambari",22,"Sare Kante",2
+3,"Farim",2,"Candjambari",23,"Sare Djai",2
+3,"Farim",2,"Candjambari",24,"Sare Famana",2
+3,"Farim",2,"Candjambari",25,"Sare Lamine",2
+3,"Farim",2,"Candjambari",26,"Sare Mali",2
+3,"Farim",2,"Candjambari",27,"Sare Mancama",2
+3,"Farim",2,"Candjambari",28,"Sare Moudo Bodo",2
+3,"Farim",2,"Candjambari",29,"Sare N'dune",2
+3,"Farim",2,"Candjambari",30,"Sare N'hado",2
+3,"Farim",2,"Candjambari",31,"Sare N'haco",2
+3,"Farim",2,"Candjambari",32,"Sare Paté",2
+3,"Farim",2,"Candjambari",33,"Sare Querel",2
+3,"Farim",2,"Candjambari",34,"Sare Sadjall",2
+3,"Farim",2,"Candjambari",35,"Sare Sago",2
+3,"Farim",2,"Candjambari",36,"Sare Soria",2
+3,"Farim",2,"Candjambari",37,"Sare Sulo",2
+3,"Farim",2,"Candjambari",38,"Sare Tenem",2
+3,"Farim",2,"Candjambari",39,"Sare Yero ",2
+3,"Farim",2,"Candjambari",40,"Sintchan Adama",2
+3,"Farim",2,"Candjambari",41,"Sintchan Aladjo",2
+3,"Farim",2,"Candjambari",42,"Sintchan Alberto",2
+3,"Farim",2,"Candjambari",43,"Sintchan Baido",2
+3,"Farim",2,"Candjambari",44,"Sintchan Bubacar",2
+3,"Farim",2,"Candjambari",45,"Sintchan Breima",2
+3,"Farim",2,"Candjambari",46,"Sintchan Daine ",2
+3,"Farim",2,"Candjambari",47,"Sintchan Demburel",2
+3,"Farim",2,"Candjambari",48,"Sintchan Denba Gaira",2
+3,"Farim",2,"Candjambari",49,"Sintchan Denbatal",2
+3,"Farim",2,"Candjambari",50,"Sintchan Djunbenbe",2
+3,"Farim",2,"Candjambari",51,"Sintchan Fago",2
+3,"Farim",2,"Candjambari",52,"Sintchan Fode",2
+3,"Farim",2,"Candjambari",53,"Sintchan Gorqué",2
+3,"Farim",2,"Candjambari",54,"Sintchan Idrissa",2
+3,"Farim",2,"Candjambari",55,"Sintchan Ioba 2",2
+3,"Farim",2,"Candjambari",56,"Sintchan Iona",2
+3,"Farim",2,"Candjambari",57,"Sintchan Kufe",2
+3,"Farim",2,"Candjambari",58,"Sintchan Lumbu Djol",2
+3,"Farim",2,"Candjambari",59,"Sintchan Malique ",2
+3,"Farim",2,"Candjambari",60,"Sintchan Mansal",2
+3,"Farim",2,"Candjambari",61,"Sintchan Muhare",2
+3,"Farim",2,"Candjambari",62,"Sintchan Querel",2
+3,"Farim",2,"Candjambari",63,"Sintchan Queta Cumba",2
+3,"Farim",2,"Candjambari",64,"Sintchan Quicuta",2
+3,"Farim",2,"Candjambari",65,"Sintchan Sadjo",2
+3,"Farim",2,"Candjambari",66,"Sintchan Saido",2
+3,"Farim",2,"Candjambari",67,"Sintchan Sanba",2
+3,"Farim",2,"Candjambari",68,"Sintchan Sanba Sabali",2
+3,"Farim",2,"Candjambari",69,"Sintchan Tumane",2
+3,"Farim",2,"Candjambari",70,"Sintchan Úla",2
+3,"Farim",2,"Candjambari",71,"Sintchan Vicente",2
+3,"Farim",2,"Candjambari",72,"Sintchan Yoba 1",2
+3,"Farim",2,"Candjambari",73,"Sintchan Yúnca",2
+3,"Farim",2,"Candjambari",74,"Sororo",2
+3,"Farim",2,"Candjambari",75,"Sumabanta",2
+3,"Farim",2,"Candjambari",76,"Tabandinto",2
+3,"Farim",3,"Cuntima",1,"Burdjala",3
+3,"Farim",3,"Cuntima",2,"Cabele",3
+3,"Farim",3,"Cuntima",3,"Cahaco",3
+3,"Farim",3,"Cuntima",4,"Canhaco 1 (Pate Cande)",3
+3,"Farim",3,"Cuntima",38,"Canhaco 2 (Mamudu Cande)",3
+3,"Farim",3,"Cuntima",5,"Carantaba",3
+3,"Farim",3,"Cuntima",6,"Cube Cunda",3
+3,"Farim",3,"Cuntima",7,"Cumbidjam 1 (Bacar Mandjam)",3
+3,"Farim",3,"Cuntima",8,"Cumbidjam 2 (Mama Sonco)",3
+3,"Farim",3,"Cuntima",9,"Cuntima 1 (Braima Mané)",3
+3,"Farim",3,"Cuntima",10,"Cuntima 2 (Francisco Iero Seide)",3
+3,"Farim",3,"Cuntima",11,"Cuntima 3 (Quintino Man)",3
+3,"Farim",3,"Cuntima",12,"Cuntima 4 (Saliu Balde)",3
+3,"Farim",3,"Cuntima",13,"Cuntima 5 (Sute Sani)",3
+3,"Farim",3,"Cuntima",14,"Djega",3
+3,"Farim",3,"Cuntima",15,"Djimadi",3
+3,"Farim",3,"Cuntima",16,"Faquina ",3
+3,"Farim",3,"Cuntima",17,"Muntchanco",3
+3,"Farim",3,"Cuntima",18,"Norbanta",3
+3,"Farim",3,"Cuntima",19,"Sare Demba Djico",3
+3,"Farim",3,"Cuntima",20,"Sare Demba Taki",3
+3,"Farim",3,"Cuntima",21,"Sare Yoba Candé",3
+3,"Farim",3,"Cuntima",22,"Sintcham Braima",3
+3,"Farim",3,"Cuntima",23,"Sintcham Denel",3
+3,"Farim",3,"Cuntima",24,"Sintcham Djacaria",3
+3,"Farim",3,"Cuntima",25,"Sintcham Metanhalin",3
+3,"Farim",3,"Cuntima",26,"Sintcham Patron 1 (Luciano Biai)",3
+3,"Farim",3,"Cuntima",27,"Sintcham Patron 2 (Opa Ciente)",3
+3,"Farim",3,"Cuntima",28,"Sintcham Pulo 2 ",3
+3,"Farim",3,"Cuntima",29,"Sintcham Sidi",3
+3,"Farim",3,"Cuntima",30,"Sintcham Tala",3
+3,"Farim",3,"Cuntima",31,"Sitato 1 (Buba Candé)",3
+3,"Farim",3,"Cuntima",32,"Sitato 2 (Ussumane Djau)",3
+3,"Farim",3,"Cuntima",33,"Suluco 1 (Bacar Mandjam)",3
+3,"Farim",3,"Cuntima",34,"Suluco 2 (Mariama Mandjam)",3
+3,"Farim",3,"Cuntima",35,"Tonhataba",3
+3,"Farim",3,"Cuntima",36,"Tuba",3
+3,"Farim",3,"Cuntima",37,"Waranto",3
+3,"Farim",4,"Farim",1,"Amedalai",4
+3,"Farim",4,"Farim",2,"Bafata Oio",4
+3,"Farim",4,"Farim",3,"Bairro Militar",4
+3,"Farim",4,"Farim",4,"Bangladez",4
+3,"Farim",4,"Farim",5,"Bani",4
+3,"Farim",4,"Farim",6,"Bantandjam",4
+3,"Farim",4,"Farim",7,"Berendinto",4
+3,"Farim",4,"Farim",8,"Birbam",4
+3,"Farim",4,"Farim",9,"Bissaré",4
+3,"Farim",4,"Farim",10,"Bolombato",4
+3,"Farim",4,"Farim",11,"Bricama",4
+3,"Farim",4,"Farim",12,"Burro",4
+3,"Farim",4,"Farim",13,"Cabeseco",4
+3,"Farim",4,"Farim",14,"Candjanco",4
+3,"Farim",4,"Farim",15,"Canico Leguecroto",4
+3,"Farim",4,"Farim",16,"Canico Tumana",4
+3,"Farim",4,"Farim",17,"Cuboroto",4
+3,"Farim",4,"Farim",18,"Culmesencunda",4
+3,"Farim",4,"Farim",19,"Demba Dado",4
+3,"Farim",4,"Farim",20,"Djimbia",4
+3,"Farim",4,"Farim",21,"Djobico",4
+3,"Farim",4,"Farim",22,"Dutato",4
+3,"Farim",4,"Farim",23,"Fafaco",4
+3,"Farim",4,"Farim",24,"Fanbanta Morcunda",4
+3,"Farim",4,"Farim",25,"Fanbanta Sansanhoto",4
+3,"Farim",4,"Farim",26,"Farandinto",4
+3,"Farim",4,"Farim",27,"Farinco",4
+3,"Farim",4,"Farim",28,"Flak Crintim",4
+3,"Farim",4,"Farim",29,"Gã-Gregorio",4
+3,"Farim",4,"Farim",30,"Gã-Lomba",4
+3,"Farim",4,"Farim",31,"Gã-Made",4
+3,"Farim",4,"Farim",32,"Gã-Pinto",4
+3,"Farim",4,"Farim",33,"Guissima",4
+3,"Farim",4,"Farim",34,"Hafia",4
+3,"Farim",4,"Farim",35,"Irabato",4
+3,"Farim",4,"Farim",36,"K-3",4
+3,"Farim",4,"Farim",37,"Lambam",4
+3,"Farim",4,"Farim",38,"Lamel",4
+3,"Farim",4,"Farim",39,"Lenquebato",4
+3,"Farim",4,"Farim",40,"Madina",4
+3,"Farim",4,"Farim",41,"Maninha",4
+3,"Farim",4,"Farim",42,"Missira",4
+3,"Farim",4,"Farim",43,"Morcunda",4
+3,"Farim",4,"Farim",44,"Ndjoia",4
+3,"Farim",4,"Farim",45,"Nema",4
+3,"Farim",4,"Farim",46,"Nhambram",4
+3,"Farim",4,"Farim",47,"Ponta Aribe",4
+3,"Farim",4,"Farim",48,"Ponta Bala Mané",4
+3,"Farim",4,"Farim",49,"Ponta Caer",4
+3,"Farim",4,"Farim",50,"Ponta Duarte",4
+3,"Farim",4,"Farim",51,"Ponta Maninha",4
+3,"Farim",4,"Farim",52,"Ponta Zeca",4
+3,"Farim",4,"Farim",53,"Praca",4
+3,"Farim",4,"Farim",54,"Salguenhe Porto",4
+3,"Farim",4,"Farim",55,"Salquenhe-Bá",4
+3,"Farim",4,"Farim",56,"Sancalanco",4
+3,"Farim",4,"Farim",57,"Sandjal",4
+3,"Farim",4,"Farim",58,"Sare Djaie",4
+3,"Farim",4,"Farim",59,"Sare Donha",4
+3,"Farim",4,"Farim",60,"Sare Ioba",4
+3,"Farim",4,"Farim",61,"Sere Dé",4
+3,"Farim",4,"Farim",62,"Sintcham",4
+3,"Farim",4,"Farim",63,"Sintcham Bacar",4
+3,"Farim",4,"Farim",64,"Sintcham Demba",4
+3,"Farim",4,"Farim",65,"Sintcham Djaie",4
+3,"Farim",4,"Farim",66,"Sintcham Gundo",4
+3,"Farim",4,"Farim",67,"Sobeia",4
+3,"Farim",4,"Farim",68,"Tanbato Brasso",4
+3,"Farim",4,"Farim",69,"Tanbato Oio",4
+3,"Farim",4,"Farim",70,"Tunguinar",4
+3,"Farim",4,"Farim",71,"Uensaco",4
+3,"Farim",4,"Farim",72,"Ufude",4
+3,"Farim",4,"Farim",73,"Urque",4
+3,"Farim",5,"Guidage",1,"Binar",5
+3,"Farim",5,"Guidage",2,"Bubo",5
+3,"Farim",5,"Guidage",3,"Carantaba",5
+3,"Farim",5,"Guidage",4,"Cufeu",5
+3,"Farim",5,"Guidage",5,"Dungal",5
+3,"Farim",5,"Guidage",6,"Enbalocunda",5
+3,"Farim",5,"Guidage",7,"Fanhar",5
+3,"Farim",5,"Guidage",8,"Guidage",5
+3,"Farim",5,"Guidage",9,"Quenhato",5
+3,"Farim",5,"Guidage",10,"Sintchan Gán Sambu",5
+3,"Farim",5,"Guidage",11,"Sintchan Nduba",5
+3,"Farim",5,"Guidage",12,"Sintchan Sulai",5
+3,"Farim",5,"Guidage",13,"Sorba",5
+3,"Farim",5,"Guidage",14,"Udjeque",5
+3,"Farim",99,"Testo",99,"Testo",99
