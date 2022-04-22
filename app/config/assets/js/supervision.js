@@ -267,7 +267,7 @@ function initButtons() {
                 }
             }
         }  
-        var queryParams = util.setQuerystringParams(date, names[0].reg, names[0].regNome, names[0].hcarea, names[0].hcareaNome, names[0].tab, names[0].tabNome);
+        var queryParams = util.setQuerystringParams(date, names[0].reg, names[0].regNome, names[0].hcarea, names[0].hcareaNome, null, names[0].tab, names[0].tabNome);
         odkTables.launchHTML(null, 'config/assets/supervisionTab.html' + queryParams);
     });
     
