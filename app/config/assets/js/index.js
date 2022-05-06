@@ -28,7 +28,7 @@ function initButtons() {
     // Supervise
     var user = odkCommon.getActiveUser();
     console.log("user", user);
-    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:cbhp" | user == "username:student") {
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:cbhp" | user == "username:fbhp" | user == "username:student") {
         var ul = $('#li');
         ul.append($("<li />").append($("<button />").attr('id',"btnSup").attr('class',"btnSup").append("Supervisão")));
         
