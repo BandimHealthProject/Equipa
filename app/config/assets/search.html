@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!--Menu-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="libs/bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css" rel="stylesheet" />
+        <link href="css/homescreen.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="commonDefinitions.js"></script>
+        <script type="text/javascript" src="libs/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="libs/jquery-migrate-3.0.0.js"></script>
+        <script type="text/javascript" src="../../system/js/odkCommon.js"></script>
+        <script type="text/javascript" src="../../system/js/odkData.js"></script>
+        <script type="text/javascript" src="../../system/tables/js/odkTables.js"></script>
+        
+        <script type="text/javascript" src="js/util.js"></script>
+        <script type="text/javascript" src="js/search.js"></script>
+        <style>
+        ul {
+            list-style:none;
+            border-radius: none;
+        }
+        .form-group {
+            margin:30px 0;
+        }
+        .pregnancy {
+            background-color: darkcyan;
+            text-align:left;
+            font-size: x-large;
+            border-radius: 4px;
+            padding-left: 75px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            background-image: url(./img/pregnant.png);
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: 10%;
+            background-position-x: 5px;
+            color: white; 
+            border: none;
+        }
+        .child {
+            text-align:left;
+            font-size: x-large;
+            border-radius: 4px;
+            padding-left: 75px;
+            margin:10px;
+            height:auto;
+            width:100%;
+            background-image: url(./img/baby.png);
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size:10%;
+            background-position-x: 1%;
+            color: black; 
+            border: none;
+        }
+        .child.sex1 {
+            background-color: powderblue;
+        }
+        .child.sex2 {
+            background-color: pink;
+        }
+        .child.sex3 {
+            background-color: lightyellow;
+        }
+      
+        form.searchBar input {
+            float: left;
+            width: 80%;
+            height: 50px;
+            padding: 10px;
+            color: black; 
+            font-size: x-large;
+        }
+        form.searchBar button {
+            float: right;
+            width: 18%;
+            height: 50px;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background: darkseagreen;
+            background-image: url(./img/search.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position-x: 20%;
+            color: black; 
+        }
+        </style>
+    </head>
+
+   
+    <body onload="display();">
+        <div id="main" class="container" style="height: 100vh;">
+            <div id="wrapper">
+                <form class="searchBar" style="margin:auto;max-width:300px">
+                    <input id="search" type="number" placeholder="Busca ID ...">
+                    <button type="button" id="searchBtn"></button>
+                  </form>
+                <hr/>
+                <div class="form-group">
+                    <ul id="li" style="padding:20px;">            
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

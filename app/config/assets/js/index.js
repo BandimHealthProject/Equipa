@@ -27,9 +27,9 @@ function initButtons() {
     });
     // Supervise
     var user = odkCommon.getActiveUser();
+    var ul = $('#li');
     console.log("user", user);
     if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:lbhp" | user == "username:abhp" | user == "username:cbhp" | user == "username:fbhp" | user == "username:s1bhp" | user == "username:s2bhp" | user == "username:s3bhp" | user == "username:student") {
-        var ul = $('#li');
         ul.append($("<li />").append($("<button />").attr('id',"btnSup").attr('class',"btnSup").append("Supervisão")));
         
         var btnSup = $('#btnSup')
@@ -37,4 +37,14 @@ function initButtons() {
             odkTables.launchHTML(null, 'config/assets/supervision.html');
         });
     }
+    // search
+    if (user == "username:ajensen" | user == "username:jvedel" | user == "username:afisker" | user == "username:ibhp" | user == "username:jbhp" | user == "username:student") {
+        ul.append($("<li />").append($("<button />").attr('id',"btnSearch").attr('class',"btnSearch").append("Busca")));
+        
+        var btnSup = $('#btnSearch')
+        btnSup.on("click", function() {
+            odkTables.launchHTML(null, 'config/assets/search.html');
+        });
+    }
+
 }
