@@ -159,6 +159,10 @@ function populateHC(reg) {
             }
         }
     }
+    if (reg == "2") {
+        HC.splice(5,0,{reg: "1", regNome: "Oio", hcarea: "5", hcareaNome: "Ondame - Bon Samaritano"}); // make devision of Ondame
+        HC[4].hcareaNome = "Ondame - Centro di governo";
+    }
     console.log("HCs in region", HC);
 
 

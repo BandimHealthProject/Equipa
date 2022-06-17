@@ -25,7 +25,7 @@ function doSanityCheck() {
 
 function loadSupervision() {
     // SQL to get pregnancies
-    var sql = "SELECT _id, _savepoint_type, ASSISTANT, VISITDATE" +
+    var sql = "SELECT _id, _savepoint_type, ASSISTANT, HCAREANOME, VISITDATE" +
         " FROM SUPERVISIONHC" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea +
         " ORDER BY " +
@@ -41,9 +41,10 @@ function loadSupervision() {
             var rowId = result.getData(row,"_id"); // row ID 
             
             var ASSISTANT = result.getData(row,"ASSISTANT");
+            var HCAREANOME = result.getData(row,"HCAREANOME")
             var VISITDATE = result.getData(row,"VISITDATE");
 
-            var s = {type: 'supervision', rowId, ASSISTANT, VISITDATE};
+            var s = {type: 'supervision', rowId, ASSISTANT, HCAREANOME, VISITDATE};
             supervisionList.push(s);
         }
         console.log("Supervisions:", supervisionList)
@@ -92,7 +93,8 @@ function setDisplayText(supervision) {
     var displayText, visitdate;
 
     visitdate = formatDate(supervision.VISITDATE);
-    displayText = "Data da visita: " + visitdate + "<br />" +
+    displayText = "Centro: " + supervision.HCAREANOME + "<br />" + 
+        "Data da visita: " + visitdate + "<br />" +
         "Nome: " + supervision.ASSISTANT;
     return displayText
 }
