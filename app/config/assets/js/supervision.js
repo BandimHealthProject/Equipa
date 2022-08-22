@@ -159,8 +159,12 @@ function populateHC(reg) {
             }
         }
     }
+    if (reg == "1") {
+        HC.splice(8,0,{reg: "1", regNome: "Oio", hcarea: "8", hcareaNome: "Nhacra - Hospital Nhacra Terra"}); // make devision of Nhacra
+        HC[7].hcareaNome = "Nhacra - Centro di governo";
+    }
     if (reg == "2") {
-        HC.splice(5,0,{reg: "1", regNome: "Oio", hcarea: "5", hcareaNome: "Ondame - Bon Samaritano"}); // make devision of Ondame
+        HC.splice(5,0,{reg: "2", regNome: "Biombo", hcarea: "5", hcareaNome: "Ondame - Bon Samaritano"}); // make devision of Ondame
         HC[4].hcareaNome = "Ondame - Centro di governo";
     }
     console.log("HCs in region", HC);
