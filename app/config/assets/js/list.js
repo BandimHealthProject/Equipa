@@ -120,7 +120,7 @@ function loadChildren() {
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = 'username:oio02' OR _row_owner = 'username:oio11' OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' OR _row_owner LIKE '%anonymous%' )" +
         " GROUP BY IDCRI HAVING MAX(VISNOCRI)" +
         " ORDER BY MOR, NOMECRI";
-    } else if (user == "username:oio05" | user == "username:oio11") {
+    } else if (user == "username:oio05" | user == "username:oio12") {
         var sql = "SELECT _id, _row_owner, _savepoint_type, BCG, BCGDATA, DATASEG, DOB, ESTADOCRI, GRAV, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, NOMEMUL, OUTRODATA, OUTROVAC, OUTROVACOU, POLIO, POLIODATA, REG, REGDIA, SEX, TAB, TELE, VISNOCRI" +
         " FROM CHILDREN" + 
         " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab + " AND (_row_owner = 'username:oio05' OR _row_owner = 'username:oio12' OR _row_owner LIKE '%ajensen%' OR _row_owner LIKE '%jvedel%' OR _row_owner LIKE '%afisker%' OR _row_owner LIKE '%bhp%' OR _row_owner LIKE '%student%' OR _row_owner LIKE '%anonymous%' )" +
