@@ -52,8 +52,8 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
 1,"Oio",1,"Binar",51,"Tebdé",1
 1,"Oio",1,"Binar",52,"Timguilin",1
 1,"Oio",1,"Binar",53,"Tolum",1
+1,"Oio",2,"Bissora I",1,"Argentina",2
 1,"Oio",2,"Bissora I",2,"Banculen",2
-1,"Oio",2,"Bissora I",3,"Baque",2
 1,"Oio",2,"Bissora I",4,"Berco",2
 1,"Oio",2,"Bissora I",5,"Bianfoi",2
 1,"Oio",2,"Bissora I",6,"Bidir",2
@@ -75,9 +75,14 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
 1,"Oio",2,"Bissora I",31,"Cunte",2
 1,"Oio",2,"Bissora I",32,"Cuntuba",2
 1,"Oio",2,"Bissora I",33,"Cussondon",2
+1,"Oio",2,"Bissora I",34,"Dame-Lipte",2
+1,"Oio",2,"Bissora I",35,"Dame-Nguabe",2
+1,"Oio",2,"Bissora I",36,"Dame-Nhae",2
 1,"Oio",2,"Bissora I",37,"Dame-Nquida",2
+1,"Oio",2,"Bissora I",38,"Dame-Pass",2
+1,"Oio",2,"Bissora I",39,"Dame-Sor",2
+1,"Oio",2,"Bissora I",40,"Dame-The",2
 1,"Oio",2,"Bissora I",41,"Danbur",2
-1,"Oio",2,"Bissora I",42,"Dandu",2
 1,"Oio",2,"Bissora I",43,"Djabel",2
 1,"Oio",2,"Bissora I",44,"Djacal",2
 1,"Oio",2,"Bissora I",45,"Djungoto",2
@@ -90,10 +95,9 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
 1,"Oio",2,"Bissora I",55,"Iador Franbetche",2
 1,"Oio",2,"Bissora I",56,"Iara",2
 1,"Oio",2,"Bissora I",60,"Libar",2
+1,"Oio",2,"Bissora I",61,"Madina",2
 1,"Oio",2,"Bissora I",62,"Mague",2
 1,"Oio",2,"Bissora I",66,"Mun",2
-1,"Oio",2,"Bissora I",67,"Nam-Balanta",2
-1,"Oio",2,"Bissora I",68,"Nam-Mandinga",2
 1,"Oio",2,"Bissora I",72,"Ndenden",2
 1,"Oio",2,"Bissora I",73,"Nhanfa",2
 1,"Oio",2,"Bissora I",74,"Nhengue",2
@@ -109,8 +113,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
 1,"Oio",2,"Bissora I",91,"Titilon",2
 1,"Oio",2,"Bissora I",93,"Unfar",2
 1,"Oio",2,"Bissora I",94,"Wacri",2
-1,"Oio",2,"Bissora I",97,"Wedegueia",2
-1,"Oio",2,"Bissora II",1,"Argentina",22
+1,"Oio",2,"Bissora II",3,"Baque",22
 1,"Oio",2,"Bissora II",10,"Blassar 1",22
 1,"Oio",2,"Bissora II",11,"Blassar 2",22
 1,"Oio",2,"Bissora II",12,"Braga 1",22
@@ -120,22 +123,18 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
 1,"Oio",2,"Bissora II",22,"Cobato",22
 1,"Oio",2,"Bissora II",28,"Culicunhe",22
 1,"Oio",2,"Bissora II",29,"Cunbran",22
-1,"Oio",2,"Bissora II",34,"Dame-Lipte",22
-1,"Oio",2,"Bissora II",35,"Dame-Nguabe",22
-1,"Oio",2,"Bissora II",36,"Dame-Nhae",22
-1,"Oio",2,"Bissora II",38,"Dame-Pass",22
-1,"Oio",2,"Bissora II",39,"Dame-Sor",22
-1,"Oio",2,"Bissora II",40,"Dame-The",22
+1,"Oio",2,"Bissora II",42,"Dandu",22
 1,"Oio",2,"Bissora II",50,"Gã-Banana",22
 1,"Oio",2,"Bissora II",51,"Gã-Djugude",22
 1,"Oio",2,"Bissora II",53,"Gã-Semitero",22
 1,"Oio",2,"Bissora II",57,"J. Kom 1",22
 1,"Oio",2,"Bissora II",58,"J. Kom 2",22
 1,"Oio",2,"Bissora II",59,"Lenden",22
-1,"Oio",2,"Bissora II",61,"Madina",22
 1,"Oio",2,"Bissora II",63,"Mansabadin",22
 1,"Oio",2,"Bissora II",64,"Missira",22
 1,"Oio",2,"Bissora II",65,"Mon",22
+1,"Oio",2,"Bissora II",67,"Nam-Balanta",22
+1,"Oio",2,"Bissora II",68,"Nam-Mandinga",22
 1,"Oio",2,"Bissora II",69,"Nbundhe",22
 1,"Oio",2,"Bissora II",70,"N'Come",22
 1,"Oio",2,"Bissora II",71,"N'cor",22
@@ -149,6 +148,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,LISTGROUP
 1,"Oio",2,"Bissora II",92,"Touba",22
 1,"Oio",2,"Bissora II",95,"Walia",22
 1,"Oio",2,"Bissora II",96,"Watine",22
+1,"Oio",2,"Bissora II",97,"Wedegueia",22
 1,"Oio",3,"Encheia",1,"Biambi",3
 1,"Oio",3,"Encheia",2,"Blaftchur",3
 1,"Oio",3,"Encheia",3,"Boda",3
