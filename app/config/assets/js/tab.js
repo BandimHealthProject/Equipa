@@ -1,5 +1,5 @@
 /**
- * Responsible for rendering the select tabanca screen 
+ * Responsible for rendering the select tabanca screen  - Modified by Ane, to call moranca screen 20230716
  */
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
@@ -37,7 +37,7 @@ function getMasterList(data) {
     for (var row = 1; row < allRows.length; row++) {  // start at row = 1 to skip header
             allRows[row] = allRows[row].replace(/"/g,""); // remove quotes from strings
             var rowValues = allRows[row].split(",");
-            var p = {reg: rowValues[0], regNome: rowValues[1], hcarea: rowValues[2], hcareaNome: rowValues[3], tab: rowValues[4], tabNome: rowValues[5], listGroup: rowValues[6]};
+            var p = {reg: rowValues[0], regNome: rowValues[1], hcarea: rowValues[2], hcareaNome: rowValues[3], tab: rowValues[4], tabNome: rowValues[5], mor: rowValues[6], morNome: rowValues[7], listGroup: rowValues[8]};
             if (p.reg != "") { // only push rows with reg number
                 masterList.push(p);
             }
@@ -71,7 +71,7 @@ function initButtons() {
         var btn = ul.find('#' + this.tab);
         btn.on("click", function() {
             var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, that.tab, that.tabNome);
-            odkTables.launchHTML(null, 'config/assets/list.html' + queryParams);
+            odkTables.launchHTML(null, 'config/assets/mor.html' + queryParams); // Ane - list.html -> mor.html
         })        
     });
 }
