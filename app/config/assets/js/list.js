@@ -31,7 +31,7 @@ function doSanityCheck() {
 
 function loadMIF() {
     // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts
-     var sql = "SELECT _id, _savepoint_type, ESTADO, EXITDATA, FOGAO, MIFDNASC, MOR, NOMEMUL, REG, REGDIA, REGID, RELA1, TAB" 
+     var sql = "SELECT _id, _savepoint_type, ESTADO, EXITDATA, FOGAO, MIFDNASC, MOR, NOMEMAE, REG, REGDIA, REGID, RELA1, TAB" +
      " FROM MIF" + 
         " WHERE REG = " + reg + " AND TAB = " + tab + " AND MOR = " + mor + 
         " ORDER BY FOGAO, REGID";
@@ -47,13 +47,13 @@ function loadMIF() {
             var rowId = result.getData(row,"_id");                      // row række id (=_id i ODK) 
             var savepoint = result.getData(row,"_savepoint_type")       // Savepoint = Finalize vs incomplete osv
             var MOR = result.getData(row,"MOR");
-            var NOMEMUL = result.getData(row,"NOMEMUL");
+            var NOMEMAE = result.getData(row,"NOMEMAE");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var REGID = result.getData(row,"REGID")
             var TAB = result.getData(row,"TAB");
             // har samles alle variablerne i et "object"
-            var p = {type: 'woman',  rowId, savepoint, MOR, NOMEMUL, REG, REGDIA, REGID, TAB};
+            var p = {type: 'woman',  rowId, savepoint, MOR, NOMEMAE, REG, REGDIA, REGID, TAB};
             MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden
         }
         console.log("MIF:", MIF)
@@ -215,7 +215,7 @@ function setDisplayText(person) {
         
         // teksten
         displayText = "Morança: " + person.MOR + "<br />" +
-        "Nome: " + person.NOMEMUL + "<br />" + 
+        "Nome: " + person.NOMEMAE + "<br />" + 
         "Dia de inclusão: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
         
@@ -369,7 +369,7 @@ function getDefaults(person) {
         defaults['HCAREANOME'] = hcareaNome;
         defaults['REGID'] = person.REGID;
         defaults['MOR'] = person.MOR;
-        defaults['NOMEMUL'] = person.NOMEMUL;
+        defaults['NOMEMAE'] = person.NOMEMAE;
         defaults['REGNOME'] = regNome;
         defaults['REGDIA'] = person.REGDIA;
         defaults['TAB'] = tab;
