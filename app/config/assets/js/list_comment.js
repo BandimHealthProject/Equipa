@@ -1,11 +1,18 @@
 /**
  * Responsible for rendering registered pregnancies
  */
-'use strict';
 
-var MIF, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome,  mor, morNome;
+
+// Kan ikke huske hvad den her gør, men det skal nok være der.
+'use strict'; 
+
+// Globale variable der bruges
+var pregnancies, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome;
+
+// Funktion der henter information fra de tidligere HTML-sider, der er "smidt videre" vi funktionen "odkTables.launchHTML()" i forgående vindue
+// Denne funktion er den første der kører
 function display() {
-    console.log("Person list loading");
+    console.log("Person list loading"); // console.log() printer til loggen
     date = util.getQueryParameter('date');
     reg = util.getQueryParameter('reg');
     regNome = util.getQueryParameter('regNome');
@@ -14,61 +21,73 @@ function display() {
     listGroup = util.getQueryParameter('listGroup');
     tab = util.getQueryParameter('tab');
     tabNome = util.getQueryParameter('tabNome');
-    mor = util.getQueryParameter('mor');
-    morNome = util.getQueryParameter('morNome');
 
+    // overskriften på siden (html-kode)
     var head = $('#main');
-    head.prepend("<h1>" + mor + " - " + morNome + " </br> <h3> Mulheres");
+    head.prepend("<h1>" + tabNome + " </br> <h3> Pessoas");
     
+    // Emil-funktion??
     doSanityCheck();
-    loadMIF();
+    
+    // kalder nu funktionen "loadPregnancies"
+    loadPregnancies();
 }
 
+// Emil-funktion??
 function doSanityCheck() {
     console.log("Checking things");
     console.log(odkData);
 }
 
-function loadMIF() {
-    // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts
-     var sql = "SELECT _id, _savepoint_type, ESTADO, EXITDATA, FOGAO, MIFDNASC, MOR, NOMEMUL, REG, REGDIA, REGID, RELA1, TAB" 
-     " FROM MIF" + 
-        " WHERE REG = " + reg + " AND TAB = " + tab + " AND MOR = " + mor + 
-        " ORDER BY FOGAO, REGID";
+
+// funktion der henter pregnancies fra SQL-table og gemmer alle i "pregnancies"-variabel
+function loadPregnancies() {
+    // SQL to get pregnancies
+    var sql = "SELECT _id, _savepoint_type, DATASEG, HCAREA, IDMUL, MOR, NOMEMUL, REG, REGDIA, TAB" +
+    " FROM PREGNANCIES" + 
+    " WHERE REG = " + reg + " AND HCAREA = " + hcarea + " AND TAB = " + tab +
+    " ORDER BY MOR, NOMEMUL";
         
-    MIF = [];
-    console.log("Querying database for Women...");
-    console.log(sql);
-   
+    pregnancies = []; 
+    console.log("Querying database for pregnancies..."); // printer til log
+    console.log(sql); // printer til log
+
+    // ODK-funktion der henter data fra SQL databasen
     var successFn = function( result ) {
-        console.log("Found " + result.getCount() + " MIF");
-        for (var row = 0; row < result.getCount(); row++) {
-           // Her hentes alle de variabler fra SQL ind i javascript
+        console.log("Found " + result.getCount() + " pregnancies");     // printer til log
+        for (var row = 0; row < result.getCount(); row++) {             // loop over alle rækker
+            // Her hentes alle de variabler fra SQL ind i javascript
             var rowId = result.getData(row,"_id");                      // row række id (=_id i ODK) 
             var savepoint = result.getData(row,"_savepoint_type")       // Savepoint = Finalize vs incomplete osv
+
+            var DATASEG = result.getData(row,"DATASEG");
+            var HCAREA = result.getData(row,"HCAREA");
+            var IDMUL = result.getData(row,"IDMUL");                    // Kan ændres til var REGID = result.getData(row,"regid"), hvis det nu er ID'et
             var MOR = result.getData(row,"MOR");
             var NOMEMUL = result.getData(row,"NOMEMUL");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
-            var REGID = result.getData(row,"REGID")
             var TAB = result.getData(row,"TAB");
+
             // har samles alle variablerne i et "object"
-            var p = {type: 'woman',  rowId, savepoint, MOR, NOMEMUL, REG, REGDIA, REGID, TAB};
-            MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden
+            var p = {type: 'pregnancy', rowId, savepoint, DATASEG, HCAREA, IDMUL, MOR, NOMEMUL, REG, REGDIA, TAB};
+            pregnancies.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden
         }
-        console.log("MIF:", MIF)
+        console.log("Pregnancies:", pregnancies) // printer til log
         
-         // så kaldes næste funktion, der henter børnene
-         loadChildren();
-         return;
+        // så kaldes næste funktion, der henter børnene
+        loadChildren();
+        return;
     }
+    // denne funktion smider en masse fejlmeddelser i log, hvis der er noget galt med SQL-koden
     var failureFn = function( errorMsg ) {
         console.error('Failed to get pregnancies from database: ' + errorMsg);
         console.error('Trying to execute the following SQL:');
         console.error(sql);
         alert("Program error Unable to look up pregnancies.");
     }
-    odkData.arbitraryQuery('MIF', sql, null, null, null, successFn, failureFn);
+    // denne funktion tjekker om der er noget galt med SQL-koden
+    odkData.arbitraryQuery('PREGNANCIES', sql, null, null, null, successFn, failureFn);
 }
 
 // funktion der henter alle children fra SQL og gemmer dem i children-variablen
@@ -92,8 +111,8 @@ function loadChildren() {
             var DATASEG = result.getData(row,"DATASEG");
             var DOB = result.getData(row,"DOB");
             var HCAREA = result.getData(row,"HCAREA");
-            var REGIDC = result.getData(row,"REGIDC");
-            var REGID = result.getData(row,"REGID");                    // Kan ændres til var REGID = result.getData(row,"regid"), hvis det nu er ID'et
+            var IDCRI = result.getData(row,"IDCRI");
+            var IDMUL = result.getData(row,"IDMUL");                    // Kan ændres til var REGID = result.getData(row,"regid"), hvis det nu er ID'et
             var MOR = result.getData(row,"MOR");
             var NOMECRI = result.getData(row,"NOMECRI");
             var REG = result.getData(row,"REG");
@@ -102,7 +121,7 @@ function loadChildren() {
             var TAB = result.getData(row,"TAB");
 
             // har samles alle variablerne i et "object"
-            var p = {type: 'child', rowId, savepoint, DATASEG, DOB, HCAREA, MOR, NOMECRI, REG, REGDIA, REGID, REGIDC, SEX, TAB};
+            var p = {type: 'child', rowId, savepoint, DATASEG, DOB, HCAREA, IDCRI, IDMUL, MOR, NOMECRI, REG, REGDIA, SEX, TAB};
             children.push(p);// Her tilføjes "object" til listen "children", der kommer til at indeholde alle børnene der kommer frem fra SQL-koden
         }
         console.log("Children:", children) // printer til log
@@ -127,15 +146,15 @@ function loadChildren() {
 function combinedList() {
     // make combined list
     personList = [];
-    MIF.forEach(function(preg) { // VIGTIGT: "pregnacies" skal være listen med kvinderne
+    pregnancies.forEach(function(preg) { // VIGTIGT: "pregnacies" skal være listen med kvinderne
         personList.push(preg);
         var thisPregChild = children.filter(function(obj) { // VIGTIGT: "children" skal være listen med børnene
-            return obj.REGID == preg.REGID;
+            return obj.IDMUL == preg.IDMUL;
         });
         thisPregChild.forEach(function(child) {
             personList.push(child);
             children.splice(children.findIndex(function(obj) {
-                return obj.REGID == preg.REGID;
+                return obj.IDMUL == preg.IDMUL;
             }), 1);
         });
     });
@@ -150,27 +169,30 @@ function combinedList() {
     populateView();
 }
 
+// funktion der laver HTML-kode, med listen af kvinder og børn
 function populateView() {
+   
+    // Dags dato som indtastes digligere 
     var today = new Date(date);
+    
+    // Dags dato som "adate"-format, så det kan føres over i ODK
     var todayAdate = "D:" + today.getDate() + ",M:" + (Number(today.getMonth()) + 1) + ",Y:" + today.getFullYear();
-    console.log("today", today);
-    console.log("todayAdate", todayAdate);
 
     // button for new pregnancy
     var newPreg = $('#newPreg')
     newPreg.on("click", function() {
+        // hvis man trykker på knappen, kaldes funktionen der åbner en helt ny form
         openFormNewPreg();
     })
     
-   
-      // Så lave listen over alle kvinder og børn
+    // Så lave listen over alle kvinder og børn
     var ul = $('#li');
     $.each(personList, function() {
         var that = this; 
         
         // Check if visited today
         var option = '';
-        if ((this.CONT == todayAdate | this.REGDIA == todayAdate) & this.savepoint == "COMPLETE") {
+        if ((this.DATASEG == todayAdate | this.REGDIA == todayAdate) & this.savepoint == "COMPLETE") {
             option = "visited";
         }
 
@@ -180,11 +202,11 @@ function populateView() {
         
         // list
         // Hvis kvinde (pregnacy)
-        if (this.type == "woman") {
-            ul.append($("<li />").append($("<button />").attr('id',this.REGID).attr('class', option + " " + this.type).append(displayText)));
+        if (this.type == "pregnancy") {
+            ul.append($("<li />").append($("<button />").attr('id',this.IDMUL).attr('class', option + " " + this.type).append(displayText)));
          
             // Buttons
-            var btn = ul.find('#' + this.REGID);
+            var btn = ul.find('#' + this.IDMUL);
             btn.on("click", function() {
                 // hvis man trykker på knappen kaldes funktionen der åbner formen
                 openForm(that);
@@ -192,10 +214,10 @@ function populateView() {
         } 
         // Hvis barn
         if (this.type == "child") {
-            ul.append($("<li />").append($("<button />").attr('id',this.REGIDC).attr('class', option + " " + this.type + " sex" + this.SEX).append(displayText)));
+            ul.append($("<li />").append($("<button />").attr('id',this.IDCRI).attr('class', option + " " + this.type + " sex" + this.SEX).append(displayText)));
         
             // Buttons
-            var btn = ul.find('#' + this.REGIDC);
+            var btn = ul.find('#' + this.IDCRI);
             btn.on("click", function() {
                 // hvis man trykker på knappen kaldes funktionen der åbner formen
                 openForm(that);
@@ -217,7 +239,7 @@ function setDisplayText(person) {
         displayText = "Morança: " + person.MOR + "<br />" +
         "Nome: " + person.NOMEMUL + "<br />" + 
         "Dia de inclusão: " + regdia + "<br />" +
-        "ID mulher: " + person.REGID;
+        "ID gravidez: " + person.IDMUL;
         
         
     } else { // hvis barn
@@ -238,7 +260,7 @@ function setDisplayText(person) {
             "Sexo: " + sex + "<br />" + 
             "Dia de nascimento: " + dob + "<br />" + 
             "Dia de inclusão: " + regdia + "<br />" +
-            "ID criança: " + person.REGIDC; 
+            "ID criança: " + person.IDCRI; 
     }
     return displayText
 }
@@ -277,8 +299,8 @@ function openFormNewPreg() {
     // ODK-funktion der tilføje ny række til SQL-tabel 
     odkTables.addRowWithSurvey(
         null,
-        'MIF', // navn på table i SQL
-        'MIF_VISIT', // navn på den form der skal åbnes
+        'PREGNANCIES', // navn på table i SQL
+        'PREGNANCIES', // navn på den form der skal åbnes
         null,
         defaults);
 }
@@ -296,24 +318,24 @@ function openForm(person) {
     var rowId = person.rowId;
     
     // hvis kvinde (pregnancy)
-    if (person.type == 'MIF') { // pregnancy
+    if (person.type == 'pregnancy') { // pregnancy
         // hvis besøgt allerede (registeret i dag), så skal man rette i en række, der allerede eksisterer
         if (person.REGDIA == todayAdate) {
             console.log("Edit form for pregnancy: ", person) // printer til log
             odkTables.editRowWithSurvey(
                 null,
-                'MIF_VISIT',  // navn på table i SQL
+                'PREGNANCIES',  // navn på table i SQL
                 rowId,          //_id for rækken man vil ændre
-                'MIF_VISIT',  // navn på den form der skal åbnes
+                'PREGNANCIES',  // navn på den form der skal åbnes
                 null,);
         // hvis besøgt allerede, så skal man rette i en række, der allerede eksisterer
-        } else if (person.CONT == todayAdate) {
+        } else if (person.DATASEG == todayAdate) {
             console.log("Edit form for pregnancy: ", person) // printer til log
             odkTables.editRowWithSurvey(
                 null,
-                'MIF_VISIT',  // navn på table i SQL
+                'PREGNANCIES',  // navn på table i SQL
                 rowId,          //_id for rækken man vil ændre
-                'MIF_VISIT',  // navn på den form der skal åbnes
+                'PREGNANCIES',  // navn på den form der skal åbnes
                 null,);
         // hvis ikke besøgt, skal man lave en ny række i SQL (som med openFromNewPreg()-funktionen)
         } else {
@@ -322,8 +344,8 @@ function openForm(person) {
             console.log("Opening pregnancy follow-up form with: ", defaults); // printer til log
             odkTables.addRowWithSurvey(
                 null,
-                'MIF_VISIT', // navn på table i SQL
-                'MIF_VISIT', // navn på den form der skal åbnes
+                'PREGNANCIES', // navn på table i SQL
+                'PREGNANCYFU', // navn på den form der skal åbnes
                 null,
                 defaults);
         }
@@ -363,11 +385,11 @@ function toAdate(date) {
 function getDefaults(person) {
     var defaults = {};
     // hvis kvinde
-    if (person.type == "MIF") { // pregnancy defaults 
-        defaults['CONT'] = toAdate(date);
+    if (person.type == "pregnancy") { // pregnancy defaults 
+        defaults['DATASEG'] = toAdate(date);
         defaults['HCAREA'] = hcarea;
         defaults['HCAREANOME'] = hcareaNome;
-        defaults['REGID'] = person.REGID;
+        defaults['IDMUL'] = person.IDMUL;
         defaults['MOR'] = person.MOR;
         defaults['NOMEMUL'] = person.NOMEMUL;
         defaults['REGNOME'] = regNome;
@@ -380,8 +402,8 @@ function getDefaults(person) {
         defaults['DOB'] = person.DOB;
         defaults['HCAREA'] = hcarea;
         defaults['HCAREANOME'] = hcareaNome;
-        defaults['REGIDC'] = person.REGIDC;
-        defaults['REGID'] = person.REGID;
+        defaults['IDCRI'] = person.IDCRI;
+        defaults['IDMUL'] = person.IDMUL;
         defaults['MOR'] = person.MOR;
         defaults['NOMECRI'] = person.NOMECRI;
         defaults['REG'] = reg;
@@ -392,5 +414,3 @@ function getDefaults(person) {
     }
     return defaults;
 }
-   
- 

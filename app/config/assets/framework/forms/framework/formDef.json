@@ -19,7 +19,7 @@
       },
       {
         "setting_name": "form_version",
-        "value": 27052020,
+        "value": 20230729,
         "_row_num": 4
       },
       {
@@ -115,6 +115,32 @@
           }
         },
         "_row_num": 5
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "MIF",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Core MIF",
+              "default": "Core MIF"
+            }
+          }
+        },
+        "_row_num": 6
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "MIF_VISIT",
+        "display": {
+          "title": {
+            "text": {
+              "english": "MIF visit",
+              "default": "MIF visita"
+            }
+          }
+        },
+        "_row_num": 7
       }
     ],
     "survey": [
@@ -225,6 +251,42 @@
       {
         "clause": "exit section",
         "_row_num": 19
+      },
+      {
+        "branch_label": "MIF",
+        "_row_num": 20
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('MIF')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 22
+      },
+      {
+        "branch_label": "MIF_VISIT",
+        "_row_num": 23
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('MIF_VISIT')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 25
       }
     ],
     "framework_translations": [
@@ -707,7 +769,7 @@
       },
       "form_version": {
         "setting_name": "form_version",
-        "value": 27052020,
+        "value": 20230729,
         "_row_num": 4
       },
       "survey": {
@@ -851,6 +913,32 @@
             }
           },
           "_row_num": 5
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "MIF",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Core MIF",
+                "default": "Core MIF"
+              }
+            }
+          },
+          "_row_num": 6
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "MIF_VISIT",
+          "display": {
+            "title": {
+              "text": {
+                "english": "MIF visit",
+                "default": "MIF visita"
+              }
+            }
+          },
+          "_row_num": 7
         }
       ]
     },
@@ -1549,12 +1637,42 @@
             "promptIdx": 5
           },
           {
+            "url": "'?' + odkSurvey.getHashString('MIF')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 21,
+            "__rowNum__": 20,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen21",
+            "promptIdx": 6
+          },
+          {
+            "url": "'?' + odkSurvey.getHashString('MIF_VISIT')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 24,
+            "__rowNum__": 23,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen24",
+            "promptIdx": 7
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 20,
-            "_branch_label_enclosing_screen": "survey/_screen20",
-            "promptIdx": 6
+            "_row_num": 26,
+            "_branch_label_enclosing_screen": "survey/_screen26",
+            "promptIdx": 8
           }
         ],
         "validation_tag_map": {
@@ -1656,25 +1774,51 @@
             "operationIdx": 13
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 20,
+            "_row_num": 21,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
-            "_row_num": 20,
+            "clause": "exit section",
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "exit_section",
+            "operationIdx": 15
+          },
+          {
+            "_row_num": 24,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 16
+          },
+          {
+            "clause": "exit section",
+            "_row_num": 25,
+            "__rowNum__": 24,
+            "_token_type": "exit_section",
+            "operationIdx": 17
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 26,
+            "operationIdx": 18
+          },
+          {
+            "_row_num": 26,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 15
+            "operationIdx": 19
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 20,
-            "operationIdx": 16
+            "_row_num": 26,
+            "operationIdx": 20
           }
         ],
         "branch_label_map": {
@@ -1691,8 +1835,12 @@
           "_screen15": 10,
           "PREGNANCYFU": 12,
           "_screen18": 12,
-          "_contents": 15,
-          "_screen20": 15
+          "MIF": 14,
+          "_screen21": 14,
+          "MIF_VISIT": 16,
+          "_screen24": 16,
+          "_contents": 19,
+          "_screen26": 19
         }
       }
     },
