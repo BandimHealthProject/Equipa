@@ -127,7 +127,7 @@ function loadChildren() {
 function combinedList() {
     // make combined list
     personList = [];
-    MIF.forEach(function(preg) { // VIGTIGT: "pregnacies" skal være listen med kvinderne
+    MIF.forEach(function(preg) { // VIGTIGT: "pregnacies" skal være listen med kvinderne - changed to mif
         personList.push(preg);
         var thisPregChild = children.filter(function(obj) { // VIGTIGT: "children" skal være listen med børnene
             return obj.REGID == preg.REGID;
@@ -209,14 +209,14 @@ function setDisplayText(person) {
     var displayText, regdia;
     
     // hvis kvinde (pregnancy)
-    if (person.type == "pregnancy") {
+    if (person.type == "woman") {
         // funtion der formaterer dato til noget der er pænt at se på
         regdia = formatDate(person.REGDIA);
         
         // teksten
         displayText = "Morança: " + person.MOR + "<br />" +
         "Nome: " + person.NOMEMAE + "<br />" + 
-        "Dia de inclusão: " + regdia + "<br />" +
+        "Regdia: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
         
         
@@ -277,8 +277,8 @@ function openFormNewPreg() {
     // ODK-funktion der tilføje ny række til SQL-tabel 
     odkTables.addRowWithSurvey(
         null,
-        'MIF', // navn på table i SQL
-        'MIF_VISIT', // navn på den form der skal åbnes
+        'PREGNANCIES', // navn på table i SQL
+        'PREGNANCIES', // navn på den form der skal åbnes
         null,
         defaults);
 }
@@ -296,7 +296,7 @@ function openForm(person) {
     var rowId = person.rowId;
     
     // hvis kvinde (pregnancy)
-    if (person.type == 'MIF') { // pregnancy
+    if (person.type == 'woman') { // pregnancy
         // hvis besøgt allerede (registeret i dag), så skal man rette i en række, der allerede eksisterer
         if (person.REGDIA == todayAdate) {
             console.log("Edit form for pregnancy: ", person) // printer til log
@@ -363,7 +363,7 @@ function toAdate(date) {
 function getDefaults(person) {
     var defaults = {};
     // hvis kvinde
-    if (person.type == "MIF") { // pregnancy defaults 
+    if (person.type == "woman") { // pregnancy defaults 
         defaults['CONT'] = toAdate(date);
         defaults['HCAREA'] = hcarea;
         defaults['HCAREANOME'] = hcareaNome;
