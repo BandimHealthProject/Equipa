@@ -299,7 +299,7 @@ function openForm(person) {
     if (person.type == 'woman') { // pregnancy
         // hvis besøgt allerede (registeret i dag), så skal man rette i en række, der allerede eksisterer
         if (person.REGDIA == todayAdate) {
-            console.log("Edit form for pregnancy: ", person) // printer til log
+            console.log("Edit form for MIF visit: ", person) // printer til log
             odkTables.editRowWithSurvey(
                 null,
                 'MIF_VISIT',  // navn på table i SQL
@@ -308,7 +308,7 @@ function openForm(person) {
                 null,);
         // hvis besøgt allerede, så skal man rette i en række, der allerede eksisterer
         } else if (person.CONT == todayAdate) {
-            console.log("Edit form for pregnancy: ", person) // printer til log
+            console.log("Edit form for MIF Visit: ", person) // printer til log
             odkTables.editRowWithSurvey(
                 null,
                 'MIF_VISIT',  // navn på table i SQL
@@ -319,7 +319,7 @@ function openForm(person) {
         } else {
             // her sættes de værdier, der automatisk skal skrives, når man starter en ny form(/række i SQL) - denne gang er der bare en seperat funktion til dette
             var defaults = getDefaults(person);
-            console.log("Opening pregnancy follow-up form with: ", defaults); // printer til log
+            console.log("Opening MIF visit form with: ", defaults); // printer til log
             odkTables.addRowWithSurvey(
                 null,
                 'MIF_VISIT', // navn på table i SQL
