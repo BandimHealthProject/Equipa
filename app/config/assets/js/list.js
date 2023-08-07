@@ -215,7 +215,7 @@ function setDisplayText(person) {
         
         // teksten
         displayText = "Morança: " + person.MOR + "<br />" +
-        "Nome: " + person.NOMEMAE + "<br />" + 
+        "Nome_x: " + person.NOMEMAE + "<br />" + 
         "Regdia: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
         
@@ -299,7 +299,7 @@ function openForm(person) {
     if (person.type == 'woman') { // pregnancy
         // hvis besøgt allerede (registeret i dag), så skal man rette i en række, der allerede eksisterer
         if (person.REGDIA == todayAdate) {
-            console.log("Edit form for MIF visit: ", person) // printer til log
+            console.log("Edit form for MIF visit1: ", person) // printer til log
             odkTables.editRowWithSurvey(
                 null,
                 'MIF_VISIT',  // navn på table i SQL
@@ -308,7 +308,7 @@ function openForm(person) {
                 null,);
         // hvis besøgt allerede, så skal man rette i en række, der allerede eksisterer
         } else if (person.CONT == todayAdate) {
-            console.log("Edit form for MIF Visit: ", person) // printer til log
+            console.log("Edit form for MIF Visit2: ", person) // printer til log
             odkTables.editRowWithSurvey(
                 null,
                 'MIF_VISIT',  // navn på table i SQL
@@ -319,10 +319,10 @@ function openForm(person) {
         } else {
             // her sættes de værdier, der automatisk skal skrives, når man starter en ny form(/række i SQL) - denne gang er der bare en seperat funktion til dette
             var defaults = getDefaults(person);
-            console.log("Opening MIF visit form with: ", defaults); // printer til log
+            console.log("Opening MIF visit form with3: ", defaults); // printer til log
             odkTables.addRowWithSurvey(
                 null,
-                'MIF_VISIT', // navn på table i SQL
+                'MIF_VISIT',  // navn på table i SQL
                 'MIF_VISIT', // navn på den form der skal åbnes
                 null,
                 defaults);
@@ -365,15 +365,17 @@ function getDefaults(person) {
     // hvis kvinde
     if (person.type == "woman") { // pregnancy defaults 
         defaults['CONT'] = toAdate(date);
-        defaults['HCAREA'] = hcarea;
-        defaults['HCAREANOME'] = hcareaNome;
+   //     defaults['HCAREA'] = hcarea;
+    //    defaults['HCAREANOME'] = hcareaNome;
         defaults['REGID'] = person.REGID;
-        defaults['MOR'] = person.MOR;
-        defaults['NOMEMAE'] = person.NOMEMAE;
-        defaults['REGNOME'] = regNome;
-        defaults['REGDIA'] = person.REGDIA;
-        defaults['TAB'] = tab;
-        defaults['TABNOME'] = tabNome;
+    //    defaults['MOR'] = person.MOR;
+    //    defaults['NOMEMAE'] = person.NOMEMAE;
+    //    defaults['REGNOME'] = regNome;
+    //    defaults['REGDIA'] = person.REGDIA;
+    //    defaults['TAB'] = tab;
+    //    defaults['TABNOME'] = tabNome;
+// Herover fjernet en masse variabler som ikke er i formen - kunne det være forklaringen=
+
     // hvis barn
     } else { // child defaults
         defaults['DATASEG'] = toAdate(date);
