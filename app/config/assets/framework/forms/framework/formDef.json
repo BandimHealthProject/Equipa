@@ -19,7 +19,7 @@
       },
       {
         "setting_name": "form_version",
-        "value": 20230729,
+        "value": 202300808,
         "_row_num": 4
       },
       {
@@ -141,6 +141,19 @@
           }
         },
         "_row_num": 7
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "MIF_V_OOP",
+        "display": {
+          "title": {
+            "text": {
+              "english": "OOP Payments Births",
+              "default": "Pagamentos de Nascimento"
+            }
+          }
+        },
+        "_row_num": 8
       }
     ],
     "survey": [
@@ -287,6 +300,42 @@
       {
         "clause": "exit section",
         "_row_num": 25
+      },
+      {
+        "branch_label": "MIF_V_OOP",
+        "_row_num": 26
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('MIF_V_OOP')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 28
+      },
+      {
+        "branch_label": "MIF_V_OOP_ANC",
+        "_row_num": 29
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('MIF_V_ANC')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 31
       }
     ],
     "framework_translations": [
@@ -769,7 +818,7 @@
       },
       "form_version": {
         "setting_name": "form_version",
-        "value": 20230729,
+        "value": 202300808,
         "_row_num": 4
       },
       "survey": {
@@ -939,6 +988,19 @@
             }
           },
           "_row_num": 7
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "MIF_V_OOP",
+          "display": {
+            "title": {
+              "text": {
+                "english": "OOP Payments Births",
+                "default": "Pagamentos de Nascimento"
+              }
+            }
+          },
+          "_row_num": 8
         }
       ]
     },
@@ -1667,12 +1729,42 @@
             "promptIdx": 7
           },
           {
+            "url": "'?' + odkSurvey.getHashString('MIF_V_OOP')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 27,
+            "__rowNum__": 26,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen27",
+            "promptIdx": 8
+          },
+          {
+            "url": "'?' + odkSurvey.getHashString('MIF_V_ANC')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 30,
+            "__rowNum__": 29,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 9
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 26,
-            "_branch_label_enclosing_screen": "survey/_screen26",
-            "promptIdx": 8
+            "_row_num": 32,
+            "_branch_label_enclosing_screen": "survey/_screen32",
+            "promptIdx": 10
           }
         ],
         "validation_tag_map": {
@@ -1800,25 +1892,51 @@
             "operationIdx": 17
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 26,
+            "_row_num": 27,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
-            "_row_num": 26,
+            "clause": "exit section",
+            "_row_num": 28,
+            "__rowNum__": 27,
+            "_token_type": "exit_section",
+            "operationIdx": 19
+          },
+          {
+            "_row_num": 30,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(9);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 20
+          },
+          {
+            "clause": "exit section",
+            "_row_num": 31,
+            "__rowNum__": 30,
+            "_token_type": "exit_section",
+            "operationIdx": 21
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 32,
+            "operationIdx": 22
+          },
+          {
+            "_row_num": 32,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 19
+            "operationIdx": 23
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 26,
-            "operationIdx": 20
+            "_row_num": 32,
+            "operationIdx": 24
           }
         ],
         "branch_label_map": {
@@ -1839,8 +1957,12 @@
           "_screen21": 14,
           "MIF_VISIT": 16,
           "_screen24": 16,
-          "_contents": 19,
-          "_screen26": 19
+          "MIF_V_OOP": 18,
+          "_screen27": 18,
+          "MIF_V_OOP_ANC": 20,
+          "_screen30": 20,
+          "_contents": 23,
+          "_screen32": 23
         }
       }
     },
