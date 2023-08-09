@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<!-- beninTeaHouses Detailed View -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../../../assets/css/detail.css" type="text/css" rel="stylesheet" />
+        <script type="text/javascript" src="../../../assets/commonDefinitions.js"></script>
+        <script type="text/javascript" src="../../../assets/libs/jquery.js"></script>
+        <script type="text/javascript" src="../../../../system/js/odkCommon.js"></script>
+        <script type="text/javascript" src="../../../../system/js/odkData.js"></script>
+        <script type="text/javascript" src="../../../../system/tables/js/odkTables.js"></script>
+        <script type="text/javascript" src="../../../assets/js/util.js"></script>
+        <script type="text/javascript" src="../js/MIF_detail.js"></script>
+    </head>
+    <body>
+
+        <div class="header col-12">
+            <h1><span id="TITLE"></span></h1>
+        </div>
+
+        <br>
+
+        <div class="detail col-12">
+            <h3>Informacao da mulher</h3>
+        </div>
+
+        <div class="row">
+
+            <div class="col-6">
+                <p><span class="detailHdr">Moranca:</span> <span id="mif_moranca"></span></p>
+                <p><span class="detailHdr">Casa:</span> <span id="mif_casa"></span></p>
+                <p><span class="detailHdr">Fogao:</span> <span id="mif_fogao"></span></p>
+            </div>
+
+            <div class="col-6">
+                <p><span class="detailHdr">Data de nascimento:</span> <span id="mif_dob"></span></p>
+                <p><span class="detailHdr">Data de registo:</span> <span id="mif_reg"></span></p>
+                <p><span class="detailHdr">Data da ultima visita:</span> <span id="mif_lastvisit"></span></p>
+            </div>
+        </div>
+
+        <div class="detail col-12">
+            <h3>Informacao de relacoes</h3>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <p><span class="detailHdr">Relacao:</span> <span id="mif_rel"></span></p>
+                <p><span class="detailHdr">Nome de relacao:</span> <span id="mif_nomerel"></span></p>
+            </div>
+
+            <div class="col-6">
+                <p><span class="detailHdr">Mome da mae:</span> <span id="mif_mae"></span></p>
+            </div>
+        </div>
+
+        <div class="button">
+            <h3 href="#" onclick="onAddVisitClick()">Visita</h3>
+        </div>
+
+        <div class="button">
+            <h3 href="#" onclick="onLinkClick()">Criancas</h3>
+            <h3>(<span id="child_list"></span>)</h3>
+        </div>
+
+        <div class="button">
+            <h3 CDhref="#" onclick="onAddChildClick()">Nova Crianca</h3>
+        </div>
+
+        <script>
+            $(function() { display(); });  // calls the detail display function when ready
+        </script>
+    </body>
+</html>
