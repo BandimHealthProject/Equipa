@@ -215,7 +215,7 @@ function setDisplayText(person) {
         
         // teksten
         displayText = "Morança: " + person.MOR + "<br />" +
-        "Nome_x: " + person.NOMEMAE + "<br />" + 
+        "Nome: " + person.NOMEMAE + "<br />" + 
         "Regdia: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
         
