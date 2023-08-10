@@ -148,7 +148,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_SEL\") != null",
+        "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_SEL\") != null|| data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 11
       },
       {
@@ -163,7 +163,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_OU\") != null",
+        "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 12
       },
       {
@@ -232,7 +232,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_SEL\") != null",
+        "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_SEL\") != null || data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 22
       },
       {
@@ -247,7 +247,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_OU\") != null",
+        "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 23
       },
       {
@@ -316,7 +316,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_SEL\") != null",
+        "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_SEL\") != null|| data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 33
       },
       {
@@ -331,7 +331,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_OU\") != null",
+        "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_OU\") != null|| data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 34
       },
       {
@@ -400,7 +400,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null",
+        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null || data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 44
       },
       {
@@ -415,7 +415,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null",
+        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 45
       },
       {
@@ -2336,7 +2336,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_SEL\") != null",
+            "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_SEL\") != null|| data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 11,
             "__rowNum__": 10,
             "_token_type": "prompt",
@@ -2356,7 +2356,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_OU\") != null",
+            "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 12,
             "__rowNum__": 11,
             "_token_type": "prompt",
@@ -2414,7 +2414,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_SEL\") != null",
+            "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_SEL\") != null || data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 22,
             "__rowNum__": 21,
             "_token_type": "prompt",
@@ -2434,7 +2434,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_OU\") != null",
+            "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 23,
             "__rowNum__": 22,
             "_token_type": "prompt",
@@ -2492,7 +2492,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_SEL\") != null",
+            "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_SEL\") != null|| data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 33,
             "__rowNum__": 32,
             "_token_type": "prompt",
@@ -2512,7 +2512,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_OU\") != null",
+            "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_OU\") != null|| data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 34,
             "__rowNum__": 33,
             "_token_type": "prompt",
@@ -2570,7 +2570,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null",
+            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null || data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 44,
             "__rowNum__": 43,
             "_token_type": "prompt",
@@ -2590,7 +2590,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null",
+            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 45,
             "__rowNum__": 44,
             "_token_type": "prompt",

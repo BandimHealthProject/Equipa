@@ -122,7 +122,7 @@
           },
           "hint": {
             "text": {
-              "english": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999",
+              "english": "Se não obtou cartao durante este gravidez, indicar 8888, se não sabe o preco indicar 9999",
               "default": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999"
             }
           }
@@ -142,7 +142,7 @@
           },
           "hint": {
             "text": {
-              "english": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999",
+              "english": "Se não obtou cartao durante este gravidez, indicar 8888, se não sabe o preco indicar 9999",
               "default": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999"
             }
           }
@@ -168,7 +168,7 @@
           "prompt": {
             "text": {
               "english": "At which health centre/clinic/hospital did the woman seek the last ANC?",
-              "default": "Em que centro de saúde/clínica/hospital a mulher procorou Ulitima Consulta Prenatal?"
+              "default": "Em que centro de saúde/clínica/hospital a mulher procorou Ultima Consulta Prenatal?"
             }
           }
         },
@@ -254,7 +254,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_SEL\") != null",
+        "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 24
       },
       {
@@ -269,7 +269,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_OU\") != null",
+        "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 25
       },
       {
@@ -338,7 +338,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_SEL\") != null",
+        "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 35
       },
       {
@@ -353,7 +353,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_OU\") != null",
+        "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 36
       },
       {
@@ -422,7 +422,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_SEL\") != null",
+        "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 46
       },
       {
@@ -437,7 +437,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_OU\") != null",
+        "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 47
       },
       {
@@ -506,7 +506,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_SEL\") != null",
+        "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 57
       },
       {
@@ -521,7 +521,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_OU\") != null",
+        "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
         "_row_num": 58
       },
       {
@@ -2508,7 +2508,7 @@
               },
               "hint": {
                 "text": {
-                  "english": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999",
+                  "english": "Se não obtou cartao durante este gravidez, indicar 8888, se não sabe o preco indicar 9999",
                   "default": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999"
                 }
               }
@@ -2533,7 +2533,7 @@
               },
               "hint": {
                 "text": {
-                  "english": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999",
+                  "english": "Se não obtou cartao durante este gravidez, indicar 8888, se não sabe o preco indicar 9999",
                   "default": "Se não obtou cartao durante est gravidez, indicar 8888, se não sabe o preco indicar 9999"
                 }
               }
@@ -2552,7 +2552,7 @@
               "prompt": {
                 "text": {
                   "english": "At which health centre/clinic/hospital did the woman seek the last ANC?",
-                  "default": "Em que centro de saúde/clínica/hospital a mulher procorou Ulitima Consulta Prenatal?"
+                  "default": "Em que centro de saúde/clínica/hospital a mulher procorou Ultima Consulta Prenatal?"
                 }
               }
             },
@@ -2641,7 +2641,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_SEL\") != null",
+            "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 24,
             "__rowNum__": 23,
             "_token_type": "prompt",
@@ -2661,7 +2661,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_OU\") != null",
+            "constraint": "data(\"OOP_A_MATQ\") == 0 || data(\"OOP_A_MATT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 25,
             "__rowNum__": 24,
             "_token_type": "prompt",
@@ -2719,7 +2719,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_SEL\") != null",
+            "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 35,
             "__rowNum__": 34,
             "_token_type": "prompt",
@@ -2739,7 +2739,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_OU\") != null",
+            "constraint": "data(\"OOP_A_DIAQ\") == 0 || data(\"OOP_A_DIAT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 36,
             "__rowNum__": 35,
             "_token_type": "prompt",
@@ -2797,7 +2797,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_SEL\") != null",
+            "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 46,
             "__rowNum__": 45,
             "_token_type": "prompt",
@@ -2817,7 +2817,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_OU\") != null",
+            "constraint": "data(\"OOP_A_MEDQ\") == 0 || data(\"OOP_A_MEDT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 47,
             "__rowNum__": 46,
             "_token_type": "prompt",
@@ -2875,7 +2875,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_SEL\") != null",
+            "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_SEL\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 57,
             "__rowNum__": 56,
             "_token_type": "prompt",
@@ -2895,7 +2895,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_OU\") != null",
+            "constraint": "data(\"OOP_A_OUTQ\") == 0 || data(\"OOP_A_OUTT_OU\") != null || data(\"OOP_ANC\") != \"1\"",
             "_row_num": 58,
             "__rowNum__": 57,
             "_token_type": "prompt",
