@@ -21,8 +21,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Out of pocket payments",
-              "default": "Pagamentos"
+              "english": "Out of pocket payments Births",
+              "default": "Pagamentos Nascimentos"
             }
           }
         },
@@ -75,6 +75,7 @@
             }
           }
         },
+        "constraint": "data(\"OOP_BIRTH\") != null",
         "_row_num": 3
       },
       {
@@ -113,29 +114,8 @@
             }
           }
         },
+        "constraint": "data(\"OOP_B_SERQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
         "_row_num": 8
-      },
-      {
-        "clause": "if",
-        "condition": "data(\"OOP_B_SERQ\") >0",
-        "_row_num": 9
-      },
-      {
-        "type": "text",
-        "name": "OOP_B_SERT",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Which services",
-              "default": "Quais serviços?"
-            }
-          }
-        },
-        "_row_num": 10
-      },
-      {
-        "clause": "end if",
-        "_row_num": 11
       },
       {
         "type": "integer",
@@ -148,11 +128,47 @@
             }
           }
         },
-        "_row_num": 12
+        "constraint": "data(\"OOP_B_MATQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+        "_row_num": 9
       },
       {
         "clause": "if",
         "condition": "data(\"OOP_B_MATQ\") >0",
+        "_row_num": 10
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "Materials",
+        "name": "OOP_B_MATT_SEL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which materials",
+              "default": "Quais materias?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_SEL\") != null",
+        "_row_num": 11
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "OOP_B_MATT_OU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Other materials",
+              "default": "Outros materiass?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_OU\") != null",
+        "_row_num": 12
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"OOP_B_MATT_OU\") ==\"1\"",
         "_row_num": 13
       },
       {
@@ -166,11 +182,24 @@
             }
           }
         },
-        "_row_num": 14
+        "constraint": "data(\"OOP_B_MATT\") != null || data(\"OOP_B_MATT_OU\") != \"1\"",
+        "_row_num": 15
       },
       {
         "clause": "end if",
-        "_row_num": 15
+        "_row_num": 16
+      },
+      {
+        "clause": "end if",
+        "_row_num": 17
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 18
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 19
       },
       {
         "type": "integer",
@@ -183,12 +212,48 @@
             }
           }
         },
-        "_row_num": 16
+        "constraint": "data(\"OOP_B_DIAQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+        "_row_num": 20
       },
       {
         "clause": "if",
         "condition": "data(\"OOP_B_DIAQ\") >0",
-        "_row_num": 17
+        "_row_num": 21
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "Diagnostics",
+        "name": "OOP_B_DIAT_SEL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which diagnostics",
+              "default": "Quais diagnostics?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_SEL\") != null",
+        "_row_num": 22
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "OOP_B_DIAT_OU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Other diagnostics",
+              "default": "Outros diagnostics?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_OU\") != null",
+        "_row_num": 23
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"OOP_B_DIAT_OU\") ==\"1\"",
+        "_row_num": 24
       },
       {
         "type": "text",
@@ -196,16 +261,29 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Quais Diagnósticos?",
-              "default": "Quais Diagnósticos?"
+              "english": "Which diagnostics",
+              "default": "Quais diagnostics?"
             }
           }
         },
-        "_row_num": 18
+        "constraint": "data(\"OOP_B_DIAT\") != null || data(\"OOP_B_DIAT_OU\") != \"1\"",
+        "_row_num": 26
       },
       {
         "clause": "end if",
-        "_row_num": 19
+        "_row_num": 27
+      },
+      {
+        "clause": "end if",
+        "_row_num": 28
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 29
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 30
       },
       {
         "type": "integer",
@@ -213,17 +291,53 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Medicamentos (incl vitaminas)",
-              "default": "Medicamentos (incl vitaminas)"
+              "english": "Medicine:",
+              "default": "Medicamentos?"
             }
           }
         },
-        "_row_num": 20
+        "constraint": "data(\"OOP_B_MEDQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+        "_row_num": 31
       },
       {
         "clause": "if",
         "condition": "data(\"OOP_B_MEDQ\") >0",
-        "_row_num": 21
+        "_row_num": 32
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "Medicines",
+        "name": "OOP_B_MEDT_SEL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which drugs",
+              "default": "Quais medicamentos?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_SEL\") != null",
+        "_row_num": 33
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "OOP_B_MEDT_OU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Other drugs",
+              "default": "Outros medicametos?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_OU\") != null",
+        "_row_num": 34
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"OOP_B_MEDT_OU\") ==\"1\"",
+        "_row_num": 35
       },
       {
         "type": "text",
@@ -231,16 +345,29 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Quais medicamentos?",
+              "english": "Which drugs",
               "default": "Quais medicamentos?"
             }
           }
         },
-        "_row_num": 22
+        "constraint": "data(\"OOP_B_MEDT\") != null || data(\"OOP_B_MEDT_OU\") != \"1\"",
+        "_row_num": 37
       },
       {
         "clause": "end if",
-        "_row_num": 23
+        "_row_num": 38
+      },
+      {
+        "clause": "end if",
+        "_row_num": 39
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 40
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 41
       },
       {
         "type": "integer",
@@ -253,12 +380,48 @@
             }
           }
         },
-        "_row_num": 24
+        "constraint": "data(\"OOP_B_OUTQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+        "_row_num": 42
       },
       {
         "clause": "if",
         "condition": "data(\"OOP_B_OUTQ\") >0",
-        "_row_num": 25
+        "_row_num": 43
+      },
+      {
+        "type": "select_multiple",
+        "values_list": "Other_expenses",
+        "name": "OOP_B_OUTT_SEL",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Which other expenses",
+              "default": "Quais outros despesas?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null",
+        "_row_num": 44
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoDontknow",
+        "name": "OOP_B_OUTT_OU",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Other expenses",
+              "default": "Outros despesas?"
+            }
+          }
+        },
+        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null",
+        "_row_num": 45
+      },
+      {
+        "clause": "if",
+        "condition": "data(\"OOP_B_OUTT_OU\") ==\"1\"",
+        "_row_num": 46
       },
       {
         "type": "text",
@@ -266,28 +429,33 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Quais",
-              "default": "Quais"
+              "english": "Which other expenses",
+              "default": "Quais outros despesas?"
             }
           }
         },
-        "_row_num": 26
+        "constraint": "data(\"OOP_B_OUTT\") != null || data(\"OOP_B_OUTT_SEL\") != \"1\"",
+        "_row_num": 48
       },
       {
         "clause": "end if",
-        "_row_num": 27
+        "_row_num": 49
+      },
+      {
+        "clause": "end if",
+        "_row_num": 50
       },
       {
         "clause": "end screen",
-        "_row_num": 28
+        "_row_num": 51
       },
       {
         "clause": "end if",
-        "_row_num": 29
+        "_row_num": 52
       },
       {
         "clause": "begin screen",
-        "_row_num": 30
+        "_row_num": 53
       },
       {
         "type": "note",
@@ -298,7 +466,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 54
       },
       {
         "type": "integer",
@@ -311,10 +479,10 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 55
       },
       {
-        "type": "select_one_with_other",
+        "type": "select_multiple",
         "values_list": "Transport",
         "name": "OOP_B_TRAM",
         "display": {
@@ -324,11 +492,38 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 56
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "Transport_other",
+        "name": "OOP_B_TRAM_OU",
+        "_row_num": 57
       },
       {
         "clause": "end screen",
-        "_row_num": 34
+        "_row_num": 58
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 59
+      },
+      {
+        "type": "text",
+        "name": "OOP_B_OBS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Observations",
+              "default": "Observacoes"
+            }
+          }
+        },
+        "_row_num": 60
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 61
       }
     ],
     "choices": [
@@ -487,6 +682,331 @@
           }
         },
         "_row_num": 14
+      },
+      {
+        "choice_list_name": "Transport_other",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "All means of transport covered above",
+              "default": "Todos meios de transporte incluindo em cima"
+            }
+          }
+        },
+        "_row_num": 16
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Gloves",
+              "default": "Luvas"
+            }
+          }
+        },
+        "_row_num": 18
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Catherter",
+              "default": "Catherter"
+            }
+          }
+        },
+        "_row_num": 19
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Materias de sutura",
+              "default": "Materias de sutura"
+            }
+          }
+        },
+        "_row_num": 20
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 21
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 22
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Ecografia",
+              "default": "Ecografia"
+            }
+          }
+        },
+        "_row_num": 25
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Blood test",
+              "default": "Analyses de sangue"
+            }
+          }
+        },
+        "_row_num": 26
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Urine test",
+              "default": "Analyses de urina"
+            }
+          }
+        },
+        "_row_num": 27
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 28
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 29
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 30
+      },
+      {
+        "choice_list_name": "Medicines",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Soro",
+              "default": "Soro"
+            }
+          }
+        },
+        "_row_num": 32
+      },
+      {
+        "choice_list_name": "Medicines",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Oxytocina (inj. Malgueta)",
+              "default": "Oxytocina (inj. Malgueta)"
+            }
+          }
+        },
+        "_row_num": 33
+      },
+      {
+        "choice_list_name": "Medicines",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Misoprostol",
+              "default": "Misoprostol"
+            }
+          }
+        },
+        "_row_num": 34
+      },
+      {
+        "choice_list_name": "Medicines",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Antibiotics",
+              "default": "Antibioticos"
+            }
+          }
+        },
+        "_row_num": 35
+      },
+      {
+        "choice_list_name": "Medicines",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "choice_list_name": "Medicines",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 37
+      },
+      {
+        "choice_list_name": "Other_expenses",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Bed",
+              "default": "Cama"
+            }
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "choice_list_name": "Other_expenses",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Cleaning",
+              "default": "Limpeza"
+            }
+          }
+        },
+        "_row_num": 40
+      },
+      {
+        "choice_list_name": "Other_expenses",
+        "data_value": "3",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Cesariana",
+              "default": "Cesariana"
+            }
+          }
+        },
+        "_row_num": 41
+      },
+      {
+        "choice_list_name": "Other_expenses",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 42
+      },
+      {
+        "choice_list_name": "Other_expenses",
+        "data_value": "5",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 43
+      },
+      {
+        "choice_list_name": "Other_expenses",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 44
       }
     ],
     "queries": [
@@ -532,12 +1052,6 @@
         "name": "OOP_B_SERQ",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 3
-      },
-      {
-        "name": "OOP_B_SERT",
-        "type": "text",
-        "isSessionVariable": false,
         "_row_num": 4
       },
       {
@@ -553,70 +1067,130 @@
         "_row_num": 7
       },
       {
+        "name": "OOP_B_MATT_SEL",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 8
+      },
+      {
+        "name": "OOP_B_MATT_OU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 9
+      },
+      {
         "name": "OOP_B_DIAQ",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 9
+        "_row_num": 11
       },
       {
         "name": "OOP_B_DIAT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 10
+        "_row_num": 12
+      },
+      {
+        "name": "OOP_B_DIAT_SEL",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 13
+      },
+      {
+        "name": "OOP_B_DIAT_OU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 14
       },
       {
         "name": "OOP_B_MEDQ",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 12
+        "_row_num": 16
       },
       {
         "name": "OOP_B_MEDT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 13
+        "_row_num": 17
+      },
+      {
+        "name": "OOP_B_MEDT_SEL",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 18
+      },
+      {
+        "name": "OOP_B_MEDT_OU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 19
       },
       {
         "name": "OOP_B_OUTQ",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 15
+        "_row_num": 21
       },
       {
         "name": "OOP_B_OUTT",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 22
+      },
+      {
+        "name": "OOP_B_OUTT_SEL",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 23
+      },
+      {
+        "name": "OOP_B_OUTT_OU",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 24
+      },
+      {
+        "name": "OOP_B_OBS",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 26
       },
       {
         "name": "OOP_B_TRAQ",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 28
       },
       {
         "name": "OOP_B_TRAM",
+        "type": "select_multiple",
+        "isSessionVariable": false,
+        "_row_num": 29
+      },
+      {
+        "name": "OOP_B_TRAM_OU",
         "type": "select_one_with_other",
         "isSessionVariable": false,
-        "_row_num": 19
+        "_row_num": 30
       },
       {
         "name": "REGID",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 31
       },
       {
         "name": "VISITDATE",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 22
+        "_row_num": 32
       },
       {
         "name": "VISITID",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 23
+        "_row_num": 33
       }
     ]
   },
@@ -657,8 +1231,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Out of pocket payments",
-              "default": "Pagamentos"
+              "english": "Out of pocket payments Births",
+              "default": "Pagamentos Nascimentos"
             }
           }
         },
@@ -733,8 +1307,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Out of pocket payments",
-              "default": "Pagamentos"
+              "english": "Out of pocket payments Births",
+              "default": "Pagamentos Nascimentos"
             }
           }
         },
@@ -901,6 +1475,341 @@
           },
           "_row_num": 14
         }
+      ],
+      "Transport_other": [
+        {
+          "choice_list_name": "Transport_other",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "All means of transport covered above",
+                "default": "Todos meios de transporte incluindo em cima"
+              }
+            }
+          },
+          "_row_num": 16
+        }
+      ],
+      "Materials": [
+        {
+          "choice_list_name": "Materials",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Gloves",
+                "default": "Luvas"
+              }
+            }
+          },
+          "_row_num": 18
+        },
+        {
+          "choice_list_name": "Materials",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Catherter",
+                "default": "Catherter"
+              }
+            }
+          },
+          "_row_num": 19
+        },
+        {
+          "choice_list_name": "Materials",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Materias de sutura",
+                "default": "Materias de sutura"
+              }
+            }
+          },
+          "_row_num": 20
+        },
+        {
+          "choice_list_name": "Materials",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 21
+        },
+        {
+          "choice_list_name": "Materials",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 22
+        },
+        {
+          "choice_list_name": "Materials",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 23
+        }
+      ],
+      "Diagnostics": [
+        {
+          "choice_list_name": "Diagnostics",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Ecografia",
+                "default": "Ecografia"
+              }
+            }
+          },
+          "_row_num": 25
+        },
+        {
+          "choice_list_name": "Diagnostics",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Blood test",
+                "default": "Analyses de sangue"
+              }
+            }
+          },
+          "_row_num": 26
+        },
+        {
+          "choice_list_name": "Diagnostics",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Urine test",
+                "default": "Analyses de urina"
+              }
+            }
+          },
+          "_row_num": 27
+        },
+        {
+          "choice_list_name": "Diagnostics",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 28
+        },
+        {
+          "choice_list_name": "Diagnostics",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 29
+        },
+        {
+          "choice_list_name": "Diagnostics",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 30
+        }
+      ],
+      "Medicines": [
+        {
+          "choice_list_name": "Medicines",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Soro",
+                "default": "Soro"
+              }
+            }
+          },
+          "_row_num": 32
+        },
+        {
+          "choice_list_name": "Medicines",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Oxytocina (inj. Malgueta)",
+                "default": "Oxytocina (inj. Malgueta)"
+              }
+            }
+          },
+          "_row_num": 33
+        },
+        {
+          "choice_list_name": "Medicines",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Misoprostol",
+                "default": "Misoprostol"
+              }
+            }
+          },
+          "_row_num": 34
+        },
+        {
+          "choice_list_name": "Medicines",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Antibiotics",
+                "default": "Antibioticos"
+              }
+            }
+          },
+          "_row_num": 35
+        },
+        {
+          "choice_list_name": "Medicines",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 36
+        },
+        {
+          "choice_list_name": "Medicines",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 37
+        }
+      ],
+      "Other_expenses": [
+        {
+          "choice_list_name": "Other_expenses",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Bed",
+                "default": "Cama"
+              }
+            }
+          },
+          "_row_num": 39
+        },
+        {
+          "choice_list_name": "Other_expenses",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Cleaning",
+                "default": "Limpeza"
+              }
+            }
+          },
+          "_row_num": 40
+        },
+        {
+          "choice_list_name": "Other_expenses",
+          "data_value": "3",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Cesariana",
+                "default": "Cesariana"
+              }
+            }
+          },
+          "_row_num": 41
+        },
+        {
+          "choice_list_name": "Other_expenses",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 42
+        },
+        {
+          "choice_list_name": "Other_expenses",
+          "data_value": "5",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 43
+        },
+        {
+          "choice_list_name": "Other_expenses",
+          "data_value": "6",
+          "display": {
+            "title": {
+              "text": {
+                "english": "x",
+                "default": "x"
+              }
+            }
+          },
+          "_row_num": 44
+        }
       ]
     },
     "table_specific_definitions": {
@@ -954,33 +1863,18 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "OOP_B_SERQ"
       },
-      "OOP_B_SERT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 10,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 4,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_SERT"
-      },
       "OOP_B_MATQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 9,
             "section_name": "survey"
           },
           {
@@ -995,7 +1889,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
@@ -1006,15 +1900,51 @@
         "isSessionVariable": false,
         "elementKey": "OOP_B_MATT"
       },
-      "OOP_B_DIAQ": {
-        "type": "integer",
+      "OOP_B_MATT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_MATT_SEL_items"
+        },
+        "valuesList": "Materials",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MATT_SEL"
+      },
+      "OOP_B_MATT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
             "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MATT_OU"
+      },
+      "OOP_B_DIAQ": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1025,22 +1955,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 18,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 10,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_DIAT"
-      },
-      "OOP_B_MEDQ": {
-        "type": "integer",
-        "_defn": [
-          {
-            "_row_num": 20,
+            "_row_num": 26,
             "section_name": "survey"
           },
           {
@@ -1049,10 +1964,15 @@
           }
         ],
         "isSessionVariable": false,
-        "elementKey": "OOP_B_MEDQ"
+        "elementKey": "OOP_B_DIAT"
       },
-      "OOP_B_MEDT": {
-        "type": "string",
+      "OOP_B_DIAT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_DIAT_SEL_items"
+        },
+        "valuesList": "Diagnostics",
         "_defn": [
           {
             "_row_num": 22,
@@ -1064,17 +1984,99 @@
           }
         ],
         "isSessionVariable": false,
+        "elementKey": "OOP_B_DIAT_SEL"
+      },
+      "OOP_B_DIAT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 23,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_DIAT_OU"
+      },
+      "OOP_B_MEDQ": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 31,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MEDQ"
+      },
+      "OOP_B_MEDT": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 37,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 17,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
         "elementKey": "OOP_B_MEDT"
+      },
+      "OOP_B_MEDT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_MEDT_SEL_items"
+        },
+        "valuesList": "Medicines",
+        "_defn": [
+          {
+            "_row_num": 33,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MEDT_SEL"
+      },
+      "OOP_B_MEDT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 34,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MEDT_OU"
       },
       "OOP_B_OUTQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -1085,26 +2087,77 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 48,
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "OOP_B_OUTT"
       },
+      "OOP_B_OUTT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_OUTT_SEL_items"
+        },
+        "valuesList": "Other_expenses",
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_OUTT_SEL"
+      },
+      "OOP_B_OUTT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_OUTT_OU"
+      },
+      "OOP_B_OBS": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_OBS"
+      },
       "OOP_B_TRAQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 32,
+            "_row_num": 55,
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -1112,26 +2165,46 @@
         "elementKey": "OOP_B_TRAQ"
       },
       "OOP_B_TRAM": {
-        "type": "string",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_TRAM_items"
+        },
         "valuesList": "Transport",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 56,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "OOP_B_TRAM"
       },
+      "OOP_B_TRAM_OU": {
+        "type": "string",
+        "valuesList": "Transport_other",
+        "_defn": [
+          {
+            "_row_num": 57,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 30,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_TRAM_OU"
+      },
       "REGID": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -1147,7 +2220,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -1158,7 +2231,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -1188,6 +2261,7 @@
                 }
               }
             },
+            "constraint": "data(\"OOP_BIRTH\") != null",
             "_row_num": 3,
             "__rowNum__": 2,
             "_token_type": "prompt",
@@ -1223,30 +2297,13 @@
                 }
               }
             },
+            "constraint": "data(\"OOP_B_SERQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
             "_row_num": 8,
             "__rowNum__": 7,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 2
-          },
-          {
-            "type": "text",
-            "name": "OOP_B_SERT",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Which services",
-                  "default": "Quais serviços?"
-                }
-              }
-            },
-            "_row_num": 10,
-            "__rowNum__": 9,
-            "_token_type": "prompt",
-            "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 3
           },
           {
             "type": "integer",
@@ -1259,12 +2316,53 @@
                 }
               }
             },
-            "_row_num": 12,
-            "__rowNum__": 11,
+            "constraint": "data(\"OOP_B_MATQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+            "_row_num": 9,
+            "__rowNum__": 8,
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "survey/_screen6",
+            "promptIdx": 3
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "Materials",
+            "name": "OOP_B_MATT_SEL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which materials",
+                  "default": "Quais materias?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_SEL\") != null",
+            "_row_num": 11,
+            "__rowNum__": 10,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen6",
             "promptIdx": 4
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "OOP_B_MATT_OU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Other materials",
+                  "default": "Outros materiass?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_MATQ\") == 0 || data(\"OOP_B_MATT_OU\") != null",
+            "_row_num": 12,
+            "__rowNum__": 11,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen6",
+            "promptIdx": 5
           },
           {
             "type": "text",
@@ -1277,12 +2375,13 @@
                 }
               }
             },
-            "_row_num": 14,
-            "__rowNum__": 13,
+            "constraint": "data(\"OOP_B_MATT\") != null || data(\"OOP_B_MATT_OU\") != \"1\"",
+            "_row_num": 15,
+            "__rowNum__": 14,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 5
+            "promptIdx": 6
           },
           {
             "type": "integer",
@@ -1295,12 +2394,53 @@
                 }
               }
             },
-            "_row_num": 16,
-            "__rowNum__": 15,
+            "constraint": "data(\"OOP_B_DIAQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+            "_row_num": 20,
+            "__rowNum__": 19,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 6
+            "_branch_label_enclosing_screen": "survey/_screen19",
+            "promptIdx": 7
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "Diagnostics",
+            "name": "OOP_B_DIAT_SEL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which diagnostics",
+                  "default": "Quais diagnostics?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_SEL\") != null",
+            "_row_num": 22,
+            "__rowNum__": 21,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen19",
+            "promptIdx": 8
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "OOP_B_DIAT_OU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Other diagnostics",
+                  "default": "Outros diagnostics?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_DIAQ\") == 0 || data(\"OOP_B_DIAT_OU\") != null",
+            "_row_num": 23,
+            "__rowNum__": 22,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen19",
+            "promptIdx": 9
           },
           {
             "type": "text",
@@ -1308,17 +2448,18 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Quais Diagnósticos?",
-                  "default": "Quais Diagnósticos?"
+                  "english": "Which diagnostics",
+                  "default": "Quais diagnostics?"
                 }
               }
             },
-            "_row_num": 18,
-            "__rowNum__": 17,
+            "constraint": "data(\"OOP_B_DIAT\") != null || data(\"OOP_B_DIAT_OU\") != \"1\"",
+            "_row_num": 26,
+            "__rowNum__": 25,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 7
+            "_branch_label_enclosing_screen": "survey/_screen19",
+            "promptIdx": 10
           },
           {
             "type": "integer",
@@ -1326,17 +2467,58 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Medicamentos (incl vitaminas)",
-                  "default": "Medicamentos (incl vitaminas)"
+                  "english": "Medicine:",
+                  "default": "Medicamentos?"
                 }
               }
             },
-            "_row_num": 20,
-            "__rowNum__": 19,
+            "constraint": "data(\"OOP_B_MEDQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+            "_row_num": 31,
+            "__rowNum__": 30,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 8
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 11
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "Medicines",
+            "name": "OOP_B_MEDT_SEL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which drugs",
+                  "default": "Quais medicamentos?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_SEL\") != null",
+            "_row_num": 33,
+            "__rowNum__": 32,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 12
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "OOP_B_MEDT_OU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Other drugs",
+                  "default": "Outros medicametos?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_MEDQ\") == 0 || data(\"OOP_B_MEDT_OU\") != null",
+            "_row_num": 34,
+            "__rowNum__": 33,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 13
           },
           {
             "type": "text",
@@ -1344,17 +2526,18 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Quais medicamentos?",
+                  "english": "Which drugs",
                   "default": "Quais medicamentos?"
                 }
               }
             },
-            "_row_num": 22,
-            "__rowNum__": 21,
+            "constraint": "data(\"OOP_B_MEDT\") != null || data(\"OOP_B_MEDT_OU\") != \"1\"",
+            "_row_num": 37,
+            "__rowNum__": 36,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 9
+            "_branch_label_enclosing_screen": "survey/_screen30",
+            "promptIdx": 14
           },
           {
             "type": "integer",
@@ -1367,12 +2550,53 @@
                 }
               }
             },
-            "_row_num": 24,
-            "__rowNum__": 23,
+            "constraint": "data(\"OOP_B_OUTQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
+            "_row_num": 42,
+            "__rowNum__": 41,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 10
+            "_branch_label_enclosing_screen": "survey/_screen41",
+            "promptIdx": 15
+          },
+          {
+            "type": "select_multiple",
+            "values_list": "Other_expenses",
+            "name": "OOP_B_OUTT_SEL",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Which other expenses",
+                  "default": "Quais outros despesas?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null",
+            "_row_num": 44,
+            "__rowNum__": 43,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen41",
+            "promptIdx": 16
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoDontknow",
+            "name": "OOP_B_OUTT_OU",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Other expenses",
+                  "default": "Outros despesas?"
+                }
+              }
+            },
+            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null",
+            "_row_num": 45,
+            "__rowNum__": 44,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen41",
+            "promptIdx": 17
           },
           {
             "type": "text",
@@ -1380,17 +2604,18 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Quais",
-                  "default": "Quais"
+                  "english": "Which other expenses",
+                  "default": "Quais outros despesas?"
                 }
               }
             },
-            "_row_num": 26,
-            "__rowNum__": 25,
+            "constraint": "data(\"OOP_B_OUTT\") != null || data(\"OOP_B_OUTT_SEL\") != \"1\"",
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 11
+            "_branch_label_enclosing_screen": "survey/_screen41",
+            "promptIdx": 18
           },
           {
             "type": "note",
@@ -1401,12 +2626,12 @@
                 }
               }
             },
-            "_row_num": 31,
-            "__rowNum__": 30,
+            "_row_num": 54,
+            "__rowNum__": 53,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen30",
-            "promptIdx": 12
+            "_branch_label_enclosing_screen": "survey/_screen53",
+            "promptIdx": 19
           },
           {
             "type": "integer",
@@ -1419,15 +2644,15 @@
                 }
               }
             },
-            "_row_num": 32,
-            "__rowNum__": 31,
+            "_row_num": 55,
+            "__rowNum__": 54,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen30",
-            "promptIdx": 13
+            "_branch_label_enclosing_screen": "survey/_screen53",
+            "promptIdx": 20
           },
           {
-            "type": "select_one_with_other",
+            "type": "select_multiple",
             "values_list": "Transport",
             "name": "OOP_B_TRAM",
             "display": {
@@ -1437,24 +2662,72 @@
                 }
               }
             },
-            "_row_num": 33,
-            "__rowNum__": 32,
+            "_row_num": 56,
+            "__rowNum__": 55,
+            "_token_type": "prompt",
+            "_type": "select_multiple",
+            "_branch_label_enclosing_screen": "survey/_screen53",
+            "promptIdx": 21
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "Transport_other",
+            "name": "OOP_B_TRAM_OU",
+            "_row_num": 57,
+            "__rowNum__": 56,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen30",
-            "promptIdx": 14
+            "_branch_label_enclosing_screen": "survey/_screen53",
+            "promptIdx": 22
+          },
+          {
+            "type": "text",
+            "name": "OOP_B_OBS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Observations",
+                  "default": "Observacoes"
+                }
+              }
+            },
+            "_row_num": 60,
+            "__rowNum__": 59,
+            "_token_type": "prompt",
+            "_type": "text",
+            "_branch_label_enclosing_screen": "survey/_screen59",
+            "promptIdx": 23
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 35,
-            "_branch_label_enclosing_screen": "survey/_screen35",
-            "promptIdx": 15
+            "_row_num": 62,
+            "_branch_label_enclosing_screen": "survey/_screen62",
+            "promptIdx": 24
           }
         ],
         "validation_tag_map": {
-          "finalize": []
+          "finalize": [
+            0,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18
+          ]
         },
         "operations": [
           {
@@ -1483,8 +2756,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else29",
-            "_row_num": 29,
+            "_branch_label": "_else52",
+            "_row_num": 52,
             "operationIdx": 2
           },
           {
@@ -1494,18 +2767,25 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 28,
-              "__rowNum__": 27,
+              "_row_num": 18,
+              "__rowNum__": 17,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nif (data(\"OOP_B_SERQ\") >0) {\nactivePromptIndicies.push(3);\n}\nactivePromptIndicies.push(4);\nif (data(\"OOP_B_MATQ\") >0) {\nactivePromptIndicies.push(5);\n}\nactivePromptIndicies.push(6);\nif (data(\"OOP_B_DIAQ\") >0) {\nactivePromptIndicies.push(7);\n}\nactivePromptIndicies.push(8);\nif (data(\"OOP_B_MEDQ\") >0) {\nactivePromptIndicies.push(9);\n}\nactivePromptIndicies.push(10);\nif (data(\"OOP_B_OUTQ\") >0) {\nactivePromptIndicies.push(11);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nactivePromptIndicies.push(2);\nactivePromptIndicies.push(3);\nif (data(\"OOP_B_MATQ\") >0) {\nactivePromptIndicies.push(4);\nactivePromptIndicies.push(5);\nif (data(\"OOP_B_MATT_OU\") ==\"1\") {\nactivePromptIndicies.push(6);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 3
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif29",
-            "_row_num": 29,
+            "clause": "begin screen",
+            "_row_num": 19,
+            "__rowNum__": 18,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 29,
+              "__rowNum__": 28,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nif (data(\"OOP_B_DIAQ\") >0) {\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nif (data(\"OOP_B_DIAT_OU\") ==\"1\") {\nactivePromptIndicies.push(10);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 4
           },
           {
@@ -1515,44 +2795,97 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 34,
-              "__rowNum__": 33,
+              "_row_num": 40,
+              "__rowNum__": 39,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nif (data(\"OOP_B_MEDQ\") >0) {\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nif (data(\"OOP_B_MEDT_OU\") ==\"1\") {\nactivePromptIndicies.push(14);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 5
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 41,
+            "__rowNum__": 40,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 51,
+              "__rowNum__": 50,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nif (data(\"OOP_B_OUTQ\") >0) {\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nif (data(\"OOP_B_OUTT_OU\") ==\"1\") {\nactivePromptIndicies.push(18);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 6
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif52",
+            "_row_num": 52,
+            "operationIdx": 7
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 53,
+            "__rowNum__": 52,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 58,
+              "__rowNum__": 57,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 8
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 59,
+            "__rowNum__": 58,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 61,
+              "__rowNum__": 60,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 9
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 35,
-            "operationIdx": 6
+            "_row_num": 62,
+            "operationIdx": 10
           },
           {
-            "_row_num": 35,
+            "_row_num": 62,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 7
+            "operationIdx": 11
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 35,
-            "operationIdx": 8
+            "_row_num": 62,
+            "operationIdx": 12
           }
         ],
         "branch_label_map": {
           "_screen2": 0,
           "_then5": 3,
           "_screen6": 3,
-          "_else29": 5,
-          "_endif29": 5,
+          "_screen19": 4,
           "_screen30": 5,
-          "_contents": 7,
-          "_screen35": 7
+          "_screen41": 6,
+          "_else52": 8,
+          "_endif52": 8,
+          "_screen53": 8,
+          "_screen59": 9,
+          "_contents": 11,
+          "_screen62": 11
         }
       },
       "initial": {
@@ -1585,8 +2918,8 @@
             "display": {
               "title": {
                 "text": {
-                  "english": "Out of pocket payments",
-                  "default": "Pagamentos"
+                  "english": "Out of pocket payments Births",
+                  "default": "Pagamentos Nascimentos"
                 }
               }
             },
@@ -1764,7 +3097,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 3,
+            "_row_num": 4,
             "section_name": "model"
           }
         ],
@@ -1774,29 +3107,11 @@
         "elementSet": "data",
         "elementPath": "OOP_B_SERQ"
       },
-      "OOP_B_SERT": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 10,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 4,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_SERT",
-        "elementName": "OOP_B_SERT",
-        "elementSet": "data",
-        "elementPath": "OOP_B_SERT"
-      },
       "OOP_B_MATQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 9,
             "section_name": "survey"
           },
           {
@@ -1814,7 +3129,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 15,
             "section_name": "survey"
           },
           {
@@ -1828,15 +3143,64 @@
         "elementSet": "data",
         "elementPath": "OOP_B_MATT"
       },
-      "OOP_B_DIAQ": {
-        "type": "integer",
+      "OOP_B_MATT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_MATT_SEL_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OOP_B_MATT_SEL.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "Materials",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 11,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MATT_SEL",
+        "elementName": "OOP_B_MATT_SEL",
+        "elementSet": "data",
+        "elementPath": "OOP_B_MATT_SEL",
+        "listChildElementKeys": [
+          "OOP_B_MATT_SEL_items"
+        ]
+      },
+      "OOP_B_MATT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 12,
             "section_name": "survey"
           },
           {
             "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MATT_OU",
+        "elementName": "OOP_B_MATT_OU",
+        "elementSet": "data",
+        "elementPath": "OOP_B_MATT_OU"
+      },
+      "OOP_B_DIAQ": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 20,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
             "section_name": "model"
           }
         ],
@@ -1850,11 +3214,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 18,
+            "_row_num": 26,
             "section_name": "survey"
           },
           {
-            "_row_num": 10,
+            "_row_num": 12,
             "section_name": "model"
           }
         ],
@@ -1864,15 +3228,64 @@
         "elementSet": "data",
         "elementPath": "OOP_B_DIAT"
       },
+      "OOP_B_DIAT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_DIAT_SEL_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OOP_B_DIAT_SEL.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "Diagnostics",
+        "_defn": [
+          {
+            "_row_num": 22,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 13,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_DIAT_SEL",
+        "elementName": "OOP_B_DIAT_SEL",
+        "elementSet": "data",
+        "elementPath": "OOP_B_DIAT_SEL",
+        "listChildElementKeys": [
+          "OOP_B_DIAT_SEL_items"
+        ]
+      },
+      "OOP_B_DIAT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 23,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_DIAT_OU",
+        "elementName": "OOP_B_DIAT_OU",
+        "elementSet": "data",
+        "elementPath": "OOP_B_DIAT_OU"
+      },
       "OOP_B_MEDQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 20,
+            "_row_num": 31,
             "section_name": "survey"
           },
           {
-            "_row_num": 12,
+            "_row_num": 16,
             "section_name": "model"
           }
         ],
@@ -1886,11 +3299,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 37,
             "section_name": "survey"
           },
           {
-            "_row_num": 13,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -1900,15 +3313,64 @@
         "elementSet": "data",
         "elementPath": "OOP_B_MEDT"
       },
+      "OOP_B_MEDT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_MEDT_SEL_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OOP_B_MEDT_SEL.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "Medicines",
+        "_defn": [
+          {
+            "_row_num": 33,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 18,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MEDT_SEL",
+        "elementName": "OOP_B_MEDT_SEL",
+        "elementSet": "data",
+        "elementPath": "OOP_B_MEDT_SEL",
+        "listChildElementKeys": [
+          "OOP_B_MEDT_SEL_items"
+        ]
+      },
+      "OOP_B_MEDT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 34,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 19,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_MEDT_OU",
+        "elementName": "OOP_B_MEDT_OU",
+        "elementSet": "data",
+        "elementPath": "OOP_B_MEDT_OU"
+      },
       "OOP_B_OUTQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 42,
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -1922,11 +3384,11 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 26,
+            "_row_num": 48,
             "section_name": "survey"
           },
           {
-            "_row_num": 16,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -1936,15 +3398,82 @@
         "elementSet": "data",
         "elementPath": "OOP_B_OUTT"
       },
+      "OOP_B_OUTT_SEL": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_OUTT_SEL_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OOP_B_OUTT_SEL.items",
+          "notUnitOfRetention": true
+        },
+        "valuesList": "Other_expenses",
+        "_defn": [
+          {
+            "_row_num": 44,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 23,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_OUTT_SEL",
+        "elementName": "OOP_B_OUTT_SEL",
+        "elementSet": "data",
+        "elementPath": "OOP_B_OUTT_SEL",
+        "listChildElementKeys": [
+          "OOP_B_OUTT_SEL_items"
+        ]
+      },
+      "OOP_B_OUTT_OU": {
+        "type": "string",
+        "valuesList": "YesNoDontknow",
+        "_defn": [
+          {
+            "_row_num": 45,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 24,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_OUTT_OU",
+        "elementName": "OOP_B_OUTT_OU",
+        "elementSet": "data",
+        "elementPath": "OOP_B_OUTT_OU"
+      },
+      "OOP_B_OBS": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 26,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_OBS",
+        "elementName": "OOP_B_OBS",
+        "elementSet": "data",
+        "elementPath": "OOP_B_OBS"
+      },
       "OOP_B_TRAQ": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 32,
+            "_row_num": 55,
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -1955,15 +3484,23 @@
         "elementPath": "OOP_B_TRAQ"
       },
       "OOP_B_TRAM": {
-        "type": "string",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "elementKey": "OOP_B_TRAM_items",
+          "elementName": "items",
+          "elementSet": "data",
+          "elementPath": "OOP_B_TRAM.items",
+          "notUnitOfRetention": true
+        },
         "valuesList": "Transport",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 56,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -1971,13 +3508,35 @@
         "elementKey": "OOP_B_TRAM",
         "elementName": "OOP_B_TRAM",
         "elementSet": "data",
-        "elementPath": "OOP_B_TRAM"
+        "elementPath": "OOP_B_TRAM",
+        "listChildElementKeys": [
+          "OOP_B_TRAM_items"
+        ]
+      },
+      "OOP_B_TRAM_OU": {
+        "type": "string",
+        "valuesList": "Transport_other",
+        "_defn": [
+          {
+            "_row_num": 57,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 30,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "OOP_B_TRAM_OU",
+        "elementName": "OOP_B_TRAM_OU",
+        "elementSet": "data",
+        "elementPath": "OOP_B_TRAM_OU"
       },
       "REGID": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 21,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -1996,7 +3555,7 @@
         "__rowNum__": 1,
         "_defn": [
           {
-            "_row_num": 22,
+            "_row_num": 32,
             "section_name": "model"
           }
         ],
@@ -2010,7 +3569,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 23,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -2019,6 +3578,46 @@
         "elementName": "VISITID",
         "elementSet": "data",
         "elementPath": "VISITID"
+      },
+      "OOP_B_MATT_SEL_items": {
+        "type": "string",
+        "elementKey": "OOP_B_MATT_SEL_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "OOP_B_MATT_SEL.items",
+        "notUnitOfRetention": true
+      },
+      "OOP_B_DIAT_SEL_items": {
+        "type": "string",
+        "elementKey": "OOP_B_DIAT_SEL_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "OOP_B_DIAT_SEL.items",
+        "notUnitOfRetention": true
+      },
+      "OOP_B_MEDT_SEL_items": {
+        "type": "string",
+        "elementKey": "OOP_B_MEDT_SEL_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "OOP_B_MEDT_SEL.items",
+        "notUnitOfRetention": true
+      },
+      "OOP_B_OUTT_SEL_items": {
+        "type": "string",
+        "elementKey": "OOP_B_OUTT_SEL_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "OOP_B_OUTT_SEL.items",
+        "notUnitOfRetention": true
+      },
+      "OOP_B_TRAM_items": {
+        "type": "string",
+        "elementKey": "OOP_B_TRAM_items",
+        "elementName": "items",
+        "elementSet": "data",
+        "elementPath": "OOP_B_TRAM.items",
+        "notUnitOfRetention": true
       },
       "_id": {
         "type": "string",
@@ -2143,10 +3742,73 @@
       },
       {
         "_partition": "Column",
+        "_aspect": "OOP_B_DIAT_OU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":2},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":3},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_DIAT_SEL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ecografia\",\"default\":\"Ecografia\"}}},\"_row_num\":25},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Analyses de sangue\"}}},\"_row_num\":26},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Analyses de urina\"}}},\"_row_num\":27},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":28},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":30}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_MATT_OU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":2},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":3},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_MATT_SEL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":18},{\"choice_list_name\":\"Materials\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Catherter\",\"default\":\"Catherter\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Materias de sutura\",\"default\":\"Materias de sutura\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":23}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_MEDT_OU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":2},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":3},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_MEDT_SEL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro\",\"default\":\"Soro\"}}},\"_row_num\":32},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Oxytocina (inj. Malgueta)\",\"default\":\"Oxytocina (inj. Malgueta)\"}}},\"_row_num\":33},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Misoprostol\",\"default\":\"Misoprostol\"}}},\"_row_num\":34},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibioticos\"}}},\"_row_num\":35},{\"choice_list_name\":\"Medicines\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":36},{\"choice_list_name\":\"Medicines\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":37}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_OUTT_OU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":2},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":3},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_OUTT_SEL",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Bed\",\"default\":\"Cama\"}}},\"_row_num\":39},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Cleaning\",\"default\":\"Limpeza\"}}},\"_row_num\":40},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Cesariana\",\"default\":\"Cesariana\"}}},\"_row_num\":41},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":42},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":43},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":44}]"
+      },
+      {
+        "_partition": "Column",
         "_aspect": "OOP_B_TRAM",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"Transport\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"A pé\",\"default\":\"A pé\"}}},\"_row_num\":6},{\"choice_list_name\":\"Transport\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Mota\",\"default\":\"Mota\"}}},\"_row_num\":7},{\"choice_list_name\":\"Transport\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Carro\",\"default\":\"Carro\"}}},\"_row_num\":8},{\"choice_list_name\":\"Transport\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Taxi\",\"default\":\"Taxi\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transport\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Motocarro\",\"default\":\"Motocarro\"}}},\"_row_num\":10},{\"choice_list_name\":\"Transport\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Ambulancia\",\"default\":\"Ambulancia\"}}},\"_row_num\":11},{\"choice_list_name\":\"Transport\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao foi possive arranjar transporter\",\"default\":\"Nao foi possive arranjar transporter\"}}},\"_row_num\":12},{\"choice_list_name\":\"Transport\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Nao sabe\"}}},\"_row_num\":13},{\"choice_list_name\":\"Transport\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Recusou-se a responder\",\"default\":\"Recusou-se a responder\"}}},\"_row_num\":14}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "OOP_B_TRAM_OU",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"Transport_other\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"All means of transport covered above\",\"default\":\"Todos meios de transporte incluindo em cima\"}}},\"_row_num\":16}]"
       },
       {
         "_partition": "FormType",
@@ -2174,7 +3836,7 @@
         "_aspect": "default",
         "_key": "displayName",
         "_type": "object",
-        "_value": "{\"text\":{\"english\":\"Out of pocket payments\",\"default\":\"Pagamentos\"}}"
+        "_value": "{\"text\":{\"english\":\"Out of pocket payments Births\",\"default\":\"Pagamentos Nascimentos\"}}"
       }
     ]
   }
