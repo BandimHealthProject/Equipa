@@ -4,13 +4,13 @@
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
 
-var masterList, date, reg, regNome;
+var masterList, date, reg, regNome, assistant; // Added assistants
 function display() {
     console.log("Health centre list loading");
     date = util.getQueryParameter('date');
     reg = util.getQueryParameter('reg');
     regNome = util.getQueryParameter('regNome');
-
+    assistant = util.getQueryParameter('assistant'); // Added assistants
     var head = $('#main');
     head.prepend("<h1>" + regNome + " </br> <h3> Areas Sanitaria");
     
@@ -67,7 +67,7 @@ function initButtons() {
         // Buttons
         var btn = ul.find('#' + this.listGroup);
         btn.on("click", function() {
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, null,  null,  null,  null, assistant);
             odkTables.launchHTML(null, 'config/assets/tab.html' + queryParams);
         })        
     });

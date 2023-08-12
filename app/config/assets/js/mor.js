@@ -5,7 +5,7 @@
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
 
-var masterList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome;
+var masterList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome, assistant;
 function display() {
     console.log("Moranca list loading");
     date = util.getQueryParameter('date');
@@ -16,7 +16,7 @@ function display() {
     listGroup = util.getQueryParameter('listGroup');
     tab = util.getQueryParameter('tab'); // Ane
     tabNome = util.getQueryParameter('tabNome');  // Ane
-
+    assistant = util.getQueryParameter('assistant'); // Added assistant
 
     var head = $('#main');
     head.prepend("<h1>" + tabNome + " </br> <h3> Morancas");
@@ -73,7 +73,7 @@ function initButtons() {
         // Buttons
         var btn = ul.find('#' + this.mor);
         btn.on("click", function() {
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, that.tab, that.tabNome, that.mor, that.morNome);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, that.tab, that.tabNome, that.mor, that.morNome, assistant);
             odkTables.launchHTML(null, 'config/assets/list.html' + queryParams);
         })        
     });

@@ -4,13 +4,14 @@
 'use strict';
 /* global odkTables, util, odkCommon, odkData */
 
-var masterList, selDay, selMon, selYea, date;
+var assistants, masterList, selDay, selMon, selYea, selAssistant, date;
 function display() {
     console.log("Region list loading");
     selDay = $('#selDateDay');
     selMon = $('#selDateMonth');
     selYea = $('#selDateYear');
-    
+    selAssistant = $('#selAssistant');
+
     var head = $('#main');
     head.prepend("<h1> Regiões");
     
@@ -20,6 +21,23 @@ function display() {
 function doSanityCheck() {
     console.log("Checking things");
     console.log(odkData);
+}
+
+// Get assistants from CSV
+$.ajax({
+    url: 'assistants.csv',
+    dataType: ' ',
+}).done(getAssistants);
+
+function getAssistants(data) {
+    assistants = [];
+    var allRows = data.split(/\r?\n|\r/);
+    for (var row = 1; row < allRows.length; row++) {  // start at row = 1 to skip header
+        var rowValues = allRows[row].split(",");
+        var p = {code: rowValues[0], name: rowValues[1]};
+        assistants.push(p);
+    }
+    console.log('Assistants', assistants);
 }
 
 // Get masterlList from CSV
@@ -79,16 +97,28 @@ function initDate() {
             selYea.append($("<option />").val(this).text(this));
         }
     })
+
+     // Assistants dropdown
+     selAssistant.append($("<option />").val(-1).text("Assistente"));
+     $.each(assistants, function() {
+         selAssistant.append($("<option />").val(this.code).text(this.name));
+     })
     
     document.getElementById("selDateDay").onchange = function() {initButtons()};
     document.getElementById("selDateMonth").onchange = function() {initButtons()};
     document.getElementById("selDateYear").onchange = function() {initButtons()};
-    
+    document.getElementById("selAssistant").onchange = function() {initButtons()};
+
     initButtons();
 }
 
 function initButtons() {
-    // Group by region
+ //Herfra
+ var assistant = selAssistant.val();
+ console.log("assbtn", assistant)
+ //Hertil
+ 
+ // Group by region
     const regions = [];
     const map = new Map();
     for (const item of masterList) {
@@ -110,9 +140,14 @@ function initButtons() {
         // Buttons
         var btn = ul.find('#' + this.reg);
         btn.on("click", function() {
-            // set date
+        // herfra
+        if (!assistant || assistant < 0 ) {
+            selAssistant.css('background-color','pink');
+            return false;
+        }
+        // hertil       // set date
             var date = new Date(selYea.val(), selMon.val()-1, selDay.val());
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, null, null, null, null , null, null, null, assistant);
             odkTables.launchHTML(null, 'config/assets/hcarea.html' + queryParams);
         })        
     });
