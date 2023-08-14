@@ -1026,7 +1026,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2004,"Bijimita",23,"Ome",23,"ANTONIOCINHO CO(CLANGHO)",15
 2,"Biombo",2004,"Bijimita",23,"Ome",24,"BUTANCA CO(CLANGHO)",15
 2,"Biombo",2004,"Bijimita",23,"Ome",25,"ODJANA NANQUE",15
-2,"Biombo",2004,"Bijimita",23,"Ome",26,"MARRA CA=37,42",15
+2,"Biombo",2004,"Bijimita",23,"Ome",26,"MARRA CA=37;42",15
 2,"Biombo",2004,"Bijimita",23,"Ome",27,"ARONE TE",15
 2,"Biombo",2004,"Bijimita",23,"Ome",28,"OMBUNDARA NANQUE(COMITE)",15
 2,"Biombo",2004,"Bijimita",23,"Ome",29,"ASSALA NANQUE",15
@@ -1037,12 +1037,12 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2004,"Bijimita",23,"Ome",34,"OLAMPRA NANQUE",15
 2,"Biombo",2004,"Bijimita",23,"Ome",35,"NDIUA NANQUE=43",15
 2,"Biombo",2004,"Bijimita",23,"Ome",36,"MBUNDE CA",15
-2,"Biombo",2004,"Bijimita",23,"Ome",37,"NTON-MA NANQUE=26,42",15
+2,"Biombo",2004,"Bijimita",23,"Ome",37,"NTON-MA NANQUE=26;42",15
 2,"Biombo",2004,"Bijimita",23,"Ome",38,"NSAL NDJINA NANQUE",15
 2,"Biombo",2004,"Bijimita",23,"Ome",39,"NDJUCACIN CO(ILONDE)",15
 2,"Biombo",2004,"Bijimita",23,"Ome",40,"IOIA TE",15
 2,"Biombo",2004,"Bijimita",23,"Ome",41,"INTCHANGA NANQUE",15
-2,"Biombo",2004,"Bijimita",23,"Ome",42,"ARA INDI=26,37",15
+2,"Biombo",2004,"Bijimita",23,"Ome",42,"ARA INDI=26;37",15
 2,"Biombo",2004,"Bijimita",23,"Ome",44,"INDJAI",15
 2,"Biombo",2004,"Bijimita",23,"Ome",45,"ANQUINA",15
 2,"Biombo",2004,"Bijimita",23,"Ome",46,"AOSSA NANQUE",15
@@ -1200,7 +1200,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2007,"Prabis",12,"Reino Quicete",4,"CALE CA",18
 2,"Biombo",2007,"Prabis",12,"Reino Quicete",5,"AUGUSTO CO=3",18
 2,"Biombo",2007,"Prabis",12,"Reino Quicete",6,"AGOSTINHO CO=3",18
-2,"Biombo",2007,"Prabis",12,"Reino Quicete",10,"AUGUSTO NANQUE=7,8,9",18
+2,"Biombo",2007,"Prabis",12,"Reino Quicete",10,"AUGUSTO NANQUE=7;8;9",18
 2,"Biombo",2007,"Prabis",12,"Reino Quicete",11,"CABI CA",18
 2,"Biombo",2007,"Prabis",12,"Reino Quicete",12,"MALAM DJU=11",18
 2,"Biombo",2007,"Prabis",12,"Reino Quicete",13,"IN-HIU NANQU",18

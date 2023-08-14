@@ -2144,6 +2144,24 @@
         "type": "async_assign_date",
         "isSessionVariable": false,
         "_row_num": 58
+      },
+      {
+        "name": "GR_LAST",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 60
+      },
+      {
+        "name": "GR_AINDA",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 61
+      },
+      {
+        "name": "PARPAD3",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 64
       }
     ]
   },
@@ -3904,6 +3922,39 @@
         "type": "async_assign_date",
         "isSessionVariable": false,
         "elementKey": "LASTVISIT"
+      },
+      "GR_LAST": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GR_LAST"
+      },
+      "GR_AINDA": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GR_AINDA"
+      },
+      "PARPAD3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARPAD3"
       }
     },
     "section_names": [
@@ -6289,6 +6340,48 @@
         "elementName": "LASTVISIT",
         "elementSet": "data",
         "elementPath": "LASTVISIT"
+      },
+      "GR_LAST": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GR_LAST",
+        "elementName": "GR_LAST",
+        "elementSet": "data",
+        "elementPath": "GR_LAST"
+      },
+      "GR_AINDA": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GR_AINDA",
+        "elementName": "GR_AINDA",
+        "elementSet": "data",
+        "elementPath": "GR_AINDA"
+      },
+      "PARPAD3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "PARPAD3",
+        "elementName": "PARPAD3",
+        "elementSet": "data",
+        "elementPath": "PARPAD3"
       },
       "abns_items": {
         "type": "string",

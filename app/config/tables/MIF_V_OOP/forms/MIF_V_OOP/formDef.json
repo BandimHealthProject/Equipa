@@ -110,7 +110,7 @@
           "prompt": {
             "text": {
               "english": "Prestação de serviços",
-              "default": "Prestação de serviços"
+              "default": "Prestação de serviços (internamento)"
             }
           }
         },
@@ -144,7 +144,7 @@
           "prompt": {
             "text": {
               "english": "Which materials",
-              "default": "Quais materias?"
+              "default": "Quais materiais?"
             }
           }
         },
@@ -159,7 +159,7 @@
           "prompt": {
             "text": {
               "english": "Other materials",
-              "default": "Outros materiass?"
+              "default": "Outros materiais?"
             }
           }
         },
@@ -207,8 +207,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Diagnósticos:",
-              "default": "Diagnósticos:"
+              "english": "Diagnósticos/Exames/Analises:",
+              "default": "Diagnósticos/Exames/Analises:"
             }
           }
         },
@@ -228,7 +228,7 @@
           "prompt": {
             "text": {
               "english": "Which diagnostics",
-              "default": "Quais diagnostics?"
+              "default": "Quais diagnostics? (Diagnósticos/Exames/Analises)"
             }
           }
         },
@@ -243,7 +243,7 @@
           "prompt": {
             "text": {
               "english": "Other diagnostics",
-              "default": "Outros diagnostics?"
+              "default": "Outros Diagnósticos/Exames/Analises?"
             }
           }
         },
@@ -262,7 +262,7 @@
           "prompt": {
             "text": {
               "english": "Which diagnostics",
-              "default": "Quais diagnostics?"
+              "default": "Quais Diagnósticos/Exames/Analises?"
             }
           }
         },
@@ -2293,7 +2293,7 @@
               "prompt": {
                 "text": {
                   "english": "Prestação de serviços",
-                  "default": "Prestação de serviços"
+                  "default": "Prestação de serviços (internamento)"
                 }
               }
             },
@@ -2332,7 +2332,7 @@
               "prompt": {
                 "text": {
                   "english": "Which materials",
-                  "default": "Quais materias?"
+                  "default": "Quais materiais?"
                 }
               }
             },
@@ -2352,7 +2352,7 @@
               "prompt": {
                 "text": {
                   "english": "Other materials",
-                  "default": "Outros materiass?"
+                  "default": "Outros materiais?"
                 }
               }
             },
@@ -2389,8 +2389,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Diagnósticos:",
-                  "default": "Diagnósticos:"
+                  "english": "Diagnósticos/Exames/Analises:",
+                  "default": "Diagnósticos/Exames/Analises:"
                 }
               }
             },
@@ -2410,7 +2410,7 @@
               "prompt": {
                 "text": {
                   "english": "Which diagnostics",
-                  "default": "Quais diagnostics?"
+                  "default": "Quais diagnostics? (Diagnósticos/Exames/Analises)"
                 }
               }
             },
@@ -2430,7 +2430,7 @@
               "prompt": {
                 "text": {
                   "english": "Other diagnostics",
-                  "default": "Outros diagnostics?"
+                  "default": "Outros Diagnósticos/Exames/Analises?"
                 }
               }
             },
@@ -2449,7 +2449,7 @@
               "prompt": {
                 "text": {
                   "english": "Which diagnostics",
-                  "default": "Quais diagnostics?"
+                  "default": "Quais Diagnósticos/Exames/Analises?"
                 }
               }
             },

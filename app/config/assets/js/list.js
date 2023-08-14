@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var MIF, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome,  mor, morNome;
+var MIF, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome,  mor, morNome, assistant;
 function display() {
     console.log("Person list loading");
     date = util.getQueryParameter('date');
@@ -16,6 +16,7 @@ function display() {
     tabNome = util.getQueryParameter('tabNome');
     mor = util.getQueryParameter('mor');
     morNome = util.getQueryParameter('morNome');
+    assistant = util.getQueryParameter('assistant');
 
     var head = $('#main');
     head.prepend("<h1>" + mor + " - " + morNome + " </br> <h3> Mulheres");
@@ -369,12 +370,15 @@ function getDefaults(person) {
     //    defaults['HCAREANOME'] = hcareaNome;
         defaults['REGID'] = person.REGID;
     //    defaults['MOR'] = person.MOR;
-    //    defaults['NOMEMAE'] = person.NOMEMAE;
+        defaults['NOMEMAE'] = person.NOMEMAE;
+        defaults['PARPAD3'] = person.PARPAD3;
+        defaults['GR_LAST'] = person.GR_LAST;
     //    defaults['REGNOME'] = regNome;
     //    defaults['REGDIA'] = person.REGDIA;
     //    defaults['TAB'] = tab;
     //    defaults['TABNOME'] = tabNome;
-// Herover fjernet en masse variabler som ikke er i formen - kunne det være forklaringen=
+      defaults['ASSISTENTE'] = assistant;
+    // Herover fjernet en masse variabler som ikke er i formen - kunne det være forklaringen=
 
     // hvis barn
     } else { // child defaults

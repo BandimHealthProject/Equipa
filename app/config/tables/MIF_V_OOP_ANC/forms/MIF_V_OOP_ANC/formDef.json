@@ -102,7 +102,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_ANC\") != null",
+        "constraint": "data(\"OOP_ANC\") != null || data(\"ANC\")!=\"1\"",
         "_row_num": 7
       },
       {
@@ -2488,7 +2488,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_ANC\") != null",
+            "constraint": "data(\"OOP_ANC\") != null || data(\"ANC\")!=\"1\"",
             "_row_num": 7,
             "__rowNum__": 6,
             "_token_type": "prompt",
