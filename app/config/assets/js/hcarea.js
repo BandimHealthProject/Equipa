@@ -6,20 +6,21 @@
 
 var masterList, date, reg, regNome, assistant; // Added assistants
 function display() {
-    console.log("Health centre list loading");
+    console.log("Health centre list loading"); 
     date = util.getQueryParameter('date');
     reg = util.getQueryParameter('reg');
     regNome = util.getQueryParameter('regNome');
     assistant = util.getQueryParameter('assistant'); // Added assistants
     var head = $('#main');
     head.prepend("<h1>" + regNome + " </br> <h3> Areas Sanitaria");
-    
+    console.log(assistant); // her    15/8
     doSanityCheck();
 }
 
 function doSanityCheck() {
     console.log("Checking things");
     console.log(odkData);
+    console.log(assistant); // her 15/8
 }
 
 // Get masterlList from CSV
@@ -44,18 +45,19 @@ function getMasterList(data) {
 }
 
 function initButtons() {
-    // Group by hcarea
+      // Group by hcarea 15-8
     const hcareas = [];
     const map = new Map();
     for (const item of masterList) {
         if (item.reg == reg) {
-            if(!map.has(item.listGroup)){
-                map.set(item.listGroup, true);    // set any value to Map
+            if(!map.has(item.hcarea)){
+                map.set(item.hcarea, true);    // set any value to Map
                 hcareas.push(item);
             }
         }
     }
     console.log("hcareas", hcareas);
+    console.log("Assistant_tjek", assistant);
 
     // Health centre buttons
     var ul = $('#li');
@@ -67,7 +69,7 @@ function initButtons() {
         // Buttons
         var btn = ul.find('#' + this.listGroup);
         btn.on("click", function() {
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, null,  null,  null,  null, assistant);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, null,  null, null, null, assistant);
             odkTables.launchHTML(null, 'config/assets/tab.html' + queryParams);
         })        
     });

@@ -71,7 +71,7 @@
           "prompt": {
             "text": {
               "english": "Did you pay for the birth?",
-              "default": "Você pagou o parto?"
+              "default": "Você pagou pelo parto?"
             }
           }
         },
@@ -109,9 +109,12 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Prestação de serviços",
-              "default": "Prestação de serviços (internamento)"
+              "english": "Prestação de serviços (pagamentos alem de materiais, diagnosticos e medicamentos)",
+              "default": "Prestação de serviços (pagamentos além de materiais, diagnósticos e medicamentos)"
             }
+          },
+          "hint": {
+            "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
           }
         },
         "constraint": "data(\"OOP_B_SERQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -124,8 +127,11 @@
           "prompt": {
             "text": {
               "english": "Materiais:",
-              "default": "Materiais?"
+              "default": "Quanto é que pagou pelos materiais?"
             }
+          },
+          "hint": {
+            "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
           }
         },
         "constraint": "data(\"OOP_B_MATQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -208,8 +214,11 @@
           "prompt": {
             "text": {
               "english": "Diagnósticos/Exames/Analises:",
-              "default": "Diagnósticos/Exames/Analises:"
+              "default": "Quanto é que pagou pelos diagnósticos/exames/análises:"
             }
+          },
+          "hint": {
+            "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
           }
         },
         "constraint": "data(\"OOP_B_DIAQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -228,7 +237,7 @@
           "prompt": {
             "text": {
               "english": "Which diagnostics",
-              "default": "Quais diagnostics? (Diagnósticos/Exames/Analises)"
+              "default": "Quais diagnósticos? (diagnósticos/exames/análises)"
             }
           }
         },
@@ -243,7 +252,7 @@
           "prompt": {
             "text": {
               "english": "Other diagnostics",
-              "default": "Outros Diagnósticos/Exames/Analises?"
+              "default": "Outros diagnósticos/exames/análises?"
             }
           }
         },
@@ -262,7 +271,7 @@
           "prompt": {
             "text": {
               "english": "Which diagnostics",
-              "default": "Quais Diagnósticos/Exames/Analises?"
+              "default": "Quais diagnósticos/exames/análises?"
             }
           }
         },
@@ -292,8 +301,11 @@
           "prompt": {
             "text": {
               "english": "Medicine:",
-              "default": "Medicamentos?"
+              "default": "Quanto é que pagou pelos medicamentos?"
             }
+          },
+          "hint": {
+            "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
           }
         },
         "constraint": "data(\"OOP_B_MEDQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -376,8 +388,11 @@
           "prompt": {
             "text": {
               "english": "Outros despesas?",
-              "default": "Outros despesas?"
+              "default": "Quanto é que pagou pelos outros despesas?"
             }
+          },
+          "hint": {
+            "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
           }
         },
         "constraint": "data(\"OOP_B_OUTQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -387,41 +402,6 @@
         "clause": "if",
         "condition": "data(\"OOP_B_OUTQ\") >0",
         "_row_num": 43
-      },
-      {
-        "type": "select_multiple",
-        "values_list": "Other_expenses",
-        "name": "OOP_B_OUTT_SEL",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Which other expenses",
-              "default": "Quais outros despesas?"
-            }
-          }
-        },
-        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null || data(\"OOP_BIRTH\") != \"1\"",
-        "_row_num": 44
-      },
-      {
-        "type": "select_one",
-        "values_list": "YesNoDontknow",
-        "name": "OOP_B_OUTT_OU",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Other expenses",
-              "default": "Outros despesas?"
-            }
-          }
-        },
-        "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
-        "_row_num": 45
-      },
-      {
-        "clause": "if",
-        "condition": "data(\"OOP_B_OUTT_OU\") ==\"1\"",
-        "_row_num": 46
       },
       {
         "type": "text",
@@ -434,39 +414,36 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_OUTT\") != null || data(\"OOP_B_OUTT_SEL\") != \"1\"",
-        "_row_num": 48
+        "constraint": "data(\"OOP_B_OUTT\") != null || data(\"OOP_B_OUTQ\") ==0",
+        "_row_num": 44
       },
       {
         "clause": "end if",
-        "_row_num": 49
-      },
-      {
-        "clause": "end if",
-        "_row_num": 50
+        "_row_num": 45
       },
       {
         "clause": "end screen",
-        "_row_num": 51
+        "_row_num": 46
       },
       {
         "clause": "end if",
-        "_row_num": 52
+        "_row_num": 47
       },
       {
         "clause": "begin screen",
-        "_row_num": 53
+        "_row_num": 48
       },
       {
         "type": "note",
         "display": {
           "prompt": {
             "text": {
-              "english": "Transporte"
+              "english": "Transporte",
+              "default": "Transporte"
             }
           }
         },
-        "_row_num": 54
+        "_row_num": 49
       },
       {
         "type": "integer",
@@ -475,11 +452,15 @@
           "prompt": {
             "text": {
               "english": "Quanto pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?",
-              "default": "Quanto pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?"
+              "default": "Quanto é que pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?"
             }
+          },
+          "hint": {
+            "text": "Se parto domiciliar, indique 0 <br> Indique: 33 se não sabe; 77 se recusou-se a responder"
           }
         },
-        "_row_num": 55
+        "constraint": "data(\"OOP_B_TRAQ\")!=null",
+        "_row_num": 50
       },
       {
         "type": "select_multiple",
@@ -488,25 +469,28 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Meio de transporte"
+              "english": "Meio de transporte",
+              "default": "Meio de transporte"
             }
           }
         },
-        "_row_num": 56
+        "constraint": "data(\"OOP_B_TRAM\")!=null ||data(\"OOP_B_TRAQ\")==0",
+        "_row_num": 52
       },
       {
         "type": "select_one_with_other",
         "values_list": "Transport_other",
         "name": "OOP_B_TRAM_OU",
-        "_row_num": 57
+        "constraint": "data(\"OOP_B_TRAM_OU\")!=null ||data(\"OOP_B_TRAQ\")==0",
+        "_row_num": 53
       },
       {
         "clause": "end screen",
-        "_row_num": 58
+        "_row_num": 54
       },
       {
         "clause": "begin screen",
-        "_row_num": 59
+        "_row_num": 55
       },
       {
         "type": "text",
@@ -515,15 +499,15 @@
           "prompt": {
             "text": {
               "english": "Observations",
-              "default": "Observacoes"
+              "default": "Observações"
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 56
       },
       {
         "clause": "end screen",
-        "_row_num": 61
+        "_row_num": 57
       }
     ],
     "choices": [
@@ -638,7 +622,7 @@
           "title": {
             "text": {
               "english": "Ambulancia",
-              "default": "Ambulancia"
+              "default": "Ambulância"
             }
           }
         },
@@ -651,7 +635,7 @@
           "title": {
             "text": {
               "english": "Nao foi possive arranjar transporter",
-              "default": "Nao foi possive arranjar transporter"
+              "default": "Não foi possivel arranjar transporte"
             }
           }
         },
@@ -664,7 +648,7 @@
           "title": {
             "text": {
               "english": "Nao sabe",
-              "default": "Nao sabe"
+              "default": "Não sabe"
             }
           }
         },
@@ -684,17 +668,30 @@
         "_row_num": 14
       },
       {
+        "choice_list_name": "Transport",
+        "data_value": "77",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Nemhuma",
+              "default": "Nemhuma destes"
+            }
+          }
+        },
+        "_row_num": 15
+      },
+      {
         "choice_list_name": "Transport_other",
         "data_value": "2",
         "display": {
           "title": {
             "text": {
               "english": "All means of transport covered above",
-              "default": "Todos meios de transporte incluindo em cima"
+              "default": "Todos os meios de transporte estão incluídos acima"
             }
           }
         },
-        "_row_num": 16
+        "_row_num": 17
       },
       {
         "choice_list_name": "Materials",
@@ -707,7 +704,7 @@
             }
           }
         },
-        "_row_num": 18
+        "_row_num": 19
       },
       {
         "choice_list_name": "Materials",
@@ -715,12 +712,12 @@
         "display": {
           "title": {
             "text": {
-              "english": "Catherter",
-              "default": "Catherter"
+              "english": "Caterther",
+              "default": "Cateter"
             }
           }
         },
-        "_row_num": 19
+        "_row_num": 20
       },
       {
         "choice_list_name": "Materials",
@@ -733,24 +730,11 @@
             }
           }
         },
-        "_row_num": 20
-      },
-      {
-        "choice_list_name": "Materials",
-        "data_value": "4",
-        "display": {
-          "title": {
-            "text": {
-              "english": "x",
-              "default": "x"
-            }
-          }
-        },
         "_row_num": 21
       },
       {
         "choice_list_name": "Materials",
-        "data_value": "5",
+        "data_value": "4",
         "display": {
           "title": {
             "text": {
@@ -763,7 +747,7 @@
       },
       {
         "choice_list_name": "Materials",
-        "data_value": "6",
+        "data_value": "5",
         "display": {
           "title": {
             "text": {
@@ -773,6 +757,19 @@
           }
         },
         "_row_num": 23
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 24
       },
       {
         "choice_list_name": "Diagnostics",
@@ -785,7 +782,7 @@
             }
           }
         },
-        "_row_num": 25
+        "_row_num": 26
       },
       {
         "choice_list_name": "Diagnostics",
@@ -794,11 +791,11 @@
           "title": {
             "text": {
               "english": "Blood test",
-              "default": "Analyses de sangue"
+              "default": "Análises de sangue"
             }
           }
         },
-        "_row_num": 26
+        "_row_num": 27
       },
       {
         "choice_list_name": "Diagnostics",
@@ -807,20 +804,7 @@
           "title": {
             "text": {
               "english": "Urine test",
-              "default": "Analyses de urina"
-            }
-          }
-        },
-        "_row_num": 27
-      },
-      {
-        "choice_list_name": "Diagnostics",
-        "data_value": "4",
-        "display": {
-          "title": {
-            "text": {
-              "english": "x",
-              "default": "x"
+              "default": "Análises de urina"
             }
           }
         },
@@ -828,7 +812,7 @@
       },
       {
         "choice_list_name": "Diagnostics",
-        "data_value": "5",
+        "data_value": "4",
         "display": {
           "title": {
             "text": {
@@ -841,7 +825,7 @@
       },
       {
         "choice_list_name": "Diagnostics",
-        "data_value": "6",
+        "data_value": "5",
         "display": {
           "title": {
             "text": {
@@ -851,6 +835,19 @@
           }
         },
         "_row_num": 30
+      },
+      {
+        "choice_list_name": "Diagnostics",
+        "data_value": "6",
+        "display": {
+          "title": {
+            "text": {
+              "english": "x",
+              "default": "x"
+            }
+          }
+        },
+        "_row_num": 31
       },
       {
         "choice_list_name": "Medicines",
@@ -863,7 +860,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 33
       },
       {
         "choice_list_name": "Medicines",
@@ -872,11 +869,11 @@
           "title": {
             "text": {
               "english": "Oxytocina (inj. Malgueta)",
-              "default": "Oxytocina (inj. Malgueta)"
+              "default": "Oxitocina (Inj. Malgueta)"
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 34
       },
       {
         "choice_list_name": "Medicines",
@@ -889,7 +886,7 @@
             }
           }
         },
-        "_row_num": 34
+        "_row_num": 35
       },
       {
         "choice_list_name": "Medicines",
@@ -898,20 +895,7 @@
           "title": {
             "text": {
               "english": "Antibiotics",
-              "default": "Antibioticos"
-            }
-          }
-        },
-        "_row_num": 35
-      },
-      {
-        "choice_list_name": "Medicines",
-        "data_value": "5",
-        "display": {
-          "title": {
-            "text": {
-              "english": "x",
-              "default": "x"
+              "default": "Antibióticos"
             }
           }
         },
@@ -919,7 +903,7 @@
       },
       {
         "choice_list_name": "Medicines",
-        "data_value": "6",
+        "data_value": "5",
         "display": {
           "title": {
             "text": {
@@ -931,72 +915,7 @@
         "_row_num": 37
       },
       {
-        "choice_list_name": "Other_expenses",
-        "data_value": "1",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Bed",
-              "default": "Cama"
-            }
-          }
-        },
-        "_row_num": 39
-      },
-      {
-        "choice_list_name": "Other_expenses",
-        "data_value": "2",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Cleaning",
-              "default": "Limpeza"
-            }
-          }
-        },
-        "_row_num": 40
-      },
-      {
-        "choice_list_name": "Other_expenses",
-        "data_value": "3",
-        "display": {
-          "title": {
-            "text": {
-              "english": "Cesariana",
-              "default": "Cesariana"
-            }
-          }
-        },
-        "_row_num": 41
-      },
-      {
-        "choice_list_name": "Other_expenses",
-        "data_value": "4",
-        "display": {
-          "title": {
-            "text": {
-              "english": "x",
-              "default": "x"
-            }
-          }
-        },
-        "_row_num": 42
-      },
-      {
-        "choice_list_name": "Other_expenses",
-        "data_value": "5",
-        "display": {
-          "title": {
-            "text": {
-              "english": "x",
-              "default": "x"
-            }
-          }
-        },
-        "_row_num": 43
-      },
-      {
-        "choice_list_name": "Other_expenses",
+        "choice_list_name": "Medicines",
         "data_value": "6",
         "display": {
           "title": {
@@ -1006,7 +925,7 @@
             }
           }
         },
-        "_row_num": 44
+        "_row_num": 38
       }
     ],
     "queries": [
@@ -1137,18 +1056,6 @@
         "type": "text",
         "isSessionVariable": false,
         "_row_num": 22
-      },
-      {
-        "name": "OOP_B_OUTT_SEL",
-        "type": "select_multiple",
-        "isSessionVariable": false,
-        "_row_num": 23
-      },
-      {
-        "name": "OOP_B_OUTT_OU",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 24
       },
       {
         "name": "OOP_B_OBS",
@@ -1430,7 +1337,7 @@
             "title": {
               "text": {
                 "english": "Ambulancia",
-                "default": "Ambulancia"
+                "default": "Ambulância"
               }
             }
           },
@@ -1443,7 +1350,7 @@
             "title": {
               "text": {
                 "english": "Nao foi possive arranjar transporter",
-                "default": "Nao foi possive arranjar transporter"
+                "default": "Não foi possivel arranjar transporte"
               }
             }
           },
@@ -1456,7 +1363,7 @@
             "title": {
               "text": {
                 "english": "Nao sabe",
-                "default": "Nao sabe"
+                "default": "Não sabe"
               }
             }
           },
@@ -1474,6 +1381,19 @@
             }
           },
           "_row_num": 14
+        },
+        {
+          "choice_list_name": "Transport",
+          "data_value": "77",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Nemhuma",
+                "default": "Nemhuma destes"
+              }
+            }
+          },
+          "_row_num": 15
         }
       ],
       "Transport_other": [
@@ -1484,11 +1404,11 @@
             "title": {
               "text": {
                 "english": "All means of transport covered above",
-                "default": "Todos meios de transporte incluindo em cima"
+                "default": "Todos os meios de transporte estão incluídos acima"
               }
             }
           },
-          "_row_num": 16
+          "_row_num": 17
         }
       ],
       "Materials": [
@@ -1503,7 +1423,7 @@
               }
             }
           },
-          "_row_num": 18
+          "_row_num": 19
         },
         {
           "choice_list_name": "Materials",
@@ -1511,12 +1431,12 @@
           "display": {
             "title": {
               "text": {
-                "english": "Catherter",
-                "default": "Catherter"
+                "english": "Caterther",
+                "default": "Cateter"
               }
             }
           },
-          "_row_num": 19
+          "_row_num": 20
         },
         {
           "choice_list_name": "Materials",
@@ -1529,7 +1449,7 @@
               }
             }
           },
-          "_row_num": 20
+          "_row_num": 21
         },
         {
           "choice_list_name": "Materials",
@@ -1542,7 +1462,7 @@
               }
             }
           },
-          "_row_num": 21
+          "_row_num": 22
         },
         {
           "choice_list_name": "Materials",
@@ -1555,7 +1475,7 @@
               }
             }
           },
-          "_row_num": 22
+          "_row_num": 23
         },
         {
           "choice_list_name": "Materials",
@@ -1568,7 +1488,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 24
         }
       ],
       "Diagnostics": [
@@ -1583,7 +1503,7 @@
               }
             }
           },
-          "_row_num": 25
+          "_row_num": 26
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1592,11 +1512,11 @@
             "title": {
               "text": {
                 "english": "Blood test",
-                "default": "Analyses de sangue"
+                "default": "Análises de sangue"
               }
             }
           },
-          "_row_num": 26
+          "_row_num": 27
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1605,11 +1525,11 @@
             "title": {
               "text": {
                 "english": "Urine test",
-                "default": "Analyses de urina"
+                "default": "Análises de urina"
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 28
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1622,7 +1542,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 29
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1635,7 +1555,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 30
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1648,7 +1568,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 31
         }
       ],
       "Medicines": [
@@ -1663,7 +1583,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 33
         },
         {
           "choice_list_name": "Medicines",
@@ -1672,11 +1592,11 @@
             "title": {
               "text": {
                 "english": "Oxytocina (inj. Malgueta)",
-                "default": "Oxytocina (inj. Malgueta)"
+                "default": "Oxitocina (Inj. Malgueta)"
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 34
         },
         {
           "choice_list_name": "Medicines",
@@ -1689,7 +1609,7 @@
               }
             }
           },
-          "_row_num": 34
+          "_row_num": 35
         },
         {
           "choice_list_name": "Medicines",
@@ -1698,20 +1618,7 @@
             "title": {
               "text": {
                 "english": "Antibiotics",
-                "default": "Antibioticos"
-              }
-            }
-          },
-          "_row_num": 35
-        },
-        {
-          "choice_list_name": "Medicines",
-          "data_value": "5",
-          "display": {
-            "title": {
-              "text": {
-                "english": "x",
-                "default": "x"
+                "default": "Antibióticos"
               }
             }
           },
@@ -1719,7 +1626,7 @@
         },
         {
           "choice_list_name": "Medicines",
-          "data_value": "6",
+          "data_value": "5",
           "display": {
             "title": {
               "text": {
@@ -1729,76 +1636,9 @@
             }
           },
           "_row_num": 37
-        }
-      ],
-      "Other_expenses": [
-        {
-          "choice_list_name": "Other_expenses",
-          "data_value": "1",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Bed",
-                "default": "Cama"
-              }
-            }
-          },
-          "_row_num": 39
         },
         {
-          "choice_list_name": "Other_expenses",
-          "data_value": "2",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Cleaning",
-                "default": "Limpeza"
-              }
-            }
-          },
-          "_row_num": 40
-        },
-        {
-          "choice_list_name": "Other_expenses",
-          "data_value": "3",
-          "display": {
-            "title": {
-              "text": {
-                "english": "Cesariana",
-                "default": "Cesariana"
-              }
-            }
-          },
-          "_row_num": 41
-        },
-        {
-          "choice_list_name": "Other_expenses",
-          "data_value": "4",
-          "display": {
-            "title": {
-              "text": {
-                "english": "x",
-                "default": "x"
-              }
-            }
-          },
-          "_row_num": 42
-        },
-        {
-          "choice_list_name": "Other_expenses",
-          "data_value": "5",
-          "display": {
-            "title": {
-              "text": {
-                "english": "x",
-                "default": "x"
-              }
-            }
-          },
-          "_row_num": 43
-        },
-        {
-          "choice_list_name": "Other_expenses",
+          "choice_list_name": "Medicines",
           "data_value": "6",
           "display": {
             "title": {
@@ -1808,7 +1648,7 @@
               }
             }
           },
-          "_row_num": 44
+          "_row_num": 38
         }
       ]
     },
@@ -2087,7 +1927,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 44,
             "section_name": "survey"
           },
           {
@@ -2098,47 +1938,11 @@
         "isSessionVariable": false,
         "elementKey": "OOP_B_OUTT"
       },
-      "OOP_B_OUTT_SEL": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OOP_B_OUTT_SEL_items"
-        },
-        "valuesList": "Other_expenses",
-        "_defn": [
-          {
-            "_row_num": 44,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 23,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_OUTT_SEL"
-      },
-      "OOP_B_OUTT_OU": {
-        "type": "string",
-        "valuesList": "YesNoDontknow",
-        "_defn": [
-          {
-            "_row_num": 45,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 24,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_OUTT_OU"
-      },
       "OOP_B_OBS": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 56,
             "section_name": "survey"
           },
           {
@@ -2153,7 +1957,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {
@@ -2173,7 +1977,7 @@
         "valuesList": "Transport",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
@@ -2189,7 +1993,7 @@
         "valuesList": "Transport_other",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 53,
             "section_name": "survey"
           },
           {
@@ -2257,7 +2061,7 @@
               "prompt": {
                 "text": {
                   "english": "Did you pay for the birth?",
-                  "default": "Você pagou o parto?"
+                  "default": "Você pagou pelo parto?"
                 }
               }
             },
@@ -2292,9 +2096,12 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Prestação de serviços",
-                  "default": "Prestação de serviços (internamento)"
+                  "english": "Prestação de serviços (pagamentos alem de materiais, diagnosticos e medicamentos)",
+                  "default": "Prestação de serviços (pagamentos além de materiais, diagnósticos e medicamentos)"
                 }
+              },
+              "hint": {
+                "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
               }
             },
             "constraint": "data(\"OOP_B_SERQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -2312,8 +2119,11 @@
               "prompt": {
                 "text": {
                   "english": "Materiais:",
-                  "default": "Materiais?"
+                  "default": "Quanto é que pagou pelos materiais?"
                 }
+              },
+              "hint": {
+                "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
               }
             },
             "constraint": "data(\"OOP_B_MATQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -2390,8 +2200,11 @@
               "prompt": {
                 "text": {
                   "english": "Diagnósticos/Exames/Analises:",
-                  "default": "Diagnósticos/Exames/Analises:"
+                  "default": "Quanto é que pagou pelos diagnósticos/exames/análises:"
                 }
+              },
+              "hint": {
+                "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
               }
             },
             "constraint": "data(\"OOP_B_DIAQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -2410,7 +2223,7 @@
               "prompt": {
                 "text": {
                   "english": "Which diagnostics",
-                  "default": "Quais diagnostics? (Diagnósticos/Exames/Analises)"
+                  "default": "Quais diagnósticos? (diagnósticos/exames/análises)"
                 }
               }
             },
@@ -2430,7 +2243,7 @@
               "prompt": {
                 "text": {
                   "english": "Other diagnostics",
-                  "default": "Outros Diagnósticos/Exames/Analises?"
+                  "default": "Outros diagnósticos/exames/análises?"
                 }
               }
             },
@@ -2449,7 +2262,7 @@
               "prompt": {
                 "text": {
                   "english": "Which diagnostics",
-                  "default": "Quais Diagnósticos/Exames/Analises?"
+                  "default": "Quais diagnósticos/exames/análises?"
                 }
               }
             },
@@ -2468,8 +2281,11 @@
               "prompt": {
                 "text": {
                   "english": "Medicine:",
-                  "default": "Medicamentos?"
+                  "default": "Quanto é que pagou pelos medicamentos?"
                 }
+              },
+              "hint": {
+                "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
               }
             },
             "constraint": "data(\"OOP_B_MEDQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -2546,8 +2362,11 @@
               "prompt": {
                 "text": {
                   "english": "Outros despesas?",
-                  "default": "Outros despesas?"
+                  "default": "Quanto é que pagou pelos outros despesas?"
                 }
+              },
+              "hint": {
+                "text": "Indique: 33 se não sabe; 77 se recusou-se a responder"
               }
             },
             "constraint": "data(\"OOP_B_OUTQ\") != null || data(\"OOP_BIRTH\") != \"1\"",
@@ -2557,46 +2376,6 @@
             "_type": "integer",
             "_branch_label_enclosing_screen": "survey/_screen41",
             "promptIdx": 15
-          },
-          {
-            "type": "select_multiple",
-            "values_list": "Other_expenses",
-            "name": "OOP_B_OUTT_SEL",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Which other expenses",
-                  "default": "Quais outros despesas?"
-                }
-              }
-            },
-            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_SEL\") != null || data(\"OOP_BIRTH\") != \"1\"",
-            "_row_num": 44,
-            "__rowNum__": 43,
-            "_token_type": "prompt",
-            "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen41",
-            "promptIdx": 16
-          },
-          {
-            "type": "select_one",
-            "values_list": "YesNoDontknow",
-            "name": "OOP_B_OUTT_OU",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Other expenses",
-                  "default": "Outros despesas?"
-                }
-              }
-            },
-            "constraint": "data(\"OOP_B_OUTQ\") == 0 || data(\"OOP_B_OUTT_OU\") != null || data(\"OOP_BIRTH\") != \"1\"",
-            "_row_num": 45,
-            "__rowNum__": 44,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen41",
-            "promptIdx": 17
           },
           {
             "type": "text",
@@ -2609,29 +2388,30 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_OUTT\") != null || data(\"OOP_B_OUTT_SEL\") != \"1\"",
-            "_row_num": 48,
-            "__rowNum__": 47,
+            "constraint": "data(\"OOP_B_OUTT\") != null || data(\"OOP_B_OUTQ\") ==0",
+            "_row_num": 44,
+            "__rowNum__": 43,
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen41",
-            "promptIdx": 18
+            "promptIdx": 16
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Transporte"
+                  "english": "Transporte",
+                  "default": "Transporte"
                 }
               }
             },
-            "_row_num": 54,
-            "__rowNum__": 53,
+            "_row_num": 49,
+            "__rowNum__": 48,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 19
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 17
           },
           {
             "type": "integer",
@@ -2640,16 +2420,20 @@
               "prompt": {
                 "text": {
                   "english": "Quanto pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?",
-                  "default": "Quanto pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?"
+                  "default": "Quanto é que pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?"
                 }
+              },
+              "hint": {
+                "text": "Se parto domiciliar, indique 0 <br> Indique: 33 se não sabe; 77 se recusou-se a responder"
               }
             },
-            "_row_num": 55,
-            "__rowNum__": 54,
+            "constraint": "data(\"OOP_B_TRAQ\")!=null",
+            "_row_num": 50,
+            "__rowNum__": 49,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 20
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 18
           },
           {
             "type": "select_multiple",
@@ -2658,27 +2442,30 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Meio de transporte"
+                  "english": "Meio de transporte",
+                  "default": "Meio de transporte"
                 }
               }
             },
-            "_row_num": 56,
-            "__rowNum__": 55,
+            "constraint": "data(\"OOP_B_TRAM\")!=null ||data(\"OOP_B_TRAQ\")==0",
+            "_row_num": 52,
+            "__rowNum__": 51,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 21
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 19
           },
           {
             "type": "select_one_with_other",
             "values_list": "Transport_other",
             "name": "OOP_B_TRAM_OU",
-            "_row_num": 57,
-            "__rowNum__": 56,
+            "constraint": "data(\"OOP_B_TRAM_OU\")!=null ||data(\"OOP_B_TRAQ\")==0",
+            "_row_num": 53,
+            "__rowNum__": 52,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "survey/_screen48",
+            "promptIdx": 20
           },
           {
             "type": "text",
@@ -2687,24 +2474,24 @@
               "prompt": {
                 "text": {
                   "english": "Observations",
-                  "default": "Observacoes"
+                  "default": "Observações"
                 }
               }
             },
-            "_row_num": 60,
-            "__rowNum__": 59,
+            "_row_num": 56,
+            "__rowNum__": 55,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen59",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "survey/_screen55",
+            "promptIdx": 21
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 62,
-            "_branch_label_enclosing_screen": "survey/_screen62",
-            "promptIdx": 24
+            "_row_num": 58,
+            "_branch_label_enclosing_screen": "survey/_screen58",
+            "promptIdx": 22
           }
         ],
         "validation_tag_map": {
@@ -2725,8 +2512,9 @@
             14,
             15,
             16,
-            17,
-            18
+            18,
+            19,
+            20
           ]
         },
         "operations": [
@@ -2756,8 +2544,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else52",
-            "_row_num": 52,
+            "_branch_label": "_else47",
+            "_row_num": 47,
             "operationIdx": 2
           },
           {
@@ -2809,58 +2597,58 @@
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 51,
-              "__rowNum__": 50,
+              "_row_num": 46,
+              "__rowNum__": 45,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nif (data(\"OOP_B_OUTQ\") >0) {\nactivePromptIndicies.push(16);\nactivePromptIndicies.push(17);\nif (data(\"OOP_B_OUTT_OU\") ==\"1\") {\nactivePromptIndicies.push(18);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nif (data(\"OOP_B_OUTQ\") >0) {\nactivePromptIndicies.push(16);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 6
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif52",
-            "_row_num": 52,
+            "_branch_label": "_endif47",
+            "_row_num": 47,
             "operationIdx": 7
           },
           {
             "clause": "begin screen",
-            "_row_num": 53,
-            "__rowNum__": 52,
+            "_row_num": 48,
+            "__rowNum__": 47,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 58,
-              "__rowNum__": 57,
+              "_row_num": 54,
+              "__rowNum__": 53,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
             "clause": "begin screen",
-            "_row_num": 59,
-            "__rowNum__": 58,
+            "_row_num": 55,
+            "__rowNum__": 54,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 61,
-              "__rowNum__": 60,
+              "_row_num": 57,
+              "__rowNum__": 56,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(21);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 9
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 62,
+            "_row_num": 58,
             "operationIdx": 10
           },
           {
-            "_row_num": 62,
+            "_row_num": 58,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -2869,7 +2657,7 @@
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 62,
+            "_row_num": 58,
             "operationIdx": 12
           }
         ],
@@ -2880,12 +2668,12 @@
           "_screen19": 4,
           "_screen30": 5,
           "_screen41": 6,
-          "_else52": 8,
-          "_endif52": 8,
-          "_screen53": 8,
-          "_screen59": 9,
+          "_else47": 8,
+          "_endif47": 8,
+          "_screen48": 8,
+          "_screen55": 9,
           "_contents": 11,
-          "_screen62": 11
+          "_screen58": 11
         }
       },
       "initial": {
@@ -3384,7 +3172,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 48,
+            "_row_num": 44,
             "section_name": "survey"
           },
           {
@@ -3398,60 +3186,11 @@
         "elementSet": "data",
         "elementPath": "OOP_B_OUTT"
       },
-      "OOP_B_OUTT_SEL": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OOP_B_OUTT_SEL_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "OOP_B_OUTT_SEL.items",
-          "notUnitOfRetention": true
-        },
-        "valuesList": "Other_expenses",
-        "_defn": [
-          {
-            "_row_num": 44,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 23,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_OUTT_SEL",
-        "elementName": "OOP_B_OUTT_SEL",
-        "elementSet": "data",
-        "elementPath": "OOP_B_OUTT_SEL",
-        "listChildElementKeys": [
-          "OOP_B_OUTT_SEL_items"
-        ]
-      },
-      "OOP_B_OUTT_OU": {
-        "type": "string",
-        "valuesList": "YesNoDontknow",
-        "_defn": [
-          {
-            "_row_num": 45,
-            "section_name": "survey"
-          },
-          {
-            "_row_num": 24,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_B_OUTT_OU",
-        "elementName": "OOP_B_OUTT_OU",
-        "elementSet": "data",
-        "elementPath": "OOP_B_OUTT_OU"
-      },
       "OOP_B_OBS": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 60,
+            "_row_num": 56,
             "section_name": "survey"
           },
           {
@@ -3469,7 +3208,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 55,
+            "_row_num": 50,
             "section_name": "survey"
           },
           {
@@ -3496,7 +3235,7 @@
         "valuesList": "Transport",
         "_defn": [
           {
-            "_row_num": 56,
+            "_row_num": 52,
             "section_name": "survey"
           },
           {
@@ -3518,7 +3257,7 @@
         "valuesList": "Transport_other",
         "_defn": [
           {
-            "_row_num": 57,
+            "_row_num": 53,
             "section_name": "survey"
           },
           {
@@ -3601,14 +3340,6 @@
         "elementName": "items",
         "elementSet": "data",
         "elementPath": "OOP_B_MEDT_SEL.items",
-        "notUnitOfRetention": true
-      },
-      "OOP_B_OUTT_SEL_items": {
-        "type": "string",
-        "elementKey": "OOP_B_OUTT_SEL_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "OOP_B_OUTT_SEL.items",
         "notUnitOfRetention": true
       },
       "OOP_B_TRAM_items": {
@@ -3752,7 +3483,7 @@
         "_aspect": "OOP_B_DIAT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ecografia\",\"default\":\"Ecografia\"}}},\"_row_num\":25},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Analyses de sangue\"}}},\"_row_num\":26},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Analyses de urina\"}}},\"_row_num\":27},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":28},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":30}]"
+        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ecografia\",\"default\":\"Ecografia\"}}},\"_row_num\":26},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Análises de sangue\"}}},\"_row_num\":27},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Análises de urina\"}}},\"_row_num\":28},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":30},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":31}]"
       },
       {
         "_partition": "Column",
@@ -3766,7 +3497,7 @@
         "_aspect": "OOP_B_MATT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":18},{\"choice_list_name\":\"Materials\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Catherter\",\"default\":\"Catherter\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Materias de sutura\",\"default\":\"Materias de sutura\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":23}]"
+        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Caterther\",\"default\":\"Cateter\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Materias de sutura\",\"default\":\"Materias de sutura\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":23},{\"choice_list_name\":\"Materials\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":24}]"
       },
       {
         "_partition": "Column",
@@ -3780,35 +3511,21 @@
         "_aspect": "OOP_B_MEDT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro\",\"default\":\"Soro\"}}},\"_row_num\":32},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Oxytocina (inj. Malgueta)\",\"default\":\"Oxytocina (inj. Malgueta)\"}}},\"_row_num\":33},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Misoprostol\",\"default\":\"Misoprostol\"}}},\"_row_num\":34},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibioticos\"}}},\"_row_num\":35},{\"choice_list_name\":\"Medicines\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":36},{\"choice_list_name\":\"Medicines\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":37}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "OOP_B_OUTT_OU",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":2},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":3},{\"choice_list_name\":\"YesNoDontknow\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":4}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "OOP_B_OUTT_SEL",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Bed\",\"default\":\"Cama\"}}},\"_row_num\":39},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Cleaning\",\"default\":\"Limpeza\"}}},\"_row_num\":40},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Cesariana\",\"default\":\"Cesariana\"}}},\"_row_num\":41},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":42},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":43},{\"choice_list_name\":\"Other_expenses\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":44}]"
+        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro\",\"default\":\"Soro\"}}},\"_row_num\":33},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Oxytocina (inj. Malgueta)\",\"default\":\"Oxitocina (Inj. Malgueta)\"}}},\"_row_num\":34},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Misoprostol\",\"default\":\"Misoprostol\"}}},\"_row_num\":35},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibióticos\"}}},\"_row_num\":36},{\"choice_list_name\":\"Medicines\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":37},{\"choice_list_name\":\"Medicines\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"x\",\"default\":\"x\"}}},\"_row_num\":38}]"
       },
       {
         "_partition": "Column",
         "_aspect": "OOP_B_TRAM",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Transport\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"A pé\",\"default\":\"A pé\"}}},\"_row_num\":6},{\"choice_list_name\":\"Transport\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Mota\",\"default\":\"Mota\"}}},\"_row_num\":7},{\"choice_list_name\":\"Transport\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Carro\",\"default\":\"Carro\"}}},\"_row_num\":8},{\"choice_list_name\":\"Transport\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Taxi\",\"default\":\"Taxi\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transport\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Motocarro\",\"default\":\"Motocarro\"}}},\"_row_num\":10},{\"choice_list_name\":\"Transport\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Ambulancia\",\"default\":\"Ambulancia\"}}},\"_row_num\":11},{\"choice_list_name\":\"Transport\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao foi possive arranjar transporter\",\"default\":\"Nao foi possive arranjar transporter\"}}},\"_row_num\":12},{\"choice_list_name\":\"Transport\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Nao sabe\"}}},\"_row_num\":13},{\"choice_list_name\":\"Transport\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Recusou-se a responder\",\"default\":\"Recusou-se a responder\"}}},\"_row_num\":14}]"
+        "_value": "[{\"choice_list_name\":\"Transport\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"A pé\",\"default\":\"A pé\"}}},\"_row_num\":6},{\"choice_list_name\":\"Transport\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Mota\",\"default\":\"Mota\"}}},\"_row_num\":7},{\"choice_list_name\":\"Transport\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Carro\",\"default\":\"Carro\"}}},\"_row_num\":8},{\"choice_list_name\":\"Transport\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Taxi\",\"default\":\"Taxi\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transport\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Motocarro\",\"default\":\"Motocarro\"}}},\"_row_num\":10},{\"choice_list_name\":\"Transport\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Ambulancia\",\"default\":\"Ambulância\"}}},\"_row_num\":11},{\"choice_list_name\":\"Transport\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao foi possive arranjar transporter\",\"default\":\"Não foi possivel arranjar transporte\"}}},\"_row_num\":12},{\"choice_list_name\":\"Transport\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":13},{\"choice_list_name\":\"Transport\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Recusou-se a responder\",\"default\":\"Recusou-se a responder\"}}},\"_row_num\":14},{\"choice_list_name\":\"Transport\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":15}]"
       },
       {
         "_partition": "Column",
         "_aspect": "OOP_B_TRAM_OU",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Transport_other\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"All means of transport covered above\",\"default\":\"Todos meios de transporte incluindo em cima\"}}},\"_row_num\":16}]"
+        "_value": "[{\"choice_list_name\":\"Transport_other\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"All means of transport covered above\",\"default\":\"Todos os meios de transporte estão incluídos acima\"}}},\"_row_num\":17}]"
       },
       {
         "_partition": "FormType",

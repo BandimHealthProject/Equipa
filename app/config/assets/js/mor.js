@@ -20,7 +20,7 @@ function display() {
 
     var head = $('#main');
     head.prepend("<h1>" + tabNome + " </br> <h3> Morancas");
-    
+    console.log(assistant); // her    15/8
     doSanityCheck();
 }
 
@@ -55,7 +55,7 @@ function initButtons() {
     const mors = [];
     const map = new Map();
     for (const item of masterList) {
-        if (item.reg == reg & item.listGroup == listGroup & item.tab == tab) {
+        if (item.reg == reg & item.tab == tab) {
             if(!map.has(item.mor)){
                 map.set(item.mor, true);    // set any value to Map
                 mors.push(item);

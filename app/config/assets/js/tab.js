@@ -14,11 +14,10 @@ function display() {
     hcareaNome = util.getQueryParameter('hcareaNome');
     listGroup = util.getQueryParameter('listGroup');
     assistant = util.getQueryParameter('assistant'); // Added assistant
-    
 
     var head = $('#main');
     head.prepend("<h1>" + hcareaNome + " </br> <h3> Tabancas");
-    
+    console.log(assistant); // her    15/8 
     doSanityCheck();
 }
 
@@ -53,14 +52,17 @@ function initButtons() {
     const tabs = [];
     const map = new Map();
     for (const item of masterList) {
-        if (item.reg == reg & item.listGroup == listGroup) {
+        if (item.reg == reg & item.hcarea == hcarea) {
             if(!map.has(item.tab)){
                 map.set(item.tab, true);    // set any value to Map
                 tabs.push(item);
             }
         }
     }
-    console.log("tabs", tabs);
+     console.log("hcareas", hcarea);
+     console.log("tabs", tabs);
+    console.log("Assistant_tjek_tab", assistant);
+
 
     // Tabanca buttons
     var ul = $('#li');

@@ -18,9 +18,6 @@ OOP_B_MEDT_SEL_items,items,string,[]
 OOP_B_OBS,OOP_B_OBS,string,[]
 OOP_B_OUTQ,OOP_B_OUTQ,integer,[]
 OOP_B_OUTT,OOP_B_OUTT,string,[]
-OOP_B_OUTT_OU,OOP_B_OUTT_OU,string,[]
-OOP_B_OUTT_SEL,OOP_B_OUTT_SEL,array,"[""OOP_B_OUTT_SEL_items""]"
-OOP_B_OUTT_SEL_items,items,string,[]
 OOP_B_SERQ,OOP_B_SERQ,integer,[]
 OOP_B_TRAM,OOP_B_TRAM,array,"[""OOP_B_TRAM_items""]"
 OOP_B_TRAM_OU,OOP_B_TRAM_OU,string,[]
