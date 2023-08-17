@@ -30,13 +30,19 @@ function doSanityCheck() {
     console.log(odkData);
 }
 
+// function testdate() {
+//       var todayAdate2 = "D:" + today.getDate() + ",M:" + (Number(today.getMonth()) + 1) + ",Y:" + today.getFullYear();
+//       console.log("todayAdate", todayAdate2);
+// }
+
 function loadMIF() {
     // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts
      var sql = "SELECT V._id, V._savepoint_type, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1,  M.TAB" +
      " FROM MIF AS M" + 
      " LEFT JOIN MIF_VISIT AS V ON M.REGID = V.REGID" + 
         " WHERE M.REG = " + reg + " AND M.TAB = " + tab + " AND M.MOR = " + mor + 
-        " GROUP BY M.REGID HAVING MAX(V.CONT) OR V.CONT IS NULL" +
+        " GROUP BY M.REGID" +
+        // HAVING V.CONT=" + todayAdate2 + " OR V.CONT IS NULL" +
         " ORDER BY M.FOGAO, M.REGID";
     
     MIF = [];
@@ -220,7 +226,7 @@ function setDisplayText(person) {
         
         // teksten
         displayText = "Morança: " + person.MOR + "<br />" +
-        "Nome: " + person.NOMEMAE + "<br />" + 
+        "Nome: " + person.NOMEMAE +"Mul:" + person.MOR + "<br />" + 
         "Regdia: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
         
