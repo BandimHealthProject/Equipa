@@ -23,6 +23,8 @@ OOP_B_TRAM,OOP_B_TRAM,array,"[""OOP_B_TRAM_items""]"
 OOP_B_TRAM_OU,OOP_B_TRAM_OU,string,[]
 OOP_B_TRAM_items,items,string,[]
 OOP_B_TRAQ,OOP_B_TRAQ,integer,[]
+OOP_B_TRAQ_COMP,OOP_B_TRAQ_COMP,integer,[]
+OOP_FACILITY,OOP_FACILITY,string,[]
 REGID,REGID,string,[]
 VISITDATE,VISITDATE,string,[]
 VISITID,VISITID,string,[]
