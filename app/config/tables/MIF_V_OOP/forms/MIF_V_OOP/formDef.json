@@ -71,7 +71,7 @@
           "prompt": {
             "text": {
               "english": "Did you pay for the birth?",
-              "default": "Você pagou pelo parto? (Prestacao de servico, materiais, diagnosticos, medicamentos)"
+              "default": "Você pagou pelo parto? <br> (Prestacao de servico, materiais, diagnosticos, medicamentos)"
             }
           },
           "hint": {
@@ -89,7 +89,7 @@
           "prompt": {
             "text": {
               "english": "Did (at least part of the birth) take place in a health facility?",
-              "default": "Foi (pelo menos parte de) o parto numa estabelecimento de saude?"
+              "default": "O parto foi num estabelecimento de saude? (pelo menos um parte)"
             }
           }
         },
@@ -530,7 +530,7 @@
             }
           }
         },
-        "constraint": "data(\"OOP_B_TRAM\")!=null ||data(\"OOP_B_TRAQ\")==0 || data(\"OOP_FACILITY\")!=\"2\"",
+        "constraint": "data(\"OOP_B_TRAM_COMP\")!=null ||data(\"OOP_B_TRAQ\")==0 || data(\"OOP_FACILITY\")!=\"2\"",
         "_row_num": 57
       },
       {
@@ -2131,7 +2131,7 @@
               "prompt": {
                 "text": {
                   "english": "Did you pay for the birth?",
-                  "default": "Você pagou pelo parto? (Prestacao de servico, materiais, diagnosticos, medicamentos)"
+                  "default": "Você pagou pelo parto? <br> (Prestacao de servico, materiais, diagnosticos, medicamentos)"
                 }
               },
               "hint": {
@@ -2154,7 +2154,7 @@
               "prompt": {
                 "text": {
                   "english": "Did (at least part of the birth) take place in a health facility?",
-                  "default": "Foi (pelo menos parte de) o parto numa estabelecimento de saude?"
+                  "default": "O parto foi num estabelecimento de saude? (pelo menos um parte)"
                 }
               }
             },
@@ -2588,7 +2588,7 @@
                 }
               }
             },
-            "constraint": "data(\"OOP_B_TRAM\")!=null ||data(\"OOP_B_TRAQ\")==0 || data(\"OOP_FACILITY\")!=\"2\"",
+            "constraint": "data(\"OOP_B_TRAM_COMP\")!=null ||data(\"OOP_B_TRAQ\")==0 || data(\"OOP_FACILITY\")!=\"2\"",
             "_row_num": 57,
             "__rowNum__": 56,
             "_token_type": "prompt",

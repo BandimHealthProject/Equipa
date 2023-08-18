@@ -55,6 +55,7 @@ function loadMIF() {
            // Her hentes alle de variabler fra SQL ind i javascript
             var rowId = result.getData(row,"_id");                      // row række id (=_id i ODK) 
             var savepoint = result.getData(row,"_savepoint_type")       // Savepoint = Finalize vs incomplete osv
+            var GR_LAST = result.getData(row,"FOGAO");
             var GR_LAST = result.getData(row,"GR_LAST");
             var MOR = result.getData(row,"MOR");
             var NOMEMAE = result.getData(row,"NOMEMAE");
@@ -64,7 +65,7 @@ function loadMIF() {
             var REGID = result.getData(row,"REGID")
             var TAB = result.getData(row,"TAB");
             // har samles alle variablerne i et "object"
-            var p = {type: 'woman',  rowId, savepoint, GR_LAST, MOR, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB}; // 
+            var p = {type: 'woman',  rowId, savepoint, FOGAO, GR_LAST, MOR, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB}; // 
             MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden
         }
         console.log("MIF:", MIF)
@@ -225,8 +226,8 @@ function setDisplayText(person) {
         regdia = formatDate(person.REGDIA);
         
         // teksten
-        displayText = "Morança: " + person.MOR + "<br />" +
-        "Nome: " + person.NOMEMAE +"Mul:" + person.MOR + "<br />" + 
+        displayText = "Morança: " + person.MOR +"Mul:" + person.MUL + "<br />" +
+        "Nome: " + person.NOMEMAE  + "<br />" + 
         "Regdia: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
         
