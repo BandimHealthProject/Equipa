@@ -147,7 +147,8 @@ function initButtons() {
         }
         // hertil       // set date
             var date = new Date(selYea.val(), selMon.val()-1, selDay.val());
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, null, null, null, null , null, null, null, assistant);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, null, null, null, null, null, null, null, null, assistant); //7s
+//     7       var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, null, null, null, null , null, null, null, null, assistant);
             odkTables.launchHTML(null, 'config/assets/hcarea.html' + queryParams);
         })        
     });

@@ -74,7 +74,7 @@ function initButtons() {
         // Buttons
         var btn = ul.find('#' + this.tab);
         btn.on("click", function() {
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, that.tab, that.tabNome, null, null, assistant);
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, that.tab, that.tabNome, null, null, null, assistant); //2
             odkTables.launchHTML(null, 'config/assets/mor.html' + queryParams); // Ane - list.html -> mor.html
         })        
     });

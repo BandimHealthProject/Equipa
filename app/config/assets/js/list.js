@@ -3,7 +3,7 @@
  */
 'use strict';
 
-var MIF, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome,  mor, morNome, assistant;
+var MIF, children, personList, date, reg, regNome, hcarea, hcareaNome, listGroup, tab, tabNome,  mor, morNome, assistant; //removed mul
 function display() {
     console.log("Person list loading");
     date = util.getQueryParameter('date');
@@ -16,6 +16,7 @@ function display() {
     tabNome = util.getQueryParameter('tabNome');
     mor = util.getQueryParameter('mor');
     morNome = util.getQueryParameter('morNome');
+ //   mul = util.getQueryParameter('mul');
     assistant = util.getQueryParameter('assistant');
 
     var head = $('#main');
@@ -37,7 +38,7 @@ function doSanityCheck() {
 
 function loadMIF() {
     // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts
-     var sql = "SELECT V._id, V._savepoint_type, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1,  M.TAB" +
+     var sql = "SELECT V._id, V._savepoint_type, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.MUL, M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1,  M.TAB" +
      " FROM MIF AS M" + 
      " LEFT JOIN MIF_VISIT AS V ON M.REGID = V.REGID" + 
         " WHERE M.REG = " + reg + " AND M.TAB = " + tab + " AND M.MOR = " + mor + 
@@ -55,17 +56,18 @@ function loadMIF() {
            // Her hentes alle de variabler fra SQL ind i javascript
             var rowId = result.getData(row,"_id");                      // row række id (=_id i ODK) 
             var savepoint = result.getData(row,"_savepoint_type")       // Savepoint = Finalize vs incomplete osv
-            var GR_LAST = result.getData(row,"FOGAO");
+            var FOGAO = result.getData(row,"FOGAO");
             var GR_LAST = result.getData(row,"GR_LAST");
             var MOR = result.getData(row,"MOR");
             var NOMEMAE = result.getData(row,"NOMEMAE");
+            var MUL = result.getData(row,"MUL");
             var PARPAD3 = result.getData(row,"PARPAD3");
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var REGID = result.getData(row,"REGID")
             var TAB = result.getData(row,"TAB");
             // har samles alle variablerne i et "object"
-            var p = {type: 'woman',  rowId, savepoint, FOGAO, GR_LAST, MOR, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB}; // 
+            var p = {type: 'woman',  rowId, savepoint, FOGAO, GR_LAST, MOR, MUL, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB}; // 
             MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden
         }
         console.log("MIF:", MIF)
