@@ -804,6 +804,32 @@
       },
       {
         "choice_list_name": "Materials",
+        "data_value": "8",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Razor blade",
+              "default": "Lamina"
+            }
+          }
+        },
+        "_row_num": 23
+      },
+      {
+        "choice_list_name": "Materials",
+        "data_value": "9",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Tread",
+              "default": "Linha"
+            }
+          }
+        },
+        "_row_num": 24
+      },
+      {
+        "choice_list_name": "Materials",
         "data_value": "33",
         "display": {
           "title": {
@@ -813,7 +839,7 @@
             }
           }
         },
-        "_row_num": 23
+        "_row_num": 25
       },
       {
         "choice_list_name": "Materials",
@@ -826,7 +852,7 @@
             }
           }
         },
-        "_row_num": 24
+        "_row_num": 26
       },
       {
         "choice_list_name": "Diagnostics",
@@ -839,7 +865,7 @@
             }
           }
         },
-        "_row_num": 27
+        "_row_num": 29
       },
       {
         "choice_list_name": "Diagnostics",
@@ -852,7 +878,7 @@
             }
           }
         },
-        "_row_num": 28
+        "_row_num": 30
       },
       {
         "choice_list_name": "Diagnostics",
@@ -865,7 +891,7 @@
             }
           }
         },
-        "_row_num": 29
+        "_row_num": 31
       },
       {
         "choice_list_name": "Diagnostics",
@@ -878,7 +904,7 @@
             }
           }
         },
-        "_row_num": 30
+        "_row_num": 32
       },
       {
         "choice_list_name": "Diagnostics",
@@ -891,7 +917,7 @@
             }
           }
         },
-        "_row_num": 31
+        "_row_num": 33
       },
       {
         "choice_list_name": "Diagnostics",
@@ -904,7 +930,7 @@
             }
           }
         },
-        "_row_num": 32
+        "_row_num": 34
       },
       {
         "choice_list_name": "Diagnostics",
@@ -917,7 +943,7 @@
             }
           }
         },
-        "_row_num": 33
+        "_row_num": 35
       },
       {
         "choice_list_name": "Medicines",
@@ -930,7 +956,7 @@
             }
           }
         },
-        "_row_num": 35
+        "_row_num": 37
       },
       {
         "choice_list_name": "Medicines",
@@ -943,7 +969,7 @@
             }
           }
         },
-        "_row_num": 36
+        "_row_num": 38
       },
       {
         "choice_list_name": "Medicines",
@@ -956,7 +982,7 @@
             }
           }
         },
-        "_row_num": 37
+        "_row_num": 39
       },
       {
         "choice_list_name": "Medicines",
@@ -969,7 +995,7 @@
             }
           }
         },
-        "_row_num": 38
+        "_row_num": 40
       },
       {
         "choice_list_name": "Medicines",
@@ -982,7 +1008,7 @@
             }
           }
         },
-        "_row_num": 39
+        "_row_num": 41
       },
       {
         "choice_list_name": "Medicines",
@@ -995,7 +1021,7 @@
             }
           }
         },
-        "_row_num": 40
+        "_row_num": 42
       },
       {
         "choice_list_name": "Medicines",
@@ -1008,7 +1034,7 @@
             }
           }
         },
-        "_row_num": 41
+        "_row_num": 43
       },
       {
         "choice_list_name": "Medicines",
@@ -1021,7 +1047,7 @@
             }
           }
         },
-        "_row_num": 42
+        "_row_num": 44
       }
     ],
     "queries": [
@@ -1574,6 +1600,32 @@
         },
         {
           "choice_list_name": "Materials",
+          "data_value": "8",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Razor blade",
+                "default": "Lamina"
+              }
+            }
+          },
+          "_row_num": 23
+        },
+        {
+          "choice_list_name": "Materials",
+          "data_value": "9",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Tread",
+                "default": "Linha"
+              }
+            }
+          },
+          "_row_num": 24
+        },
+        {
+          "choice_list_name": "Materials",
           "data_value": "33",
           "display": {
             "title": {
@@ -1583,7 +1635,7 @@
               }
             }
           },
-          "_row_num": 23
+          "_row_num": 25
         },
         {
           "choice_list_name": "Materials",
@@ -1596,7 +1648,7 @@
               }
             }
           },
-          "_row_num": 24
+          "_row_num": 26
         }
       ],
       "Diagnostics": [
@@ -1611,7 +1663,7 @@
               }
             }
           },
-          "_row_num": 27
+          "_row_num": 29
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1624,7 +1676,7 @@
               }
             }
           },
-          "_row_num": 28
+          "_row_num": 30
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1637,7 +1689,7 @@
               }
             }
           },
-          "_row_num": 29
+          "_row_num": 31
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1650,7 +1702,7 @@
               }
             }
           },
-          "_row_num": 30
+          "_row_num": 32
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1663,7 +1715,7 @@
               }
             }
           },
-          "_row_num": 31
+          "_row_num": 33
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1676,7 +1728,7 @@
               }
             }
           },
-          "_row_num": 32
+          "_row_num": 34
         },
         {
           "choice_list_name": "Diagnostics",
@@ -1689,7 +1741,7 @@
               }
             }
           },
-          "_row_num": 33
+          "_row_num": 35
         }
       ],
       "Medicines": [
@@ -1704,7 +1756,7 @@
               }
             }
           },
-          "_row_num": 35
+          "_row_num": 37
         },
         {
           "choice_list_name": "Medicines",
@@ -1717,7 +1769,7 @@
               }
             }
           },
-          "_row_num": 36
+          "_row_num": 38
         },
         {
           "choice_list_name": "Medicines",
@@ -1730,7 +1782,7 @@
               }
             }
           },
-          "_row_num": 37
+          "_row_num": 39
         },
         {
           "choice_list_name": "Medicines",
@@ -1743,7 +1795,7 @@
               }
             }
           },
-          "_row_num": 38
+          "_row_num": 40
         },
         {
           "choice_list_name": "Medicines",
@@ -1756,7 +1808,7 @@
               }
             }
           },
-          "_row_num": 39
+          "_row_num": 41
         },
         {
           "choice_list_name": "Medicines",
@@ -1769,7 +1821,7 @@
               }
             }
           },
-          "_row_num": 40
+          "_row_num": 42
         },
         {
           "choice_list_name": "Medicines",
@@ -1782,7 +1834,7 @@
               }
             }
           },
-          "_row_num": 41
+          "_row_num": 43
         },
         {
           "choice_list_name": "Medicines",
@@ -1795,7 +1847,7 @@
               }
             }
           },
-          "_row_num": 42
+          "_row_num": 44
         }
       ]
     },
@@ -3789,7 +3841,7 @@
         "_aspect": "OOP_B_DIAT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ecografia\",\"default\":\"Ecografia\"}}},\"_row_num\":27},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Análises de sangue\"}}},\"_row_num\":28},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Análises de urina\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Feces test\",\"default\":\"Análises de fezes\"}}},\"_row_num\":30},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"TDR\",\"default\":\"TDR (paludismo)\"}}},\"_row_num\":31},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":32},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nenhuma destes\"}}},\"_row_num\":33}]"
+        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ecografia\",\"default\":\"Ecografia\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Análises de sangue\"}}},\"_row_num\":30},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Análises de urina\"}}},\"_row_num\":31},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Feces test\",\"default\":\"Análises de fezes\"}}},\"_row_num\":32},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"TDR\",\"default\":\"TDR (paludismo)\"}}},\"_row_num\":33},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":34},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nenhuma destes\"}}},\"_row_num\":35}]"
       },
       {
         "_partition": "Column",
@@ -3803,7 +3855,7 @@
         "_aspect": "OOP_B_MATT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Caterther\",\"default\":\"Cateter (urina)\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Materias de sutura\",\"default\":\"Materias de sutura\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"IV drip materials\",\"default\":\"Cateter (para soro/sangue)\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":23},{\"choice_list_name\":\"Materials\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nenhuma destes\"}}},\"_row_num\":24}]"
+        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Caterther\",\"default\":\"Cateter (urina)\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Materias de sutura\",\"default\":\"Materias de sutura\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"IV drip materials\",\"default\":\"Cateter (para soro/sangue)\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Razor blade\",\"default\":\"Lamina\"}}},\"_row_num\":23},{\"choice_list_name\":\"Materials\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Tread\",\"default\":\"Linha\"}}},\"_row_num\":24},{\"choice_list_name\":\"Materials\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":25},{\"choice_list_name\":\"Materials\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nenhuma destes\"}}},\"_row_num\":26}]"
       },
       {
         "_partition": "Column",
@@ -3817,7 +3869,7 @@
         "_aspect": "OOP_B_MEDT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro\",\"default\":\"Soro\"}}},\"_row_num\":35},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Oxytocina (inj. Malgueta)\",\"default\":\"Oxitocina (Inj. Malgueta)\"}}},\"_row_num\":36},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Misoprostol\",\"default\":\"Misoprostol\"}}},\"_row_num\":37},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibióticos\"}}},\"_row_num\":38},{\"choice_list_name\":\"Medicines\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Iron\",\"default\":\"Ferro\"}}},\"_row_num\":39},{\"choice_list_name\":\"Medicines\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":40},{\"choice_list_name\":\"Medicines\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":41},{\"choice_list_name\":\"Medicines\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":42}]"
+        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Soro\",\"default\":\"Soro\"}}},\"_row_num\":37},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Oxytocina (inj. Malgueta)\",\"default\":\"Oxitocina (Inj. Malgueta)\"}}},\"_row_num\":38},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Misoprostol\",\"default\":\"Misoprostol\"}}},\"_row_num\":39},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibióticos\"}}},\"_row_num\":40},{\"choice_list_name\":\"Medicines\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Iron\",\"default\":\"Ferro\"}}},\"_row_num\":41},{\"choice_list_name\":\"Medicines\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":42},{\"choice_list_name\":\"Medicines\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":43},{\"choice_list_name\":\"Medicines\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":44}]"
       },
       {
         "_partition": "Column",
