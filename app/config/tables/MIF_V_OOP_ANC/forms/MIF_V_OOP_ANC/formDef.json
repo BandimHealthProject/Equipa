@@ -70,8 +70,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Did you seek ANC",
-              "default": "Você procorou alguma consulta de cuidados pré-natais?"
+              "english": "Did you seek any ANC consultation?",
+              "default": "Você procurou alguma consulta de cuidados pré-natais?"
             }
           }
         },
@@ -94,8 +94,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Você pagou a sua última consulta de cuidados pré-natais ?",
-              "default": "Você pagou à sua última consulta de cuidados pré-natais? (Prestacao de servico, materiais, diagnosticos, medicamentos)"
+              "english": "Did you pay for your last ANC visit (including service provision, materials, diagnostics, medicine)?",
+              "default": "Você pagou à sua última consulta de cuidados pré-natais? (Prestação de serviço, matériais, diagnósticos, medicamentos)"
             }
           }
         },
@@ -116,7 +116,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Quanto é que pagou pelo seguinte:",
+              "english": "How much did you pay for the following:",
               "default": "Quanto é que pagou pelo seguinte:"
             }
           }
@@ -129,12 +129,15 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Prestação de serviços",
+              "english": "Service provision",
               "default": "Prestação de serviços"
             }
           },
           "hint": {
-            "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+            "text": {
+              "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer",
+              "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+            }
           }
         },
         "constraint": "data(\"OOP_A_SERQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -146,12 +149,15 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Materiais:",
+              "english": "How much did you pay for materials?",
               "default": "Quanto pagou pelos materiais?"
             }
           },
           "hint": {
-            "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao foi usado nenhuma materiais"
+            "text": {
+              "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no materials have been used",
+              "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não foram usadas nenhumas materiais"
+            }
           }
         },
         "constraint": "data(\"OOP_A_MATQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -169,7 +175,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which materials",
+              "english": "Which materials?",
               "default": "Quais materiais?"
             }
           }
@@ -184,7 +190,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Other materials",
+              "english": "Other materials?",
               "default": "Outros materias?"
             }
           }
@@ -203,7 +209,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which Materials",
+              "english": "Which materials?",
               "default": "Quais materiais?"
             }
           }
@@ -233,12 +239,15 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Diagnósticos:",
+              "english": "How much did you pay for diagnostics:",
               "default": "Quanto é que pagou pelos diagnósticos/exames/análises:"
             }
           },
           "hint": {
-            "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao foi feito nenhuma analises/exame"
+            "text": {
+              "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no diagnostics performed",
+              "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não foram feitos nenhums diagnósticos/exames/análises"
+            }
           }
         },
         "constraint": "data(\"OOP_A_DIAQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -256,7 +265,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which diagnostics",
+              "english": "Which diagnostics?",
               "default": "Quais diagnósticos? (diagnósticos/exames/análises)"
             }
           }
@@ -271,7 +280,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Other diagnostics",
+              "english": "Other diagnostics?",
               "default": "Outros diagnósticos/exames/análises?"
             }
           }
@@ -290,7 +299,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which diagnostics",
+              "english": "Which diagnostics?",
               "default": "Quais diagnósticos/exames/análises?"
             }
           }
@@ -320,12 +329,15 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Medicine:",
+              "english": "How much did you pay for medicines?",
               "default": "Quanto é que pagou pelos medicamentos?"
             }
           },
           "hint": {
-            "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao foi receitada medicamentos"
+            "text": {
+              "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no medicines prescribed/provided",
+              "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não foi receitada medicamentos"
+            }
           }
         },
         "constraint": "data(\"OOP_A_MEDQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -343,7 +355,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which drugs",
+              "english": "Which medicines?",
               "default": "Quais medicamentos?"
             }
           }
@@ -358,7 +370,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Other drugs",
+              "english": "Other medicines?",
               "default": "Outros medicametos?"
             }
           }
@@ -377,7 +389,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which drugs",
+              "english": "Which medicines?",
               "default": "Quais medicamentos?"
             }
           }
@@ -407,12 +419,15 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Outros despesas?",
+              "english": "How much did you pay for other expenses?",
               "default": "Quanto é que pagou pelos outros despesas?"
             }
           },
           "hint": {
-            "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao tinha outros despesas"
+            "text": {
+              "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no further payments",
+              "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não tinha outros despesas"
+            }
           }
         },
         "constraint": "data(\"OOP_A_OUTQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -429,7 +444,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Which other expenses",
+              "english": "Which other expenses?",
               "default": "Quais outros despesas?"
             }
           }
@@ -463,8 +478,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Em que centro de saúde/clínica/hospital  {{data.NOMEMUL}}  procorou Ultima Consulta Prenatal?",
-              "default": "Em que centro de saúde/clínica/hospital  {{data.NOMEMUL}}  procorou a sua última consulta de cuidados pré-natais?"
+              "english": "In which health facility did {{data.NOMEMUL}}  have her last ANC visit?",
+              "default": "Em que centro de saúde/clínica/hospital  {{data.NOMEMUL}}  procurou a sua última consulta de cuidados pré-natais?"
             }
           }
         },
@@ -478,8 +493,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Onde Foi a Consulta CPN?",
-              "default": "Onde Foi a Ultimo Consulta CPN?"
+              "english": "Where was the last ANC visit?",
+              "default": "Onde foi a última consulta CPN?"
             }
           }
         },
@@ -507,7 +522,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Place of Consultation",
+              "english": "Place of consultation",
               "default": "Local de consulta"
             }
           }
@@ -575,8 +590,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Despesas de transporte de mulher gravida",
-              "default": "Despesas de transporte de mulher gravida"
+              "english": "Transportation costs of the pregnant woman",
+              "default": "Despesas de transporte de mulher grávida"
             }
           }
         },
@@ -588,12 +603,15 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Quanto pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?",
+              "english": "How much did you pay for transport to/from the health facility (round trip)?",
               "default": "Quanto é que pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?"
             }
           },
           "hint": {
-            "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+            "text": {
+              "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer",
+              "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+            }
           }
         },
         "constraint": "data(\"OOP_A_TRAQ\")!=null ||data(\"ANC\")==\"2\"",
@@ -606,7 +624,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Meio de transporte",
+              "english": "Means of transport",
               "default": "Meio de transporte"
             }
           }
@@ -634,7 +652,7 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Quanto é que pagou pelo seguinte durante este gravidez:",
+              "english": "How much did you pay for the following furing this pregnancy:",
               "default": "Quanto é que pagou pelo seguinte durante este gravidez:"
             }
           }
@@ -647,14 +665,14 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Cartão de gravidez?",
+              "english": "Pregnancy card (the big pink one)?",
               "default": "Cartão de gravidez?"
             }
           },
           "hint": {
             "text": {
-              "english": "Se não obtou cartao durante este gravidez, indicar 88, se não sabe o preco indicar 33",
-              "default": "Indique: <br> 88 se não obtou cartao durante est gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preco"
+              "english": "Indicate: <br> 88 if she didn't receive a pregnancy card; <br> 77 if refused to answer; <br> 33 if she does not remember the price",
+              "default": "Indique: <br> 88 se não obtou cartão durante esta gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preço"
             }
           }
         },
@@ -667,14 +685,14 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Cartão de vacina contra tétano?",
+              "english": "Tetanus vaccine card (the small pink one)?",
               "default": "Cartão de vacina contra tétano?"
             }
           },
           "hint": {
             "text": {
-              "english": "Indicar: <br> 88 se não obtou cartao durante este gravidez, <br> 33 se não sabe o preco indicar",
-              "default": "Indique: <br> 88 se não obtou cartao durante este gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preco indicar"
+              "english": "Indicate: <br> 88 if she didn't receive a tetanus vacine card; <br> 77 if refused to answer; <br> 33 if she does not remember the price",
+              "default": "Indique: <br> 88 se não obtou cartão durante esta gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preço"
             }
           }
         },
@@ -761,7 +779,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "A pé",
+              "english": "Walked",
               "default": "A pé"
             }
           }
@@ -787,8 +805,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Carro",
-              "default": "Carro de Transporte"
+              "english": "Car (public transport)",
+              "default": "Carro de transporte"
             }
           }
         },
@@ -826,7 +844,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Ambulancia",
+              "english": "Ambulance",
               "default": "Ambulância"
             }
           }
@@ -840,7 +858,7 @@
           "title": {
             "text": {
               "english": "Private car",
-              "default": "Carro Particular"
+              "default": "Carro particular"
             }
           }
         },
@@ -852,7 +870,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Nao sabe",
+              "english": "Don't know",
               "default": "Não sabe"
             }
           }
@@ -865,7 +883,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Recusou-se a responder",
+              "english": "Refused to answer",
               "default": "Recusou-se a responder"
             }
           }
@@ -878,7 +896,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Nemhuma",
+              "english": "None of these",
               "default": "Nemhuma destes"
             }
           }
@@ -944,7 +962,7 @@
           "title": {
             "text": {
               "english": "Soap",
-              "default": "Sabao"
+              "default": "Sabão"
             }
           }
         },
@@ -956,7 +974,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Dont know",
+              "english": "Don't know",
               "default": "Não sabe"
             }
           }
@@ -969,7 +987,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Nemhuma",
+              "english": "None of these",
               "default": "Nemhuma destes"
             }
           }
@@ -982,7 +1000,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Ecografia",
+              "english": "Ultrasound",
               "default": "Ecografia"
             }
           }
@@ -1034,7 +1052,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "TDR",
+              "english": "TDR (Malaria rapid test)",
               "default": "TDR (paludismo)"
             }
           }
@@ -1047,7 +1065,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Dont know",
+              "english": "Don't know",
               "default": "Não sabe"
             }
           }
@@ -1060,7 +1078,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Nemhuma",
+              "english": "None of these",
               "default": "Nemhuma destes"
             }
           }
@@ -1073,7 +1091,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Ferro",
+              "english": "Iron",
               "default": "Ferro"
             }
           }
@@ -1086,7 +1104,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Fansidar",
+              "english": "Antimalarials",
               "default": "Fansidar"
             }
           }
@@ -1099,7 +1117,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Vitaminas",
+              "english": "Vitamins",
               "default": "Vitaminas"
             }
           }
@@ -1125,7 +1143,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Vacina TT",
+              "english": "Tetanus vaccine",
               "default": "Vacina TT"
             }
           }
@@ -1151,7 +1169,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Anti-fungal",
+              "english": "Anti-fungals",
               "default": "Anti-fungus"
             }
           }
@@ -1164,8 +1182,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Nao sabe destinguir",
-              "default": "Nao sabe destinguir"
+              "english": "Can't distinguish",
+              "default": "Não sabe distinguir"
             }
           }
         },
@@ -1178,7 +1196,7 @@
         "display": {
           "title": {
             "text": {
-              "english": "Nemhuma",
+              "english": "None of these",
               "default": "Nemhuma destes"
             }
           }
@@ -1217,8 +1235,8 @@
         "display": {
           "title": {
             "text": {
-              "english": "Health Facility",
-              "default": "Estabelisimento Sanitaria"
+              "english": "Health facility",
+              "default": "Estabelisimento  sanitária"
             }
           }
         },
@@ -1231,7 +1249,7 @@
           "title": {
             "text": {
               "english": "Outreach in the village",
-              "default": "Estrategia Avancada na Tabanca"
+              "default": "Estrategia avançada na Tabanca"
             }
           }
         },
@@ -1244,7 +1262,7 @@
           "title": {
             "text": {
               "english": "Outreach elsewhere",
-              "default": "Estrategia Avancada num outro local fora da Tabanca"
+              "default": "Estrategia avançada num outro local fora da Tabanca"
             }
           }
         },
@@ -1660,7 +1678,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "A pé",
+                "english": "Walked",
                 "default": "A pé"
               }
             }
@@ -1686,8 +1704,8 @@
           "display": {
             "title": {
               "text": {
-                "english": "Carro",
-                "default": "Carro de Transporte"
+                "english": "Car (public transport)",
+                "default": "Carro de transporte"
               }
             }
           },
@@ -1725,7 +1743,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Ambulancia",
+                "english": "Ambulance",
                 "default": "Ambulância"
               }
             }
@@ -1739,7 +1757,7 @@
             "title": {
               "text": {
                 "english": "Private car",
-                "default": "Carro Particular"
+                "default": "Carro particular"
               }
             }
           },
@@ -1751,7 +1769,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Nao sabe",
+                "english": "Don't know",
                 "default": "Não sabe"
               }
             }
@@ -1764,7 +1782,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Recusou-se a responder",
+                "english": "Refused to answer",
                 "default": "Recusou-se a responder"
               }
             }
@@ -1777,7 +1795,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Nemhuma",
+                "english": "None of these",
                 "default": "Nemhuma destes"
               }
             }
@@ -1847,7 +1865,7 @@
             "title": {
               "text": {
                 "english": "Soap",
-                "default": "Sabao"
+                "default": "Sabão"
               }
             }
           },
@@ -1859,7 +1877,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Dont know",
+                "english": "Don't know",
                 "default": "Não sabe"
               }
             }
@@ -1872,7 +1890,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Nemhuma",
+                "english": "None of these",
                 "default": "Nemhuma destes"
               }
             }
@@ -1887,7 +1905,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Ecografia",
+                "english": "Ultrasound",
                 "default": "Ecografia"
               }
             }
@@ -1939,7 +1957,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "TDR",
+                "english": "TDR (Malaria rapid test)",
                 "default": "TDR (paludismo)"
               }
             }
@@ -1952,7 +1970,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Dont know",
+                "english": "Don't know",
                 "default": "Não sabe"
               }
             }
@@ -1965,7 +1983,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Nemhuma",
+                "english": "None of these",
                 "default": "Nemhuma destes"
               }
             }
@@ -1980,7 +1998,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Ferro",
+                "english": "Iron",
                 "default": "Ferro"
               }
             }
@@ -1993,7 +2011,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Fansidar",
+                "english": "Antimalarials",
                 "default": "Fansidar"
               }
             }
@@ -2006,7 +2024,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Vitaminas",
+                "english": "Vitamins",
                 "default": "Vitaminas"
               }
             }
@@ -2032,7 +2050,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Vacina TT",
+                "english": "Tetanus vaccine",
                 "default": "Vacina TT"
               }
             }
@@ -2058,7 +2076,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Anti-fungal",
+                "english": "Anti-fungals",
                 "default": "Anti-fungus"
               }
             }
@@ -2071,8 +2089,8 @@
           "display": {
             "title": {
               "text": {
-                "english": "Nao sabe destinguir",
-                "default": "Nao sabe destinguir"
+                "english": "Can't distinguish",
+                "default": "Não sabe distinguir"
               }
             }
           },
@@ -2085,7 +2103,7 @@
           "display": {
             "title": {
               "text": {
-                "english": "Nemhuma",
+                "english": "None of these",
                 "default": "Nemhuma destes"
               }
             }
@@ -2128,8 +2146,8 @@
           "display": {
             "title": {
               "text": {
-                "english": "Health Facility",
-                "default": "Estabelisimento Sanitaria"
+                "english": "Health facility",
+                "default": "Estabelisimento  sanitária"
               }
             }
           },
@@ -2142,7 +2160,7 @@
             "title": {
               "text": {
                 "english": "Outreach in the village",
-                "default": "Estrategia Avancada na Tabanca"
+                "default": "Estrategia avançada na Tabanca"
               }
             }
           },
@@ -2155,7 +2173,7 @@
             "title": {
               "text": {
                 "english": "Outreach elsewhere",
-                "default": "Estrategia Avancada num outro local fora da Tabanca"
+                "default": "Estrategia avançada num outro local fora da Tabanca"
               }
             }
           },
@@ -2737,8 +2755,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Did you seek ANC",
-                  "default": "Você procorou alguma consulta de cuidados pré-natais?"
+                  "english": "Did you seek any ANC consultation?",
+                  "default": "Você procurou alguma consulta de cuidados pré-natais?"
                 }
               }
             },
@@ -2757,8 +2775,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Você pagou a sua última consulta de cuidados pré-natais ?",
-                  "default": "Você pagou à sua última consulta de cuidados pré-natais? (Prestacao de servico, materiais, diagnosticos, medicamentos)"
+                  "english": "Did you pay for your last ANC visit (including service provision, materials, diagnostics, medicine)?",
+                  "default": "Você pagou à sua última consulta de cuidados pré-natais? (Prestação de serviço, matériais, diagnósticos, medicamentos)"
                 }
               }
             },
@@ -2775,7 +2793,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Quanto é que pagou pelo seguinte:",
+                  "english": "How much did you pay for the following:",
                   "default": "Quanto é que pagou pelo seguinte:"
                 }
               }
@@ -2793,12 +2811,15 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Prestação de serviços",
+                  "english": "Service provision",
                   "default": "Prestação de serviços"
                 }
               },
               "hint": {
-                "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+                "text": {
+                  "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer",
+                  "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+                }
               }
             },
             "constraint": "data(\"OOP_A_SERQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -2815,12 +2836,15 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Materiais:",
+                  "english": "How much did you pay for materials?",
                   "default": "Quanto pagou pelos materiais?"
                 }
               },
               "hint": {
-                "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao foi usado nenhuma materiais"
+                "text": {
+                  "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no materials have been used",
+                  "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não foram usadas nenhumas materiais"
+                }
               }
             },
             "constraint": "data(\"OOP_A_MATQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -2838,7 +2862,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which materials",
+                  "english": "Which materials?",
                   "default": "Quais materiais?"
                 }
               }
@@ -2858,7 +2882,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Other materials",
+                  "english": "Other materials?",
                   "default": "Outros materias?"
                 }
               }
@@ -2877,7 +2901,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which Materials",
+                  "english": "Which materials?",
                   "default": "Quais materiais?"
                 }
               }
@@ -2896,12 +2920,15 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Diagnósticos:",
+                  "english": "How much did you pay for diagnostics:",
                   "default": "Quanto é que pagou pelos diagnósticos/exames/análises:"
                 }
               },
               "hint": {
-                "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao foi feito nenhuma analises/exame"
+                "text": {
+                  "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no diagnostics performed",
+                  "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não foram feitos nenhums diagnósticos/exames/análises"
+                }
               }
             },
             "constraint": "data(\"OOP_A_DIAQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -2919,7 +2946,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which diagnostics",
+                  "english": "Which diagnostics?",
                   "default": "Quais diagnósticos? (diagnósticos/exames/análises)"
                 }
               }
@@ -2939,7 +2966,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Other diagnostics",
+                  "english": "Other diagnostics?",
                   "default": "Outros diagnósticos/exames/análises?"
                 }
               }
@@ -2958,7 +2985,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which diagnostics",
+                  "english": "Which diagnostics?",
                   "default": "Quais diagnósticos/exames/análises?"
                 }
               }
@@ -2977,12 +3004,15 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Medicine:",
+                  "english": "How much did you pay for medicines?",
                   "default": "Quanto é que pagou pelos medicamentos?"
                 }
               },
               "hint": {
-                "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao foi receitada medicamentos"
+                "text": {
+                  "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no medicines prescribed/provided",
+                  "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não foi receitada medicamentos"
+                }
               }
             },
             "constraint": "data(\"OOP_A_MEDQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -3000,7 +3030,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which drugs",
+                  "english": "Which medicines?",
                   "default": "Quais medicamentos?"
                 }
               }
@@ -3020,7 +3050,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Other drugs",
+                  "english": "Other medicines?",
                   "default": "Outros medicametos?"
                 }
               }
@@ -3039,7 +3069,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which drugs",
+                  "english": "Which medicines?",
                   "default": "Quais medicamentos?"
                 }
               }
@@ -3058,12 +3088,15 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Outros despesas?",
+                  "english": "How much did you pay for other expenses?",
                   "default": "Quanto é que pagou pelos outros despesas?"
                 }
               },
               "hint": {
-                "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se nao tinha outros despesas"
+                "text": {
+                  "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer; <br> 88 if no further payments",
+                  "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder; <br> 88 se não tinha outros despesas"
+                }
               }
             },
             "constraint": "data(\"OOP_A_OUTQ\") != null || data(\"OOP_ANC\") != \"1\"",
@@ -3080,7 +3113,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Which other expenses",
+                  "english": "Which other expenses?",
                   "default": "Quais outros despesas?"
                 }
               }
@@ -3098,8 +3131,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Em que centro de saúde/clínica/hospital  {{data.NOMEMUL}}  procorou Ultima Consulta Prenatal?",
-                  "default": "Em que centro de saúde/clínica/hospital  {{data.NOMEMUL}}  procorou a sua última consulta de cuidados pré-natais?"
+                  "english": "In which health facility did {{data.NOMEMUL}}  have her last ANC visit?",
+                  "default": "Em que centro de saúde/clínica/hospital  {{data.NOMEMUL}}  procurou a sua última consulta de cuidados pré-natais?"
                 }
               }
             },
@@ -3118,8 +3151,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Onde Foi a Consulta CPN?",
-                  "default": "Onde Foi a Ultimo Consulta CPN?"
+                  "english": "Where was the last ANC visit?",
+                  "default": "Onde foi a última consulta CPN?"
                 }
               }
             },
@@ -3157,7 +3190,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Place of Consultation",
+                  "english": "Place of consultation",
                   "default": "Local de consulta"
                 }
               }
@@ -3207,8 +3240,8 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Despesas de transporte de mulher gravida",
-                  "default": "Despesas de transporte de mulher gravida"
+                  "english": "Transportation costs of the pregnant woman",
+                  "default": "Despesas de transporte de mulher grávida"
                 }
               }
             },
@@ -3225,12 +3258,15 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Quanto pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?",
+                  "english": "How much did you pay for transport to/from the health facility (round trip)?",
                   "default": "Quanto é que pagou pelo transporte de/para o estabelecimento de saúde (ida e volta)?"
                 }
               },
               "hint": {
-                "text": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+                "text": {
+                  "english": "Indicate: <br> 33 if don't know; <br> 77 if refused to answer",
+                  "default": "Indique: <br> 33 se não sabe; <br> 77 se recusou-se a responder"
+                }
               }
             },
             "constraint": "data(\"OOP_A_TRAQ\")!=null ||data(\"ANC\")==\"2\"",
@@ -3248,7 +3284,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Meio de transporte",
+                  "english": "Means of transport",
                   "default": "Meio de transporte"
                 }
               }
@@ -3278,7 +3314,7 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Quanto é que pagou pelo seguinte durante este gravidez:",
+                  "english": "How much did you pay for the following furing this pregnancy:",
                   "default": "Quanto é que pagou pelo seguinte durante este gravidez:"
                 }
               }
@@ -3296,14 +3332,14 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Cartão de gravidez?",
+                  "english": "Pregnancy card (the big pink one)?",
                   "default": "Cartão de gravidez?"
                 }
               },
               "hint": {
                 "text": {
-                  "english": "Se não obtou cartao durante este gravidez, indicar 88, se não sabe o preco indicar 33",
-                  "default": "Indique: <br> 88 se não obtou cartao durante est gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preco"
+                  "english": "Indicate: <br> 88 if she didn't receive a pregnancy card; <br> 77 if refused to answer; <br> 33 if she does not remember the price",
+                  "default": "Indique: <br> 88 se não obtou cartão durante esta gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preço"
                 }
               }
             },
@@ -3321,14 +3357,14 @@
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Cartão de vacina contra tétano?",
+                  "english": "Tetanus vaccine card (the small pink one)?",
                   "default": "Cartão de vacina contra tétano?"
                 }
               },
               "hint": {
                 "text": {
-                  "english": "Indicar: <br> 88 se não obtou cartao durante este gravidez, <br> 33 se não sabe o preco indicar",
-                  "default": "Indique: <br> 88 se não obtou cartao durante este gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preco indicar"
+                  "english": "Indicate: <br> 88 if she didn't receive a tetanus vacine card; <br> 77 if refused to answer; <br> 33 if she does not remember the price",
+                  "default": "Indique: <br> 88 se não obtou cartão durante esta gravidez, <br> 77 se recusou-se a responder, <br> 33 se não sabe o preço"
                 }
               }
             },
@@ -4675,7 +4711,7 @@
         "_aspect": "ANCPLACE",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Place\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Health Facility\",\"default\":\"Estabelisimento Sanitaria\"}}},\"_row_num\":49},{\"choice_list_name\":\"Place\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Outreach in the village\",\"default\":\"Estrategia Avancada na Tabanca\"}}},\"_row_num\":50},{\"choice_list_name\":\"Place\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Outreach elsewhere\",\"default\":\"Estrategia Avancada num outro local fora da Tabanca\"}}},\"_row_num\":51}]"
+        "_value": "[{\"choice_list_name\":\"Place\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Health facility\",\"default\":\"Estabelisimento  sanitária\"}}},\"_row_num\":49},{\"choice_list_name\":\"Place\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Outreach in the village\",\"default\":\"Estrategia avançada na Tabanca\"}}},\"_row_num\":50},{\"choice_list_name\":\"Place\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Outreach elsewhere\",\"default\":\"Estrategia avançada num outro local fora da Tabanca\"}}},\"_row_num\":51}]"
       },
       {
         "_partition": "Column",
@@ -4696,7 +4732,7 @@
         "_aspect": "OOP_A_DIAT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ecografia\",\"default\":\"Ecografia\"}}},\"_row_num\":26},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Análises de sangue\"}}},\"_row_num\":27},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Análises de urina\"}}},\"_row_num\":28},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Feces test\",\"default\":\"Análises de fezes\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"TDR\",\"default\":\"TDR (paludismo)\"}}},\"_row_num\":30},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Dont know\",\"default\":\"Não sabe\"}}},\"_row_num\":31},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":32}]"
+        "_value": "[{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ultrasound\",\"default\":\"Ecografia\"}}},\"_row_num\":26},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Blood test\",\"default\":\"Análises de sangue\"}}},\"_row_num\":27},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Urine test\",\"default\":\"Análises de urina\"}}},\"_row_num\":28},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Feces test\",\"default\":\"Análises de fezes\"}}},\"_row_num\":29},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"TDR (Malaria rapid test)\",\"default\":\"TDR (paludismo)\"}}},\"_row_num\":30},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":31},{\"choice_list_name\":\"Diagnostics\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":32}]"
       },
       {
         "_partition": "Column",
@@ -4710,7 +4746,7 @@
         "_aspect": "OOP_A_MATT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":18},{\"choice_list_name\":\"Materials\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Desinfectant\",\"default\":\"Desinfetantes\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Bleach\",\"default\":\"Lixivia\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Soap\",\"default\":\"Sabao\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Dont know\",\"default\":\"Não sabe\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":23}]"
+        "_value": "[{\"choice_list_name\":\"Materials\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Gloves\",\"default\":\"Luvas\"}}},\"_row_num\":18},{\"choice_list_name\":\"Materials\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Desinfectant\",\"default\":\"Desinfetantes\"}}},\"_row_num\":19},{\"choice_list_name\":\"Materials\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Bleach\",\"default\":\"Lixivia\"}}},\"_row_num\":20},{\"choice_list_name\":\"Materials\",\"data_value\":\"9\",\"display\":{\"title\":{\"text\":{\"english\":\"Soap\",\"default\":\"Sabão\"}}},\"_row_num\":21},{\"choice_list_name\":\"Materials\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":22},{\"choice_list_name\":\"Materials\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":23}]"
       },
       {
         "_partition": "Column",
@@ -4724,14 +4760,14 @@
         "_aspect": "OOP_A_MEDT_SEL",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Ferro\",\"default\":\"Ferro\"}}},\"_row_num\":35},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Fansidar\",\"default\":\"Fansidar\"}}},\"_row_num\":36},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitaminas\",\"default\":\"Vitaminas\"}}},\"_row_num\":37},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibióticos\"}}},\"_row_num\":38},{\"choice_list_name\":\"Medicines\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Vacina TT\",\"default\":\"Vacina TT\"}}},\"_row_num\":39},{\"choice_list_name\":\"Medicines\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":40},{\"choice_list_name\":\"Medicines\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Anti-fungal\",\"default\":\"Anti-fungus\"}}},\"_row_num\":41},{\"choice_list_name\":\"Medicines\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe destinguir\",\"default\":\"Nao sabe destinguir\"}}},\"__EMPTY\":\"was 6 on  20230819\",\"_row_num\":42},{\"choice_list_name\":\"Medicines\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":43}]"
+        "_value": "[{\"choice_list_name\":\"Medicines\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Iron\",\"default\":\"Ferro\"}}},\"_row_num\":35},{\"choice_list_name\":\"Medicines\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Antimalarials\",\"default\":\"Fansidar\"}}},\"_row_num\":36},{\"choice_list_name\":\"Medicines\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Vitamins\",\"default\":\"Vitaminas\"}}},\"_row_num\":37},{\"choice_list_name\":\"Medicines\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Antibiotics\",\"default\":\"Antibióticos\"}}},\"_row_num\":38},{\"choice_list_name\":\"Medicines\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Tetanus vaccine\",\"default\":\"Vacina TT\"}}},\"_row_num\":39},{\"choice_list_name\":\"Medicines\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Paracetamol\",\"default\":\"Paracetamol\"}}},\"_row_num\":40},{\"choice_list_name\":\"Medicines\",\"data_value\":\"8\",\"display\":{\"title\":{\"text\":{\"english\":\"Anti-fungals\",\"default\":\"Anti-fungus\"}}},\"_row_num\":41},{\"choice_list_name\":\"Medicines\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Can't distinguish\",\"default\":\"Não sabe distinguir\"}}},\"__EMPTY\":\"was 6 on  20230819\",\"_row_num\":42},{\"choice_list_name\":\"Medicines\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":43}]"
       },
       {
         "_partition": "Column",
         "_aspect": "OOP_A_TRAM",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Transport\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"A pé\",\"default\":\"A pé\"}}},\"_row_num\":6},{\"choice_list_name\":\"Transport\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Mota\",\"default\":\"Mota\"}}},\"_row_num\":7},{\"choice_list_name\":\"Transport\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Carro\",\"default\":\"Carro de Transporte\"}}},\"_row_num\":8},{\"choice_list_name\":\"Transport\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Taxi\",\"default\":\"Taxi\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transport\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Motocarro\",\"default\":\"Motocarro\"}}},\"_row_num\":10},{\"choice_list_name\":\"Transport\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Ambulancia\",\"default\":\"Ambulância\"}}},\"_row_num\":11},{\"choice_list_name\":\"Transport\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Private car\",\"default\":\"Carro Particular\"}}},\"_row_num\":12},{\"choice_list_name\":\"Transport\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Nao sabe\",\"default\":\"Não sabe\"}}},\"_row_num\":13},{\"choice_list_name\":\"Transport\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Recusou-se a responder\",\"default\":\"Recusou-se a responder\"}}},\"_row_num\":14},{\"choice_list_name\":\"Transport\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"Nemhuma\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":15}]"
+        "_value": "[{\"choice_list_name\":\"Transport\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Walked\",\"default\":\"A pé\"}}},\"_row_num\":6},{\"choice_list_name\":\"Transport\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Mota\",\"default\":\"Mota\"}}},\"_row_num\":7},{\"choice_list_name\":\"Transport\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Car (public transport)\",\"default\":\"Carro de transporte\"}}},\"_row_num\":8},{\"choice_list_name\":\"Transport\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Taxi\",\"default\":\"Taxi\"}}},\"_row_num\":9},{\"choice_list_name\":\"Transport\",\"data_value\":\"5\",\"display\":{\"title\":{\"text\":{\"english\":\"Motocarro\",\"default\":\"Motocarro\"}}},\"_row_num\":10},{\"choice_list_name\":\"Transport\",\"data_value\":\"6\",\"display\":{\"title\":{\"text\":{\"english\":\"Ambulance\",\"default\":\"Ambulância\"}}},\"_row_num\":11},{\"choice_list_name\":\"Transport\",\"data_value\":\"7\",\"display\":{\"title\":{\"text\":{\"english\":\"Private car\",\"default\":\"Carro particular\"}}},\"_row_num\":12},{\"choice_list_name\":\"Transport\",\"data_value\":\"33\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":13},{\"choice_list_name\":\"Transport\",\"data_value\":\"66\",\"display\":{\"title\":{\"text\":{\"english\":\"Refused to answer\",\"default\":\"Recusou-se a responder\"}}},\"_row_num\":14},{\"choice_list_name\":\"Transport\",\"data_value\":\"77\",\"display\":{\"title\":{\"text\":{\"english\":\"None of these\",\"default\":\"Nemhuma destes\"}}},\"_row_num\":15}]"
       },
       {
         "_partition": "Column",
