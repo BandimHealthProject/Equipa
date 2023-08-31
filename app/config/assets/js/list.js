@@ -228,7 +228,7 @@ function setDisplayText(person) {
         regdia = formatDate(person.REGDIA);
         
         // teksten
-        displayText = "Morança: " + person.MOR +"Mul:" + person.MUL + "<br />" +
+        displayText = "Mor:" + person.MOR +" Mul:" + person.MUL + " Fogao:" + person.FOGAO + "<br />" +
         "Nome: " + person.NOMEMAE  + "<br />" + 
         "Regdia: " + regdia + "<br />" +
         "ID mulher: " + person.REGID;
