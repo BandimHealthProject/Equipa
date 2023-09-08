@@ -597,7 +597,7 @@
       },
       {
         "clause": "if",
-        "condition": "data('ESTADOVIS') == '1' && data('GR') == '1'",
+        "condition": "data('ESTADOVIS') == '1' && (data('GR') == '1' || data('GR_AINDA') == '1' )",
         "_row_num": 82
       },
       {
@@ -4583,7 +4583,7 @@
           },
           {
             "clause": "if",
-            "condition": "data('ESTADOVIS') == '1' && data('GR') == '1'",
+            "condition": "data('ESTADOVIS') == '1' && (data('GR') == '1' || data('GR_AINDA') == '1' )",
             "_row_num": 82,
             "__rowNum__": 81,
             "_token_type": "goto_label",

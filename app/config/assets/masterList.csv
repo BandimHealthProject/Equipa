@@ -115,6 +115,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 1,"Oio",1002,"Encheia",17,"Cangha Cocry",18,"AMBUIA QUIFADE=20",2
 1,"Oio",1002,"Encheia",17,"Cangha Cocry",19,"ANHACA WEL(WAS TCHUDA)",2
 1,"Oio",1002,"Encheia",17,"Cangha Cocry",20,"AMBENDA QUEMUCA=18",2
+1,"Oio",1002,"Encheia",17,"Cangha Cocry",21,"TCHUDA MOCTE",2
 1,"Oio",1002,"Encheia",18,"Encheia",1,"AFANDE",2
 1,"Oio",1002,"Encheia",18,"Encheia",2,"AFLON",2
 1,"Oio",1002,"Encheia",18,"Encheia",3,"ALOTE",2
@@ -333,6 +334,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 1,"Oio",1004,"Mansoa",6,"Cutia",63,"QUINHAWE DANFA",4
 1,"Oio",1004,"Mansoa",6,"Cutia",64,"IUNA NHAGA",4
 1,"Oio",1004,"Mansoa",6,"Cutia",65,"TIBNA",4
+1,"Oio",1004,"Mansoa",6,"Cutia",66,"POR FAVOR INDICAR NOME",4
 1,"Oio",1004,"Mansoa",7,"Rossum",1,"BLEFE NANJULAM(BRIMPANDE)",4
 1,"Oio",1004,"Mansoa",7,"Rossum",2,"BIAIA NANFAMBA",4
 1,"Oio",1004,"Mansoa",7,"Rossum",3,"BASSAM NHAGA(PANSAU)",4
@@ -739,6 +741,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 1,"Oio",1013,"Mansaba",32,"Demba So",17,"SECO SEIDE",11
 1,"Oio",1013,"Mansaba",32,"Demba So",18,"IERO SEIDE",11
 1,"Oio",1013,"Mansaba",32,"Demba So",19,"MALAM SEIDE",11
+1,"Oio",1013,"Mansaba",32,"Demba So",20,"POR FAVOR INDICAR NOME",11
 2,"Biombo",2001,"Ondame",17,"Blim Blim",1,"DELGADO CO",12
 2,"Biombo",2001,"Ondame",17,"Blim Blim",2,"ALIOS TE",12
 2,"Biombo",2001,"Ondame",17,"Blim Blim",3,"ABA IE",12
@@ -909,6 +912,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2002,"Dorse",14,"Bissa",30,"OPICA",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",1,"OBERCO SA",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",2,"OLOPES",13
+2,"Biombo",2002,"Dorse",15,"Reino Tor",3,"INSUMANDE INDI",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",8,"OCULPA",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",9,"CRIMA IE",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",12,"QUEBESSE TE",13
@@ -933,6 +937,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2002,"Dorse",15,"Reino Tor",59,"JOSE NUNES",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",60,"CAT-NA",13
 2,"Biombo",2002,"Dorse",15,"Reino Tor",61,"PAULO TE(ORENHINS)",13
+2,"Biombo",2002,"Dorse",15,"Reino Tor",62,"POR FAVOR INDICAR NOME",13
 2,"Biombo",2002,"Dorse",16,"Dorse",1,"MINAGUE",13
 2,"Biombo",2002,"Dorse",16,"Dorse",2,"RUI CO",13
 2,"Biombo",2002,"Dorse",16,"Dorse",3,"ABEBOL",13
@@ -963,6 +968,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2002,"Dorse",16,"Dorse",55,"ODECADE",13
 2,"Biombo",2003,"Quinhamel",22,"Bocomul",1,"QUION CA",14
 2,"Biombo",2003,"Quinhamel",22,"Bocomul",2,"NDONGUE",14
+2,"Biombo",2003,"Quinhamel",22,"Bocomul",3,"INHENE",14
 2,"Biombo",2003,"Quinhamel",22,"Bocomul",3,"INHENE",14
 2,"Biombo",2003,"Quinhamel",22,"Bocomul",4,"ASSALA",14
 2,"Biombo",2003,"Quinhamel",22,"Bocomul",6,"DJINE",14
@@ -1281,6 +1287,7 @@ REG,REGNOME,HCAREA,HCAREANOME,TAB,TABNOME,MOR,MORNOME,LISTGROUP
 2,"Biombo",2008,"Cumura",9,"Iem",14,"IMBANA LENGUE",19
 2,"Biombo",2008,"Cumura",9,"Iem",15,"FANDA QUELUSSE",19
 2,"Biombo",2008,"Cumura",9,"Iem",16,"QUEMUTCHE BIAG",19
+2,"Biombo",2008,"Cumura",9,"Iem",17,"SORI QUEITA",19
 2,"Biombo",2008,"Cumura",9,"Iem",18,"SAMBA DA SILVA",19
 2,"Biombo",3001,"Quelele",10,"Buno",1,"SECO DJU",20
 2,"Biombo",3001,"Quelele",10,"Buno",2,"ANTONIO CO(INQUIR)",20
