@@ -69,7 +69,7 @@ function initButtons() {
         // Buttons
         var btn = ul.find('#' + this.listGroup);
         btn.on("click", function() {
-            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, null,  null, null, null, null, assistant); //4
+            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, null,  null, null,  null, assistant); //4 5->4
 //            var queryParams = util.setQuerystringParams(date, that.reg, that.regNome, that.hcarea, that.hcareaNome, that.listGroup, null,  null, null, null, null, assistant);
             odkTables.launchHTML(null, 'config/assets/tab.html' + queryParams);
         })        

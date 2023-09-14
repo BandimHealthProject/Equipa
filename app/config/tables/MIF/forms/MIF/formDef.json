@@ -2098,6 +2098,12 @@
         "_row_num": 48
       },
       {
+        "name": "CONT",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 49
+      },
+      {
         "name": "CICA",
         "type": "async_assign_num_value",
         "isSessionVariable": false,
@@ -2162,6 +2168,12 @@
         "type": "integer",
         "isSessionVariable": false,
         "_row_num": 64
+      },
+      {
+        "name": "VISNUMBER",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 65
       }
     ]
   },
@@ -3835,6 +3847,22 @@
         "isSessionVariable": true,
         "elementKey": "vivons"
       },
+      "CONT": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONT"
+      },
       "CICA": {
         "_defn": [
           {
@@ -3955,6 +3983,17 @@
         ],
         "isSessionVariable": false,
         "elementKey": "PARPAD3"
+      },
+      "VISNUMBER": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNUMBER"
       }
     },
     "section_names": [
@@ -6229,6 +6268,25 @@
           "vivons_items"
         ]
       },
+      "CONT": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "CONT",
+        "elementName": "CONT",
+        "elementSet": "data",
+        "elementPath": "CONT"
+      },
       "CICA": {
         "_defn": [
           {
@@ -6382,6 +6440,20 @@
         "elementName": "PARPAD3",
         "elementSet": "data",
         "elementPath": "PARPAD3"
+      },
+      "VISNUMBER": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNUMBER",
+        "elementName": "VISNUMBER",
+        "elementSet": "data",
+        "elementPath": "VISNUMBER"
       },
       "abns_items": {
         "type": "string",

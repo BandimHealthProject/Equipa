@@ -1405,9 +1405,7 @@
         "_row_num": 22
       },
       {
-        "name": "OOP_A_OUTT_SEL",
-        "type": "select_multiple",
-        "isSessionVariable": false,
+        "comment": "OOP_A_OUTT_SEL; select_multiple; removed",
         "_row_num": 23
       },
       {
@@ -1459,9 +1457,7 @@
         "_row_num": 33
       },
       {
-        "name": "LOCPAR_FORA",
-        "type": "select_one",
-        "isSessionVariable": false,
+        "comment": "LOCPAR_FORA, select_one, removed",
         "_row_num": 34
       },
       {
@@ -2483,21 +2479,6 @@
         "isSessionVariable": false,
         "elementKey": "OOP_A_OUTT"
       },
-      "OOP_A_OUTT_SEL": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OOP_A_OUTT_SEL_items"
-        },
-        "_defn": [
-          {
-            "_row_num": 23,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_A_OUTT_SEL"
-      },
       "OOP_A_OUTT_OU": {
         "type": "string",
         "_defn": [
@@ -2612,17 +2593,6 @@
         ],
         "isSessionVariable": false,
         "elementKey": "VISITID"
-      },
-      "LOCPAR_FORA": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 34,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "LOCPAR_FORA"
       },
       "OOP_A_C_CPN": {
         "type": "integer",
@@ -4209,31 +4179,6 @@
         "elementSet": "data",
         "elementPath": "OOP_A_OUTT"
       },
-      "OOP_A_OUTT_SEL": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "elementKey": "OOP_A_OUTT_SEL_items",
-          "elementName": "items",
-          "elementSet": "data",
-          "elementPath": "OOP_A_OUTT_SEL.items",
-          "notUnitOfRetention": true
-        },
-        "_defn": [
-          {
-            "_row_num": 23,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "OOP_A_OUTT_SEL",
-        "elementName": "OOP_A_OUTT_SEL",
-        "elementSet": "data",
-        "elementPath": "OOP_A_OUTT_SEL",
-        "listChildElementKeys": [
-          "OOP_A_OUTT_SEL_items"
-        ]
-      },
       "OOP_A_OUTT_OU": {
         "type": "string",
         "_defn": [
@@ -4379,20 +4324,6 @@
         "elementName": "VISITID",
         "elementSet": "data",
         "elementPath": "VISITID"
-      },
-      "LOCPAR_FORA": {
-        "type": "string",
-        "_defn": [
-          {
-            "_row_num": 34,
-            "section_name": "model"
-          }
-        ],
-        "isSessionVariable": false,
-        "elementKey": "LOCPAR_FORA",
-        "elementName": "LOCPAR_FORA",
-        "elementSet": "data",
-        "elementPath": "LOCPAR_FORA"
       },
       "OOP_A_C_CPN": {
         "type": "integer",
@@ -4558,14 +4489,6 @@
         "elementName": "items",
         "elementSet": "data",
         "elementPath": "OOP_A_MEDT_SEL.items",
-        "notUnitOfRetention": true
-      },
-      "OOP_A_OUTT_SEL_items": {
-        "type": "string",
-        "elementKey": "OOP_A_OUTT_SEL_items",
-        "elementName": "items",
-        "elementSet": "data",
-        "elementPath": "OOP_A_OUTT_SEL.items",
         "notUnitOfRetention": true
       },
       "OOP_A_TRAM_items": {

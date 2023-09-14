@@ -82,17 +82,12 @@
         "_row_num": 3
       },
       {
-        "type": "select_one",
-        "values_list": "Assistant",
-        "name": "ASSISTANT",
-        "display": {
-          "prompt": {
-            "text": {
-              "english": "Assistent",
-              "default": "Assistente"
-            }
-          }
-        },
+        "comment": "Removed:",
+        "__EMPTY": "select_one",
+        "__EMPTY_1": "Assistant",
+        "__EMPTY_2": "ASSISTANT",
+        "__EMPTY_3": "Assistent",
+        "__EMPTY_4": "Assistente",
         "_row_num": 4
       },
       {
@@ -209,8 +204,8 @@
         "display": {
           "prompt": {
             "text": {
-              "english": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida?",
-              "default": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida?"
+              "english": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida (mesmo gravidez)?",
+              "default": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida  (mesmo gravidez)?"
             }
           }
         },
@@ -1828,8 +1823,9 @@
       },
       {
         "name": "ASSISTANT",
-        "type": "select_one",
+        "type": "text",
         "isSessionVariable": false,
+        "__EMPTY": "From tablet",
         "_row_num": 8
       },
       {
@@ -1987,6 +1983,12 @@
         "type": "integer",
         "isSessionVariable": false,
         "_row_num": 35
+      },
+      {
+        "name": "VISNUMBER",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 36
       }
     ]
   },
@@ -3191,18 +3193,14 @@
       },
       "ASSISTANT": {
         "type": "string",
-        "valuesList": "Assistant",
         "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
           {
             "_row_num": 8,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
+        "__EMPTY": "From tablet",
         "elementKey": "ASSISTANT"
       },
       "CART": {
@@ -3588,6 +3586,17 @@
         ],
         "isSessionVariable": false,
         "elementKey": "PARPAD3"
+      },
+      "VISNUMBER": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNUMBER"
       }
     },
     "section_names": [
@@ -3620,25 +3629,6 @@
           },
           {
             "type": "select_one",
-            "values_list": "Assistant",
-            "name": "ASSISTANT",
-            "display": {
-              "prompt": {
-                "text": {
-                  "english": "Assistent",
-                  "default": "Assistente"
-                }
-              }
-            },
-            "_row_num": 4,
-            "__rowNum__": 3,
-            "_token_type": "prompt",
-            "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen2",
-            "promptIdx": 1
-          },
-          {
-            "type": "select_one",
             "values_list": "visitstatus",
             "name": "ESTADOVIS",
             "display": {
@@ -3654,7 +3644,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 2
+            "promptIdx": 1
           },
           {
             "type": "adate",
@@ -3672,7 +3662,7 @@
             "_token_type": "prompt",
             "_type": "adate",
             "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 3
+            "promptIdx": 2
           },
           {
             "type": "text",
@@ -3690,7 +3680,7 @@
             "_token_type": "prompt",
             "_type": "text",
             "_branch_label_enclosing_screen": "survey/_screen6",
-            "promptIdx": 4
+            "promptIdx": 3
           },
           {
             "type": "note",
@@ -3708,15 +3698,15 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen16",
-            "promptIdx": 5
+            "promptIdx": 4
           },
           {
             "type": "note",
             "display": {
               "prompt": {
                 "text": {
-                  "english": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida?",
-                  "default": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida?"
+                  "english": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida (mesmo gravidez)?",
+                  "default": "Name: <b>{{data.NOMEMAE}}</b> estave gravida visita passada. Ela continuar ser gravida  (mesmo gravidez)?"
                 }
               }
             },
@@ -3725,7 +3715,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen22",
-            "promptIdx": 6
+            "promptIdx": 5
           },
           {
             "type": "select_one",
@@ -3736,7 +3726,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen22",
-            "promptIdx": 7
+            "promptIdx": 6
           },
           {
             "type": "note",
@@ -3753,7 +3743,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen29",
-            "promptIdx": 8
+            "promptIdx": 7
           },
           {
             "type": "select_one",
@@ -3772,7 +3762,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen29",
-            "promptIdx": 9
+            "promptIdx": 8
           },
           {
             "type": "select_one",
@@ -3791,7 +3781,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen29",
-            "promptIdx": 10
+            "promptIdx": 9
           },
           {
             "type": "note",
@@ -3808,7 +3798,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen38",
-            "promptIdx": 11
+            "promptIdx": 10
           },
           {
             "type": "select_one",
@@ -3827,7 +3817,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen38",
-            "promptIdx": 12
+            "promptIdx": 11
           },
           {
             "type": "select_one",
@@ -3846,7 +3836,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen38",
-            "promptIdx": 13
+            "promptIdx": 12
           },
           {
             "type": "select_one",
@@ -3865,7 +3855,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen48",
-            "promptIdx": 14
+            "promptIdx": 13
           },
           {
             "type": "adate",
@@ -3883,7 +3873,7 @@
             "_token_type": "prompt",
             "_type": "adate",
             "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 15
+            "promptIdx": 14
           },
           {
             "type": "select_one",
@@ -3902,7 +3892,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen53",
-            "promptIdx": 16
+            "promptIdx": 15
           },
           {
             "type": "select_one",
@@ -3921,7 +3911,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 17
+            "promptIdx": 16
           },
           {
             "type": "integer",
@@ -3939,7 +3929,7 @@
             "_token_type": "prompt",
             "_type": "integer",
             "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 18
+            "promptIdx": 17
           },
           {
             "type": "select_one_with_other",
@@ -3958,7 +3948,7 @@
             "_token_type": "prompt",
             "_type": "select_one_with_other",
             "_branch_label_enclosing_screen": "survey/_screen58",
-            "promptIdx": 19
+            "promptIdx": 18
           },
           {
             "type": "note",
@@ -3975,7 +3965,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen67",
-            "promptIdx": 20
+            "promptIdx": 19
           },
           {
             "type": "linked_table",
@@ -3985,7 +3975,7 @@
             "_token_type": "prompt",
             "_type": "linked_table",
             "_branch_label_enclosing_screen": "survey/_screen67",
-            "promptIdx": 21
+            "promptIdx": 20
           },
           {
             "type": "note",
@@ -4002,7 +3992,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen74",
-            "promptIdx": 22
+            "promptIdx": 21
           },
           {
             "type": "linked_table",
@@ -4012,7 +4002,7 @@
             "_token_type": "prompt",
             "_type": "linked_table",
             "_branch_label_enclosing_screen": "survey/_screen74",
-            "promptIdx": 23
+            "promptIdx": 22
           },
           {
             "type": "note",
@@ -4029,7 +4019,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 24
+            "promptIdx": 23
           },
           {
             "type": "linked_table",
@@ -4039,7 +4029,7 @@
             "_token_type": "prompt",
             "_type": "linked_table",
             "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 25
+            "promptIdx": 24
           },
           {
             "type": "select_one",
@@ -4058,7 +4048,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen98",
-            "promptIdx": 26
+            "promptIdx": 25
           },
           {
             "type": "select_multiple",
@@ -4077,7 +4067,7 @@
             "_token_type": "prompt",
             "_type": "select_multiple",
             "_branch_label_enclosing_screen": "survey/_screen98",
-            "promptIdx": 27
+            "promptIdx": 26
           },
           {
             "type": "select_one",
@@ -4096,7 +4086,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen105",
-            "promptIdx": 28
+            "promptIdx": 27
           },
           {
             "type": "select_one",
@@ -4115,7 +4105,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen105",
-            "promptIdx": 29
+            "promptIdx": 28
           },
           {
             "type": "select_one",
@@ -4134,7 +4124,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen105",
-            "promptIdx": 30
+            "promptIdx": 29
           },
           {
             "type": "select_one",
@@ -4153,7 +4143,7 @@
             "_token_type": "prompt",
             "_type": "select_one",
             "_branch_label_enclosing_screen": "survey/_screen112",
-            "promptIdx": 31
+            "promptIdx": 30
           },
           {
             "type": "note",
@@ -4171,7 +4161,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen116",
-            "promptIdx": 32
+            "promptIdx": 31
           },
           {
             "type": "note",
@@ -4189,7 +4179,7 @@
             "_token_type": "prompt",
             "_type": "note",
             "_branch_label_enclosing_screen": "survey/_screen123",
-            "promptIdx": 33
+            "promptIdx": 32
           },
           {
             "_token_type": "prompt",
@@ -4197,7 +4187,7 @@
             "_type": "contents",
             "_row_num": 128,
             "_branch_label_enclosing_screen": "survey/_screen128",
-            "promptIdx": 34
+            "promptIdx": 33
           }
         ],
         "validation_tag_map": {
@@ -4215,7 +4205,7 @@
               "__rowNum__": 4,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\nactivePromptIndicies.push(1);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(0);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 0
           },
           {
@@ -4229,7 +4219,7 @@
               "__rowNum__": 13,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(2);\nif (data('ESTADOVIS') ==  '2' || data('ESTADOVIS') ==  '3') {\nactivePromptIndicies.push(3);\nif (data('ESTADOVIS') ==  '2') {\nactivePromptIndicies.push(4);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(1);\nif (data('ESTADOVIS') ==  '2' || data('ESTADOVIS') ==  '3') {\nactivePromptIndicies.push(2);\nif (data('ESTADOVIS') ==  '2') {\nactivePromptIndicies.push(3);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 1
           },
           {
@@ -4259,7 +4249,7 @@
               "__rowNum__": 18,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(4);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 4
           },
           {
@@ -4296,7 +4286,7 @@
               "__rowNum__": 24,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(6);\nactivePromptIndicies.push(7);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(5);\nactivePromptIndicies.push(6);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 8
           },
           {
@@ -4349,7 +4339,7 @@
               "__rowNum__": 34,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nactivePromptIndicies.push(10);\nif (data('GR') == '1') {\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(7);\nactivePromptIndicies.push(8);\nactivePromptIndicies.push(9);\nif (data('GR') == '1') {\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 14
           },
           {
@@ -4386,7 +4376,7 @@
               "__rowNum__": 43,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nactivePromptIndicies.push(13);\nif (data('GR') == '1') {\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(10);\nactivePromptIndicies.push(11);\nactivePromptIndicies.push(12);\nif (data('GR') == '1') {\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
@@ -4423,7 +4413,7 @@
               "__rowNum__": 49,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 22
           },
           {
@@ -4460,7 +4450,7 @@
               "__rowNum__": 55,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(15);\nactivePromptIndicies.push(16);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(14);\nactivePromptIndicies.push(15);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 26
           },
           {
@@ -4490,7 +4480,7 @@
               "__rowNum__": 63,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(17);\nif (data('ABPARTNV') == '2') {\nactivePromptIndicies.push(18);\nactivePromptIndicies.push(19);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(16);\nif (data('ABPARTNV') == '2') {\nactivePromptIndicies.push(17);\nactivePromptIndicies.push(18);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 29
           },
           {
@@ -4527,7 +4517,7 @@
               "__rowNum__": 69,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nactivePromptIndicies.push(20);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 33
           },
           {
@@ -4564,7 +4554,7 @@
               "__rowNum__": 76,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(21);\nactivePromptIndicies.push(22);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 37
           },
           {
@@ -4608,7 +4598,7 @@
               "__rowNum__": 85,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(23);\nactivePromptIndicies.push(24);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 42
           },
           {
@@ -4652,7 +4642,7 @@
               "__rowNum__": 102,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nif (data('EVITA') == '1') {\nactivePromptIndicies.push(27);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(25);\nif (data('EVITA') == '1') {\nactivePromptIndicies.push(26);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 47
           },
           {
@@ -4673,7 +4663,7 @@
               "__rowNum__": 110,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nif (data('TENDAYN') != '2' || data('TENDA') !=3) {\nactivePromptIndicies.push(30);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(27);\nactivePromptIndicies.push(28);\nif (data('TENDAYN') != '2' || data('TENDA') !=3) {\nactivePromptIndicies.push(29);\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 49
           },
           {
@@ -4687,7 +4677,7 @@
               "__rowNum__": 113,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 50
           },
           {
@@ -4717,7 +4707,7 @@
               "__rowNum__": 117,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 53
           },
           {
@@ -4754,7 +4744,7 @@
               "__rowNum__": 125,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 57
           },
           {
@@ -4773,7 +4763,7 @@
           {
             "_row_num": 128,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
@@ -5151,18 +5141,14 @@
       },
       "ASSISTANT": {
         "type": "string",
-        "valuesList": "Assistant",
         "_defn": [
-          {
-            "_row_num": 4,
-            "section_name": "survey"
-          },
           {
             "_row_num": 8,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
+        "__EMPTY": "From tablet",
         "elementKey": "ASSISTANT",
         "elementName": "ASSISTANT",
         "elementSet": "data",
@@ -5645,6 +5631,20 @@
         "elementSet": "data",
         "elementPath": "PARPAD3"
       },
+      "VISNUMBER": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 36,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VISNUMBER",
+        "elementName": "VISNUMBER",
+        "elementSet": "data",
+        "elementPath": "VISNUMBER"
+      },
       "escons_items": {
         "type": "string",
         "elementKey": "escons_items",
@@ -5803,13 +5803,6 @@
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Live birth\",\"default\":\"Nado vivo\"}}},\"_row_num\":47},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Stillbirth\",\"default\":\"Nado morto\"}}},\"_row_num\":48},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Miscarriage\",\"default\":\"Aborto\"}}},\"_row_num\":49}]"
-      },
-      {
-        "_partition": "Column",
-        "_aspect": "ASSISTANT",
-        "_key": "displayChoicesList",
-        "_type": "object",
-        "_value": "[{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"4\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Simoneo\",\"default\":\"Simoneo\"}}},\"_row_num\":8},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"10\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Malam\",\"default\":\"Malam\"}}},\"_row_num\":9},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"11\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Maudo\",\"default\":\"Maudo\"}}},\"_row_num\":10},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"13\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Celestino\",\"default\":\"Celestino\"}}},\"_row_num\":11},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"14\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Makci\",\"default\":\"Makci\"}}},\"_row_num\":12},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"15\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Iaia\",\"default\":\"Iaia\"}}},\"_row_num\":13},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"16\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Oides\",\"default\":\"Oides\"}}},\"_row_num\":14},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"20\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"William\",\"default\":\"William\"}}},\"_row_num\":15},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"22\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Jailson\",\"default\":\"Jailson\"}}},\"_row_num\":16},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"23\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Igualdino\",\"default\":\"Igualdino\"}}},\"_row_num\":17},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"26\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Demba\",\"default\":\"Demba\"}}},\"_row_num\":18},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"28\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Helson\",\"default\":\"Helson\"}}},\"_row_num\":19},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"29\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Gibril\",\"default\":\"Gibril\"}}},\"_row_num\":20},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"30\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Voler\",\"default\":\"Voler\"}}},\"_row_num\":21},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"31\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Isna\",\"default\":\"Isna\"}}},\"_row_num\":22},{\"choice_list_name\":\"Assistant\",\"data_value\":\"=\\\"32\\\"\",\"display\":{\"title\":{\"text\":{\"english\":\"Mina\",\"default\":\"Mina\"}}},\"_row_num\":23}]"
       },
       {
         "_partition": "Column",

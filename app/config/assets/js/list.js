@@ -36,13 +36,14 @@ function doSanityCheck() {
 //       console.log("todayAdate", todayAdate2);
 // }
 
+
 function loadMIF() {
     // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts
-     var sql = "SELECT V._id, V._savepoint_type, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.MUL, M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1,  M.TAB" +
+     var sql = "SELECT V._id, V._savepoint_type, V.CONT, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.MUL, M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1,  M.TAB, V.VISNUMBER" +
      " FROM MIF AS M" + 
      " LEFT JOIN MIF_VISIT AS V ON M.REGID = V.REGID" + 
         " WHERE M.REG = " + reg + " AND M.TAB = " + tab + " AND M.MOR = " + mor + 
-        " GROUP BY M.REGID" +
+        " GROUP BY M.REGID HAVING MAX(V.VISNUMBER) OR V.VISNUMBER IS NULL" +
         // HAVING V.CONT=" + todayAdate2 + " OR V.CONT IS NULL" +
         " ORDER BY M.FOGAO, M.REGID";
     
@@ -56,6 +57,7 @@ function loadMIF() {
            // Her hentes alle de variabler fra SQL ind i javascript
             var rowId = result.getData(row,"_id");                      // row række id (=_id i ODK) 
             var savepoint = result.getData(row,"_savepoint_type")       // Savepoint = Finalize vs incomplete osv
+            var CONT = result.getData(row,"CONT");
             var FOGAO = result.getData(row,"FOGAO");
             var GR_LAST = result.getData(row,"GR_LAST");
             var MOR = result.getData(row,"MOR");
@@ -66,9 +68,10 @@ function loadMIF() {
             var REGDIA = result.getData(row,"REGDIA");
             var REGID = result.getData(row,"REGID")
             var TAB = result.getData(row,"TAB");
+            var VISNUMBER = result.getData(row,"VISNUMBER");
             // har samles alle variablerne i et "object"
-            var p = {type: 'woman',  rowId, savepoint, FOGAO, GR_LAST, MOR, MUL, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB}; // 
-            MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden
+            var p = {type: 'woman',  rowId, savepoint, CONT, FOGAO, GR_LAST, MOR, MUL, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB, VISNUMBER}; // 
+            MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden 20230911: CONT added*4
         }
         console.log("MIF:", MIF)
         
@@ -391,6 +394,7 @@ function getDefaults(person) {
     //    defaults['REGDIA'] = person.REGDIA;
     //    defaults['TAB'] = tab;
     //    defaults['TABNOME'] = tabNome;
+        defaults['VISNUMBER'] = Number(person.VISNUMBER) + 1;
     // Herover fjernet en masse variabler som ikke er i formen - kunne det være forklaringen=
 
     // hvis barn
