@@ -1,6 +1,7 @@
 _element_key,_element_name,_element_type,_list_child_element_keys
 ANC,ANC,string,[]
 ANCPLACE,ANCPLACE,string,[]
+ANC_NO,ANC_NO,integer,[]
 LOCPARCODE,LOCPARCODE,string,[]
 LOCPAROU,LOCPAROU,string,[]
 OOP_ANC,OOP_ANC,string,[]

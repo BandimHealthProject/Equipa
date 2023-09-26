@@ -71,7 +71,7 @@
           "prompt": {
             "text": {
               "english": "Did you pay for the birth? (incl. service provision, materials, diagnostics, medicine)",
-              "default": "Você pagou pelo parto? <br> (Prestação de serviço, materiais, diagnósticos, medicamentos)"
+              "default": "Você pagou pelo parto? <br> ( <span style=\"color: red;\"> Prestação de serviço, materiais, diagnósticos, medicamentos </span>)"
             }
           },
           "hint": {
@@ -2427,7 +2427,7 @@
               "prompt": {
                 "text": {
                   "english": "Did you pay for the birth? (incl. service provision, materials, diagnostics, medicine)",
-                  "default": "Você pagou pelo parto? <br> (Prestação de serviço, materiais, diagnósticos, medicamentos)"
+                  "default": "Você pagou pelo parto? <br> ( <span style=\"color: red;\"> Prestação de serviço, materiais, diagnósticos, medicamentos </span>)"
                 }
               },
               "hint": {
