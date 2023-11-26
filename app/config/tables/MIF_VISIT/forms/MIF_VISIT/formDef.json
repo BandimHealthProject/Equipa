@@ -8,7 +8,7 @@
       },
       {
         "setting_name": "form_version",
-        "value": 270519,
+        "value": 10112023,
         "_row_num": 3
       },
       {
@@ -529,11 +529,11 @@
       {
         "clause": "if",
         "condition": "data('ABPARTTIPO') == '1'",
-        "_row_num": 66
+        "_row_num": 67
       },
       {
         "clause": "begin screen",
-        "_row_num": 67
+        "_row_num": 68
       },
       {
         "type": "select_one",
@@ -547,12 +547,12 @@
             }
           }
         },
-        "_row_num": 68
+        "_row_num": 69
       },
       {
         "clause": "if",
         "condition": "data('ABPARTNV') == '2'",
-        "_row_num": 69
+        "_row_num": 70
       },
       {
         "type": "integer",
@@ -565,7 +565,7 @@
             }
           }
         },
-        "_row_num": 70
+        "_row_num": 71
       },
       {
         "type": "select_one_with_other",
@@ -579,28 +579,295 @@
             }
           }
         },
-        "_row_num": 71
-      },
-      {
-        "clause": "end if",
         "_row_num": 72
       },
       {
-        "clause": "end screen",
+        "clause": "end if",
         "_row_num": 73
       },
       {
-        "clause": "end if",
+        "clause": "end screen",
         "_row_num": 74
       },
       {
-        "clause": "if",
-        "condition": "data('ESTADOVIS') == '1' && (data('ABPARTTIPO') == '1'||data('ABPARTTIPO') == '2')",
+        "clause": "end if",
         "_row_num": 75
       },
       {
-        "clause": "begin screen",
+        "clause": "if",
+        "condition": "data('ABPARTTIPO') == '4'",
         "_row_num": 76
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 77
+      },
+      {
+        "type": "select_one",
+        "values_list": "birthoutcome2",
+        "name": "ABPARTTIPO_G1",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Twin 1: Type of delivery",
+              "default": "Gemeo 1: Tipo de parto"
+            }
+          }
+        },
+        "_row_num": 78
+      },
+      {
+        "clause": "if",
+        "condition": "data('ABPARTTIPO_G1')==\"1\"",
+        "_row_num": 79
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoU",
+        "name": "ABPARTNV",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Is the 1st twin  still alive?",
+              "default": "O primeiro gemeo ainda está viva?"
+            }
+          }
+        },
+        "_row_num": 80
+      },
+      {
+        "clause": "if",
+        "condition": "data('ABPARTNV') == '2'",
+        "_row_num": 81
+      },
+      {
+        "type": "integer",
+        "name": "ABPARTNV_TEMPO",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Age at death",
+              "default": "Idade de falecimento"
+            }
+          }
+        },
+        "_row_num": 82
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "time_unit",
+        "name": "ABPARTNV_TEMPO_UNIT",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Time units",
+              "default": "Unidade de tempo"
+            }
+          }
+        },
+        "_row_num": 83
+      },
+      {
+        "clause": "end if",
+        "_row_num": 84
+      },
+      {
+        "clause": "end if",
+        "_row_num": 85
+      },
+      {
+        "type": "select_one",
+        "values_list": "birthoutcome2",
+        "name": "ABPARTTIPO_G2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Twin 2: Type of delivery",
+              "default": "Gemeo 2: Tipo de parto"
+            }
+          }
+        },
+        "_row_num": 86
+      },
+      {
+        "clause": "if",
+        "condition": "data('ABPARTTIPO_G2')==\"1\"",
+        "_row_num": 87
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoU",
+        "name": "ABPARTNV2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Is the 2nd twin  still alive?",
+              "default": "O segundo gemeo ainda está viva?"
+            }
+          }
+        },
+        "_row_num": 89
+      },
+      {
+        "clause": "if",
+        "condition": "data('ABPARTNV2') == '2'",
+        "_row_num": 90
+      },
+      {
+        "type": "integer",
+        "name": "ABPARTNV_TEMPO2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Age at death",
+              "default": "Idade de falecimento"
+            }
+          }
+        },
+        "_row_num": 91
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "time_unit",
+        "name": "ABPARTNV_TEMPO_UNIT2",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Time units",
+              "default": "Unidade de tempo"
+            }
+          }
+        },
+        "_row_num": 92
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoU",
+        "name": "TRIGEMEOS",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "More than 2 children",
+              "default": "Mais de 2 gemeos?"
+            }
+          }
+        },
+        "_row_num": 93
+      },
+      {
+        "clause": "end if",
+        "_row_num": 94
+      },
+      {
+        "clause": "end if",
+        "_row_num": 95
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 96
+      },
+      {
+        "clause": "end if",
+        "_row_num": 97
+      },
+      {
+        "clause": "if",
+        "condition": "data('TRIGEMEOS')==\"1\"",
+        "_row_num": 98
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 99
+      },
+      {
+        "type": "select_one",
+        "values_list": "birthoutcome2",
+        "name": "ABPARTTIPO_G3",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Twin 3: Type of delivery",
+              "default": "Gemeo 3: Tipo de parto"
+            }
+          }
+        },
+        "_row_num": 100
+      },
+      {
+        "clause": "if",
+        "condition": "data('ABPARTTIPO_G3')==\"1\"",
+        "_row_num": 101
+      },
+      {
+        "type": "select_one",
+        "values_list": "YesNoU",
+        "name": "ABPARTNV3",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Is the 3rd twin  still alive?",
+              "default": "O terceiro gemeo ainda está viva?"
+            }
+          }
+        },
+        "_row_num": 102
+      },
+      {
+        "clause": "if",
+        "condition": "data('ABPARTNV3') == '2'",
+        "_row_num": 103
+      },
+      {
+        "type": "integer",
+        "name": "ABPARTNV_TEMPO3",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Age at death",
+              "default": "Idade de falecimento"
+            }
+          }
+        },
+        "_row_num": 104
+      },
+      {
+        "type": "select_one_with_other",
+        "values_list": "time_unit",
+        "name": "ABPARTNV_TEMPO_UNIT3",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Time units",
+              "default": "Unidade de tempo"
+            }
+          }
+        },
+        "_row_num": 105
+      },
+      {
+        "clause": "end if",
+        "_row_num": 106
+      },
+      {
+        "clause": "end if",
+        "_row_num": 107
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 108
+      },
+      {
+        "clause": "end if",
+        "_row_num": 109
+      },
+      {
+        "clause": "if",
+        "condition": "data('ESTADOVIS') == '1' && (data('ABPARTTIPO') == '1'||data('ABPARTTIPO') == '2' || data('ABPARTTIPO_G1')!= null ||data('ABPARTTIPO_G2') != null ||data('ABPARTTIPO_G3') != null)",
+        "_row_num": 110
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 111
       },
       {
         "type": "note",
@@ -612,29 +879,29 @@
             }
           }
         },
-        "_row_num": 77
+        "_row_num": 112
       },
       {
         "type": "linked_table",
         "values_list": "mif_v_oop",
-        "_row_num": 78
+        "_row_num": 113
       },
       {
         "clause": "end screen",
-        "_row_num": 79
+        "_row_num": 114
       },
       {
         "clause": "end if",
-        "_row_num": 80
+        "_row_num": 115
       },
       {
         "clause": "if",
-        "condition": "data('ESTADOVIS') == '1' && data('ABPARTTIPO') == '1'",
-        "_row_num": 82
+        "condition": "data('ESTADOVIS') == '1' && (data('ABPARTTIPO') == '1' || data('ABPARTTIPO_G1') == '1' ||data('ABPARTTIPO_G2') == '1' ||data('ABPARTTIPO_G3') == '1')",
+        "_row_num": 117
       },
       {
         "clause": "begin screen",
-        "_row_num": 83
+        "_row_num": 118
       },
       {
         "type": "note",
@@ -646,33 +913,33 @@
             }
           }
         },
-        "_row_num": 84
+        "_row_num": 119
       },
       {
         "type": "linked_table",
         "values_list": "mif_v_oop_vac",
-        "_row_num": 85
+        "_row_num": 120
       },
       {
         "clause": "end screen",
-        "_row_num": 86
+        "_row_num": 121
       },
       {
         "clause": "end if",
-        "_row_num": 87
+        "_row_num": 122
       },
       {
         "clause": "end if",
-        "_row_num": 88
+        "_row_num": 123
       },
       {
         "clause": "if",
         "condition": "data('ESTADOVIS') == '1' && (data('GR') == '1' || data('GR_AINDA') == '1' )",
-        "_row_num": 91
+        "_row_num": 126
       },
       {
         "clause": "begin screen",
-        "_row_num": 92
+        "_row_num": 127
       },
       {
         "type": "note",
@@ -684,33 +951,30 @@
             }
           }
         },
-        "_row_num": 93
+        "_row_num": 128
       },
       {
         "type": "linked_table",
         "values_list": "mif_v_oop_anc",
-        "_row_num": 94
+        "_row_num": 129
       },
       {
         "clause": "end screen",
-        "_row_num": 95
+        "_row_num": 130
       },
       {
         "clause": "end if",
-        "_row_num": 96
-      },
-      {
-        "clause": "end if",
-        "_row_num": 104
+        "_row_num": 131
       },
       {
         "clause": "if",
-        "condition": "data('GR') != '1' || (data('PARPAD') != '2' && data('PARPAD3') != '1')",
-        "_row_num": 106
+        "condition": "data('GR') != '1' && data('PARPAD') != '1' && data('PARPAD3') != '1' && data('ESTADOVIS')!='3'&& data('ESTADOVIS')!='2'",
+        "comment": "Added 10-11-2023 - obs may need to shift the end if back",
+        "_row_num": 134
       },
       {
         "clause": "begin screen",
-        "_row_num": 107
+        "_row_num": 135
       },
       {
         "type": "select_one",
@@ -724,12 +988,12 @@
             }
           }
         },
-        "_row_num": 108
+        "_row_num": 136
       },
       {
         "clause": "if",
         "condition": "data('EVITA') == '1'",
-        "_row_num": 109
+        "_row_num": 137
       },
       {
         "type": "select_multiple",
@@ -743,23 +1007,29 @@
             }
           }
         },
-        "_row_num": 110
+        "_row_num": 138
       },
       {
         "clause": "end if",
-        "_row_num": 111
+        "_row_num": 139
       },
       {
         "clause": "end screen",
-        "_row_num": 112
+        "_row_num": 140
       },
       {
         "clause": "end if",
-        "_row_num": 113
+        "_row_num": 141
+      },
+      {
+        "clause": "if",
+        "condition": "data('PARPAD') != '1' && data('PARPAD3') != '1' && data('ESTADOVIS')!='3'&& data('ESTADOVIS')!='2'",
+        "comment": "end if",
+        "_row_num": 142
       },
       {
         "clause": "begin screen",
-        "_row_num": 114
+        "_row_num": 143
       },
       {
         "type": "select_one",
@@ -773,7 +1043,7 @@
             }
           }
         },
-        "_row_num": 115
+        "_row_num": 144
       },
       {
         "type": "select_one",
@@ -787,12 +1057,12 @@
             }
           }
         },
-        "_row_num": 116
+        "_row_num": 145
       },
       {
         "clause": "if",
         "condition": "data('TENDAYN') != '2' || data('TENDA') !=3",
-        "_row_num": 117
+        "_row_num": 146
       },
       {
         "type": "select_one",
@@ -806,19 +1076,19 @@
             }
           }
         },
-        "_row_num": 118
+        "_row_num": 147
       },
       {
         "clause": "end if",
-        "_row_num": 119
+        "_row_num": 148
       },
       {
         "clause": "end screen",
-        "_row_num": 120
+        "_row_num": 149
       },
       {
         "clause": "begin screen",
-        "_row_num": 121
+        "_row_num": 151
       },
       {
         "type": "select_one",
@@ -832,20 +1102,20 @@
             }
           }
         },
-        "_row_num": 122
+        "_row_num": 152
       },
       {
         "clause": "end screen",
-        "_row_num": 123
+        "_row_num": 153
       },
       {
         "clause": "if",
         "condition": "data('CART') == '1'",
-        "_row_num": 124
+        "_row_num": 154
       },
       {
         "clause": "begin screen",
-        "_row_num": 125
+        "_row_num": 155
       },
       {
         "type": "note",
@@ -857,25 +1127,73 @@
             }
           }
         },
-        "comment": "linked table vac removed",
-        "_row_num": 126
+        "comment": "linked table vac removed: Added - 10-11-2023",
+        "_row_num": 156
+      },
+      {
+        "type": "linked_table",
+        "values_list": "mif_vac",
+        "comment": "linked table vac removed: Added - 10-11-2023",
+        "_row_num": 157
       },
       {
         "clause": "end screen",
-        "_row_num": 127
+        "_row_num": 158
       },
       {
         "clause": "end if",
-        "_row_num": 128
+        "_row_num": 159
+      },
+      {
+        "clause": "end if",
+        "_row_num": 160
+      },
+      {
+        "clause": "if",
+        "condition": "data('ESTADOVIS') ==  '1' && data('CICA') == null",
+        "_row_num": 161
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 162
+      },
+      {
+        "type": "note",
+        "display": {
+          "prompt": {
+            "text": {
+              "english": "Scar status",
+              "default": "Estado da cicatriz"
+            }
+          }
+        },
+        "_row_num": 163
+      },
+      {
+        "type": "linked_table",
+        "values_list": "scar",
+        "_row_num": 164
+      },
+      {
+        "clause": "end screen",
+        "_row_num": 165
+      },
+      {
+        "clause": "end if",
+        "_row_num": 166
+      },
+      {
+        "clause": "end if",
+        "_row_num": 167
       },
       {
         "clause": "if",
         "condition": "data('GR') == '1'  && data('GR_LAST') != '1'",
-        "_row_num": 131
+        "_row_num": 168
       },
       {
         "clause": "begin screen",
-        "_row_num": 132
+        "_row_num": 169
       },
       {
         "type": "note",
@@ -888,15 +1206,15 @@
           }
         },
         "comment": "linked_table pregnancies removed",
-        "_row_num": 133
+        "_row_num": 170
       },
       {
         "clause": "end screen",
-        "_row_num": 135
+        "_row_num": 172
       },
       {
         "clause": "end if",
-        "_row_num": 136
+        "_row_num": 173
       }
     ],
     "prompt_types": [
@@ -1494,6 +1812,45 @@
         "_row_num": 49
       },
       {
+        "choice_list_name": "birthoutcome",
+        "data_value": "4",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Twins",
+              "default": "Gêmeos"
+            }
+          }
+        },
+        "_row_num": 50
+      },
+      {
+        "choice_list_name": "birthoutcome2",
+        "data_value": "1",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Live birth",
+              "default": "Nado vivo"
+            }
+          }
+        },
+        "_row_num": 51
+      },
+      {
+        "choice_list_name": "birthoutcome2",
+        "data_value": "2",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Stillbirth",
+              "default": "Nado morto"
+            }
+          }
+        },
+        "_row_num": 52
+      },
+      {
         "choice_list_name": "contraceptive",
         "data_value": "PILULA",
         "display": {
@@ -1504,7 +1861,7 @@
             }
           }
         },
-        "_row_num": 50
+        "_row_num": 54
       },
       {
         "choice_list_name": "contraceptive",
@@ -1517,7 +1874,7 @@
             }
           }
         },
-        "_row_num": 51
+        "_row_num": 55
       },
       {
         "choice_list_name": "contraceptive",
@@ -1530,7 +1887,7 @@
             }
           }
         },
-        "_row_num": 52
+        "_row_num": 56
       },
       {
         "choice_list_name": "contraceptive",
@@ -1543,7 +1900,7 @@
             }
           }
         },
-        "_row_num": 53
+        "_row_num": 57
       },
       {
         "choice_list_name": "contraceptive",
@@ -1556,7 +1913,7 @@
             }
           }
         },
-        "_row_num": 54
+        "_row_num": 58
       },
       {
         "choice_list_name": "contraceptive",
@@ -1569,7 +1926,7 @@
             }
           }
         },
-        "_row_num": 55
+        "_row_num": 59
       },
       {
         "choice_list_name": "contraceptive",
@@ -1582,7 +1939,7 @@
             }
           }
         },
-        "_row_num": 56
+        "_row_num": 60
       },
       {
         "choice_list_name": "contraceptive",
@@ -1595,7 +1952,7 @@
             }
           }
         },
-        "_row_num": 57
+        "_row_num": 61
       },
       {
         "choice_list_name": "contraceptive",
@@ -1608,7 +1965,7 @@
             }
           }
         },
-        "_row_num": 58
+        "_row_num": 62
       },
       {
         "choice_list_name": "contraceptive",
@@ -1621,7 +1978,7 @@
             }
           }
         },
-        "_row_num": 59
+        "_row_num": 63
       },
       {
         "choice_list_name": "contraceptive",
@@ -1634,7 +1991,7 @@
             }
           }
         },
-        "_row_num": 60
+        "_row_num": 64
       },
       {
         "choice_list_name": "dontknow",
@@ -1647,7 +2004,7 @@
             }
           }
         },
-        "_row_num": 61
+        "_row_num": 65
       },
       {
         "choice_list_name": "vactype",
@@ -1660,7 +2017,7 @@
             }
           }
         },
-        "_row_num": 62
+        "_row_num": 66
       },
       {
         "choice_list_name": "vacinf",
@@ -1673,7 +2030,7 @@
             }
           }
         },
-        "_row_num": 63
+        "_row_num": 67
       },
       {
         "choice_list_name": "vacinf",
@@ -1686,7 +2043,7 @@
             }
           }
         },
-        "_row_num": 64
+        "_row_num": 68
       },
       {
         "choice_list_name": "vaccheck",
@@ -1699,7 +2056,7 @@
             }
           }
         },
-        "_row_num": 65
+        "_row_num": 69
       },
       {
         "choice_list_name": "vaccheck",
@@ -1712,7 +2069,7 @@
             }
           }
         },
-        "_row_num": 66
+        "_row_num": 70
       },
       {
         "choice_list_name": "vaccheck",
@@ -1725,7 +2082,7 @@
             }
           }
         },
-        "_row_num": 67
+        "_row_num": 71
       },
       {
         "choice_list_name": "time_unit",
@@ -1738,7 +2095,7 @@
             }
           }
         },
-        "_row_num": 69
+        "_row_num": 73
       },
       {
         "choice_list_name": "time_unit",
@@ -1751,7 +2108,7 @@
             }
           }
         },
-        "_row_num": 70
+        "_row_num": 74
       },
       {
         "choice_list_name": "time_unit",
@@ -1764,7 +2121,7 @@
             }
           }
         },
-        "_row_num": 71
+        "_row_num": 75
       }
     ],
     "queries": [
@@ -1791,13 +2148,13 @@
         "_row_num": 3
       },
       {
-        "query_name": "vac",
+        "query_name": "mif_vac",
         "query_type": "linked_table",
-        "linked_form_id": "VAC",
-        "linked_table_id": "VAC",
+        "linked_form_id": "MIF_VAC",
+        "linked_table_id": "MIF_VAC",
         "selection": "REGID = ?",
         "selectionArgs": "[data('REGID')]",
-        "newRowInitialElementKeyToValueMap": "{REGID: data('REGID'), VISITDATE: data('CONT'), VISITID: opendatakit.getCurrentInstanceId()}",
+        "newRowInitialElementKeyToValueMap": "{REGID: data('REGID'), VAC1DATA: data('VAC1DATA'), VAC2DATA: data('VAC2DATA'),VAC3DATA: data('VAC3DATA'), VAC4DATA: data('VAC4DATA'), VAC5DATA: data('VAC5DATA'), VAC6DATA: data('VAC6DATA'), VAC7DATA: data('VAC7DATA'), VAC8DATA: data('VAC8DATA'), VAC9DATA: data('VAC9DATA'), VAC10DATA: data('VAC10DATA'), VAC11DATA: data('VAC11DATA'), VAC12DATA: data('VAC12DATA'),VAC13DATA: data('VAC13DATA'), VAC14DATA: data('VAC14DATA'), VAC15DATA: data('VAC15DATA'), VAC16DATA: data('VAC16DATA'), VAC17DATA: data('VAC17DATA'), VAC18DATA: data('VAC18DATA'), VAC19DATA: data('VAC19DATA'),     VAC20DATA: data('VAC20DATA'), VISITDATE: data('CONT'), VISITID: opendatakit.getCurrentInstanceId()}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 4
       },
@@ -1891,179 +2248,365 @@
         "_row_num": 6
       },
       {
-        "name": "ABPARTTIPO",
+        "name": "ABPARTNV2",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 7
+      },
+      {
+        "name": "ABPARTNV_TEMPO2",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 8
+      },
+      {
+        "name": "ABPARTNV_TEMPO_UNIT2",
+        "type": "select_one_with_other",
+        "isSessionVariable": false,
+        "_row_num": 9
+      },
+      {
+        "name": "ABPARTNV3",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 10
+      },
+      {
+        "name": "ABPARTNV_TEMPO3",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 11
+      },
+      {
+        "name": "ABPARTNV_TEMPO_UNIT3",
+        "type": "select_one_with_other",
+        "isSessionVariable": false,
+        "_row_num": 12
+      },
+      {
+        "name": "ABPARTTIPO",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 13
+      },
+      {
+        "name": "ABPARTTIPO_G1",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 14
+      },
+      {
+        "name": "ABPARTTIPO_G2",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 15
+      },
+      {
+        "name": "ABPARTTIPO_G3",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 16
       },
       {
         "name": "ASSISTANT",
         "type": "text",
         "isSessionVariable": false,
         "__EMPTY": "From tablet",
-        "_row_num": 8
+        "_row_num": 17
       },
       {
         "name": "CART",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 9
+        "_row_num": 18
       },
       {
         "name": "CESCO",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 10
+        "_row_num": 19
       },
       {
         "name": "CONSENTDAT",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 11
+        "_row_num": 20
       },
       {
         "name": "CONSENTFOR",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 12
+        "_row_num": 21
       },
       {
         "name": "CONSENTSIG",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 13
+        "_row_num": 22
       },
       {
         "name": "CONSENTTYP",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 14
+        "_row_num": 23
       },
       {
         "name": "CONT",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 15
+        "_row_num": 24
       },
       {
         "name": "ESCO",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 16
+        "_row_num": 25
       },
       {
         "name": "escons",
         "type": "select_multiple",
         "isSessionVariable": true,
-        "_row_num": 17
+        "_row_num": 26
       },
       {
         "name": "ESTADOVIS",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 18
+        "_row_num": 27
       },
       {
         "name": "EVITA",
         "type": "select_one",
         "isSessionVariable": false,
-        "_row_num": 19
+        "_row_num": 28
       },
       {
         "name": "EVITA2",
         "type": "select_multiple",
         "isSessionVariable": false,
-        "_row_num": 20
+        "_row_num": 29
       },
       {
         "name": "EXITDATA",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 21
+        "_row_num": 30
       },
       {
         "name": "EXITMUDO",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 22
-      },
-      {
-        "name": "GR",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 23
-      },
-      {
-        "name": "NOMEMAE",
-        "type": "text",
-        "isSessionVariable": false,
-        "_row_num": 24
-      },
-      {
-        "name": "PARPAD",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 25
-      },
-      {
-        "name": "TENDA",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 26
-      },
-      {
-        "name": "TENDATIPO",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 27
-      },
-      {
-        "name": "TENDAYN",
-        "type": "select_one",
-        "isSessionVariable": false,
-        "_row_num": 28
-      },
-      {
-        "name": "CICA",
-        "type": "integer",
-        "isSessionVariable": false,
-        "_row_num": 30
-      },
-      {
-        "name": "GR_LAST",
-        "type": "integer",
-        "isSessionVariable": false,
         "_row_num": 31
       },
       {
-        "name": "GR_AINDA",
+        "name": "GEMEOS",
         "type": "select_one",
         "isSessionVariable": false,
         "_row_num": 32
       },
       {
+        "name": "GR",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 33
+      },
+      {
+        "name": "NOMEMAE",
+        "type": "text",
+        "isSessionVariable": false,
+        "_row_num": 34
+      },
+      {
+        "name": "PARPAD",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 35
+      },
+      {
+        "name": "TENDA",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 36
+      },
+      {
+        "name": "TENDATIPO",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 37
+      },
+      {
+        "name": "TENDAYN",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 38
+      },
+      {
+        "name": "TRIGEMEOS",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 39
+      },
+      {
+        "name": "CICA",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 40
+      },
+      {
+        "name": "GR_LAST",
+        "type": "integer",
+        "isSessionVariable": false,
+        "_row_num": 41
+      },
+      {
+        "name": "GR_AINDA",
+        "type": "select_one",
+        "isSessionVariable": false,
+        "_row_num": 42
+      },
+      {
         "name": "REGID",
         "type": "text",
         "isSessionVariable": false,
-        "_row_num": 33
+        "_row_num": 43
       },
       {
         "name": "LASTVISIT",
         "type": "adate",
         "isSessionVariable": false,
-        "_row_num": 34
+        "_row_num": 44
       },
       {
         "name": "PARPAD3",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 35
+        "_row_num": 45
       },
       {
         "name": "VISNUMBER",
         "type": "integer",
         "isSessionVariable": false,
-        "_row_num": 36
+        "_row_num": 46
+      },
+      {
+        "name": "VAC1DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 48
+      },
+      {
+        "name": "VAC2DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 49
+      },
+      {
+        "name": "VAC3DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 50
+      },
+      {
+        "name": "VAC4DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 51
+      },
+      {
+        "name": "VAC5DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 52
+      },
+      {
+        "name": "VAC6DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 53
+      },
+      {
+        "name": "VAC7DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 54
+      },
+      {
+        "name": "VAC8DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 55
+      },
+      {
+        "name": "VAC9DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 56
+      },
+      {
+        "name": "VAC10DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 57
+      },
+      {
+        "name": "VAC11DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 58
+      },
+      {
+        "name": "VAC12DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 59
+      },
+      {
+        "name": "VAC13DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 60
+      },
+      {
+        "name": "VAC14DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 61
+      },
+      {
+        "name": "VAC15DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 62
+      },
+      {
+        "name": "VAC16DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 63
+      },
+      {
+        "name": "VAC17DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 64
+      },
+      {
+        "name": "VAC18DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 65
+      },
+      {
+        "name": "VAC19DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 66
+      },
+      {
+        "name": "VAC20DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 67
       }
     ]
   },
@@ -2091,7 +2634,7 @@
       },
       "form_version": {
         "setting_name": "form_version",
-        "value": 270519,
+        "value": 10112023,
         "_row_num": 3
       },
       "table_id": {
@@ -2782,6 +3325,47 @@
             }
           },
           "_row_num": 49
+        },
+        {
+          "choice_list_name": "birthoutcome",
+          "data_value": "4",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Twins",
+                "default": "Gêmeos"
+              }
+            }
+          },
+          "_row_num": 50
+        }
+      ],
+      "birthoutcome2": [
+        {
+          "choice_list_name": "birthoutcome2",
+          "data_value": "1",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Live birth",
+                "default": "Nado vivo"
+              }
+            }
+          },
+          "_row_num": 51
+        },
+        {
+          "choice_list_name": "birthoutcome2",
+          "data_value": "2",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Stillbirth",
+                "default": "Nado morto"
+              }
+            }
+          },
+          "_row_num": 52
         }
       ],
       "contraceptive": [
@@ -2796,7 +3380,7 @@
               }
             }
           },
-          "_row_num": 50
+          "_row_num": 54
         },
         {
           "choice_list_name": "contraceptive",
@@ -2809,7 +3393,7 @@
               }
             }
           },
-          "_row_num": 51
+          "_row_num": 55
         },
         {
           "choice_list_name": "contraceptive",
@@ -2822,7 +3406,7 @@
               }
             }
           },
-          "_row_num": 52
+          "_row_num": 56
         },
         {
           "choice_list_name": "contraceptive",
@@ -2835,7 +3419,7 @@
               }
             }
           },
-          "_row_num": 53
+          "_row_num": 57
         },
         {
           "choice_list_name": "contraceptive",
@@ -2848,7 +3432,7 @@
               }
             }
           },
-          "_row_num": 54
+          "_row_num": 58
         },
         {
           "choice_list_name": "contraceptive",
@@ -2861,7 +3445,7 @@
               }
             }
           },
-          "_row_num": 55
+          "_row_num": 59
         },
         {
           "choice_list_name": "contraceptive",
@@ -2874,7 +3458,7 @@
               }
             }
           },
-          "_row_num": 56
+          "_row_num": 60
         },
         {
           "choice_list_name": "contraceptive",
@@ -2887,7 +3471,7 @@
               }
             }
           },
-          "_row_num": 57
+          "_row_num": 61
         },
         {
           "choice_list_name": "contraceptive",
@@ -2900,7 +3484,7 @@
               }
             }
           },
-          "_row_num": 58
+          "_row_num": 62
         },
         {
           "choice_list_name": "contraceptive",
@@ -2913,7 +3497,7 @@
               }
             }
           },
-          "_row_num": 59
+          "_row_num": 63
         },
         {
           "choice_list_name": "contraceptive",
@@ -2926,7 +3510,7 @@
               }
             }
           },
-          "_row_num": 60
+          "_row_num": 64
         }
       ],
       "dontknow": [
@@ -2941,7 +3525,7 @@
               }
             }
           },
-          "_row_num": 61
+          "_row_num": 65
         }
       ],
       "vactype": [
@@ -2956,7 +3540,7 @@
               }
             }
           },
-          "_row_num": 62
+          "_row_num": 66
         }
       ],
       "vacinf": [
@@ -2971,7 +3555,7 @@
               }
             }
           },
-          "_row_num": 63
+          "_row_num": 67
         },
         {
           "choice_list_name": "vacinf",
@@ -2984,7 +3568,7 @@
               }
             }
           },
-          "_row_num": 64
+          "_row_num": 68
         }
       ],
       "vaccheck": [
@@ -2999,7 +3583,7 @@
               }
             }
           },
-          "_row_num": 65
+          "_row_num": 69
         },
         {
           "choice_list_name": "vaccheck",
@@ -3012,7 +3596,7 @@
               }
             }
           },
-          "_row_num": 66
+          "_row_num": 70
         },
         {
           "choice_list_name": "vaccheck",
@@ -3025,7 +3609,7 @@
               }
             }
           },
-          "_row_num": 67
+          "_row_num": 71
         }
       ],
       "time_unit": [
@@ -3040,7 +3624,7 @@
               }
             }
           },
-          "_row_num": 69
+          "_row_num": 73
         },
         {
           "choice_list_name": "time_unit",
@@ -3053,7 +3637,7 @@
               }
             }
           },
-          "_row_num": 70
+          "_row_num": 74
         },
         {
           "choice_list_name": "time_unit",
@@ -3066,7 +3650,7 @@
               }
             }
           },
-          "_row_num": 71
+          "_row_num": 75
         }
       ]
     },
@@ -3096,14 +3680,14 @@
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 3
       },
-      "vac": {
-        "query_name": "vac",
+      "mif_vac": {
+        "query_name": "mif_vac",
         "query_type": "linked_table",
-        "linked_form_id": "VAC",
-        "linked_table_id": "VAC",
+        "linked_form_id": "MIF_VAC",
+        "linked_table_id": "MIF_VAC",
         "selection": "REGID = ?",
         "selectionArgs": "[data('REGID')]",
-        "newRowInitialElementKeyToValueMap": "{REGID: data('REGID'), VISITDATE: data('CONT'), VISITID: opendatakit.getCurrentInstanceId()}",
+        "newRowInitialElementKeyToValueMap": "{REGID: data('REGID'), VAC1DATA: data('VAC1DATA'), VAC2DATA: data('VAC2DATA'),VAC3DATA: data('VAC3DATA'), VAC4DATA: data('VAC4DATA'), VAC5DATA: data('VAC5DATA'), VAC6DATA: data('VAC6DATA'), VAC7DATA: data('VAC7DATA'), VAC8DATA: data('VAC8DATA'), VAC9DATA: data('VAC9DATA'), VAC10DATA: data('VAC10DATA'), VAC11DATA: data('VAC11DATA'), VAC12DATA: data('VAC12DATA'),VAC13DATA: data('VAC13DATA'), VAC14DATA: data('VAC14DATA'), VAC15DATA: data('VAC15DATA'), VAC16DATA: data('VAC16DATA'), VAC17DATA: data('VAC17DATA'), VAC18DATA: data('VAC18DATA'), VAC19DATA: data('VAC19DATA'),     VAC20DATA: data('VAC20DATA'), VISITDATE: data('CONT'), VISITID: opendatakit.getCurrentInstanceId()}",
         "openRowInitialElementKeyToValueMap": "{}",
         "_row_num": 4
       },
@@ -3208,7 +3792,11 @@
         "valuesList": "YesNoU",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 80,
             "section_name": "survey"
           },
           {
@@ -3223,7 +3811,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 71,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 82,
             "section_name": "survey"
           },
           {
@@ -3239,7 +3831,11 @@
         "valuesList": "time_unit",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 72,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 83,
             "section_name": "survey"
           },
           {
@@ -3250,6 +3846,100 @@
         "isSessionVariable": false,
         "elementKey": "ABPARTNV_TEMPO_UNIT"
       },
+      "ABPARTNV2": {
+        "type": "string",
+        "valuesList": "YesNoU",
+        "_defn": [
+          {
+            "_row_num": 89,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV2"
+      },
+      "ABPARTNV_TEMPO2": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 91,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO2"
+      },
+      "ABPARTNV_TEMPO_UNIT2": {
+        "type": "string",
+        "valuesList": "time_unit",
+        "_defn": [
+          {
+            "_row_num": 92,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO_UNIT2"
+      },
+      "ABPARTNV3": {
+        "type": "string",
+        "valuesList": "YesNoU",
+        "_defn": [
+          {
+            "_row_num": 102,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV3"
+      },
+      "ABPARTNV_TEMPO3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 104,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO3"
+      },
+      "ABPARTNV_TEMPO_UNIT3": {
+        "type": "string",
+        "valuesList": "time_unit",
+        "_defn": [
+          {
+            "_row_num": 105,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO_UNIT3"
+      },
       "ABPARTTIPO": {
         "type": "string",
         "valuesList": "birthoutcome",
@@ -3259,18 +3949,66 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "ABPARTTIPO"
       },
+      "ABPARTTIPO_G1": {
+        "type": "string",
+        "valuesList": "birthoutcome2",
+        "_defn": [
+          {
+            "_row_num": 78,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTTIPO_G1"
+      },
+      "ABPARTTIPO_G2": {
+        "type": "string",
+        "valuesList": "birthoutcome2",
+        "_defn": [
+          {
+            "_row_num": 86,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTTIPO_G2"
+      },
+      "ABPARTTIPO_G3": {
+        "type": "string",
+        "valuesList": "birthoutcome2",
+        "_defn": [
+          {
+            "_row_num": 100,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTTIPO_G3"
+      },
       "ASSISTANT": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -3283,11 +4021,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 152,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -3298,7 +4036,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -3314,7 +4052,7 @@
         "__rowNum__": 2,
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -3325,7 +4063,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -3336,7 +4074,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -3347,7 +4085,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -3367,7 +4105,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -3378,7 +4116,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -3393,7 +4131,7 @@
         },
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -3409,7 +4147,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -3421,11 +4159,11 @@
         "valuesList": "YesNoU",
         "_defn": [
           {
-            "_row_num": 108,
+            "_row_num": 136,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -3441,11 +4179,11 @@
         "valuesList": "contraceptive",
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 138,
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -3465,7 +4203,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -3480,12 +4218,23 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "EXITMUDO"
+      },
+      "GEMEOS": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEMEOS"
       },
       "GR": {
         "type": "string",
@@ -3504,7 +4253,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -3515,7 +4264,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -3539,7 +4288,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -3551,11 +4300,11 @@
         "valuesList": "bednettime",
         "_defn": [
           {
-            "_row_num": 116,
+            "_row_num": 145,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -3567,11 +4316,11 @@
         "valuesList": "bednet",
         "_defn": [
           {
-            "_row_num": 118,
+            "_row_num": 147,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -3583,22 +4332,38 @@
         "valuesList": "YesNoU",
         "_defn": [
           {
-            "_row_num": 115,
+            "_row_num": 144,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "TENDAYN"
       },
+      "TRIGEMEOS": {
+        "type": "string",
+        "valuesList": "YesNoU",
+        "_defn": [
+          {
+            "_row_num": 93,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRIGEMEOS"
+      },
       "CICA": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -3609,7 +4374,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -3625,7 +4390,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -3636,7 +4401,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -3652,7 +4417,7 @@
         "__rowNum__": 2,
         "_defn": [
           {
-            "_row_num": 34,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -3663,7 +4428,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -3674,12 +4439,332 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
         "isSessionVariable": false,
         "elementKey": "VISNUMBER"
+      },
+      "VAC1DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 48,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC1DATA"
+      },
+      "VAC2DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC2DATA"
+      },
+      "VAC3DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 50,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC3DATA"
+      },
+      "VAC4DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 51,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC4DATA"
+      },
+      "VAC5DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC5DATA"
+      },
+      "VAC6DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 53,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC6DATA"
+      },
+      "VAC7DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC7DATA"
+      },
+      "VAC8DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 55,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC8DATA"
+      },
+      "VAC9DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 56,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC9DATA"
+      },
+      "VAC10DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 57,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC10DATA"
+      },
+      "VAC11DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC11DATA"
+      },
+      "VAC12DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC12DATA"
+      },
+      "VAC13DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC13DATA"
+      },
+      "VAC14DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC14DATA"
+      },
+      "VAC15DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC15DATA"
+      },
+      "VAC16DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC16DATA"
+      },
+      "VAC17DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC17DATA"
+      },
+      "VAC18DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC18DATA"
+      },
+      "VAC19DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 66,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC19DATA"
+      },
+      "VAC20DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC20DATA"
       }
     },
     "section_names": [
@@ -4044,11 +5129,11 @@
                 }
               }
             },
-            "_row_num": 68,
-            "__rowNum__": 67,
+            "_row_num": 69,
+            "__rowNum__": 68,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen67",
+            "_branch_label_enclosing_screen": "survey/_screen68",
             "promptIdx": 19
           },
           {
@@ -4062,11 +5147,11 @@
                 }
               }
             },
-            "_row_num": 70,
-            "__rowNum__": 69,
+            "_row_num": 71,
+            "__rowNum__": 70,
             "_token_type": "prompt",
             "_type": "integer",
-            "_branch_label_enclosing_screen": "survey/_screen67",
+            "_branch_label_enclosing_screen": "survey/_screen68",
             "promptIdx": 20
           },
           {
@@ -4081,12 +5166,256 @@
                 }
               }
             },
-            "_row_num": 71,
-            "__rowNum__": 70,
+            "_row_num": 72,
+            "__rowNum__": 71,
             "_token_type": "prompt",
             "_type": "select_one_with_other",
-            "_branch_label_enclosing_screen": "survey/_screen67",
+            "_branch_label_enclosing_screen": "survey/_screen68",
             "promptIdx": 21
+          },
+          {
+            "type": "select_one",
+            "values_list": "birthoutcome2",
+            "name": "ABPARTTIPO_G1",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Twin 1: Type of delivery",
+                  "default": "Gemeo 1: Tipo de parto"
+                }
+              }
+            },
+            "_row_num": 78,
+            "__rowNum__": 77,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 22
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoU",
+            "name": "ABPARTNV",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Is the 1st twin  still alive?",
+                  "default": "O primeiro gemeo ainda está viva?"
+                }
+              }
+            },
+            "_row_num": 80,
+            "__rowNum__": 79,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 23
+          },
+          {
+            "type": "integer",
+            "name": "ABPARTNV_TEMPO",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Age at death",
+                  "default": "Idade de falecimento"
+                }
+              }
+            },
+            "_row_num": 82,
+            "__rowNum__": 81,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 24
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "time_unit",
+            "name": "ABPARTNV_TEMPO_UNIT",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Time units",
+                  "default": "Unidade de tempo"
+                }
+              }
+            },
+            "_row_num": 83,
+            "__rowNum__": 82,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 25
+          },
+          {
+            "type": "select_one",
+            "values_list": "birthoutcome2",
+            "name": "ABPARTTIPO_G2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Twin 2: Type of delivery",
+                  "default": "Gemeo 2: Tipo de parto"
+                }
+              }
+            },
+            "_row_num": 86,
+            "__rowNum__": 85,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 26
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoU",
+            "name": "ABPARTNV2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Is the 2nd twin  still alive?",
+                  "default": "O segundo gemeo ainda está viva?"
+                }
+              }
+            },
+            "_row_num": 89,
+            "__rowNum__": 88,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 27
+          },
+          {
+            "type": "integer",
+            "name": "ABPARTNV_TEMPO2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Age at death",
+                  "default": "Idade de falecimento"
+                }
+              }
+            },
+            "_row_num": 91,
+            "__rowNum__": 90,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 28
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "time_unit",
+            "name": "ABPARTNV_TEMPO_UNIT2",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Time units",
+                  "default": "Unidade de tempo"
+                }
+              }
+            },
+            "_row_num": 92,
+            "__rowNum__": 91,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 29
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoU",
+            "name": "TRIGEMEOS",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "More than 2 children",
+                  "default": "Mais de 2 gemeos?"
+                }
+              }
+            },
+            "_row_num": 93,
+            "__rowNum__": 92,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen77",
+            "promptIdx": 30
+          },
+          {
+            "type": "select_one",
+            "values_list": "birthoutcome2",
+            "name": "ABPARTTIPO_G3",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Twin 3: Type of delivery",
+                  "default": "Gemeo 3: Tipo de parto"
+                }
+              }
+            },
+            "_row_num": 100,
+            "__rowNum__": 99,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen99",
+            "promptIdx": 31
+          },
+          {
+            "type": "select_one",
+            "values_list": "YesNoU",
+            "name": "ABPARTNV3",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Is the 3rd twin  still alive?",
+                  "default": "O terceiro gemeo ainda está viva?"
+                }
+              }
+            },
+            "_row_num": 102,
+            "__rowNum__": 101,
+            "_token_type": "prompt",
+            "_type": "select_one",
+            "_branch_label_enclosing_screen": "survey/_screen99",
+            "promptIdx": 32
+          },
+          {
+            "type": "integer",
+            "name": "ABPARTNV_TEMPO3",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Age at death",
+                  "default": "Idade de falecimento"
+                }
+              }
+            },
+            "_row_num": 104,
+            "__rowNum__": 103,
+            "_token_type": "prompt",
+            "_type": "integer",
+            "_branch_label_enclosing_screen": "survey/_screen99",
+            "promptIdx": 33
+          },
+          {
+            "type": "select_one_with_other",
+            "values_list": "time_unit",
+            "name": "ABPARTNV_TEMPO_UNIT3",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Time units",
+                  "default": "Unidade de tempo"
+                }
+              }
+            },
+            "_row_num": 105,
+            "__rowNum__": 104,
+            "_token_type": "prompt",
+            "_type": "select_one_with_other",
+            "_branch_label_enclosing_screen": "survey/_screen99",
+            "promptIdx": 34
           },
           {
             "type": "note",
@@ -4098,22 +5427,22 @@
                 }
               }
             },
-            "_row_num": 77,
-            "__rowNum__": 76,
+            "_row_num": 112,
+            "__rowNum__": 111,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen76",
-            "promptIdx": 22
+            "_branch_label_enclosing_screen": "survey/_screen111",
+            "promptIdx": 35
           },
           {
             "type": "linked_table",
             "values_list": "mif_v_oop",
-            "_row_num": 78,
-            "__rowNum__": 77,
+            "_row_num": 113,
+            "__rowNum__": 112,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen76",
-            "promptIdx": 23
+            "_branch_label_enclosing_screen": "survey/_screen111",
+            "promptIdx": 36
           },
           {
             "type": "note",
@@ -4125,22 +5454,22 @@
                 }
               }
             },
-            "_row_num": 84,
-            "__rowNum__": 83,
+            "_row_num": 119,
+            "__rowNum__": 118,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 24
+            "_branch_label_enclosing_screen": "survey/_screen118",
+            "promptIdx": 37
           },
           {
             "type": "linked_table",
             "values_list": "mif_v_oop_vac",
-            "_row_num": 85,
-            "__rowNum__": 84,
+            "_row_num": 120,
+            "__rowNum__": 119,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen83",
-            "promptIdx": 25
+            "_branch_label_enclosing_screen": "survey/_screen118",
+            "promptIdx": 38
           },
           {
             "type": "note",
@@ -4152,22 +5481,22 @@
                 }
               }
             },
-            "_row_num": 93,
-            "__rowNum__": 92,
+            "_row_num": 128,
+            "__rowNum__": 127,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen92",
-            "promptIdx": 26
+            "_branch_label_enclosing_screen": "survey/_screen127",
+            "promptIdx": 39
           },
           {
             "type": "linked_table",
             "values_list": "mif_v_oop_anc",
-            "_row_num": 94,
-            "__rowNum__": 93,
+            "_row_num": 129,
+            "__rowNum__": 128,
             "_token_type": "prompt",
             "_type": "linked_table",
-            "_branch_label_enclosing_screen": "survey/_screen92",
-            "promptIdx": 27
+            "_branch_label_enclosing_screen": "survey/_screen127",
+            "promptIdx": 40
           },
           {
             "type": "select_one",
@@ -4181,12 +5510,12 @@
                 }
               }
             },
-            "_row_num": 108,
-            "__rowNum__": 107,
+            "_row_num": 136,
+            "__rowNum__": 135,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 28
+            "_branch_label_enclosing_screen": "survey/_screen135",
+            "promptIdx": 41
           },
           {
             "type": "select_multiple",
@@ -4200,12 +5529,12 @@
                 }
               }
             },
-            "_row_num": 110,
-            "__rowNum__": 109,
+            "_row_num": 138,
+            "__rowNum__": 137,
             "_token_type": "prompt",
             "_type": "select_multiple",
-            "_branch_label_enclosing_screen": "survey/_screen107",
-            "promptIdx": 29
+            "_branch_label_enclosing_screen": "survey/_screen135",
+            "promptIdx": 42
           },
           {
             "type": "select_one",
@@ -4219,12 +5548,12 @@
                 }
               }
             },
-            "_row_num": 115,
-            "__rowNum__": 114,
+            "_row_num": 144,
+            "__rowNum__": 143,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen114",
-            "promptIdx": 30
+            "_branch_label_enclosing_screen": "survey/_screen143",
+            "promptIdx": 43
           },
           {
             "type": "select_one",
@@ -4238,12 +5567,12 @@
                 }
               }
             },
-            "_row_num": 116,
-            "__rowNum__": 115,
+            "_row_num": 145,
+            "__rowNum__": 144,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen114",
-            "promptIdx": 31
+            "_branch_label_enclosing_screen": "survey/_screen143",
+            "promptIdx": 44
           },
           {
             "type": "select_one",
@@ -4257,12 +5586,12 @@
                 }
               }
             },
-            "_row_num": 118,
-            "__rowNum__": 117,
+            "_row_num": 147,
+            "__rowNum__": 146,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen114",
-            "promptIdx": 32
+            "_branch_label_enclosing_screen": "survey/_screen143",
+            "promptIdx": 45
           },
           {
             "type": "select_one",
@@ -4276,12 +5605,12 @@
                 }
               }
             },
-            "_row_num": 122,
-            "__rowNum__": 121,
+            "_row_num": 152,
+            "__rowNum__": 151,
             "_token_type": "prompt",
             "_type": "select_one",
-            "_branch_label_enclosing_screen": "survey/_screen121",
-            "promptIdx": 33
+            "_branch_label_enclosing_screen": "survey/_screen151",
+            "promptIdx": 46
           },
           {
             "type": "note",
@@ -4293,13 +5622,51 @@
                 }
               }
             },
-            "comment": "linked table vac removed",
-            "_row_num": 126,
-            "__rowNum__": 125,
+            "comment": "linked table vac removed: Added - 10-11-2023",
+            "_row_num": 156,
+            "__rowNum__": 155,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen125",
-            "promptIdx": 34
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 47
+          },
+          {
+            "type": "linked_table",
+            "values_list": "mif_vac",
+            "comment": "linked table vac removed: Added - 10-11-2023",
+            "_row_num": 157,
+            "__rowNum__": 156,
+            "_token_type": "prompt",
+            "_type": "linked_table",
+            "_branch_label_enclosing_screen": "survey/_screen155",
+            "promptIdx": 48
+          },
+          {
+            "type": "note",
+            "display": {
+              "prompt": {
+                "text": {
+                  "english": "Scar status",
+                  "default": "Estado da cicatriz"
+                }
+              }
+            },
+            "_row_num": 163,
+            "__rowNum__": 162,
+            "_token_type": "prompt",
+            "_type": "note",
+            "_branch_label_enclosing_screen": "survey/_screen162",
+            "promptIdx": 49
+          },
+          {
+            "type": "linked_table",
+            "values_list": "scar",
+            "_row_num": 164,
+            "__rowNum__": 163,
+            "_token_type": "prompt",
+            "_type": "linked_table",
+            "_branch_label_enclosing_screen": "survey/_screen162",
+            "promptIdx": 50
           },
           {
             "type": "note",
@@ -4312,20 +5679,20 @@
               }
             },
             "comment": "linked_table pregnancies removed",
-            "_row_num": 133,
-            "__rowNum__": 132,
+            "_row_num": 170,
+            "__rowNum__": 169,
             "_token_type": "prompt",
             "_type": "note",
-            "_branch_label_enclosing_screen": "survey/_screen132",
-            "promptIdx": 35
+            "_branch_label_enclosing_screen": "survey/_screen169",
+            "promptIdx": 51
           },
           {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 137,
-            "_branch_label_enclosing_screen": "survey/_screen137",
-            "promptIdx": 36
+            "_row_num": 174,
+            "_branch_label_enclosing_screen": "survey/_screen174",
+            "promptIdx": 52
           }
         ],
         "validation_tag_map": {
@@ -4446,8 +5813,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else104",
-            "_row_num": 104,
+            "_branch_label": "_else167",
+            "_row_num": 167,
             "operationIdx": 11
           },
           {
@@ -4610,8 +5977,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else88",
-            "_row_num": 88,
+            "_branch_label": "_else123",
+            "_row_num": 123,
             "operationIdx": 29
           },
           {
@@ -4631,28 +5998,28 @@
           {
             "clause": "if",
             "condition": "data('ABPARTTIPO') == '1'",
-            "_row_num": 66,
-            "__rowNum__": 65,
+            "_row_num": 67,
+            "__rowNum__": 66,
             "_token_type": "goto_label",
-            "_branch_label": "_then66",
+            "_branch_label": "_then67",
             "operationIdx": 31
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else74",
-            "_row_num": 74,
+            "_branch_label": "_else75",
+            "_row_num": 75,
             "operationIdx": 32
           },
           {
             "clause": "begin screen",
-            "_row_num": 67,
-            "__rowNum__": 66,
+            "_row_num": 68,
+            "__rowNum__": 67,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 73,
-              "__rowNum__": 72,
+              "_row_num": 74,
+              "__rowNum__": 73,
               "_token_type": "end_screen"
             },
             "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(19);\nif (data('ABPARTNV') == '2') {\nactivePromptIndicies.push(20);\nactivePromptIndicies.push(21);\n}\n\nreturn activePromptIndicies;\n}\n",
@@ -4661,294 +6028,430 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif74",
-            "_row_num": 74,
+            "_branch_label": "_endif75",
+            "_row_num": 75,
             "operationIdx": 34
           },
           {
             "clause": "if",
-            "condition": "data('ESTADOVIS') == '1' && (data('ABPARTTIPO') == '1'||data('ABPARTTIPO') == '2')",
-            "_row_num": 75,
-            "__rowNum__": 74,
+            "condition": "data('ABPARTTIPO') == '4'",
+            "_row_num": 76,
+            "__rowNum__": 75,
             "_token_type": "goto_label",
-            "_branch_label": "_then75",
+            "_branch_label": "_then76",
             "operationIdx": 35
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else80",
-            "_row_num": 80,
+            "_branch_label": "_else97",
+            "_row_num": 97,
             "operationIdx": 36
           },
           {
             "clause": "begin screen",
-            "_row_num": 76,
-            "__rowNum__": 75,
+            "_row_num": 77,
+            "__rowNum__": 76,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 79,
-              "__rowNum__": 78,
+              "_row_num": 96,
+              "__rowNum__": 95,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nactivePromptIndicies.push(23);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(22);\nif (data('ABPARTTIPO_G1')==\"1\") {\nactivePromptIndicies.push(23);\nif (data('ABPARTNV') == '2') {\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n}\n}\nactivePromptIndicies.push(26);\nif (data('ABPARTTIPO_G2')==\"1\") {\nactivePromptIndicies.push(27);\nif (data('ABPARTNV2') == '2') {\nactivePromptIndicies.push(28);\nactivePromptIndicies.push(29);\nactivePromptIndicies.push(30);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 37
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif80",
-            "_row_num": 80,
+            "_branch_label": "_endif97",
+            "_row_num": 97,
             "operationIdx": 38
           },
           {
             "clause": "if",
-            "condition": "data('ESTADOVIS') == '1' && data('ABPARTTIPO') == '1'",
-            "_row_num": 82,
-            "__rowNum__": 81,
+            "condition": "data('TRIGEMEOS')==\"1\"",
+            "_row_num": 98,
+            "__rowNum__": 97,
             "_token_type": "goto_label",
-            "_branch_label": "_then82",
+            "_branch_label": "_then98",
             "operationIdx": 39
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else87",
-            "_row_num": 87,
+            "_branch_label": "_else109",
+            "_row_num": 109,
             "operationIdx": 40
           },
           {
             "clause": "begin screen",
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 99,
+            "__rowNum__": 98,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 86,
-              "__rowNum__": 85,
+              "_row_num": 108,
+              "__rowNum__": 107,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(24);\nactivePromptIndicies.push(25);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(31);\nif (data('ABPARTTIPO_G3')==\"1\") {\nactivePromptIndicies.push(32);\nif (data('ABPARTNV3') == '2') {\nactivePromptIndicies.push(33);\nactivePromptIndicies.push(34);\n}\n}\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 41
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif87",
-            "_row_num": 87,
+            "_branch_label": "_endif109",
+            "_row_num": 109,
             "operationIdx": 42
           },
           {
-            "clause": "end if",
+            "clause": "if",
+            "condition": "data('ESTADOVIS') == '1' && (data('ABPARTTIPO') == '1'||data('ABPARTTIPO') == '2' || data('ABPARTTIPO_G1')!= null ||data('ABPARTTIPO_G2') != null ||data('ABPARTTIPO_G3') != null)",
+            "_row_num": 110,
+            "__rowNum__": 109,
             "_token_type": "goto_label",
-            "_branch_label": "_endif88",
-            "_row_num": 88,
+            "_branch_label": "_then110",
             "operationIdx": 43
           },
           {
-            "clause": "if",
-            "condition": "data('ESTADOVIS') == '1' && (data('GR') == '1' || data('GR_AINDA') == '1' )",
-            "_row_num": 91,
-            "__rowNum__": 90,
+            "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_then91",
+            "_branch_label": "_else115",
+            "_row_num": 115,
             "operationIdx": 44
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_else96",
-            "_row_num": 96,
-            "operationIdx": 45
-          },
-          {
             "clause": "begin screen",
-            "_row_num": 92,
-            "__rowNum__": 91,
+            "_row_num": 111,
+            "__rowNum__": 110,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 95,
-              "__rowNum__": 94,
+              "_row_num": 114,
+              "__rowNum__": 113,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(26);\nactivePromptIndicies.push(27);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 46
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(35);\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 45
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif96",
-            "_row_num": 96,
+            "_branch_label": "_endif115",
+            "_row_num": 115,
+            "operationIdx": 46
+          },
+          {
+            "clause": "if",
+            "condition": "data('ESTADOVIS') == '1' && (data('ABPARTTIPO') == '1' || data('ABPARTTIPO_G1') == '1' ||data('ABPARTTIPO_G2') == '1' ||data('ABPARTTIPO_G3') == '1')",
+            "_row_num": 117,
+            "__rowNum__": 116,
+            "_token_type": "goto_label",
+            "_branch_label": "_then117",
             "operationIdx": 47
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif104",
-            "_row_num": 104,
+            "_branch_label": "_else122",
+            "_row_num": 122,
             "operationIdx": 48
           },
           {
-            "clause": "if",
-            "condition": "data('GR') != '1' || (data('PARPAD') != '2' && data('PARPAD3') != '1')",
-            "_row_num": 106,
-            "__rowNum__": 105,
-            "_token_type": "goto_label",
-            "_branch_label": "_then106",
+            "clause": "begin screen",
+            "_row_num": 118,
+            "__rowNum__": 117,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 121,
+              "__rowNum__": 120,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(37);\nactivePromptIndicies.push(38);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 49
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else113",
-            "_row_num": 113,
+            "_branch_label": "_endif122",
+            "_row_num": 122,
             "operationIdx": 50
-          },
-          {
-            "clause": "begin screen",
-            "_row_num": 107,
-            "__rowNum__": 106,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 112,
-              "__rowNum__": 111,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(28);\nif (data('EVITA') == '1') {\nactivePromptIndicies.push(29);\n}\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 51
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif113",
-            "_row_num": 113,
+            "_branch_label": "_endif123",
+            "_row_num": 123,
+            "operationIdx": 51
+          },
+          {
+            "clause": "if",
+            "condition": "data('ESTADOVIS') == '1' && (data('GR') == '1' || data('GR_AINDA') == '1' )",
+            "_row_num": 126,
+            "__rowNum__": 125,
+            "_token_type": "goto_label",
+            "_branch_label": "_then126",
             "operationIdx": 52
           },
           {
-            "clause": "begin screen",
-            "_row_num": 114,
-            "__rowNum__": 113,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 120,
-              "__rowNum__": 119,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(30);\nactivePromptIndicies.push(31);\nif (data('TENDAYN') != '2' || data('TENDA') !=3) {\nactivePromptIndicies.push(32);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else131",
+            "_row_num": 131,
             "operationIdx": 53
           },
           {
             "clause": "begin screen",
-            "_row_num": 121,
-            "__rowNum__": 120,
+            "_row_num": 127,
+            "__rowNum__": 126,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 123,
-              "__rowNum__": 122,
+              "_row_num": 130,
+              "__rowNum__": 129,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(33);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(39);\nactivePromptIndicies.push(40);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 54
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif131",
+            "_row_num": 131,
+            "operationIdx": 55
+          },
+          {
+            "clause": "if",
+            "condition": "data('GR') != '1' && data('PARPAD') != '1' && data('PARPAD3') != '1' && data('ESTADOVIS')!='3'&& data('ESTADOVIS')!='2'",
+            "comment": "Added 10-11-2023 - obs may need to shift the end if back",
+            "_row_num": 134,
+            "__rowNum__": 133,
+            "_token_type": "goto_label",
+            "_branch_label": "_then134",
+            "operationIdx": 56
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else141",
+            "_row_num": 141,
+            "operationIdx": 57
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 135,
+            "__rowNum__": 134,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 140,
+              "__rowNum__": 139,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(41);\nif (data('EVITA') == '1') {\nactivePromptIndicies.push(42);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 58
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif141",
+            "_row_num": 141,
+            "operationIdx": 59
+          },
+          {
+            "clause": "if",
+            "condition": "data('PARPAD') != '1' && data('PARPAD3') != '1' && data('ESTADOVIS')!='3'&& data('ESTADOVIS')!='2'",
+            "comment": "end if",
+            "_row_num": 142,
+            "__rowNum__": 141,
+            "_token_type": "goto_label",
+            "_branch_label": "_then142",
+            "operationIdx": 60
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else160",
+            "_row_num": 160,
+            "operationIdx": 61
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 143,
+            "__rowNum__": 142,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 149,
+              "__rowNum__": 148,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(43);\nactivePromptIndicies.push(44);\nif (data('TENDAYN') != '2' || data('TENDA') !=3) {\nactivePromptIndicies.push(45);\n}\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 62
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 151,
+            "__rowNum__": 150,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 153,
+              "__rowNum__": 152,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(46);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 63
           },
           {
             "clause": "if",
             "condition": "data('CART') == '1'",
-            "_row_num": 124,
-            "__rowNum__": 123,
+            "_row_num": 154,
+            "__rowNum__": 153,
             "_token_type": "goto_label",
-            "_branch_label": "_then124",
-            "operationIdx": 55
+            "_branch_label": "_then154",
+            "operationIdx": 64
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else128",
-            "_row_num": 128,
-            "operationIdx": 56
+            "_branch_label": "_else159",
+            "_row_num": 159,
+            "operationIdx": 65
           },
           {
             "clause": "begin screen",
-            "_row_num": 125,
-            "__rowNum__": 124,
+            "_row_num": 155,
+            "__rowNum__": 154,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 127,
-              "__rowNum__": 126,
+              "_row_num": 158,
+              "__rowNum__": 157,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(34);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 57
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(47);\nactivePromptIndicies.push(48);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 66
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif128",
-            "_row_num": 128,
-            "operationIdx": 58
+            "_branch_label": "_endif159",
+            "_row_num": 159,
+            "operationIdx": 67
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif160",
+            "_row_num": 160,
+            "operationIdx": 68
+          },
+          {
+            "clause": "if",
+            "condition": "data('ESTADOVIS') ==  '1' && data('CICA') == null",
+            "_row_num": 161,
+            "__rowNum__": 160,
+            "_token_type": "goto_label",
+            "_branch_label": "_then161",
+            "operationIdx": 69
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_else166",
+            "_row_num": 166,
+            "operationIdx": 70
+          },
+          {
+            "clause": "begin screen",
+            "_row_num": 162,
+            "__rowNum__": 161,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 165,
+              "__rowNum__": 164,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(49);\nactivePromptIndicies.push(50);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 71
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif166",
+            "_row_num": 166,
+            "operationIdx": 72
+          },
+          {
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif167",
+            "_row_num": 167,
+            "operationIdx": 73
           },
           {
             "clause": "if",
             "condition": "data('GR') == '1'  && data('GR_LAST') != '1'",
-            "_row_num": 131,
-            "__rowNum__": 130,
+            "_row_num": 168,
+            "__rowNum__": 167,
             "_token_type": "goto_label",
-            "_branch_label": "_then131",
-            "operationIdx": 59
+            "_branch_label": "_then168",
+            "operationIdx": 74
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else136",
-            "_row_num": 136,
-            "operationIdx": 60
+            "_branch_label": "_else173",
+            "_row_num": 173,
+            "operationIdx": 75
           },
           {
             "clause": "begin screen",
-            "_row_num": 132,
-            "__rowNum__": 131,
+            "_row_num": 169,
+            "__rowNum__": 168,
             "_token_type": "begin_screen",
             "_end_screen_clause": {
               "clause": "end screen",
-              "_row_num": 135,
-              "__rowNum__": 134,
+              "_row_num": 172,
+              "__rowNum__": 171,
               "_token_type": "end_screen"
             },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(35);\n\nreturn activePromptIndicies;\n}\n",
-            "operationIdx": 61
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(51);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 76
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif136",
-            "_row_num": 136,
-            "operationIdx": 62
+            "_branch_label": "_endif173",
+            "_row_num": 173,
+            "operationIdx": 77
           },
           {
             "_token_type": "exit_section",
             "clause": "exit section",
-            "_row_num": 137,
-            "operationIdx": 63
+            "_row_num": 174,
+            "operationIdx": 78
           },
           {
-            "_row_num": 137,
+            "_row_num": 174,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(36);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(52);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 64
+            "operationIdx": 79
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 137,
-            "operationIdx": 65
+            "_row_num": 174,
+            "operationIdx": 80
           }
         ],
         "branch_label_map": {
@@ -4981,42 +6484,57 @@
           "_endif60": 28,
           "_then61": 30,
           "_screen62": 30,
-          "_then66": 33,
-          "_screen67": 33,
-          "_else74": 35,
-          "_endif74": 35,
-          "_then75": 37,
-          "_screen76": 37,
-          "_else80": 39,
-          "_endif80": 39,
-          "_then82": 41,
-          "_screen83": 41,
-          "_else87": 43,
-          "_endif87": 43,
-          "_else88": 44,
-          "_endif88": 44,
-          "_then91": 46,
-          "_screen92": 46,
-          "_else96": 48,
-          "_endif96": 48,
-          "_else104": 49,
-          "_endif104": 49,
-          "_then106": 51,
-          "_screen107": 51,
-          "_else113": 53,
-          "_endif113": 53,
-          "_screen114": 53,
-          "_screen121": 54,
-          "_then124": 57,
-          "_screen125": 57,
-          "_else128": 59,
-          "_endif128": 59,
-          "_then131": 61,
-          "_screen132": 61,
-          "_else136": 63,
-          "_endif136": 63,
-          "_contents": 64,
-          "_screen137": 64
+          "_then67": 33,
+          "_screen68": 33,
+          "_else75": 35,
+          "_endif75": 35,
+          "_then76": 37,
+          "_screen77": 37,
+          "_else97": 39,
+          "_endif97": 39,
+          "_then98": 41,
+          "_screen99": 41,
+          "_else109": 43,
+          "_endif109": 43,
+          "_then110": 45,
+          "_screen111": 45,
+          "_else115": 47,
+          "_endif115": 47,
+          "_then117": 49,
+          "_screen118": 49,
+          "_else122": 51,
+          "_endif122": 51,
+          "_else123": 52,
+          "_endif123": 52,
+          "_then126": 54,
+          "_screen127": 54,
+          "_else131": 56,
+          "_endif131": 56,
+          "_then134": 58,
+          "_screen135": 58,
+          "_else141": 60,
+          "_endif141": 60,
+          "_then142": 62,
+          "_screen143": 62,
+          "_screen151": 63,
+          "_then154": 66,
+          "_screen155": 66,
+          "_else159": 68,
+          "_endif159": 68,
+          "_else160": 69,
+          "_endif160": 69,
+          "_then161": 71,
+          "_screen162": 71,
+          "_else166": 73,
+          "_endif166": 73,
+          "_else167": 74,
+          "_endif167": 74,
+          "_then168": 76,
+          "_screen169": 76,
+          "_else173": 78,
+          "_endif173": 78,
+          "_contents": 79,
+          "_screen174": 79
         }
       },
       "initial": {
@@ -5248,7 +6766,11 @@
         "valuesList": "YesNoU",
         "_defn": [
           {
-            "_row_num": 68,
+            "_row_num": 69,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 80,
             "section_name": "survey"
           },
           {
@@ -5266,7 +6788,11 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 70,
+            "_row_num": 71,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 82,
             "section_name": "survey"
           },
           {
@@ -5285,7 +6811,11 @@
         "valuesList": "time_unit",
         "_defn": [
           {
-            "_row_num": 71,
+            "_row_num": 72,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 83,
             "section_name": "survey"
           },
           {
@@ -5299,6 +6829,118 @@
         "elementSet": "data",
         "elementPath": "ABPARTNV_TEMPO_UNIT"
       },
+      "ABPARTNV2": {
+        "type": "string",
+        "valuesList": "YesNoU",
+        "_defn": [
+          {
+            "_row_num": 89,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 7,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV2",
+        "elementName": "ABPARTNV2",
+        "elementSet": "data",
+        "elementPath": "ABPARTNV2"
+      },
+      "ABPARTNV_TEMPO2": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 91,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 8,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO2",
+        "elementName": "ABPARTNV_TEMPO2",
+        "elementSet": "data",
+        "elementPath": "ABPARTNV_TEMPO2"
+      },
+      "ABPARTNV_TEMPO_UNIT2": {
+        "type": "string",
+        "valuesList": "time_unit",
+        "_defn": [
+          {
+            "_row_num": 92,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 9,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO_UNIT2",
+        "elementName": "ABPARTNV_TEMPO_UNIT2",
+        "elementSet": "data",
+        "elementPath": "ABPARTNV_TEMPO_UNIT2"
+      },
+      "ABPARTNV3": {
+        "type": "string",
+        "valuesList": "YesNoU",
+        "_defn": [
+          {
+            "_row_num": 102,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 10,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV3",
+        "elementName": "ABPARTNV3",
+        "elementSet": "data",
+        "elementPath": "ABPARTNV3"
+      },
+      "ABPARTNV_TEMPO3": {
+        "type": "integer",
+        "_defn": [
+          {
+            "_row_num": 104,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 11,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO3",
+        "elementName": "ABPARTNV_TEMPO3",
+        "elementSet": "data",
+        "elementPath": "ABPARTNV_TEMPO3"
+      },
+      "ABPARTNV_TEMPO_UNIT3": {
+        "type": "string",
+        "valuesList": "time_unit",
+        "_defn": [
+          {
+            "_row_num": 105,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 12,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTNV_TEMPO_UNIT3",
+        "elementName": "ABPARTNV_TEMPO_UNIT3",
+        "elementSet": "data",
+        "elementPath": "ABPARTNV_TEMPO_UNIT3"
+      },
       "ABPARTTIPO": {
         "type": "string",
         "valuesList": "birthoutcome",
@@ -5308,7 +6950,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 7,
+            "_row_num": 13,
             "section_name": "model"
           }
         ],
@@ -5318,11 +6960,68 @@
         "elementSet": "data",
         "elementPath": "ABPARTTIPO"
       },
+      "ABPARTTIPO_G1": {
+        "type": "string",
+        "valuesList": "birthoutcome2",
+        "_defn": [
+          {
+            "_row_num": 78,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 14,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTTIPO_G1",
+        "elementName": "ABPARTTIPO_G1",
+        "elementSet": "data",
+        "elementPath": "ABPARTTIPO_G1"
+      },
+      "ABPARTTIPO_G2": {
+        "type": "string",
+        "valuesList": "birthoutcome2",
+        "_defn": [
+          {
+            "_row_num": 86,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 15,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTTIPO_G2",
+        "elementName": "ABPARTTIPO_G2",
+        "elementSet": "data",
+        "elementPath": "ABPARTTIPO_G2"
+      },
+      "ABPARTTIPO_G3": {
+        "type": "string",
+        "valuesList": "birthoutcome2",
+        "_defn": [
+          {
+            "_row_num": 100,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 16,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "ABPARTTIPO_G3",
+        "elementName": "ABPARTTIPO_G3",
+        "elementSet": "data",
+        "elementPath": "ABPARTTIPO_G3"
+      },
       "ASSISTANT": {
         "type": "string",
         "_defn": [
           {
-            "_row_num": 8,
+            "_row_num": 17,
             "section_name": "model"
           }
         ],
@@ -5338,11 +7037,11 @@
         "valuesList": "YesNo",
         "_defn": [
           {
-            "_row_num": 122,
+            "_row_num": 152,
             "section_name": "survey"
           },
           {
-            "_row_num": 9,
+            "_row_num": 18,
             "section_name": "model"
           }
         ],
@@ -5356,7 +7055,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 10,
+            "_row_num": 19,
             "section_name": "model"
           }
         ],
@@ -5375,7 +7074,7 @@
         "__rowNum__": 2,
         "_defn": [
           {
-            "_row_num": 11,
+            "_row_num": 20,
             "section_name": "model"
           }
         ],
@@ -5389,7 +7088,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 12,
+            "_row_num": 21,
             "section_name": "model"
           }
         ],
@@ -5403,7 +7102,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 13,
+            "_row_num": 22,
             "section_name": "model"
           }
         ],
@@ -5417,7 +7116,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 14,
+            "_row_num": 23,
             "section_name": "model"
           }
         ],
@@ -5440,7 +7139,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 15,
+            "_row_num": 24,
             "section_name": "model"
           }
         ],
@@ -5454,7 +7153,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 16,
+            "_row_num": 25,
             "section_name": "model"
           }
         ],
@@ -5477,7 +7176,7 @@
         },
         "_defn": [
           {
-            "_row_num": 17,
+            "_row_num": 26,
             "section_name": "model"
           }
         ],
@@ -5499,7 +7198,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 18,
+            "_row_num": 27,
             "section_name": "model"
           }
         ],
@@ -5514,11 +7213,11 @@
         "valuesList": "YesNoU",
         "_defn": [
           {
-            "_row_num": 108,
+            "_row_num": 136,
             "section_name": "survey"
           },
           {
-            "_row_num": 19,
+            "_row_num": 28,
             "section_name": "model"
           }
         ],
@@ -5541,11 +7240,11 @@
         "valuesList": "contraceptive",
         "_defn": [
           {
-            "_row_num": 110,
+            "_row_num": 138,
             "section_name": "survey"
           },
           {
-            "_row_num": 20,
+            "_row_num": 29,
             "section_name": "model"
           }
         ],
@@ -5571,7 +7270,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 21,
+            "_row_num": 30,
             "section_name": "model"
           }
         ],
@@ -5589,7 +7288,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 22,
+            "_row_num": 31,
             "section_name": "model"
           }
         ],
@@ -5598,6 +7297,20 @@
         "elementName": "EXITMUDO",
         "elementSet": "data",
         "elementPath": "EXITMUDO"
+      },
+      "GEMEOS": {
+        "type": "string",
+        "_defn": [
+          {
+            "_row_num": 32,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "GEMEOS",
+        "elementName": "GEMEOS",
+        "elementSet": "data",
+        "elementPath": "GEMEOS"
       },
       "GR": {
         "type": "string",
@@ -5616,7 +7329,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 23,
+            "_row_num": 33,
             "section_name": "model"
           }
         ],
@@ -5630,7 +7343,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 24,
+            "_row_num": 34,
             "section_name": "model"
           }
         ],
@@ -5657,7 +7370,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 25,
+            "_row_num": 35,
             "section_name": "model"
           }
         ],
@@ -5672,11 +7385,11 @@
         "valuesList": "bednettime",
         "_defn": [
           {
-            "_row_num": 116,
+            "_row_num": 145,
             "section_name": "survey"
           },
           {
-            "_row_num": 26,
+            "_row_num": 36,
             "section_name": "model"
           }
         ],
@@ -5691,11 +7404,11 @@
         "valuesList": "bednet",
         "_defn": [
           {
-            "_row_num": 118,
+            "_row_num": 147,
             "section_name": "survey"
           },
           {
-            "_row_num": 27,
+            "_row_num": 37,
             "section_name": "model"
           }
         ],
@@ -5710,11 +7423,11 @@
         "valuesList": "YesNoU",
         "_defn": [
           {
-            "_row_num": 115,
+            "_row_num": 144,
             "section_name": "survey"
           },
           {
-            "_row_num": 28,
+            "_row_num": 38,
             "section_name": "model"
           }
         ],
@@ -5724,11 +7437,30 @@
         "elementSet": "data",
         "elementPath": "TENDAYN"
       },
+      "TRIGEMEOS": {
+        "type": "string",
+        "valuesList": "YesNoU",
+        "_defn": [
+          {
+            "_row_num": 93,
+            "section_name": "survey"
+          },
+          {
+            "_row_num": 39,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "TRIGEMEOS",
+        "elementName": "TRIGEMEOS",
+        "elementSet": "data",
+        "elementPath": "TRIGEMEOS"
+      },
       "CICA": {
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 30,
+            "_row_num": 40,
             "section_name": "model"
           }
         ],
@@ -5742,7 +7474,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 31,
+            "_row_num": 41,
             "section_name": "model"
           }
         ],
@@ -5761,7 +7493,7 @@
             "section_name": "survey"
           },
           {
-            "_row_num": 32,
+            "_row_num": 42,
             "section_name": "model"
           }
         ],
@@ -5775,7 +7507,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 33,
+            "_row_num": 43,
             "section_name": "model"
           }
         ],
@@ -5794,7 +7526,7 @@
         "__rowNum__": 2,
         "_defn": [
           {
-            "_row_num": 34,
+            "_row_num": 44,
             "section_name": "model"
           }
         ],
@@ -5808,7 +7540,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 35,
+            "_row_num": 45,
             "section_name": "model"
           }
         ],
@@ -5822,7 +7554,7 @@
         "type": "integer",
         "_defn": [
           {
-            "_row_num": 36,
+            "_row_num": 46,
             "section_name": "model"
           }
         ],
@@ -5831,6 +7563,386 @@
         "elementName": "VISNUMBER",
         "elementSet": "data",
         "elementPath": "VISNUMBER"
+      },
+      "VAC1DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 48,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC1DATA",
+        "elementName": "VAC1DATA",
+        "elementSet": "data",
+        "elementPath": "VAC1DATA"
+      },
+      "VAC2DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 49,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC2DATA",
+        "elementName": "VAC2DATA",
+        "elementSet": "data",
+        "elementPath": "VAC2DATA"
+      },
+      "VAC3DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 50,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC3DATA",
+        "elementName": "VAC3DATA",
+        "elementSet": "data",
+        "elementPath": "VAC3DATA"
+      },
+      "VAC4DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 51,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC4DATA",
+        "elementName": "VAC4DATA",
+        "elementSet": "data",
+        "elementPath": "VAC4DATA"
+      },
+      "VAC5DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 52,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC5DATA",
+        "elementName": "VAC5DATA",
+        "elementSet": "data",
+        "elementPath": "VAC5DATA"
+      },
+      "VAC6DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 53,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC6DATA",
+        "elementName": "VAC6DATA",
+        "elementSet": "data",
+        "elementPath": "VAC6DATA"
+      },
+      "VAC7DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 54,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC7DATA",
+        "elementName": "VAC7DATA",
+        "elementSet": "data",
+        "elementPath": "VAC7DATA"
+      },
+      "VAC8DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 55,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC8DATA",
+        "elementName": "VAC8DATA",
+        "elementSet": "data",
+        "elementPath": "VAC8DATA"
+      },
+      "VAC9DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 56,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC9DATA",
+        "elementName": "VAC9DATA",
+        "elementSet": "data",
+        "elementPath": "VAC9DATA"
+      },
+      "VAC10DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 57,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC10DATA",
+        "elementName": "VAC10DATA",
+        "elementSet": "data",
+        "elementPath": "VAC10DATA"
+      },
+      "VAC11DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 58,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC11DATA",
+        "elementName": "VAC11DATA",
+        "elementSet": "data",
+        "elementPath": "VAC11DATA"
+      },
+      "VAC12DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 59,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC12DATA",
+        "elementName": "VAC12DATA",
+        "elementSet": "data",
+        "elementPath": "VAC12DATA"
+      },
+      "VAC13DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 60,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC13DATA",
+        "elementName": "VAC13DATA",
+        "elementSet": "data",
+        "elementPath": "VAC13DATA"
+      },
+      "VAC14DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 61,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC14DATA",
+        "elementName": "VAC14DATA",
+        "elementSet": "data",
+        "elementPath": "VAC14DATA"
+      },
+      "VAC15DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 62,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC15DATA",
+        "elementName": "VAC15DATA",
+        "elementSet": "data",
+        "elementPath": "VAC15DATA"
+      },
+      "VAC16DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 63,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC16DATA",
+        "elementName": "VAC16DATA",
+        "elementSet": "data",
+        "elementPath": "VAC16DATA"
+      },
+      "VAC17DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 64,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC17DATA",
+        "elementName": "VAC17DATA",
+        "elementSet": "data",
+        "elementPath": "VAC17DATA"
+      },
+      "VAC18DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 65,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC18DATA",
+        "elementName": "VAC18DATA",
+        "elementSet": "data",
+        "elementPath": "VAC18DATA"
+      },
+      "VAC19DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 66,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC19DATA",
+        "elementName": "VAC19DATA",
+        "elementSet": "data",
+        "elementPath": "VAC19DATA"
+      },
+      "VAC20DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC20DATA",
+        "elementName": "VAC20DATA",
+        "elementSet": "data",
+        "elementPath": "VAC20DATA"
       },
       "escons_items": {
         "type": "string",
@@ -5979,17 +8091,66 @@
       },
       {
         "_partition": "Column",
+        "_aspect": "ABPARTNV2",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoU\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":4},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":5},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ABPARTNV3",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoU\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":4},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":5},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
         "_aspect": "ABPARTNV_TEMPO_UNIT",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"time_unit\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Days\",\"default\":\"Dias\"}}},\"_row_num\":69},{\"choice_list_name\":\"time_unit\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Weeks\",\"default\":\"Semanas\"}}},\"_row_num\":70},{\"choice_list_name\":\"time_unit\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Months\",\"default\":\"Meses\"}}},\"_row_num\":71}]"
+        "_value": "[{\"choice_list_name\":\"time_unit\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Days\",\"default\":\"Dias\"}}},\"_row_num\":73},{\"choice_list_name\":\"time_unit\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Weeks\",\"default\":\"Semanas\"}}},\"_row_num\":74},{\"choice_list_name\":\"time_unit\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Months\",\"default\":\"Meses\"}}},\"_row_num\":75}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ABPARTNV_TEMPO_UNIT2",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"time_unit\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Days\",\"default\":\"Dias\"}}},\"_row_num\":73},{\"choice_list_name\":\"time_unit\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Weeks\",\"default\":\"Semanas\"}}},\"_row_num\":74},{\"choice_list_name\":\"time_unit\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Months\",\"default\":\"Meses\"}}},\"_row_num\":75}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ABPARTNV_TEMPO_UNIT3",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"time_unit\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Days\",\"default\":\"Dias\"}}},\"_row_num\":73},{\"choice_list_name\":\"time_unit\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Weeks\",\"default\":\"Semanas\"}}},\"_row_num\":74},{\"choice_list_name\":\"time_unit\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Months\",\"default\":\"Meses\"}}},\"_row_num\":75}]"
       },
       {
         "_partition": "Column",
         "_aspect": "ABPARTTIPO",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Live birth\",\"default\":\"Nado vivo\"}}},\"_row_num\":47},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Stillbirth\",\"default\":\"Nado morto\"}}},\"_row_num\":48},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Miscarriage\",\"default\":\"Aborto\"}}},\"_row_num\":49}]"
+        "_value": "[{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Live birth\",\"default\":\"Nado vivo\"}}},\"_row_num\":47},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Stillbirth\",\"default\":\"Nado morto\"}}},\"_row_num\":48},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Miscarriage\",\"default\":\"Aborto\"}}},\"_row_num\":49},{\"choice_list_name\":\"birthoutcome\",\"data_value\":\"4\",\"display\":{\"title\":{\"text\":{\"english\":\"Twins\",\"default\":\"Gêmeos\"}}},\"_row_num\":50}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ABPARTTIPO_G1",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"birthoutcome2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Live birth\",\"default\":\"Nado vivo\"}}},\"_row_num\":51},{\"choice_list_name\":\"birthoutcome2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Stillbirth\",\"default\":\"Nado morto\"}}},\"_row_num\":52}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ABPARTTIPO_G2",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"birthoutcome2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Live birth\",\"default\":\"Nado vivo\"}}},\"_row_num\":51},{\"choice_list_name\":\"birthoutcome2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Stillbirth\",\"default\":\"Nado morto\"}}},\"_row_num\":52}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "ABPARTTIPO_G3",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"birthoutcome2\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Live birth\",\"default\":\"Nado vivo\"}}},\"_row_num\":51},{\"choice_list_name\":\"birthoutcome2\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"Stillbirth\",\"default\":\"Nado morto\"}}},\"_row_num\":52}]"
       },
       {
         "_partition": "Column",
@@ -6017,7 +8178,7 @@
         "_aspect": "EVITA2",
         "_key": "displayChoicesList",
         "_type": "object",
-        "_value": "[{\"choice_list_name\":\"contraceptive\",\"data_value\":\"PILULA\",\"display\":{\"title\":{\"text\":{\"english\":\"Pill\",\"default\":\"Pílula\"}}},\"_row_num\":50},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"JADELLE\",\"display\":{\"title\":{\"text\":{\"english\":\"P-rod\",\"default\":\"Jadelle\"}}},\"_row_num\":51},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"DIU\",\"display\":{\"title\":{\"text\":{\"english\":\"IUD\",\"default\":\"Anilha\"}}},\"_row_num\":52},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"CAMISINHA\",\"display\":{\"title\":{\"text\":{\"english\":\"Condom\",\"default\":\"Camisinha\"}}},\"_row_num\":53},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"FEMIDOM\",\"display\":{\"title\":{\"text\":{\"english\":\"Femidom\",\"default\":\"Femidom\"}}},\"_row_num\":54},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"DEPO\",\"display\":{\"title\":{\"text\":{\"english\":\"Depo\",\"default\":\"Depo\"}}},\"_row_num\":55},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"ESTERIL-F\",\"display\":{\"title\":{\"text\":{\"english\":\"F-Steriliastion\",\"default\":\"Esteril-F\"}}},\"_row_num\":56},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"ESTERIL-M\",\"display\":{\"title\":{\"text\":{\"english\":\"Vasectomy\",\"default\":\"Vasectomia\"}}},\"_row_num\":57},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"EMERCENCIA\",\"display\":{\"title\":{\"text\":{\"english\":\"Morning after pill\",\"default\":\"Pílulas do dia seguinte.\"}}},\"_row_num\":58},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"TRADICIONAIS\",\"display\":{\"title\":{\"text\":{\"english\":\"Traditional\",\"default\":\"Tradicionais\"}}},\"_row_num\":59},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"OUTRA\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outra/o\"}}},\"_row_num\":60}]"
+        "_value": "[{\"choice_list_name\":\"contraceptive\",\"data_value\":\"PILULA\",\"display\":{\"title\":{\"text\":{\"english\":\"Pill\",\"default\":\"Pílula\"}}},\"_row_num\":54},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"JADELLE\",\"display\":{\"title\":{\"text\":{\"english\":\"P-rod\",\"default\":\"Jadelle\"}}},\"_row_num\":55},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"DIU\",\"display\":{\"title\":{\"text\":{\"english\":\"IUD\",\"default\":\"Anilha\"}}},\"_row_num\":56},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"CAMISINHA\",\"display\":{\"title\":{\"text\":{\"english\":\"Condom\",\"default\":\"Camisinha\"}}},\"_row_num\":57},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"FEMIDOM\",\"display\":{\"title\":{\"text\":{\"english\":\"Femidom\",\"default\":\"Femidom\"}}},\"_row_num\":58},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"DEPO\",\"display\":{\"title\":{\"text\":{\"english\":\"Depo\",\"default\":\"Depo\"}}},\"_row_num\":59},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"ESTERIL-F\",\"display\":{\"title\":{\"text\":{\"english\":\"F-Steriliastion\",\"default\":\"Esteril-F\"}}},\"_row_num\":60},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"ESTERIL-M\",\"display\":{\"title\":{\"text\":{\"english\":\"Vasectomy\",\"default\":\"Vasectomia\"}}},\"_row_num\":61},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"EMERCENCIA\",\"display\":{\"title\":{\"text\":{\"english\":\"Morning after pill\",\"default\":\"Pílulas do dia seguinte.\"}}},\"_row_num\":62},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"TRADICIONAIS\",\"display\":{\"title\":{\"text\":{\"english\":\"Traditional\",\"default\":\"Tradicionais\"}}},\"_row_num\":63},{\"choice_list_name\":\"contraceptive\",\"data_value\":\"OUTRA\",\"display\":{\"title\":{\"text\":{\"english\":\"Other\",\"default\":\"Outra/o\"}}},\"_row_num\":64}]"
       },
       {
         "_partition": "Column",
@@ -6057,6 +8218,13 @@
       {
         "_partition": "Column",
         "_aspect": "TENDAYN",
+        "_key": "displayChoicesList",
+        "_type": "object",
+        "_value": "[{\"choice_list_name\":\"YesNoU\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":4},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":5},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":6}]"
+      },
+      {
+        "_partition": "Column",
+        "_aspect": "TRIGEMEOS",
         "_key": "displayChoicesList",
         "_type": "object",
         "_value": "[{\"choice_list_name\":\"YesNoU\",\"data_value\":\"1\",\"display\":{\"title\":{\"text\":{\"english\":\"Yes\",\"default\":\"Sim\"}}},\"_row_num\":4},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"2\",\"display\":{\"title\":{\"text\":{\"english\":\"No\",\"default\":\"Não\"}}},\"_row_num\":5},{\"choice_list_name\":\"YesNoU\",\"data_value\":\"3\",\"display\":{\"title\":{\"text\":{\"english\":\"Don't know\",\"default\":\"Não sabe\"}}},\"_row_num\":6}]"

@@ -167,6 +167,32 @@
           }
         },
         "_row_num": 9
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "MIF_VAC",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Vaccines",
+              "default": "Vacinas"
+            }
+          }
+        },
+        "_row_num": 10
+      },
+      {
+        "choice_list_name": "forms",
+        "data_value": "SCAR",
+        "display": {
+          "title": {
+            "text": {
+              "english": "Scar",
+              "default": "Cicatrizes"
+            }
+          }
+        },
+        "_row_num": 11
       }
     ],
     "survey": [
@@ -367,6 +393,42 @@
       {
         "clause": "exit section",
         "_row_num": 34
+      },
+      {
+        "branch_label": "MIF_VAC",
+        "_row_num": 35
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('MIF_VAC')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 36
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 37
+      },
+      {
+        "branch_label": "SCAR",
+        "_row_num": 38
+      },
+      {
+        "url": "'?' + odkSurvey.getHashString('SCAR')",
+        "type": "external_link",
+        "display": {
+          "prompt": {
+            "text": "Open form"
+          }
+        },
+        "_row_num": 39
+      },
+      {
+        "clause": "exit section",
+        "_row_num": 40
       }
     ],
     "framework_translations": [
@@ -1045,6 +1107,32 @@
             }
           },
           "_row_num": 9
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "MIF_VAC",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Vaccines",
+                "default": "Vacinas"
+              }
+            }
+          },
+          "_row_num": 10
+        },
+        {
+          "choice_list_name": "forms",
+          "data_value": "SCAR",
+          "display": {
+            "title": {
+              "text": {
+                "english": "Scar",
+                "default": "Cicatrizes"
+              }
+            }
+          },
+          "_row_num": 11
         }
       ]
     },
@@ -1818,12 +1906,42 @@
             "promptIdx": 10
           },
           {
+            "url": "'?' + odkSurvey.getHashString('MIF_VAC')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 36,
+            "__rowNum__": 35,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen36",
+            "promptIdx": 11
+          },
+          {
+            "url": "'?' + odkSurvey.getHashString('SCAR')",
+            "type": "external_link",
+            "display": {
+              "prompt": {
+                "text": "Open form"
+              }
+            },
+            "_row_num": 39,
+            "__rowNum__": 38,
+            "_token_type": "prompt",
+            "_type": "external_link",
+            "_branch_label_enclosing_screen": "survey/_screen39",
+            "promptIdx": 12
+          },
+          {
             "_token_type": "prompt",
             "type": "contents",
             "_type": "contents",
-            "_row_num": 35,
-            "_branch_label_enclosing_screen": "survey/_screen35",
-            "promptIdx": 11
+            "_row_num": 41,
+            "_branch_label_enclosing_screen": "survey/_screen41",
+            "promptIdx": 13
           }
         ],
         "validation_tag_map": {
@@ -1990,25 +2108,51 @@
             "operationIdx": 23
           },
           {
-            "_token_type": "exit_section",
-            "clause": "exit section",
-            "_row_num": 35,
+            "_row_num": 36,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 24
           },
           {
-            "_row_num": 35,
+            "clause": "exit section",
+            "_row_num": 37,
+            "__rowNum__": 36,
+            "_token_type": "exit_section",
+            "operationIdx": 25
+          },
+          {
+            "_row_num": 39,
             "_token_type": "begin_screen",
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(11);\n\nreturn activePromptIndicies;\n}\n",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(12);\n\nreturn activePromptIndicies;\n}\n",
+            "operationIdx": 26
+          },
+          {
+            "clause": "exit section",
+            "_row_num": 40,
+            "__rowNum__": 39,
+            "_token_type": "exit_section",
+            "operationIdx": 27
+          },
+          {
+            "_token_type": "exit_section",
+            "clause": "exit section",
+            "_row_num": 41,
+            "operationIdx": 28
+          },
+          {
+            "_row_num": 41,
+            "_token_type": "begin_screen",
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(13);\n\nreturn activePromptIndicies;\n}\n",
             "screen": {
               "hideInBackHistory": true
             },
-            "operationIdx": 25
+            "operationIdx": 29
           },
           {
             "_token_type": "resume",
             "clause": "resume",
-            "_row_num": 35,
-            "operationIdx": 26
+            "_row_num": 41,
+            "operationIdx": 30
           }
         ],
         "branch_label_map": {
@@ -2035,8 +2179,12 @@
           "_screen30": 20,
           "MIF_V_OOP_VAC": 22,
           "_screen33": 22,
-          "_contents": 25,
-          "_screen35": 25
+          "MIF_VAC": 24,
+          "_screen36": 24,
+          "SCAR": 26,
+          "_screen39": 26,
+          "_contents": 29,
+          "_screen41": 29
         }
       }
     },

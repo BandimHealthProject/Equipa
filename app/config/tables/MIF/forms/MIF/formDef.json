@@ -2174,6 +2174,126 @@
         "type": "integer",
         "isSessionVariable": false,
         "_row_num": 65
+      },
+      {
+        "name": "VAC1DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 67
+      },
+      {
+        "name": "VAC2DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 68
+      },
+      {
+        "name": "VAC3DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 69
+      },
+      {
+        "name": "VAC4DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 70
+      },
+      {
+        "name": "VAC5DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 71
+      },
+      {
+        "name": "VAC6DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 72
+      },
+      {
+        "name": "VAC7DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 73
+      },
+      {
+        "name": "VAC8DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 74
+      },
+      {
+        "name": "VAC9DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 75
+      },
+      {
+        "name": "VAC10DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 76
+      },
+      {
+        "name": "VAC11DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 77
+      },
+      {
+        "name": "VAC12DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 78
+      },
+      {
+        "name": "VAC13DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 79
+      },
+      {
+        "name": "VAC14DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 80
+      },
+      {
+        "name": "VAC15DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 81
+      },
+      {
+        "name": "VAC16DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 82
+      },
+      {
+        "name": "VAC17DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 83
+      },
+      {
+        "name": "VAC18DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 84
+      },
+      {
+        "name": "VAC19DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 85
+      },
+      {
+        "name": "VAC20DATA",
+        "type": "adate",
+        "isSessionVariable": false,
+        "_row_num": 86
       }
     ]
   },
@@ -3994,6 +4114,326 @@
         ],
         "isSessionVariable": false,
         "elementKey": "VISNUMBER"
+      },
+      "VAC1DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC1DATA"
+      },
+      "VAC2DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC2DATA"
+      },
+      "VAC3DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC3DATA"
+      },
+      "VAC4DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC4DATA"
+      },
+      "VAC5DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 71,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC5DATA"
+      },
+      "VAC6DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC6DATA"
+      },
+      "VAC7DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC7DATA"
+      },
+      "VAC8DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC8DATA"
+      },
+      "VAC9DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC9DATA"
+      },
+      "VAC10DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 76,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC10DATA"
+      },
+      "VAC11DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC11DATA"
+      },
+      "VAC12DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 78,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC12DATA"
+      },
+      "VAC13DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 79,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC13DATA"
+      },
+      "VAC14DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 80,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC14DATA"
+      },
+      "VAC15DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC15DATA"
+      },
+      "VAC16DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 82,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC16DATA"
+      },
+      "VAC17DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC17DATA"
+      },
+      "VAC18DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 84,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC18DATA"
+      },
+      "VAC19DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 85,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC19DATA"
+      },
+      "VAC20DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 86,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC20DATA"
       }
     },
     "section_names": [
@@ -6454,6 +6894,386 @@
         "elementName": "VISNUMBER",
         "elementSet": "data",
         "elementPath": "VISNUMBER"
+      },
+      "VAC1DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 67,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC1DATA",
+        "elementName": "VAC1DATA",
+        "elementSet": "data",
+        "elementPath": "VAC1DATA"
+      },
+      "VAC2DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 68,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC2DATA",
+        "elementName": "VAC2DATA",
+        "elementSet": "data",
+        "elementPath": "VAC2DATA"
+      },
+      "VAC3DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 69,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC3DATA",
+        "elementName": "VAC3DATA",
+        "elementSet": "data",
+        "elementPath": "VAC3DATA"
+      },
+      "VAC4DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 70,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC4DATA",
+        "elementName": "VAC4DATA",
+        "elementSet": "data",
+        "elementPath": "VAC4DATA"
+      },
+      "VAC5DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 71,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC5DATA",
+        "elementName": "VAC5DATA",
+        "elementSet": "data",
+        "elementPath": "VAC5DATA"
+      },
+      "VAC6DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 72,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC6DATA",
+        "elementName": "VAC6DATA",
+        "elementSet": "data",
+        "elementPath": "VAC6DATA"
+      },
+      "VAC7DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 73,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC7DATA",
+        "elementName": "VAC7DATA",
+        "elementSet": "data",
+        "elementPath": "VAC7DATA"
+      },
+      "VAC8DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 74,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC8DATA",
+        "elementName": "VAC8DATA",
+        "elementSet": "data",
+        "elementPath": "VAC8DATA"
+      },
+      "VAC9DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 75,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC9DATA",
+        "elementName": "VAC9DATA",
+        "elementSet": "data",
+        "elementPath": "VAC9DATA"
+      },
+      "VAC10DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 76,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC10DATA",
+        "elementName": "VAC10DATA",
+        "elementSet": "data",
+        "elementPath": "VAC10DATA"
+      },
+      "VAC11DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 77,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC11DATA",
+        "elementName": "VAC11DATA",
+        "elementSet": "data",
+        "elementPath": "VAC11DATA"
+      },
+      "VAC12DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 78,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC12DATA",
+        "elementName": "VAC12DATA",
+        "elementSet": "data",
+        "elementPath": "VAC12DATA"
+      },
+      "VAC13DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 79,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC13DATA",
+        "elementName": "VAC13DATA",
+        "elementSet": "data",
+        "elementPath": "VAC13DATA"
+      },
+      "VAC14DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 80,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC14DATA",
+        "elementName": "VAC14DATA",
+        "elementSet": "data",
+        "elementPath": "VAC14DATA"
+      },
+      "VAC15DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 81,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC15DATA",
+        "elementName": "VAC15DATA",
+        "elementSet": "data",
+        "elementPath": "VAC15DATA"
+      },
+      "VAC16DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 82,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC16DATA",
+        "elementName": "VAC16DATA",
+        "elementSet": "data",
+        "elementPath": "VAC16DATA"
+      },
+      "VAC17DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 83,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC17DATA",
+        "elementName": "VAC17DATA",
+        "elementSet": "data",
+        "elementPath": "VAC17DATA"
+      },
+      "VAC18DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 84,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC18DATA",
+        "elementName": "VAC18DATA",
+        "elementSet": "data",
+        "elementPath": "VAC18DATA"
+      },
+      "VAC19DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 85,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC19DATA",
+        "elementName": "VAC19DATA",
+        "elementSet": "data",
+        "elementPath": "VAC19DATA"
+      },
+      "VAC20DATA": {
+        "prompt_type_name": "adate",
+        "type": "string",
+        "elementType": "string",
+        "comment": "Save only mm.dd.yyyy with support for ?? at all positions",
+        "_row_num": 3,
+        "__rowNum__": 2,
+        "_defn": [
+          {
+            "_row_num": 86,
+            "section_name": "model"
+          }
+        ],
+        "isSessionVariable": false,
+        "elementKey": "VAC20DATA",
+        "elementName": "VAC20DATA",
+        "elementSet": "data",
+        "elementPath": "VAC20DATA"
       },
       "abns_items": {
         "type": "string",

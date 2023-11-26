@@ -36,10 +36,11 @@ function doSanityCheck() {
 //       console.log("todayAdate", todayAdate2);
 // }
 
+ /*         */
 
 function loadMIF() {
-    // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts
-     var sql = "SELECT V._id, V._savepoint_type, V.CONT, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.MUL, M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1,  M.TAB, V.VISNUMBER" +
+    // SQL to get MIF - obs - see CSBCG - smart stuff for filtering - incl user accounts //  
+     var sql = "SELECT V._id, V._savepoint_type, M.CICA, V.CONT, M.ESTADO,  M.EXITDATA,  M.FOGAO,  M.GR_LAST,  M.MIFDNASC,  M.MOR,  M.NOMEMAE,  M.MUL, M.PARPAD3,  M.REG,  M.REGDIA,  M.REGID,  M.RELA1NOME,  M.TAB, M.VAC1DATA, M.VAC2DATA, M.VAC3DATA, M.VAC4DATA, M.VAC5DATA, M.VAC6DATA, M.VAC7DATA, M.VAC8DATA, M.VAC9DATA, M.VAC10DATA, M.VAC11DATA, M.VAC12DATA, M.VAC13DATA, M.VAC14DATA, M.VAC15DATA, M.VAC16DATA, M.VAC17DATA, M.VAC18DATA, M.VAC19DATA, M.VAC20DATA, V.VISNUMBER" + //
      " FROM MIF AS M" + 
      " LEFT JOIN MIF_VISIT AS V ON M.REGID = V.REGID" + 
         " WHERE M.REG = " + reg + " AND M.TAB = " + tab + " AND M.MOR = " + mor + 
@@ -49,7 +50,7 @@ function loadMIF() {
     
     MIF = [];
     console.log("Querying database for Women...");
-    console.log(sql);
+    console.log(sql); // REMOVED A COMMA 19-11-2023
    
     var successFn = function( result ) {
         console.log("Found " + result.getCount() + " MIF");
@@ -57,6 +58,7 @@ function loadMIF() {
            // Her hentes alle de variabler fra SQL ind i javascript
             var rowId = result.getData(row,"_id");                      // row række id (=_id i ODK) 
             var savepoint = result.getData(row,"_savepoint_type")       // Savepoint = Finalize vs incomplete osv
+            var CICA = result.getData(row,"CICA");  //CICA ADDED 10-11-2023
             var CONT = result.getData(row,"CONT");
             var FOGAO = result.getData(row,"FOGAO");
             var GR_LAST = result.getData(row,"GR_LAST");
@@ -67,10 +69,31 @@ function loadMIF() {
             var REG = result.getData(row,"REG");
             var REGDIA = result.getData(row,"REGDIA");
             var REGID = result.getData(row,"REGID")
+            var RELA1NOME = result.getData(row,"RELA1NOME");
             var TAB = result.getData(row,"TAB");
+            var VAC1DATA = result.getData(row,"VAC1DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC2DATA = result.getData(row,"VAC2DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC3DATA = result.getData(row,"VAC3DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC4DATA = result.getData(row,"VAC4DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC5DATA = result.getData(row,"VAC5DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC6DATA = result.getData(row,"VAC6DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC7DATA = result.getData(row,"VAC7DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC8DATA = result.getData(row,"VAC8DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC9DATA = result.getData(row,"VAC9DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC10DATA = result.getData(row,"VAC10DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC11DATA = result.getData(row,"VAC11DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC12DATA = result.getData(row,"VAC12DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC13DATA = result.getData(row,"VAC13DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC14DATA = result.getData(row,"VAC14DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC15DATA = result.getData(row,"VAC15DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC16DATA = result.getData(row,"VAC16DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC17DATA = result.getData(row,"VAC17DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC18DATA = result.getData(row,"VAC18DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC19DATA = result.getData(row,"VAC19DATA");  //VAC#DATA ADDED 19-11-2023
+            var VAC20DATA = result.getData(row,"VAC20DATA");  //VAC#DATA ADDED 19-11-2023 
             var VISNUMBER = result.getData(row,"VISNUMBER");
             // har samles alle variablerne i et "object"
-            var p = {type: 'woman',  rowId, savepoint, CONT, FOGAO, GR_LAST, MOR, MUL, NOMEMAE, PARPAD3, REG, REGDIA, REGID, TAB, VISNUMBER}; // 
+            var p = {type: 'woman',  rowId, savepoint, CICA, CONT, FOGAO, GR_LAST, MOR, MUL, NOMEMAE, PARPAD3, REG, REGDIA, REGID, RELA1NOME, TAB, VAC1DATA, VAC2DATA, VAC3DATA, VAC4DATA, VAC5DATA, VAC6DATA, VAC7DATA, VAC8DATA, VAC9DATA, VAC10DATA, VAC11DATA, VAC12DATA, VAC13DATA, VAC14DATA, VAC15DATA, VAC16DATA, VAC17DATA, VAC18DATA, VAC19DATA, VAC20DATA, VISNUMBER};  // 
             MIF.push(p); // Her tilføjes "object" til listen "pregnancies", der kommer til at indeholde alle graviditeterne der kommer frem fra SQL-koden 20230911: CONT added*4
         }
         console.log("MIF:", MIF)
@@ -231,10 +254,11 @@ function setDisplayText(person) {
         regdia = formatDate(person.REGDIA);
         
         // teksten
-        displayText = "Mor:" + person.MOR +" Mul:" + person.MUL + " Fogao:" + person.FOGAO + "<br />" +
+        displayText = "Mor:" + person.MOR +" Mul:" + person.MUL + " Fogao:" + person.FOGAO +  " ID:" + person.REGID + "<br />" +
         "Nome: " + person.NOMEMAE  + "<br />" + 
         "Regdia: " + regdia + "<br />" +
-        "ID mulher: " + person.REGID;
+        "(Rela1: " +  person.RELA1NOME + ")" ;
+       
         
         
     } else { // hvis barn
@@ -382,6 +406,7 @@ function getDefaults(person) {
     // hvis kvinde
     if (person.type == "woman") { // pregnancy defaults 
         defaults['ASSISTANT'] = assistant;
+        defaults['CICA'] = person.CICA;
         defaults['CONT'] = toAdate(date);
         defaults['GR_LAST'] = person.GR_LAST;
    //     defaults['HCAREA'] = hcarea;
@@ -394,6 +419,26 @@ function getDefaults(person) {
     //    defaults['REGDIA'] = person.REGDIA;
     //    defaults['TAB'] = tab;
     //    defaults['TABNOME'] = tabNome;
+        defaults['VAC1DATA'] = person.VAC1DATA;
+        defaults['VAC2DATA'] = person.VAC2DATA;
+        defaults['VAC3DATA'] = person.VAC3DATA;
+        defaults['VAC4DATA'] = person.VAC4DATA;
+        defaults['VAC5DATA'] = person.VAC5DATA;
+        defaults['VAC6DATA'] = person.VAC6DATA;
+        defaults['VAC7DATA'] = person.VAC7DATA;
+        defaults['VAC8DATA'] = person.VAC8DATA;
+        defaults['VAC9DATA'] = person.VAC9DATA;
+        defaults['VAC10DATA'] = person.VAC10DATA;
+        defaults['VAC11DATA'] = person.VAC11DATA;
+        defaults['VAC12DATA'] = person.VAC12DATA;
+        defaults['VAC13DATA'] = person.VAC13DATA;
+        defaults['VAC14DATA'] = person.VAC14DATA;
+        defaults['VAC15DATA'] = person.VAC15DATA;
+        defaults['VAC16DATA'] = person.VAC16DATA;
+        defaults['VAC17DATA'] = person.VAC17DATA;
+        defaults['VAC18DATA'] = person.VAC18DATA;
+        defaults['VAC19DATA'] = person.VAC19DATA;
+        defaults['VAC20DATA'] = person.VAC20DATA; 
         defaults['VISNUMBER'] = Number(person.VISNUMBER) + 1;
     // Herover fjernet en masse variabler som ikke er i formen - kunne det være forklaringen=
 
