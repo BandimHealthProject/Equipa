@@ -95,6 +95,7 @@
             }
           }
         },
+        "constraint": "data(\"ANC\")!=\"1\" || (data(\"ANC_NO\") >= 0 && data(\"ANC\")==\"1\")",
         "_row_num": 4
       },
       {
@@ -2795,6 +2796,7 @@
                 }
               }
             },
+            "constraint": "data(\"ANC\")!=\"1\" || (data(\"ANC_NO\") >= 0 && data(\"ANC\")==\"1\")",
             "_row_num": 4,
             "__rowNum__": 3,
             "_token_type": "prompt",
@@ -3440,6 +3442,7 @@
         "validation_tag_map": {
           "finalize": [
             0,
+            1,
             2,
             4,
             5,
