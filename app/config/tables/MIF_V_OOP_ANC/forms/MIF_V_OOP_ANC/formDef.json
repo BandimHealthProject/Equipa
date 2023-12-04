@@ -724,8 +724,16 @@
         "_row_num": 81
       },
       {
-        "clause": "begin screen",
+        "clause": "end if",
         "_row_num": 82
+      },
+      {
+        "clause": "end if",
+        "_row_num": 83
+      },
+      {
+        "clause": "begin screen",
+        "_row_num": 84
       },
       {
         "type": "text",
@@ -738,18 +746,10 @@
             }
           }
         },
-        "_row_num": 83
-      },
-      {
-        "clause": "end screen",
-        "_row_num": 84
-      },
-      {
-        "clause": "end if",
         "_row_num": 85
       },
       {
-        "clause": "end if",
+        "clause": "end screen",
         "_row_num": 86
       }
     ],
@@ -2535,7 +2535,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 85,
             "section_name": "survey"
           },
           {
@@ -3423,11 +3423,11 @@
                 }
               }
             },
-            "_row_num": 83,
-            "__rowNum__": 82,
+            "_row_num": 85,
+            "__rowNum__": 84,
             "_token_type": "prompt",
             "_type": "text",
-            "_branch_label_enclosing_screen": "survey/_screen82",
+            "_branch_label_enclosing_screen": "survey/_screen84",
             "promptIdx": 32
           },
           {
@@ -3496,8 +3496,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else86",
-            "_row_num": 86,
+            "_branch_label": "_else83",
+            "_row_num": 83,
             "operationIdx": 2
           },
           {
@@ -3597,8 +3597,8 @@
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_else85",
-            "_row_num": 85,
+            "_branch_label": "_else82",
+            "_row_num": 82,
             "operationIdx": 12
           },
           {
@@ -3644,31 +3644,31 @@
             "operationIdx": 15
           },
           {
-            "clause": "begin screen",
+            "clause": "end if",
+            "_token_type": "goto_label",
+            "_branch_label": "_endif82",
             "_row_num": 82,
-            "__rowNum__": 81,
-            "_token_type": "begin_screen",
-            "_end_screen_clause": {
-              "clause": "end screen",
-              "_row_num": 84,
-              "__rowNum__": 83,
-              "_token_type": "end_screen"
-            },
-            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 16
           },
           {
             "clause": "end if",
             "_token_type": "goto_label",
-            "_branch_label": "_endif85",
-            "_row_num": 85,
+            "_branch_label": "_endif83",
+            "_row_num": 83,
             "operationIdx": 17
           },
           {
-            "clause": "end if",
-            "_token_type": "goto_label",
-            "_branch_label": "_endif86",
-            "_row_num": 86,
+            "clause": "begin screen",
+            "_row_num": 84,
+            "__rowNum__": 83,
+            "_token_type": "begin_screen",
+            "_end_screen_clause": {
+              "clause": "end screen",
+              "_row_num": 86,
+              "__rowNum__": 85,
+              "_token_type": "end_screen"
+            },
+            "_screen_block": "function() {var activePromptIndicies = [];\nactivePromptIndicies.push(32);\n\nreturn activePromptIndicies;\n}\n",
             "operationIdx": 18
           },
           {
@@ -3708,11 +3708,11 @@
           "_screen54": 13,
           "_screen68": 14,
           "_screen75": 15,
-          "_screen82": 16,
-          "_else85": 18,
-          "_endif85": 18,
-          "_else86": 19,
-          "_endif86": 19,
+          "_else82": 17,
+          "_endif82": 17,
+          "_else83": 18,
+          "_endif83": 18,
+          "_screen84": 18,
           "_contents": 20,
           "_screen87": 20
         }
@@ -4282,7 +4282,7 @@
         "type": "string",
         "_defn": [
           {
-            "_row_num": 83,
+            "_row_num": 85,
             "section_name": "survey"
           },
           {
